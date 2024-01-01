@@ -3,6 +3,7 @@ APPS_PATH=/usr/share/applications
 HIDDEN=$APPS_PATH-hidden
 mkdir HIDDEN
 
+echo 
 sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/terminal.png" "$APPS_PATH/kitty.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Terminal" "$APPS_PATH/kitty.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/file-manager.png" "$APPS_PATH/thunar.desktop"
