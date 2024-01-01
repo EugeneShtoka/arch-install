@@ -18,5 +18,4 @@ kitty +kitten themes
 
 chsh -s $(which zsh)
 source ~/.env
-$SCRIPTS_PATH/install-rofi.sh
 nohup zsh $SCRIPTS_PATH/install.sh
