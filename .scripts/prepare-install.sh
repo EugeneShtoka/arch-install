@@ -7,7 +7,7 @@ rm -rf ~/arch-install/.config
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 rm .zshrc
 rm .zshrc.pre-oh-my-zsh
-mv ~/arch-install/.* ~/
+mv ~/ar$SCRIPTS_PATH/install-rofi.shch-install/.* ~/
 
 yes | sudo pacman -S curl zsh inotify-tools thunar adapta-gtk-theme arc-gtk-theme kwallet-pam adobe-source-code-pro-fonts bluez bluez-utils brightnessctl
 yes | sudo pacman -R dolphin kio-extras kio5 kwallet5
