@@ -1,0 +1,6 @@
+custom-scripts-pull() {
+  bash ~/.scripts/custom-scripts-pull.sh
+  zrc
+}
+
+custom-scripts-pull

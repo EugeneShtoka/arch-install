@@ -1,0 +1,17 @@
+*
+.*
+!.gitignore
+!.env
+!.zshrc
+!.zshfn
+!.zshfn/**
+!.scripts
+!.scripts/**
+!.icons
+!.icons/**
+!.config
+!.config/hypr
+!.config/hypr/hyprland.conf
+!.config/systemd
+!.config/systemd/user
+!.config/systemd/user/start-up-routine.service

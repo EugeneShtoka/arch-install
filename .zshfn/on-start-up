@@ -1,0 +1,6 @@
+on-start-up() {
+	pull-custom-scripts
+	auto-sync-scripts
+}
+
+on-start-up

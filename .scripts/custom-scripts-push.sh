@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "`date` custom-scripts-push" >> $HOME/scripts.log
+$SCRIPTS_PATH/ssh-init.sh
+cd $HOME
+git add .
+
+git commit -m update
+git push

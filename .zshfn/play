@@ -1,0 +1,5 @@
+play() {
+	setsid cvlc --random $1 &>/dev/null
+}
+
+play $1;

@@ -1,0 +1,5 @@
+obs() {
+	setsid obsidian &>/dev/null
+}
+
+obs;

@@ -1,0 +1,5 @@
+qbtr() {
+	setsid qbittorrent &>/dev/null
+}
+
+qbtr;

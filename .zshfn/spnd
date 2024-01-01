@@ -1,0 +1,3 @@
+spnd() {
+    systemctl suspend
+}

@@ -1,0 +1,9 @@
+unset-custom-functions() {
+  folder=~/.zshfn
+
+  for file in $(ls ~/.zshfn); do
+    unset -f "$file"
+  done
+};
+
+unset-custom-functions;
