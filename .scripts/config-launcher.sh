@@ -8,7 +8,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Terminal" "$APPS_PATH/kitty.des
 sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/file-manager.png" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=File Manager" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=VS Code" "$APPS_PATH/code.desktop"
-theme='style-1'
+
 
 sudo mv "$APPS_PATH/nm-connection-editor.desktop" "$HIDDEN/nm-connection-editor.desktop"
 sudo mv "$APPS_PATH/thunar-bulk-rename.desktop" "$HIDDEN/thunar-bulk-rename.desktop"
