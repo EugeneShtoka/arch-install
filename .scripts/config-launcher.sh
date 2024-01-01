@@ -1,5 +1,6 @@
 #!/bin/zsh
 source=.env
+
 APPS_PATH=/usr/share/applications
 HIDDEN=$APPS_PATH-hidden
 mkdir HIDDEN
