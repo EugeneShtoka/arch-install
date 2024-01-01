@@ -9,7 +9,7 @@ rm .zshrc
 rm .zshrc.pre-oh-my-zsh
 mv ~/ar$SCRIPTS_PATH/install-rofi.shch-install/.* ~/
 
-yes | sudo pacman -S curl zsh inotify-tools thunar adapta-gtk-theme arc-gtk-theme kwallet-pam adobe-source-code-pro-fonts bluez bluez-utils brightnessctl
+yes | sudo pacman -S curl zsh inotify-tools thunar rofi adapta-gtk-theme arc-gtk-theme kwallet-pam adobe-source-code-pro-fonts bluez bluez-utils brightnessctl
 yes | sudo pacman -R dolphin kio-extras kio5 kwallet5
 localectl set-locale LC_TIME=en_GB.UTF-8
 
