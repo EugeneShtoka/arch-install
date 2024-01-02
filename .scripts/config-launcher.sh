@@ -11,7 +11,6 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=VS Code" "$APPS_PATH/code.deskt
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Chrome" "$APPS_PATH/google-chrome.desktop"
 
-sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-2'" "$HOME/.config/rofi/launchers/type-2/launcher.sh"      
 
 sudo mv "$APPS_PATH/nm-connection-editor.desktop" $HIDDEN
 sudo mv "$APPS_PATH/rofi-theme-selector.desktop" $HIDDEN
