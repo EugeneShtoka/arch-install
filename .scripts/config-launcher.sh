@@ -9,7 +9,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/file-manager.png" "$
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=File Manager" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=VS Code" "$APPS_PATH/code.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/google-chrome.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Chrome" "$APPS_PATH/google-chrome.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-2'" "$HOME/.config/rofi/launchers/type-2/launcher.sh"      
 
 sudo mv "$APPS_PATH/nm-connection-editor.desktop" "$HIDDEN/nm-connection-editor.desktop"
