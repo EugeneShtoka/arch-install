@@ -15,7 +15,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-2'" "$HOME/.c
 sudo mv "$APPS_PATH/nm-connection-editor.desktop" "$HIDDEN/nm-connection-editor.desktop"
 sudo mv "$APPS_PATH/thunar-bulk-rename.desktop" "$HIDDEN/thunar-bulk-rename.desktop"
 sudo mv "$APPS_PATH/thunar-settings.desktop" "$HIDDEN/thunar-settings.desktop"
-sudo mv "$APPS_PATH/vim.desktop" "$HIDDEN/rofi-theme-selector.desktop"
 sudo mv "$APPS_PATH/lstopo.desktop" "$HIDDEN/lstopo.desktop"
 sudo mv "$APPS_PATH/vim.desktop" "$HIDDEN/vim.desktop"
-
+sudo mv "$APPS_PATH/lstopo.desktop" "$HIDDEN/rofi.desktop"
+sudo mv "$APPS_PATH/vim.desktop" "$HIDDEN/rofi-theme-selector.desktop"
