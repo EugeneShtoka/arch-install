@@ -18,4 +18,4 @@ sudo mv "$APPS_PATH/thunar-settings.desktop" $HIDDEN
 sudo mv "$APPS_PATH/lstopo.desktop" $HIDDEN
 sudo mv "$APPS_PATH/vim.desktop" $HIDDEN
 sudo mv "$APPS_PATH/lstopo.desktop" $HIDDEN
-sudo mv "$APPS_PATH/vim.desktop" $HIDDEN/rofi-theme-selector.desktop"
+sudo mv "$APPS_PATH/vim.desktop" $HIDDEN
