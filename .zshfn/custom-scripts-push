@@ -1,5 +1,5 @@
 custom-scripts-push() {
-	bash ~/.scripts/custom-scripts-push.sh
+	~/.scripts/custom-scripts-push.sh
 }
 
 custom-scripts-push
