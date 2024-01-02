@@ -18,5 +18,7 @@ sudo mv "$APPS_PATH/thunar-bulk-rename.desktop" $HIDDEN
 sudo mv "$APPS_PATH/thunar-settings.desktop" $HIDDEN
 
 sudo mv "$APPS_PATH/lstopo.desktop" $HIDDEN
+sudo mv "$APPS_PATH/rofi.desktop" $HIDDEN
+
 sudo mv "$APPS_PATH/vim.desktop" $HIDDEN
 
