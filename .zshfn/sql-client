@@ -1,5 +1,5 @@
 sql-client() {
-    sh nohup /usr/local/bin/start-dbeaver.sh &>/dev/null
+    nohup /usr/local/bin/start-dbeaver.sh &>/dev/null
 }
 
 sql-client
