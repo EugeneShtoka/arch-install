@@ -1,6 +1,6 @@
 sql-client() {
     nohup  &>/dev/null
-    setsid obsidian &>/dev/null
+    setsid /usr/local/bin/start-dbeaver.sh &>/dev/null
 }
 
 sql-client
