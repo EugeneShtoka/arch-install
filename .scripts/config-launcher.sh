@@ -12,7 +12,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Chrome" "$APPS_PATH/google-chrome.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-2'" "$HOME/.config/rofi/launchers/type-2/launcher.sh"      
 
-sudo mv "$APPS_PATH/nm-connection-editor.desktop" "$HIDDEN/
+sudo mv "$APPS_PATH/nm-connection-editor.desktop" $HIDDEN/
 sudo mv "$APPS_PATH/thunar-bulk-rename.desktop" "$HIDDEN/"
 sudo mv "$APPS_PATH/thunar-settings.desktop" "$HIDDEN/"
 sudo mv "$APPS_PATH/lstopo.desktop" "$HIDDEN/"
