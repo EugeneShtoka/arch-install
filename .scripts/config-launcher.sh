@@ -22,4 +22,3 @@ sudo mv "$APPS_PATH/lstopo.desktop" $HIDDEN
 sudo mv "$APPS_PATH/rofi.desktop" $HIDDEN
 sudo mv "$APPS_PATH/vim.desktop" $HIDDEN
 
-n
