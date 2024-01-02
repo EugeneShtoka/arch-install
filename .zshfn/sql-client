@@ -1,3 +1,5 @@
 sql-client() {
     sh /usr/local/bin/start-dbeaver.sh
 }
+
+sql-client
