@@ -13,7 +13,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Chrome" "$APPS_PATH/google-chro
 sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-2'" "$HOME/.config/rofi/launchers/type-2/launcher.sh"      
 
 sudo mv "$APPS_PATH/nm-connection-editor.desktop" "$HIDDEN/"
-sudo mv "$APPS_PATH/thunar-bulk-rename.desktop" "$HIDDEN/thunar-bulk-rename.desktop"
+sudo mv "$APPS_PATH/thunar-bulk-rename.desktop" "$HIDDEN/"
 sudo mv "$APPS_PATH/thunar-settings.desktop" "$HIDDEN/thunar-settings.desktop"
 sudo mv "$APPS_PATH/lstopo.desktop" "$HIDDEN/lstopo.desktop"
 sudo mv "$APPS_PATH/vim.desktop" "$HIDDEN/vim.desktop"
