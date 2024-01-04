@@ -1,0 +1,1 @@
+hyprctl dispatch exec [workspace 8 silent] kitty
