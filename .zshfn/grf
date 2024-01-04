@@ -1,5 +1,5 @@
 grf() {
-	git checkout production -- $1;
+	git checkout development -- $1;
 }
 
 grf $1
