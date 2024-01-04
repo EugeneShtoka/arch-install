@@ -2,7 +2,7 @@
 
 APPS_PATH=/usr/share/applications
 HIDDEN=$APPS_PATH-hidden
-mkdir HIDDEN
+mkdir $HIDDEN
 
 sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-2'" "$HOME/.config/rofi/launchers/type-2/launcher.sh"      
 
@@ -18,7 +18,16 @@ sudo mv "$APPS_PATH/nm-connection-editor.desktop" $HIDDEN
 sudo mv "$APPS_PATH/rofi-theme-selector.desktop" $HIDDEN
 sudo mv "$APPS_PATH/thunar-bulk-rename.desktop" $HIDDEN
 sudo mv "$APPS_PATH/thunar-settings.desktop" $HIDDEN
+sudo mv "$APPS_PATH/avahi-discover.desktop" $HIDDEN
+sudo mv "$APPS_PATH/electron27.desktop" $HIDDEN
+sudo mv "$APPS_PATH/qvidcap.desktop" $HIDDEN
 sudo mv "$APPS_PATH/lstopo.desktop" $HIDDEN
+sudo mv "$APPS_PATH/qv4l2.desktop" $HIDDEN
 sudo mv "$APPS_PATH/rofi.desktop" $HIDDEN
+sudo mv "$APPS_PATH/bssh.desktop" $HIDDEN
+sudo mv "$APPS_PATH/bvnc.desktop" $HIDDEN
+sudo mv "$APPS_PATH/htop.desktop" $HIDDEN
 sudo mv "$APPS_PATH/vim.desktop" $HIDDEN
+
+
 
