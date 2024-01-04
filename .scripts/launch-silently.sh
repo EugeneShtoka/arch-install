@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hyprctl d/ispatch exec [workspace $1 silent] $2
+hyprctl dispatch exec [workspace $1 silent] $2
