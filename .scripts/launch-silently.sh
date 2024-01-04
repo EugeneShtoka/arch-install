@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo 
+echo ""
 hyprctl dispatch exec [workspace $1 silent] $2
