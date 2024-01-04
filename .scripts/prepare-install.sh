@@ -1,16 +1,21 @@
 #!/bin/bash
 
-mv ~/arch-install/.config/hypr/hyprland.conf ~/.config/hypr/
-mv ~/arch-install/.config/rclone ~/.config/
-sudo mv ~/arch-install/.config/systemd/user/start-up-routine.service ~/.config/systemd/user/
-rm -rf ~/arch-install/.config
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 rm .zshrc
-rm .zshrc.pre-oh-my-zsh
-mv ~/ar$SCRIPTS_PATH/install-rofi.shch-install/.* ~/
+mv .zshrc.pre-oh-my-zsh .zshrc
 
-yes | sudo pacman -S curl zsh inotify-tools thunar rofi adapta-gtk-theme arc-gtk-theme kwallet-pam adobe-source-code-pro-fonts bluez bluez-utils brightnessctl
-yes | sudo pacman -R dolphin kio-extras kio5 kwallet5
+ZSH_AUTOSUGGESTION_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+rm -rf $ZSH_AUTOSUGGESTION_PATH
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_AUTOSUGGESTION_PATH
+
+ZSH_SYNTAX_HIGHLIGHTING_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+rm -rf $ZSH_SYNTAX_HIGHLIGHTING_PATH
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING_PATH
+
+yes | sudo pacman -S curl zsh inotify-tools thunar rofi adapta-gtk-theme arc-gtk-theme adobe-source-code-pro-fonts bluez bluez-utils brightnessctl jre17-openjdk dbeaver upower postgresql docker-compose gnome-keyring
+yes | sudo pacman -R dolphin kwallet-pam kwallet5
+yes | sudo pacman -Rns $(pacman -Qtdq)
+
 localectl set-locale LC_TIME=en_GB.UTF-8
 
 #Select Cobalt-Neon theme
@@ -18,4 +23,4 @@ kitty +kitten themes
 
 chsh -s $(which zsh)
 source ~/.env
-nohup zsh $SCRIPTS_PATH/install.sh
+zsh $SCRIPTS_PATH/install.sh
