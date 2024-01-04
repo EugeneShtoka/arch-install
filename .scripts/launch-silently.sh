@@ -1,1 +1,1 @@
-hyprctl dispatch exec [workspace  silent] kitty
+hyprctl dispatch exec [workspace $1 silent] kitty
