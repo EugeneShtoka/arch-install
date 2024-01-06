@@ -23,4 +23,6 @@ kitty +kitten themes
 
 chsh -s $(which zsh)
 source ~/.env
-zsh $SCRIPTS_PATH/install.sh
+zsh $SCRIPTS_PATH/apps-install.sh
+zsh $SCRIPTS_PATH/config-install.sh
+
