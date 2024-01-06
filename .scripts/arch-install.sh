@@ -13,7 +13,7 @@ rm -rf $ZSH_SYNTAX_HIGHLIGHTING_PATH
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING_PATH
 
 yes | sudo pacman -S curl zsh inotify-tools thunar rofi adapta-gtk-theme arc-gtk-theme adobe-source-code-pro-fonts bluez bluez-utils brightnessctl jre17-openjdk dbeaver upower postgresql docker-compose gnome-keyring
-yes | sudo pacman -R dolphin kwallet-pam kwallet5
+yes | sudo pacman -R dolphin kwallet5
 yes | sudo pacman -Rns $(pacman -Qtdq)
 
 localectl set-locale LC_TIME=en_GB.UTF-8
