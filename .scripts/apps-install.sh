@@ -4,6 +4,7 @@ $SCRIPTS_PATH/auto-yay.sh google-chrome
 $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh zoom
 $SCRIPTS_PATH/auto-yay.sh bluemail
+$SCRIPTS_PATH/auto-yay.sh beeper
 $SCRIPTS_PATH/auto-yay.sh obsidian
 $SCRIPTS_PATH/auto-yay.sh glab-git
 $SCRIPTS_PATH/auto-yay.sh github-cli
