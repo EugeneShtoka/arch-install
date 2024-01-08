@@ -1,4 +1,4 @@
-dispatch moveworkspacetomonitor 1 eDP-1
+hyperctl dispatch moveworkspacetomonitor 1 eDP-1
 dispatch moveworkspacetomonitor 2 eDP-1
 dispatch moveworkspacetomonitor 3 eDP-1
 dispatch moveworkspacetomonitor 4 DP-3
