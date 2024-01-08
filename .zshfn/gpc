@@ -4,4 +4,4 @@ gpc() {
 	gh pr create --fill;
 }
 
-gpc 
+gpc $1
