@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo $1 $2 $3 >> .scripts.log
+echo $1 $2 $3 >> ~/.scripts.log
 
 OLD_LINE_PATTERN=$1;
 NEW_LINE=$2;
