@@ -1,5 +1,3 @@
-grf() {
-	git checkout main -- $1;
-}
-
-grf $1
+git add .;
+git commit -m "$1";
+gh pr create --fill;
