@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "`date` custom-scripts-pull" >> $HOME/scripts.log
+#echo "`date` custom-scripts-pull" >> $HOME/scripts.log
 cd $HOME
 git reset --hard
 git pull
