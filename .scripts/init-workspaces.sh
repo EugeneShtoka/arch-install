@@ -1,5 +1,4 @@
 hyprctl dispatch moveworkspacetomonitor 1 eDP-1
-hyprctl dispatch moveworkspacetomonitor 2 eDP-1
 
 hyprctl dispatch moveworkspacetomonitor 0 DP-4
 hyprctl dispatch moveworkspacetomonitor 9 DP-4
