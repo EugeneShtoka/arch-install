@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source $HOME/.env
-#echo "`date` on-start-up" >> $HOME/scripts.log
+#echo "`date` on-start-up" >> $HOME/.scripts.log
 eval "$(ssh-agent)"
 $SCRIPTS_PATH/ssh-add-keys.sh
 $SCRIPTS_PATH/custom-scripts-pull.sh
