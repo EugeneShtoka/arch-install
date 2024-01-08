@@ -1,4 +1,4 @@
-
+gcpr() {
 git stash
 
 git switch main;
