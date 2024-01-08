@@ -3,3 +3,5 @@ gpc() {
 	git commit -m "$1";
 	gh pr create --fill;
 }
+
+gpc
