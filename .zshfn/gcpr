@@ -1,6 +1,6 @@
 git stash
 
-git switch master;
+git switch main;
 git pull;
 git checkout -b "eugene/$1";
 
