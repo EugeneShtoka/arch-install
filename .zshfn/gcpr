@@ -1,13 +1,13 @@
 gcpr() {
-git stash
+    git stash
 
-git switch main;
-git pull;
-git checkout -b "eugene/$1";
+    git switch main;
+    git pull;
+    git checkout -b "eugene/$1";
 
-git stash apply
+    git stash apply
 
-git add .;
-git commit -m "$1";
-gh pr create --fill;
+    git add .;
+    git commit -m "$1";
+    gh pr create --fill;
 }
