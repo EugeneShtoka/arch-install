@@ -12,3 +12,4 @@ gcpr() {
     gh pr create --fill;
 }
 
+gcpr
