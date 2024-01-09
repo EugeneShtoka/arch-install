@@ -14,7 +14,6 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Mail" "$APPS_PATH/bluemail.desk
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=File Manager" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=VS Code" "$APPS_PATH/code.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=/usr/local/bin/start-dbeaver.sh" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Chrome" "$APPS_PATH/google-chrome.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Docker" "$APPS_PATH/docker-desktop.desktop"
