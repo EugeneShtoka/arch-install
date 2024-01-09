@@ -14,6 +14,8 @@
 !.config/hypr/hyprland.conf
 !.config/kitty
 !.config/kitty/kitty.conf
+!.config/autokey
+!.config/autokey/*
 !.config/systemd
 !.config/systemd/user
 !.config/systemd/user/start-up-routine.service
