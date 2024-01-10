@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "replace_line" $LOG_PATH ${LOG_PATH} "${LOG_PATH}"
+echo
 echo "replace line" >> ~/script.log
 echo $LOG_PATH ${LOG_PATH} "${LOG_PATH}" >> ~/script.log
 
