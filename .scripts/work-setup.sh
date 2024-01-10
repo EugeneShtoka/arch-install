@@ -10,7 +10,7 @@ hyprctl dispatch exec '[workspace 2 silent]' slack
 hyprctl dispatch exec '[workspace 4 silent]' google-chrome-stable
 hyprctl dispatch exec '[workspace 4 silent]' code
 
-
+sleep 2
 
 hyprctl dispatch movetoworkspacesilent 1, beeper
 hyprctl dispatch movetoworkspacesilent 1, mailspring
