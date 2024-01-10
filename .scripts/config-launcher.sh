@@ -11,7 +11,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/terminal.png" "$APPS
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Terminal" "$APPS_PATH/kitty.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/file-manager.png" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Mail" "$APPS_PATH/Mailspring.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=$SCRIPTS_PATH/mails.sh" "$APPS_PATH/Mailspring.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=$SCRIPTS_PATH/mailspring.sh" "$APPS_PATH/Mailspring.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=File Manager" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=VS Code" "$APPS_PATH/code.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
