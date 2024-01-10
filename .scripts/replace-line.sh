@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $LOG_PATH >> ~/.scripts.log
+echo $LOG_PATH " >> ~/.scripts.log
 
 echo $1 $2 $3 >> $LOG_PATH
 
