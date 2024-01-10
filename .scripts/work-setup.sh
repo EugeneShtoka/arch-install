@@ -11,6 +11,7 @@ hyprctl dispatch exec '[workspace 4 silent]' google-chrome-stable
 hyprctl dispatch exec '[workspace 4 silent]' code
 
 
+
 hyprctl dispatch movetoworkspacesilent 1, beeper
 hyprctl dispatch movetoworkspacesilent 1, mailspring
 
