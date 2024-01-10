@@ -1,5 +1,5 @@
 #!/bin/bash
-rcho 
+echp
 
 echo $1 $2 $3 >> $LOG_PATH
 
