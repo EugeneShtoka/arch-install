@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #echo "`date` work-setup" >> $LOG_PATH
+
 hyprctl dispatch exec '[workspace 2 silent]' slack
 
 
