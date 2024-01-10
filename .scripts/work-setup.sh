@@ -19,4 +19,4 @@ hyprctl dispatch movetoworkspacesilent 2, zoom
 hyprctl dispatch movetoworkspacesilent 2, Slack
 
 hyprctl dispatch movetoworkspacesilent 4, google-chrome-stable
-hyprctl dispatch movetoworkspacesilent 4, code
+hyprctl dispatch movetoworkspacesilent 4, Code
