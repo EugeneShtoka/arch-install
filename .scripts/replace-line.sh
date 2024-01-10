@@ -1,5 +1,5 @@
 #!/bin/zsh
-sou
+source
 echo "replace_line" $LOG_PATH ${LOG_PATH} "${LOG_PATH}"
 echo $LOG_PATH
 echo ${LOG_PATH}
