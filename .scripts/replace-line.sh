@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ECH
+
 echo $1 $2 $3 >> $LOG_PATH
 
 OLD_LINE_PATTERN=$1;
