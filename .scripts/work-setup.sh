@@ -11,4 +11,4 @@ hyprctl dispatch exec '[workspace 2 silent]' google-chrome-stable
 hyprctl dispatch exec '[workspace 2 silent]' code
 
 
-hyprctl dispatch movetoworkspacesilent 2, zoom  
+hyprctl dispatch movetoworkspacesilent 2, beeper  
