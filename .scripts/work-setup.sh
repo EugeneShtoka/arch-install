@@ -7,8 +7,8 @@ hyprctl dispatch exec '[workspace 2 silent]' $SCRIPTS_PATH/mailspring-start.sh
 hyprctl dispatch exec '[workspace 2 silent]' zoom
 hyprctl dispatch exec '[workspace 2 silent]' slack
 
-hyprctl dispatch exec '[workspace 2 silent]' google-chrome-stable
-hyprctl dispatch exec '[workspace 2 silent]' code
+hyprctl dispatch exec '[workspace 4 silent]' google-chrome-stable
+hyprctl dispatch exec '[workspace 4 silent]' code
 
 
 hyprctl dispatch movetoworkspacesilent 1, beeper
