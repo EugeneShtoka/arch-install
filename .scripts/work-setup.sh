@@ -17,5 +17,5 @@ hyprctl dispatch movetoworkspacesilent 1, mailspring
 hyprctl dispatch movetoworkspacesilent 2, zoom
 hyprctl dispatch movetoworkspacesilent 2, slack
 
-hyprctl dispatch movetoworkspacesilent 1, beeper
+hyprctl dispatch movetoworkspacesilent 1, google-chrome-stable
 hyprctl dispatch movetoworkspacesilent 1, code
