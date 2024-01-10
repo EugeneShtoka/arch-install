@@ -20,7 +20,8 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Chrome" "$APPS_PATH/google-chro
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Docker" "$APPS_PATH/docker-desktop.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Torrent" "$APPS_PATH/org.qbittorrent.qBittorrent.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Steam" "$APPS_PATH/steam.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Together" "$APPS_LOCAL_PATH/dont-starve-together.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Together" "$APPS_LOCAL_PATH/dosudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Together" "$APPS_LOCAL_PATH/dont-starve-together.desktop"
+nt-starve-together.desktop"
 
 sudo mv "$APPS_PATH/nm-connection-editor.desktop" $HIDDEN
 sudo mv "$APPS_PATH/rofi-theme-selector.desktop" $HIDDEN
