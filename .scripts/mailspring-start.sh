@@ -1,1 +1,1 @@
-mailspring --password-store='gnome-libsecret' %U
+mailspring --password-store='gnome-libsecret' %Umailspring --password-store='gnome-libsecret' %U
