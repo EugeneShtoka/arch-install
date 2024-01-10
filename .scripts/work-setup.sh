@@ -8,7 +8,7 @@ hyprctl dispatch exec '[workspace 2 silent]' slack
 hyprctl dispatch exec '[workspace 2 silent]' zoom
 
 hyprctl dispatch exec '[workspace 2 silent]' slack
-hyprctl dispatch exec '[workspace 2 silent]' cose
+hyprctl dispatch exec '[workspace 2 silent]' co
 
 
 hyprctl dispatch movetoworkspacesilent 2,zoom  
