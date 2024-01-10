@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $LO
+echo $LOg
 
 echo $1 $2 $3 >> $LOG_PATH
 
