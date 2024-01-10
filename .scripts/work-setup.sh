@@ -14,7 +14,7 @@ hyprctl dispatch exec '[workspace 2 silent]' code
 hyprctl dispatch movetoworkspacesilent 1, beeper
 hyprctl dispatch movetoworkspacesilent 1, beeper
 
-hyprctl dispatch movetoworkspacesilent 1, beeper
+hyprctl dispatch movetoworkspacesilent 1, zoom
 hyprctl dispatch movetoworkspacesilent 1, beeper
 
 hyprctl dispatch movetoworkspacesilent 1, beeper
