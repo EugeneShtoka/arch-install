@@ -3,7 +3,7 @@ $SCRIPTS_PATH/yay-install.sh
 $SCRIPTS_PATH/auto-yay.sh google-chrome
 $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh zoom
-$SCRIPTS_PATH/auto-yay.sh bluemail
+$SCRIPTS_PATH/auto-yay.sh mailspring
 $SCRIPTS_PATH/auto-yay.sh beeper
 $SCRIPTS_PATH/auto-yay.sh obsidian
 $SCRIPTS_PATH/auto-yay.sh glab-git
@@ -18,3 +18,4 @@ $SCRIPTS_PATH/auto-yay.sh zsh-git-prompt-hs-git
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot-ffmpeg-codecs
+$SCRIPTS_PATH/auto-yay.sh autohotkey-gtk
