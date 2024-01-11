@@ -18,4 +18,4 @@ $SCRIPTS_PATH/auto-yay.sh zsh-git-prompt-hs-git
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot-ffmpeg-codecs
-$SCRIPTS_PATH/auto-yay.sh autohotkey-gtk
+$SCRIPTS_PATH/auto-yay.sh autokey-gtk

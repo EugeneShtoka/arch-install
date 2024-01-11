@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yes | sudo pacman -S curl zsh inotify-tools thunar rofi adapta-gtk-theme arc-gtk-theme adobe-source-code-pro-fonts bluez bluez-utils brightnessctl jre17-openjdk dbeaver upower postgresql docker-compose gnome-keyring jq python-packaging
+yes | sudo pacman -S curl zsh inotify-tools thunar rofi adapta-gtk-theme arc-gtk-theme adobe-source-code-pro-fonts bluez bluez-utils brightnessctl jre17-openjdk dbeaver upower postgresql docker-compose gnome-keyring bitwarden-cli jq python-packaging
 yes | sudo pacman -R dolphin
 yes | sudo pacman -Rns $(pacman -Qtdq)
 yes | sudo pacman -R kio-extras kio5 kwallet5
