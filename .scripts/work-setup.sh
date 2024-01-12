@@ -10,7 +10,7 @@ hyprctl dispatch -- exec '[title;workspace 2 silent]' slack
 #hyprctl dispatch exec '[workspace 4 silent]' vivaldi
 hyprctl dispatch -- exec '[title;workspace 4 silent]' code
 
-sleep 5
+sleep 15
 
 hyprctl dispatch movetoworkspacesilent "2,address:0x5610b819b6e0"
 hyprctl dispatch movetoworkspacesilent "4,address:0x5610b8174a40"
