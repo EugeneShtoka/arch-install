@@ -5,7 +5,7 @@ Description=Start-up Routine
 Type=simple
 Environment="SCRIPTS_PATH=/home/eugene/.scripts"
 Environment="LOG_PATH=/home/eugene/.scripts.log"
-ExecStart=/bin/bash $SCRIPTS_PATH/on-start-up.sh
+ExecStart=/bin/bash /home/eugene/.scripts/on-start-up.sh
 
 [Install]
 WantedBy=default.target
