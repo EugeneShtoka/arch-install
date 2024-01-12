@@ -18,7 +18,7 @@
 !.config/autokey/*
 !.config/vivaldi-snapshot
 1.config/vivaldi-snapshot/styles
-1.config/vivaldi-snapshot/styles
+1.config/vivaldi-snapshot/styles/*
 !.config/systemd
 !.config/systemd/user
 !.config/systemd/user/start-up-routine.service
