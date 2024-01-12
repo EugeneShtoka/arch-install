@@ -17,7 +17,7 @@
 !.config/autokey
 !.config/autokey/*
 !.config/vivaldi-snapshot
-
+1.
 !.config/autokey/*
 !.config/systemd
 !.config/systemd/user
