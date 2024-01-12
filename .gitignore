@@ -16,7 +16,7 @@
 !.config/kitty/kitty.conf
 !.config/autokey
 !.config/autokey/*
-!.config/autokey
+!.config/
 !.config/autokey/*
 !.config/systemd
 !.config/systemd/user
