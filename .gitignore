@@ -18,6 +18,7 @@
 !.config/autokey/**/*
 .config/autokey/autokey.json~
 !.config/vivaldi-snapshot
+!.config/vivaldi-snapshot/.gitignore
 !.config/vivaldi-snapshot/styles
 !.config/vivaldi-snapshot/styles/custom.css
 !.config/systemd
