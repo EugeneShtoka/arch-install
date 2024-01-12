@@ -7,7 +7,7 @@ hyprctl dispatch exec '[workspace 1 silent]' beeper
 hyprctl dispatch exec '[workspace 2 silent]' zoom
 hyprctl dispatch exec '[workspace 2 silent]' slack
 
-hyprctl dispatch exec '[workspace 4 silent]' vivaldi
+#hyprctl dispatch exec '[workspace 4 silent]' vivaldi
 hyprctl dispatch exec '[workspace 4 silent]' code
 
 sleep 5
