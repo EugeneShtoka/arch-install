@@ -1,1 +1,1 @@
-nohup $SCRIPTS_PATH/obsidian-pull.sh &>/dev/null
+nohup $SCRIPTS_PATH/obsidian-sync-from-gdrive.sh &>/dev/null

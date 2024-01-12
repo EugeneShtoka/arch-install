@@ -1,5 +1,5 @@
 bw-pass() {
-  bw get item $1 | jq '.login.password'
+  $SCRIPTS_PATH/bw-pass.sh $1 | xclip -selection c
 }
 
 bw-pass $1
