@@ -12,10 +12,10 @@
         "interfaceType": "XRecord",
         "undoUsingBackspace": true,
         "windowDefaultSize": [
-            428,
-            718
+            858,
+            1438
         ],
-        "hPanePosition": 108,
+        "hPanePosition": 217,
         "columnWidths": [
             150,
             50,
@@ -32,7 +32,7 @@
             "0",
             "0:0"
         ],
-        "pathLastOpen": "0:2"
+        "pathLastOpen": "0:0"
     },
     "folders": [],
     "toggleServiceHotkey": {
