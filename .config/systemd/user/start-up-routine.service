@@ -3,7 +3,7 @@ Description=Start-up Routine
 
 [Service]
 Type=simple
-Environment="SCRIPTS_PATH=/home/eugene/.sc"
+Environment="SCRIPTS_PATH=/home/eugene/.scripts"
 ExecStart=/bin/bash /home/eugene/.scripts/on-start-up.sh
 
 [Install]
