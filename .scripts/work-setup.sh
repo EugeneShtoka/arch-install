@@ -12,7 +12,7 @@ hyprctl dispatch -- exec '[title;workspace 4 silent]' code
 
 sleep 5
 
-hyprctl dispatch movetoworkspacesilent 1, Beeper
+hyprctl dispatch movetoworkspacesilent "2,address:0x5610b819b6e0"
 hyprctl dispatch movetoworkspacesilent 1, mailspring
 
 hyprctl dispatch movetoworkspacesilent 2, zoom
