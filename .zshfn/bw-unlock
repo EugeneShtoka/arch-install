@@ -1,0 +1,5 @@
+bw-unlock() {
+  source ~/temp.sh
+}
+
+bw-unlock
