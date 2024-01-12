@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #echo "`date` work-setup" >> $LOG_PATH
-#$SCRIPTS_PATH/mailspring-start.sh
-hyprctl dispatch exec '[workspace 1 silent], beeper'
+hyprctl dispatch -- exec '[title;workspace 1 silent]' $SCRIPTS_PATH/mailspring-start.sh
+hyprctl dispatch -- exec '[title;workspace 1 silent]' beeper
 
-hyprctl dispatch exec '[workspace 2 silent], zoom'
-hyprctl dispatch exec '[workspace 2 silent], slack'
+hyprctl dispatch -- exec '[title;workspace 2 silent]' zoom
+hyprctl dispatch -- exec '[title;workspace 2 silent]' slack
 
 #hyprctl dispatch exec '[workspace 4 silent]' vivaldi
-hyprctl dispatch exec '[workspace 4 silent], code'
+hyprctl dispatch -- exec '[title;workspace 4 silent]' code
 
 sleep 5
 
