@@ -17,6 +17,8 @@
 !.config/autokey
 !.config/autokey/**/*
 .config/autokey/autokey.json~
+
+!.config/vivaldi-snapshot
 !.config/vivaldi-snapshot/
 !.config/systemd
 !.config/systemd/user
