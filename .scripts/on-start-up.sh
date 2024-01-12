@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "`date` on-start-up ${SCRIPTS_PATH} ${PWD} ${}" >> ~/.scripts.log
+echo "`date` on-start-up ${SCRIPTS_PATH} ${PWD} ${LOG_P}" >> ~/.scripts.log
 eval "$(ssh-agent)"
 $SCRIPTS_PATH/ssh-add-keys.sh
 $SCRIPTS_PATH/custom-scripts-pull.sh
