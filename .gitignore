@@ -15,6 +15,7 @@
 !.config/kitty
 !.config/kitty/kitty.conf
 !.config/autokey
+.config/autokey/autokey.json~
 !.config/autokey/**/*
 !.config/vivaldi-snapshot
 !.config/vivaldi-snapshot/styles
