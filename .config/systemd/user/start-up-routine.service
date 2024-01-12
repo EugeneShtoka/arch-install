@@ -4,7 +4,7 @@ Description=Start-up Routine
 [Service]
 Type=simple
 Environment="SCRIPTS_PATH=/home/eugene/.scripts"
-ExecStart=/bin/bash SCRIPTS_PATH/on-start-up.sh
+ExecStart=/bin/bash $SCRIPTS_PATH/on-start-up.sh
 
 [Install]
 WantedBy=default.target
