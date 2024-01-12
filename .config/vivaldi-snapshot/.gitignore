@@ -8,5 +8,6 @@
 # force Git to ignore this entry.
 *
 !.gitignore
+!styles
 !styles/
 !styles/**
