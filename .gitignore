@@ -16,7 +16,7 @@
 !.config/kitty/kitty.conf
 !.config/autokey
 !.config/autokey/*
-!.config/viv
+!.config/vivaldi-snapshot
 !.config/autokey/*
 !.config/systemd
 !.config/systemd/user
