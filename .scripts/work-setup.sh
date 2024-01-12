@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #echo "`date` work-setup" >> $LOG_PATH
-$SCRIPTS_PATH/mailspring-start.sh
+#$SCRIPTS_PATH/mailspring-start.sh
 hyprctl dispatch exec '[workspace 1 silent]' beeper
 
 hyprctl dispatch exec '[workspace 2 silent]' zoom
