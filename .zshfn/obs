@@ -1,5 +1,5 @@
 obs() {
-	setsid obsidian &>/dev/null
+	$SCRIPTS_PATH/obsidian-start.sh
 }
 
 obs;
