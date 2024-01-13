@@ -10,4 +10,6 @@ hyprctl dispatch -- exec vivaldi-snapshot
 hyprctl dispatch -- exec code
 hyprctl dispatch -- exec $SCRIPTS_PATH/obsidian-start.sh
 
+sleep 5
 
+hyprctl dispatch movetoworkspacesilent "2,address:$(hyprctl clients -j | jq -r '.[] | select(.class == "zoom") | .address')"
