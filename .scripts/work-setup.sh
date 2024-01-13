@@ -10,7 +10,8 @@ hyprctl dispatch -- exec '[title;workspace 2 silent]' slack
 hyprctl dispatch -- exec '[title;workspace 4 silent]' vivaldi-snapshot
 hyprctl dispatch -- exec '[title;workspace 4 silent]' code
 
-sleep 15
+sleep 5
 
 hyprctl dispatch movetoworkspacesilent "2,address:0x5610b819b6e0"
 hyprctl dispatch movetoworkspacesilent "4,address:$(hyprctl clients -j | jq '.[] | select(.class == "Code") | .address')"
+hyprctl dispatch movetoworkspacesilent "4,address:$(hyprctl clients -j | jq -r '.[] | select(.class == "Code") | .address')"
