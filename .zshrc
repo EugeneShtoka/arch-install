@@ -74,7 +74,7 @@ plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting sudo dirhisto
 
 source $ZSH/oh-my-zsh.sh
 source /etc/profile.d/google-cloud-cli.sh
-echo "`date` source /home/eugene/.env ${$HOME} ${SCRIPTS_PATH}" >> .scripts.log
+echo "`date` source /home/eugene/.env ${$HOME} ${SCRIPTS_PATH}" >> /home/eugene/.scripts.log
 source /home/eugene/.env
 
 source /usr/share/zsh/plugins/zsh-git-prompt/zshrc.sh
