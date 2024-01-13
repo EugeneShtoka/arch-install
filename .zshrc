@@ -76,6 +76,7 @@ source $ZSH/oh-my-zsh.sh
 source /etc/profile.d/google-cloud-cli.sh
 echo "`date` before source ${SCRIPTS_PATH} ${TEST_VAR}" >> /home/eugene/.scripts.log
 export TEST_VAR=dummy_value
+setenv TEST_VAR dummy_value
 source /home/eugene/.env
 echo "`date` after source ${SCRIPTS_PATH} ${TEST_VAR}" >> /home/eugene/.scripts.log
 
