@@ -5,11 +5,11 @@ hyprctl dispatch workspace 4
 hyprctl dispatch -- exec $SCRIPTS_PATH/mailspring-start.sh
 hyprctl dispatch -- exec beeper
 hyprctl dispatch -- exec zoom
-hyprctl dispatch -- exec slack
 hyprctl dispatch -- exec vivaldi-snapshot
 hyprctl dispatch -- exec code
 hyprctl dispatch -- exec $SCRIPTS_PATH/obsidian-start.sh
 
 sleep 5
+hyprctl dispatch -- exec slack
 
 hyprctl dispatch movetoworkspacesilent "2,address:$(hyprctl clients -j | jq -r '.[] | select(.class == "zoom") | .address')"
