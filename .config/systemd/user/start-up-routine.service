@@ -3,7 +3,7 @@ Description=Start-up Routine
 
 [Service]
 Type=simple
-ExecStart=/bin/zsh /home/eugene/.scripts/on-start-up.sh
+ExecStart=/home/eugene/.scripts/on-start-up.sh
 
 [Install]
 WantedBy=default.target
