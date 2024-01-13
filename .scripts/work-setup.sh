@@ -8,5 +8,5 @@ hyprctl dispatch -- exec vivaldi-snapshot
 hyprctl dispatch -- exec beeper
 hyprctl dispatch -- exec code
 hyprctl dispatch -- exec zoom
-sleep 5
+sleep 3
 hyprctl dispatch -- exec slack
