@@ -75,10 +75,9 @@ plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting sudo dirhisto
 source $ZSH/oh-my-zsh.sh
 source /etc/profile.d/google-cloud-cli.sh
 export TEST_VAR=dummy_value
-
-echo "`date` before source ${SCRIPTS_PATH}" >> /home/eugene/.scripts.log
+echo "`date` before source ${SCRIPTS_PATH} ${TEST_VAR}" >> /home/eugene/.scripts.log
 source /home/eugene/.env
-echo "`date` after source ${SCRIPTS_PATH}" >> /home/eugene/.scripts.log
+echo "`date` after source ${SCRIPTS_PATH} ${TEST_VAR}" >> /home/eugene/.scripts.log
 
 source /usr/share/zsh/plugins/zsh-git-prompt/zshrc.sh
 GIT_PROMPT_EXECUTABLE='haskell'
