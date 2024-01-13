@@ -11,5 +11,5 @@ hyprctl dispatch -- exec zoom
 sleep 5
 hyprctl dispatch -- exec slack
 
-hyprctl dispatch movetoworkspacesilent "3,address:$(hyprctl clients -j | jq -r '.[] | select(.class == "zoom") | .address')"
-hyprctl dispatch movetoworkspacesilent "2,address:$(hyprctl clients -j | jq -r '.[] | select(.class == "zoom") | .address')"
+#hyprctl dispatch movetoworkspacesilent "3,address:$(hyprctl clients -j | jq -r '.[] | select(.class == "zoom") | .address')"
+#hyprctl dispatch movetoworkspacesilent "2,address:$(hyprctl clients -j | jq -r '.[] | select(.class == "zoom") | .address')"
