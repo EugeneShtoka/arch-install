@@ -16,7 +16,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=File Manager" "$APPS_PATH/thuna
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=VS Code" "$APPS_PATH/code.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=$SCRIPTS_PATH/dbeaver-start.sh" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Chrome" "$APPS_PATH/google-chrome.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Browser" "$APPS_PATH/vivaldi-snapshot.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Docker" "$APPS_PATH/docker-desktop.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Torrent" "$APPS_PATH/org.qbittorrent.qBittorrent.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Steam" "$APPS_PATH/steam.desktop"
