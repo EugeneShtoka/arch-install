@@ -1,8 +1,5 @@
 #!/bin/zsh
 echo "replace_line" $LOG_PATH ${LOG_PATH} "${LOG_PATH}"
-echo $LOG_PATH
-echo ${LOG_PATH}
-echo "${LOG_PATH}"
 echo $LOG_PATH ${LOG_PATH} "${LOG_PATH}" >> ~/script.log
 
 echo $1 $2 $3 >> $LOG_PATH
