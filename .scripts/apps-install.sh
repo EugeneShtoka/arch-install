@@ -20,4 +20,3 @@ $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot-ffmpeg-codecs
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh postman-bin
-$SCRIPTS_PATH/auto-yay.sh
