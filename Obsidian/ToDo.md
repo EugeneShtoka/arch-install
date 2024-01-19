@@ -1,0 +1,14 @@
+- [ ] Permanently mount drives
+- [ ] Translate hypr config to i3
+- [ ] Sign blank for options release from DoControl
+- [ ] Make appointments for Mother
+- [ ] Find out what is happening with gas
+- [ ] Set variables conveniently for scripts as well
+- [ ] Style notifications
+- [ ] Add alarm on low battery
+- [ ] Add status message with 
+	- [ ] Time
+	- [ ] Battery charge
+	- [ ] Volume level
+	- [ ] WiFi network name & signal strength
+	- [ ] Bluetooth devices
