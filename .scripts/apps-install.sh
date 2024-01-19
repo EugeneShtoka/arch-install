@@ -1,6 +1,5 @@
 $SCRIPTS_PATH/yay-install.sh
 
-$SCRIPTS_PATH/auto-yay.sh google-chrome
 $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh zoom
 $SCRIPTS_PATH/auto-yay.sh mailspring
