@@ -15,7 +15,7 @@ $SCRIPTS_PATH/auto-yay.sh npm
 $SCRIPTS_PATH/auto-yay.sh rclone
 $SCRIPTS_PATH/auto-yay.sh zsh-git-prompt-hs-git
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
-$SCRIPTS_PATH/auto-yay.sh google-cloud-cki
+$SCRIPTS_PATH/auto-yay.sh google-cloud-cli
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot-ffmpeg-codecs
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
