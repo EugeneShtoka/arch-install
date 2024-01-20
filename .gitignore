@@ -10,8 +10,8 @@
 !.icons
 !.icons/**
 !.config
-!.config/hypr
-!.config/hypr/hyprland.conf
+!.config/i3
+!.config/i3/config
 !.config/kitty
 !.config/kitty/kitty.conf
 !.config/autokey
