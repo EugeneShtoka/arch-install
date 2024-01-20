@@ -19,3 +19,5 @@ read -p "Enter ssh key name for GitLab: " keyName
 glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName 
 
 gsettings set org.gnome.desktop.interface gtk-theme Pop
+
+$SCRIPTS_PATH/bw-unlock.sh
