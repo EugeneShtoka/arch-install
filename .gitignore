@@ -12,7 +12,6 @@
 !dev
 !dev/work
 !dev/work/.gitconfig
-
 !.config
 !.config/gtk-3.0
 !.config/gtk-3.0/settings.ini
