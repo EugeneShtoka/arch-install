@@ -1,0 +1,5 @@
+[user]
+	name = Eugene Shtoka
+        email = eugene.shtoka@swapp.net
+[alias]
+	main = !git rev-parse --abbrev-ref development
