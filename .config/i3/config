@@ -14,6 +14,7 @@ set $TERMINAL kitty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
+font pango:monospace 0
 for_window [class=".*"] title_format " "
 default_border pixel 1
 
@@ -188,5 +189,6 @@ bindsym $mod+w mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
+        font pango:monospace 8
         status_command i3status
 }
