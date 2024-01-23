@@ -19,7 +19,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=$SCRIPTS_PATH/dbeaver-start.sh"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Browser" "$APPS_PATH/vivaldi-snapshot.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Docker" "$APPS_PATH/docker-desktop.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Torrent" "$APPS_PATH/org.qbittorrent.qBittorrent.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Messanger" "$APPS_PATH/beeper.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Messenger" "$APPS_PATH/beeper.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Steam" "$APPS_PATH/steam.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Together" "$APPS_LOCAL_PATH/dont-starve-together.desktop"
 
