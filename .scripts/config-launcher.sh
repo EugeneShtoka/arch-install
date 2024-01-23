@@ -21,6 +21,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Docker" "$APPS_PATH/docker-desk
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Torrent" "$APPS_PATH/org.qbittorrent.qBittorrent.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Messenger" "$APPS_PATH/beeper.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Notes" "$APPS_PATH/obsidian.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Slack" "$APPS_PATH/slack.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Steam" "$APPS_PATH/steam.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Together" "$APPS_LOCAL_PATH/dont-starve-together.desktop"
 
