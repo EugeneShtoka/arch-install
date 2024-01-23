@@ -14,7 +14,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Mail" "$APPS_PATH/Mailspring.de
 sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=$SCRIPTS_PATH/mailspring-start.sh" "$APPS_PATH/Mailspring.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=File Manager" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=VS Code" "$APPS_PATH/code.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DBeaver" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=DB Tool" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=$SCRIPTS_PATH/dbeaver-start.sh" "$APPS_PATH/io.dbeaver.DBeaver.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Browser" "$APPS_PATH/vivaldi-snapshot.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Docker" "$APPS_PATH/docker-desktop.desktop"
