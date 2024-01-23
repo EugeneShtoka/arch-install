@@ -2,6 +2,7 @@
 
 cd ~
 
+sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 $SCRIPTS_PATH/rofi-theme-install.sh
 $SCRIPTS_PATH/config-launcher.sh
 
