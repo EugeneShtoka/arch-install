@@ -3,6 +3,7 @@
 !.gitignore
 !.env
 !.zshrc
+!.xprofile
 !.zshfn
 !.zshfn/**
 !.scripts
