@@ -31,3 +31,4 @@ bw get item 'SWAPP GCS credentials' | jq '.notes' >> swapp-v1-1564402864804-stor
 sudo mv swapp-v1-1564402864804-storage.json /usr/share/credentials/
 
 gcloud auth login
+gcloud config set project swapp-v1-1564402864804
