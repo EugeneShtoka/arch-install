@@ -23,11 +23,11 @@ glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName
 gsettings set org.gnome.desktop.interface gtk-theme Pop
 
 $SCRIPTS_PATH/bw-unlock.sh
-bw get item 'SWAPP GCloud credentials' | jq '.notes' >> swapp-v1-1564402864804.json
+bw get item 'SWAPP GCloud credentials' | jq '.notes fromjson' >> swapp-v1-1564402864804.json
 sudo mkdir /usr/share/credentials
 sudo mv swapp-v1-1564402864804.json /usr/share/credentials/
 
-bw get item 'SWAPP GCS credentials' | jq '.notes' >> swapp-v1-1564402864804-storage.json
+bw get item 'SWAPP GCS credentials' | jq '.notes fromjson' >> swapp-v1-1564402864804-storage.json
 sudo mv swapp-v1-1564402864804-storage.json /usr/share/credentials/
 
 gcloud auth login
