@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yes | sudo pacman -S curl zsh inotify-tools thunar rofi adobe-source-code-pro-fonts bluez bluez-utils brightnessctl jre17-openjdk dbeaver postgresql docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip kitty notification-daemon upower
+yes | sudo pacman -S curl zsh inotify-tools thunar rofi adobe-source-code-pro-fonts bluez bluez-utils brightnessctl jre17-openjdk dbeaver postgresql docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip kitty notification-daemon upower xclip
 yes | sudo pacman -R xterm
 yes | sudo pacman -Rns $(pacman -Qtdq)
 

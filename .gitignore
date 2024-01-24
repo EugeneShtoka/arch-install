@@ -8,8 +8,6 @@
 !.zshfn/**
 !.scripts
 !.scripts/**
-!.services
-!.services/**
 !.icons
 !.icons/**
 !dev
