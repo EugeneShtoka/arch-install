@@ -28,5 +28,4 @@ sudo mkdir /usr/share/credentials
 sudo mv swapp-v1-1564402864804.json /usr/share/credentials/
 
 bw get item 'SWAPP GCS credentials' | jq '.notes' >> swapp-v1-1564402864804-storage.json
-sudo mkdir /usr/share/credentials
 sudo mv swapp-v1-1564402864804-storage.json /usr/share/credentials/
