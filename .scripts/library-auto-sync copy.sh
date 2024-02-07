@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo "`date` library-auto-sync" >> $LOG_PATH
-inotifywait -q -r -m -e DELETE,CLOSE_WRITE,MOVED_TO,MOVED_FROM $LIBRARY_PATH | while read DIR EVENT FILE
-do
-    echo "`date` library-auto-sync $EVENT on $DIR$FILE" >> $SCRIPTS_PATH
-    $SCRIPTS_PATH/library-auto-sync.sh
-done
+git clone git@github.com:jagannatharjun/qbt-theme.git
+mkdir .config/qBittorrent/themes/
+mv qbt-theme/*.qbtheme .config/qBittorrent/ .config/qBittorrent/themes/
+rm -rf qbt-theme
