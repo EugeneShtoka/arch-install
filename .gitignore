@@ -32,3 +32,6 @@
 !.config/systemd
 !.config/systemd/user
 !.config/systemd/user/start-up-routine.service
+!.config/qBittorrent
+!.config/qBittorrent/qBittorent.conf
+!.config/gtk-3.0/settings.ini
