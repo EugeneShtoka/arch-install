@@ -45,10 +45,17 @@ BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for e
             "topK": 10
         }}'
 
-json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
-    -H 'Content-Type: application/json' \
-    -X POST \
-    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | jq 'fromjson')
+#json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
+#    -H 'Content-Type: application/json' \
+#    -X POST \
+#    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | jq 'fromjson')
+
+json_data='{
+  "SUMMARY": "Thyroid Ultrasound",
+  "LOCATION": "96 Yigal Alon St. Building C, Tel Aviv, 3rd Floor",
+  "DTSTART": "2024-02-22T16:00:00Z",
+  "DTEND": "2024-02-22T17:30:00Z"
+}'
 
 summary=$(echo "$json_data" | jq -r '.SUMMARY')
 location=$(echo "$json_data" | jq -r '.LOCATION')
