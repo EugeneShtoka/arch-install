@@ -45,10 +45,10 @@ BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for e
             "topK": 10
         }}'
 
-#json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
-#    -H 'Content-Type: application/json' \
-#    -X POST \
-#    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | jq 'fromjson')
+json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
+    -H 'Content-Type: application/json' \
+    -X POST \
+    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | jq 'fromjson')
 
 json_data='{
   "SUMMARY": "Thyroid Ultrasound",
