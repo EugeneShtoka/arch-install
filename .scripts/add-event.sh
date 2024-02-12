@@ -1,6 +1,6 @@
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
-BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english and prepare json consisting of tile, location, startDate YYYY-MM-DDTHH:MM:SSZ, endDate YYYY-MM-DDTHH:MM:SSZ"}]}],
+BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for expected finish time and prepare json consisting of tile, location, startDate YYYY-MM-DDTHH:MM:SSZ, endDate YYYY-MM-DDTHH:MM:SSZ"}]}],
 "generationConfig": {
             "stopSequences": [
                 "Title"
