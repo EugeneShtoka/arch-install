@@ -5,7 +5,7 @@ BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english and prepare js
             "stopSequences": [
                 "Title"
             ],
-            "temperature": 1.0,
+            "temperature": 0.2,
             "maxOutputTokens": 800,
             "topP": 0.8,
             "topK": 10
