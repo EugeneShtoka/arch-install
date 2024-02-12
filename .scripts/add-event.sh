@@ -10,4 +10,4 @@ curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generate
     -d '{
       "contents": [{
         "parts":[{
-          "text": "'$CONTENT'"}]}]}' 2> /dev/null | jq '.candidates[].content.parts[].text' | tr -d \"
+          "text": "'$CONTENT'"}]}]}' 2> /dev/null 
