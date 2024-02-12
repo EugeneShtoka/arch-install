@@ -25,6 +25,8 @@ BODY='{"contents": [{"parts":[{"text": "Today is '$DATE' Translate '$1' to engli
             "topK": 10
         }}'
 
+echo $BODY
+
 json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
     -H 'Content-Type: application/json' \
     -X POST \
