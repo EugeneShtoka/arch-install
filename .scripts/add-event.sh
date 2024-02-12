@@ -1,6 +1,6 @@
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
-CONTENT=$1
+CONTENT="Translate $1 to english"
 
 echo $CONTENT
 
