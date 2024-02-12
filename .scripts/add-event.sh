@@ -63,6 +63,8 @@ dtstart=$(echo "$json_data" | jq -r '.DTSTART')
 dtend=$(echo "$json_data" | jq -r '.DTEND')
 
 # Replace placeholders in the ICS data
+ics_data=$(echo "$ics_data" | sed "s/SUMMARY:/$summary/")
+ics_data=$(echo "$ics_data" | sed "s/LOCATION:/$location/")
 ics_data=$(echo "$ics_data" | sed "s/DTSTART;TZID=Asia\/Jerusalem:/DTSTART;TZID=Asia\/Jerusalem:$dtstart/")
 ics_data=$(echo "$ics_data" | sed "s/DTEND;TZID=Asia\/Jerusalem:/DTEND;TZID=Asia\/Jerusalem:$dtend/")
 
