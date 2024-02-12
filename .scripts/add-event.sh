@@ -13,16 +13,7 @@ END:VCALENDAR'
 
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
-BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for expected finish time and prepare json consisting of SUMMARY, LOCATION, DTSTART YYYY-MM-DDTHH:MM:SSZ, DTEND YYYYMMDDTHHMMSS. Timezone is Asia/Jerusalem. Return json only"}]}],
-"generationConfig": {
-            "stopSequences": [
-                "Title"
-            ],
-            "temperature": 0.2,
-            "maxOutputTokens": 800,
-            "topP": 1,
-            "topK": 10
-        }}'
+BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for expected finish time and prepare json consisting of SUMMARY, LOCATION, DTSTART YYYY-MM-DDTHH:MM:SSZ, DTEND YYYYMMDDTHHMMSS. Timezone is Asia/Jerusalem. Return json only"}]}]'
 
 json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
     -H 'Content-Type: application/json' \
