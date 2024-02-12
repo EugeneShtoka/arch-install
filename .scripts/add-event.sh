@@ -19,7 +19,7 @@ echo $BODY
 json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
     -H 'Content-Type: application/json' \
     -X POST \
-    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | jq 'fromjson')
+    -d "$BODY" 2> /dev/null)
 
 echo "$json_data"
 
