@@ -38,7 +38,7 @@ dtend=$(echo "$json_data" | jq -r '.DTEND')
 ics_data=$(echo "$ics_data" | sed "s/SUMMARY:/SUMMARY:$summary/")
 ics_data=$(echo "$ics_data" | sed "s/LOCATION:/LOCATION:$location/")
 ics_data=$(echo "$ics_data" | sed "s/DTSTART;TZID=Asia\/Jerusalem:/DTSTART;TZID=Asia\/Jerusalem:$dtstart/")
- "$ics_data" | sed "s/DTEND;TZID=Asia\/Jerusalem:/DTEND;TZID=Asia\/Jerusalem:$dtend/")ics_data=$(echo
+ics_data=$(echo "$ics_data" | sed "s/DTEND;TZID=Asia\/Jerusalem:/DTEND;TZID=Asia\/Jerusalem:$dtend/")
 
 # Print the updated ICS data
 echo "$ics_data" > ~/Downloads/event.ics
