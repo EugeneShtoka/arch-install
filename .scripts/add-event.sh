@@ -13,7 +13,8 @@ END:VCALENDAR'
 
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
-BODY='{"contents": [{"parts":[{"text": "today is `date` what is tomorrow date"}]}], "model": "gemini-ultra"}'
+DATE=`date`
+BODY='{"contents": [{"parts":[{"text": "today is 'date' what is tomorrow date"}]}], "model": "gemini-ultra"}'
 
 echo $BODY
 
