@@ -7,7 +7,7 @@ BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for e
             ],
             "temperature": 0.2,
             "maxOutputTokens": 800,
-            "topP": 0.8,
+            "topP": 1,
             "topK": 10
         }}'
 
