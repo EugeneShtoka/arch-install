@@ -14,16 +14,28 @@ END:VCALENDAR'
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
 DATE=`date`
-BODY='{"contents": [{"parts":[{"text": "today is '$DATE' what is tomorrow date"}]}], "model": "gemini-ultra"}'
-
-echo $BODY
+BODY='{"contents": [{"parts":[{"text": "Today is '$DATE' Translate '$1' to english, analyze for expected finish time and prepare json consisting of SUMMARY, LOCATION, DTSTART YYYY-MM-DDTHH:MM:SSZ, DTEND YYYYMMDDTHHMMSS. Timezone is Asia/Jerusalem. Return json only"}]}],
+"generationConfig": {
+            "stopSequences": [
+                "Title"
+            ],
+            "temperature": 0.2,
+            "maxOutputTokens": 800,
+            "topP": 1,
+            "topK": 10
+        }}'
 
 json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
     -H 'Content-Type: application/json' \
     -X POST \
-    -d "$BODY" 2> /dev/null)
+    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | jq 'fromjson')
 
-echo "$json_data"
+json_data='{
+  "SUMMARY": "Thyroid Ultrasound",
+  "LOCATION": "96 Yigal Alon St. Building C, Tel Aviv, 3rd Floor",
+  "DTSTART": "2024-02-22T16:00:00Z",
+  "DTEND": "2024-02-22T17:30:00Z"
+}'
 
 summary=$(echo "$json_data" | jq -r '.SUMMARY')
 location=$(echo "$json_data" | jq -r '.LOCATION')
@@ -37,7 +49,6 @@ ics_data=$(echo "$ics_data" | sed "s/DTSTART;TZID=Asia\/Jerusalem:/DTSTART;TZID=
 ics_data=$(echo "$ics_data" | sed "s/DTEND;TZID=Asia\/Jerusalem:/DTEND;TZID=Asia\/Jerusalem:$dtend/")
 
 # Print the updated ICS data
-echo "$ics_data"
-# > ~/Downloads/event.ics
-# vivaldi-snapshot ~/Downloads/event.ics
+echo "$ics_data" > ~/Downloads/event.ics
+vivaldi-snapshot ~/Downloads/event.ics
 
