@@ -49,3 +49,5 @@ json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-
     -H 'Content-Type: application/json' \
     -X POST \
     -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | jq 'fromjson')
+
+echo $json_data
