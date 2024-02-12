@@ -1,6 +1,6 @@
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
-BODY='{"contents": [{"parts":[{"text": "Translate '$CONTENT' to english"}]}]}'
+BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english"}]}]}'
 
 echo $BODY
 
