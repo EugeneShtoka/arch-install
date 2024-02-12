@@ -69,4 +69,4 @@ ics_data=$(echo "$ics_data" | sed "s/DTSTART;TZID=Asia\/Jerusalem:/DTSTART;TZID=
 ics_data=$(echo "$ics_data" | sed "s/DTEND;TZID=Asia\/Jerusalem:/DTEND;TZID=Asia\/Jerusalem:$dtend/")
 
 # Print the updated ICS data
-$ics_data >> event.ics
+$ics_data > event.ics
