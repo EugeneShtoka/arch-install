@@ -14,7 +14,7 @@ END:VCALENDAR'
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
 DATE=`date`
-BODY='{"contents": [{"parts":[{"text": "Your role is personal assistant. Today is '$DATE' Translate '$1' to english, analyze for expected finish time and prepare json consisting of SUMMARY, LOCATION, DTSTART YYYYMMDDTHHMMSS, DTEND YYYYMMDDTHHMMSS. Timezone is Asia/Jerusalem. Return json only. Time given consider timezone"}]}]}'
+BODY='{"contents": [{"parts":[{"text": "Your role is personal assistant. Today is '$DATE' Translate '$1' to english, analyze for expected finish time and prepare json consisting of SUMMARY, LOCATION, DTSTART YYYYMMDDTHHMMSS, DTEND YYYYMMDDTHHMMSS. Timezone is Asia/Jerusalem. Return json only. Time given in IDT"}]}]}'
 
 echo $BODY
 
