@@ -70,4 +70,5 @@ ics_data=$(echo "$ics_data" | sed "s/DTEND;TZID=Asia\/Jerusalem:/DTEND;TZID=Asia
 
 # Print the updated ICS data
 echo "$ics_data" > ~/Downloads/event.ics
+vivaldi-snapshot ~/Downloads/event.ics
 
