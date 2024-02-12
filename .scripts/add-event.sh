@@ -34,7 +34,7 @@ END:VCALENDAR'
 
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
-BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for expected finish time and prepare json consisting of SUMMARY, LOCATION, DTSTART YYYY-MM-DDTHH:MM:SSZ, DTEND YYYY-MM-DDTHH:MM:SSZ. Return json only"}]}],
+BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english, analyze for expected finish time and prepare json consisting of SUMMARY, LOCATION, DTSTART YYYY-MM-DDTHH:MM:SSZ, DTEND YYYY-MM-DDTHH:MM:SSZ. Timezone is Asia/Jerusalem. Return json only"}]}],
 "generationConfig": {
             "stopSequences": [
                 "Title"
