@@ -13,7 +13,7 @@ END:VCALENDAR'
 
 GEMINI_API_KEY=$(bw get item 'Gemini API Key' | jq '.notes' |  tr -d \")
 
-BODY='{"contents": [{"parts":[{"text": "next thursday"}]}]}'
+BODY='{"contents": [{"parts":[{"text": "today date"}]}]}'
 echo $BODY
 
 json_data=$(curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
