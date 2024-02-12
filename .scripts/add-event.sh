@@ -5,4 +5,4 @@ BODY='{"contents": [{"parts":[{"text": "Translate '$1' to english and prepare js
 curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
     -H 'Content-Type: application/json' \
     -X POST \
-    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | tr -d \" | jq
+    -d "$BODY" 2> /dev/null | jq '.candidates[].content.parts[0].text' | tr -d \" | jq 'fromjson'
