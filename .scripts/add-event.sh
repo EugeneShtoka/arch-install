@@ -7,4 +7,4 @@ echo $BODY
 curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY \
     -H 'Content-Type: application/json' \
     -X POST \
-    -d "$BODY" 2> /dev/null
+    -d '{"contents": [{"parts":[{"text": "Translate '$1' to english"}]}]}' 2> /dev/null
