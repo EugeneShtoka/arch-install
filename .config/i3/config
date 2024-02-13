@@ -57,6 +57,9 @@ bindsym $mod+x kill
 # lock screen
 bindsym $mod+l exec i3lock
 
+# toggle bluetooth headphones
+bindsym $mod+F8 exec i3lock
+
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
