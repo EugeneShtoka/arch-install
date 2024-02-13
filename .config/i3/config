@@ -58,7 +58,7 @@ bindsym $mod+x kill
 bindsym $mod+l exec i3lock
 
 # toggle bluetooth headphones
-bindsym $mod+F8 exec i3lock
+bindsym $mod+F8 exec $SCRIPTS_PATH/switch-headphones
 
 
 # start dmenu (a program launcher)
