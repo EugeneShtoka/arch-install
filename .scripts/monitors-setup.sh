@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo $1
-echo $2
-echo $3
+monitors=($(xrandr | grep ' connected' | awk '{print $1}'))
 
 xrandr --output DP-1-8 --auto --right-of eDP-1
 sleep 3
