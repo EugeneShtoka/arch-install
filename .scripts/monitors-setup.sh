@@ -5,4 +5,4 @@ echo
 
 xrandr --output ${monitors[1]} --auto --right-of eDP-1
 sleep 3
-xrandr --output DP-1-1-8 --auto --right-of ${monitors[1]}        
+xrandr --output ${monitors[2]} --auto --right-of ${monitors[1]}        
