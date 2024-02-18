@@ -185,7 +185,7 @@ mode "resize" {
 bindsym $mod+w mode "resize"
 
 # Closing zoom nuisance windows
-for_window [title="zoom" class="zoom"] move to workspace 6";
+for_window [title="zoom" class="zoom"] move to workspace "6";
 ##for_wiw [titlendo="Zoom - Free Account" class="zoom"] floating disable;
 #for_window [title="Zoom - Free Account" class="zoom" instance="action=join"] move to workspace "hidden";
 
