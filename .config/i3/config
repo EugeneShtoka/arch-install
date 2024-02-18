@@ -184,7 +184,7 @@ mode "resize" {
 
 bindsym $mod+w mode "resize"
 
-for_window [class="^zoom$" title="^zoom$"] floating enable;
+#for_window [class="^zoom$" title="^zoom$"] floating enable;
 #for_window [title="^zoom$" class="^zoom$"] move to workspace "hidden"
 #for_window [title="^zoom$" class="[zoom]*"] kill; floating enable; border none
 
