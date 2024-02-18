@@ -185,11 +185,9 @@ mode "resize" {
 bindsym $mod+w mode "resize"
 
 # Closing zoom nuisance windows
-#for_window [title="zoom" class="zoom"] move to workspace "hidden";
+for_window [title="zoom" class="zoom"] move to workspace "hidden";
 ##for_wiw [titlendo="Zoom - Free Account" class="zoom"] floating disable;
-#for_window [title="Zoom - Free Account" class="zoom" instance="action=join"] move to workspace "hidden";
-
-for_window [class="zoom" title="!Zoom - Free Account*"] move to workspace "5";
+for_window [title="Zoom - Free Account" class="zoom" instance="action=join"] move to workspace "hidden";
 
 # Start i3bar to display a workspace bar (plus theps system information i3status finds out, if available)
 #bar {
