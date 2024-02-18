@@ -185,7 +185,7 @@ mode "resize" {
 bindsym $mod+w mode "resize"
 
 for_window [title="^zoom$" class="[zoom]*"] floating enable
-for_window [title="Zoom - Free Account" class="[zoom]*"] resize set 10 10
+for_window [title="Zoom - Free Account" class="[zoom]*"] resize set 100 100
 #for_window [title="^zoom$" class="[zoom]*"] kill; floating enable; border none
 
 # Start i3bar to display a workspace bar (plus theps system information i3status finds out, if available)
