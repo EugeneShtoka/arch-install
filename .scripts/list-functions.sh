@@ -1,1 +1,1 @@
-printFunctions
+print -l ${(ok)functions}
