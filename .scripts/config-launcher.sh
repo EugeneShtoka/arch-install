@@ -5,7 +5,11 @@ APPS_LOCAL_PATH=~/.local/share/applications
 HIDDEN=$APPS_PATH-hidden
 mkdir $HIDDEN
 
-sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-10'" "$HOME/.config/rofi/launchers/type-4/launcher.sh"      
+sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-10'" "$HOME/.config/rofi/launchers/type-4/launcher.sh"
+sudo $SCRIPTS_PATH/replace-line.sh "-theme ${dir}/${theme}.rasi" "-theme ${dir}/${theme}.rasi \" "$HOME/.config/rofi/launchers/type-4/launcher.sh"
+echo "-run-list-command $(print -l ${(ok)functions}) -run-command "/bin/zsh -i -c '{cmd}'" -rnow " >> "$HOME/.config/rofi/launchers/type-4/launcher.sh"
+    
+         
 
 sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/terminal.png" "$APPS_PATH/kitty.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Terminal" "$APPS_PATH/kitty.desktop"
