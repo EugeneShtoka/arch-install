@@ -185,7 +185,7 @@ mode "resize" {
 bindsym $mod+w mode "resize"
 
 # Closing zoom nuisance windows
-for_window [title="zoom" class="zoom"] move to workspace "hidden";
+#for_window [title="zoom" class="zoom"] move to workspace "hidden";
 for_window [title="Zoom - Free Account" class="zoom" instance="action=join"] move to workspace "hidden";
 
 #for_window [title="Zoom - Free Account" class="zoom"] move to workspace $(i3-msg -t get_workspaces | jq '.[] | select(.focused).num');
