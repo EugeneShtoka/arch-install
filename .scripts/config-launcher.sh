@@ -10,8 +10,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "-theme ${dir}/${theme}.rasi" "-theme ${dir}/
 
 printFunctions=$(print -l ${(ok)functions})
 echo $printFunctions
-echo "-run-list-command $printFunctions -run-command "/bin/zsh -i -c '{cmd}'" -rnow " >> "$HOME/.config/rofi/launchers/type-4/launcher.sh"
-    
+echo "-run-list-command $SCRIPTS_PATH/list-functions.sh -run-command "/bin/zsh -i -c '{cmd}'" -rnow " >> "$HOME/.config/rofi/launchers/type-4/launcher.sh" 
          
 
 sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/terminal.png" "$APPS_PATH/kitty.desktop"
