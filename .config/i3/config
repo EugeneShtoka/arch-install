@@ -185,8 +185,8 @@ mode "resize" {
 bindsym $mod+w mode "resize"
 
 #for_window [title="^zoom$" class="[zoom]*"] floating enable; move scratchpad
-for_window [class="^zoom$"] floating enable
-for_window [class="zoom" instance="zoom" title="zoom"] kill
+for_window [class="^zoom$"] floating enable; move scratchpad
+for_window [class="zoom" instance="zoom" title="zoom"] kill; move scratchpad
 for_window [class="^zoom$" title="Zoom Meeting"] floating disable
 
 # Start i3bar to display a workspace bar (plus theps system information i3status finds out, if available)
