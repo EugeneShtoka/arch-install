@@ -9,7 +9,7 @@ sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-10'" "$HOME/.
 sudo $SCRIPTS_PATH/replace-line.sh "-theme ${dir}/${theme}.rasi" "-theme ${dir}/${theme}.rasi \\" "$HOME/.config/rofi/launchers/type-4/launcher.sh"
 
 printFunctions=$(print -l ${(ok)functions})
-echo "-run-list-command  -run-command "/bin/zsh -i -c '{cmd}'" -rnow " >> "$HOME/.config/rofi/launchers/type-4/launcher.sh"
+echo "-run-list-command $printFunctions -run-command "/bin/zsh -i -c '{cmd}'" -rnow " >> "$HOME/.config/rofi/launchers/type-4/launcher.sh"
     
          
 
