@@ -1,0 +1,5 @@
+daily() {
+	xdg-open 'zoommtg://zoom.us/join?action=join&video=on&confno=75993015411&pwd=c9aCz7qXaOgsvphGqrpYjSG2v2UXaf.1' &
+}
+
+daily
