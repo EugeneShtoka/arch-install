@@ -8,8 +8,6 @@ mkdir $HIDDEN
 sudo $SCRIPTS_PATH/replace-line.sh "theme='style-1'" "theme='style-10'" "$HOME/.config/rofi/launchers/type-4/launcher.sh"
 sudo $SCRIPTS_PATH/replace-line.sh "-theme ${dir}/${theme}.rasi" "-theme ${dir}/${theme}.rasi \\" "$HOME/.config/rofi/launchers/type-4/launcher.sh"
 
-printFunctions=$(print -l ${(ok)functions})
-echo $printFunctions
 echo "-run-list-command $SCRIPTS_PATH/list-functions.sh -run-command "/bin/zsh -i -c '{cmd}'" -rnow " >> "$HOME/.config/rofi/launchers/type-4/launcher.sh" 
          
 
