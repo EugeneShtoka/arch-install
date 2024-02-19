@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Function to check if the vault is locked
