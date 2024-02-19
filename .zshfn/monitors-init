@@ -1,5 +1,5 @@
 monitors-init() {
-
+    $SCRIPTS_PATH/monitors-init.sh
 }
 
 monitors-init
