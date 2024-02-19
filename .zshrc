@@ -109,6 +109,6 @@ fpath=($ZSHFN_PATH $fpath);
 autoload -Uz $fpath[1]/*(.:t);
 
 $SCRIPTS_PATH/ssh-init.sh > /dev/null 2>&1
-$SCRIPTS_PATH/show-status.sh
+$SCRIPTS_PATH/status-show.sh
 
 
