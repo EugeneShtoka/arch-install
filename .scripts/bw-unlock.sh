@@ -10,6 +10,5 @@ check_vault_status() {
 # Check initial vault status
 check_vault_status
 if [[ $? -eq 0 ]]; then
-  echo "Bitwarden vault is locked. Enter master password to unlock:"
   export BW_SESSION=$(bw unlock | grep '$ export' | awk -F'BW_SESSION=' '{print $2}')
 fi
