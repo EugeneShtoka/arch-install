@@ -181,7 +181,7 @@ for_window [title="Zoom - Free account" class="zoom" instance="zoom "] move to w
 for_window [title="Zoom - Free Account" class="zoom" instance="zoom "] move to workspace $ws3;
 for_window [title="Zoom Cloud Meetings" class="zoom" instance="zoom "] move to workspace $ws3;
 # killing zoom
-bindsym $mod+Shift+z exec pkill zoom && restart
+bindsym $mod+Shift+z exec --no-startup-id pkill zoom
 
 # Start i3bar to display a workspace bar (plus theps system information i3status finds out, if available)
 #bar {
