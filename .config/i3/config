@@ -65,7 +65,7 @@ bindsym $mod+r exec $SCRIPTS_PATH/rofi-launch.sh
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# alternatively, you can use the cursor keys:
+# move focuse
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
