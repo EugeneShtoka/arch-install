@@ -157,7 +157,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
@@ -184,6 +183,7 @@ bindsym $mod+w mode "resize"
 # Closing zoom nuisance windows
 for_window [title="^zoom$" class="zoom"] move to workspace "hidden";
 for_window [title="Zoom - Free Account" class="zoom" instance="action=join"] move to workspace "hidden";
+for_window [title="Zoom Cloud Meetings" class="zoom"] move to workspace "hidden";
 # Temp solution before I adding functionality to join meeting dynamiocally on zoom
 for_window [title="Zoom - Free Account" class="zoom" instance="zoom "] move to workspace $ws3;
 # killing zoom
