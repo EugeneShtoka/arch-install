@@ -24,5 +24,5 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_H
 chsh -s $(which zsh)
 source ~/.env
 zsh $SCRIPTS_PATH/apps-install.sh
-zsh $SCRIPTS_PATH/config-install.sh
+zsh $SCRIPTS_PATH/arch-config.sh
 

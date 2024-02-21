@@ -38,8 +38,10 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86Calculator exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym Ctrl+F11 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# toggle bluetooth headphones
+bindsym Ctrl+F9 exec $SCRIPTS_PATH/headphones-toggle.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -57,30 +59,19 @@ bindsym $mod+x kill
 # lock screen
 bindsym $mod+l exec i3lock
 
-# toggle bluetooth headphones
-bindsym $mod+F8 exec $SCRIPTS_PATH/toggle-headphones.sh
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym $mod+r exec ~/.config/rofi/launchers/type-4/launcher.sh
+bindsym $mod+r exec $SCRIPTS_PATH/rofi-launch.sh
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# alternatively, you can use the cursor keys:
+# move focuse
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -160,7 +151,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
@@ -185,10 +175,13 @@ mode "resize" {
 bindsym $mod+w mode "resize"
 
 # Closing zoom nuisance windows
-for_window [title="zoom" class="zoom"] move to workspace "hidden";
-for_window [title="Zoom - Free Account" class="zoom" instance="action=join"] move to workspace "hidden";
-
-#for_window [title="Zoom - Free Account" class="zoom"] move to workspace $(i3-msg -t get_workspaces | jq '.[] | select(.focused).num');
+for_window [title="^zoom$" class="zoom"] move to workspace "hidden";
+# Temp solution before I adding functionality to join meeting dynamiocally on zoom
+for_window [title="Zoom - Free account" class="zoom" instance="zoom "] move to workspace $ws3;
+for_window [title="Zoom - Free Account" class="zoom" instance="zoom "] move to workspace $ws3;
+for_window [title="Zoom Cloud Meetings" class="zoom" instance="zoom "] move to workspace $ws3;
+# killing zoom
+bindsym $mod+Shift+z exec --no-startup-id pkill zoom
 
 # Start i3bar to display a workspace bar (plus theps system information i3status finds out, if available)
 #bar {

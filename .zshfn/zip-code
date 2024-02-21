@@ -1,5 +1,5 @@
-zip () {
+zip-code () {
   bw get item 'address' | jq '.notes' | jq 'fromjson .zip' | xclip -selection c
 }
 
-zip;
+zip-code;
