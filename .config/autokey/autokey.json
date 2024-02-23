@@ -30,9 +30,10 @@
         "gtkTheme": "classic",
         "gtkExpandedRows": [
             "0",
-            "0:0"
+            "0:0",
+            "1"
         ],
-        "pathLastOpen": "0:0"
+        "pathLastOpen": "1:0"
     },
     "folders": [],
     "toggleServiceHotkey": {
