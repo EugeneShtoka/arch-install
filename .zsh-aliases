@@ -1,3 +1,5 @@
+echo setting up aliases with $SCRIPTS_PATH
+
 alias gmn='setsid vivaldi-snapshot https://gemini.google.com/app &>/dev/null'
 alias ytb='setsid vivaldi-snapshot https://www.youtube.com &>/dev/null'
 alias ghb='setsid vivaldi-snapshot https://github.com &>/dev/null'
@@ -9,13 +11,13 @@ alias obs='setsid obsidian &>/dev/null'
 alias sqlc='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
 
-alias cs-pull='$SCRIPTS_PATH/custom-scripts-pull.sh'
-alias cs-push='$SCRIPTS_PATH/custom-scripts-push.sh'
-alias monitors-init='$SCRIPTS_PATH/monitors-init.sh'
-alias play='$SCRIPTS_PATH/music-play.sh'
-alias stop='$SCRIPTS_PATH/music-stop.sh'
-alias yayi='$SCRIPTS_PATH/auto-yay.sh'
-alias zrc='$SCRIPTS_PATH/zsh-reload-config.sh'
+alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
+alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
+alias monitors-init=$SCRIPTS_PATH/monitors-init.sh
+alias play=$SCRIPTS_PATH/music-play.sh
+alias stop=$SCRIPTS_PATH/music-stop.sh
+alias yayi=$SCRIPTS_PATH/auto-yay.sh
+alias zrc=$SCRIPTS_PATH/zsh-reload-config.sh
 
 alias bw-unlock='source $SCRIPTS_PATH/bw-unlock.sh'
 alias bw-create='source $SCRIPTS_PATH/bw-create.sh'
@@ -25,9 +27,9 @@ alias postal-code='source $SCRIPTS_PATH/postal-code-get.sh'
 
 alias gsm='git switch main'
 alias grf='git checkout main --'
-alias gpc='$SCRIPTS_PATH/git-push-commit.sh'
-alias gcpr='$SCRIPTS_PATH/git-create-pull-request.sh'
-alias gcmr='$SCRIPTS_PATH/git-create-merge-request.sh'
+alias gpc=$SCRIPTS_PATH/git-push-commit.sh
+alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
+alias gcmr=$SCRIPTS_PATH/git-create-merge-request.sh
 
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
