@@ -34,3 +34,5 @@
 !.config/systemd/user/start-up-routine.service
 !.config/qBittorrent
 !.config/qBittorrent/qBittorrent.conf
+!.config/Mailspring
+!.config/Mailspring/keymap.json
