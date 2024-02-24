@@ -3,7 +3,6 @@
 !.gitignore
 !.env
 !.zshrc
-!.zsh-aliases
 !.xprofile
 !.zshfn
 !.zshfn/**
@@ -39,3 +38,4 @@
 !.config/Mailspring/keymap.json
 !.vscode
 !.vscode/argv.json
+!$ZSH_CUSTOM
