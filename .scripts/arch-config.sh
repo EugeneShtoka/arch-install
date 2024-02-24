@@ -9,6 +9,8 @@ $SCRIPTS_PATH/apps-config.sh
 
 echo config web browser
 source $SCRIPTS_PATH/bw-unlock.sh
+$SCRIPTS_PATH/bw-item.sh g.personal
+$SCRIPTS_PATH/bw-item.sh g.work
 
 rclone config
 
