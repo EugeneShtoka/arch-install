@@ -1,5 +1,3 @@
-echo setting up aliases with $SCRIPTS_PATH
-
 alias gmn='setsid vivaldi-snapshot https://gemini.google.com/app &>/dev/null'
 alias ytb='setsid vivaldi-snapshot https://www.youtube.com &>/dev/null'
 alias ghb='setsid vivaldi-snapshot https://github.com &>/dev/null'

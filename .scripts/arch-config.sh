@@ -7,6 +7,9 @@ systemctl --user enable start-up-routine
 $SCRIPTS_PATH/rofi-theme-install.sh
 $SCRIPTS_PATH/apps-config.sh
 
+echo config web browser
+bw-unlock
+
 rclone config
 
 $SCRIPTS_PATH/git-set-up.sh
