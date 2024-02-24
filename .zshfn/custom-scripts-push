@@ -1,5 +1,0 @@
-custom-scripts-push() {
-	$SCRIPTS_PATH/custom-scripts-push.sh
-}
-
-custom-scripts-push
