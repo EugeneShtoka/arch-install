@@ -7,6 +7,8 @@ systemctl --user enable start-up-routine
 $SCRIPTS_PATH/rofi-theme-install.sh
 $SCRIPTS_PATH/apps-config.sh
 
+systemctl --user enable start-up-routine.service
+
 echo config web browser
 source $SCRIPTS_PATH/bw-unlock.sh
 echo work gmail
