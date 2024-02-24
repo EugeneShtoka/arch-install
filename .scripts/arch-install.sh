@@ -12,6 +12,7 @@ kitty +kitten themes
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 rm .zshrc
 mv .zshrc.pre-oh-my-zsh .zshrc
+rm $ZSH_CUSTOM/custom/.gitignore
 
 ZSH_AUTOSUGGESTION_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 rm -rf $ZSH_AUTOSUGGESTION_PATH
