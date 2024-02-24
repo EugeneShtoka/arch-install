@@ -105,6 +105,7 @@ PROMPT='%B%~%b$(git_super_status) '
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Reload zsh functions. Uncomment, when adding at least one
 fpath=($ZSHFN_PATH $fpath);
 autoload -Uz $fpath[1]/*(.:t);
 
