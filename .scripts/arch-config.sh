@@ -9,8 +9,12 @@ $SCRIPTS_PATH/apps-config.sh
 
 echo config web browser
 source $SCRIPTS_PATH/bw-unlock.sh
+echo work gmail
 $SCRIPTS_PATH/bw-item.sh g.personal
+echo personal gmail
 $SCRIPTS_PATH/bw-item.sh g.work
+echo github
+$SCRIPTS_PATH/bw-item.sh g.github
 
 rclone config
 
