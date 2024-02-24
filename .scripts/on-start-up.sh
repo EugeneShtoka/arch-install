@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source $HOME/.env
 echo "`date` on-start-up ${SCRIPTS_PATH}" >> $LOG_PATH
 eval "$(ssh-agent)"
 $SCRIPTS_PATH/ssh-add-keys.sh >/dev/null
