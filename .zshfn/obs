@@ -1,5 +1,0 @@
-obs() {
-	$SCRIPTS_PATH/obsidian-start.sh
-}
-
-obs;

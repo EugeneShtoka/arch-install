@@ -1,5 +1,0 @@
-stdn() {
-    shutdown now
-}
-
-stdn;

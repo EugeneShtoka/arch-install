@@ -1,0 +1,22 @@
+alias gmn='setsid vivaldi-snapshot https://gemini.google.com/app &>/dev/null'
+alias ytb='setsid vivaldi-snapshot https://www.youtube.com &>/dev/null'
+alias ghb='setsid vivaldi-snapshot https://github.com &>/dev/null'
+alias glb='setsid vivaldi-snapshot https://gitlab.com &>/dev/null'
+alias gcp='setsid vivaldi-snapshot "https://console.cloud.google.com/welcome?pli=1&project=swapp-v1-1564402864804&authuser=1" &>/dev/null'
+
+alias ls='eza --icons -a'
+alias ll='eza --icons -al'
+
+alias qbt='setsid qbittorrent &>/dev/null'
+alias obs='setsid obsidian &>/dev/null'
+alias sqlc='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
+
+alias monitors-init='$SCRIPTS_PATH/monitors-init.sh'
+alias bulk-rename='thunar --bulk-rename'
+alias stdn='shutdown now'
+
+alias gsm='git switch main'
+alias grf='git checkout main --'
+alias gpc='$SCRIPTS_PATH/git-push-commit.sh'
+alias gcpr='$SCRIPTS_PATH/git-create-pull-request.sh'
+alias gcmr='$SCRIPTS_PATH/git-create-merge-request.sh'

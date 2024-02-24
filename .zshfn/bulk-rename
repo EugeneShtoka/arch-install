@@ -1,6 +1,0 @@
-bulk-rename() {
-    echo "$@"
-    thunar --bulk-rename "$@"
-}
-
-bulk-rename "$@"

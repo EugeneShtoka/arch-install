@@ -1,1 +1,0 @@
-setsid obsidian &>/dev/null

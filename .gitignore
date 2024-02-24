@@ -3,6 +3,7 @@
 !.gitignore
 !.env
 !.zshrc
+!.zsh-aliases
 !.xprofile
 !.zshfn
 !.zshfn/**

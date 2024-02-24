@@ -1,5 +1,0 @@
-gsm() {
-    git switch main
-}
-
-gsm
