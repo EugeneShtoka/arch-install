@@ -38,4 +38,6 @@
 !.config/Mailspring/keymap.json
 !.vscode
 !.vscode/argv.json
-!$ZSH_CUSTOM
+!.oh-my-zsh
+!.oh-my-zsh/custom
+!.oh-my-zsh/custom/aliases.zsh
