@@ -21,6 +21,10 @@ ZSH_SYNTAX_HIGHLIGHTING_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-synt
 rm -rf $ZSH_SYNTAX_HIGHLIGHTING_PATH
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING_PATH
 
+rm -rf $ZSH_GIT_PROMPT_PATH
+git clone https://github.com/olivierverdier/zsh-git-prompt.git $ZSH_GIT_PROMPT_PATH
+
+
 chsh -s $(which zsh)
 source ~/.env
 zsh $SCRIPTS_PATH/apps-install.sh

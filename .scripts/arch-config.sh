@@ -12,7 +12,7 @@ rclone config
 $SCRIPTS_PATH/git-set-up.sh
 $SCRIPTS_PATH/ssh-generate-key.sh $PERSONAL_EMAIL personal
 gh auth login
-git remote set-url origin git@github.com:EugeneShtoka/arch-install.git
+it@github.com:EugeneShtoka/arch-install.gitgit remote set-url origin g
 git clone $OBSIDIAN_GIT_REPO $OBSIDIAN_PATH
 
 $SCRIPTS_PATH/ssh-generate-key.sh $WORK_EMAIL work

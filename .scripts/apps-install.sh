@@ -13,7 +13,6 @@ $SCRIPTS_PATH/auto-yay.sh qemu-full
 $SCRIPTS_PATH/auto-yay.sh docker-desktop
 $SCRIPTS_PATH/auto-yay.sh npm
 $SCRIPTS_PATH/auto-yay.sh rclone
-$SCRIPTS_PATH/auto-yay.sh zsh-git-prompt-hs-git
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli
 $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot

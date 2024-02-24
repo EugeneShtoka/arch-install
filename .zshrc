@@ -74,8 +74,7 @@ plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting sudo dirhisto
 
 source $ZSH/oh-my-zsh.sh
 source /etc/profile.d/google-cloud-cli.sh
-source /usr/share/zsh/plugins/zsh-git-prompt/zshrc.sh
-GIT_PROMPT_EXECUTABLE='haskell'
+source $ZSH_GIT_PROMPT_PATH/zshrc.sh
 
 PROMPT='%B%~%b$(git_super_status) '
 
