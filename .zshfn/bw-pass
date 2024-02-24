@@ -1,6 +1,0 @@
-bw-pass() {
-  source $SCRIPTS_PATH/bw-unlock.sh
-  $SCRIPTS_PATH/bw-pass.sh $1 | xclip -selection c
-}
-
-bw-pass $1

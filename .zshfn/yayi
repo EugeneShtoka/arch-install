@@ -1,5 +1,0 @@
-yayi() {
-    $SCRIPTS_PATH/auto-yay.sh $1
-}
-
-yayi $1

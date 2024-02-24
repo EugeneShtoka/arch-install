@@ -1,6 +1,0 @@
-zrc() {
-  unset-custom-functions
-  source ~/.zshrc
-}
-
-zrc

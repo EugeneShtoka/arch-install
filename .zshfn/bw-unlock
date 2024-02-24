@@ -1,5 +1,0 @@
-bw-unlock() {
-  source $SCRIPTS_PATH/bw-unlock.sh
-}
-
-bw-unlock

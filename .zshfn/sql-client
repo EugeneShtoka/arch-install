@@ -1,5 +1,0 @@
-sql-client() {
-    setsid /usr/local/bin/start-dbeaver.sh &>/dev/null
-}
-
-sql-client

@@ -1,5 +1,0 @@
-vol() {
-    wpctl set-volume @DEFAULT_AUDIO_SINK@ $(($1 / 5.0))
-}
-
-vol $1
