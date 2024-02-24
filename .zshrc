@@ -106,8 +106,8 @@ PROMPT='%B%~%b$(git_super_status) '
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Reload zsh functions. Uncomment, when adding at least one
-fpath=($ZSHFN_PATH $fpath);
-autoload -Uz $fpath[1]/*(.:t);
+#fpath=($ZSHFN_PATH $fpath);
+#autoload -Uz $fpath[1]/*(.:t);
 
 $SCRIPTS_PATH/ssh-init.sh>/dev/null 2>&1
 #$SCRIPTS_PATH/status-show.sh
