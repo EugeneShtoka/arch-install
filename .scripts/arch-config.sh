@@ -8,7 +8,7 @@ $SCRIPTS_PATH/rofi-theme-install.sh
 $SCRIPTS_PATH/apps-config.sh
 
 echo config web browser
-bw-unlock
+source $SCRIPTS_PATH/bw-unlock.sh
 
 rclone config
 
@@ -25,7 +25,7 @@ glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName
 
 gsettings set org.gnome.desktop.interface gtk-theme Pop
 
-$SCRIPTS_PATH/bw-unlock.sh
+
 bw get item 'SWAPP GCloud credentials' | jq '.notes' | jq 'fromjson' >> swapp-v1-1564402864804.json
 sudo mkdir /usr/share/credentials
 sudo mv swapp-v1-1564402864804.json /usr/share/credentials/
