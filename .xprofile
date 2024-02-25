@@ -1,1 +1,4 @@
+echo '`date` xprofile sourced' >> $HOME/.scripts.log
+set -a
 source ~/.env
+set +a
