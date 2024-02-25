@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-#source .env
+source .env
 
 echo "`date` on-start-up $HOME $LOG_PATH $SCRIPTS_PATH" >> /home/eugene/.scripts.log
 eval "$(ssh-agent)"

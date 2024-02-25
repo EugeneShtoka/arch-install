@@ -1,1 +1,1 @@
-#source $HOME/.oh-my-zsh/custom/env.zsh
+source .env

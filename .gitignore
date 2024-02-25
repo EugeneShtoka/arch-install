@@ -3,6 +3,7 @@
 !.gitignore
 !.zshrc
 !.xprofile
+!.env
 !.zshfn
 !.zshfn/**
 !.scripts
@@ -40,4 +41,3 @@
 !.oh-my-zsh
 !.oh-my-zsh/custom
 !.oh-my-zsh/custom/aliases.zsh
-!.oh-my-zsh/custom/env.zsh
