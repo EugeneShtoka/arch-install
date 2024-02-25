@@ -1,5 +1,3 @@
-#!/bin/bash
-
 folder=~/.zshfn
 
 for file in $(ls ~/.zshfn); do

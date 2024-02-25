@@ -1,5 +1,3 @@
-#!/bin/bash
-
 git stash  
 
 git switch main;  

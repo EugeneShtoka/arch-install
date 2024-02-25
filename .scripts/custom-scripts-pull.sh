@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo "`date` custom-scripts-pull $SCRIPTS_PATH" >> $LOG_PATH
 cd $HOME
 git reset --hard

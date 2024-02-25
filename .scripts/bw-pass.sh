@@ -1,3 +1,1 @@
-#!/bin/bash
-
 bw get item $1 | jq '.login.password' |  tr -d \"

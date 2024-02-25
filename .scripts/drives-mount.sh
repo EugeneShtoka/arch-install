@@ -1,5 +1,3 @@
-#!/bin/bash
-
 sudo mkdir /mnt/Vault
 sudo mkdir /mnt/Games
 sudo mkdir /mnt/Archive

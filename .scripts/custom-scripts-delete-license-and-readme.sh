@@ -1,5 +1,3 @@
-#!/bin/bash
-
 cd $HOME
 rm LICENSE
 rm README.md

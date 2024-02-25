@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # ICS data
 ics_data='BEGIN:VCALENDAR
 CALSCALE:GREGORIAN

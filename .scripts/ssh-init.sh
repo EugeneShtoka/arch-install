@@ -1,5 +1,3 @@
-#!/bin/bash
-
 check-ssh-agent() {
     [ -S "$SSH_AUTH_SOCK" ] && { ssh-add -l >& /dev/null || [ $? -ne 2 ]; }
 }
