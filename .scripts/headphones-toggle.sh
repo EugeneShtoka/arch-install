@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 echo "`date` switch-headphones" >> $LOG_PATH
 
 status=$(bluetoothctl info $HEADPHONES_MAC_ADDR | grep Connected | awk '{print $2}')

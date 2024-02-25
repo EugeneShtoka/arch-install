@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 ssh-keygen -t ed25519 -C $1
 sleep 3
 mv ~/.ssh/id_ed25519 ~/.ssh/id_ed25519_$2

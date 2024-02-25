@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 echo "`date` work-setup" >> $LOG_PATH
 hyprctl dispatch workspace 
 hyprctl dispatch -- exec $SCRIPTS_PATH/mailspring-start.sh

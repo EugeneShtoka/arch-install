@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 $SCRIPTS_PATH/yay-install.sh
 
 $SCRIPTS_PATH/auto-yay.sh slack-desktop

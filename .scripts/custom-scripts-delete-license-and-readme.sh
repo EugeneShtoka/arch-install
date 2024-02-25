@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 cd $HOME
 rm LICENSE
 rm README.md

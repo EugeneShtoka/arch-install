@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 OLD_LINE_PATTERN=$1;
 NEW_LINE=$2;
 FILE=$3

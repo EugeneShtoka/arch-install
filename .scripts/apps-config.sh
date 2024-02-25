@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 APPS_PATH=/usr/share/applications
 APPS_LOCAL_PATH=~/.local/share/applications
 HIDDEN=$APPS_PATH-hidden

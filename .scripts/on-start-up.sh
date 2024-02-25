@@ -1,4 +1,8 @@
-echo "`date` $0 on-start-up $HOME $LOG_PATH $SCRIPTS_PATH" >> /home/eugene/.scripts.log
+#!/bin/zsh
+
+source .env
+
+echo "`date` on-start-up $HOME $LOG_PATH $SCRIPTS_PATH" >> /home/eugene/.scripts.log
 eval "$(ssh-agent)"
 $SCRIPTS_PATH/ssh-add-keys.sh >/dev/null
 $SCRIPTS_PATH/custom-scripts-pull.sh

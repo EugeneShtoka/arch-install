@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 git stash  
 
 git switch main;  
