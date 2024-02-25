@@ -17,3 +17,5 @@ export LOG_PATH=$HOME/.scripts.log
 export SERVICES_PATH=$HOME/.config/dbus-1/services
 export ZSH_GIT_PROMPT_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-git-prompt
 export PATH=$PATH:$(go env GOPATH)/bin:$(go env GOROOT)/bin
+
+echo "`date` source env" >> $LOG_PATH
