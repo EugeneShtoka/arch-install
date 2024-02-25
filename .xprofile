@@ -1,2 +1,3 @@
 source ~/.env
-#source .test
+
+echo "`date` source xprofile" >> ~/.scripts.log
