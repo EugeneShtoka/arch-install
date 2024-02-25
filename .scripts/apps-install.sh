@@ -22,4 +22,4 @@ $SCRIPTS_PATH/auto-yay.sh vivaldi-snapshot-ffmpeg-codecs
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
-
+$SCRIPTS_PATH/auto-yay.sh eza-git
