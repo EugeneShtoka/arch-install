@@ -75,6 +75,7 @@ plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting sudo dirhisto
 source $ZSH/oh-my-zsh.sh
 source /etc/profile.d/google-cloud-cli.sh
 source $ZSH_GIT_PROMPT_PATH/zshrc.sh
+source $SCRIPTS_PATH/aliases.sh
 
 PROMPT='%B%~%b$(git_super_status) '
 

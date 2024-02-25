@@ -4,6 +4,7 @@
 !.zshrc
 !.xprofile
 !.env
+!aliases.zsh
 !.zshfn
 !.zshfn/**
 !.scripts
@@ -38,6 +39,3 @@
 !.config/Mailspring/keymap.json
 !.vscode
 !.vscode/argv.json
-!.oh-my-zsh
-!.oh-my-zsh/custom
-!.oh-my-zsh/custom/aliases.zsh

@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-echo "`date` custom-scripts-auto-sync $ZSH_CUSTOM" >> $LOG_PATH
-inotifywait -q -r -m -e DELETE,CLOSE_WRITE,MOVED_TO,MOVED_FROM $HOME/.zshrc $ZSH_CUSTOM/aliases.zsh $HOME/.env $HOME/.config/i3 $HOME/.config/autokey $HOME/.config/systemd/user $HOME/.gitignore $ZSHFN_PATH $SCRIPTS_PATH $SERVICES_PATH | while read DIR EVENT FILE
+echo "`date` custom-scripts-auto-sync" >> $LOG_PATH
+inotifywait -q -r -m -e DELETE,CLOSE_WRITE,MOVED_TO,MOVED_FROM $HOME/.zshrc $HOME/.env $HOME/.config/i3 $HOME/.config/autokey $HOME/.config/systemd/user $HOME/.gitignore $ZSHFN_PATH $SCRIPTS_PATH $SERVICES_PATH | while read DIR EVENT FILE
 do
     echo "`date` custom-scripts-auto-sync $EVENT on $DIR$FILE" >> $SCRIPTS_PATH
     $SCRIPTS_PATH/custom-scripts-push.sh
