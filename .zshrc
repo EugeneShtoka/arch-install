@@ -73,9 +73,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting sudo dirhistory history z)
 
 source $ZSH/oh-my-zsh.sh
-source /etc/profile.d/google-cloud-cli.sh
-source $ZSH_GIT_PROMPT_PATH/zshrc.sh
+source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 source $SCRIPTS_PATH/aliases.sh
+source /etc/profile.d/google-cloud-cli.sh
 
 PROMPT='%B%~%b$(git_super_status) '
 

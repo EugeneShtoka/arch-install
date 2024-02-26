@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-yes | sudo pacman -S git curl zsh inotify-tools thunar rofi adobe-source-code-pro-fonts bluez bluez-utils brightnessctl jre17-openjdk dbeaver postgresql docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip kitty notification-daemon upower xclip cups ghostscript go ttf-nerd-fonts-symbols ttf-font-awesome
+source ~/.env
+
+yes | sudo pacman -S kitty curl zsh inotify-tools thunar rofi bluez bluez-utils brightnessctl jre17-openjdk dbeaver postgresql docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip notification-daemon upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome
 yes | sudo pacman -R xterm
 yes | sudo pacman -Rns $(pacman -Qtdq)
 
@@ -14,22 +16,14 @@ rm .zshrc
 mv .zshrc.pre-oh-my-zsh .zshrc
 rm -rf .oh-my-zsh/.git
 rm -rf .oh-my-zsh/.github
-rm $ZSH_CUSTOM/custom/.gitignore
+rm -rf $ZSH_PLUGINS_PATH
+rm $ZSH_CUSTOM/.gitignore
 
-ZSH_AUTOSUGGESTION_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-rm -rf $ZSH_AUTOSUGGESTION_PATH
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_AUTOSUGGESTION_PATH
-
-ZSH_SYNTAX_HIGHLIGHTING_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-rm -rf $ZSH_SYNTAX_HIGHLIGHTING_PATH
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING_PATH
-
-rm -rf $ZSH_GIT_PROMPT_PATH
-git clone https://github.com/olivierverdier/zsh-git-prompt.git $ZSH_GIT_PROMPT_PATH
-
+git clone https://github.com/olivierverdier/zsh-git-prompt.git $ZSH_GIT_PROMPT_PLUGIN
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_PLUGINS_PATH/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS_PATH/zsh-syntax-highlighting
 
 chsh -s $(which zsh)
-source ~/.env
 zsh $SCRIPTS_PATH/apps-install.sh
 zsh $SCRIPTS_PATH/arch-config.sh
 
