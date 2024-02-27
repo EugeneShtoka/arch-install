@@ -10,4 +10,4 @@ theme='style-10'
 #     -run-list-command ". $SCRIPTS_PATH/functions-list.sh" -run-command "/bin/zsh -i -c '{cmd}'" -rnow
 
 command=$(. $SCRIPTS_PATH/functions-list.sh | rofi -theme ${dir}/${theme}.rasi -dmenu)
-zsh $command
+zsh -ic $command
