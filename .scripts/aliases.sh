@@ -11,7 +11,7 @@ alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/softwar
 
 alias torrent='setsid qbittorrent &>/dev/null'
 alias obsidian='setsid obsidian &>/dev/null'
-alias dbt='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
+alias db-tool='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
