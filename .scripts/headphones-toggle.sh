@@ -10,8 +10,8 @@ fi
 isConnected=$(echo $blStatus | grep Connected | awk '{print $2}')
 if [[ "$bl-status" == "yes" ]]; then
     echo $(bluetoothctl disconnect $HEADPHONES_MAC_ADDR)
-    notify-send "Headphones" "Disconnected"
+    notify-send "Headphones Disconnected" "Volume: 60%" -i headphones-disconnect 
 else
     echo $(bluetoothctl connect $HEADPHONES_MAC_ADDR)
-    notify-send "Headphones" "Connected"
+    notify-send "Headphones Connected" "Volume: 60%" -i headphones    
 fi
