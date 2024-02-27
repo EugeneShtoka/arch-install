@@ -9,8 +9,6 @@ if ([[ "$blStatus" == *"$notAvailable"* ]]); then
     echo "not available"
 fi
 
- | grep Connected | awk '{print $2}')
-
 if [[ "$bl-status" == "yes" ]]; then
     echo $(bluetoothctl disconnect $HEADPHONES_MAC_ADDR)
 else
