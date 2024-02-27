@@ -9,9 +9,9 @@ alias gdp='setsid vivaldi-snapshot "https://drive.google.com/drive/u/0/my-drive"
 alias gdw='setsid vivaldi-snapshot "https://drive.google.com/drive/u/1/my-drive" &>/dev/null'
 alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/software/c/projects/SWP/boards/1?assignee=712020%3Aee767fac-fcf2-4a03-a591-ccc8a59a097b" &>/dev/null'
 
-alias qbt='setsid qbittorrent &>/dev/null'
-alias obs='setsid obsidian &>/dev/null'
-alias sqlc='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
+alias ='setsid qbittorrent &>/dev/null'
+alias obsidian='setsid obsidian &>/dev/null'
+alias dbt='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
