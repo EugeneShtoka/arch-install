@@ -12,7 +12,15 @@ alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/softwar
 alias torrent='setsid qbittorrent &>/dev/null'
 alias obsidian='setsid obsidian &>/dev/null'
 alias db-tool='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
+alias file-manager='setsid thunar --bulk-rename &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
+alias docker='setsid thunar --bulk-rename &>/dev/null'
+alias mail='setsid thunar --bulk-rename &>/dev/null'
+alias messnger='setsid thunar --bulk-rename &>/dev/null'
+alias browser='setsid thunar --bulk-rename &>/dev/null'
+alias slack='setsid thunar --bulk-rename &>/dev/null'
+alias postman='setsid thunar --bulk-rename &>/dev/null'
+alias zoom='setsid thunar --bulk-rename &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
