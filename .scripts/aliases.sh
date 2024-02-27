@@ -20,7 +20,7 @@ alias messnger='setsid thunar --bulk-rename &>/dev/null'
 alias browser='setsid thunar --bulk-rename &>/dev/null'
 alias slack='setsid thunar --bulk-rename &>/dev/null'
 alias postman='setsid thunar --bulk-rename &>/dev/null'
-alias zoom='setsid zoom %U &>/dev/null'
+alias zoom='setsid zoom &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
