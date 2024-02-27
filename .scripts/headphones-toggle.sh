@@ -1,17 +1,18 @@
 #!/bin/zsh
 
 echo "`date` switch-headphones" >> $LOG_PATH
+volumeLevel="60%"
 
 blStatus=$(bluetoothctl info $HEADPHONES_MAC_ADDR)
 if ([[ "$blStatus" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
-    echo "not available"
+    notify-send "Headphones not available" "Volume: $volumeLevel" -i volume-high  
 fi
 
 isConnected=$(echo $blStatus | grep Connected | awk '{print $2}')
 if [[ "$bl-status" == "yes" ]]; then
     echo $(bluetoothctl disconnect $HEADPHONES_MAC_ADDR)
-    notify-send "Headphones Disconnected" "Volume: 60%" -i headphones-disconnect 
+    notify-send "Headphones disconnected" "Volume: $volumeLevel" -i headphones-disconnect 
 else
     echo $(bluetoothctl connect $HEADPHONES_MAC_ADDR)
-    notify-send "Headphones Connected" "Volume: 60%" -i headphones    
+    notify-send "Headphones connected" "Volume: $volumeLevel" -i headphones    
 fi
