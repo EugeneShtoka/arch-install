@@ -2,10 +2,7 @@
 
 echo "`date` switch-headphones" >> $LOG_PATH
 
-notAvailable="Device $HEADPHONES_MAC_ADDR not available"
-blStatus=$(bluetoothctl info $HEADPHONES_MAC_ADDR)
-
-if ([[ "$blStatus" == *"$notAvailable"* ]]); then
+if ([[ "$blStatus" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
     echo "not available"
 fi
 
