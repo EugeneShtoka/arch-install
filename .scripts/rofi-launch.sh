@@ -5,6 +5,6 @@ theme='style-10'
 
 ## Run
 rofi \
-    -show drun \
+    -show run \
     -theme ${dir}/${theme}.rasi \
     -run-list-command ". $SCRIPTS_PATH/functions-list.sh" -run-command "/bin/zsh -i -c '{cmd}'" -rnow
