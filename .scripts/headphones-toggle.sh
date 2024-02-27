@@ -2,8 +2,14 @@
 
 echo "`date` switch-headphones" >> $LOG_PATH
 
-blStatus=$(bluetoothctl info $HEADPHONES_MAC_ADDR | grep Connected | awk '{print $2}')
-echo satus $blStatus
+notAvailable = "Device $HEADPHONES_MAC_ADDR not available"
+blStatus=$(bluetoothctl info $HEADPHONES_MAC_ADDR)
+
+if ([[ "$blStatus" == *"$notAvailable"* ]]); then
+    echo "not available"
+fi
+
+ | grep Connected | awk '{print $2}')
 
 if [[ "$bl-status" == "yes" ]]; then
     echo $(bluetoothctl disconnect $HEADPHONES_MAC_ADDR)
