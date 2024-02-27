@@ -19,7 +19,7 @@ alias daily=$SCRIPTS_PATH/zoom-join-daily.sh
 alias monitors-init=$SCRIPTS_PATH/monitors-init.sh
 alias play=$SCRIPTS_PATH/music-play.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
-alias zrc=source $SCRIPTS_PATH/zsh-reload-config.sh
+alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
 
 alias gmn='setsid vivaldi-snapshot "https://gemini.google.com/app" &>/dev/null'
 alias ytb='setsid vivaldi-snapshot "https://www.youtube.com" &>/dev/null'
