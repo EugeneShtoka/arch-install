@@ -10,7 +10,7 @@ alias gdw='setsid vivaldi-snapshot "https://drive.google.com/drive/u/1/my-drive"
 alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/software/c/projects/SWP/boards/1?assignee=712020%3Aee767fac-fcf2-4a03-a591-ccc8a59a097b" &>/dev/null'
 
 alias torrent='setsid qbittorrent &>/dev/null'
-alias obsidian='setsid obsidian &>/dev/null'
+alias notes='setsid obsidian &>/dev/null'
 alias db-tool='setsid $SCRIPTS_PATH/dbeaver-start.sh &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
