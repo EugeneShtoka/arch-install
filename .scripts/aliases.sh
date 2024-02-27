@@ -20,7 +20,7 @@ alias messenger='setsid beeper --no-sandbox &>/dev/null'
 alias browser='setsid vivaldi-snapshot &>/dev/null'
 alias slack='setsid /usr/bin/slack -s &>/dev/null'
 alias postman='setsid /opt/postman/Postman --bulk-rename &>/dev/null'
-alias zoom='setsid zoom &>/dev/null'
+alias zoom='setsid /usr/bin/zoom &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
