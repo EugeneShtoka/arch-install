@@ -19,7 +19,7 @@ alias mail='setsid mailspring --password-store="gnome-libsecret" &>/dev/null'
 alias messenger='setsid beeper --no-sandbox &>/dev/null'
 alias browser='setsid vivaldi-snapshot &>/dev/null'
 alias slack='setsid /usr/bin/slack -s &>/dev/null'
-alias postman='setsid thunar --bulk-rename &>/dev/null'
+alias postman='setsid /opt/postman/Postman --bulk-rename &>/dev/null'
 alias zoom='setsid zoom &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
