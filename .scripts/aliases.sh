@@ -9,9 +9,9 @@ alias docker-start='setsid /opt/docker-desktop/bin/com.docker.url-handler &>/dev
 alias postman='setsid /opt/postman/Postman &>/dev/null'
 alias db-tool='setsid $SCRIPTS_PATH/dbeaver-start.sh &>/dev/null'
 alias notes='setsid obsidian &>/dev/null'
+alias torrent='setsid qbittorrent &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
-alias torrent='setsid qbittorrent &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
