@@ -11,7 +11,7 @@ alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/softwar
 
 alias torrent='setsid qbittorrent &>/dev/null'
 alias obsidian='setsid obsidian &>/dev/null'
-alias db-tool='setsid /usr/local/bin/start-dbeaver.sh &>/dev/null'
+alias db-tool='setsid $SCRIPTS_PATH/dbeaver-start.sh &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
 alias docker='setsid /opt/docker-desktop/bin/com.docker.url-handler &>/dev/null'
@@ -31,4 +31,6 @@ alias stop=$SCRIPTS_PATH/music-stop.sh
 alias zrc=$SCRIPTS_PATH/zsh-reload-config.sh
 
 alias spnd='systemctl suspend'
-alias stdn='shutdown now'
+
+
+
