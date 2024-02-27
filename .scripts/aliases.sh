@@ -32,6 +32,6 @@ alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/softwar
 
 
 alias spnd='systemctl suspend'
-alias spnd='shutdown'
+alias stdn='shutdown'
 
 
