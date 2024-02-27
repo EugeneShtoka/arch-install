@@ -1,17 +1,17 @@
 #!/bin/zsh
 
-alias torrent='setsid qbittorrent &>/dev/null'
-alias notes='setsid obsidian &>/dev/null'
+alias browser='setsid vivaldi-snapshot &>/dev/null'
+alias mail='setsid mailspring --password-store="gnome-libsecret" &>/dev/null'
+alias slack='setsid /usr/bin/slack -s &>/dev/null'
+alias messenger='setsid beeper --no-sandbox &>/dev/null'
+alias zoom='setsid /usr/bin/zoom &>/dev/null'
+alias docker-start='setsid /opt/docker-desktop/bin/com.docker.url-handler &>/dev/null'
+alias postman='setsid /opt/postman/Postman &>/dev/null'
 alias db-tool='setsid $SCRIPTS_PATH/dbeaver-start.sh &>/dev/null'
+alias notes='setsid obsidian &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
-alias docker-start='setsid /opt/docker-desktop/bin/com.docker.url-handler &>/dev/null'
-alias mail='setsid mailspring --password-store="gnome-libsecret" &>/dev/null'
-alias messenger='setsid beeper --no-sandbox &>/dev/null'
-alias browser='setsid vivaldi-snapshot &>/dev/null'
-alias slack='setsid /usr/bin/slack -s &>/dev/null'
-alias postman='setsid /opt/postman/Postman &>/dev/null'
-alias zoom='setsid /usr/bin/zoom &>/dev/null'
+alias torrent='setsid qbittorrent &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
