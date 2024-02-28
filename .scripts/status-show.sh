@@ -15,6 +15,18 @@ get_wifi_signal_strength() {
   echo $(( (current_signal - min_signal) * 100 / (max_signal - min_signal) ))
 }
 
+function get_audio_icon() {
+  if [[ $bt_connected == "yes" ]]; then
+    echo "f025"
+  else
+    if [[ $(pactl get-sink-mute $(pactl get-default-sink) | awk '{print $2}') == "no" ]]; then
+      echo "f028"
+    else
+      echo "f026"
+    fi
+  fi
+}
+
 # Battery information
 battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
 
@@ -28,9 +40,8 @@ io_stats=$(iostat -d -x 1 2 | awk 'NR==4{printf "r/s: %.1f kB/s w/s: %.1f kB/s",
 
 # Construct the message for notify-send
 message="<span font='40px'>$(date +%H:%M)</span>
-<span font='25px'>$(print_glyph 'f028') $(get-volume-level)%
-$(print_glyph 'f025') Bluetooth: $bt_status
-$(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)
+<span font='25px'>$(print_glyph $(get_audio_icon)) $(get-volume-level)%
+$(print_glyph 'f1eb') $(get_wifi_signal_strength)% <span font='20px'>$(iwgetid -r)</span>
 $(get_battery_icon $battery_level) $battery_level% $(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage</span>"
 
 # Send the notification
