@@ -5,7 +5,7 @@ source $SCRIPTS_PATH/volume.sh
 target=$1
 action=$2
 
-if ([[ "$target" == "Volume"]]); then
+if ([[ "$Volume" == "Volume" ]]); then
   if ([[ "$action" == "decreased" ]]); then
     icon=volume-low
   elif ([[ "$action" == "muted" ]]); then
