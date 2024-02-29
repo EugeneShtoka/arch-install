@@ -39,7 +39,7 @@ ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
 io_stats=$(iostat -d -x 1 2 | awk 'NR==4{printf "r/s: %.1f kB/s w/s: %.1f kB/s", $2, $3}') 
 
 hardware_info="$(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage</span>"
-if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=percentage: ).*' | grep -o 'should be ignored') == "should be ignored" ]]); then
+if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=percentage: ).*' | grep -o 'should be ignored') != "should be ignored" ]]); then
   echo 'HAS NO BATTERY'
   hardware_info=$(get_battery_icon $battery_level) $battery_level% $cpu_and_ram $hardware_info
 fi
