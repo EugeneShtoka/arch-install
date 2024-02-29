@@ -178,7 +178,7 @@ mode "resize" {
 bindsym $mod+w mode "resize"
 
 # Closing zoom nuisance windows
-for_window [title="^zoom$" class="zoom"] move to workspace "hidden";
+#for_window [title="^zoom$" class="zoom"] move to workspace "hidden";
 # Temp solution before I adding functionality to join meeting dynamiocally on zoom
 for_window [title="Zoom - Free account" class="zoom" instance="zoom "] move to workspace $ws3;
 for_window [title="Zoom - Free Account" class="zoom" instance="zoom "] move to workspace $ws3;
