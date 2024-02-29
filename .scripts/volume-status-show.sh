@@ -2,4 +2,4 @@
 
 source $SCRIPTS_PATH/volume.sh
 
-notify-send "Volume $1" "$(get_audio_status)"
+notify-send "$1 $2" "$(get_audio_status)"
