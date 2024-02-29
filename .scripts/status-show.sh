@@ -38,11 +38,15 @@ cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk
 ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
 io_stats=$(iostat -d -x 1 2 | awk 'NR==4{printf "r/s: %.1f kB/s w/s: %.1f kB/s", $2, $3}') 
 
+hardware_info="$(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage</span>"
+if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=percentage: ).*' | grep -o 'should be ignored') != "should be ignored" ]]); then
+  hardware_info=$(get_battery_icon $battery_level) $battery_level% $cpu_and_ram $hardware_info
+fi
 # Construct the message for notify-send
 message="<span font='40px'>$(date +%H:%M)</span>
 <span font='25px'>$(print_glyph $(get_audio_icon)) $(get-volume-level)%
 $(print_glyph 'f1eb') $(get_wifi_signal_strength)% <span font='20px'>$(iwgetid -r)</span>
-$(get_battery_icon $battery_level) $battery_level% $(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage</span>"
+$hardware_info
 
 # Send the notification
 notify-send "$(date +%d.%m.%Y)" "$message"
