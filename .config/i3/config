@@ -41,7 +41,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl get-defau
 bindsym $mod+z exec --no-startup-id pactl set-source-mute $(pactl get-default-source) toggle && $refresh_i3status
 
 # toggle bluetooth headphones
-bindsym $mod+h exec $SCRIPTS_PATH/headphones-toggle.sh
+bindsym $mod+q exec $SCRIPTS_PATH/headphones-toggle.sh
 
 bindsym XF86AudioLowerVolume exec --no-startup-id i3lock --nofork
 
