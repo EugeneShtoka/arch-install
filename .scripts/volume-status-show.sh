@@ -6,7 +6,6 @@ target=$1
 action=$2
 
 if ([[ "$target" == "Volume" ]]); then
-  echo "Volume"
   if ([[ "$action" == "decreased" ]]); then
     icon=volume-low
   elif ([[ "$action" == "muted" ]]); then
