@@ -43,8 +43,6 @@ bindsym $mod+XF86AudioMute exec --no-startup-id pactl set-source-mute $(pactl ge
 # toggle bluetooth headphones
 bindsym $mod+h exec $SCRIPTS_PATH/headphones-toggle.sh
 
-bindsym XF86AudioLowerVolume exec --no-startup-id i3lock --nofork
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
