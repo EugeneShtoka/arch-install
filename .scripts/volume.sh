@@ -16,3 +16,7 @@ function get_audio_icon() {
     fi
   fi
 }
+
+function get_audio_status() {
+    printf "\u$(get_audio_icon $bt_status)\n" $(get-volume-level)%
+}
