@@ -10,7 +10,7 @@ volumeLevel="$(printf '\uf028\n') $(get-volume-level)%"
 blStatus=$(bluetoothctl info $HEADPHONES_MAC_ADDR)
 
 if ([[ "$blStatus" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
-    notify-send "Headphones not available" "$(get_audioa_status)" -i headphones-disconnect  
+    notify-send "Headphones not available" "$(get_audio_status)" -i headphones-disconnect  
 else
     isConnected=$(echo $blStatus | grep Connected | awk '{print $2}')
 
