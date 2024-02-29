@@ -15,5 +15,7 @@ elif [[ "$1" == "Microphone" ]]
     icon=microphone-mute
   else
     icon=microphone
+  fi
 fi
-  notify-send "$1 $2" "$(get_audio_status)" --icon $icon
+
+notify-send "$1 $2" "$(get_audio_status)" --icon $icon
