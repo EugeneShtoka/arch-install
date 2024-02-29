@@ -36,7 +36,6 @@ bt_status=$(bluetoothctl info | grep 'Connected' | awk '{print $2}')
 # CPU, RAM, IO usage
 cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
 ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
-io_stats=$(iostat -d -x 1 2 | awk 'NR==4{printf "r/s: %.1f kB/s w/s: %.1f kB/s", $2, $3}') 
 
 # Construct the message for notify-send
 # message="<span font='40px'>$(date +%H:%M)</span>
