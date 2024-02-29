@@ -24,7 +24,6 @@ else
         echo $(bluetoothctl connect $HEADPHONES_MAC_ADDR)
         sleep 2
         blStatus=$(bluetoothctl info $HEADPHONES_MAC_ADDR)
-        echo "$blStatus"
         name=$(echo $blStatus | grep -oP '(?<=Name: ).*' )
         battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
         message="$(get_battery_icon $battery_level) $battery_level% $(get_audio_status)"
