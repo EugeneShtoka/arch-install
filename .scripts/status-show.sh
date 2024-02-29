@@ -34,9 +34,8 @@ battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep pe
 bt_status=$(bluetoothctl info | grep 'Connected' | awk '{print $2}')
 
 # CPU, RAM, IO usage
-cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
+cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1".0f%"}')
 ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
-io_stats=$(iostat -d -x 1 2 | awk 'NR==4{printf "r/s: %.1f kB/s w/s: %.1f kB/s", $2, $3}') 
 
 hardware_info="$(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage</span>"
 if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=percentage: ).*' | grep -o 'should be ignored') != "should be ignored" ]]); then
