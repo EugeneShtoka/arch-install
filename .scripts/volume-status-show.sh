@@ -5,16 +5,16 @@ source $SCRIPTS_PATH/volume.sh
 target=$1
 action=$2
 
-if [ "$target" == "Volume"]
-  if [ "$action" == "decreased" ]
+if [ "$target" == "Volume"]; then
+  if [ "$action" == "decreased" ]; then
     icon=volume-low
   elif [ "$action" == "muted" ]
     icon=volume-mute
   else
     icon=volume-high
   fi
-elif [ "$target" == "Microphone" ]
-  if [ "$action" == "muted" ]
+elif [ "$target" == "Microphone" ]; then
+  if [ "$action" == "muted" ]; then
     icon=microphone-mute
   else
     icon=microphone
