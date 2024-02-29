@@ -21,4 +21,6 @@ elif ([[ "$target" == "Microphone" ]]); then
   fi
 fi
 
+echo $icon
+
 notify-send "$1 $2" "$(get_audio_status)" --icon $icon
