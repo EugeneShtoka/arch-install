@@ -8,7 +8,7 @@ action=$2
 if [ "$target" == "Volume"]; then
   if [ "$action" == "decreased" ]; then
     icon=volume-low
-  elif [ "$action" == "muted" ]
+  elif [ "$action" == "muted" ]; then
     icon=volume-mute
   else
     icon=volume-high
