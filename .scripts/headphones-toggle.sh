@@ -17,7 +17,7 @@ else
     if [[ "$isConnected" == "yes" ]]; then
         name=$(echo $blStatus | grep -oP '(?<=Name: ).*' )
         battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
-        message="$(get_battery_icon $battery_level) $battery_level% $volumeLevel"
+        message="$(get_battery_icon $battery_level) $battery_level% $(get_audio_status)"
         echo $(bluetoothctl disconnect $HEADPHONES_MAC_ADDR)
         notify-send "$name disconnected" "$message" -i headphones-disconnect 
     else
@@ -27,7 +27,7 @@ else
         echo "$blStatus"
         name=$(echo $blStatus | grep -oP '(?<=Name: ).*' )
         battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
-        message="$(get_battery_icon $battery_level) $battery_level% $volumeLevel"
+        message="$(get_battery_icon $battery_level) $battery_level% $(get_audio_status)"
         notify-send "$name connected" "$message" -i headphones
     fi
 fi
