@@ -2,7 +2,7 @@
 
 # Volume information (assumes PulseAudio)
 source $SCRIPTS_PATH/volume.sh
-source $SCRIPTS_PATH/get-battery-icon.sh
+source $SCRIPTS_PATH/battery.sh
 
 echo "`date` switch-headphones" >> $LOG_PATH
 volumeLevel="$(printf '\uf028\n') $(get-volume-level)%"
