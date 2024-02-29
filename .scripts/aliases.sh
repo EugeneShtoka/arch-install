@@ -1,5 +1,4 @@
 #!/bin/zsh
-echo 'load aliases'
 
 alias browser='setsid vivaldi-snapshot &>/dev/null'
 alias mail='setsid mailspring --password-store="gnome-libsecret" &>/dev/null'
