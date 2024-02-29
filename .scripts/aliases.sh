@@ -32,5 +32,4 @@ alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/softwar
 
 alias spnd='systemctl suspend'
 alias stdn='shutdown now'
-alias test5=$SCRIPTS_PATH/rofi-launch.sh
 
