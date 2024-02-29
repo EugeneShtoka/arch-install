@@ -28,7 +28,7 @@ function get_audio_icon() {
 }
 
 # Battery information
-#battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
+battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
 
 # Bluetooth headphones status (requires some setup - see notes below)
 #bt_status=$(bluetoothctl info | grep 'Connected' | awk '{print $2}')
