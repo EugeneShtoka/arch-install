@@ -16,7 +16,7 @@ get_wifi_signal_strength() {
 }
 
 function get_audio_icon() {
-  if [[ $bt_connected == "yes" ]]; then
+  if [[ $1 == "yes" ]]; then
     echo "f025"
   else
     if [[ $(pactl get-sink-mute $(pactl get-default-sink) | awk '{print $2}') == "no" ]]; then
