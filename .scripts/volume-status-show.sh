@@ -5,8 +5,7 @@ source $SCRIPTS_PATH/volume.sh
 target=$1
 action=$2
 
-if ([[ "$Volume" == "Volume" ]]); then
-  if ([[ "$action" == "decreased" ]]); then
+if ([[ "$Volume" == "Volume" ]]); then  if ([[ "$action" == "decreased" ]]); then
     icon=volume-low
   elif ([[ "$action" == "muted" ]]); then
     icon=volume-mute
@@ -20,7 +19,5 @@ elif ([[ "$target" == "Microphone" ]]); then
     icon=microphone
   fi
 fi
-
-echo $icon
 
 notify-send "$1 $2" "$(get_audio_status)" --icon $icon
