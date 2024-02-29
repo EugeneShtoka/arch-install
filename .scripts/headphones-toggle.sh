@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Volume information (assumes PulseAudio)
-source $SCRIPTS_PATH/get-volume-level.sh
+source $SCRIPTS_PATH/volume.sh
 source $SCRIPTS_PATH/get-battery-icon.sh
 
 echo "`date` switch-headphones" >> $LOG_PATH
