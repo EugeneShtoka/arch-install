@@ -14,7 +14,7 @@ function show-headphones-message() {
     name=$(echo $blStatus | grep -oP '(?<=Name: ).*' )
     battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
     message="$(get_battery_icon $battery_level) $battery_level% $(get_audio_status)"
-    notify-send "$name connected" "$message" -i headphones
+    notify-send "$name $1" "$message" -i headphones
 }
 
 if ([[ "$blStatus" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
@@ -23,6 +23,7 @@ else
     isConnected=$(echo $blStatus | grep Connected | awk '{print $2}')
 
     if [[ "$isConnected" == "yes" ]]; then
+
         name=$(echo $blStatus | grep -oP '(?<=Name: ).*' )
         battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
         message="$(get_battery_icon $battery_level) $battery_level% $(get_audio_status)"
