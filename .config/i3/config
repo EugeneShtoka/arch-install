@@ -38,10 +38,12 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl get-default-sink) toggle && $refresh_i3status
-bindsym $mod+XF86AudioMute exec --no-startup-id pactl set-source-mute $(pactl get-default-source) toggle && $refresh_i3status
+bindsym $mod+m exec --no-startup-id pactl set-source-mute $(pactl get-default-source) toggle && $refresh_i3status
 
 # toggle bluetooth headphones
 bindsym $mod+h exec $SCRIPTS_PATH/headphones-toggle.sh
+
+bindsym XF86AudioLowerVolume exec --no-startup-id i3lock --nofork
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
