@@ -46,7 +46,7 @@ fi
 message="<span font='40px'>$(date +%H:%M)</span>
 <span font='25px'>$(print_glyph $(get_audio_icon)) $(get-volume-level)%
 $(print_glyph 'f1eb') $(get_wifi_signal_strength)% <span font='20px'>$(iwgetid -r)</span>
-$hardware_info
+$hardware_info"
 
 # Send the notification
 notify-send "$(date +%d.%m.%Y)" "$message"
