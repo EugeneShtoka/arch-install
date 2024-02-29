@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-source $SCRIPTS_PATH/get-volume-level.sh
-source $SCRIPTS_PATH/get-battery-icon.sh
+source $SCRIPTS_PATH/volume.sh
+source $SCRIPTS_PATH/battery.sh
 
 print_glyph() {
   printf "\u$1\n"
