@@ -6,9 +6,9 @@ if [[ $1 == "Volume"]]
   if [[ $2 == "decreased" ]]
     icon=volume-low
   elif [[ $2 == "muted" ]]
-    icon=volume-muted
+    icon=volume-mute
   else
-    icon= 
+    icon=volume-high
   fi
 elif [[ $1 == "Microphone" ]]
   if [[ $2 == "muted" ]]
