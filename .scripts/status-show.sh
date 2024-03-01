@@ -18,9 +18,6 @@ get_wifi_signal_strength() {
 # Battery information
 battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
 
-# Bluetooth headphones status (requires some setup - see notes below)
-bt_status=$(bluetoothctl info | grep 'Connected' | awk '{print $2}')
-
 # CPU, RAM, IO usage
 cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{printf "%.0f%%", 100 - $1"%"}')
 ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
