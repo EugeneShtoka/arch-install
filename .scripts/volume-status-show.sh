@@ -11,10 +11,10 @@ if ([[ "$target" == "Volume" ]]); then
   elif ([[ "$action" == "increased" ]]); then
     icon=volume-high
   elif ([[ $(is_audio_muted) == "yes" ]]); then
-    icon=volume-high
+    icon=volume-mute 
     action="muted"
   else
-    icon=volume-mute
+    icon=volume-high
     action="unmuted"
   fi
 elif ([[ "$target" == "Microphone" ]]); then
