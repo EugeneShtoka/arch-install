@@ -6,7 +6,6 @@ function is_bluetooth_connected() {
     echo $(echo $(bluetooth_status) | grep Connected | awk '{print $2}')
 }
 
-
 function show-headphones-message() {
     blStatus=$(bluetooth_status)
     name=$(echo $blStatus | grep -oP '(?<=Name: ).*' )
