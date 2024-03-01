@@ -9,6 +9,10 @@ function is_audio_muted() {
   echo $(pactl get-sink-mute $(pactl get-default-sink) | awk '{print $2}')
 }
 
+function is_microphone_muted() {
+  echo $(pactl get-sink-mute $(pactl get-default-sink) | awk '{print $2}')
+}
+
 function get_audio_icon() {
   if [[ $1 == "yes" ]]; then
     echo "f025"
