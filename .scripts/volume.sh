@@ -16,6 +16,11 @@ function get_audio_icon() {
     echo "f025"
   else
     if [[ $(is_muted sink) == "no" ]]; then echo "f028"; else echo "f026"; fi
+    if [[ $(is_muted sink) == "no" ]]; then
+      echo "\uf028 $(get-level sink)%"
+    else
+      echo "<span color=\"magenta\">\f026 $(get-level sink)%</span>"
+    fi
   fi
 }
 
@@ -23,7 +28,6 @@ function get_microphone_icon() {
   if [[ $(is_muted source) == "no" ]]; then
     echo "\uf130 $(get-level source)%"
   else
-  #</span>
     echo "<span color=\"magenta\">\uf131 $(get-level source)%</span>"
   fi
 }
