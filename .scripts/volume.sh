@@ -5,6 +5,10 @@ get-volume-level() {
     printf $(pactl get-sink-volume $(pactl get-default-sink) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
 }
 
+function is_volume_muted() {
+  echo $(pactl get-sink-mute $(pactl get-default-sink) | awk '{print $2}')
+}
+
 function get_audio_icon() {
   if [[ $1 == "yes" ]]; then
     echo "f025"
