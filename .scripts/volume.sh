@@ -4,7 +4,7 @@ source $SCRIPTS_PATH/bluetooth.sh
 
 # Volume information (assumes PulseAudio)
 get-level() {
-    printf $(pactl get-sink-volume $(pactl get-default-sink) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
+    printf $(pactl get-$1-volume $(pactl get-default-$1) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
 }
 
 get-microphone-level() {
