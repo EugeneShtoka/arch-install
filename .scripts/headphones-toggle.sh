@@ -3,6 +3,7 @@
 # Volume information (assumes PulseAudio)
 source $SCRIPTS_PATH/volume.sh
 source $SCRIPTS_PATH/battery.sh
+source $SCRIPTS_PATH/bluetooth.sh
 
 echo "`date` switch-headphones" >> $LOG_PATH
 blStatus=$(bluetooth_status)
