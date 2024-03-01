@@ -18,7 +18,7 @@ function get_audio_icon() {
     if [[ $(is_muted sink) == "no" ]]; then
       echo "\uf028 $(get-level sink)%"
     else
-      echo "<span color=\"magenta\">\f026 $(get-level sink)%</span>"
+      echo "<span color=\"magenta\">\f029 $(get-level sink)%</span>"
     fi
   fi
 }
