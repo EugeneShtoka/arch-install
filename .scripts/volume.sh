@@ -23,7 +23,7 @@ function get_microphone_icon() {
   if [[ $(is_muted source) == "no" ]]; then
     echo "f130$(get_level source)"; 
   else
-    echo "<span color=\"magenta\">f131$(get_level source)";
+    echo "<span color=\"magenta\">f131$(get_level source)</span>";
   fi
 }
 
