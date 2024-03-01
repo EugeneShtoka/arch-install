@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source $SCRIPTS_PATH/bluetooth.sh
+
 # Volume information (assumes PulseAudio)
 get-volume-level() {
     printf $(pactl get-sink-volume $(pactl get-default-sink) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
@@ -14,7 +16,7 @@ function is_microphone_muted() {
 }
 
 function get_audio_icon() {
-  if [[ $1 == "yes" ]]; then
+  if [[ $() == "yes" ]]; then
     echo "f025"
   else
     if [[ $(is_audio_muted) == "no" ]]; then echo "f028"; else echo "f026"; fi
