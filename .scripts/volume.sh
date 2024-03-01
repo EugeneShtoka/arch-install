@@ -24,10 +24,10 @@ function get_microphone_icon() {
     printf "\uf130 $(get-level source)%%"
   else
   #</span>
-    echo "<span color=\"magenta\">$(printf "\uf131") $(get-level source)\%</span>"
+    echo "<span color=\"magenta\">$(printf "\uf131") $(get-level source)%</span>"
   fi
 }
 
 function get_audio_status() {
-    printf "\u$(get_audio_icon) $(get-level sink)%% $(get_microphone_icon)"
+    printf "\u$(get_audio_icon) $(get-level sink)%% $(get_microphone_icon)%"
 }
