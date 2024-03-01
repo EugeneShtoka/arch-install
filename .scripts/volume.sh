@@ -24,7 +24,7 @@ function get_microphone_icon() {
     printf "\uf130 $(get_level source)%"
   else
   #<span color=\"magenta\"></span>
-    printf "\uf131"$(get_level source)%%
+    printf "\uf131"$(get-level source)%%
   fi
 }
 
