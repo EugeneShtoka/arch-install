@@ -31,6 +31,10 @@ function get_audio_icon() {
   fi
 }
 
+function get_microphone_icon() {
+  if [[ $(is_microphone_muted) == "no" ]]; then echo "f028"; else echo "f026"; fi
+}
+
 function get_audio_status() {
     printf "\u$(get_audio_icon) $(get-audio-level)%%"
 }
