@@ -28,8 +28,7 @@ if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=
 fi
 
 # Construct the message for notify-send
-message="$(date +%d.%m.%Y)\n$(get_audio_status)\n$(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)
-$hardware_info</span>"
+message="$(date +%d.%m.%Y)\n$(get_audio_status)\n$(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)\n$hardware_info</span>"
 
 # Send the notification
 notify-send "$(date +%H:%M)" "$message"
