@@ -17,6 +17,7 @@ set $TERMINAL kitty
 font pango:monospace 0
 for_window [class=".*"] title_format " "
 default_border pixel 1
+border_radius 5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
