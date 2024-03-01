@@ -18,7 +18,7 @@ if ([[ "$target" == "Volume" ]]); then
     action=unmuted
   fi
 elif ([[ "$target" == "Microphone" ]]); then
-  if ([[ "$(is_microphone_muted)" == "yes" ]]); then
+  if ([[ "$(is_muted source)" == "yes" ]]); then
     icon=microphone-mute
     action="muted"
   else
