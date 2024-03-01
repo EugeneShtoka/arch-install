@@ -6,7 +6,6 @@ sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-
 systemctl --user enable start-up-routine
 systemctl enable bluetooth.service
 $SCRIPTS_PATH/rofi-theme-install.sh
-$SCRIPTS_PATH/apps-config.sh
 
 systemctl --user enable start-up-routine.service
 
