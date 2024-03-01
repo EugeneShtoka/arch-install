@@ -1,0 +1,10 @@
+[global]
+    font = Source Code Pro 28
+    width = 200
+
+[urgency_normal]
+    background = "#900000"
+    foreground = "#ffffff"
+    timeout = 10
+    # Icon for notifications with normal urgency, uncomment to enable
+    #default_icon = /path/to/icon
