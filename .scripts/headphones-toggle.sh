@@ -10,9 +10,7 @@ blStatus=$(bluetooth_status)
 if ([[ "$(bluetooth_status)" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
     notify-send "Headphones not available" "$(get_audio_status)" -i headphones-disconnect  
 else
-    isConnected=$(echo $blStatus | grep Connected | awk '{print $2}')
-
-    if [[ "$isConnected" == "yes" ]]; then
+    if [[ "$(is_bluetooth_connected)" == "yes" ]]; then
         show-headphones-message "disconnected"
         echo $(bluetoothctl disconnect $HEADPHONES_MAC_ADDR)
     else
