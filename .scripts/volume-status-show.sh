@@ -22,7 +22,7 @@ elif ([[ "$target" == "Microphone" ]]); then
     icon=microphone-mute
     action="muted"
   else
-    icon=microphone
+    icon=$ICONS/microphone.png
     action=unmuted
   fi
 fi
