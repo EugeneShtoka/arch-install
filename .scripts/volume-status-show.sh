@@ -12,15 +12,19 @@ if ([[ "$target" == "Volume" ]]); then
     icon=volume-high
   elif ([[ $(is_audio_muted) == "yes" ]]); then
     icon=volume-high
+    action="muted"
   else
     icon=volume-mute
+    action="unmuted"
   fi
 elif ([[ "$target" == "Microphone" ]]); then
   if ([[ "$(is_microphone_muted)" == "yes" ]]); then
     icon=microphone-mute
+    action="muted"
   else
     icon=microphone
+    action="unmuted"
   fi
 fi
 
-notify-send "$1 $2" "$(get_audio_status)" --icon $icon
+notify-send "$target $action" "$(get_audio_status)" --icon $icon
