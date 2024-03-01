@@ -16,7 +16,7 @@ function is_microphone_muted() {
 }
 
 function get_audio_icon() {
-  if [[ $() == "yes" ]]; then
+  if [[ $(is_bluetooth_connected) == "yes" ]]; then
     echo "f025"
   else
     if [[ $(is_audio_muted) == "no" ]]; then echo "f028"; else echo "f026"; fi
