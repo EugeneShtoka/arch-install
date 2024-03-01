@@ -32,5 +32,5 @@ function get_microphone_icon() {
 }
 
 function get_audio_status() {
-    echo "$(get_audio_icon) $(get-level sink)%% $(get_microphone_icon)"
+    echo "$(get_audio_icon) $(get_microphone_icon)"
 }
