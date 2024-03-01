@@ -3,7 +3,7 @@
 source $SCRIPTS_PATH/bluetooth.sh
 
 # Volume information (assumes PulseAudio)
-get-volume-level() {
+get-audio-level() {
     printf $(pactl get-sink-volume $(pactl get-default-sink) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
 }
 
@@ -23,6 +23,14 @@ function get_audio_icon() {
   fi
 }
 
+function get_audio_icon() {
+  if [[ $(is_bluetooth_connected) == "yes" ]]; then
+    echo "f025"
+  else
+    if [[ $(is_audio_muted) == "no" ]]; then echo "f028"; else echo "f026"; fi
+  fi
+}
+
 function get_audio_status() {
-    printf "\u$(get_audio_icon) $(get-volume-level)%%"
+    printf "\u$(get_audio_icon) $(get-audio-level)%%"
 }
