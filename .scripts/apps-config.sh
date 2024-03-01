@@ -5,9 +5,9 @@ APPS_LOCAL_PATH=~/.local/share/applications
 HIDDEN=$APPS_PATH-hidden
 mkdir $HIDDEN
 
-sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/terminal.png" "$APPS_PATH/kitty.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATHS/terminal.png" "$APPS_PATH/kitty.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Terminal" "$APPS_PATH/kitty.desktop"
-sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATH/file-manager.png" "$APPS_PATH/thunar.desktop"
+sudo $SCRIPTS_PATH/replace-line.sh "Icon=" "Icon=$ICON_PATHS/file-manager.png" "$APPS_PATH/thunar.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=Mail" "$APPS_PATH/Mailspring.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Exec=" "Exec=$SCRIPTS_PATH/mailspring-start.sh" "$APPS_PATH/Mailspring.desktop"
 sudo $SCRIPTS_PATH/replace-line.sh "Name=" "Name=File Manager" "$APPS_PATH/thunar.desktop"
