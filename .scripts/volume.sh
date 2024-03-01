@@ -7,10 +7,6 @@ get-level() {
     printf $(pactl get-$1-volume $(pactl get-default-$1) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
 }
 
-get-microphone-level() {
-    printf $(pactl get-source-volume $(pactl get-default-source) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
-}
-
 function is_audio_muted() {
   echo $(pactl get-sink-mute $(pactl get-default-sink) | awk '{print $2}')
 }
@@ -32,5 +28,5 @@ function get_microphone_icon() {
 }
 
 function get_audio_status() {
-    printf "\u$(get_audio_icon) $(get-level source)%% \u$(get_microphone_icon) $(get-microphone-level)%%"
+    printf "\u$(get_audio_icon) $(get-level sink)%% \u$(get_microphone_icon) $(get-level source)%%"
 }
