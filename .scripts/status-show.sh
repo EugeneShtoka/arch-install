@@ -28,8 +28,8 @@ if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=
 fi
 
 # Construct the message for notify-send
-message="<span font='25px'>$(date +%d.%m.%Y)
-<span font='25px'>$(get_audio_status)
+message="<span font='20px'>$(date +%d.%m.%Y)
+$(get_audio_status)
 $(print_glyph 'f1eb') $(get_wifi_signal_strength)% <span font='20px'>$(iwgetid -r)
 $hardware_info</span>"
 
