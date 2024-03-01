@@ -2,7 +2,7 @@
 
 source ~/.env
 
-yes | sudo pacman -S kitty curl zsh inotify-tools thunar rofi bluez bluez-utils brightnessctl jre17-openjdk dbeaver postgresql docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip notification-daemon upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome
+yes | sudo pacman -S kitty curl zsh inotify-tools thunar rofi bluez bluez-utils brightnessctl jre17-openjdk dbeaver postgresql docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome
 yes | sudo pacman -R xterm
 yes | sudo pacman -Rns $(pacman -Qtdq)
 
