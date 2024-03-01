@@ -8,7 +8,7 @@ get-audio-level() {
 }
 
 get-microphone-level() {
-    printf $(pactl get-sink-volume $(pactl get-default-sink) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
+    printf $(pactl get-source-volume $(pactl get-source-sink) | grep -Pom 1 '[0-9]*%' | head -1 | tr -d %)
 }
 
 function is_audio_muted() {
