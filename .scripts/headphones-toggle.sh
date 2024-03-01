@@ -7,7 +7,7 @@ source $SCRIPTS_PATH/bluetooth.sh
 echo "`date` switch-headphones" >> $LOG_PATH
 blStatus=$(bluetooth_status)
 
-if ([[ "$blStatus" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
+if ([[ "$(bluetooth_status)" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
     notify-send "Headphones not available" "$(get_audio_status)" -i headphones-disconnect  
 else
     isConnected=$(echo $blStatus | grep Connected | awk '{print $2}')
