@@ -11,10 +11,6 @@ function is_muted() {
   echo $(pactl get-$1-mute $(pactl get-default-$1) | awk '{print $2}')
 }
 
-function is_microphone_muted() {
-  echo $(pactl get-source-mute $(pactl get-default-source) | awk '{print $2}')
-}
-
 function get_audio_icon() {
   if [[ $(is_bluetooth_connected) == "yes" ]]; then
     echo "f025"
