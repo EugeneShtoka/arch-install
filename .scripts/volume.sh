@@ -13,11 +13,7 @@ function get_audio_icon() {
   if [[ $1 == "yes" ]]; then
     echo "f025"
   else
-    if [[ $(is_volume_muted) == "no" ]]; then
-      echo "f028"
-    else
-      echo "f026"
-    fi
+    if [[ $(is_volume_muted) == "no" ]]; then echo "f028"; else echo "f026"; fi
   fi
 }
 
