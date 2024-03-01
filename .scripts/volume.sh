@@ -32,5 +32,5 @@ function get_microphone_icon() {
 }
 
 function get_audio_status() {
-    printf "\u$(get_audio_icon) $(get-audio-level)%% \u$(get_microphone_icon) $(get-microphone-level)%%"
+    printf "\u$(get_audio_icon) $(get-level sink)%% \u$(get_microphone_icon) $(get-microphone-level)%%"
 }
