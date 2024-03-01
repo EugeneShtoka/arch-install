@@ -20,7 +20,7 @@ function get_audio_icon() {
 }
 
 function get_microphone_icon() {
-  if [[ $(is_muted source) == "no" ]]; then echo "f028"; else echo "f026"; fi
+  if [[ $(is_muted source) == "no" ]]; then echo "f130"; else echo "f131"; fi
 }
 
 function get_audio_status() {
