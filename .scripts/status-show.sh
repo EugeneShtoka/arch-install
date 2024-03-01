@@ -30,8 +30,10 @@ fi
 # Construct the message for notify-send
 message="<span font='20px'>$(date +%d.%m.%Y)
 $(get_audio_status)
-$(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)
+$(print_glyph 'f1eb') $(get_wifi_signal_strength)% <span font='20px'>$(iwgetid -r)
 $hardware_info</span>"
+
+echo $message
 
 # Send the notification
 notify-send "$(date +%H:%M)" "$message"
