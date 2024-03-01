@@ -5,11 +5,9 @@ source $SCRIPTS_PATH/volume.sh
 source $SCRIPTS_PATH/battery.sh
 
 echo "`date` switch-headphones" >> $LOG_PATH
-volumeLevel="$(printf '\uf028\n') $(get-volume-level)%"
+blStatus=$(bluetooth_status)
 
-
-
-if ([[ "$(bluetooth_status)" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
+if ([[ "$blStatus" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
     notify-send "Headphones not available" "$(get_audio_status)" -i headphones-disconnect  
 else
     isConnected=$(echo $blStatus | grep Connected | awk '{print $2}')
