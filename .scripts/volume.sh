@@ -21,7 +21,7 @@ function get_audio_icon() {
 
 function get_microphone_icon() {
   if [[ $(is_muted source) == "no" ]]; then
-    echo "\uf130 $(get-level source)%%"
+    echo "\uf130 $(get-level source)%"
   else
   #</span>
     echo "<span color=\"magenta\">\uf131 $(get-level source)%</span>"
