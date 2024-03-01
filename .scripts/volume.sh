@@ -23,7 +23,7 @@ function get_microphone_icon() {
   if [[ $(is_muted source) == "no" ]]; then
     echo "f130$(get_level source)"; 
   else
-    printf "<span color=\"magenta\">\uf131$(get_level source)</span>";
+    printf "<span color=\"magenta\">\uf131$(get_level source)%</span>";
   fi
 }
 
