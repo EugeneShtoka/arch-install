@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-# Volume information (assumes PulseAudio)
 source $SCRIPTS_PATH/volume.sh
 source $SCRIPTS_PATH/battery.sh
 source $SCRIPTS_PATH/bluetooth.sh
