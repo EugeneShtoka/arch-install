@@ -1,0 +1,6 @@
+[user]
+	name = Eugene Shtoka
+	email = eshtoka@gmail.com
+
+[includeIf "gitdir/i:~/dev/work/"]
+    path = ~/dev/work/.gitconfig
