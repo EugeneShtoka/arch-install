@@ -21,3 +21,6 @@ alias ll='eza --icons -al'
 alias copy='xclip -selection c'
 alias paste='xclip -out -selection c'
 alias yayr='sudo pacman -R'
+
+alias mirophone-mute='pactl set-source-mute $(pactl get-default-source) 1'
+alias mirophone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
