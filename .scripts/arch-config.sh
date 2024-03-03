@@ -20,10 +20,10 @@ $SCRIPTS_PATH/bw-item.sh g.github
 
 rclone config
 
-$SCRIPTS_PATH/git-set-up.sh
 $SCRIPTS_PATH/ssh-generate-key.sh $PERSONAL_EMAIL personal
 gh auth login
-it@github.com:EugeneShtoka/arch-install.gitgit remote set-url origin g
+git remote set-url origin git@github.com:EugeneShtoka/arch-install.git
+
 git clone $OBSIDIAN_GIT_REPO $OBSIDIAN_PATH
 
 $SCRIPTS_PATH/ssh-generate-key.sh $WORK_EMAIL work
@@ -32,7 +32,6 @@ read -p "Enter ssh key name for GitLab: " keyName
 glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName 
 
 gsettings set org.gnome.desktop.interface gtk-theme Pop
-
 
 bw get item 'SWAPP GCloud credentials' | jq '.notes' | jq 'fromjson' >> swapp-v1-1564402864804.json
 sudo mkdir /usr/share/credentials
