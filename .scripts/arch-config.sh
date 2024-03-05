@@ -41,5 +41,7 @@ sudo mv swapp-v1-1564402864804-storage.json /usr/share/credentials/
 gcloud auth login
 gcloud config set project swapp-v1-1564402864804
 
-terraItem=$(bw get item 'aws.terraform' | jq)
+awsTerraCreds=$(bw get item 'aws.terraform' | jq)
+echo "AWS config"
+echo "secret access key:" $(echo $terraItem | grep -A 1 '"secret access key"' | awk '{print $2}' | tail -1 | tr -d \",)
 aws configure
