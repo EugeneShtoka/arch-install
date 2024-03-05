@@ -40,3 +40,6 @@ sudo mv swapp-v1-1564402864804-storage.json /usr/share/credentials/
 
 gcloud auth login
 gcloud config set project swapp-v1-1564402864804
+
+bw get item 'aws' | jq
+aws configure
