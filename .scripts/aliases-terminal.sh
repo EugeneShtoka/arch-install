@@ -25,4 +25,4 @@ alias yayr='sudo pacman -R'
 alias mirophone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias mirophone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
 
-alias cloud-proxy-start='pkill cloud-sql-proxy && nohup cloud-sql-proxy swapp-v1-1564402864804:us-central1:swapp-postgres-db -p 5433 -c /usr/share/credentials/swapp-v1-1564402864804.json &'
+alias cloud-proxy-start='pkill cloud-sql-proxy && setsid cloud-sql-proxy swapp-v1-1564402864804:us-central1:swapp-postgres-db -p 5433 -c /usr/share/credentials/swapp-v1-1564402864804.json &'
