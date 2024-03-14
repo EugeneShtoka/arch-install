@@ -12,6 +12,7 @@ alias gsm='git switch main'
 alias grf='git checkout main --'
 alias gsp='git switch -'
 alias gpl='git switch -'
+alias grh='git reset --hard HEAD^ && git pull'
 alias gsq=$SCRIPTS_PATH/git-squash.sh
 alias gpc=$SCRIPTS_PATH/git-push-commit.sh
 alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
