@@ -34,3 +34,8 @@ alias stdn='$(microphone-unmute) shutdown now'
 alias db-proxy='pkill cloud-sql-proxy && setsid cloud-sql-proxy swapp-v1-1564402864804:us-central1:swapp-postgres-db -p 5433 -c /usr/share/credentials/swapp-v1-1564402864804.json &>/dev/null'
 
 alias against-the-storm='setsid /mnt/Games/Against\ The\ Storm/start.sh &>/dev/null'
+alias europa='setsid /mnt/Games/Europa/start.sh &>/dev/null'
+alias victoria3='setsid /mnt/Games/Victoria/binaries/victoria3 &>/dev/null'
+alias against-the-storm='setsid /mnt/Games/Against\ The\ Storm/start.sh &>/dev/null'
+
+
