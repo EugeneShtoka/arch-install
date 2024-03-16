@@ -35,7 +35,7 @@ alias db-proxy='pkill cloud-sql-proxy && setsid cloud-sql-proxy swapp-v1-1564402
 
 alias against-the-storm='setsid /mnt/Games/Against\ The\ Storm/start.sh &>/dev/null'
 alias europa='setsid /mnt/Games/Europa/start.sh &>/dev/null'
-alias victoria3='setsid /mnt/Games/Victoria/binaries/victoria3 &>/dev/null'
+alias victoria='setsid /mnt/Games/Victoria/binaries/victoria3 &>/dev/null'
 alias rim-world='setsid /mnt/Games/RimWorld/start.sh &>/dev/null'
 
 
