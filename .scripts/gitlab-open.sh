@@ -11,7 +11,7 @@ if [[ $current_dir == $prefix* ]]; then
   # Extract the first folder after the prefix
   first_folder="${current_dir#$prefix/}"
   first_folder="${first_folder%%/*}"  
-  setsid vivaldi-snapshot "https://gitlab.com/builds/$first_folder" &>/dev/null
+  setsid vivaldi-snapshot "https://gitlab.com/buildos/$first_folder" &>/dev/null
   echo "Current directory starts with the prefix."
   echo "First folder after the prefix: $first_folder"
 else
