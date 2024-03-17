@@ -17,12 +17,11 @@ alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
 alias daily=$SCRIPTS_PATH/zoom-join-daily.sh
 alias play=$SCRIPTS_PATH/music-play.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
-alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
+alias zrc='source .env && source $SCRIPTS_PATH/zsh-reload-config.sh'
 
 alias gmn='setsid vivaldi-snapshot "https://gemini.google.com/app" &>/dev/null'
 alias ytb='setsid vivaldi-snapshot "https://www.youtube.com" &>/dev/null'
 alias ghb='setsid vivaldi-snapshot "https://github.com" &>/dev/null'
-alias glb='setsid vivaldi-snapshot "https://gitlab.com" &>/dev/null'
 alias gcp='setsid vivaldi-snapshot "https://console.cloud.google.com/welcome?pli=1&project=swapp-v1-1564402864804&authuser=1" &>/dev/null'
 alias pdr='setsid vivaldi-snapshot "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
 alias wdr='setsid vivaldi-snapshot "https://drive.google.com/drive/u/1/my-drive" &>/dev/null'
