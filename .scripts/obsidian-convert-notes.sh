@@ -30,7 +30,7 @@ process_md_file() {
     # Tags line exists, insert our new tags before it
     sed -i "/^tags:/s/$/\n  - $tags/" "$filepath" 
   else
-    if grep -q '^\-\-\-' "$filepath"; then
+    if grep -q '^---' "$filepath"; then
       sed -i "0,/^\-\-\-/s/$/\ntags:\n  - $tags/" "$filepath" 
     else
       # Tags line doesn't exist, add it to the beginning
@@ -38,8 +38,6 @@ process_md_file() {
     fi
   fi
   mv "$filepath" "$source_dir/"
-
-  echo filepath: $filepath, filename: $filename, tags: $tags
 }
 
 export -f process_md_file
