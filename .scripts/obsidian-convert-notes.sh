@@ -20,14 +20,14 @@ process_md_file() {
   local dirpath=$(dirname "$filepath")
   while [[ "$dirpath" != "$source_dir" ]]; do
     echo dirpath: $dirpath
-    tags="#$(basename "$dirpath") $tags" 
+    tags="$(basename "$dirpath") $tags" 
     dirpath=$(dirname "$dirpath") 
   done
 
   # Add the tags (prepend existing content as needed)
-  if grep -q '^#tags:' "$filepath"; then
+  if grep -q '^tags:' "$filepath"; then
     # Tags line exists, insert our new tags before it
-    sed -i "/^#tags:/i $tags" "$filepath" 
+    sed -i "/^tags:/i $tags" "$filepath" 
   else
     # Tags line doesn't exist, add it to the beginning
     echo -e "$tags\n$(cat "$filepath")" > "$filepath"
