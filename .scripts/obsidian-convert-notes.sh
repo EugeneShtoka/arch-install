@@ -29,6 +29,7 @@ process_md_file() {
     # Tags line exists, insert our new tags before it
     sed -i "/^tags:/i $tags" "$filepath" 
   else
+     if grep -q '^\-\-\-' "$filepath"; then
     # Tags line doesn't exist, add it to the beginning
     echo -e "$tags\n$(cat "$filepath")" > "$filepath"
   fi
@@ -40,4 +41,4 @@ process_md_file() {
 export -f process_md_file
 
 # Recursively find and process Markdown files
-find "$source_dir" -type f -name "*.md" -exec bash -c '$sourceDir &&process_md_file "$0"' {} \; 
+find "$source_dir" -type f -name "*.md" -exec bash -c 'process_md_file "$0"' {} \; 
