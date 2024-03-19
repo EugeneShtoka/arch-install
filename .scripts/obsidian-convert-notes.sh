@@ -18,7 +18,6 @@ process_md_file() {
   local tags=""
   local dirpath=$(dirname "$filepath")
   while [[ "$dirpath" != "$source_dir" ]]; do
-    echo dirpath: $dirpath
     tags="$(basename "$dirpath") $tags" 
     dirpath=$(dirname "$dirpath") 
   done
