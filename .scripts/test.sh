@@ -1,5 +1,3 @@
 #!/bin/zsh
 
-if grep -q '^tags:' "Obsidian/Resources/Professional/Architecture/Components/GeoDNS.md"; then
- echo 'ok' 
-fi
+sed -i "/^tags:/i test rest best" "Obsidian/Resources/Professional/Architecture/Components/GeoDNS.md"; then
