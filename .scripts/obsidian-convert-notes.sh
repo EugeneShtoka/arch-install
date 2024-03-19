@@ -37,7 +37,7 @@ process_md_file() {
       echo -e "---\ntags:\n  - $tags\n---\n$(cat "$filepath")" > "$filepath"
     fi
   fi
-  #mv "$filepath" "$source_dir/"
+  mv "$filepath" "$source_dir/"
 
   echo filepath: $filepath, filename: $filename, tags: $tags
 }
