@@ -12,7 +12,6 @@ echo $source_dir
 # Function to process a single Markdown file
 process_md_file() {
   local filepath="$1"
-  local source_dir="$2"
   local filename=$(basename "$filepath")
 
   echo $source_dir, filepath: $filepath, filename: $filename
@@ -39,4 +38,4 @@ process_md_file() {
 export -f process_md_file
 
 # Recursively find and process Markdown files
-find "$source_dir" -type f -name "*.md" -exec bash -c 'process_md_file "$0" "$source_dir"' {} \; 
+find "$source_dir" -type f -name "*.md" -exec bash -c 'process_md_file "$0"' {} \; 
