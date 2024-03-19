@@ -29,9 +29,11 @@ process_md_file() {
     # Tags line exists, insert our new tags before it
     sed -i "/^tags:/i $tags" "$filepath" 
   else
-     if grep -q '^\-\-\-' "$filepath"; then
-    # Tags line doesn't exist, add it to the beginning
-    echo -e "$tags\n$(cat "$filepath")" > "$filepath"
+    if grep -q '^\-\-\-' "$filepath"; then
+      sed -i "/^\-\-\-\n/^tags:/i $tags" "$filepath" 
+    else
+      # Tags line doesn't exist, add it to the beginning
+      echo -e "---\n$tags\n---\n$(cat "$filepath")" > "$filepath"
   fi
   mv "$filepath" "$source_dir/"
 
