@@ -32,7 +32,7 @@ process_md_file() {
     # Tags line doesn't exist, add it to the beginning
     echo -e "$tags\n$(cat "$filepath")" > "$filepath"
   fi
-  mv "$filepath" "$source_dir/"
+  # mv "$filepath" "$source_dir/"
 
   echo filepath: $filepath, filename: $filename, tags: $tags
 }
