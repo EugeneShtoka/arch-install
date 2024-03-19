@@ -34,7 +34,7 @@ process_md_file() {
   fi
   mv "$filepath" "$source_dir/"
 
-    echo filepath: $filepath, filename: $filename, tags: $tags
+  echo filepath: $filepath, filename: $filename, tags: $tags
 }
 
 export -f process_md_file
