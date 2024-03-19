@@ -24,14 +24,16 @@ process_md_file() {
     dirpath=$(dirname "$dirpath") 
   done
 
-#   # Add the tags (prepend existing content as needed)
-#   if grep -q '^#tags:' "$filepath"; then
-#     # Tags line exists, insert our new tags before it
-#     sed -i "/^#tags:/i $tags" "$filepath" 
-#   else
-#     # Tags line doesn't exist, add it to the beginning
-#     echo -e "$tags\n$(cat "$filepath")" > "$filepath"
-#   fi
+  # Add the tags (prepend existing content as needed)
+  if grep -q '^#tags:' "$filepath"; then
+    # Tags line exists, insert our new tags before it
+    sed -i "/^#tags:/i $tags" "$filepath" 
+  else
+    # Tags line doesn't exist, add it to the beginning
+    echo -e "$tags\n$(cat "$filepath")" > "$filepath"
+  fi
+  mv "$filepath" "$source_dir/"
+
     echo filepath: $filepath, filename: $filename, tags: $tags
 }
 
