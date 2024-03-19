@@ -27,10 +27,10 @@ process_md_file() {
   # Add the tags (prepend existing content as needed)
   if grep -q '^tags:' "$filepath"; then
     # Tags line exists, insert our new tags before it
-    sed -i "/^tags:/s/$/ $tags/" "$filepath" 
+    sed -i "0,/^\-\-\-/s/$/\ntags: test rest best/" "$filepath"  
   else
     if grep -q '^\-\-\-' "$filepath"; then
-      sed -i "/^\-\-\-\n/^tags:/i $tags" "$filepath" 
+      sed -i "/^\-\-\-/s/$/tags: $tags\n" "$filepath" 
     else
       # Tags line doesn't exist, add it to the beginning
       echo -e "---\ntags :$tags\n---\n$(cat "$filepath")" > "$filepath"
