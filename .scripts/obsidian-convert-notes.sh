@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-source_dir="$1"
+export source_dir="$1"
 echo $source_dir
 
 # Function to process a single Markdown file
