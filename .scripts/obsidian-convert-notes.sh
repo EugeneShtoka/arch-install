@@ -38,4 +38,4 @@ process_md_file() {
 export -f process_md_file
 
 # Recursively find and process Markdown files
-find "$source_dir" -type f -name "*.md" -exec bash -c 'process_md_file "$0"' {} \; 
+find "$source_dir" -type f -name "*.md" -exec bash -c 'echo $0 $sourceDir &&process_md_file "$0"' {} \; 
