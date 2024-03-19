@@ -34,6 +34,7 @@ process_md_file() {
     else
       # Tags line doesn't exist, add it to the beginning
       echo -e "---\n$tags\n---\n$(cat "$filepath")" > "$filepath"
+    fi
   fi
   mv "$filepath" "$source_dir/"
 
