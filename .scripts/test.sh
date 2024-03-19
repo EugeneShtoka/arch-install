@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-filepath="Obsidian/Resources//Vertical Scaling.md"
+filepath="Obsidian/Resources/Professional/Vertical Scaling.md"
 if grep -q '^\-\-\-' "$filepath"; then
   sed -i "0,/^\-\-\-/s/$/\ntags:\n -test\n - rest\n - best/" "$filepath" 
 else
