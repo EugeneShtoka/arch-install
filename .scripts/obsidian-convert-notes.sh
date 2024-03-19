@@ -7,7 +7,6 @@ if [ -z "$1" ]; then
 fi
 
 export source_dir="$1"
-echo $source_dir
 
 # Function to process a single Markdown file
 process_md_file() {
