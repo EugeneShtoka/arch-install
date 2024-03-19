@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 tags="test rest best"
-tags=${tags// /\\n   - }
+tags=${tags// /\\n  - }
 filepath="Obsidian/Resources/Vertical Scaling.md"
 if grep -q '^\-\-\-' "$filepath"; then
   sed -i "0,/^\-\-\-/s/$/\ntags:\n  -$tags/" "$filepath" 
