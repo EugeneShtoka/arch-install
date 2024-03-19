@@ -22,7 +22,7 @@ process_md_file() {
     dirpath=$(dirname "$dirpath") 
   done
 
-  tags=${tags// /\\n  - }
+  tags=${(L)tags// /\\n  - }
   # Add the tags (prepend existing content as needed)
   if grep -q '^tags:' "$filepath"; then
     # Tags line exists, insert our new tags before it
