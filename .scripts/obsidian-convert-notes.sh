@@ -33,7 +33,7 @@ process_md_file() {
       sed -i "/^\-\-\-\n/^tags:/i $tags" "$filepath" 
     else
       # Tags line doesn't exist, add it to the beginning
-      echo -e "---\n$tags\n---\n$(cat "$filepath")" > "$filepath"
+      echo -e "---\ntags :$tags\n---\n$(cat "$filepath")" > "$filepath"
     fi
   fi
   mv "$filepath" "$source_dir/"
