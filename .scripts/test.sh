@@ -2,7 +2,7 @@
 
 tags="test rest best"
 tags=${tags// /\\n   - }
-filepath="Obsidian/Resources/Professional/Vertical Scaling.md"
+filepath="Obsidian/Resources/Vertical Scaling.md"
 if grep -q '^\-\-\-' "$filepath"; then
   sed -i "0,/^\-\-\-/s/$/\ntags:\n  -$tags/" "$filepath" 
 else
