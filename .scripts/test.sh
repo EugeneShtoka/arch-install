@@ -7,5 +7,5 @@ if grep -q '^\-\-\-' "$filepath"; then
   sed -i "0,/^\-\-\-/s/$/\ntags:\n  -$tags/" "$filepath" 
 else
   # Tags line doesn't exist, add it to the beginning
-  echo -e "---\ntags: $tags\n---\n$(cat "$filepath")" > "$filepath"
+  echo -e "---\ntags:\n  $tags\n---\n$(cat "$filepath")" > "$filepath"
 fi
