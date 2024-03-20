@@ -14,7 +14,7 @@ if grep -q '^tags:' "$filepath"; then
 else
   if grep -q '^---' "$filepath"; then
     echo "case 2"
-    sed -i "0,/^\-\-\-/s/$/\ntags:$tags/" "$filepath" 
+    sed -i "0,/^---/s/$/\ntags:$tags/" "$filepath" 
   else
     echo "case 3"
     # Tags line doesn't exist, add it to the beginning
