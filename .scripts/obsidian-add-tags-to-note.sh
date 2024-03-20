@@ -3,6 +3,7 @@
 filepath="$1"
 tags="$2"
 
+echo filepath: $filepath, tags: $tags
 tags=${tags,,}
 tags=${tags// /\\n  - }
 # Add the tags (prepend existing content as needed)
