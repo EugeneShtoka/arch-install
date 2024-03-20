@@ -4,7 +4,7 @@ filepath="$1"
 tags="$2"
 
 echo filepath: $filepath, tags: $tags
-tags=${tags,,}
+tags=${(L)tags,,}
 tags=${tags// /\\n  - }
 # Add the tags (prepend existing content as needed)
 if grep -q '^tags:' "$filepath"; then
