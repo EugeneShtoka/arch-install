@@ -22,7 +22,9 @@ process_md_file() {
     dirpath=$(dirname "$dirpath") 
   done
 
-  $SCRIPTS_PATH/obsidian-add-tags-to-note.sh "$filepath" "$tags"
+  if [[ -z "$tags" ]]; then
+    $SCRIPTS_PATH/obsidian-add-tags-to-note.sh "$filepath" "$tags"
+  fi
   mv "$filepath" "$source_dir/"
 }
 
