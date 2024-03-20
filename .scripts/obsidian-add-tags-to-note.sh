@@ -5,6 +5,7 @@ tags="$2"
 
 first_line=$(head -n 1 $filepath)
 tags="\n  - ${(L)tags//|/\\n  - }"
+
 # Add the tags (prepend existing content as needed)
 if grep -q '^tags:' "$filepath"; then
   # Tags line exists, insert our new tags before it
