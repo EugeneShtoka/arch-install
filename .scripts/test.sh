@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-tags="$1"
-filepath="$2"
+filepath="$1"
+tags="$2"
 
 tags=${tags,,}
 tags=${tags// /\\n  - }
