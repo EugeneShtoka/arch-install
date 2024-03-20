@@ -11,7 +11,7 @@ echo filepath: $filepath, tags: $tags
 if grep -q '^tags:' "$filepath"; then
   # Tags line exists, insert our new tags before it
   echo "case 1"
-  sed -i "0,/^tags:/s/$/\n  - $tags/" "$filepath" 
+  sed -i "0,/^tags:/s/$/$tags/" "$filepath" 
 else
   if grep -q '^---' "$filepath"; then
     echo "case 2"
@@ -19,6 +19,6 @@ else
   else
     echo "case 3"
     # Tags line doesn't exist, add it to the beginning
-    echo -e "---\ntags:\n  - $tags\n---\n$(cat "$filepath")" > "$filepath"
+    echo -e "---\ntags:$tags\n---\n$(cat "$filepath")" > "$filepath"
   fi
 fi
