@@ -3,7 +3,8 @@
 filepath="$1"
 tags="$2"
 
-echo filepath: $filepath, tags: $tags
+first_line=$(head -n 1 $filepath)
+echo filepath: $filepath, tags: $tags, first_line: $first_line
 tags="\n  - ${(L)tags// /\\n  - }"
 echo filepath: $filepath, tags: $tags
 # Add the tags (prepend existing content as needed)
