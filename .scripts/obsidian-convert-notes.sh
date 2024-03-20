@@ -13,6 +13,7 @@ process_md_file() {
   local filepath="$1"
   local filename=$(basename "$filepath")
 
+  echo filepath: "$filepath"
   # Build a list of tags from the directory structure
   local tags=""
   local dirpath=$(dirname "$filepath")
