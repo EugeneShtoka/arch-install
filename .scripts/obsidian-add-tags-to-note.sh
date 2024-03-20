@@ -5,7 +5,7 @@ tags="$2"
 
 echo filepath: $filepath, tags: $tags
 tags=${(L)tags}
-tags=${tags// /\\n  - }
+tags="\n  - ${tags// /\\n  - }"
 echo filepath: $filepath, tags: $tags
 # Add the tags (prepend existing content as needed)
 if grep -q '^tags:' "$filepath"; then
@@ -15,7 +15,7 @@ if grep -q '^tags:' "$filepath"; then
 else
   if grep -q '^---' "$filepath"; then
     echo "case 2"
-    sed -i "0,/^\-\-\-/s/$/\ntags:\n  - $tags/" "$filepath" 
+    sed -i "0,/^\-\-\-/s/$/\ntags:$tags/" "$filepath" 
   else
     echo "case 3"
     # Tags line doesn't exist, add it to the beginning
