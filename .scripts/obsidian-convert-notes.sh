@@ -23,7 +23,7 @@ process_md_file() {
   done
 
   $SCRIPT_PATH/obsidian-add-tags-to-note.sh "$filepath" "$tags"
-  #mv "$filepath" "$source_dir/"
+  mv "$filepath" "$source_dir/"
 }
 
 export -f process_md_file
