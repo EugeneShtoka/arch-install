@@ -13,7 +13,7 @@ if grep -q '^tags:' "$filepath"; then
   echo "case 1"
   sed -i "0,/^tags:/s/$/$tags/" "$filepath" 
 else
-  if grep -q '^---' "$filepath"; then
+  if [[ $first_line == "---" ]]; then
     echo "case 2"
     sed -i "0,/^---/s/$/\ntags:$tags/" "$filepath" 
   else
