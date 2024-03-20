@@ -6,6 +6,7 @@ tags="$2"
 echo filepath: $filepath, tags: $tags
 tags=${(L)tags}
 tags=${tags// /\\n  - }
+echo filepath: $filepath, tags: $tags
 # Add the tags (prepend existing content as needed)
 if grep -q '^tags:' "$filepath"; then
   # Tags line exists, insert our new tags before it
