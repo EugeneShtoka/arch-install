@@ -3,4 +3,4 @@
 	email = eshtoka@gmail.com
 
 [includeIf "gitdir/i:~/dev/work/"]
-    path = ~/dev/work/.gitconfig
+    path = $WORK_REPOS_PATH/.gitconfig
