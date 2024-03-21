@@ -20,7 +20,7 @@ alias gcmr=$SCRIPTS_PATH/git-create-merge-request.sh
 
 alias home='cd $WORK_REPOS_PATH/ && code . && clear'
 alias backend='$SCRIPTS_PATH/code-open-repo.sh backend'
-alias roomassignment='cd $WORK_REPOS_PATH/ && code . && clear'
+alias roomassignment='cd $WORK_REPOS_PATH/roomassignment && code . && clear'
 
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
