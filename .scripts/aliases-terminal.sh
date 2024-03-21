@@ -19,7 +19,8 @@ alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
 alias gcmr=$SCRIPTS_PATH/git-create-merge-request.sh
 
 alias home='cd ~ && code . && clear'
-alias backend='$SCRIPTS_PATH/code-open-repo.sh backend'
+alias aps='cd $WORK_REPOS_PATH/swapp=aps && code . && clear'
+alias backend='cd $WORK_REPOS_PATH/swappbackend && code . && clear'
 alias roomassignment='cd $WORK_REPOS_PATH/roomassignment && code . && clear'
 
 alias ls='eza --icons -a'
