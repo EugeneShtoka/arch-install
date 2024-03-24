@@ -18,7 +18,7 @@ alias daily=$SCRIPTS_PATH/zoom-join-daily.sh
 alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
-alias zrc='source .env && source $SCRIPTS_PATH/zsh-reload-config.sh'
+alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
 
 alias gmn='setsid vivaldi-snapshot "https://gemini.google.com/app" &>/dev/null'
 alias ytb='setsid vivaldi-snapshot "https://www.youtube.com" &>/dev/null'
