@@ -2,12 +2,12 @@
 
 alias yayi='$SCRIPTS_PATH/auto-yay.sh'
 
+alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
 alias bw-unlock='source $SCRIPTS_PATH/bw-unlock.sh'
 alias bw-create='source $SCRIPTS_PATH/bw-create.sh'
 alias bw-item='source $SCRIPTS_PATH/bw-item.sh'
 alias bw-pass='source $SCRIPTS_PATH/bw-unlock.sh && $SCRIPTS_PATH/bw-pass.sh'
 alias postal-code='source $SCRIPTS_PATH/postal-code-get.sh'
-alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
 
 alias gsm='git switch main'
 alias grf='git checkout main --'
