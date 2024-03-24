@@ -11,6 +11,7 @@ alias postal-code='source $SCRIPTS_PATH/postal-code-get.sh'
 alias gsm='git switch main'
 alias grf='git checkout main --'
 alias gsp='git switch -'
+alias gsb='git switch -'
 alias gpl='git pull'
 alias ghr='git reset --hard HEAD^ && git pull'
 alias gsq=$SCRIPTS_PATH/git-squash.sh
