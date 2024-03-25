@@ -10,6 +10,10 @@ foreground = '#8ff586'
 text = '#122637'
 cursor = '#c4206f'
 
+[colors.selection]
+text = "CellBackground"
+background = "CellBackground"
+
 # Normal colors
 [colors.normal]
 black   = '#142630'
@@ -34,7 +38,7 @@ white   = '#8ff586'
 
 [font]
 normal.family = "Source Code Pro"
-size = 9.0
+size = 10.0
 
 [cursor]
 style = "Beam"
