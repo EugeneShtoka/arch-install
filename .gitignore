@@ -27,8 +27,6 @@
 !.config/i3/config
 !.config/dunst
 !.config/dunst/dunstrc
-!.config/kitty
-!.config/kitty/kitty.conf
 !.config/autokey
 !.config/autokey/**/*
 .config/autokey/autokey.json~
