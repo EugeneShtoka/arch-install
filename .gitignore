@@ -17,7 +17,7 @@
 !dev/work/.gitconfig
 !.config
 !.config/alacritty
-!.config/alacritty/**.* */
+!.config/alacritty/**.*
 !.config/gtk-3.0
 !.config/gtk-3.0/settings.ini
 !.config/dbus-1
