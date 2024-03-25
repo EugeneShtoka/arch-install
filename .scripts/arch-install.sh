@@ -2,14 +2,11 @@
 
 source ~/.env
 
-yes | sudo pacman -S kitty curl zsh inotify-tools thunar rofi bluez bluez-utils brightnessctl docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome terraform aws-cli kubectl
+yes | sudo pacman -S alacritty curl zsh inotify-tools thunar rofi bluez bluez-utils brightnessctl docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome terraform aws-cli kubectl
 yes | sudo pacman -R xterm
 yes | sudo pacman -Rns $(pacman -Qtdq)
 
 localectl set-locale LC_TIME=en_GB.UTF-8
-
-#Select Cobalt-Neon theme
-kitty +kitten themes
 
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 rm .zshrc
