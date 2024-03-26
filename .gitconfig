@@ -3,4 +3,9 @@
 	email = eshtoka@gmail.com
 
 [includeIf "gitdir/i:~/dev/work/"]
-    path = $WORK_REPOS_PATH/.gitconfig
+    path = ~/dev/work/.gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
