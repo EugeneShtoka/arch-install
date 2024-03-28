@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+rclone sync $GDRIVE_NAME:$LIBRARY_GDRIVE_PATH $LIBRARY_PATH
