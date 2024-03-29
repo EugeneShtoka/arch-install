@@ -18,6 +18,7 @@ for_window [class=".*"] title_format " "
 default_border pixel 1
 #border_radius 5
 
+# do not move focus on mouse move
 focus_follows_mouse no
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
