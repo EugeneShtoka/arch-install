@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:monospace 0
 # for_window [class=".*"] title_format " "
 default_border pixel 2
-#border_radius 5
+border_radius 5
 
 # do not move focus on mouse movement
 focus_follows_mouse no
