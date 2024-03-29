@@ -22,9 +22,9 @@ mouse_warping none
 
 # do not move focus on mouse movement
 focus_follows_mouse no
-client.focused_inactive $transp
-client.unfocused        $transp
-client.urgent           $transp
+client.focused_inactive $transp $transp $transp $transp $transp
+client.unfocused        $transp $transp $transp $transp $transp
+client.urgent           $transp $transp $transp $transp $transp
 client.background       $transp
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
