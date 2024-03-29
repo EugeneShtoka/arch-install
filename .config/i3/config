@@ -21,6 +21,10 @@ default_border pixel 2
 
 # do not move focus on mouse movement
 focus_follows_mouse no
+client.focused_inactive $color13 $color8  $color1  $color1    $transp
+client.unfocused        $color8  $color8  $color7  $color1    $transp
+client.urgent           $color5  $color1  $color0  $color1    $transp
+client.background       $transp
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
