@@ -16,7 +16,7 @@ set $transp       #00000000
 # is used in the bar {} block below.
 font pango:monospace 0
 for_window [class=".*"] title_format " "
-for_window [class="vivaldi"] border pixel 5
+for_window [class="vivaldi-snapshot"] border pixel 5
 default_border pixel 1
 # border_radius 5
 
