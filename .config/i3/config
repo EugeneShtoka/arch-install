@@ -18,7 +18,6 @@ font pango:monospace 0
 for_window [class=".*"] title_format " "
 for_window [class=".*"] border pixel 1
 for_window [class="Vivaldi-snapshot"] border pixel 3
-mouse_warping none
 
 # do not move focus on mouse movement
 focus_follows_mouse no
