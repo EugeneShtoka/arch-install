@@ -15,7 +15,7 @@ set $transp       #00000000
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 0
-default_border pixel 1
+border pixel 1
 for_window [class=".*"] title_format " "
 for_window [class="Vivaldi-snapshot"] border pixel 1
 # border_radius 5
