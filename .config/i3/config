@@ -20,6 +20,7 @@ default_border pixel 2
 
 # do not move focus on mouse movement
 focus_follows_mouse no
+set $transp       #00000000
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
