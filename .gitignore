@@ -29,7 +29,7 @@ dev/work/.env
 !.config/dunst
 !.config/dunst/dunstrc
 !.config/copyq
-!.config/copyq/*.ini
+!.config/copyq/commands.ini
 !.config/copyq/*.conf
 !.config/copyq/themes
 !.config/copyq/themes/*.ini
