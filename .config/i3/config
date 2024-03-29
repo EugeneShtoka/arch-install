@@ -23,7 +23,7 @@ focus_wrapping no
 
 # do not move focus on mouse movement
 focus_follows_mouse no
-client.focused          $green  $green  $green  $green  $green 
+client.focused          $green  $green  $green  $green  $green
 client.focused_inactive $transp $transp $transp $transp $transp
 client.unfocused        $transp $transp $transp $transp $transp
 client.urgent           $transp $transp $transp $transp $transp
