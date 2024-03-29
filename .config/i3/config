@@ -17,7 +17,7 @@ set $transp       #00000000
 font pango:monospace 0
 default_border pixel 1
 for_window [class=".*"] title_format " "
-for_window [class="Vivaldi-snapshot"] border pixel 5
+for_window [class="Vivaldi-snapshot"] border pixel 3
 # border_radius 5
 
 # do not move focus on mouse movement
