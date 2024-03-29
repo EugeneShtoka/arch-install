@@ -39,6 +39,8 @@ exec --no-startup-id autokey-gtk
 # start clipboard manager
 exec --no-startup-id copyq
 
+exec --no-startup-id keynav
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) +10% && $SCRIPTS_PATH/volume-status-show.sh Volume increased && $refresh_i3status
