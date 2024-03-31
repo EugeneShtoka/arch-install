@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-source $SCRIPTS_PATH/bw-pass.sh
-bw_pass $1 | xclip -selection clipboard
+source $SCRIPTS_PATH/bw-unlock.sh
+bw get item $1 | jq '.login.password' |  tr -d \" | xclip -selection clipboard
