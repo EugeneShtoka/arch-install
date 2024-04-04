@@ -2,7 +2,7 @@
 
 source ~/.env
 
-yes | sudo pacman -S alacritty curl zsh
+yes | sudo pacman -Syi alacritty curl zsh
 yes | sudo pacman -R xterm
 yes | sudo pacman -Rns $(pacman -Qtdq)
 
