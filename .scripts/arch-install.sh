@@ -4,7 +4,6 @@ source ~/.env
 
 yes | sudo pacman -Syi alacritty curl zsh
 yes | sudo pacman -R xterm
-yes | sudo pacman -Rns $(pacman -Qtdq)
 
 localectl set-locale LC_TIME=en_GB.UTF-8
 
