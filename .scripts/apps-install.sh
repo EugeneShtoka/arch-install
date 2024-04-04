@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+yes | sudo pacman -S inotify-tools thunar rofi bluez bluez-utils brightnessctl docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome terraform aws-cli kubectl expac maim
+
 $SCRIPTS_PATH/yay-install.sh
 
 $SCRIPTS_PATH/auto-yay.sh slack-desktop
