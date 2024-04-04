@@ -27,3 +27,5 @@ $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 
 $SCRIPTS_PATH/eza-install.sh
+
+yes | sudo pacman -Rns $(pacman -Qtdq)
