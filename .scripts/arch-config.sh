@@ -48,7 +48,3 @@ echo "AWS config"
 echo "AWS Access Key ID:" $(echo $awsTerraCreds | grep -A 1 '"secret access key"' | awk '{print $2}' | tail -1 | tr -d \",)
 echo "AWS Secret Access Key:" $(echo $awsTerraCreds | grep -A 1 '"access key"' | awk '{print $2}' | tail -1 | tr -d \",)
 aws configure
-
-str=$(bw get item rclone | jq '.notes')
-formatted_string="${str//\\n/\n}"
-formatted_string="${formatted_string//\\\"/\"}"
