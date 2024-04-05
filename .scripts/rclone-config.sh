@@ -9,7 +9,7 @@ str=$(bw get item rclone | jq '.notes')
 conf="${str:1:-1}"
 echo $conf
 
-conf="${str//\\n/\n}"
+conf="${conf//\\n/\n}"
 conf="${conf//\\\"/\"}"
 
 echo $conf > $confPath/rclone.conf
