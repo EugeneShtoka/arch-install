@@ -1,7 +1,7 @@
 source $SCRIPTS_PATH/bw-unlock.sh
 
 confPath=$HOME/.config/rclone
-mldir -p $confPath
+mkdir -p $confPath
 
 conf=$(bw get item rclone | jq '.notes')
 conf="${conf//\\n/\n}"
