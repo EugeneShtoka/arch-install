@@ -13,7 +13,7 @@ current_date=$(date +%Y-%m-%d_%H-%M-%S)
 
 # Construct the output filename and path
 output_filename="screenshot_${current_date}.png"
-output_path="$HOME/Downloads/$output_filename"
+output_path="$HOME/Screenshots/$output_filename"
 
 # Take the screenshot using maim
 if [[ $mode == "window" ]]; then
