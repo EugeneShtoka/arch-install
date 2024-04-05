@@ -1,21 +1,11 @@
 #!/bin/zsh
 
-# Set default mode to full screen
-mode="fullscreen"
-
-# Check for "window" argument
-if [[ $1 == "window" ]]; then
-  mode="window"
-fi
-
-# Get the current date and time in a suitable format
-current_date=$(date +%Y-%m-%d_%H-%M-%S)
-
 # Construct the output filename and path
+current_date=$(date +%Y-%m-%d_%H-%M-%S)
 output_path="$HOME/Screenshots/${current_date}.png"
 
 # Take the screenshot using maim
-if [[ $mode == "window" ]]; then
+if [[ $1 == "window" ]]; then
   maim -u -i $(xdotool getactivewindow) "$output_path"
 else
   maim -u  "$output_path" 
