@@ -8,5 +8,6 @@ echo $conf
 conf="${conf//\\n/\n}"
 echo $conf
 conf="${conf//\\\"/\"}"
+echo $conf
 
 echo $conf > $confPath/rclone.conf
