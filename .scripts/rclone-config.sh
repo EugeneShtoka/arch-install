@@ -7,7 +7,7 @@ mkdir -p $confPath
 
 str=$(bw get item rclone | jq '.notes')
 conf="${str:1:-1}"
-echo $str
+echo $conf
 conf="${str//\\n/\n}"
 echo $conf
 conf="${conf//\\\"/\"}"
