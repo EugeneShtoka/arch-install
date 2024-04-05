@@ -4,7 +4,9 @@ confPath=$HOME/.config/rclone
 mkdir -p $confPath
 
 conf=$(bw get item rclone | jq '.notes')
+echo $conf
 conf="${conf//\\n/\n}"
+echo $conf
 conf="${conf//\\\"/\"}"
 
 echo $conf > $confPath/rclone.conf
