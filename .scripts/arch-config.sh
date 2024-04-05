@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 cd ~
+mkdir Screenshots
 
 sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 systemctl --user enable start-up-routine
