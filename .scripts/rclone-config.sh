@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 source $SCRIPTS_PATH/bw-unlock.sh
 
 confPath=$HOME/.config/rclone
