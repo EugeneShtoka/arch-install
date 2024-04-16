@@ -3,9 +3,7 @@
 num_monitors=$(xrandr --listactivemonitors | grep -c 'Monitors:') 
 
 if [[ $num_monitors -eq 1 ]]; then
-    #$SCRIPTS_PATH/monitor-multi-setup.sh
-    echo switch to multi monitor
+    $SCRIPTS_PATH/monitor-multi-setup.sh
 else 
-    #$SCRIPTS_PATH/monitor-single-setup.sh
-    echo switch to single monitor
+    $SCRIPTS_PATH/monitor-single-setup.sh
 fi
