@@ -6,5 +6,5 @@ if [[ $num_monitors -eq 1 ]]; then
     #$SCRIPTS_PATH/monitor-multi-setup.sh
     echo switch to multi monitor
 else 
-    $multi_monitor_script
+    echo switch to single monitor
 fi
