@@ -15,6 +15,7 @@ alias keyboard-trainer='setsid tipp10 &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
+alias upgrade=$SCRIPTS_PATH/apps-install.sh
 alias daily=$SCRIPTS_PATH/zoom-join-daily.sh
 alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
