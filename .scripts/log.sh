@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-echo 'monitor event catched' >> /home/eugene/monitors.log
+echo `date` monitor event catched $1 >> /home/eugene/monitors.log
