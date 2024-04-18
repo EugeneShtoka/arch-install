@@ -1,11 +1,11 @@
 #!/bin/zsh
 
 source /home/eugene/.env
+source /home/eugene/monitor.env
 
-if [[ $MONITOR_SETUP != "SINGLE"]]; then
-    MONITOR_SETUP="SINGLE"
+if [ "$MONITOR_SETUP" != SINGLE ]; then
+    echo MONITOR_SETUP=SINGLE > monitor.env
 
-    echo turning off monitors >> /home/eugene/monitors.log
     xrandr --output $MONITOR_WORK_2 --off
     xrandr --output $MONITOR_WORK_3 --off
 fi

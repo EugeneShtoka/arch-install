@@ -6,9 +6,6 @@ source /home/eugene/monitor.env
 if [ "$MONITOR_SETUP" != MULTI ]; then
     echo MONITOR_SETUP=MULTI > monitor.env
 
-    echo "single monitor setup detected"
-    export MONITOR_SETUP="MULTI"
-
     echo connecting monitor $MONITOR_WORK_2 >> /home/eugene/monitors.log
     xrandr --output $MONITOR_WORK_2 --auto --right-of $MONITOR_LAPTOP
     sleep 2
