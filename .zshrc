@@ -89,6 +89,6 @@ PROMPT='%B%~%b$(git_super_status) '
 $SCRIPTS_PATH/ssh-init.sh>/dev/null 2>&1
 #$SCRIPTS_PATH/status-show.sh
 
-rm $HOME/monitor.env >> /dev/null 2>&1
+rm $HOME/monitor.env > /dev/null 2>&1
 
 
