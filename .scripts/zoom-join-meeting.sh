@@ -16,6 +16,7 @@ echo "$meetings" | jq -c '.[]' | while read item; do
 done
 
 meetingCount=$(echo "$meetings" | jq '. | length')
+echo "Meeting count: $meetingCount"
 
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
