@@ -16,7 +16,7 @@ function converertDate() {
 }
 
 function connectToMeeting() {
-	meeting=$1
+	meeting="$1"
 	echo "$meeting"
 	conf=${$(echo $meeting | jq '.url')##*/}
 	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
