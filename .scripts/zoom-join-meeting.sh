@@ -23,7 +23,6 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	name=$(converertDate "$meeting")
 	conf=${$(echo $meeting | jq '.url')##*/}
 	command=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
-	echo $name $command
 	cmds["$name"]="$command"
 done
 echo "$cmds"
