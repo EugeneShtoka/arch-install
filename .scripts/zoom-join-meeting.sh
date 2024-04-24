@@ -5,3 +5,4 @@ echo $topLimit
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')
 meetingArr=($(echo $meetings | jq '.[0]' | tr -d '\"'))
 const meetingCount=${#meetingArr[@]}
+echo $meetingCount
