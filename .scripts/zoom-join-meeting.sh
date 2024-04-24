@@ -9,8 +9,8 @@ meetingCount=${#meetingArr[@]}
 if [[ $meetingCount -eq 0 ]]; then
 	dunstify "Auto Join meetings" "no meetings found"
 elif [[ $meetingCount -eq 1 ]]; then
-	echo ${$(echo $meetings | jq '.[3]')##*/}
-	#setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=75993015411&pwd=$pass" &>/dev/null
+	conf=${$(echo $meetings | jq '.[3]')##*/}
+	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" &>/dev/null
 else
 	dunstify "Auto Join meetings" "more than one meeting found"
 fi
