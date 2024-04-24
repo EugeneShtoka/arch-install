@@ -82,6 +82,8 @@ bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/status-show.sh
 # A more modern dmenu replacement is rofi:
 bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
 
+bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
+
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
 bindsym Shift+Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh
