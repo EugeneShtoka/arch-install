@@ -20,14 +20,6 @@ if [[ $meetingCount -eq 0 ]]; then
 	meetingName=$(echo $nextMeeting | jq '.[] | .summary' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.[] | start' | tr -d '\"')
 	formatted_date=$(converertDate $date_string) 
-	date_only=$(date -d $date_string +'%d-%m-%Y')
-	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
-		formatted_date="Today at $(date -d $date_string +'%H:%M')"
-	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		formatted_date="Tomorrow at $(date -d $date_string +'%H:%M')"
-	else
-		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
-	fi
 	dunstify "Auto Join meetings" "No meetings scheduled soon.<br>Next meeting:<br>  $meetingName - $formatted_date";
 elif [[ $meetingCount -eq 1 ]]; then
 	conf=${$(echo $meetings | jq '.[] | .url')##*/}
