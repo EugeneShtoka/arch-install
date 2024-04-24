@@ -10,7 +10,7 @@ function converertDate() {
 	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
 		formatted_date="Tomorrow at $(date -d $date_string +'%H:%M')"
 	else
-		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
+		formatted_date=$(date -d $date_string +'%A, %d %B %Y at %H:%M')
 	fi
 	echo $meetingName - $formatted_date
 }
