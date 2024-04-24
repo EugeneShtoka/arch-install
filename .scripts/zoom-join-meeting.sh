@@ -9,7 +9,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
 	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"')
-	date=$(echo $nextMeeting | jq '.[1]')
+	date=${$(echo $nextMeeting | jq '.[1]' | tr -d '\"')##*T}
 	echo $meetingName $date
 	dunstify "Auto Join meetings" "no meetings found"
 elif [[ $meetingCount -eq 1 ]]; then
