@@ -38,7 +38,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	fi
 	dunstify "Auto Join meetings" "No meetings scheduled soon.<br>Next meeting:<br>  $meetingName - $formatted_date";
 elif [[ $meetingCount -eq 1 ]]; then
-	conf=${$(echo $meetings | jq '.[3]')##*/}
+	conf=${$(echo $meetings | jq '.[] | .url')##*/}
 	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
 else
