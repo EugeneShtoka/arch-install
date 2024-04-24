@@ -1,5 +1,17 @@
 #!/bin/zsh
 
+json_data='[
+  {"name": "Alice", "age": 30},
+  {"name": "Bob", "age": 25}
+]'
+
+# Iterate over items using a while loop
+echo "$json_data" | jq -c '.[]' | while read item; do
+    name=$(echo "$item" | jq -r '.name')
+    age=$(echo "$item" | jq -r '.age')
+    echo "Name: $name, Age: $age"
+done
+
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq -c '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')
 meetingArr=$(echo $meetings | jq '.[0]' | tr -d '\"' | tr -d  ' ')
