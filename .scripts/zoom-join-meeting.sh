@@ -2,8 +2,9 @@
 
 topLimit=$(date -d '+15 hours' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')
-echo $meetings
 meetingArr=$(echo $meetings | jq '.[0]' | tr -d '\"')
+echo $meetingArr
+
 meetingCount=${#meetingArr[@]}
 
 if [[ $meetingCount -eq 0 ]]; then
