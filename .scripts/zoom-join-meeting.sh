@@ -7,7 +7,7 @@ meetingArr=($(echo $meetings | jq '.[0]' | tr -d '\"'))
 meetingCount=${#meetingArr[@]}
 
 if [[ $meetingCount -eq 0 ]]; then
-	dunstify "$target $action" "<span font='20px'>$(get_audio_status)</span>"
+	dunstify "Auto Join meetings" "no meetings found"
 else if [[ $meetingCount -eq 1 ]]; then
 
 else
