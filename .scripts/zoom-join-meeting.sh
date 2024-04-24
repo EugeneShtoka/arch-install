@@ -3,8 +3,8 @@
 json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}]'
 
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
-meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default )
-echo $(echo $meetings)
+meetings=$(~/dv/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq -c '.[])
+echo $meetings
 echo $json_data
 # Iterate over items using a while loop
 echo "$json_data" | jq -c '.[]' | while read item; do
