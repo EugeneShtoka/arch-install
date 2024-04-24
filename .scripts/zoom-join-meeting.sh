@@ -17,8 +17,6 @@ if [[ $meetingCount -eq 0 ]]; then
 	else
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
 	fi
-
-	echo $meetingName - $formatted_date
 	dunstify "Auto Join meetings" "No meetings scheduled soon<br>Next meeting:<br>  $meetingName - $formatted_date";
 elif [[ $meetingCount -eq 1 ]]; then
 	conf=${$(echo $meetings | jq '.[3]')##*/}
