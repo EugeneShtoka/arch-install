@@ -5,7 +5,7 @@ meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxS
 meetingArr=$(echo $meetings | jq '.[0]' | tr -d '\"' | tr -d  ' ')
 meetingCount=$(echo "$meetingArr" | wc -l)
 echo "$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq )" | jq -c '.[]' | while read item; do
-   echo "Item: $($item | jq '.summary')"
+   echo "Item: $item"
     echo "Name: $name, Age: $age"
 done
 
