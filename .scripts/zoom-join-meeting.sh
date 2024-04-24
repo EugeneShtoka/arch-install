@@ -39,7 +39,6 @@ elif [[ $meetingCount -eq 1 ]]; then
 else
 	availableMeetings=()
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
-		echo $meeting
 		name=$(converertDate "$meeting")
 		availableMeetings+=("$name")
 	done
