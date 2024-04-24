@@ -11,9 +11,9 @@ if [[ $meetingCount -eq 0 ]]; then
 	date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
-		formatted_date="Today $(date -d $date_string +'%H:%M')"
+		formatted_date="Today at $(date -d $date_string +'%H:%M')"
 	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		formatted_date="Tomorrow $(date -d $date_string +'%H:%M')"
+		formatted_date="Tomorrow at $(date -d $date_string +'%H:%M')"
 	else
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
 	fi
