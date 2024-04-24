@@ -29,7 +29,6 @@ meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[0]')	
-	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.start.dateTime' | tr -d '\"')
 	formatted_date=$(converertDate $date_string) 
