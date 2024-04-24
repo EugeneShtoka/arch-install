@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-json_data='[
-  {"name": "Alice", "age": 30},
-  {"name": "Bob", "age": 25}
+json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}
 ]'
 
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
