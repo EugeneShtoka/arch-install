@@ -23,7 +23,7 @@ meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxS
 meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
-	meeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq "$eventMap" | jq -c '.[0]')	
+	meeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq "$eventMap" | jq '.[0]')	
 	dunstify "Auto Join meetings" "No meetings scheduled soon.<br>Next meeting:<br>  $(converertDate $meeting)";
 elif [[ $meetingCount -eq 1 ]]; then
 	meeting=$(echo $meetings | jq '.[0]')
