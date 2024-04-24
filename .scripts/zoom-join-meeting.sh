@@ -40,9 +40,11 @@ else
 		name=$(converertDate "$meeting")
 		availableMeetings+=("$name")
 	done
-	command=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
-	zsh -ic $command
-	choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
+	dir="$HOME/.config/rofi/launchers/type-4"
+	theme='style-10'
+	choice=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
+	echo "$choice"
+	#choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
 		name=$(converertDate "$meeting")
 		if [[ "$name" == "$choice" ]]; then
