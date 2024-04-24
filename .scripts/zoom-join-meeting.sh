@@ -13,7 +13,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	today=`date +'%d-%m-%Y'`
 	if [[ $date_string = `date +'%d-%m-%Y'`]]; then
 		formatted_date=Today
-	elif [[ $date_string -eq `date -d '+1 day' +'%d-%m-%Y'`]]; then
+	elif [[ $date_string = `date -d '+1 day' +'%d-%m-%Y'`]]; then
 		formatted_date=Tomorrow
 	else
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
