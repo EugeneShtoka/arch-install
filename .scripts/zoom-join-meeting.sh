@@ -4,13 +4,12 @@ topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')
 meetingArr=$(echo $meetings | jq '.[0]' | tr -d '\"' | tr -d  ' ')
 meetingCount=$(echo "$meetingArr" | wc -l)
-if [[ -z "$meetingArr" ]]; then
-    meetingCount=0
-fi
-
-for meeting in "${meetings[@]}"; do
-	echo $meeting ___
+echo "$meetings" | jq -c '.[]' | while read item; do
+    name=$(echo "$item" | jq '.[0]')
+    age=$(echo "$item" | jq -r '.age')
+    echo "Name: $name, Age: $age"
 done
+
 
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
