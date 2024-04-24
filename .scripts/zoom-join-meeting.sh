@@ -23,7 +23,7 @@ function connectToMeeting() {
 }
 
 eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri })'
-topLimit=$(date -d '+10 minutes' +'%Y-%m-%dT%H:%M:%S%z')
+topLimit=$(date -d '+10 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
 
 meetingCount=$(echo "$meetings" | jq '. | length')
