@@ -31,7 +31,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq 'map( {summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri})')	
 	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.[0] | .summary' | tr -d '\"' | tr -d  ' ')
-	date_string=$(echo $nextMeeting | jq '.[] | start' | tr -d '\"')
+	date_string=$(echo $nextMeeting | jq '.[] | .start' | tr -d '\"')
 	formatted_date=$(converertDate $date_string) 
 	dunstify "Auto Join meetings" "No meetings scheduled soon.<br>Next meeting:<br>  $meetingName - $formatted_date";
 elif [[ $meetingCount -eq 1 ]]; then
