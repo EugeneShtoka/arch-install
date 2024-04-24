@@ -43,7 +43,6 @@ else
 		availableMeetings+=("$name")
 	done
 	choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
-	echo $choice
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
 		name=$(converertDate "$meeting")
 		if [[ "$name" == "$choice" ]]; then
