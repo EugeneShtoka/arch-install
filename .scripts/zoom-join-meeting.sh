@@ -17,12 +17,6 @@ done
 
 meetingArr=$(echo $meetings | jq '.[] | .summary' | tr -d '\"' | tr -d  ' ')
 meetingCount=$(echo "$meetingArr" | wc -l)
-echo "$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq )" | jq -c '.[]' | while read item; do
-   echo "$item" | jq '.fromjson'
-   summary=$(echo "$item" | jq '.summary')
-    echo "Name: $summary, Age: $age"
-done
-
 
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
