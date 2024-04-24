@@ -2,7 +2,7 @@
 
 json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}]'
 
-topLimit=$(date -d '+1 days' +'%Y-%m-%dT%H:%M:%S%z')
+topLimit=$(date -d '+1 hours' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq 'map( {summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri})')
 
 # Iterate over items using a while loop
