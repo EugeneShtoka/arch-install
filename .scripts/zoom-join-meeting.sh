@@ -28,7 +28,7 @@ done
 meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
-	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[0] | map( {summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri})')	
+	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[0]'  | jq 'map( {summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri})')	
 	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.[0] | .summary' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.[0] | .start' | tr -d '\"')
