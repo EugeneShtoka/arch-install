@@ -18,7 +18,7 @@ if [[ $meetingCount -eq 0 ]]; then
 		formatted_date=Tomorrow
 	else
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
-	if
+	fi
 
 	echo $meetingName - $formatted_date
 	dunstify "Auto Join meetings" "no meetings found";
