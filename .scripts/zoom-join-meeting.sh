@@ -6,7 +6,8 @@ meetingArr=($(echo $meetings | jq '.[0]' | tr -d '\"'))
 meetingCount=${#meetingArr[@]}
 
 if [[ $meetingCount -eq 0 ]]; then
-	meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')	
+	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
+	echo $nextMeeting
 	dunstify "Auto Join meetings" "no meetings found"
 elif [[ $meetingCount -eq 1 ]]; then
 	conf=${$(echo $meetings | jq '.[3]')##*/}
