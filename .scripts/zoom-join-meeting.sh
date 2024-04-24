@@ -5,7 +5,7 @@ meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxS
 meetingArr=$(echo $meetings | jq '.[0]' | tr -d '\"' | tr -d  ' ')
 echo $meetingArr
 
-meetingCount=${#meetingArr[@]}
+meetingCount=$(echo "$meetingArr" | wc -l)
 echo $meetingCount
 
 if [[ $meetingCount -eq 0 ]]; then
