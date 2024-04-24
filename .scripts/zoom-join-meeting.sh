@@ -4,7 +4,7 @@ function converertDate() {
 	meeting=$1
 	meetingName=$(echo $meeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
-	echo hrhrhr $date_string frfrfr
+	echo hrhrhr $meeting frfrfr
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
 		formatted_date="Today at $(date -d $date_string +'%H:%M')"
@@ -20,7 +20,6 @@ json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}]'
 
 topLimit=$(date -d '+1 hours' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default)
-#echo "$meetings"
 # Iterate over items using a while loop
 echo "$meetings" | jq -c '.[]' | while read item; do
 	echo $(converertDate $item)
