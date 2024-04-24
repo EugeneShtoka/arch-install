@@ -6,6 +6,7 @@ meetingArr=$(echo $meetings | jq '.[0]' | tr -d '\"')
 echo $meetingArr
 
 meetingCount=${#meetingArr[@]}
+echo $meetingCount
 
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
