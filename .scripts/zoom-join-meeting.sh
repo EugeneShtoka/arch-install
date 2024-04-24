@@ -10,7 +10,7 @@ meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxS
 
 # Iterate over items using a while loop
 echo "$meetings" | jq -c '.[]' | while read item; do
-    name=$(echo "$item" | jq -r '.name')
+    name=$(echo "$item" | jq -r '.summary')
     age=$(echo "$item" | jq -r '.age')
     echo "Name: $name, Age: $age"
 done
