@@ -11,9 +11,9 @@ if [[ $meetingCount -eq 0 ]]; then
 	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
 	today=`date +'%d-%m-%Y'`
-	if ([[ $date_string -eq `date +'%d-%m-%Y'`]]); then
+	if [[ $date_string -eq `date +'%d-%m-%Y'`]]; then
 		formatted_date=Today
-	elif ([[ $date_string -eq `date -d '+1 day' +'%d-%m-%Y'`]]); then
+	elif [[ $date_string -eq `date -d '+1 day' +'%d-%m-%Y'`]]; then
 		formatted_date=Tomorrow
 	else
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
