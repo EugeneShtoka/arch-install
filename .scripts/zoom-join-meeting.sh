@@ -8,7 +8,7 @@ echo $meetings
 
 # Iterate over items using a while loop
 echo "$meetings" | jq -c '.[]' | while read item; do
-	echo "$item" | jq '.fromjson'
+	echo "$item"
     name=$(echo "$item" | jq -r '.summary')
     age=$(echo "$item" | jq -r '.age')
     echo "Name: $name, Age: $age"
