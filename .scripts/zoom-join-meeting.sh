@@ -19,21 +19,6 @@ eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, url: .confe
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
 # Iterate over items using a while loop
-availableMeetings=()
-echo "$meetings" | jq -c '.[]' | while read meeting; do
-	name=$(converertDate "$meeting")
-	availableMeetings+=("$name")
-done
-choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
-echo $choice
-echo "$meetings" | jq -c '.[]' | while read meeting; do
-	name=$(converertDate "$meeting")
-	if [[ "$name" == "$choice" ]]; then
-		conf=${$(echo $meeting | jq '.url')##*/}
-		conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
-		setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
-	fi
-done
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 
@@ -45,6 +30,20 @@ elif [[ $meetingCount -eq 1 ]]; then
 	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
 else
-	dunstify "Auto Join meetings" "more than one meeting found"
+	availableMeetings=()
+	echo "$meetings" | jq -c '.[]' | while read meeting; do
+		name=$(converertDate "$meeting")
+		availableMeetings+=("$name")
+	done
+	choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
+	echo $choice
+	echo "$meetings" | jq -c '.[]' | while read meeting; do
+		name=$(converertDate "$meeting")
+		if [[ "$name" == "$choice" ]]; then
+			conf=${$(echo $meeting | jq '.url')##*/}
+			conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
+			setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
+		fi
+	done
 fi
 
