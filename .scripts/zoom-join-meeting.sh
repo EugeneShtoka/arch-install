@@ -6,6 +6,7 @@ topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default)
 # Iterate over items using a while loop
 echo "$meetings" | jq -c '.[]' | while read item; do
+	echo "$item" | jq '.fromjson'
     name=$(echo "$item" | jq -r '.summary')
     age=$(echo "$item" | jq -r '.age')
     echo "Name: $name, Age: $age"
