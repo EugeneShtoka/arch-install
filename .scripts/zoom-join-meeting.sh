@@ -19,7 +19,6 @@ eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, url: .confe
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
 # Iterate over items using a while loop
-echo "$meetings"
 local -A commands
 echo "$meetings" | jq -c '.[]' | while read meeting; do
 	name=$(converertDate "$meeting")
