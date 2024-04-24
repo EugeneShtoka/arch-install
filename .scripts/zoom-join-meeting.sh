@@ -12,6 +12,7 @@ echo "$json_data" | jq -c '.[]' | while read item; do
     age=$(echo "$item" | jq -r '.age')
     echo "Name: $name, Age: $age"
 done
+topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
 echo $(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default )
 
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
