@@ -28,6 +28,7 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	conf=${$(echo $meeting | jq '.url')##*/}
 done
 echo "$numbered_options"
+choice=$(printf '%s\n' "${numbered_options[@]}" | dmenu -p "Select item:")
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 echo $meetingCount
