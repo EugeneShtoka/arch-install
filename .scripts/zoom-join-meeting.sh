@@ -4,7 +4,7 @@ function converertDate() {
 	meeting=$1
 	meetingName=$(echo $nextMeeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.start.dateTime' | tr -d '\"')
-	echo $date_string
+	echo hrhrhr $date_string
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
 		formatted_date="Today at $(date -d $date_string +'%H:%M')"
