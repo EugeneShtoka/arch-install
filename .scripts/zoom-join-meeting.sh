@@ -8,7 +8,7 @@ meetingCount=${#meetingArr[@]}
 
 if [[ $meetingCount -eq 0 ]]; then
 	dunstify "Auto Join meetings" "no meetings found"
-else if [[ $meetingCount -eq 1 ]]; then
+elif [[ $meetingCount -eq 1 ]]; then
 
 else
 	dunstify "Auto Join meetings" "more than one meeting found"
