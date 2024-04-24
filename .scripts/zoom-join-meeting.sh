@@ -8,6 +8,10 @@ if [[ -z "$meetingArr" ]]; then
     meetingCount=0
 fi
 
+for meeting in "${meetings[@]}"; do
+	echo $meeting[0]
+done
+
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
 	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"' | tr -d  ' ')
