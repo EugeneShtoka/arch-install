@@ -23,7 +23,6 @@ availableMeetings=()
 echo "$meetings" | jq -c '.[]' | while read meeting; do
 	name=$(converertDate "$meeting")
 	availableMeetings+=("$name")
-	conf=${$(echo $meeting | jq '.url')##*/}
 done
 echo "$numbered_options"
 choice=$(printf '%s\n' "${numbered_options[@]}" | dmenu -p "Select item:")
