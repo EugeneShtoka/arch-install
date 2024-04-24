@@ -27,7 +27,7 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	numbered_options+=("$i $name")
 	conf=${$(echo $meeting | jq '.url')##*/}
 done
-echo "$cmds"
+echo "$numbered_options"
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 echo $meetingCount
