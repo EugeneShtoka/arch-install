@@ -19,7 +19,7 @@ function converertDate() {
 json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}]'
 
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
-meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default)
+meetings="$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default)"
 # Iterate over items using a while loop
 echo "$meetings" | jq -c '.[]' | while read item; do
 	echo $(converertDate $(echo "$meetings" | jq -c '.[0]'))
