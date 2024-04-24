@@ -16,8 +16,8 @@ function converertDate() {
 }
 
 function connectToMeeting() {
-	meetingt=$1
-	conf=${$(echo $meetingt | jq '.url')##*/}
+	meeting=$1
+	conf=${$(echo $meeting | jq '.url')##*/}
 	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
 }
