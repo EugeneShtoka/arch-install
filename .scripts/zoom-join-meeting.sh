@@ -15,7 +15,7 @@ function converertDate() {
 	echo $meetingName - $formatted_date
 }
 
-eventMap='map({ summary, start, end, url: .conferenceData.entryPoints.[0].uri })'
+eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri })'
 topLimit=$(date -d '+5 hours' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
 # Iterate over items using a while loop
