@@ -10,8 +10,6 @@ if [[ $meetingCount -eq 0 ]]; then
 	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
 	date_only=$(date -d $date_string +'%d-%m-%Y')
-	today=``
-	echo  "$date_only" "$today";
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
 		formatted_date="Today $(date -d $date_string +'%H:%M')"
 	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
