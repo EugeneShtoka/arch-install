@@ -15,8 +15,6 @@ function converertDate() {
 	echo $meetingName - $formatted_date
 }
 
-json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}]'
-
 eventMap='map({ summary, start, end, url: .conferenceData.entryPoints.[0].uri })'
 topLimit=$(date -d '+5 hours' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
