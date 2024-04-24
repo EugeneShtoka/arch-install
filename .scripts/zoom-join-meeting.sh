@@ -25,7 +25,7 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	conf=${$(echo $meetings | jq '.url')##*/}
 	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 	command="setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &"
-	echo $name $command
+	echo $name #$command
 done
 
 meetingCount=$(echo "$meetings" | jq '. | length')
