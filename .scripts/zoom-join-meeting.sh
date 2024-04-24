@@ -12,7 +12,7 @@ echo "$json_data" | jq -c '.[]' | while read item; do
     age=$(echo "$item" | jq -r '.age')
     echo "Name: $name, Age: $age"
 done
-echo $(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq )
+echo $(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default )
 
 topLimit=$(date -d '+5 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq -c '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')
