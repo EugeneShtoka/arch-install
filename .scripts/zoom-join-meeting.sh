@@ -19,6 +19,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
 	meetingName=$(echo $nextMeeting | jq '.[] | .summary' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.[] | start' | tr -d '\"')
+	formatted_date=$(is_muted source) 
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
 		formatted_date="Today at $(date -d $date_string +'%H:%M')"
@@ -40,10 +41,10 @@ function converertDate() {
 	date_string=$1
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
-		formatted_date="Today at $(date -d $date_string +'%H:%M')"
+		 echo "Today at $(date -d $date_string +'%H:%M')"
 	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		formatted_date="Tomorrow at $(date -d $date_string +'%H:%M')"
+		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
 	else
-		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
+		echo $(date -d $date_string +'%A, %d %B %Y %H:%M')
 	fi
 }
