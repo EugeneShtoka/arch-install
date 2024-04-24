@@ -35,7 +35,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	dunstify "Auto Join meetings" "No meetings scheduled soon.<br>Next meeting:<br>  $(converertDate $meeting)";
 elif [[ $meetingCount -eq 1 ]]; then
 	meeting=$(echo $meetings | jq -c '.[0]')
-	echo $meeting
+	echo "$meeting"
 	$(connectToMeeting "$meeting")
 else
 	availableMeetings=()
