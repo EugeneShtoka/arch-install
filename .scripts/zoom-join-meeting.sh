@@ -28,7 +28,8 @@ done
 meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
-	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
+	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq ''map( {summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri})')	
+	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.[] | summary' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.[] | start' | tr -d '\"')
 	formatted_date=$(converertDate $date_string) 
