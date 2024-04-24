@@ -29,7 +29,7 @@ echo $choice
 echo "$meetings" | jq -c '.[]' | while read meeting; do
 	name=$(converertDate "$meeting")
 	if [[ "$name" == "$choice" ]]; then
-		availableMeetings+=("$name")
+		setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
 	fi
 done
 
