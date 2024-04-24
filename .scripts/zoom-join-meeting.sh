@@ -23,7 +23,7 @@ meetings="$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --max
 # Iterate over items using a while loop
 echo $(echo "$meetings" | jq -c '.[0]')
 echo "$meetings" | jq -c '.[]' | while read item; do
-	echo $(converertDate $(echo "$meetings" | jq -c '.[0]'))
+	echo $(converertDate "$(echo "$meetings" | jq -c '.[0]')")
 done
 
 meetingCount=$(echo "$meetings" | jq '. | length')
