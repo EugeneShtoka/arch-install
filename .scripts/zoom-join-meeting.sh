@@ -6,12 +6,13 @@ function converertDate() {
 	date_string=$(echo $nextMeeting | jq '.start.dateTime' | tr -d '\"')
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
-		 echo "Today at $(date -d $date_string +'%H:%M')"
+		formatted_date="Today at $(date -d $date_string +'%H:%M')"
 	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
+		formatted_date="Tomorrow at $(date -d $date_string +'%H:%M')"
 	else
-		echo $(date -d $date_string +'%A, %d %B %Y %H:%M')
+		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
 	fi
+	echo $meetingName - $formatted_date
 }
 
 json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}]'
