@@ -35,3 +35,7 @@ elif [[ $meetingCount -eq 1 ]]; then
 else
 	dunstify "Auto Join meetings" "more than one meeting found"
 fi
+
+function converertDate() {
+
+}
