@@ -10,7 +10,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"')
 	date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
-	formatted_date=$(date -jf "%Y-%m-%dT%H:%M:%S%z" "$date_string" +"%Y-%m-%d")
+	formatted_date=$(date -f "%Y-%m-%dT%H:%M:%S%z" "$date_string" +"%Y-%m-%d")
 
 	echo $meetingName $formatted_date
 	dunstify "Auto Join meetings" "no meetings found"
