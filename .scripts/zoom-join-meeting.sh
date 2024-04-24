@@ -13,7 +13,7 @@ if [ $meetingCount -eq 0 ]; then
 	today=`date +'%d-%m-%Y'`
 	echo  "$date_only" "$today"
 	if [ "$date_string" == "$today"]; then
-		formatted_date=Today
+		formatted_date=Today;
 	elif [ "$date_string" == "`date -d '+1 day' +'%d-%m-%Y'`"]; then
 		formatted_date=Tomorrow
 	else
