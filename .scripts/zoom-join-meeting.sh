@@ -15,6 +15,13 @@ function converertDate() {
 	echo $meetingName - $formatted_date
 }
 
+function connectToMeeting() {
+	meeting=$1
+	conf=${$(echo $meeting | jq '.url')##*/}
+	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
+	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
+}
+
 eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri })'
 topLimit=$(date -d '+1 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
@@ -42,6 +49,7 @@ else
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
 		name=$(converertDate "$meeting")
 		if [[ "$name" == "$choice" ]]; then
+			$(connectToMeeting "$meeting")
 			conf=${$(echo $meeting | jq '.url')##*/}
 			conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 			setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
