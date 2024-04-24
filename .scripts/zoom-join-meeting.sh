@@ -15,7 +15,6 @@ echo "$meetings" | jq -c '.[]' | while read item; do
     echo "Name: $name, Age: $age"
 done
 
-meetingArr=$(echo $meetings | jq '.[] | .summary' | tr -d '\"' | tr -d  ' ')
 meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
