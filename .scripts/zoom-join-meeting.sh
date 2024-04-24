@@ -19,7 +19,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	fi
 
 	echo $meetingName - $formatted_date
-	dunstify "Auto Join meetings" "No meetings found<br>Next meeting:<br>  $meetingName - $formatted_date";
+	dunstify "Auto Join meetings" "No meetings scheduled soon<br>Next meeting:<br>  $meetingName - $formatted_date";
 elif [[ $meetingCount -eq 1 ]]; then
 	conf=${$(echo $meetings | jq '.[3]')##*/}
 	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
