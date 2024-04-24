@@ -44,7 +44,6 @@ else
 	theme='style-9a'
 	choice=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
 	echo "$choice"
-	#choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
 		name=$(converertDate "$meeting")
 		if [[ "$name" == "$choice" ]]; then
