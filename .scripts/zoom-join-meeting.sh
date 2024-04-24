@@ -9,7 +9,8 @@ if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
 	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"')
-	date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
+	#date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
+	date_string="2024-04-25T10:10:00+03:00"
 	formatted_date=$(date -jf "%Y-%m-%dT%H:%M:%S%z" "$date_string" +"%Y-%m-%d")
 
 	echo $meetingName $formatted_date
