@@ -13,9 +13,9 @@ if [[ $meetingCount -eq 0 ]]; then
 	today=`date +'%d-%m-%Y'`
 	echo  "$date_only" "$today";
 	if [[ "$date_only" == "$today" ]]; then
-		formatted_date=Today $(date -d $date_string +'%H:%M')
+		formatted_date="Today $(date -d $date_string +'%H:%M')"
 	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		formatted_date=Tomorrow $(date -d $date_string +'%H:%M')
+		formatted_date="Tomorrow $(date -d $date_string +'%H:%M')"
 	else
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
 	fi
