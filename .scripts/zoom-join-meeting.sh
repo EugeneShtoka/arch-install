@@ -5,4 +5,11 @@ echo $topLimit
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')
 meetingArr=($(echo $meetings | jq '.[0]' | tr -d '\"'))
 meetingCount=${#meetingArr[@]}
-echo $meetingCount
+
+if [[ $meetingCount -eq 0 ]]; then
+	dunstify "$target $action" "<span font='20px'>$(get_audio_status)</span>"
+else if [[ $meetingCount -eq 1 ]]; then
+
+else
+	dunstify "$target $action" "<span font='20px'>$(get_audio_status)</span>"
+fi
