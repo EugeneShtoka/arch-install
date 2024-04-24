@@ -5,6 +5,7 @@ json_data='[
   {"name": "Bob", "age": 25}
 ]'
 
+echo $json_data
 # Iterate over items using a while loop
 echo "$json_data" | jq -c '.[]' | while read item; do
     name=$(echo "$item" | jq -r '.name')
