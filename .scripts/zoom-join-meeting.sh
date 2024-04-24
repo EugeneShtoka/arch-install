@@ -26,7 +26,7 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	echo $name $command
 	commands[$name]=$command
 done
-echo commands
+echo $commands
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 echo $meetingCount
