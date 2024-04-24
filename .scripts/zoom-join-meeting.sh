@@ -12,7 +12,7 @@ elif [[ $meetingCount -eq 1 ]]; then
 	conf=${$(echo $meetings | jq '.[3]')##*/}
 	conf=$(echo $conf | tr -d '\"')
 	echo $conf
-	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" &>/dev/null
+	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=75993015411?pwd=c9aCz7qXaOgsvphGqrpYjSG2v2UXaf.1" &>/dev/null
 else
 	dunstify "Auto Join meetings" "more than one meeting found"
 fi
