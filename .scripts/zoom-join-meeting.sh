@@ -6,7 +6,7 @@ meetingArr=$(echo $meetings | jq '.[0]' | tr -d '\"' | tr -d  ' ')
 meetingCount=$(echo "$meetingArr" | wc -l)
 echo "$meetings" | jq -c '.[]' | while read item; do
     name=$(echo "$item" | jq '.[0]')
-    age=$(echo "$item" | jq -r '.age')
+    age=$(echo "$item" | jq '.[1]')
     echo "Name: $name, Age: $age"
 done
 
