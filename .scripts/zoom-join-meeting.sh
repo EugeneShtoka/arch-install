@@ -36,7 +36,7 @@ if [[ $meetingCount -eq 0 ]]; then
 elif [[ $meetingCount -eq 1 ]]; then
 	meeting=$(echo $meetings | jq -c '.[0]')
 	echo "$meeting"
-	$(connectToMeeting '$meeting')
+	$(connectToMeeting $meeting)
 else
 	availableMeetings=()
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
