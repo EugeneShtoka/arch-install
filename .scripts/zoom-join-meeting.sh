@@ -1,8 +1,3 @@
 #!/bin/zsh
 
-daily() {
-	pass=$(secret-tool lookup service zoom)
-	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=75993015411&pwd=$pass" &>/dev/null
-}
-
-daily
+meetings=$(~/dev/gcalcli list events --single --maxResults 2 --orderBy startTime --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime, .conferenceData.entryPoints.[0].uri]')
