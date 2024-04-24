@@ -24,7 +24,6 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	name=$(converertDate "$meeting")
 	availableMeetings+=("$name")
 done
-echo "$numbered_options"
 choice=$(printf '%s\n' "${numbered_options[@]}" | dmenu -p "Select item:")
 echo $choice
 meetingCount=$(echo "$meetings" | jq '. | length')
