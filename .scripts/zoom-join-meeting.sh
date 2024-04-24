@@ -41,7 +41,7 @@ else
 		availableMeetings+=("$name")
 	done
 	dir="$HOME/.config/rofi/launchers/type-2"
-	theme='style-1'
+	theme='style-6'
 	choice=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
 	echo "$choice"
 	#choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
