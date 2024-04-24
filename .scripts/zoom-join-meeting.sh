@@ -29,7 +29,8 @@ echo $choice
 echo "$meetings" | jq -c '.[]' | while read meeting; do
 	name=$(converertDate "$meeting")
 	if [[ "$name" == "$choice" ]]; then
-	availableMeetings+=("$name")
+		availableMeetings+=("$name")
+	fi
 done
 
 meetingCount=$(echo "$meetings" | jq '. | length')
