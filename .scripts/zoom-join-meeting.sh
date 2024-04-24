@@ -28,7 +28,6 @@ choice=$(printf '%s\n' "${numbered_options[@]}" | dmenu -p "Select item:")
 echo $choice
 
 meetingCount=$(echo "$meetings" | jq '. | length')
-echo $meetingCount
 
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq "$eventMap" | jq '.[0]')	
