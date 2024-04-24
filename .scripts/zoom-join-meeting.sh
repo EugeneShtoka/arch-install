@@ -9,7 +9,7 @@ if [[ -z "$meetingArr" ]]; then
 fi
 
 for meeting in "${meetings[@]}"; do
-	echo $meeting[0]
+	echo $meeting
 done
 
 if [[ $meetingCount -eq 0 ]]; then
