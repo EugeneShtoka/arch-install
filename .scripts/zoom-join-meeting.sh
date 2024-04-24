@@ -1,5 +1,17 @@
 #!/bin/zsh
 
+function converertDate() {
+	date_string=$1
+	date_only=$(date -d $date_string +'%d-%m-%Y')
+	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
+		 echo "Today at $(date -d $date_string +'%H:%M')"
+	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
+		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
+	else
+		echo $(date -d $date_string +'%A, %d %B %Y %H:%M')
+	fi
+}
+
 json_data='[{"name": "Alice", "age": 30},{"name": "Bob", "age": 25}]'
 
 topLimit=$(date -d '+1 hours' +'%Y-%m-%dT%H:%M:%S%z')
@@ -29,14 +41,3 @@ else
 	dunstify "Auto Join meetings" "more than one meeting found"
 fi
 
-function converertDate() {
-	date_string=$1
-	date_only=$(date -d $date_string +'%d-%m-%Y')
-	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
-		 echo "Today at $(date -d $date_string +'%H:%M')"
-	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
-	else
-		echo $(date -d $date_string +'%A, %d %B %Y %H:%M')
-	fi
-}
