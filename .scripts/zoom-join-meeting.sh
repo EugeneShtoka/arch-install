@@ -10,6 +10,7 @@ if [[ $meetingCount -eq 0 ]]; then
 	echo $nextMeeting
 	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"' | tr -d  ' ')
 	date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
+	echo `date +'%d-%m%Y'`
 
 	formatted_date=$(date -d $date_string +'%A, %d %B %Y %H:%M')
 	echo $meetingName - $formatted_date
