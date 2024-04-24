@@ -24,9 +24,9 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	conf=${$(echo $meeting | jq '.url')##*/}
 	command=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 	echo $name $command
-	commands[$name]=$command
+	cmds[$name]=$command
 done
-echo $commands
+echo $cmds
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 echo $meetingCount
