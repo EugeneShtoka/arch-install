@@ -11,5 +11,5 @@ if [[ $meetingCount -eq 0 ]]; then
 else if [[ $meetingCount -eq 1 ]]; then
 
 else
-	dunstify "$target $action" "<span font='20px'>$(get_audio_status)</span>"
+	dunstify "Auto Join meetings" "more than one meeting found"
 fi
