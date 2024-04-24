@@ -26,8 +26,8 @@ done
 
 if [[ $meetingCount -eq 0 ]]; then
 	nextMeeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq '.[] | [.summary, .start.dateTime, .end.dateTime]')	
-	meetingName=$(echo $nextMeeting | jq '.[0]' | tr -d '\"' | tr -d  ' ')
-	date_string=$(echo $nextMeeting | jq '.[1]' | tr -d '\"')
+	meetingName=$(echo $nextMeeting | jq '.[] | .summary' | tr -d '\"' | tr -d  ' ')
+	date_string=$(echo $nextMeeting | jq '.[]' | tr -d '\"')
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "date +'%d-%m-%Y'" ]]; then
 		formatted_date="Today at $(date -d $date_string +'%H:%M')"
