@@ -25,7 +25,6 @@ function connectToMeeting() {
 eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, url: .conferenceData.entryPoints.[0].uri })'
 topLimit=$(date -d '+15 days' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
-# Iterate over items using a while loop
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 
@@ -41,6 +40,8 @@ else
 		name=$(converertDate "$meeting")
 		availableMeetings+=("$name")
 	done
+	command=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
+	zsh -ic $command
 	choice=$(printf '%s\n' "${availableMeetings[@]}" | dmenu -p "Select item:")
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
 		name=$(converertDate "$meeting")
