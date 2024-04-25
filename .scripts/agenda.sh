@@ -14,6 +14,12 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 		echo $date
 		currentDate=$date
 	fi
+	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
+    if [[ $dateTime == "null" ]]; then
+        startTime="\t\t"
+    else
+        startTime=$(date -d $dateTime +'%H:%M')
+    fi
 	echo "\t\t$(getName "$meeting")"
 
 done
