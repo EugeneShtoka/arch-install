@@ -24,9 +24,9 @@ function getDate() {
     fi
 
     if [ -n "$dateTime" ]; then
-        echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
+        echo "$startDate at $(date -d $dateTime +'%H:%M')"
     else
-        echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
+        echo "$startDate"
 	fi
 
     echo "$startDate$dateTime"
