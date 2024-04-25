@@ -27,12 +27,18 @@ if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=
   hardware_info="$(get_battery_icon $battery_level) $battery_level% $cpu_and_ram $hardware_info"
 fi
 
+$SCRIPTS_PATH/agenda.sh>agenda
+echo agenda
 # Construct the message for notify-send
 message="<span font='20px'>$(date +%d.%m.%Y)
 $(date +%A)
 $(get_audio_status)
 $(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)
-$hardware_info</span>"
+$hardware_info
+<br>
+Agenda:
+
+</span>"
 
 echo $message
 
