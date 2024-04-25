@@ -19,19 +19,20 @@ eventMap='map({ summary, start, end, conferenceType: .conferenceData.conferenceS
 topLimit=$(date -d '+10 minutes' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
 meetings=$(echo "$meetings" | jq '[ .[] | select(.conferenceType == "Google Meet" or .conferenceType == "Zoom Meeting" )]')
+formatMeeting='%A, %d %B'
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
 	meeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq "$eventMap" | jq '.[0]')	
-	dunstify "Auto Join meetings" "<span font='20px'>No meetings scheduled soon.<br>Next meeting:<br>  $(formatMeeting $meeting)</span>";
+	dunstify "Auto Join meetings" "<span font='20px'>No meetings scheduled soon.<br>Next meeting:<br>  $(formatMeeting $meeting $formatMeeting)</span>";
 elif [[ $meetingCount -eq 1 ]]; then
 	meeting=$(echo $meetings | jq -c '.[0]')
 	$(connectToMeeting $meeting)
 else
 	availableMeetings=()
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
-		name=$(formatMeeting "$meeting")
+		name=$(formatMeeting "$meeting" $formatMeeting)
 		availableMeetings+=("$name")
 	done
 	dir="$HOME/.config/rofi/launchers/type-4"
@@ -39,7 +40,7 @@ else
 	choice=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
 	echo $choice
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
-		name=$(formatMeeting "$meeting")
+		name=$(formatMeeting $meeting $formatMeeting)
 		if [[ "$name" == "$choice" ]]; then
 			$(connectToMeeting "$meeting")
 		fi
