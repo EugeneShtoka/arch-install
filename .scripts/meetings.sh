@@ -16,15 +16,17 @@ function getDate() {
     fi
 	
 	if [[ "$date" == "`date +'%d-%m-%Y'`" ]]; then
-		 echo "Today at $(date -d $date_string +'%H:%M')"
+		startDate="Today"
 	elif [[ "$date" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
+		startDate="Tomorrow"
 	else
-        if [ -n "$startTime" ]; then
-		    echo $(date -d $date_string +'%A, %d %B %Y at %H:%M')
+        startDate=$(date -d $startDate +'%A, %d %B %Y')
+        if [ -n "$dateTime" ]; then
+		    echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
         else
-             echo $(date -d $date_string +'%A, %d %B %Y at %H:%M')
+             echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
 	fi
+     at $(date -d $startDate +'%H:%M')"
 }
 
 function getName() {
