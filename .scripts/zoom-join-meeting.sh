@@ -22,10 +22,10 @@ function connectToMeeting() {
 	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
 }
 
-eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime,  conferenceData,, url: .conferenceData.entryPoints.[0].uri })'
+eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, conferenceData, url: .conferenceData.entryPoints.[0].uri })'
 topLimit=$(date -d '+10 minutes' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
-
+echo $meetings
 meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
