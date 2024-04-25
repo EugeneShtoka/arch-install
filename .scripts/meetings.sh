@@ -7,6 +7,7 @@ function formatMeeting() {
 
 function getDate() {
 	meeting=$1
+    dateFormat=$2
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
     if [[ $dateTime == "null" ]]; then
         startDate=$(echo $meeting | jq '.start.date' | tr -d '\"')
@@ -19,7 +20,7 @@ function getDate() {
 	elif [[ "$date" == "`date -d '+1 day' +'%Y-%m-%d'`" ]]; then
 		startDate="Tomorrow"
 	else
-        startDate=$(date -d $startDate +'%A, %d %B %Y')
+        startDate=$(date -d $startDate +$dateFormat)
     fi
 
     if [ -z "$dateTime" ]; then
