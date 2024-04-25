@@ -14,7 +14,7 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 		echo "$date"
 		currentDate=$date
 	fi
-	uset dateTime
+	unset dateTime
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
     if [[ $dateTime == "null" ]]; then
     else
