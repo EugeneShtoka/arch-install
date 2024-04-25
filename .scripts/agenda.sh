@@ -12,7 +12,7 @@ agenda=""
 echo "$meetings" | jq -c '.[]' | while read meeting; do
 	date=$(getDate "$meeting" '%d %B')
 	if [ "$date" != "$currentDate" ]; then
-		agenda+="$date"
+		agenda+="$date\n"
 		currentDate=$date
 	fi
 	unset startTime
@@ -23,7 +23,7 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	else
         startTime="$(date -d $dateTimeStart +'%H:%M') - $(date -d $dateTimeEnd +'%H:%M')\t"
     fi
-	agenda+="\t$startTime$(getName "$meeting")"
+	agenda+="\t$startTime$(getName "$meeting")\n"
 done
 
 echo "$agenda"
