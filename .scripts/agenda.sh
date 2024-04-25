@@ -2,5 +2,5 @@
 
 source $SCRIPTS_PATH/meetings.sh
 
-echo "$agenda"
+echo "$(agenda)"
 
