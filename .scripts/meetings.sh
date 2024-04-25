@@ -23,6 +23,13 @@ function getDate() {
         startDate=$(date -d $startDate +$dateFormat)
     fi
 
+
+}
+
+function getiime() {
+    meeting=$1
+	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
+
     if [[ $dateTime == "null" ]]; then
         echo "$startDate"
     else
