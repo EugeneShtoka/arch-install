@@ -32,7 +32,7 @@ elif [[ $meetingCount -eq 1 ]]; then
 else
 	availableMeetings=()
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
-		name=$(formatMeeting "$meeting" $formatMeeting)
+		name=$(formatMeeting $meeting $formatMeeting)
 		availableMeetings+=("$name")
 	done
 	dir="$HOME/.config/rofi/launchers/type-4"
