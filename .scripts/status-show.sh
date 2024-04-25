@@ -28,7 +28,8 @@ if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=
 fi
 
 $SCRIPTS_PATH/agenda.sh>agenda
-echo agenda
+#echo agenda
+
 # Construct the message for notify-send
 message="<span font='20px'>$(date +%d.%m.%Y)
 $(date +%A)
