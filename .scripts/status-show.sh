@@ -37,7 +37,7 @@ $(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)
 $hardware_info
 <br>
 Agenda:
-$($SCRIPTS_PATH/agenda.sh)
+'$($SCRIPTS_PATH/agenda.sh)'
 </span>"
 
 # Send the notification
