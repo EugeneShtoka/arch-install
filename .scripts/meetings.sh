@@ -23,10 +23,10 @@ function getDate() {
         startDate=$(date -d $startDate +$dateFormat)
     fi
 
-    if [ -z "$dateTime" ]; then
-        echo "$startDate at $(date -d $dateTime +'%H:%M')"
-    else
+    if [[ $dateTime == "null" ]]; then
         echo "$startDate"
+    else
+        echo "$startDate at $(date -d $dateTime +'%H:%M')"
 	fi
 }
 
