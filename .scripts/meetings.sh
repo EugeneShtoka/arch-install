@@ -17,7 +17,6 @@ function formatMeeting() {
 
 function getDate() {
 	meeting=$1
-	
 	date_string=$(echo $meeting | jq '.start' | tr -d '\"')
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "`date +'%d-%m-%Y'`" ]]; then
