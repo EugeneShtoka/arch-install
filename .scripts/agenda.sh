@@ -11,5 +11,9 @@ meetingCount=$(echo "$meetings" | jq '. | length')
 currentDate=""
 echo "$meetings" | jq -c '.[]' | while read meeting; do
 	date=$(getDate "$meeting")
-	echo $(formatMeeting "$meeting")
+	if [ "$date" != "$currentDate" ]; then
+		echo $date
+		currentDate=$date
+	fi
+	echo $(getName "$meeting")
 done
