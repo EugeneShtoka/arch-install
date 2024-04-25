@@ -10,9 +10,10 @@ function getDate() {
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
     if [ -z "$dateTime" ]; then
         echo OOO"$dateTime"OOO
-        startDate=$(date -d $dateTime +'%Y-%m-%d')
-    else
         startDate=$(echo $meeting | jq '.start.date' | tr -d '\"')
+    else
+        startDate=$(date -d $dateTime +'%Y-%m-%d')
+        
     fi
 	
 	if [[ "$date" == "`date +'%Y-%m-%d'`" ]]; then
