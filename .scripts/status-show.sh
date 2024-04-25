@@ -40,5 +40,4 @@ $hardware_info
 # Send the notification
 notify-send "$(date +%H:%M)" "$message"
 
-echo "$(agenda)"
 notify-send "Agenda" "<span font='15px'>$(agenda)</span>"
