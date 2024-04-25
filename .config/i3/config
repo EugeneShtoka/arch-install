@@ -125,10 +125,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # show weekly agenda
-bindsym $mod+a notify-send "Agenda" "<span font='15px'>$(agenda 7)</span>"
+bindsym $mod+a exec --no-startup-id $SCRIPTS_PATH/agenda-show.sh 7
 
 # show daily agenda
-bindsym $mod+dd notify-send "Agenda" "<span font='15px'>$(agenda 1)</span>"
+bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/agenda-show.sh 1
 
 # focus the child container
 #bindsym $mod+d focus child
