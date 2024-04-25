@@ -24,7 +24,7 @@ meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
 	meeting=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxResults 1 --eventTypes default | jq "$eventMap" | jq '.[0]')	
-	dunstify "Auto Join meetings" "No meetings scheduled soon.<br>Next meeting:<br>  $(formatMeeting $meeting)";
+	dunstify "Auto Join meetings" "<span font='20px'>No meetings scheduled soon.<br>Next meeting:<br>  $(formatMeeting $meeting)</span>";
 elif [[ $meetingCount -eq 1 ]]; then
 	meeting=$(echo $meetings | jq -c '.[0]')
 	$(connectToMeeting $meeting)
