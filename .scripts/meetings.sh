@@ -28,9 +28,6 @@ function getDate() {
     else
         echo "$startDate"
 	fi
-
-    echo "$startDate$dateTime"
-    at $(date -d $startDate +'%H:%M')"
 }
 
 function getName() {
