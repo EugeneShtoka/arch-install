@@ -20,7 +20,7 @@ function getDate() {
 		startDate="Tomorrow"
 	else
         echo "AAAAAAA$startDate"AAAA
-        startDate=$(date -d "2024-04-30" +'%A, %d %B %Y')
+        startDate=$(date -d $startDate +'%A, %d %B %Y')
     fi
 
     if [ -n "$dateTime" ]; then
