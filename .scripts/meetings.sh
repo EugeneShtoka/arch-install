@@ -12,7 +12,7 @@ function getDate() {
         startDate=$(date -d $dateTime +'%d-%m-%Y')
     else
         startDate=$(echo $meeting | jq '.start.date' | tr -d '\"')
-        startDate=$(date -d $dateTime +'%d-%m-%Y')
+        startDate=$(date -d $startDate +'%d-%m-%Y')
     fi
 	
 	if [[ "$date" == "`date +'%d-%m-%Y'`" ]]; then
