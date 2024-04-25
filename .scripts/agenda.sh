@@ -11,7 +11,7 @@ currentDate=""
 echo "$meetings" | jq -c '.[]' | while read meeting; do
 	date=$(getDate "$meeting" '%d %B %Y')
 	if [ "$date" != "$currentDate" ]; then
-		echo $date
+		echo "$date\n"
 		currentDate=$date
 	fi
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
