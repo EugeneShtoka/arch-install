@@ -8,7 +8,7 @@ function formatMeeting() {
 function getDate() {
 	meeting=$1
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
-    if [ -n "$dateTime" ]; then
+    if [ -z "$dateTime" ]; then
         echo OOO"$dateTime"OOO
         startDate=$(date -d $dateTime +'%Y-%m-%d')
     else
