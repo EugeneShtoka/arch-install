@@ -56,7 +56,7 @@ else
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
 		name=$(converertDate "$meeting")
 		if [[ "$name" == "$choice" ]]; then
-			$(connectToMeeting "$meeting")
+			echo $(connectToMeeting "$meeting")
 		fi
 	done
 fi
