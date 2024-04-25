@@ -2,7 +2,7 @@
 
 function formatMeeting() {
 	meeting=$1
-	echo $(getName $meeting) - $(getDate $meeting '%A, %d %B %Y')
+	echo $(getName $meeting) - $(getDate $meeting '%A, %d %B %Y')$(getiime $meeting)
 }
 
 function getDate() {
