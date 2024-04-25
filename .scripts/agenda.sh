@@ -16,9 +16,9 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	fi
 	unset startTime
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
-    if [[ $dateTime != "null" ]]; then
+    if [[ $dateTime == "null" ]]; then
         startTime="$(date -d $dateTime +'%H:%M')\t"
     fi
-	echo "$startTime$(getName "$meeting")"
+	echo "t\t$startTime$(getName "$meeting")"
 
 done
