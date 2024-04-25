@@ -33,6 +33,7 @@ topLimit=$(date -d '+10 minutes' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
 echo $meetings
 meetingsFiltered=$(echo "$meetings" | jq '.[] | select(.conferenceType == "Google Meet")')
+echo $meetingsFiltered
 
 meetingCount=$(echo "$meetings" | jq '. | length')
 
