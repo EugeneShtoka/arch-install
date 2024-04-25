@@ -5,3 +5,8 @@ echo $topLimit
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit | jq "$eventMap")
 echo $meetings
 
+meetingCount=$(echo "$meetings" | jq '. | length')
+currentDate=""
+echo "$meetings" | jq -c '.[]' | while read meeting; do
+	echo $(formatMeeting "$meeting")
+done
