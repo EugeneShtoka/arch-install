@@ -15,17 +15,17 @@ function formatMeeting() {
 	echo $meetingName - $formatted_date
 }
 
-function formatMeeting() {
+function getDate() {
 	meeting=$1
 	
 	date_string=$(echo $meeting | jq '.start' | tr -d '\"')
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "`date +'%d-%m-%Y'`" ]]; then
-		formatted_date="Today at $(date -d $date_string +'%H:%M')"
+		 echo "Today at $(date -d $date_string +'%H:%M')"
 	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
-		formatted_date="Tomorrow at $(date -d $date_string +'%H:%M')"
+		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
 	else
-		formatted_date=$(date -d $date_string +'%A, %d %B %Y at %H:%M')
+		echo $(date -d $date_string +'%A, %d %B %Y at %H:%M')
 	fi
 }
 
