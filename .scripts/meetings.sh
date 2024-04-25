@@ -16,6 +16,11 @@ function converertDate() {
 }
 
 function formatMeeting() {
+
+}
+
+function getName() {
     meeting=$1
-    meetingName=$(echo $meeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
+    echo $(echo $meeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
+
 }
