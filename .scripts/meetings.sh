@@ -22,5 +22,4 @@ function formatMeeting() {
 function getName() {
     meeting=$1
     echo $(echo $meeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
-
 }
