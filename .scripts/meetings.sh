@@ -22,8 +22,6 @@ function getDate() {
 	else
         startDate=$(date -d $startDate +$dateFormat)
     fi
-
-
 }
 
 function getiime() {
