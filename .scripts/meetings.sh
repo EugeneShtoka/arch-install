@@ -7,11 +7,16 @@ function formatMeeting() {
 
 function getDate() {
 	meeting=$1
-	date_string=$(echo $meeting | jq '.start' | tr -d '\"')
-	date_only=$(date -d $date_string +'%d-%m-%Y')
-	if [[ "$date_only" == "`date +'%d-%m-%Y'`" ]]; then
+	date=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
+    if [ -n "$string" ]; then
+        echo "The string is not empty."
+    else
+        date=$(date -d $date_string +'%d-%m-%Y')
+    fi
+	
+	if [[ "$date" == "`date +'%d-%m-%Y'`" ]]; then
 		 echo "Today at $(date -d $date_string +'%H:%M')"
-	elif [[ "$date_only" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
+	elif [[ "$date" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
 		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
 	else
 		echo $(date -d $date_string +'%A, %d %B %Y at %H:%M')
