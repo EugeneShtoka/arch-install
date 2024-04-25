@@ -3,6 +3,5 @@ eventMap='map({ summary, start, end, conferenceType: .conferenceData.conferenceS
 topLimit=$(date -d '+8 days' +'%Y-%m-%dT00:00:00%z')
 echo $topLimit
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit | jq "$eventMap")
-#meetings=$(echo "$meetings" | jq '[ .[] | select(.conferenceType == "Google Meet" or .conferenceType == "Zoom Meeting" )]')
 echo $meetings
 
