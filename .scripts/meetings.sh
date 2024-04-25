@@ -2,7 +2,7 @@
 
 function converertDate() {
 	meeting=$1
-	meetingName=$(echo $meeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
+	
 	date_string=$(echo $meeting | jq '.start' | tr -d '\"')
 	date_only=$(date -d $date_string +'%d-%m-%Y')
 	if [[ "$date_only" == "`date +'%d-%m-%Y'`" ]]; then
@@ -13,4 +13,9 @@ function converertDate() {
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y at %H:%M')
 	fi
 	echo $meetingName - $formatted_date
+}
+
+function formatMeeting() {
+    meeting=$1
+    meetingName=$(echo $meeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
 }
