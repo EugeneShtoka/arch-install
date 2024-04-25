@@ -23,11 +23,11 @@ function connectToMeeting() {
 		conf=${$(echo $meeting | jq '.url')##*/}
 		conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 		echo "Zoom Meeting $conf"
-		setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
+		setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" > /dev/null 2>&1 &
 	elif [[ "$conferenceType" == "Google Meet" ]]; then
 		url=$(echo $meeting | jq '.url' | tr -d '\"')
 		echo "Google Meet $url"
-		setsid setsid vivaldi-snapshot "$url" >/dev/null 2>&1 < /dev/null &
+		setsid setsid vivaldi-snapshot "$url" > /dev/null 2>&1 &
 	fi
 }
 
