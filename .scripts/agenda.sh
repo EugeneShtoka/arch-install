@@ -21,6 +21,6 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	else
         startTime="$(date -d $dateTime +'%H:%M')\t"
     fi
-	echo "  $startTime$(getName "$meeting")"
+	echo "\t$startTime$(getName "$meeting")"
 
 done
