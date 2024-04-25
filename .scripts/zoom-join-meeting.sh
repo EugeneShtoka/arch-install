@@ -27,7 +27,6 @@ function connectToMeeting() {
 		echo "Google Meet $url"
 		setsid setsid vivaldi-snapshot "$url" >/dev/null 2>&1 < /dev/null &
 	fi
-
 }
 
 eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, conferenceType: .conferenceData.conferenceSolution.name, url: .conferenceData.entryPoints.[0].uri })'
