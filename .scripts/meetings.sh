@@ -7,10 +7,11 @@ function formatMeeting() {
 
 function getDate() {
 	meeting=$1
-	date=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
+	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
     startTime=""
     if [ -n "$string" ]; then
-        date=$(date -d $date_string +'%d-%m-%Y')
+        startDate=$(date -d $startDate +'%d-%m-%Y')
+        startTime=$(date -d $startDate +'%H:%M')
     else
         
     fi
@@ -20,7 +21,10 @@ function getDate() {
 	elif [[ "$date" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
 		echo "Tomorrow at $(date -d $date_string +'%H:%M')"
 	else
-		echo $(date -d $date_string +'%A, %d %B %Y at %H:%M')
+        if [ -n "$startTime" ]; then
+		    echo $(date -d $date_string +'%A, %d %B %Y at %H:%M')
+        else
+             echo $(date -d $date_string +'%A, %d %B %Y at %H:%M')
 	fi
 }
 
