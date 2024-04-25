@@ -64,5 +64,5 @@ function agenda() {
 		agenda+="\t$startTime$(getName "$meeting")\n"
 	done
 
-    echo "$agenda"
+    printf "$agenda"
 }
