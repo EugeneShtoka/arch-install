@@ -124,8 +124,11 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# show weekly agenda
 bindsym $mod+a notify-send "Agenda" "<span font='15px'>$(agenda 7)</span>"
+
+# show daily agenda
+bindsym $mod+dd notify-send "Agenda" "<span font='15px'>$(agenda 1)</span>"
 
 # focus the child container
 #bindsym $mod+d focus child
