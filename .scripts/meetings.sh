@@ -42,9 +42,7 @@ function getName() {
 function agenda() {
     daysToShow=$1
 	eventMap='map({ summary, start, end, conferenceType: .conferenceData.conferenceSolution.name, url: .conferenceData.entryPoints.[0].uri })'
-    addition="+$daysToShow days"
-    echo $addition
-	topLimit=$(date -d $addition +'%Y-%m-%dT00:00:00%z')
+	topLimit=$(date -d +$daysToShow days +'%Y-%m-%dT00:00:00%z')
     echo $topLimit
 	meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit | jq "$eventMap")
 
