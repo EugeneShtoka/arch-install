@@ -14,6 +14,6 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 		echo $date
 		currentDate=$date
 	fi
-	echo $(getName "$meeting")
+	echo \t\t$(getName "$meeting")
 
 done
