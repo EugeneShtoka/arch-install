@@ -24,6 +24,7 @@ function connectToMeeting() {
 		setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
 	elif [[ $conferenceType == "Google Meet" ]]; then
 		url=$(echo $meeting | jq '.conferenceType' | tr -d '\"')
+		echo "Google Meet $url"
 		setsid setsid vivaldi-snapshot "$url" >/dev/null 2>&1 < /dev/null &
 	fi
 
