@@ -36,8 +36,6 @@ $(date +%A)
 $(get_audio_status)
 $(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)
 $hardware_info
-<br>
-Agenda:
 $agenda
 </span>"
 
