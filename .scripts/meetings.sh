@@ -31,7 +31,7 @@ function getiime() {
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
 
     if [[ $dateTime != "null" ]]; then
-        $(date -d $dateTime +'%H:%M')"
+        echo " at $(date -d $dateTime +'%H:%M')"
 	fi
 }
 
