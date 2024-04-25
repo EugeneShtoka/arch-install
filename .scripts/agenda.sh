@@ -18,7 +18,7 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 	dateTimeStart=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
 	dateTimeEnd=$(echo $meeting | jq '.end.dateTime' | tr -d '\"')
     if [[ $dateTimeStart == "null" ]]; then
-		startTime="\t"
+		startTime="\t\t"
 	else
         startTime="$(date -d $dateTimeStart +'%H:%M') - $(date -d $dateTimeEnd +'%H:%M')\t"
     fi
