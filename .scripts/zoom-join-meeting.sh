@@ -26,6 +26,7 @@ eventMap='map({ summary, start: .start.dateTime, end: .end.dateTime, conferenceD
 topLimit=$(date -d '+10 minutes' +'%Y-%m-%dT%H:%M:%S%z')
 meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit --eventTypes default | jq "$eventMap")
 echo $meetings
+
 meetingCount=$(echo "$meetings" | jq '. | length')
 
 if [[ $meetingCount -eq 0 ]]; then
