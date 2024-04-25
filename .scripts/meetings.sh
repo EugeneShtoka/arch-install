@@ -14,7 +14,7 @@ function getDate() {
         startDate=$(echo $meeting | jq '.start.date' | tr -d '\"')
     fi
 	
-	if [[ "$date" == "`date +'%d-%m-%Y'`" ]]; then
+	if [[ "$date" == "`date +'%Y-%m-%d'`" ]]; then
 		startDate="Today"
 	elif [[ "$date" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
 		startDate="Tomorrow"
