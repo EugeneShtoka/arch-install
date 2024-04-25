@@ -17,7 +17,7 @@ function converertDate() {
 
 function connectToMeeting() {
 	meeting=$1
-	conferenceType=$(echo $meeting | jq '.conferenceType' | tr -d '\"' | tr -d  ' ')
+	conferenceType=$(echo $meeting | jq '.conferenceType' | tr -d '\"')
 	echo "Conference type: $conferenceType"
 	if [[ "$conferenceType" == "Zoom Meeting" ]]; then
 		conf=${$(echo $meeting | jq '.url')##*/}
