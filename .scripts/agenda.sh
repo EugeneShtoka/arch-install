@@ -25,3 +25,5 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
     fi
 	agenda+="\t$startTime$(getName "$meeting")"
 done
+
+echo "$agenda"
