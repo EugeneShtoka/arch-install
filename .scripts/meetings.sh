@@ -12,7 +12,7 @@ function formatMeeting() {
 	else
 		formatted_date=$(date -d $date_string +'%A, %d %B %Y at %H:%M')
 	fi
-	echo $meetingName - $formatted_date
+	echo $(getName $meeting) - $(getDate $meeting)
 }
 
 function getDate() {
