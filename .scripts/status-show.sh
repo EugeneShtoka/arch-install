@@ -41,5 +41,7 @@ Agenda:
 
 </span>"
 
+echo $message
+
 # Send the notification
 notify-send "$(date +%H:%M)" "$message"
