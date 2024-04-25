@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 function converertDate() {
 	meeting=$1
 	meetingName=$(echo $meeting | jq '.summary' | tr -d '\"' | tr -d  ' ')
