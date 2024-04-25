@@ -45,6 +45,7 @@ function agenda() {
     addition="+$daysToShow days"
     echo $addition
 	topLimit=$(date -d $addition +'%Y-%m-%dT00:00:00%z')
+    echo $topLimit
 	meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxStartTime $topLimit | jq "$eventMap")
 
 	meetingCount=$(echo "$meetings" | jq '. | length')
