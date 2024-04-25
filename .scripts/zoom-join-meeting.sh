@@ -39,7 +39,8 @@ else
 	choice=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
 	echo $choice
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
-		name=$(converertDate "$meeting")
+		name=$(	dunstify "Auto Join meetings" "No meetings scheduled soon.<br>Next meeting:<br>  $(formatMeeting $meeting)";
+ "$meeting")
 		if [[ "$name" == "$choice" ]]; then
 			$(connectToMeeting "$meeting")
 		fi
