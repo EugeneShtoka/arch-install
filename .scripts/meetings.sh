@@ -16,11 +16,11 @@ function getDate() {
     fi
 	
 	if [[ "$date" == "`date +'%Y-%m-%d'`" ]]; then
-		startDate="Today"
+		echo "Today"
 	elif [[ "$date" == "`date -d '+1 day' +'%Y-%m-%d'`" ]]; then
-		startDate="Tomorrow"
+		echo "Tomorrow"
 	else
-        startDate=$(date -d $startDate +$dateFormat)
+        echo $(date -d $startDate +$dateFormat)
     fi
 }
 
