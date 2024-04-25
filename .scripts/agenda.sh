@@ -9,7 +9,7 @@ meetings=$(~/dev/gcalcli/gcalcli list events --single --orderBy startTime --maxS
 meetingCount=$(echo "$meetings" | jq '. | length')
 currentDate=""
 echo "$meetings" | jq -c '.[]' | while read meeting; do
-	date=$(getDate "$meeting" '%d %B %Y')
+	date=$(getDate "$meeting" '%d %B')
 	if [ "$date" != "$currentDate" ]; then
 		echo "$date"
 		currentDate=$date
