@@ -9,9 +9,9 @@ function getDate() {
 	meeting=$1
 	date=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
     if [ -n "$string" ]; then
-        echo "The string is not empty."
-    else
         date=$(date -d $date_string +'%d-%m-%Y')
+    else
+        
     fi
 	
 	if [[ "$date" == "`date +'%d-%m-%Y'`" ]]; then
