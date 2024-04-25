@@ -30,10 +30,8 @@ function getiime() {
     meeting=$1
 	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
 
-    if [[ $dateTime == "null" ]]; then
-        echo "$startDate"
-    else
-        echo "$startDate at $(date -d $dateTime +'%H:%M')"
+    if [[ $dateTime != "null" ]]; then
+        $(date -d $dateTime +'%H:%M')"
 	fi
 }
 
