@@ -23,5 +23,4 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
         startTime="$(date -d $dateTimeStart +'%H:%M') - $(date -d $dateTimeEnd +'%H:%M')\t"
     fi
 	echo "\t$startTime$(getName "$meeting")"
-
 done
