@@ -13,7 +13,6 @@ function getDate() {
     else
         echo OOO"$dateTime"OOO
         startDate=$(date -d $dateTime +'%Y-%m-%d')
-        
     fi
 	
 	if [[ "$date" == "`date +'%Y-%m-%d'`" ]]; then
