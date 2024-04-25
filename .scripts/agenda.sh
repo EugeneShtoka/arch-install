@@ -11,5 +11,6 @@ echo $meetings
 meetingCount=$(echo "$meetings" | jq '. | length')
 currentDate=""
 echo "$meetings" | jq -c '.[]' | while read meeting; do
+	echo "$meeting"
 	echo $(formatMeeting "$meeting")
 done
