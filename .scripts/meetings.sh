@@ -29,7 +29,7 @@ function getDate() {
         echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
 	fi
 
-    echo "$startDate$startTime"
+    echo "$startDate$dateTime"
     at $(date -d $startDate +'%H:%M')"
 }
 
