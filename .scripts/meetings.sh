@@ -20,6 +20,7 @@ function getDate() {
 	elif [[ "$date" == "`date -d '+1 day' +'%d-%m-%Y'`" ]]; then
 		startDate="Tomorrow"
 	else
+        echo $(date -d $startDate +'%A, %d %B %Y')
         startDate=$(date -d $startDate +'%A, %d %B %Y')
     fi
 
