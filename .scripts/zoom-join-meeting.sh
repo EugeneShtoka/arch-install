@@ -17,6 +17,8 @@ function converertDate() {
 
 function connectToMeeting() {
 	meeting=$1
+	conferenceType=$(echo $meeting | jq '.conferenceType' | tr -d '\"' | tr -d  ' ')
+	if [[ $meeting == null ]]; then
 	conf=${$(echo $meeting | jq '.url')##*/}
 	conf=$(echo $conf | tr -d '\"' | sed 's/?/\&/')
 	setsid xdg-open "zoommtg://zoom.us/join?action=join&video=on&confno=$conf" >/dev/null 2>&1 < /dev/null &
