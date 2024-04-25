@@ -21,12 +21,16 @@ function getDate() {
 		startDate="Tomorrow"
 	else
         startDate=$(date -d $startDate +'%A, %d %B %Y')
-        if [ -n "$dateTime" ]; then
-		    echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
-        else
-             echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
+    fi
+
+    if [ -n "$dateTime" ]; then
+        echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
+    else
+        echo $(date -d $startDate +'%A, %d %B %Y at %H:%M')
 	fi
-     at $(date -d $startDate +'%H:%M')"
+
+    echo "$startDate$startTime"
+    at $(date -d $startDate +'%H:%M')"
 }
 
 function getName() {
