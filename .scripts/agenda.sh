@@ -15,11 +15,12 @@ echo "$meetings" | jq -c '.[]' | while read meeting; do
 		currentDate=$date
 	fi
 	unset startTime
-	dateTime=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
-    if [[ $dateTime == "null" ]]; then
+	dateTimeStart=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
+	dateTimeEnd=$(echo $meeting | jq '.end.dateTime' | tr -d '\"')
+    if [[ $dateTimeStart == "null" ]]; then
 		startTime="\t"
 	else
-        startTime="$(date -d $dateTime +'%H:%M')\t"
+        startTime="$(date -d $dateTimeStart +'%H:%M') - $(date -d $dateTimeEnd +'%H:%M')\t"
     fi
 	echo "\t$startTime$(getName "$meeting")"
 
