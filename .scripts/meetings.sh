@@ -58,7 +58,7 @@ function agenda() {
 		dateTimeStart=$(echo $meeting | jq '.start.dateTime' | tr -d '\"')
 		dateTimeEnd=$(echo $meeting | jq '.end.dateTime' | tr -d '\"')
 		if [[ $dateTimeStart == "null" ]]; then
-			startTime="\t\t"
+			startTime="\t"
 		else
 			startTime="$(date -d $dateTimeStart +'%H:%M') - $(date -d $dateTimeEnd +'%H:%M')\t"
 		fi
