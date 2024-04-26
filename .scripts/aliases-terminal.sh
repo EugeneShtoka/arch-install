@@ -26,7 +26,7 @@ alias aps='cd $WORK_REPOS_PATH/swapp-aps && code . && clear'
 alias plugin='cd $WORK_REPOS_PATH/revit-plugin && code . && clear'
 alias workflows='cd $WORK_REPOS_PATH/workflows && code . && clear'
 alias backend='cd $WORK_REPOS_PATH/swappbackend && code . && clear'
-alias roomassignment='cd $WORK_REPOS_PATH/roomassignment && code . && clear'
+alias algo='cd $WORK_REPOS_PATH/roomassignment && code . && clear'
 
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
