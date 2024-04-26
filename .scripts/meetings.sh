@@ -60,7 +60,7 @@ function agenda() {
 		if [[ $dateTimeStart == "null" ]]; then
 			startTime="\t"
 		else
-			startTime="$(date -d $dateTimeStart +'%H:%M') - $(date -d $dateTimeEnd +'%H:%M')\t"
+			startTime="$(date -d $dateTimeStart +'%H:%M') - $(date -d $dateTimeEnd +'%H:%M') "
 		fi
 		agenda+="  $startTime$(getName "$meeting")\n"
 	done
