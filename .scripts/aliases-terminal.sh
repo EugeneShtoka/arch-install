@@ -21,7 +21,7 @@ alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
 alias gcmr=$SCRIPTS_PATH/git-create-merge-request.sh
 
 alias home='cd ~ && code . && clear'
-alias gcalcli='cd $HOME/dev/gcalcli && code . && clear'
+alias figoro='cd $HOME/dev/figoro && code . && clear'
 alias aps='cd $WORK_REPOS_PATH/swapp-aps && code . && clear'
 alias plugin='cd $WORK_REPOS_PATH/revit-plugin && code . && clear'
 alias workflows='cd $WORK_REPOS_PATH/workflows && code . && clear'
