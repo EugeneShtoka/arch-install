@@ -26,6 +26,7 @@ $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh kodoo-reader
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
+$SCRIPTS_PATH/auto-yay.sh upx
 
 $SCRIPTS_PATH/eza-install.sh
 
