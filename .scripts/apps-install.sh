@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-yes | sudo pacman -Syi inotify-tools thunar rofi bluez bluez-utils brightnessctl docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome terraform aws-cli kubectl expac maim
+yes | sudo pacman -Syi inotify-tools thunar rofi bluz bluez-utils brightnessctl docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome terraform aws-cli kubectl expac maim upx
 
 $SCRIPTS_PATH/yay-install.sh
 
