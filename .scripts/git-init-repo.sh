@@ -1,7 +1,8 @@
 #!/bin/zsh
 
-DIR=$(pwd)
-echo $DIR
+path=$(pwd)
+folder="${path##*/}"
+echo $folder
 # PROJECT_NAME=myAwesomeRepo
 # gh repo create $PROJECT_NAME --public
 # git init
