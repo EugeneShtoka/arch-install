@@ -1,10 +1,15 @@
 #!/bin/zsh
 
-path=$(pwd)
-folder="${path##*/}"
 
-PROJECT_NAME=$1
-if [[ ]]
+
+=$1
+if [ -z "$1" ]; then
+    path=$(pwd)
+    PROJECT_NAME="${path##*/}"
+else
+    PROJECT_NAME=$1
+fi
+
 gh repo create $PROJECT_NAME --public
 git init
 git add -A
