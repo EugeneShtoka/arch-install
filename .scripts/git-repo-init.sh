@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 script_dir="$( cd "$( dirname "${(%):-%N}" )" && pwd )"
+echo $script_dir
 # PROJECT_NAME=myAwesomeRepo
 # gh repo create $PROJECT_NAME --public
 # git init
