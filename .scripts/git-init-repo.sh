@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-echo pwd >dir
+DIR=$(echo pwd)
 echo dir
 # PROJECT_NAME=myAwesomeRepo
 # gh repo create $PROJECT_NAME --public
