@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 DIR=$(echo pwd)
-echo dir
+echo $DIR
 # PROJECT_NAME=myAwesomeRepo
 # gh repo create $PROJECT_NAME --public
 # git init
