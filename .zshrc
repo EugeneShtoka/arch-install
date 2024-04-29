@@ -48,7 +48,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 HIST_STAMPS="yyyy-mm-dd"
 
 # Do not save duplicate commands to history
-setopt HIST_IGNORE_ALL_DUPS
+#setopt HIST_IGNORE_ALL_DUPS
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
