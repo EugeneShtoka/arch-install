@@ -1,5 +1,5 @@
 #!/bin/zsh
-
+echo AAA $1
 if [ -z "$1" ]; then
     pathToPlay=$MUSIC_PATH/$choice
 else
