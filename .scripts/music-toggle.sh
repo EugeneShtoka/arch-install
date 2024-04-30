@@ -1,5 +1,5 @@
 #!/bin/zsh
-pid=${ps aux | grep vlc | grep -v grep | awk '{print $2}'}
+pid=$(ps aux | grep vlc | grep -v grep | awk '{print $2}')
 if [ -z "$pid" ]; then
 	echo empty
 else
