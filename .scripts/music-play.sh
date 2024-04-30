@@ -1,6 +1,7 @@
 #!/bin/zsh
 echo AAA $1
 if [ -z "$1" ]; then
+    echo empty
     pathToPlay=$MUSIC_PATH/$choice
 else
 	dir="$HOME/.config/rofi/launchers/type-4"
