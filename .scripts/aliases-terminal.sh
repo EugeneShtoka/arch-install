@@ -19,6 +19,7 @@ alias gsq=$SCRIPTS_PATH/git-squash.sh
 alias gpc=$SCRIPTS_PATH/git-push-commit.sh
 alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
 alias gcmr=$SCRIPTS_PATH/git-create-merge-request.sh
+alias git-alias-main='git symbolic-ref refs/heads/main refs/heads/$(git rev-parse --abbrev-ref HEAD)'
 
 alias home='cd ~ && code . && clear'
 alias figoro='cd $HOME/dev/figoro && code . && clear'
