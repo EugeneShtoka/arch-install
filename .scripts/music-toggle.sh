@@ -4,9 +4,9 @@ if [ -z "$pid" ]; then
 	SCRIPTS_PATH/music-play.sh
 else
     if [[ "$(ps -o state= -p $pid)" = "T" ]]; then
-        echo suspended
+        kill -CONT $pid
     else
-        echo playing
+        kill -STOP $pid
     fi
 fi
 
