@@ -6,4 +6,4 @@ else
     echo $pid
 fi
 
-setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
+#setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
