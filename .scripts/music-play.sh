@@ -1,9 +1,9 @@
 #!/bin/zsh
 
 if [ -z "$1" ]; then
-    PLAY_PATH=
+    pathToPlay=$MUSIC_PATH/$choice
 else
-    PLAY_PATH=$MUSIC_PATH/$1
+    pathToPlay=$MUSIC_PATH/$1
 fi
 
-setsid cvlc --random $PLAY_PATH > /dev/null 2>&1 &
+setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
