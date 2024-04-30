@@ -91,4 +91,5 @@ $SCRIPTS_PATH/ssh-init.sh>/dev/null 2>&1
 
 rm $HOME/monitor.env > /dev/null 2>&1
 
-
+# Dedup history
+sed ':start; /\\$/ { N; s/\\\n/\\\x00/; b start }' .zsh_history | nl -nrz | tac | sort -t';' -u -k2 | sort | cut -d$'\t' -f2- | tr '\000' '\n' > .zsh_history_deduped && mv .zsh_history_deduped .zsh_history
