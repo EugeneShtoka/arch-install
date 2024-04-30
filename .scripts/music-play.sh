@@ -10,5 +10,6 @@ else
     pathToPlay=$MUSIC_PATH/$1
 fi
 
+echo $pathToPlay
 
 #setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
