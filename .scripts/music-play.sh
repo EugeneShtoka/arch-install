@@ -7,7 +7,6 @@ if [ -z "$1" ]; then
     echo $choice
     pathToPlay=$MUSIC_PATH/$choice
 else
-
     pathToPlay=$MUSIC_PATH/$1
 fi
 
