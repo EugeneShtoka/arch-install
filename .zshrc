@@ -89,7 +89,7 @@ PROMPT='%B%~%b$(git_super_status) '
 $SCRIPTS_PATH/ssh-init.sh>/dev/null 2>&1
 #$SCRIPTS_PATH/status-show.sh
 
-rm $HOME/monitor.env > /dev/null 2>&1
+echo MONITOR_SETUP=SINGLE > $HOME/monitor.env
 
 # Dedup history
 sed ':start; /\\$/ { N; s/\\\n/\\\x00/; b start }' $HOME/.zsh_history | nl -nrz | tac | sort -t';' -u -k2 | sort | cut -d$'\t' -f2- | tr '\000' '\n' > $HOME/.zsh_history_deduped && mv $HOME/.zsh_history_deduped $HOME/.zsh_history
