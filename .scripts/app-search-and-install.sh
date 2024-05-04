@@ -7,6 +7,7 @@ package=$1
     names=${(f)$(echo $packages | awk '{print $1}')}
     versions=${(f)$(echo $packages | awk '{print $2}')}
     descriptions=${(f)$(echo $searchResults | awk 'NR % 2 == 0')}
+    echo ${#my_array}
     for i in "${!names}"; do  # Get indices of array1
       echo ${names[i]} ${versions[i]} ${descriptions[i]}
     done
