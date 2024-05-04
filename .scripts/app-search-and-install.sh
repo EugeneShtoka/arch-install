@@ -6,7 +6,7 @@ package=$1
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
     names=$(echo $packages | awk '{print $1}')
     names_arr=${(f)names}
-    echo ${#names_arr}
+    echo ${#names_arr[@]}
     versions=${(f)$(echo $packages | awk '{print $2}')}
     descriptions=${(f)$(echo $searchResults | awk 'NR % 2 == 0')}
     for i in {1..$(echo $names | wc -l)}; do
