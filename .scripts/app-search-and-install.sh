@@ -12,7 +12,7 @@ versions=($(echo $packages | awk '{print $2}'))
 descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
     found=()
     for (( i=${#names[@]}; i>=1; i-- )); do
-        availableMeetings+=("${names[i]} ${versions[i]} ${descriptions[i]}")
+        found+=("${names[i]} ${versions[i]} ${descriptions[i]}")
     done
     
     # for i in {1..$(echo $names | wc -l)}; do
