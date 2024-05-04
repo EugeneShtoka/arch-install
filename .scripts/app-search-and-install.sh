@@ -1,6 +1,17 @@
 #!/bin/zsh
 
 package=$1
+
+official=$(pacman -Ss "^$package$" | wc -l)
+if [[ $official -gt 0 ]]; then
+  #sudo pacman -S $package
+  echo "Package $package found in official repositories."
+else
+  aur=$(yay -Ss "^$package$" | wc -l)
+  if [[ $aur -gt 0 ]]; then
+    #$SCRIPTS_PATH/auto-yay.sh $package
+    echo "Package $package found in AUR."
+  else
     SAVEIFS=$IFS
     IFS=$'\n'
     searchResults=$(yay -Ss $package)
@@ -17,21 +28,7 @@ package=$1
     choice=$(printf '%s\n' "${found[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
     if [[ -n $choice ]]; then
       package="${$(echo $choice | awk '{print $1}')##*/}"
-      echo $package
       $SCRIPTS_PATH/app-search-and-install.sh $package
     fi
-# official=$(pacman -Ss "^$package$" | wc -l)
-# if [[ $official -gt 0 ]]; then
-#   #sudo pacman -S $package
-#   echo "Package $package found in official repositories."
-# else
-#   aur=$(yay -Ss "^$package$" | wc -l)
-#   if [[ $aur -gt 0 ]]; then
-#     #$SCRIPTS_PATH/auto-yay.sh $package
-#     echo "Package $package found in AUR."
-#   else
-
-#   fi
-# fi
-
-# IFS=$SAVEIFS   # Restore original IFS
+  fi
+fi
