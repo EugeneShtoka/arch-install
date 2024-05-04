@@ -4,14 +4,10 @@ package=$1
     IFS=$'\n'
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
-    names=$(echo $packages | awk '{print $1}')
-    for name ($(echo $packages | awk '{print $1}')); do
-      echo name: $name;
-    done
-    echo $names
+    names="$(echo $packages | awk '{print $1}')"
 SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
 IFS=$'\n'      # Change IFS to newline char
-names_arr=($names) # split the `names` string into an array by the same name
+names_arr=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
 IFS=$SAVEIFS   # Restore original IFS
     for (( i=0; i<${#names_arr[@]}; i++ ))
     do
