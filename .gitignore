@@ -38,9 +38,9 @@ dev/work/.env
 !.config/autokey/data
 !.config/autokey/data/**/*
 !.config/autokey/autokey.json
-!.config/vivaldi-snapshot
-!.config/vivaldi-snapshot/styles
-!.config/vivaldi-snapshot/styles/**/* 
+!.config/vivaldi
+!.config/vivaldi/styles
+!.config/vivaldi/styles/**/* 
 !.config/systemd
 !.config/systemd/user
 !.config/systemd/user/start-up-routine.service
