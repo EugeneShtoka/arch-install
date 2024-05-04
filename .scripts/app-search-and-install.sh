@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 package=$1
-if pacman -Ss "^$package$" &> /dev/null; then
+official=$(pacman -Ss "^$package$" | wc -l)
+if [[ $official -gt 0 ]]; then
   #sudo pacman -S $package
   echo "Package $package found in official repositories."
 elif yay -Ss "^$package$" &> /dev/null; then
