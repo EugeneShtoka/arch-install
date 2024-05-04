@@ -13,7 +13,6 @@ $SCRIPTS_PATH/auto-yay.sh glab-git
 $SCRIPTS_PATH/auto-yay.sh github-cli
 $SCRIPTS_PATH/auto-yay.sh qbittorrent-enhanced
 $SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
-$SCRIPTS_PATH/auto-yay.sh 
 $SCRIPTS_PATH/auto-yay.sh docker-desktop
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli
