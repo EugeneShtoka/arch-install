@@ -1,14 +1,16 @@
 #!/bin/zsh
 
 package=$1
+    SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
+    IFS=$'\n'      # Change IFS to newline char
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
     names="$(echo $packages | awk '{print $1}')"
-SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
+
 names=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
 versions=($(echo $packages | awk '{print $2}'))
 descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
-    for (( i=1; i<=${#names[@]}; i++ ))
+    for (( i=1; i<${#names[@]}; i++ ))
     do
         echo "${names[i]} ${versions[i]} ${descriptions[i]}"
     done
@@ -33,3 +35,5 @@ else
     echo $(echo $searchResults | awk 'NR % 2 == 0')
   fi
 fi
+
+IFS=$SAVEIFS   # Restore original IFS
