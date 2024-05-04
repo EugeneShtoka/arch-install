@@ -12,8 +12,8 @@ else
     echo "Package $package found in AUR."
   else
 
-    SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
-    IFS=$'\n'      # Change IFS to newline char
+    SAVEIFS=$IFS
+    IFS=$'\n'
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
     names=($(echo $packages | awk '{print $1}'))
