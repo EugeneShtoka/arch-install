@@ -3,8 +3,8 @@
 package=$1
 
     searchResults=$(yay -Ss $package)
-    package=$(echo $searchResults | awk 'NR % 2 == 1')
-    echo "$packageNames"
+    packages=$(echo $searchResults | awk 'NR % 2 == 1')
+    echo "$packages"
 
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
