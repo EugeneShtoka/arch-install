@@ -3,7 +3,7 @@
 package=$1
 
     searchResults=$(yay -Ss $package)
-    echo "$(echo $searchResults | awk 'NR % 2 == 1' | awk '{print $1}')"
+    echo "$(echo $searchResults | awk 'NR % 2 == 1')"
 
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
