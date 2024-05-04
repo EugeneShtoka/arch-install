@@ -10,7 +10,7 @@ package=$1
     for line in $lines; do
       echo "Processing: $line"
     done
-    echo $descriptions
+    echo $names
 
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
