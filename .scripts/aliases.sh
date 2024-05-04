@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-alias browser='setsid vivaldi &>/dev/null'
+alias browser='setsid $BROWSER &>/dev/null'
 alias mail='setsid mailspring --password-store="gnome-libsecret" &>/dev/null'
 alias slack='setsid /usr/bin/slack -s &>/dev/null'
 alias messenger='setsid beeper --no-sandbox &>/dev/null'
