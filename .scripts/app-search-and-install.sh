@@ -1,6 +1,11 @@
 #!/bin/zsh
 
 package=$1
+
+    searchResults=$(yay -Ss $package)
+    echo $searchResults
+    echo $(echo $searchResults | awk 'NR % 2 == 0')
+
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
   #sudo pacman -S $package
