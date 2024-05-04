@@ -2,7 +2,6 @@
 
 USR_HOME=/home/eugene
 source $USR_HOME/.env
-source $USR_HOME/monitor.env
 
 monitorsCount=$(xrandr --listactivemonitors | grep 'Monitors:' | awk '{print $2}')
 if [[ "$monitorsCount" -eq 1 ]]; then  
