@@ -27,6 +27,7 @@ else
     choice=$(printf '%s\n' "${found[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
     if [[ -n $choice ]]; then
       $SCRIPTS_PATH/app-search-and-install.sh $choice
+    fi
   fi
 fi
 
