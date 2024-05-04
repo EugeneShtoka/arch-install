@@ -4,8 +4,8 @@ package=$1
     IFS=$'\n'
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
-    names="$(echo $packages | awk '{print $1}')"
-    for name (test rest); do
+    names=$(echo $packages | awk '{print $1}')
+    for name (); do
       echo name: $name;
     done
     echo $names
