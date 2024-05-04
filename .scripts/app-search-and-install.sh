@@ -4,8 +4,9 @@ package=$1
 
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
-    packageNames=$(echo $packages | awk '{print $1}')
-    packageVersions=$(echo $packages | awk '{print $2}')
+    names=$(echo $packages | awk '{print $1}')
+    versions=$(echo $packages | awk '{print $2}')
+
     echo $packageVersions
 
 official=$(pacman -Ss "^$package$" | wc -l)
