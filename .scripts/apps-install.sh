@@ -28,7 +28,5 @@ $SCRIPTS_PATH/auto-yay.sh kodoo-reader
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 $SCRIPTS_PATH/auto-yay.sh upx
 
-$SCRIPTS_PATH/eza-install.sh
-
 yes | sudo pacman -Syu
 yes | sudo pacman -Rns $(pacman -Qtdq)
