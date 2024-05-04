@@ -15,7 +15,6 @@ $SCRIPTS_PATH/auto-yay.sh qbittorrent-enhanced
 $SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
 $SCRIPTS_PATH/auto-yay.sh qemu-full
 $SCRIPTS_PATH/auto-yay.sh docker-desktop
-$SCRIPTS_PATH/auto-yay.sh 
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
