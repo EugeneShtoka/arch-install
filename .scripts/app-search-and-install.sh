@@ -4,7 +4,7 @@ package=$1
 
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
-    echo "$packages"
+    packageNames=$(echo $packages | awk '{print $1}')
 
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
