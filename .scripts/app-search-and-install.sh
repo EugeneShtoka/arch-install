@@ -24,6 +24,6 @@ else
   else
     echo "Package not found in official repositories or AUR."
     searchResults=$(yay -Ss $package)
-    echo $searchResults | awk 'NR % 2 == 0'
+    echo $(echo $searchResults | awk 'NR % 2 == 0')
   fi
 fi
