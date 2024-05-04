@@ -8,7 +8,7 @@ SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
 names=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
 versions=($(echo $packages | awk '{print $2}'))
 descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
-    for (( i=1; i<${#names[@]}; i++ ))
+    for (( i=1; i<=${#names[@]}; i++ ))
     do
         echo "${names[i]} ${versions[i]} ${descriptions[i]}"
     done
