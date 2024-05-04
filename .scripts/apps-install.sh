@@ -8,7 +8,6 @@ $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh zoom
 $SCRIPTS_PATH/auto-yay.sh mailspring
 $SCRIPTS_PATH/auto-yay.sh beeper
-$SCRIPTS_PATH/auto-yay.sh 
 $SCRIPTS_PATH/auto-yay.sh qbittorrent-enhanced
 $SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
 $SCRIPTS_PATH/auto-yay.sh docker-desktop
