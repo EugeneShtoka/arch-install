@@ -31,6 +31,8 @@ else
         package="${$(echo $choice | awk '{print $1}')##*/}"
         $SCRIPTS_PATH/app-search-and-install.sh $package
       fi
+    else
+      echo "Haven't found anything matching $package"
     fi
   fi
 fi
