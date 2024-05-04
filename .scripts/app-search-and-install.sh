@@ -11,10 +11,20 @@ else
     #$SCRIPTS_PATH/auto-yay.sh $package
     echo "Package $package found in AUR."
   else
-    echo "Package not found in official repositories or AUR."
+
+    SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
+    IFS=$'\n'      # Change IFS to newline char
     searchResults=$(yay -Ss $package)
-    echo $searchResults
-    echo $(echo $searchResults | awk 'NR % 2 == 0')
+    names=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
+    versions=($(echo $packages | awk '{print $2}'))
+    descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
+    found=()
+    for (( i=${#names[@]}; i>=1; i-- )); do
+        found+=("${names[i]} ${versions[i]} ${descriptions[i]}")
+    done
+    dir="$HOME/.config/rofi/launchers/type-4"
+	theme='style-9a'
+	choice=$(printf '%s\n' "${found[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
   fi
 fi
 
