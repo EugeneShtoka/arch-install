@@ -6,7 +6,7 @@ package=$1
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
     packageNames=$(echo $packages | awk '{print $1}')
     packageVersions=$(echo $packages | awk '{print $2}')
-    echo $packageNames
+    echo $packageVersions
 
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
