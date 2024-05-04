@@ -4,12 +4,12 @@ package=$1
 
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
-  #sudo pacman -S $package
+  sudo pacman -S $package
   echo "Package $package found in official repositories."
 else
   aur=$(yay -Ss "^$package$" | wc -l)
   if [[ $aur -gt 0 ]]; then
-    #$SCRIPTS_PATH/auto-yay.sh $package
+    $SCRIPTS_PATH/auto-yay.sh $package
     echo "Package $package found in AUR."
   else
     SAVEIFS=$IFS
