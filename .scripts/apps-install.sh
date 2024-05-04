@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-yes | sudo pacman -Syi inotify-tools thunar rofi bluz bluez-utils brightnessctl docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome terraform aws-cli kubectl expac maim vlc bc eza
+yes | sudo pacman -Syi inotify-tools thunar rofi bluz bluez-utils brightnessctl docker-compose gnome-keyring bitwarden-cli jq python-packaging gvfs p7zip dunst upower xclip cups ghostscript go adobe-source-code-pro-fonts ttf-nerd-fonts-symbols ttf-font-awesome terraform aws-cli kubectl expac maim vlc bc eza upx
 
 $SCRIPTS_PATH/yay-install.sh
 
@@ -26,7 +26,6 @@ $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh kodoo-reader
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
-$SCRIPTS_PATH/auto-yay.sh upx
 
 yes | sudo pacman -Syu
 yes | sudo pacman -Rns $(pacman -Qtdq)
