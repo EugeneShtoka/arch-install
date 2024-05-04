@@ -12,7 +12,7 @@ else
     echo "Package $package found in AUR."
   else
     echo "Package not found in official repositories or AUR."
-    echo $(yay -Ss $package | tail -n +2)
+    echo $(yay -Ss $package)
     # Skip the first two header lines
     # while IFS=$'/' read -rA line; do
     #     for i in $fields; do
