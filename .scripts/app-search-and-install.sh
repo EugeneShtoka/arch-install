@@ -15,7 +15,8 @@ else
     SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
     IFS=$'\n'      # Change IFS to newline char
     searchResults=$(yay -Ss $package)
-    names=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
+    packages=$(echo $searchResults | awk 'NR % 2 == 1')
+    names=($(echo $packages | awk '{print $1}'))
     versions=($(echo $packages | awk '{print $2}'))
     descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
     found=()
