@@ -5,7 +5,7 @@ package=$1
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
     names=$(echo $packages | awk '{print $1}')
-    for name (); do
+    for name ($(echo $packages | awk '{print $1}')); do
       echo name: $name;
     done
     echo $names
