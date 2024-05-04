@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-USR_HOME=/home/eugene
-source $USR_HOME/.env
-source $USR_HOME/monitor.env
+source /home/eugene/.env
 
 monitorsCount=$(xrandr --listactivemonitors | grep 'Monitors:' | awk '{print $2}')
 if [ "$monitorsCount" -gt 1 ]; then  
