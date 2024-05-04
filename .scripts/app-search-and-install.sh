@@ -8,13 +8,14 @@ package=$1
 SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
 IFS=$'\n'      # Change IFS to newline char
 names_arr=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
+versions=($(echo $packages | awk '{print $2}'))
+descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
 IFS=$SAVEIFS   # Restore original IFS
     for (( i=0; i<${#names_arr[@]}; i++ ))
     do
-        echo ${names[i]} ${versions[i]} ${descriptions[i]}
+        echo ${names_arr[i]} ${versions[i]} ${descriptions[i]}
     done
-    versions=${(f)$(echo $packages | awk '{print $2}')}
-    descriptions=${(f)$(echo $searchResults | awk 'NR % 2 == 0')}
+    
     # for i in {1..$(echo $names | wc -l)}; do
     #   echo ${names[i]} ${versions[i]} ${descriptions[i]}
     # done
