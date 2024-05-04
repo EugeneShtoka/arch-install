@@ -16,6 +16,7 @@ package=$1
     theme='style-9a'
     choice=$(printf '%s\n' "${found[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
     if [[ -n $choice ]]; then
+      package=$(echo $choice | awk '{print $1}')
       $SCRIPTS_PATH/app-search-and-install.sh $choice
     fi
 # official=$(pacman -Ss "^$package$" | wc -l)
