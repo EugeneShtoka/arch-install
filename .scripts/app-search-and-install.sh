@@ -20,7 +20,7 @@ else
     versions=($(echo $packages | awk '{print $2}'))
     descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
     found=()
-    if [[ =${#names[@]} -gt 0 ]]; then  
+    if [[ ${#names[@]} -gt 0 ]]; then  
       for (( i=${#names[@]}; i>=1; i-- )); do
           found+=("${names[i]} ${versions[i]} ${descriptions[i]}")
       done
