@@ -4,7 +4,43 @@ package=$1
     IFS=$'\n'
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
-    names="$(echo $packages | awk '{print $1}')"
+    names="aur/tano
+aur/sub3dtool-git
+aur/gridplayer-appimage
+aur/augenkrebs-git
+aur/python-vlc-git
+aur/npapi-vlc
+aur/libvlc-qt
+aur/asap-chiptunes-player-git
+aur/libvlc-qt-git
+aur/syncplay-git
+aur/phonon-qt4-vlc
+aur/vlc-listenbrainz-git
+aur/vlc-materia-skin-git
+aur/playerctl-git
+aur/libvlcpp-git
+aur/vlc-plugin-pipewire
+aur/vlc-bittorrent-git
+aur/python-vlc
+aur/vlc-materia-skin
+aur/vlc-wayland-git
+aur/vlc-plugin-ytdl-git
+aur/vlc-pause-click-plugin
+aur/vlc-media-context
+aur/vlc-bittorrent
+aur/freetuxtv
+aur/vlc-tunein-radio
+aur/vlc-arc-dark-git
+aur/npapi-vlc-git
+aur/vlc-nox
+aur/vlsub-git
+aur/vlc-luajit
+aur/vlc-git
+extra/syncplay
+extra/phonon-qt6-vlc
+extra/phonon-qt5-vlc
+extra/playerctl
+extra/vlc"
     echo $names
 SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
 IFS=$'\n'      # Change IFS to newline char
