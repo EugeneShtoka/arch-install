@@ -15,7 +15,7 @@ $SCRIPTS_PATH/auto-yay.sh google-cloud-cli
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
-$SCRIPTS_PATH/auto-yay.sh kodoo-reader
+$SCRIPTS_PATH/auto-yay.sh koodo-reader-bin
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 
 yes | sudo pacman -Syu
