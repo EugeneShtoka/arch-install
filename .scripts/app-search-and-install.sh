@@ -13,7 +13,7 @@ descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
 IFS=$SAVEIFS   # Restore original IFS
     for (( i=0; i<${#names_arr[@]}; i++ ))
     do
-        echo ${names_arr[i]} ${versions[i]} ${descriptions[i]}
+        echo ${names[i]} ${versions[i]} ${descriptions[i]}
     done
     
     # for i in {1..$(echo $names | wc -l)}; do
