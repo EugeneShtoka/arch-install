@@ -5,6 +5,9 @@ package=$1
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
     names="$(echo $packages | awk '{print $1}')"
+    for name $names; do
+      echo name: $name;
+      done
     echo $names
 SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
 IFS=$'\n'      # Change IFS to newline char
