@@ -23,14 +23,7 @@ else
     echo "Package $package found in AUR."
   else
     echo "Package not found in official repositories or AUR."
-    yay -Ss $package | 
-    tail -n +2 | 
-    echo # Skip the first two header lines
-    while IFS=$'/' read -rA line; do
-        for i in $fields; do
-            echo -ne "${line[i]}\t"  # Print the selected field with a tab
-        done
-        echo # Newline
-    done 
+    searchResults=$(yay -Ss $package)
+    echo $searchResults | awk 'NR % 2 == 0'
   fi
 fi
