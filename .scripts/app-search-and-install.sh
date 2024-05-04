@@ -11,7 +11,7 @@ names_arr=($(echo $packages | awk '{print $1}')) # split the `names` string into
 IFS=$SAVEIFS   # Restore original IFS
     for (( i=0; i<${#names_arr[@]}; i++ ))
     do
-        echo "$i: ${names_arr[$i]}"
+        echo ${names[i]} ${versions[i]} ${descriptions[i]}
     done
     versions=${(f)$(echo $packages | awk '{print $2}')}
     descriptions=${(f)$(echo $searchResults | awk 'NR % 2 == 0')}
