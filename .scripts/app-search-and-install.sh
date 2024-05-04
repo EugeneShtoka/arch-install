@@ -5,10 +5,12 @@ official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
   #sudo pacman -S $package
   echo "Package $package found in official repositories."
-elif yay -Ss "^$package$" &> /dev/null; then
-  #$SCRIPTS_PATH/auto-yay.sh $package
-  echo "Package $package found in AUR."
 else
-    
-  echo "Package not found in official repositories or AUR."
+  aur=$(yay -Ss "^$package$" | wc -l)
+  if [[ $aur -gt 0 ]]; then
+    #$SCRIPTS_PATH/auto-yay.sh $package
+    echo "Package $package found in AUR."
+  else
+    echo "Package not found in official repositories or AUR."
+  fi
 fi
