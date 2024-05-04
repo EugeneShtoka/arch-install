@@ -8,10 +8,7 @@ package=$1
     versions=${(f)$(echo $packages | awk '{print $2}')}
     descriptions=${(f)$(echo $searchResults | awk 'NR % 2 == 0')}
     for i in "${!names}"; do  # Get indices of array1
-      echo "Index: $i"
-      echo "Line from var1: ${array1[i]}"
-      echo "Line from var2: ${array2[i]}"
-      echo "---"  # Optional separator
+      echo ${names[i]} ${versions[i]} ${descriptions[i]}
     done
 
 official=$(pacman -Ss "^$package$" | wc -l)
