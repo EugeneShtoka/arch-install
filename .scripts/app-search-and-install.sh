@@ -14,7 +14,7 @@ aur/libvlc-qt
 aur/asap-chiptunes-player-git
 aur/libvlc-qt-git
 aur/syncplay-git
-aur/phonon-qt4-vlc
+aur/phonon-qt4-vlc\n
 aur/vlc-listenbrainz-git
 aur/vlc-materia-skin-git
 aur/playerctl-git
