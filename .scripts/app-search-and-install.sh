@@ -11,7 +11,6 @@ else
     #$SCRIPTS_PATH/auto-yay.sh $package
     echo "Package $package found in AUR."
   else
-
     SAVEIFS=$IFS
     IFS=$'\n'
     searchResults=$(yay -Ss $package)
@@ -24,8 +23,9 @@ else
         found+=("${names[i]} ${versions[i]} ${descriptions[i]}")
     done
     dir="$HOME/.config/rofi/launchers/type-4"
-	theme='style-9a'
-	choice=$(printf '%s\n' "${found[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
+    theme='style-9a'
+    choice=$(printf '%s\n' "${found[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
+    if [[ -n $choice ]]; then
   fi
 fi
 
