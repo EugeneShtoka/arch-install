@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 package=$1
-
+    IFS=$'\n'
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
     names=${(f)"$(echo $packages | awk '{print $1}')"}
