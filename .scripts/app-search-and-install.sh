@@ -9,7 +9,7 @@ SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
 IFS=$'\n'      # Change IFS to newline char
 names_arr=($names) # split the `names` string into an array by the same name
 IFS=$SAVEIFS   # Restore original IFS
-    echo ${#names_arr}
+    echo ${#names_arr[@]}
     versions=${(f)$(echo $packages | awk '{print $2}')}
     descriptions=${(f)$(echo $searchResults | awk 'NR % 2 == 0')}
     for i in {1..$(echo $names | wc -l)}; do
