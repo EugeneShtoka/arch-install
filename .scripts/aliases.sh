@@ -21,16 +21,16 @@ alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
 
-alias gmn='setsid vivaldi-snapshot "https://gemini.google.com/app" &>/dev/null'
-alias ytb='setsid vivaldi-snapshot "https://www.youtube.com" &>/dev/null'
-alias ghb='setsid vivaldi-snapshot "https://github.com" &>/dev/null'
-alias gcp='setsid vivaldi-snapshot "https://console.cloud.google.com/welcome?pli=1&project=swapp-v1-1564402864804&authuser=1" &>/dev/null'
-alias gcp-composer='setsid vivaldi-snapshot "https://console.cloud.google.com/composer/environments?referrer=search&authuser=1&project=swapp-v1-1564402864804" &>/dev/null'
-alias gcp-airflow='setsid vivaldi-snapshot "https://15f236baf9994fd7a4d6ae3be218aaf8-dot-us-central1.composer.googleusercontent.com/home" &>/dev/null'
-alias pgd='setsid vivaldi-snapshot "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
-alias wgd='setsid vivaldi-snapshot "https://drive.google.com/drive/u/1/my-drive" &>/dev/null'
-alias jira='setsid vivaldi-snapshot "https://swapp-ai.atlassian.net/jira/software/c/projects/SWP/boards/1?assignee=712020%3Aee767fac-fcf2-4a03-a591-ccc8a59a097b" &>/dev/null'
-alias coralogix='setsid vivaldi-snapshot "https://swapp.app.coralogix.us/#/dashboard" &>/dev/null'
+alias gmn='setsid $BROWSER "https://gemini.google.com/app" &>/dev/null'
+alias ytb='setsid $BROWSER "https://www.youtube.com" &>/dev/null'
+alias ghb='setsid $BROWSER "https://github.com" &>/dev/null'
+alias gcp='setsid $BROWSER "https://console.cloud.google.com/welcome?pli=1&project=swapp-v1-1564402864804&authuser=1" &>/dev/null'
+alias gcp-composer='setsid $BROWSER "https://console.cloud.google.com/composer/environments?referrer=search&authuser=1&project=swapp-v1-1564402864804" &>/dev/null'
+alias gcp-airflow='setsid $BROWSER "https://15f236baf9994fd7a4d6ae3be218aaf8-dot-us-central1.composer.googleusercontent.com/home" &>/dev/null'
+alias pgd='setsid $BROWSER "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
+alias wgd='setsid $BROWSER "https://drive.google.com/drive/u/1/my-drive" &>/dev/null'
+alias jira='setsid $BROWSER "https://swapp-ai.atlassian.net/jira/software/c/projects/SWP/boards/1?assignee=712020%3Aee767fac-fcf2-4a03-a591-ccc8a59a097b" &>/dev/null'
+alias coralogix='setsid $BROWSER "https://swapp.app.coralogix.us/#/dashboard" &>/dev/null'
 
 alias spnd='mirophone-unmute && systemctl suspend'
 alias stdn='mirophone-unmute && shutdown now'
