@@ -4,7 +4,7 @@ package=$1
     IFS=$'\n'
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
-    names=$(echo $packages | awk '{print $1}')
+    names="$(echo $packages | awk '{print $1}')"
     saveIFS=$IFS; IFS=$'\n'; names_arr=("$names"); IFS=$saveIFS
     echo ${#names_arr}
     versions=${(f)$(echo $packages | awk '{print $2}')}
