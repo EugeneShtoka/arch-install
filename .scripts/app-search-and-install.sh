@@ -32,7 +32,7 @@ else
         $SCRIPTS_PATH/app-search-and-install.sh $package
       fi
     else
-      echo "Haven't found anything matching $package"
+      echo "Haven't found any package matching $package"
     fi
   fi
 fi
