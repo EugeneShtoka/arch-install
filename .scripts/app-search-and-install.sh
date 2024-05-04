@@ -4,7 +4,7 @@ package=$1
 
     searchResults=$(yay -Ss $package)
     packages=$(echo $searchResults | awk 'NR % 2 == 1')
-    names=${(f)$(echo $packages | awk '{print $1}')}
+    names=${(f)"$(echo $packages | awk '{print $1}')"}
     versions=${(f)$(echo $packages | awk '{print $2}')}
     descriptions=${(f)$(echo $searchResults | awk 'NR % 2 == 0')}
     echo ${#names}
