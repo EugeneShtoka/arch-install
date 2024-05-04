@@ -4,6 +4,7 @@ package=$1
 
     searchResults=$(yay -Ss $package)
     packageNames=$(echo $searchResults | awk 'NR % 2 == 1')
+    echo "$packageNames"
 
 official=$(pacman -Ss "^$package$" | wc -l)
 if [[ $official -gt 0 ]]; then
