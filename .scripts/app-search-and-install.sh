@@ -7,7 +7,7 @@ package=$1
     names="$(echo $packages | awk '{print $1}')"
 SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
 IFS=$'\n'      # Change IFS to newline char
-names_arr=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
+names=($(echo $packages | awk '{print $1}')) # split the `names` string into an array by the same name
 versions=($(echo $packages | awk '{print $2}'))
 descriptions=($(echo $searchResults | awk 'NR % 2 == 0'))
 IFS=$SAVEIFS   # Restore original IFS
