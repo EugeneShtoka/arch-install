@@ -5,3 +5,8 @@ for file in $MUSIC_PATH/**/*; do
     parts=(${(s/,/)str})
     echo $parts[1] $parts[5]
 done
+
+author=$1
+song=$2
+url=$3
+yt-dlp -x --audio-format mp3 $url -o Music/$2/$song.mp3
