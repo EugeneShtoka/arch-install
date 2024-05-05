@@ -6,7 +6,7 @@ html_file=~/yt-temp/song.html
 #wget $url -O $html_file
 
 html=`cat $html_file`
-title=$(sed 's/.*\<title\>\(.*\)\<\/title\>.*/\1/g' $html_file)
+title=$(sed 's/.*\<title\>\(.*\)\<\/title\>.*/\1/g' $html)
 
 echo $title
 title="Manu Chao – Clandestino (Official Music Video)"
