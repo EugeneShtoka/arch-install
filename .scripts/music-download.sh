@@ -12,8 +12,6 @@ title=${titleRaw::-2}
 
 if [[ -n $title ]]; then
     resJson=$($SCRIPTS_PATH/gemini.sh "From title get artist and song: '$title', json response, resonse in single line")
-    KEY=$(secret-tool lookup provider gemini key-pair secret)
-    resJson=$(gemini-cli --key $KEY prompt "From title get artist and song: '$title', json response, resonse in single line")
     if [[ -n $resJson ]]; then
         artist=$(echo $resJson | jq '.artist' | tr -d '"')
         song=$(echo $resJson | jq '.song' | tr -d '"')
