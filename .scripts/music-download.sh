@@ -20,6 +20,7 @@ echo $request
 contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title', return result as json"}]}]}'
 echo $contents
 respose=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
-echo $(echo $respose | jq)
+cleanedRespose=${respose//`/}
+echo $(echo $cleanedRespose | jq '.candidates[0].content.parts[0].text')
 #yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
 ##id3v2 -a $author Music/$author/$song.mp3
