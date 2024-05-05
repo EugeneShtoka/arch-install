@@ -12,6 +12,8 @@ title=${titleRaw::-2}
 
 if [[ -n $title ]]; then
     KEY=$(secret-tool lookup provider gemini key-pair secret)
+    resJson=$(gemini-cli --key AIzaSyBX0F5dCV1VUNtblZ_Hy2j_grsd1e1uIU4 prompt "From title get artist and song: '$title', json response, resonse in single line")
+
     gmnUrl='https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='$KEY
     contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title', json response, resonse in single line"}]}]}'
     response=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
