@@ -16,5 +16,3 @@ song=$2
 url=$3
 yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
 id3v2 -a $author Music/$author/$song.mp3
-
-secret-tool store --label="gemini key" provider gemini key-pair secret AIzaSyDJ7aZ-nVVpNzBgV2o3Mq3E5x5SDVhl404
