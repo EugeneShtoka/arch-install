@@ -13,9 +13,7 @@ title=${titleRaw::-2}
 if [[ -n $title ]]; then
     KEY=$(secret-tool lookup provider gemini key-pair secret)
     resJson=$(gemini-cli --key $KEY prompt "From title get artist and song: '$title', json response, resonse in single line")
-    echo $resJson
     if [[ -n $resJson ]]; then
-        echo $resJson
         artist=$(echo $(echo $resJson | jq 'fromjson | .artist' | tr -d '"'))
         song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
         if [[ -n $artist && -n $song ]]; then
