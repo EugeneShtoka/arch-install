@@ -23,7 +23,7 @@ echo BBBBBBBBBB$response
 resJson=$(echo $response | jq '.candidates[0].content.parts[0].text')
 echo CCCCCCCCC$resJson
 artist=$(echo $(echo $resJson | jq 'fromjson | .artist'))
-song=$(echo $(echo $resJson | jq 'fromjson | .song'))
+song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
 echo $artist $song
 yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
 id3v2 -a $author Music/$author/$song.mp3
