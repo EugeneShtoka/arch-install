@@ -19,6 +19,7 @@ if [[ -n $title ]]; then
     if [[ -n $response ]]; then
         resJson=$(echo $response | jq '.candidates[0].content.parts[0].text')
         if [[ -n $resJson ]]; then
+            echo $resJson
             artist=$(echo $(echo $resJson | jq 'fromjson | .artist' | tr -d '"'))
             song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
             if [[ -n $artist && -n $song ]]; then
