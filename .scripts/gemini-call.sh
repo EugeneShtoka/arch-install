@@ -1,3 +1,3 @@
 source $SCRIPTS_PATH/gemini.sh
 
-gemini $1
+gemini "$1"
