@@ -9,6 +9,7 @@ html=`cat $html_file`
 parts=(${(s/title>/)html})
 title=${parts[2]}
 
+echo AAAAAAAAAA$title
 KEY=$(secret-tool lookup provider gemini key-pair secret)
 echo $KEY
 request=""
