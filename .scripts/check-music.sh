@@ -9,4 +9,4 @@ done
 author=$1
 song=$2
 url=$3
-yt-dlp -x --audio-format mp3 $url -o Music/$2/$song.mp3
+yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
