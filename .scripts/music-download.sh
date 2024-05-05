@@ -23,7 +23,7 @@ if [[ -n $title ]]; then
             song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
             if [[ -n $artist && -n $song ]]; then
                 yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
-                id3v2 -a $author Music/$artist/$song.mp3
+                id3v2 -a $artist Music/$artist/$song.mp3
             fi
         fi
     fi
