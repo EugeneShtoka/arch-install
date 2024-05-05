@@ -17,7 +17,7 @@ request="From title get artist and song: $title, return result as json"
 gmnUrl='https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='$KEY
 echo $gmnUrl
 echo $request
-respose=$(curl -H 'Content-Type: application/json' -d $'{"contents":[{"parts":[{"text":$request}]}]}' -X POST $gmnUrl)
+respose=$(curl -H 'Content-Type: application/json' -d $'{"contents":[{"parts":[{"text":"$request"}]}]}' -X POST $gmnUrl)
 echo $respose
 #yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
 ##id3v2 -a $author Music/$author/$song.mp3
