@@ -36,7 +36,7 @@ else
 		availableMeetings+=("$name")
 	done
 	dir="$HOME/.config/rofi/launchers/type-4"
-	theme='style-9-wide'
+	theme='style-9-no-search'
 	choice=$(printf '%s\n' "${availableMeetings[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
 	echo "$meetings" | jq -c '.[]' | while read meeting; do
 		name=$(formatMeeting $meeting $formatMeeting)
