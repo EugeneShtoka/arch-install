@@ -22,7 +22,7 @@ response=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl
 echo BBBBBBBBBB$response
 resJson=$(echo $response | jq '.candidates[0].content.parts[0].text')
 echo CCCCCCCCC$resJson
-artist=$(echo $(echo $resJson | jq 'fromjson | .artist'  | tr -d '"'))
+artist=$(echo $(echo $resJson | jq 'fromjson | .artist' | tr -d '"'))
 song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
 echo $artist $song
 yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
