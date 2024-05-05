@@ -24,6 +24,7 @@ if [[ -n $title ]]; then
             if [[ -n $artist && -n $song ]]; then
                 yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
                 id3v2 -a $artist Music/$artist/$song.mp3
+                notify-send "YouTube Download" "Tracl saved to Music/$artist/$song.mp3"
             fi
         fi
     fi
