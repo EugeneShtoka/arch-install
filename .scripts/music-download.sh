@@ -10,7 +10,7 @@ title=$(sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' "$html_file" | \
         sed -e 's/<[^>]*>//g')
 
 echo $title
-
+$title="Manu Chao – Clandestino (Official Music Video)"
 KEY=$(secret-tool lookup provider gemini key-pair secret)
 echo $KEY
 request=""
