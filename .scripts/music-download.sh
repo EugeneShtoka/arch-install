@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-url=$1
+url=$(xclip -o -selection c)
 mkdir ~/yt-temp
 html_file=~/yt-temp/song.html
 wget $url -O $html_file
