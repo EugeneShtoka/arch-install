@@ -20,6 +20,7 @@ curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl
 response=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
 echo BBBBBBBBBB$response
 resJson=$(echo $respose | jq '.candidates[0].content.parts[0].text')
+echo CCCCCCCCC$resJson
 artist=$(echo $(echo $resJson | jq 'fromjson | .artist'))
 song=$(echo $(echo $resJson | jq 'fromjson | .song'))
 echo $artist $song
