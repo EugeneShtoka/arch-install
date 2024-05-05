@@ -3,13 +3,11 @@
 url=$1
 mkdir ~/yt-temp
 html_file=~/yt-temp/song.html
-#wget $url -O $html_file
+wget $url -O $html_file
 
 html=`cat $html_file`
-#title=$(sed 's/.*\<title\>\(.*\)\<\/title\>.*/\1/g' $html)
 parts=(${(s/title>/)html})
-
-echo ${parts[2]}
+title=${parts[2]}
 
 # KEY=$(secret-tool lookup provider gemini key-pair secret)
 # echo $KEY
