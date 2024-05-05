@@ -21,7 +21,7 @@ alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
 
-alias gmn='setsid $BROWSER "https://gemini.google.com/app" &>/dev/null'
+alias gemini='setsid $BROWSER "https://gemini.google.com/app" &>/dev/null'
 alias ytb='setsid $BROWSER "https://www.youtube.com" &>/dev/null'
 alias ghb='setsid $BROWSER "https://github.com" &>/dev/null'
 alias gcp='setsid $BROWSER "https://console.cloud.google.com/welcome?pli=1&project=swapp-v1-1564402864804&authuser=1" &>/dev/null'
