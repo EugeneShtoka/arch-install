@@ -6,10 +6,11 @@ html_file=~/yt-temp/song.html
 #wget $url -O $html_file
 
 html=`cat $html_file`
-title=$(sed 's/.*\<title\>\(.*\)\<\/title\>.*/\1/g' $html)
+#title=$(sed 's/.*\<title\>\(.*\)\<\/title\>.*/\1/g' $html)
+parts=(${(s/title>/)html})
 
 echo $title
-title="Manu Chao – Clandestino (Official Music Video)"
+
 # KEY=$(secret-tool lookup provider gemini key-pair secret)
 # echo $KEY
 # request=""
