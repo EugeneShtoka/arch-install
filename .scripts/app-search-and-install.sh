@@ -25,7 +25,7 @@ else
           found+=("${names[i]} ${versions[i]} ${descriptions[i]}")
       done
       dir="$HOME/.config/rofi/launchers/type-4"
-      theme='style-9a'
+      theme='style-9-no-search'
       choice=$(printf '%s\n' "${found[@]}" | rofi -theme ${dir}/${theme}.rasi -dmenu)
       if [[ -n $choice ]]; then
         package="${$(echo $choice | awk '{print $1}')##*/}"
