@@ -52,6 +52,7 @@
 !.config/rofi
 !.config/rofi/launchers
 !.config/rofi/launchers/type-4
+!.config/rofi/launchers/type-4/style-9.rasi
 !.config/rofi/launchers/type-4/style-9-no-search.rasi
 !.config/rofi/launchers/type-4/style-9-wide.rasi
 !.vscode
