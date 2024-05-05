@@ -49,5 +49,9 @@
 !.config/Mailspring/keymap.json
 !.config/fontconfig
 !.config/fontconfig/fonts.conf
+!.config/rofi
+!.config/rofi/launchers
+!.config/rofi/launchers/type-4
+!.config/rofi/launchers/type-4/style-9-no-search.rasi
 !.vscode
 !.vscode/argv.json
