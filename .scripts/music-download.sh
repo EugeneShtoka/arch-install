@@ -9,7 +9,7 @@ html=`cat $html_file`
 #title=$(sed 's/.*\<title\>\(.*\)\<\/title\>.*/\1/g' $html)
 parts=(${(s/title>/)html})
 
-echo $title
+echo ${parts[2]}
 
 # KEY=$(secret-tool lookup provider gemini key-pair secret)
 # echo $KEY
