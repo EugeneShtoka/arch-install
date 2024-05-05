@@ -17,7 +17,7 @@ request=""
 gmnUrl='https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='$KEY
 echo $gmnUrl
 echo $request
-contents='{"contents":[{"parts":[{"text":"From title get artist and song: $title, return result as json"}]}]}'
+contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title', return result as json"}]}]}'
 echo $contents
 #respose=$(curl -H 'Content-Type: application/json' -d $'{"contents":[{"parts":[{"text":"$request"}]}]}' -X POST $gmnUrl)
 echo $respose
