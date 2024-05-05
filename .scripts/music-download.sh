@@ -18,9 +18,13 @@ if [[ -n $title ]]; then
     response=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
     if [[ -n $response ]]
         resJson=$(echo $response | jq '.candidates[0].content.parts[0].text')
-        artist=$(echo $(echo $resJson | jq 'fromjson | .artist' | tr -d '"'))
-        song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
-        yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
-        id3v2 -a $author Music/$author/$song.mp3
+        if [[ -n $resJson ]]; then
+            artist=$(echo $(echo $resJson | jq 'fromjson | .artist' | tr -d '"'))
+            song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
+            if [[ -n $artist && -n $song ]]; then
+                yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
+                id3v2 -a $author Music/$author/$song.mp3
+            fi
+        fi
     fi
 fi
