@@ -36,6 +36,7 @@ alias paste='xclip -out -selection c'
 alias yayr='sudo pacman -R'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias install=$SCRIPTS_PATH/app-search-and-install.sh
+alias gmn=$SCRIPTS_PATH/gemini-call.sh
 
 alias mirophone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias mirophone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
