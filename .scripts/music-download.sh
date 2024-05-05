@@ -14,6 +14,7 @@ if [[ -n $title ]]; then
     source $SCRIPTS_PATH/gemini.sh
 
     resJson=$(gemini "From title get artist and song: '$title', json response, resonse in single line")
+    echo $resJson
     if [[ -n $resJson ]]; then
         artist=$(echo $resJson | jq '.artist' | tr -d '"')
         song=$(echo $resJson | jq '.song' | tr -d '"')
