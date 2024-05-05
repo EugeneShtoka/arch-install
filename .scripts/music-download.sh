@@ -22,5 +22,5 @@ respose=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
 resJson=$(echo $respose | jq '.candidates[0].content.parts[0].text')
 artist=$(echo $(echo $resJson | jq 'fromjson | .artist'))
 song=$(echo $(echo $resJson | jq 'fromjson | .song'))
-#yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
-##id3v2 -a $author Music/$author/$song.mp3
+yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
+id3v2 -a $author Music/$author/$song.mp3
