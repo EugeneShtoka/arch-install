@@ -17,11 +17,10 @@ request=""
 gmnUrl='https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='$KEY
 echo $gmnUrl
 echo $request
-contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title', return result as json"}]}]}'
+contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title'"}]}]}'
 echo $contents
 respose=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
-cleanedRespose=${respose//\`\`\`/}
-echo $cleanedRespose
-echo $(echo $cleanedRespose | jq '.candidates[0].content.parts[0].text')
+echo $respose
+echo $(echo $respose | jq '.candidates[0].content.parts[0].text')
 #yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
 ##id3v2 -a $author Music/$author/$song.mp3
