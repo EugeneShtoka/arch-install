@@ -8,6 +8,8 @@ title=$(sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' "$html_file" | \
         grep -Eo '<title>.*</title>' | \
         sed -e 's/<[^>]*>//g')
 
+parseWithGemini=$(gemini 'From title get artist and song "$title    ", return result as json')
+
 author=$1
 song=$2
 url=$3
