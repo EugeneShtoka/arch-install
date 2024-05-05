@@ -2,7 +2,8 @@
 
 url=$1
 mkdir ~/yt-temp
-wget $url -O ~/yt-temp/song.html
+html_file=~/yt-temp/song.html
+wget $url -O $html_file
 
 title=$(sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' "$html_file" | \
         grep -Eo '<title>.*</title>' | \
