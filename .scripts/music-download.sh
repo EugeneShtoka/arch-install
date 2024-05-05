@@ -16,9 +16,11 @@ if [[ -n $title ]]; then
     contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title', json response, resonse in single line"}]}]}'
     curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl
     response=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
-    resJson=$(echo $response | jq '.candidates[0].content.parts[0].text')
-    artist=$(echo $(echo $resJson | jq 'fromjson | .artist' | tr -d '"'))
-    song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
-    yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
-    id3v2 -a $author Music/$author/$song.mp3
+    if [[ -n $response ]]
+        resJson=$(echo $response | jq '.candidates[0].content.parts[0].text')
+        artist=$(echo $(echo $resJson | jq 'fromjson | .artist' | tr -d '"'))
+        song=$(echo $(echo $resJson | jq 'fromjson | .song' | tr -d '"'))
+        yt-dlp -x --audio-format mp3 $url -o Music/$artist/$song.mp3
+        id3v2 -a $author Music/$author/$song.mp3
+    fi
 fi
