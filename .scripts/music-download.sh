@@ -3,7 +3,7 @@
 url=$1
 mkdir ~/yt-temp
 html_file=~/yt-temp/song.html
-wget $url -O $html_file
+#wget $url -O $html_file
 
 title=$(sed 's/.*<title>"\([0-9]*\)".*/\1/g' $html_file)
 
