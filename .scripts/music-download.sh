@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+url=$1
+mkdir ~/yt-temp
+wget $url -O ~/yt-temp/song.html
+
 author=$1
 song=$2
 url=$3
