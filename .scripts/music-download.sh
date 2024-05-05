@@ -14,7 +14,6 @@ if [[ -n $title ]]; then
     KEY=$(secret-tool lookup provider gemini key-pair secret)
     gmnUrl='https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='$KEY
     contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title', json response, resonse in single line"}]}]}'
-    curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl
     response=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
     if [[ -n $response ]]; then
         resJson=$(echo $response | jq '.candidates[0].content.parts[0].text')
