@@ -8,7 +8,7 @@ wget $url -O $html_file
 html=`cat $html_file`
 parts=(${(s/title>/)html})
 titleRaw=${parts[2]}
-title=${title::-2}
+title=${titleRaw::-2}
 
 echo AAAAAAAAAA$title
 KEY=$(secret-tool lookup provider gemini key-pair secret)
