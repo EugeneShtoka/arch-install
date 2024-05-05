@@ -18,7 +18,6 @@ gmnUrl='https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:gener
 echo $gmnUrl
 echo $request
 contents='{"contents":[{"parts":[{"text":"From title get artist and song: '$title', json response, resonse in single line"}]}]}'
-
 respose=$(curl -H 'Content-Type: application/json' -d $contents -X POST $gmnUrl)
 echo $respose
 echo $(echo $respose | jq '.candidates[0].content.parts[0].text')
