@@ -13,10 +13,11 @@ echo $title
 
 KEY=$(secret-tool lookup provider gemini key-pair secret)
 echo $KEY
-request="From title get artist and song: $title, return result as json"
+request=""
 gmnUrl='https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key='$KEY
 echo $gmnUrl
 echo $request
+contents='{"contents":[{"parts":[{"text":"From title get artist and song: $title, return result as json"}]}]}'
 respose=$(curl -H 'Content-Type: application/json' -d $'{"contents":[{"parts":[{"text":"$request"}]}]}' -X POST $gmnUrl)
 echo $respose
 #yt-dlp -x --audio-format mp3 $url -o Music/$author/$song.mp3
