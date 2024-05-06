@@ -1,0 +1,10 @@
+# Vivaldi added this file.
+#
+# Prevent the profile from being silently added to a git repo
+#
+# Uploading the profile to an online repository, e.g. on GitHub, can leak
+# sensitive information such as passwords, cookies, and other data.
+# It is still possible to commit the files to a repo, but you have to
+# force Git to ignore this entry.
+
+# Placeholder - permission are managed at main .gitignore
