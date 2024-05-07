@@ -7,7 +7,7 @@ else
     PROJECT_NAME=$1
 fi
 
-git status
+/bin/git status
 # gh repo create $PROJECT_NAME --public
 # git init
 # git add -A
