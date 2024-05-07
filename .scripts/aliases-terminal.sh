@@ -23,7 +23,7 @@ alias git-alias-main='git symbolic-ref refs/heads/main refs/heads/$(git rev-pars
 
 alias home='cd ~ && code . && clear'
 alias figoro='cd $HOME/dev/figoro && code . && clear'
-alias figoro='cd $HOME/dev/blog && code . && clear'
+alias blog='cd $HOME/dev/blog && code . && clear'
 alias aps='cd $WORK_REPOS_PATH/swapp-aps && code . && clear'
 alias plugin='cd $WORK_REPOS_PATH/revit-plugin && code . && clear'
 alias workflows='cd $WORK_REPOS_PATH/workflows && code . && clear'
