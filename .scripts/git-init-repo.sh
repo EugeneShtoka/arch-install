@@ -7,7 +7,6 @@ else
     PROJECT_NAME=$1
 fi
 
-echo $PROJECT_NAME
 gh repo create $PROJECT_NAME --public
 git init
 git add -A
