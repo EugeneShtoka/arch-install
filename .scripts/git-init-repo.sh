@@ -12,4 +12,5 @@ fi
 /bin/git add -A
 /bin/git commit -m 'Initial commit'
 /bin/git remote add origin git@github.com:EugeneShtoka/$PROJECT_NAME.git
+sleep 2
 /bin/git push -u -f origin main
