@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 if [ -z "$1" ]; then
-    path=$(pwd)
-    PROJECT_NAME="${path##*/}"
+    fullPath=$(pwd)
+    PROJECT_NAME="${fullPath##*/}"
 else
     PROJECT_NAME=$1
 fi
