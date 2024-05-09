@@ -9,12 +9,12 @@ branchName=$category/${title// /-}
 
 git stash
 
-git switch main;
-git pull;
-git checkout -b $branchName;
+git switch main
+git pull
+git checkout -b $branchName
 
 git stash apply
 
-git add .;
-git commit -m "$title";
-gh pr create -B main --fill;
+git add .
+git commit -m "$title"
+gh pr create -B main --fill
