@@ -15,6 +15,6 @@ git checkout -b $branchName
 
 git stash apply
 
-git add .
+git add -A
 git commit -m "$title"
 gh pr create -B main --fill
