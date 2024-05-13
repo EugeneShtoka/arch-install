@@ -1,13 +1,13 @@
 function bluetooth_status() {
-    prrintf "$(bluetoothctl info $HEADPHONES_MAC_ADDR)"
+    printf $(bluetoothctl info $HEADPHONES_MAC_ADDR)
 }
 
 function is_bluetooth_connected() {
-    echo $(echo "$(bluetoothctl info $HEADPHONES_MAC_ADDR)" | grep Connected | awk '{print $2}')
+    echo $(bluetoothctl info $HEADPHONES_MAC_ADDR | grep Connected | awk '{print $2}')
 }
 
 function show-headphones-message() {
-    blStatus="$(bluetoothctl info $HEADPHONES_MAC_ADDR)"
+    blStatus="$(bluetooth_status)"
     echo "$blStatus"
     name=$(echo "$blStatus" | grep -oP '(?<=Name: ).*' )
     battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
