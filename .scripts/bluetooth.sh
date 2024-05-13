@@ -1,5 +1,5 @@
 function bluetooth_status() {
-    echo "$(bluetoothctl info $HEADPHONES_MAC_ADDR)"
+    print "$(bluetoothctl info $HEADPHONES_MAC_ADDR)"
 }
 
 function is_bluetooth_connected() {
@@ -13,4 +13,4 @@ function show-headphones-message() {
     battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
     message="$(get_battery_icon $battery_level) $battery_level% $(get_audio_status)"
     notify-send "$name $1" "$message" -i headphones
-}
+}2
