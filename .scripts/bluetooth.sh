@@ -1,5 +1,5 @@
 function bluetooth_status() {
-    printf "$(bluetoothctl info $HEADPHONES_MAC_ADDR)"
+    prrintf "$(bluetoothctl info $HEADPHONES_MAC_ADDR)"
 }
 
 function is_bluetooth_connected() {
