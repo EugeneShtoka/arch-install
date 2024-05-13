@@ -3,7 +3,7 @@ function bluetooth_status() {
 }
 
 function is_bluetooth_connected() {
-    echo $(printf "$(bluetooth_status)"| grep Connected | awk '{print $2}')
+    echo $(echo "$(bluetooth_status)" | grep Connected | awk '{print $2}')
 }
 
 function show-headphones-message() {
