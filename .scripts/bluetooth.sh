@@ -7,7 +7,7 @@ function is_bluetooth_connected() {
 }
 
 function show-headphones-message() {
-    blStatus=$(bluetooth_status)
+    blStatus="$(bluetooth_status)"
     echo "$blStatus"
     name=$(echo "$blStatus" | grep -oP '(?<=Name: ).*' )
     battery_level=$(echo $blStatus | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
