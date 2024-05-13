@@ -13,7 +13,7 @@ function is_muted() {
 
 function get_audio_icon() {
   if [[ $(is_bluetooth_connected) == "yes" ]]; then
-    echo "\uf025"
+    echo "\uf025 $(get-level sink)%"
   else
     if [[ $(is_muted sink) == "no" ]]; then
       echo "\uf028 $(get-level sink)%"
