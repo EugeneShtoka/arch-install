@@ -13,7 +13,7 @@ alias file-manager='setsid thunar &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
 alias keyboard-trainer='setsid tipp10 &>/dev/null'
 alias reader='setsid koodo-reader &>/dev/null'
-alias reader='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/null'
+alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
