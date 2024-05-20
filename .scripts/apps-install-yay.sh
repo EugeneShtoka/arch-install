@@ -53,9 +53,9 @@ $SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
 $SCRIPTS_PATH/auto-yay.sh docker-desktop
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy-bin
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
+$SCRIPTS_PATH/auto-yay.sh autokey-common
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh koodo-reader-bin
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
-
