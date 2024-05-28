@@ -39,6 +39,7 @@ alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias install=$SCRIPTS_PATH/app-search-and-install.sh
 alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
 alias gmn=$SCRIPTS_PATH/gemini-call.sh
+alias calc=$SCRIPTS_PATH//calculate.sh
 
 alias mirophone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias mirophone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
