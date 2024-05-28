@@ -3,7 +3,7 @@
 alias browser='setsid $BROWSER &>/dev/null'
 alias mail='setsid mailspring --password-store="gnome-libsecret" &>/dev/null'
 alias slack='setsid /usr/bin/slack -s &>/dev/null'
-alias messenger='setsid beeper --no-sandbox &>/dev/null'
+alias messenger='setsid beeper --no-sandbox --default-frame &>/dev/null'
 alias zoom='setsid /usr/bin/zoom &>/dev/null'
 alias docker-start='setsid /opt/docker-desktop/bin/docker-desktop &>/dev/null'
 alias postman='setsid /opt/postman/Postman &>/dev/null'
