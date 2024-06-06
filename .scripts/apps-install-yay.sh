@@ -64,3 +64,4 @@ $SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh ngrok
 $SCRIPTS_PATH/auto-yay.sh openvpn
+$SCRIPTS_PATH/auto-yay.sh networkmanager-openvpn
