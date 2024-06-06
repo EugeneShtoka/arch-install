@@ -62,12 +62,4 @@ $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh vault
-<<<<<<< HEAD
 $SCRIPTS_PATH/auto-yay.sh openvpn
-=======
-$SCRIPTS_PATH/auto-yay.sh ngrok
-$SCRIPTS_PATH/auto-yay.sh gpu-viewer
-$SCRIPTS_PATH/auto-yay.sh steam
-$SCRIPTS_PATH/auto-yay.sh openvpn3
-$SCRIPTS_PATH/auto-yay.sh eovpn
->>>>>>> refs/remotes/origin/main
