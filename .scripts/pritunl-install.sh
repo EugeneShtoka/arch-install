@@ -1,4 +1,4 @@
-
+#!/bin/zsh
 
 if [[ $(grep -c "Server = https://repo.pritunl.com/stable/pacman" "/etc/pacman.conf") -eq 0 ]]; then
     echo "[pritunl]" >> /etc/pacman.conf
