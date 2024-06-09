@@ -63,4 +63,3 @@ $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh openvpn
-$SCRIPTS_PATH/auto-yay.sh pritunl-client-electron
