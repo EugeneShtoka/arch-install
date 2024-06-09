@@ -66,3 +66,4 @@ $SCRIPTS_PATH/auto-yay.sh openvpn
 $SCRIPTS_PATH/auto-yay.sh networkmanager
 $SCRIPTS_PATH/auto-yay.sh nm-connection-editor
 $SCRIPTS_PATH/auto-yay.sh networkmanager-openvpn
+$SCRIPTS_PATH/auto-yay.sh pritunl-client-electron
