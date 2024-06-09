@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+$SCRIPTS_PATH/pritunl-install.SH
+
 $SCRIPTS_PATH/auto-yay.sh gcc-go-snapshot
 $SCRIPTS_PATH/auto-yay.sh inotify-tools
 $SCRIPTS_PATH/auto-yay.sh thunar
