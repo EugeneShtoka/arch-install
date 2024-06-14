@@ -2,7 +2,6 @@
 
 $SCRIPTS_PATH/pritunl-install.sh
 
-$SCRIPTS_PATH/auto-yay.sh gcc-go-snapshot
 $SCRIPTS_PATH/auto-yay.sh inotify-tools
 $SCRIPTS_PATH/auto-yay.sh thunar
 $SCRIPTS_PATH/auto-yay.sh rofi
