@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-rclone sync $GDRIVE_NAME:$OBSIDIAN_GDRIVE_PATH $OBSIDIAN_PATH

@@ -1,5 +1,5 @@
 #!/bin/zsh
 
-cd $OBSIDIAN_PATH
+cd $NOTES_PATH
 git reset --hard
 git pull
