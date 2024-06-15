@@ -20,7 +20,7 @@ add_drive() {
         echo ""
         echo "# $label"
         echo "UUID=$uuid $mount_point ext4  $options    0 2"
-    } | sudo tee -a ~/fstab.log > /dev/null
+    } | sudo tee -a /etc/fstab > /dev/null
 }
 
 add_drive Vault ",noatime,discard,errors=remount-ro"
