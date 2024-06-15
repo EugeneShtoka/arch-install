@@ -8,6 +8,7 @@ $SCRIPTS_PATH/auto-yay.sh rofi
 $SCRIPTS_PATH/auto-yay.sh bluez
 $SCRIPTS_PATH/auto-yay.sh bluez-utils
 $SCRIPTS_PATH/auto-yay.sh brightnessctl
+$SCRIPTS_PATH/auto-yay.sh copyq
 $SCRIPTS_PATH/auto-yay.sh docker-compose
 $SCRIPTS_PATH/auto-yay.sh gnome-keyring
 $SCRIPTS_PATH/auto-yay.sh bitwarden-cli
@@ -61,8 +62,6 @@ $SCRIPTS_PATH/auto-yay.sh koodo-reader-bin
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 $SCRIPTS_PATH/auto-yay.sh musescore-midi
-$SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh openvpn
 $SCRIPTS_PATH/auto-yay.sh anki-bin
-$SCRIPTS_PATH/auto-yay.sh gparted
