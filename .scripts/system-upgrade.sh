@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 yes | yay -Suy
 
 $SCRIPTS_PATH/rclone-config.sh

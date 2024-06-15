@@ -25,7 +25,6 @@ $SCRIPTS_PATH/auto-yay.sh hugo
 $SCRIPTS_PATH/auto-yay.sh bind
 $SCRIPTS_PATH/auto-yay.sh yt-dlp
 $SCRIPTS_PATH/auto-yay.sh id3v2
-$SCRIPTS_PATH/auto-yay.sh qbittorrent
 $SCRIPTS_PATH/auto-yay.sh ttf-adobe-source-code-pro-fonts
 $SCRIPTS_PATH/auto-yay.sh ttf-nerd-fonts-symbols
 $SCRIPTS_PATH/auto-yay.sh ttf-font-awesome
@@ -64,4 +63,4 @@ $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh openvpn
-$SCRIPTS_PATH/auto-yay.sh anki-bin
+$SCRIPTS_PATH/auto-yay.sh anki-bin$SCRIPTS_PATH/auto-yay.sh transmission-cli
