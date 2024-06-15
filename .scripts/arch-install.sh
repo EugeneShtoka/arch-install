@@ -2,12 +2,12 @@
 
 source ~/.env
 
-yes | sudo pacman -Syi alacritty curl zsh
+yes | sudo pacman -Sy alacritty curl zsh
 yes | sudo pacman -R xterm
 
 localectl set-locale LC_TIME=en_GB.UTF-8
 
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 rm .zshrc
 mv .zshrc.pre-oh-my-zsh .zshrc
 rm -rf .oh-my-zsh/.git
