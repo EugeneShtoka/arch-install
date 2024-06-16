@@ -1,8 +1,7 @@
 #!/bin/zsh
 
 cd ~
-mkdir Screenshots
-mkdir -p dev/work
+mkdir
 
 sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 systemctl --user enable start-up-routine
@@ -28,7 +27,7 @@ git remote set-url origin git@github.com:EugeneShtoka/arch-install.git
 
 $SCRIPTS_PATH/ssh-generate-key.sh $WORK_EMAIL work
 glab auth login
-read -p "Enter ssh key name for GitLab: " keyName
+read -p "Enter ssh key name for GitLab: (PC/Laptop)" keyName
 glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName 
 
 mkdir .tmp
