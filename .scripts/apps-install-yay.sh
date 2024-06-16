@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 $SCRIPTS_PATH/pritunl-install.sh
+$SCRIPTS_PATH/qbittorrent-install.sh
 
 $SCRIPTS_PATH/auto-yay.sh inotify-tools
 $SCRIPTS_PATH/auto-yay.sh thunar
@@ -63,4 +64,5 @@ $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh openvpn
-$SCRIPTS_PATH/auto-yay.sh anki-bin$SCRIPTS_PATH/auto-yay.sh transmission-cli
+$SCRIPTS_PATH/auto-yay.sh anki-bin
+
