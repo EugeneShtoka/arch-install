@@ -18,6 +18,7 @@ rm $ZSH_CUSTOM/.gitignore
 git clone https://github.com/olivierverdier/zsh-git-prompt.git $ZSH_GIT_PROMPT_PLUGIN
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_PLUGINS_PATH/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS_PATH/zsh-syntax-highlighting
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_PLUGINS_PATH/zsh-vi-mode
 
 chsh -s $(which zsh)
 zsh $SCRIPTS_PATH/apps-install.sh
