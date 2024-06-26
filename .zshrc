@@ -62,6 +62,7 @@ source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 source $SCRIPTS_PATH/aliases-terminal.sh
 source $SCRIPTS_PATH/aliases.sh
 source /etc/profile.d/google-cloud-cli.sh
+source <(fzf --zsh)
 
 PROMPT='%B%~%b$(git_super_status) '
 
