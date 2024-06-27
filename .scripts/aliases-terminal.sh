@@ -9,12 +9,13 @@ alias bw-item='source $SCRIPTS_PATH/bw-item.sh'
 alias bw-pass='source $SCRIPTS_PATH/bw-copy-pass.sh'
 alias postal-code='source $SCRIPTS_PATH/postal-code-get.sh'
 
-alias gsm='git switch main && git pull'
+alias gsm='git stash && git switch main && git pull && git stash apply'
 alias grf='git checkout main --'
 alias gsp='git switch -'
 alias gsb='git switch'
 alias gpl='git pull'
 alias ghr='git reset --hard HEAD^ && git pull'
+
 alias gsq=$SCRIPTS_PATH/git-squash.sh
 alias gpc=$SCRIPTS_PATH/git-push-commit.sh
 alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
