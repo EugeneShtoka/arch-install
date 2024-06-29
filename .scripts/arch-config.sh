@@ -1,14 +1,11 @@
 #!/bin/zsh
 
 cd ~
-mkdir
 
 sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-1/services/org.freedesktop.Notifications.service
-systemctl --user enable start-up-routine
+systemctl --user enable start-up-routine.service
 systemctl enable bluetooth.service
 $SCRIPTS_PATH/rofi-theme-install.sh
-
-systemctl --user enable start-up-routine.service
 
 echo config web browser
 source $SCRIPTS_PATH/bw-unlock.sh
