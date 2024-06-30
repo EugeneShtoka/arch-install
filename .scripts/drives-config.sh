@@ -9,14 +9,17 @@ for dir in "${dirs[@]}"; do
 done
 
 mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Screenshots")
+for mount in "${mounts[@]}"; do
+    rm $HOME/$mount
+    mkdir $HOME/$mount
+    # Add dev entry to fstab
+    {
+        echo ""
+        echo "# dev"
+        echo "/mnt/Vault/dev					/home/eugene/dev	none		bind	0  0"
+    } | sudo tee -a /etc/fstab > /dev/null
+done
 
-mkdir $HOME/dev
-# Add dev entry to fstab
-{
-    echo ""
-    echo "# dev"
-    echo "/mnt/Vault/dev					/home/eugene/dev	none		bind	0  0"
-} | sudo tee -a /etc/fstab > /dev/null
 
 mkdir $HOME/Notes
 {
