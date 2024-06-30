@@ -15,8 +15,8 @@ for mount in "${mounts[@]}"; do
     # Add dev entry to fstab
     {
         echo ""
-        echo "# dev"
-        echo "/mnt/Vault/dev					/home/eugene/dev	none		bind	0  0"
+        echo "# $mount"
+        echo "/mnt/Vault/$mount					/home/eugene/$mount	none		bind	0  0"
     } | sudo tee -a /etc/fstab > /dev/null
 done
 
