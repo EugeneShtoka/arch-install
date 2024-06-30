@@ -1,12 +1,12 @@
 #!/bin/zsh
 
-$SCRIPTS_PATH/drives-mount.sh
+# $SCRIPTS_PATH/drives-mount.sh
 
-dirs=("Downloads" "Torrents")
-for dir in "${dirs[@]}"; do
-    rm -rf ~/$dir
-    ln -s /mnt/Vault/$dir ~/$dir
-done
+# dirs=("Downloads" "Torrents")
+# for dir in "${dirs[@]}"; do
+#     rm -rf ~/$dir
+#     ln -s /mnt/Vault/$dir ~/$dir
+# done
 
 mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Screenshots")
 for mount in "${mounts[@]}"; do
