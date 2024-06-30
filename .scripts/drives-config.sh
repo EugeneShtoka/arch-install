@@ -2,11 +2,13 @@
 
 $SCRIPTS_PATH/drives-mount.sh
 
-dirs=("dev" "Documents" "Galina's Documents" "Downloads" "Library" "Music" "Notes" "Pictures" "Screenshots" "Torrents")
+dirs=("Downloads" "Torrents")
 for dir in "${dirs[@]}"; do
     rm -rf ~/$dir
     ln -s /mnt/Vault/$dir ~/$dir
 done
+
+mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Screenshots" )
 
 mkdir $HOME/dev
 # Add dev entry to fstab
