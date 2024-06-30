@@ -19,6 +19,6 @@ mkdir $HOME/dev
 mkdir $HOME/Notes
 {
     echo ""
-    echo "# dev"
+    echo "# Notes"
     echo "/mnt/Vault/Notes					/home/eugene/Notes	none		bind	0  0"
 } | sudo tee -a /etc/fstab > /dev/null
