@@ -6,8 +6,6 @@
 !.xprofile
 !.env
 !aliases.zsh
-!.zshfn
-!.zshfn/**
 !.scripts
 !.scripts/**
 !.icons
