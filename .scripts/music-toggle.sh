@@ -11,3 +11,4 @@ else
 fi
 
 #setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
+#test
