@@ -8,7 +8,7 @@ for dir in "${dirs[@]}"; do
     ln -s /mnt/Vault/$dir ~/$dir
 done
 
-mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Screenshots" )
+mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Screenshots")
 
 mkdir $HOME/dev
 # Add dev entry to fstab
