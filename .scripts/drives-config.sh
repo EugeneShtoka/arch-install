@@ -18,4 +18,4 @@ for mount in "${mounts[@]}"; do
         echo "# $mount"
         echo "/mnt/Vault/$mount					/home/eugene/$mount	none		bind	0  0"
     } | sudo tee -a /etc/fstab > /dev/null
-don
+done
