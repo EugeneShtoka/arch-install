@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+echo "@@@@@@@ TEST 3 @@@@@@@@@@@@" >> /home/eugene/.scripts.log
+echo "@@@@@@@ TEST 4 @@@@@@@@@@@@" >> $LOG_PATH
+
 echo "`date` custom-scripts-auto-sync" >> $LOG_PATH
 
 inotifywait -q -m -e DELETE,CLOSE_WRITE,MOVED_TO,MOVED_FROM $SCRIPTS_PATH | while read DIR EVENT FILE
