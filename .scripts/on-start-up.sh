@@ -11,7 +11,7 @@ $SCRIPTS_PATH/custom-scripts-pull.sh
 sleep 10
 $SCRIPTS_PATH/custom-scripts-auto-sync.sh
 
-echo "@@@@@@@ TEST 4 @@@@@@@@@@@@" >> $LOG_PATH
+echo "@@@@@@@ TEST after custom scripts auto sync @@@@@@@@@@@@" >> $LOG_PATH
 
 
 $SCRIPTS_PATH/library-auto-sync.sh
