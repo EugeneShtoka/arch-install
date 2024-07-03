@@ -10,10 +10,6 @@ $SCRIPTS_PATH/library-sync-from-gdrive.sh
 $SCRIPTS_PATH/custom-scripts-pull.sh
 sleep 10
 $SCRIPTS_PATH/custom-scripts-auto-sync.sh &
-
-echo "@@@@@@@ after custom scripts auto sync @@@@@@@@@@@@" >> $LOG_PATH
-
-
 $SCRIPTS_PATH/library-auto-sync.sh &
 
 wait
