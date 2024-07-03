@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-echo "@@@@@@@ TEST 3 @@@@@@@@@@@@" >> /home/eugene/.scripts.log
 echo "@@@@@@@ TEST 4 @@@@@@@@@@@@" >> $LOG_PATH
 
 echo "`date` custom-scripts-auto-sync" >> $LOG_PATH
