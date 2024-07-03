@@ -14,3 +14,5 @@ $SCRIPTS_PATH/custom-scripts-auto-sync.sh &
 $SCRIPTS_PATH/gdrive-auto-sync.sh $LIBRARY_PATH $GDRIVE_PATH:LIBRARY_GDRIVE_PATH &
 
 wait
+
+#test comment
