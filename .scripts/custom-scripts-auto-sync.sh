@@ -10,4 +10,3 @@ do
 done
 
 # $HOME/.config/i3 $HOME/.config/systemd/user $SERVICES_PATH
-# 
