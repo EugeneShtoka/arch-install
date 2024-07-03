@@ -15,3 +15,5 @@ echo "@@@@@@@ after custom scripts auto sync @@@@@@@@@@@@" >> $LOG_PATH
 
 
 $SCRIPTS_PATH/library-auto-sync.sh &
+
+wait
