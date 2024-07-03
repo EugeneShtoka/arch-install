@@ -4,6 +4,9 @@ source=$1
 destination=$2
 
 echo "`date` gdrive-auto-sync from $source to $destination" >> $LOG_PATH
+
+$SCRIPTS_PATH/gdrive-sync.sh $LIBRARY_PATH $GDRIVE_NAME:$LIBRARY_GDRIVE_PATH
+
 rclone sync $source $destination
 
 echo "`date` library-auto-sync" >> $LOG_PATH
