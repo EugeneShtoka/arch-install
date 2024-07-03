@@ -7,5 +7,3 @@ do
     echo "`date` custom-scripts-auto-sync $EVENT on $DIR$FILE" >> $LOG_PATH
     $SCRIPTS_PATH/custom-scripts-push.sh
 done
-
-#
