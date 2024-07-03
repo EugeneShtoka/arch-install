@@ -10,5 +10,6 @@ $SCRIPTS_PATH/ssh-add-keys.sh
 $SCRIPTS_PATH/custom-scripts-auto-sync.sh &
 $SCRIPTS_PATH/gdrive-auto-sync.sh $LIBRARY_PATH $GDRIVE_NAME:$LIBRARY_GDRIVE_PATH &
 $SCRIPTS_PATH/gdrive-auto-sync.sh $MUSIC_PATH $GDRIVE_NAME:$MUSIC_GDRIVE_PATH &
+$SCRIPTS_PATH/gdrive-auto-sync.sh $DOCUMENTS_PATH $GDRIVE_NAME:$DOCUMENTS_GDRIVE_PATH &
 
 wait
