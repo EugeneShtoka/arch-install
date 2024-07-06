@@ -16,6 +16,6 @@ for mount in "${mounts[@]}"; do
     {
         echo ""
         echo "# $mount"
-        echo "$VAULT_PATH/$mount					/home/eugene/$mount	none		bind	0  0"
+        echo "$VAULT_PATH/$mount					$HOME/$mount	none		bind	0  0"
     } | sudo tee -a /etc/fstab > /dev/null
 done
