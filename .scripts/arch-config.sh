@@ -29,6 +29,8 @@ glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName
 
 mkdir .tmp
 
+$SCRIPTS_PATH/atuin-install.sh
+
 bw get item 'SWAPP GCloud credentials' | jq '.notes' | jq 'fromjson' >> swapp-v1-1564402864804.json
 sudo mkdir /usr/share/credentials
 sudo mv swapp-v1-1564402864804.json /usr/share/credentials/
