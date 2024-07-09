@@ -67,3 +67,4 @@ $SCRIPTS_PATH/auto-yay.sh openvpn
 $SCRIPTS_PATH/auto-yay.sh anki-bin
 $SCRIPTS_PATH/auto-yay.sh fzf
 $SCRIPTS_PATH/auto-yay.sh atuin-git
+$SCRIPTS_PATH/auto-yay.sh mop
