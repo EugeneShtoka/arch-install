@@ -61,8 +61,3 @@ chars = "\u0003"
 [[keyboard.bindings]]
 key = "CapsLock"
 action = "ToggleViMode"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Control|Alt"
-chars = "vw"
