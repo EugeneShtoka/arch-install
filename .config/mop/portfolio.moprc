@@ -1,14 +1,6 @@
 {
     "Tickers": [
-        "AAPL",
-        "AMZN",
-        "GOOG",
-        "IBM",
-        "META",
-        "MSFT",
-        "NVDA",
-        "TSLA",
-        "TSM"
+        "TSLA"
     ],
     "MarketRefresh": 60,
     "QuotesRefresh": 60,
