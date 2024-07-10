@@ -25,6 +25,7 @@
 !.config/i3/config
 !.config/dunst
 !.config/dunst/dunstrc
+!.config/mop
 !.config/copyq
 !.config/copyq/copyq-commands.ini
 !.config/copyq/copyq-filter.ini
