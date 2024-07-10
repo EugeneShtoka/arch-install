@@ -1,0 +1,29 @@
+{
+    "Tickers": [
+        "AAPL",
+        "AMZN",
+        "GOOG",
+        "IBM",
+        "META",
+        "MSFT",
+        "NVDA",
+        "TSLA",
+        "TSM"
+    ],
+    "MarketRefresh": 60,
+    "QuotesRefresh": 60,
+    "SortColumn": 0,
+    "Ascending": true,
+    "Grouped": true,
+    "Filter": "",
+    "UpDownJump": 10,
+    "Colors": {
+        "Gain": "green",
+        "Loss": "red",
+        "Tag": "yellow",
+        "Header": "lightgray",
+        "Time": "lightgray",
+        "Default": "lightgray"
+    },
+    "ShowTimestamp": false
+}
