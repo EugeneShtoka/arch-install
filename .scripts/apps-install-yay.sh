@@ -52,7 +52,6 @@ $SCRIPTS_PATH/auto-yay.sh zoom
 $SCRIPTS_PATH/auto-yay.sh mailspring
 $SCRIPTS_PATH/auto-yay.sh beeper-latest-bin
 $SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
-$SCRIPTS_PATH/auto-yay.sh docker-desktop
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh autokey-common
