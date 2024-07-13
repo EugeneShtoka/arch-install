@@ -12,6 +12,7 @@ $SCRIPTS_PATH/auto-yay.sh brightnessctl
 $SCRIPTS_PATH/auto-yay.sh copyq
 $SCRIPTS_PATH/auto-yay.sh docker
 $SCRIPTS_PATH/auto-yay.sh docker-compose
+$SCRIPTS_PATH/auto-yay.sh lazydocker
 $SCRIPTS_PATH/auto-yay.sh gnome-keyring
 $SCRIPTS_PATH/auto-yay.sh bitwarden-cli
 $SCRIPTS_PATH/auto-yay.sh python-packaging
