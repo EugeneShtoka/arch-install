@@ -10,6 +10,7 @@ $SCRIPTS_PATH/auto-yay.sh bluez
 $SCRIPTS_PATH/auto-yay.sh bluez-utils
 $SCRIPTS_PATH/auto-yay.sh brightnessctl
 $SCRIPTS_PATH/auto-yay.sh copyq
+$SCRIPTS_PATH/auto-yay.sh docker
 $SCRIPTS_PATH/auto-yay.sh docker-compose
 $SCRIPTS_PATH/auto-yay.sh gnome-keyring
 $SCRIPTS_PATH/auto-yay.sh bitwarden-cli
@@ -67,4 +68,3 @@ $SCRIPTS_PATH/auto-yay.sh anki-bin
 $SCRIPTS_PATH/auto-yay.sh fzf
 $SCRIPTS_PATH/auto-yay.sh atuin-git
 $SCRIPTS_PATH/auto-yay.sh mop
-$SCRIPTS_PATH/auto-yay.sh lazydocker
