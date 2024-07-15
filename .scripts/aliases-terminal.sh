@@ -42,8 +42,8 @@ alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
 alias gmn=$SCRIPTS_PATH/gemini-call.sh
 alias calc=$SCRIPTS_PATH//calculate.sh
 
-alias tsm='mop -profile .config/mop/market.moprc'
-alias tsp='mop -profile .config/mop/portfolio.moprc'
+alias tsm='mop -profile ~/.config/mop/market.moprc'
+alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
 
 alias mirophone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias mirophone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
