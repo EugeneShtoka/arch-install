@@ -24,12 +24,3 @@ while true; do
         return 0
     fi
 done
-
-    if [[ -n $choice ]]; then
-        current_path=$LIBRARY_PATH/$choice
-        setsid koodo-reader $pathToPlay > /dev/null 2>&1 &
-    fi
-else
-    pathToPlay=$LIBRARY_PATH/$1
-    setsid koodo-reader $pathToPlay > /dev/null 2>&1 &
-
