@@ -42,4 +42,5 @@ alias europa='setsid /mnt/Games/Europa/start.sh &>/dev/null'
 alias victoria='setsid /mnt/Games/Victoria/binaries/victoria3 &>/dev/null'
 alias rim-world='setsid /mnt/Games/RimWorld/start.sh &>/dev/null'
 
+# To maintain this as last item - it should be last in the list
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
