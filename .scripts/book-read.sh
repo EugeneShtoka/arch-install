@@ -21,7 +21,7 @@ while true; do
         current_path="$full_path"
     elif [[ -f "$full_path" ]]; then
         setsid koodo-reader "$full_path" >/dev/null 2>&1 &
-        return 0  # Success
+        return 0
     fi
 done
 
