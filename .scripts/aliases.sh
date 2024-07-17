@@ -12,7 +12,6 @@ alias torrent='setsid qbittorrent &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
 alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
 alias keyboard-trainer='setsid tipp10 &>/dev/null'
-alias reader='setsid koodo-reader &>/dev/null'
 alias read=$SCRIPTS_PATH/book-read.sh
 alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/null'
 
