@@ -20,7 +20,7 @@ while true; do
     if [[ -d "$full_path" ]]; then
         current_path="$full_path"
     elif [[ -f "$full_path" ]]; then
-        setsid koodo-reader "$full_path" >/dev/null 2>&1 & 
+        setsid koodo-reader "$full_path" >/dev/null 2>&1 &
         return 0  # Success
     fi
 done
