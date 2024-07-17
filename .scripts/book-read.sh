@@ -1,6 +1,6 @@
 #!/bin/zsh
 dir="$HOME/.config/rofi/launchers/type-4"
-theme='style-9-columns'
+theme='style-9'
 
 if [ -z "$1" ]; then
 	current_path=$LIBRARY_PATH
