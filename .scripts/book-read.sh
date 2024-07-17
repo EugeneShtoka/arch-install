@@ -16,7 +16,6 @@ while true; do
     fi
 
     local full_path="$current_path/$choice"
-    echo $full_path
     if [[ -d "$full_path" ]]; then
         current_path="$full_path"
     elif [[ -f "$full_path" ]]; then
