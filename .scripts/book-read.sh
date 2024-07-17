@@ -9,7 +9,7 @@ else
 fi
 
 while true; do
-    local choice=$(ls -a "$current_path" | rev | cut -d. -f2- | rev | grep -v "^\.$"  | rofi -i -theme "$dir/$theme.rasi" -dmenu -matching prefix)
+    local choice=$(ls "$current_path" | rev | cut -d. -f2- | rev | rofi -i -theme "$dir/$theme.rasi" -dmenu -matching prefix)
 
     if [[ -z "$choice" ]]; then  # User cancelled
         return 1 
