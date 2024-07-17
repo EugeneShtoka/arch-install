@@ -10,7 +10,6 @@ alias postman='setsid /opt/postman/Postman &>/dev/null'
 alias notes='setsid obsidian &>/dev/null'
 alias torrent='setsid qbittorrent &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
-alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
 alias keyboard-trainer='setsid tipp10 &>/dev/null'
 alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/null'
 
@@ -43,4 +42,4 @@ alias europa='setsid /mnt/Games/Europa/start.sh &>/dev/null'
 alias victoria='setsid /mnt/Games/Victoria/binaries/victoria3 &>/dev/null'
 alias rim-world='setsid /mnt/Games/RimWorld/start.sh &>/dev/null'
 
-
+alias bulk-rename='setsid thunar --bulk-rename &>/dev/null'
