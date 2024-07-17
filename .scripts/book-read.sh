@@ -5,7 +5,7 @@ theme='style-9'
 if [ -z "$1" ]; then
 	current_path=$LIBRARY_PATH
 else
-    current_path=$LIBRARY_PATH/$1
+    current_path=$1
 fi
 
 while true; do
