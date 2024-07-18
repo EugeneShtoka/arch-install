@@ -2,7 +2,7 @@
 dir="$HOME/.config/rofi/launchers/type-4"
 theme='style-9'
 
-echo "@@@@@@@@@@@@@@@@@"
+echo "@@@@@@@@@@@@@@@@@" $1
 
 if [ -z "$1" ]; then
 	current_path=$LIBRARY_PATH
