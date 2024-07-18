@@ -33,6 +33,7 @@ alias algo='cd $WORK_REPOS_PATH/roomassignment && code . && clear'
 
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
+alias clr='clear'
 alias copy='xclip -selection c'
 alias paste='xclip -out -selection c'
 alias yayr='sudo pacman -R'
