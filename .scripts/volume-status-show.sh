@@ -27,4 +27,4 @@ elif ([[ "$target" == "Microphone" ]]); then
   fi
 fi
 
-dunstify "$target $action" "<span font='20px'>$(get_audio_status)</span>" --icon $ICONS_PATH/$icon.png
+dunstify "$target $action" "<span font='20px'>$(get_audio_status)</span>" - $ICONS_PATH/$icon.png
