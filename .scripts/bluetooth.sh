@@ -12,5 +12,5 @@ function show-headphones-message() {
     name=$(echo "$blStatus" | grep -oP '(?<=Name: ).*' )
     battery_level=$(echo "$blStatus" | grep -oP '(?<=Battery Percentage: ).*' | awk '{print $2}' | tr -d \(\))
     message="$(get_battery_icon $battery_level) $battery_level% $(get_audio_status)"
-    dunstify "$name $1" "$message" -i headphones -r 101017
+    notify-send "$name $1" "$message" -i $ICONS_PATH/headphones.png -r 101043
 }
