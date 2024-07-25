@@ -8,7 +8,7 @@ echo "`date` switch-headphones" >> $LOG_PATH
 blStatus=$(bluetooth_status)
 
 if ([[ "$(bluetooth_status)" == *"Device $HEADPHONES_MAC_ADDR not available"* ]]); then
-    dunstify "Headphones not available" "$(get_audio_status)" -i headphones-disconnect  -r 101047
+    dunstify "Headphones not available" "$(get_audio_status)" -i headphones-disconnect -r 101047
 else
     if [[ "$(is_bluetooth_connected)" == "yes" ]]; then
         show-headphones-message "disconnected"
