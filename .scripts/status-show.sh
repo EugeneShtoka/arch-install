@@ -38,3 +38,6 @@ $hardware_info</span>"
 
 # Send the notification
 notify-send "$(date +%H:%M)" "$message" --icon=" " --category="test"
+CURRENT_ID=$?
+
+echo $CURRENT_ID
