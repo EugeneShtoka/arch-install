@@ -27,4 +27,4 @@ elif ([[ "$target" == "Microphone" ]]); then
   fi
 fi
 
-notify-send "$target $action" "<span font='20px'>$(get_audio_status)</span>" -i $ICONS_PATH/$icon.png
+notify-send "$target $action" "<span font='20px'>$(get_audio_status)</span>" -i $ICONS_PATH/$icon.png -r 101023
