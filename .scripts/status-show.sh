@@ -37,7 +37,4 @@ $(print_glyph 'f1eb') $(get_wifi_signal_strength)% $(iwgetid -r)
 $hardware_info</span>"
 
 # Send the notification
-echo $(notify-send "$(date +%H:%M)" "$message" --icon=" " --category="test")
-CURRENT_ID=$?
-
-echo "$CURRENT_ID"
+notify-send "$(date +%H:%M)" "$message" --icon=" " --category="test"
