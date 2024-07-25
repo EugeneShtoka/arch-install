@@ -10,5 +10,5 @@ elif [[ $daysToShow -eq 7 ]]; then
     title=Weekly
 fi
 
-dunstify "$title" "<span font='15px'>$(agenda $daysToShow)</span>" --icon=" " -r 101017
+notiy--sennd "$title" "<span font='15px'>$(agenda $daysToShow)</span>" -i " " -r 101017
 
