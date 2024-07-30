@@ -29,9 +29,8 @@ glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName
 
 mkdir .tmp
 
-echo 'Set Gemini secret key. Paste following value as Password'
-bw get item "gemini" | jq '.notes' | tr -d \"
-secret-tool store --label="Gemini sercret key" provider gemini profile default key-pair secret
+echo 'Set Gemini secret key. '
+bw get item "gemini" | jq '.notes' | tr -d \" | secret-tool store --label="Gemini sercret key" provider gemini profile default key-pair secret
 
 $SCRIPTS_PATH/atuin-install.sh
 
