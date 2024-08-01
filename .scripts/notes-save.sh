@@ -1,5 +1,4 @@
 #!/bin/zsh
 
 nohup $SCRIPTS_PATH/notes-push.sh &>/dev/null
-nohup $SCRIPTS_PATH/notes-sync-to-gdrive.sh &>/dev/null
-
+"$SCRIPTS_PATH"/gdrive-auto-sync.sh "$NOTES_PATH" "$GDRIVE_NAME":"$NOTES_GDRIVE_PATH" &
