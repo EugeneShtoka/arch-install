@@ -30,6 +30,7 @@ alias pgd='setsid $BROWSER "https://drive.google.com/drive/u/0/my-drive" &>/dev/
 alias wgd='setsid $BROWSER "https://drive.google.com/drive/u/1/my-drive" &>/dev/null'
 alias jira='setsid $BROWSER "https://swapp-ai.atlassian.net/jira/software/c/projects/SWP/boards/1?assignee=712020%3Aee767fac-fcf2-4a03-a591-ccc8a59a097b" &>/dev/null'
 alias coralogix='setsid $BROWSER "https://swapp.app.coralogix.us/#/dashboard" &>/dev/null'
+alias syncthing='setsid $BROWSER "http://127.0.0.1:8384" &>/dev/null'
 
 alias spnd='mirophone-unmute && systemctl suspend'
 alias stdn='mirophone-unmute && shutdown now'
