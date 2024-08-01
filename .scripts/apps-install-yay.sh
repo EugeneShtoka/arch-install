@@ -71,3 +71,4 @@ $SCRIPTS_PATH/auto-yay.sh atuin-git
 $SCRIPTS_PATH/auto-yay.sh mop
 $SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh syncthing
+$SCRIPTS_PATH/auto-yay.sh neovim
