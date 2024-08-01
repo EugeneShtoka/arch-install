@@ -1,3 +1,4 @@
+#!/bin/zsh
 
 gemini() {
     PROMPT="$1"
