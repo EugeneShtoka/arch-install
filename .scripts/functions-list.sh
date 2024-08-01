@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# fetch all zsh aliases 
+# fetch all zsh aliases
 #alias | awk -F'[ =]' '{print $1}'
 
 # fetch all zsh functions
