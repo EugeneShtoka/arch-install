@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-rclone sync $NOTES_PATH $GDRIVE_NAME:$NOTES_GDRIVE_PATH --exclude '{.git,.trash}/**' --exclude '.gitignore'
+rclone sync $NOTES_PATH $GDRIVE_NAME:$NOTES_GDRIVE_PATH --exclude '{.git,.trash,.stfolder}/**' --exclude '.gitignore' --exclude 'ttxfolder' --exclude '.syncthing*'
