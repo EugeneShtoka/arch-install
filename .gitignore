@@ -10,7 +10,7 @@
 !.scripts/**
 !.icons
 !.icons/**
-!dev
+!dev/**
 !.config
 !.config/alacritty
 !.config/alacritty/alacritty.toml
