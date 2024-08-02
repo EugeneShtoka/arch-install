@@ -77,3 +77,4 @@ $SCRIPTS_PATH/auto-yay.sh lazygit
 $SCRIPTS_PATH/auto-yay.sh gdu
 $SCRIPTS_PATH/auto-yay.sh bottom
 $SCRIPTS_PATH/auto-yay.sh dosfstools
+$SCRIPTS_PATH/auto-yay.sh sysstat
