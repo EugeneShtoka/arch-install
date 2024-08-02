@@ -10,7 +10,9 @@
 !.scripts/**
 !.icons
 !.icons/**
-
+!dev2
+!dev2/work
+!dev2/work/.gitconfig
 !.config
 !.config/alacritty
 !.config/alacritty/alacritty.toml
