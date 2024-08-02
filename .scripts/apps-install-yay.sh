@@ -74,3 +74,4 @@ $SCRIPTS_PATH/auto-yay.sh syncthing
 $SCRIPTS_PATH/auto-yay.sh neovim
 $SCRIPTS_PATH/auto-yay.sh ripgrep
 $SCRIPTS_PATH/auto-yay.sh lazygit
+$SCRIPTS_PATH/auto-yay.sh gdu
