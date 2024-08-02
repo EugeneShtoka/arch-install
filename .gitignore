@@ -11,7 +11,7 @@
 !.icons
 !.icons/**
 !dev
-.dev/**
+.dev/**/*
 !dev/work
 !dev/work/.gitconfig
 !.config
