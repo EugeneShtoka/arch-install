@@ -11,8 +11,7 @@
 !.icons
 !.icons/**
 !dev
-!dev/work
-!dev/work/.gitconfig
+
 !.config
 !.config/alacritty
 !.config/alacritty/alacritty.toml
