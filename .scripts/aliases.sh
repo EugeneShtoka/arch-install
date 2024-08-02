@@ -27,7 +27,7 @@ alias gcp='setsid $BROWSER "https://console.cloud.google.com/welcome?pli=1&proje
 alias gcp-composer='setsid $BROWSER "https://console.cloud.google.com/composer/environments?referrer=search&authuser=1&project=swapp-v1-1564402864804" &>/dev/null'
 alias gcp-airflow='setsid $BROWSER "https://15f236baf9994fd7a4d6ae3be218aaf8-dot-us-central1.composer.googleusercontent.com/home" &>/dev/null'
 alias pgd='setsid $BROWSER "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
-alias wgd='setsid $BROWSER "https://drive.google.com/drive/u/1/my-drive" &>/dev/null'
+alias wgd='setsid $BROWSER "https://drive.google.com/drive/u/1/shared-drive" &>/dev/null'
 alias jira='setsid $BROWSER "https://swapp-ai.atlassian.net/jira/software/c/projects/SWP/boards/1?assignee=712020%3Aee767fac-fcf2-4a03-a591-ccc8a59a097b" &>/dev/null'
 alias coralogix='setsid $BROWSER "https://swapp.app.coralogix.us/#/dashboard" &>/dev/null'
 alias syncthing='setsid $BROWSER "http://127.0.0.1:8384" &>/dev/null'
