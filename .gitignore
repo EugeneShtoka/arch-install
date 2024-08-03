@@ -40,7 +40,9 @@
 !.config/vivaldi
 !.config/vivaldi/.gitignore
 !.config/vivaldi/styles
-!.config/vivaldi/styles/custom.css
+!.config/vivaldi/styles/**
+!.config/vivaldi/uBlock-filters
+!.config/vivaldi/uBlock-filters/**
 !.config/systemd
 !.config/systemd/user
 !.config/systemd/user/start-up-routine.service
