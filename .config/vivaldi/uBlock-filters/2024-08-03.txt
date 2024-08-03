@@ -1,0 +1,19 @@
+! https://lingust.ru
+lingust.ru###wrapper
+lingust.ru###menumenu-box > .off-canvas.ba__menu-wrapper.ba__menuHorizontal
+lingust.ru###header-graphic
+lingust.ru##.pa-0.ba---section
+lingust.ru###wrapper2
+
+! https://rutracker.org
+rutracker.org###logo
+rutracker.org###latest_news
+rutracker.org###idx-sidebar2
+rutracker.org###sidebar1
+rutracker.org###main_content_wrap > .w100
+rutracker.org##.hide-for-print.ta-inf2.top-alert
+
+! https://habr.com
+habr.com##.tm-page__sidebar
+habr.com##div.tm-articles-list__after-article:nth-of-type(4)
+habr.com##div.tm-articles-list__after-article:nth-of-type(10)
