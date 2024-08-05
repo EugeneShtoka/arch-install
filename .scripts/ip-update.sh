@@ -7,6 +7,16 @@ if [[ $(cat /proc/sys/kernel/hostname) != "archlinux-pc" ]]; then
     exit 0
 fi
 
+CURRENT_IP=$(curl -s http://checkip.amazonaws.com)
+if [[ -f $IP_FILE ]]; then
+    PREVIOUS_IP=$(cat $IP_FILE)
+
+    # Compare IP addresses and exit if they match
+    if [[ $CURRENT_IP == $PREVIOUS_IP ]]; then
+        exit 0
+    fi
+fi
+
 cd ~/dev/cloudblock/aws/ || exit
 
 sudo sed -i -e "s#^nameserver .*#nameserver 9.9.9.9#" /etc/resolv.conf
