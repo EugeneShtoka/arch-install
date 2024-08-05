@@ -11,6 +11,7 @@ if [[ -f $IP_FILE ]]; then
     PREVIOUS_IP=$(cat $IP_FILE)
 
     if [[ $CURRENT_IP == $PREVIOUS_IP ]]; then
+        echo 'IP unchanged'
         exit 0
     fi
 fi
