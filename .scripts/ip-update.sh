@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 cd ~/dev/cloudblock/aws/
 
 ip=$(curl -s http://checkip.amazonaws.com)
