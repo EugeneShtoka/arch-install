@@ -11,7 +11,6 @@ CURRENT_IP=$(curl -s http://checkip.amazonaws.com)
 if [[ -f $IP_FILE ]]; then
     PREVIOUS_IP=$(cat $IP_FILE)
 
-    # Compare IP addresses and exit if they match
     if [[ $CURRENT_IP == $PREVIOUS_IP ]]; then
         exit 0
     fi
