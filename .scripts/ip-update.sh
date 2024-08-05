@@ -5,6 +5,8 @@ if [[ $(cat /proc/sys/kernel/hostname) != "archlinux-pc" ]]; then
     exit 0
 fi
 
+sudo sed -i -e "s#^nameserver .*#nameserver 9.9.9.9#" /etc/resolv.conf
+
 IP_FILE="$HOME/.ip"
 CURRENT_IP=$(curl -s http://checkip.amazonaws.com)
 if [[ -f $IP_FILE ]]; then
@@ -12,13 +14,12 @@ if [[ -f $IP_FILE ]]; then
 
     if [[ $CURRENT_IP == $PREVIOUS_IP ]]; then
         echo 'IP unchanged'
+        sudo sed -i -e "s#^nameserver .*#nameserver 9.9.9.9#" /etc/resolv.conf
         exit 0
     fi
 fi
 
 cd ~/dev/cloudblock/aws/ || exit
-
-sudo sed -i -e "s#^nameserver .*#nameserver 9.9.9.9#" /etc/resolv.conf
 
 sed -i -e "s#^mgmt_cidr = .*#mgmt_cidr = \"$CURRENT_IP/32\"#" aws.tfvars
 
