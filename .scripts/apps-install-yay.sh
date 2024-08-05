@@ -81,3 +81,4 @@ $SCRIPTS_PATH/auto-yay.sh sysstat
 $SCRIPTS_PATH/auto-yay.sh gparted
 $SCRIPTS_PATH/auto-yay.sh openbooks-bin
 $SCRIPTS_PATH/auto-yay.sh libgen-cli-bin
+$SCRIPTS_PATH/auto-yay.sh tasker-permissions-git
