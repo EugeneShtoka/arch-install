@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 IP_FILE="$HOME/.ip"
 
