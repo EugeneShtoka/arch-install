@@ -27,5 +27,5 @@ yes | terraform apply -var-file="aws.tfvars"
 
 sudo sed -i -e "s#^nameserver .*#nameserver 10.0.0.1#" /etc/resolv.conf
 
-echo "Updated ip to $CURRENT_IP"
 echo $CURRENT_IP >$IP_FILE
+echo "Updated ip to $CURRENT_IP"
