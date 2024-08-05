@@ -7,7 +7,7 @@ if [[ $(cat /proc/sys/kernel/hostname) != "archlinux-pc" ]]; then
     exit 0
 fi
 
-cd ~/dev/cloudblock/aws/
+cd ~/dev/cloudblock/aws/ || exit
 
 sudo sed -i -e "s#^nameserver .*#nameserver 9.9.9.9#" /etc/resolv.conf
 
