@@ -1,5 +1,12 @@
 #!/bin/zsh
 
+IP_FILE="$HOME/.ip"
+
+if [[ $(cat /proc/sys/kernel/hostname) != "archlinux-pc" ]]; then
+    echo 'Not home pc'
+    exit 0
+fi
+
 cd ~/dev/cloudblock/aws/
 
 sudo sed -i -e "s#^nameserver .*#nameserver 9.9.9.9#" /etc/resolv.conf
