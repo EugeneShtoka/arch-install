@@ -14,7 +14,7 @@ if [[ -f $IP_FILE ]]; then
 
     if [[ $CURRENT_IP == $PREVIOUS_IP ]]; then
         echo 'IP unchanged'
-        sudo sed -i -e "s#^nameserver .*#nameserver 9.9.9.9#" /etc/resolv.conf
+        sudo sed -i -e "s#^nameserver .*#nameserver 10.0.0.1#" /etc/resolv.conf
         exit 0
     fi
 fi
