@@ -9,7 +9,7 @@ for dir in "${dirs[@]}"; do
     ln -s $VAULT_PATH/$dir ~/$dir
 done
 
-mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Screenshots")
+mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Photo" "Screenshots")
 for mount in "${mounts[@]}"; do
     rm $HOME/$mount
     mkdir $HOME/$mount
@@ -18,5 +18,5 @@ for mount in "${mounts[@]}"; do
         echo ""
         echo "# $mount"
         echo "$VAULT_PATH/$mount					$HOME/$mount	none		bind	0  0"
-    } | sudo tee -a /etc/fstab > /dev/null
+    } | sudo tee -a /etc/fstab >/dev/null
 done
