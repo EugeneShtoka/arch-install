@@ -83,3 +83,4 @@ $SCRIPTS_PATH/auto-yay.sh openbooks-bin
 $SCRIPTS_PATH/auto-yay.sh libgen-cli-bin
 $SCRIPTS_PATH/auto-yay.sh tasker-permissions-git
 $SCRIPTS_PATH/auto-yay.sh android-sdk-platform-tools
+$SCRIPTS_PATH/auto-yay.sh fb2converter-bin
