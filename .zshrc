@@ -96,3 +96,4 @@ sed ':start; /\\$/ { N; s/\\\n/\\\x00/; b start }' $HOME/.zsh_history | nl -nrz 
 . "$HOME/.atuin/bin/env"
 
 #eval "$(atuin init zsh --disable-up-arrow)"[ -f /opt/mambaforge/etc/profile.d/conda.sh ] && source /opt/mambaforge/etc/profile.d/conda.sh
+source /opt/mambaforge/etc/profile.d/conda.sh
