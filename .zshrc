@@ -95,8 +95,6 @@ sed ':start; /\\$/ { N; s/\\\n/\\\x00/; b start }' $HOME/.zsh_history | nl -nrz 
 
 . "$HOME/.atuin/bin/env"
 
-#eval "$(atuin init zsh --disable-up-arrow)"[ -f /opt/mambaforge/etc/profile.d/conda.sh ] && source /opt/mambaforge/etc/profile.d/conda.sh
-# source /opt/mambaforge/etc/profile.d/conda.sh  # commented out by conda initialize
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
