@@ -22,14 +22,14 @@ alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
 alias gcmr=$SCRIPTS_PATH/git-create-merge-request.sh
 alias git-alias-main='git symbolic-ref refs/heads/main refs/heads/$(git rev-parse --abbrev-ref HEAD)'
 
-alias home='cd ~ && code . && clear'
-alias figoro='cd $HOME/dev/figoro && code . && clear'
-alias blog='cd $HOME/dev/blog && code . && clear'
-alias aps='cd $WORK_REPOS_PATH/swapp-aps && code . && clear'
-alias plugin='cd $WORK_REPOS_PATH/revit-plugin && code . && clear'
-alias workflows='cd $WORK_REPOS_PATH/workflows && code . && clear'
-alias backend='cd $WORK_REPOS_PATH/swappbackend && code . && clear'
-alias algo='cd $WORK_REPOS_PATH/roomassignment && code . && clear'
+alias home='cd ~ && code . && clr'
+alias figoro='cd $HOME/dev/figoro && code . && clr'
+alias blog='cd $HOME/dev/blog && code . && clr'
+alias aps='cd $WORK_REPOS_PATH/swapp-aps && code . && clr'
+alias plugin='cd $WORK_REPOS_PATH/revit-plugin && code . && clr'
+alias workflows='cd $WORK_REPOS_PATH/workflows && code . && clr'
+alias backend='cd $WORK_REPOS_PATH/swappbackend && code . && clr'
+alias algo='cd $WORK_REPOS_PATH/roomassignment && code . && clr'
 
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
