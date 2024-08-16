@@ -86,6 +86,4 @@ $SCRIPTS_PATH/auto-yay.sh android-sdk-platform-tools
 $SCRIPTS_PATH/auto-yay.sh fb2converter-bin
 $SCRIPTS_PATH/auto-yay.sh mambaforge
 $SCRIPTS_PATH/auto-yay.sh libcurl3-gnutls
-$SCRIPTS_PATH/auto-yay.sh rimpy-bin
-$SCRIPTS_PATH/auto-yay.sh rimsort-git
 $SCRIPTS_PATH/auto-yay.sh steamcmd
