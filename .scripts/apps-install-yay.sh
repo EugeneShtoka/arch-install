@@ -85,3 +85,4 @@ $SCRIPTS_PATH/auto-yay.sh tasker-permissions-git
 $SCRIPTS_PATH/auto-yay.sh android-sdk-platform-tools
 $SCRIPTS_PATH/auto-yay.sh fb2converter-bin
 $SCRIPTS_PATH/auto-yay.sh mambaforge
+$SCRIPTS_PATH/auto-yay.sh rimsort-bin
