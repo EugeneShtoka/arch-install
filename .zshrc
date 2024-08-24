@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -87,17 +87,17 @@ PROMPT='%B%~%b$(git_super_status) '
 #fpath=($ZSHFN_PATH $fpath);
 #autoload -Uz $fpath[1]/*(.:t);
 
-$SCRIPTS_PATH/ssh-init.sh>/dev/null 2>&1
+$SCRIPTS_PATH/ssh-init.sh >/dev/null 2>&1
 #$SCRIPTS_PATH/status-show.sh
 
 # Dedup history
-sed ':start; /\\$/ { N; s/\\\n/\\\x00/; b start }' $HOME/.zsh_history | nl -nrz | tac | sort -t';' -u -k2 | sort | cut -d$'\t' -f2- | tr '\000' '\n' > $HOME/.zsh_history_deduped && mv $HOME/.zsh_history_deduped $HOME/.zsh_history
+sed ':start; /\\$/ { N; s/\\\n/\\\x00/; b start }' $HOME/.zsh_history | nl -nrz | tac | sort -t';' -u -k2 | sort | cut -d$'\t' -f2- | tr '\000' '\n' >$HOME/.zsh_history_deduped && mv $HOME/.zsh_history_deduped $HOME/.zsh_history
 
 . "$HOME/.atuin/bin/env"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/mambaforge/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -112,5 +112,6 @@ unset __conda_setup
 if [ -f "/opt/mambaforge/etc/profile.d/mamba.sh" ]; then
     . "/opt/mambaforge/etc/profile.d/mamba.sh"
 fi
-# <<< conda initialize <<<
 
+PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
+# <<< conda initialize <<<
