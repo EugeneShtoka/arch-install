@@ -113,5 +113,6 @@ if [ -f "/opt/mambaforge/etc/profile.d/mamba.sh" ]; then
     . "/opt/mambaforge/etc/profile.d/mamba.sh"
 fi
 
-PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
 # <<< conda initialize <<<
+
+PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
