@@ -90,3 +90,4 @@ $SCRIPTS_PATH/auto-yay.sh steamcmd
 $SCRIPTS_PATH/auto-yay.sh ruby
 $SCRIPTS_PATH/auto-yay.sh afdko
 $SCRIPTS_PATH/auto-yay.sh python-ufonormalizer
+$SCRIPTS_PATH/auto-yay.sh python-ufonormalizer-git
