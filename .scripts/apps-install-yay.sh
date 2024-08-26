@@ -88,3 +88,4 @@ $SCRIPTS_PATH/auto-yay.sh mambaforge
 $SCRIPTS_PATH/auto-yay.sh libcurl3-gnutls
 $SCRIPTS_PATH/auto-yay.sh steamcmd
 $SCRIPTS_PATH/auto-yay.sh ruby
+$SCRIPTS_PATH/auto-yay.sh afdko
