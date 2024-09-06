@@ -68,7 +68,7 @@ git_prompt_info_wrapper() {
     if [[ -d .git ]]; then
         echo AAAAA$(git_super_status)
     else
-        echo $status
+        echo $Status
     fi
 }
 
