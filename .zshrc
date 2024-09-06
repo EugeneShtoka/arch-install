@@ -64,6 +64,14 @@ source $SCRIPTS_PATH/aliases.sh
 source /etc/profile.d/google-cloud-cli.sh
 source <(fzf --zsh)
 
+git_prompt_info_wrapper() {
+    if [[ -d .git ]]; then
+        echo $(git_super_status)
+    else
+        echo $status
+    fi
+}
+
 PROMPT='%B%~%b$(git_super_status) '
 
 # User configuration
