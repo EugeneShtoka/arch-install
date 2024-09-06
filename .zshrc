@@ -66,7 +66,7 @@ source <(fzf --zsh)
 
 git_prompt_info_wrapper() {
     if [[ -d .git ]]; then
-        echo $(git_super_status)
+        echo AAAAA$(git_super_status)
     else
         echo $status
     fi
