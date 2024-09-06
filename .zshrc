@@ -64,6 +64,7 @@ source $SCRIPTS_PATH/aliases.sh
 source /etc/profile.d/google-cloud-cli.sh
 source <(fzf --zsh)
 
+# Do not show git status for non-git folders
 git_prompt_info_wrapper() {
     if [[ -d .git ]]; then
         echo $(git_super_status)
