@@ -72,7 +72,7 @@ git_prompt_info_wrapper() {
     fi
 }
 
-PROMPT='%B%~%b$(git_super_status) '
+PROMPT='%B%~%b$(git_prompt_info_wrapper) '
 
 # User configuration
 
