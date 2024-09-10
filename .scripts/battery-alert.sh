@@ -4,7 +4,7 @@
 threshold=75
 
 # Get battery status using upower
-power_info=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
+power_info="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)"
 echo $power_info
 battery_level=$(echo $power_info | grep percentage | awk '{print $2}' | tr -d %)
 state=$(power_info | grep state | awk '{print $2}')
