@@ -3,7 +3,7 @@ Description=Battery alert service
 
 [Service]
 Type=oneshot
-ExecStart=/home/yourusername/battery-alert.sh
+ExecStart=/home/eugene/.scripts/battery-alert.sh
 
 [Install]
 WantedBy=multi-user.target
