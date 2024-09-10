@@ -46,6 +46,7 @@
 !.config/systemd
 !.config/systemd/user
 !.config/systemd/user/start-up-routine.service
+!.config/systemd/user/battery-alert.service
 !.config/systemd/user/battery-alert.timer
 !.config/qBittorrent
 !.config/qBittorrent/qBittorrent.conf
