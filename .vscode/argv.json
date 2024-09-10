@@ -12,10 +12,6 @@
 
   // Allows to disable crash reporting.
   // Should restart the app if the value is changed.
-  "enable-crash-reporter": true,
-
-  // Unique id used for correlating crash reports sent from this instance.
-  // Do not edit this value.
-  "crash-reporter-id": "b9422300-1908-4e46-a951-3016d3416e95",
+  "enable-crash-reporter": false,
   "password-store": "gnome-libsecret"
 }

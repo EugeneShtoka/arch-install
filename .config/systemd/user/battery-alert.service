@@ -1,0 +1,9 @@
+[Unit]
+Description=Battery alert service
+
+[Service]
+Type=oneshot
+ExecStart=/home/yourusername/battery-alert.sh  # Replace 'yourusername' with your actual username
+
+[Install]
+WantedBy=multi-user.target

@@ -45,7 +45,7 @@
 !.config/vivaldi/uBlock-filters/**
 !.config/systemd
 !.config/systemd/user
-!.config/systemd/user/start-up-routine.service
+!.config/systemd/user/*
 !.config/qBittorrent
 !.config/qBittorrent/qBittorrent.conf
 !.config/Mailspring
