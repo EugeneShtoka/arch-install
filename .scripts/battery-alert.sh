@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set your desired low battery threshold (in percentage)
-threshold=15
+threshold=75
 
 # Get battery status using acpi
 battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
