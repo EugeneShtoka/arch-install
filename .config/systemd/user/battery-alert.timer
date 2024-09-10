@@ -1,9 +1,9 @@
 [Unit]
-Description=Battery alert service
+Description=Run battery alert script periodically
 
-[Service]
-Type=oneshot
-ExecStart=/home/yourusername/battery-alert.sh  # Replace 'yourusername' with your actual username
+[Timer]
+OnCalendar=*:0/5  # Run every 5 minutes
+AccuracySec=1min
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target
