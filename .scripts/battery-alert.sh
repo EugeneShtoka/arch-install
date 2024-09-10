@@ -4,7 +4,7 @@
 threshold=15
 
 # Get battery status using acpi
-battery_level=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
 
 if [ $battery_level -le $threshold ]; then
     # Send a notification using your chosen daemon
