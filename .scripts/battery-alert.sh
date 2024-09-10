@@ -13,5 +13,5 @@ if [ $battery_level -le $threshold ] && [ "$state" != "charging" ]; then
     # Send a notification using your chosen daemon
     notify-send -u critical "Low Battery - $battery_level%" --icon " " -r 101029
 else
-    notify-send "" "" -r 101029
+    notify-send "Charging" "" -r 101029
 fi
