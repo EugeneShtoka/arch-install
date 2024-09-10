@@ -10,5 +10,5 @@ if [ $battery_level -le $threshold ]; then
     # Send a notification using your chosen daemon
     notify-send -u critical "Low Battery - $battery_level%" --icon " " -r 101029
 else
-notify-send -h 101029
+    notify-send -h 101029
 fi
