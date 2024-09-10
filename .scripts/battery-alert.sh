@@ -9,7 +9,7 @@ battery_level=$(echo "$power_info" | grep percentage | awk '{print $2}' | tr -d 
 state=$(echo "$power_info" | grep state | awk '{print $2}')
 echo $battery_level $state
 
-if [ $battery_level -le $threshold ] && [ "$charging" != "charging" ]; then
+if [ $battery_level -le $threshold ] && [ "$state" != "charging" ]; then
     # Send a notification using your chosen daemon
     notify-send -u critical "Low Battery - $battery_level%" --icon " " -r 101029
 else
