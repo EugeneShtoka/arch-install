@@ -6,4 +6,4 @@ Type=oneshot
 ExecStart=/home/eugene/.scripts/battery-alert.sh
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
