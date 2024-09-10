@@ -3,7 +3,7 @@ Description=Battery alert service
 
 [Service]
 Type=oneshot
-ExecStart=/home/yourusername/battery-alert.sh  # Replace 'yourusername' with your actual username
+ExecStart=/home/yourusername/battery-alert.sh
 
 [Install]
 WantedBy=multi-user.target
