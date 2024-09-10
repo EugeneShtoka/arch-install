@@ -8,5 +8,5 @@ battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep pe
 
 if [ $battery_level -le $threshold ]; then
     # Send a notification using your chosen daemon
-    notify-send -u critical "Low Battery ($battery_level%)" "Battery level is at $battery_level%." 
+    notify-send -u critical "Low Battery $battery_level%" "" 
 fi
