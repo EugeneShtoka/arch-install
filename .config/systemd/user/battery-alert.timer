@@ -2,7 +2,7 @@
 Description=Run battery alert script periodically
 
 [Timer]
-OnCalendar=*:0/5  # Run every 5 minutes
+OnCalendar=*:0/5
 AccuracySec=1min
 
 [Install]
