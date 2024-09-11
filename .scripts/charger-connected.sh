@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-su - eugene -c notify-send "Charging" "" -i " " -r 101029
+su - eugene -c notify-send "Charging" "" -r 101029
