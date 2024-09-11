@@ -17,8 +17,9 @@ get_wifi_signal_strength() {
 }
 
 # Battery information
-battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
-
+power_info="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)"
+battery_level=$(echo "$power_info" | grep percentage | awk '{print $2}' | tr -d %)
+state=$(echo "$power_info" | grep state | awk '{print $2}')
 # CPU, RAM
 cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{printf "%.0f%%", 100 - $1"%"}')
 ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
