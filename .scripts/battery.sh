@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# Battery information
-battery_level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | tr -d %)
-
 # Battery icon, depending on battery level
 get_battery_icon() {
   if (( $1 >= 80 )); then
@@ -18,6 +15,6 @@ get_battery_icon() {
   fi
 }
 
-get_battery_info() {
-  echo "$(get_battery_icon $battery_level) $battery_level%"
+get_battery_status() {
+  echo "$(get_battery_icon $1) $1%%"
 }
