@@ -5,4 +5,4 @@ CONTENT="SUBSYSTEM==\"drm\", ACTION==\"add\", RUN+=\"/home/eugene/.scripts/monit
 echo -e "$CONTENT" | sudo tee "$RULE_FILE" > /dev/null
 
 # Reload udev rules to apply the changes
-sudo udevadm control --reload-rules && udevadm trigger
+# sudo udevadm control --reload-rules && udevadm trigger
