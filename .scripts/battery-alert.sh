@@ -16,6 +16,6 @@ else
     dunstctl close 101029
 fi
 
-if [ "$IS_LAPTOP" = "1" ]; then
+if [ "$IS_LAPTOP"="1" ]; then
    echo "is laptop"
 fi
