@@ -2,6 +2,7 @@
 
 # Battery icon, depending on battery level
 get_battery_icon() {
+  echo $2
   if (( $2=="charging" )); then
     printf "\uf1e6"
   elif (( $1 >= 80 )); then
