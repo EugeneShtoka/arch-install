@@ -3,7 +3,7 @@
 # Battery icon, depending on battery level
 get_battery_icon() {
   if (( $1 >= 80 )); then
-    printf "\uf240\n"
+    printf "\uf240"
   elif (( $1 >= 60 )); then
     printf "\uf241\n"
   elif (( $1 >= 40 )); then
