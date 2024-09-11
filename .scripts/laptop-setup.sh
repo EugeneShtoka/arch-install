@@ -6,5 +6,3 @@ echo -e "$CONTENT" | sudo tee "$RULE_FILE" > /dev/null
 
 # Reload udev rules to apply the changes
 sudo udevadm control --reload-rules && udevadm trigger
-
-echo "Udev rule file created/updated successfully!"
