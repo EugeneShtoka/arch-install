@@ -10,7 +10,7 @@
 # echo -e "$CONTENT" | sudo tee "$RULE_FILE" > /dev/null
 
 RULE_FILE="/etc/udev/rules.d/12-charger.rules"
-CONTENT="SUBSYSTEM==\"power_supply\", ATTR{online}==\"1\", RUN+=\"/usr/local/bin/charger_connected.sh\""
+CONTENT="SUBSYSTEM==\"power_supply\", ATTR{online}==\"1\", RUN+=\"/home/eugene/.scripts/charger-connected.sh\""
 
 # Reload udev rules to apply the changes
 sudo udevadm control --reload-rules && udevadm trigger
