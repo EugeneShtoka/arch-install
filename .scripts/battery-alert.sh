@@ -15,3 +15,7 @@ if [ $battery_level -le $threshold ] && [ "$state" != "charging" ]; then
 else
     dunstctl close 101029
 fi
+
+if [ "$IS_LAPTOP" = "1" ]; then
+   echo "is laptop"
+fi
