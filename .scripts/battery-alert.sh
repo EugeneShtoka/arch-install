@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Set your desired low battery threshold (in percentage)
 threshold=15
