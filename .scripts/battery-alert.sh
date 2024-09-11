@@ -9,7 +9,7 @@ battery_level=$(echo "$power_info" | grep percentage | awk '{print $2}' | tr -d 
 state=$(echo "$power_info" | grep state | awk '{print $2}')
 echo $battery_level $state
 
-if (( $state=="discharging" )); then
+if (( $state=="charging" )); then
     printf "\uf1e6"
 fi
 
