@@ -1,0 +1,1 @@
+notify-send "$name $1" "$message" -i $ICONS_PATH/headphones.png -r 101029
