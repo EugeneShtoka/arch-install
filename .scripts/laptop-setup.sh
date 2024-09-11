@@ -1,3 +1,8 @@
+    systemctl --user enable battery-alert.service
+    systemctl --user start battery-alert.service
+    systemctl --user enable battery-alert.timer
+    systemctl --user start battery-alert.timer
+
 # Create rule to auto-hook monitors on connect
 RULE_FILE="/etc/udev/rules.d/11-monitor.rules"
 CONTENT="SUBSYSTEM==\"drm\", ACTION==\"add\", RUN+=\"/home/eugene/.scripts/monitor-setup-hook.sh multi\"\nSUBSYSTEM==\"drm\", ACTION==\"remove\", RUN+=\"/home/eugene/.scripts/monitor-setup-hook.sh single\""
