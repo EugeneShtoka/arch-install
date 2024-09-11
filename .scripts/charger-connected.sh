@@ -13,4 +13,9 @@ function notify-send() {
     sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus notify-send "$@"
 }
 
-notify-send "Charging" --icon " " -r 101029
+power_info="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)"
+battery_level=$(echo "$power_info" | grep percentage | awk '{print $2}' | tr -d %)
+state=$(echo "$power_info" | grep state | awk '{print $2}')
+
+
+notify-send "Charging $battery_level%" --icon " " -r 101029
