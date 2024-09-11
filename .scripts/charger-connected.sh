@@ -18,4 +18,4 @@ battery_level=$(echo "$power_info" | grep percentage | awk '{print $2}' | tr -d 
 state=$(echo "$power_info" | grep state | awk '{print $2}')
 
 icon=$(printf "\uf1e6")
-notify-send "$icon Charging $battery_level%" -i $ICONS_PATH/headphones.png  -r 101029
+notify-send "$icon Charging $battery_level%" -i $ICONS_PATH/plug.png -r 101029
