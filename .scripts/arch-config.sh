@@ -4,11 +4,15 @@ cd ~
 
 sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 systemctl --user enable start-up-routine.service
-systemctl --user enable battery-alert.service
-systemctl --user start battery-alert.service
-systemctl --user enable battery-alert.timer
-systemctl --user start battery-alert.timer
 systemctl enable bluetooth.service
+
+if [ "$IS_LAPTOP" = "1" ]; then
+    systemctl --user enable battery-alert.service
+    systemctl --user start battery-alert.service
+    systemctl --user enable battery-alert.timer
+    systemctl --user start battery-alert.timer
+fi
+
 $SCRIPTS_PATH/rofi-theme-install.sh
 
 echo config web browser
