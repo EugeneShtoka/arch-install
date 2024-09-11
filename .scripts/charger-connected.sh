@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+USR_HOME=/home/eugene
+source $USR_HOME/.env
+
 function notify-send() {
     #Detect the name of the display in use
     local display=":$(ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
