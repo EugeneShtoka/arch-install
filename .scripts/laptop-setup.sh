@@ -15,4 +15,4 @@ CONTENT="SUBSYSTEM==\"power_supply\", ATTR{online}==\"1\", RUN+=\"/home/eugene/.
 echo -e "$CONTENT" | sudo tee "$RULE_FILE" > /dev/null
 
 # Reload udev rules to apply the changes
-sudo udevadm control --reload-rules && udevadm trigger
+sudo udevadm control --reload
