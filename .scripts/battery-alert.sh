@@ -10,7 +10,9 @@ state=$(echo "$power_info" | grep state | awk '{print $2}')
 echo $battery_level $state
 
 if [[ $state=="dfsdf" ]]; then
-    printf "\uf1e6"
+    echo charging
+else
+    echo discharging
 fi
 
 if [ $battery_level -le $threshold ] && [ "$state" != "charging" ]; then
