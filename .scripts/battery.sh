@@ -14,3 +14,7 @@ get_battery_icon() {
     printf "\uf244\n"
   fi
 }
+
+get_battery_info() {
+  echo "$(get_battery_icon $1) $1%%"
+}
