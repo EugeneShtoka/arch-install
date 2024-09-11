@@ -126,8 +126,6 @@ fi
 
 PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
 
-#!/bin/bash
-
 # Check for the presence of a battery
 if [ -d "/sys/class/power_supply/BAT0" ] || [ -d "/sys/class/power_supply/BAT1" ]; then
   echo "This is a laptop"
