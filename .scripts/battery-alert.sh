@@ -10,7 +10,7 @@ state=$(echo "$power_info" | grep state | awk '{print $2}')
 echo $battery_level $state
 
 if [[ "$state"=="dfsdf" ]]; then
-    echo $($state==dfsdf) $state charging
+    echo $($state=='dfsdf') $state charging
 else
     echo discharging
 fi
