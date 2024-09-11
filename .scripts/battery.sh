@@ -19,5 +19,5 @@ get_battery_icon() {
 }
 
 get_battery_info() {
-  echo "$(get_battery_icon $1) $1%"
+  echo "$(get_battery_icon $battery_level) $battery_level%"
 }
