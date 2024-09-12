@@ -2,7 +2,7 @@
 
 source $SCRIPTS_PATH/battery.sh
 
-threshold=15
+threshold=105
 get_battery_info
 
 if [ $battery_level -le $threshold ] && [ "$state" != "charging" ]; then
