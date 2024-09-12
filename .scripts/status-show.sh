@@ -25,7 +25,8 @@ hardware_info="$(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage
 #   get_battery_info
 #   hardware_info="$(get_battery_status $battery_level $charge_state)$cpu_and_ram $hardware_info"
 # fi
-if [ "$IS_LAPTOP" = "1" ]; then
+echo $IS_LAPTOP
+if [[ "$IS_LAPTOP" = "1" ]]; then
   get_battery_info
   hardware_info="$(get_battery_status $battery_level $charge_state)$cpu_and_ram $hardware_info"
 fi
