@@ -22,6 +22,7 @@ ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
 
 hardware_info="$(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage"
 if ([[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP '(?<=percentage: ).*' | grep -o 'should be ignored') != "should be ignored" ]]); then
+  get_battery_info
   hardware_info="$(get_battery_status $battery_level $charge_state)$cpu_and_ram $hardware_info"
 fi
 
