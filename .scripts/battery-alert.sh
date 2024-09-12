@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $SCRIPTS_PATH/battery.sh
+
 threshold=15
 get_battery_info
 
