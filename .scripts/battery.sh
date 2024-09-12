@@ -6,7 +6,7 @@ get_battery_info() {
   battery_level=$(echo "$power_info" | grep percentage | awk '{print $2}' | tr -d %)
   charge_state=$(echo "$power_info" | grep state | awk '{print $2}')
 
-  reply=("$battery_level" "$state")
+  reply=("$battery_level" "$charge_state")
 }
 
 # Battery icon, depending on battery level
