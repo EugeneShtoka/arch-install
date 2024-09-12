@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Set your desired low battery threshold (in percentage)
 threshold=15
-
 get_battery_info
+
 if [ $battery_level -le $threshold ] && [ "$state" != "charging" ]; then
     # Send a notification using your chosen daemon
     notify-send -u critical "Low Battery - $battery_level%" --icon " " -r 101029
