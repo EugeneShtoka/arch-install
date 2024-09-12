@@ -9,9 +9,6 @@ get_battery_info() {
   reply=("$battery_level" "$state")
 }
 
-my_function
-echo $reply[1] $reply[2]
-
 # Battery icon, depending on battery level
 get_battery_icon() {
   if (( "$2" = "charging" )); then
