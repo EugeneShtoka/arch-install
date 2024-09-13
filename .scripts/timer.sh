@@ -23,5 +23,6 @@ esac
 # Sleep for the calculated time
 sleep $seconds
 
-beep 0.03 440
-beep 0.03 440
+beep
+beep
+beep
