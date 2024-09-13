@@ -13,7 +13,7 @@ get_battery_icon() {
   local icons=( 󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹 ) 
   local index=$(( $1 / 9 ))
 
-  printf "${icons[index]}" 
+  printf "${icons[index]} $1" 
 }
 
 get_battery_status() {
