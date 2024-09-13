@@ -23,6 +23,6 @@ sleep $seconds
 
 play -n synth 0.05 sine 240
 play -n synth 0.05 sine 240
-play -n synth 0.05 sine 640
+play -n synth 0.05 sine 240
 
 echo "Time's up!"
