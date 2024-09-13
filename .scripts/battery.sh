@@ -34,7 +34,7 @@ get_battery_icon() {
   elif (( $1 >= 9 )); then
     printf "󰁺"
   else
-    printf "\uf244"
+    printf "󰂎"
   fi
 }
 
