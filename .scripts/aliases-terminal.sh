@@ -41,8 +41,8 @@ alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias install=$SCRIPTS_PATH/app-search-and-install.sh
 alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
 alias gmn=$SCRIPTS_PATH/gemini-call.sh
-alias calc=$SCRIPTS_PATH//calculate.sh
-alias timer='setsid $SCRIPTS_PATH//calculate.sh'
+alias calc=$SCRIPTS_PATH/calculate.sh
+alias timer='setsid $SCRIPTS_PATH/calculate.sh'
 
 alias tsm='mop -profile ~/.config/mop/market.moprc'
 alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
