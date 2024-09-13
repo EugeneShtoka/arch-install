@@ -43,9 +43,9 @@ get_battery_icon() {
   local index=$(( $1 / 11 ))  # 100 / 9 is approximately 11
 
   if [ "$2" = "yes" ]; then
-    echo $index
     printf "󰂄"
   else
+    echo $index
     printf "${icons[index]}" 
   fi
 }
