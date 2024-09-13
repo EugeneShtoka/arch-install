@@ -12,7 +12,7 @@ get_battery_info() {
 get_battery_icon() {
   local icons=( 󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹 ) 
   local index=$(( $1 / 9 ))
-  echo $1 $index $icons ${icons[1]}
+  echo $1 $index $icons ${icons[0]}
   printf "${icons[index]} $1%%" 
 }
 
