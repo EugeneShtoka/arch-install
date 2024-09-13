@@ -13,11 +13,7 @@ get_battery_icon() {
   local icons=( 󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹 ) 
   local index=$(( $1 / 9 ))
 
-  if [ "$2" = "yes" ]; then
-    printf "󰂄"
-  else
-    printf "${icons[index]}" 
-  fi
+  printf "${icons[index]}" 
 }
 
 get_battery_status() {
