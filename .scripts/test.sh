@@ -1,0 +1,1 @@
+source $SCRIPTS_PATH/wifi.sh
