@@ -10,6 +10,7 @@ get_wifi_icon() {
   printf "${icons[2]}" 
   printf "${icons[3]}" 
   printf "${icons[4]}" 
+  printf "${icons[5]}" 
 
   printf "${icons[index]}" 
 }
