@@ -24,4 +24,4 @@ esac
 sleep $seconds
 
 beep 0.01 440
-beep
+beep 0.01 440
