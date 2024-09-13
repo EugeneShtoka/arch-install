@@ -13,16 +13,16 @@ get_battery_info() {
 get_battery_icon() {
   if (( "$2" = "charging" )); then
     printf "\uf1e6"
-  # elif (( $1 >= 90 )); then
-  #   printf "󰁹"
-  # elif (( $1 >= 81 )); then
-  #   printf "󰂂"
-  # elif (( $1 >= 72 )); then
-  #   printf "󰂁"
-  # elif (( $1 >= 63 )); then
-  #   printf "󰂀"
-  # elif (( $1 >= 54 )); then
-  #   printf "󰁿"
+  elif (( $1 >= 90 )); then
+    printf "󰁹"
+  elif (( $1 >= 81 )); then
+    printf "󰂂"
+  elif (( $1 >= 72 )); then
+    printf "󰂁"
+  elif (( $1 >= 63 )); then
+    printf "󰂀"
+  elif (( $1 >= 54 )); then
+    printf "󰁿"
   elif (( $1 >= 45 )); then 
    printf "󰁾"
   elif (( $1 >= 36 )); then
@@ -39,5 +39,5 @@ get_battery_icon() {
 }
 
 get_battery_status() {
-  echo "$(get_battery_icon $1 $2) $1%"
+  echo "$(get_battery_icon  $2) $1%"
 }
