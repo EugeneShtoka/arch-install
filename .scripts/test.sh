@@ -1,6 +1,6 @@
 source $SCRIPTS_PATH/battery.sh
 
-get_battery_status 92 "charging"
+get_battery_status 92 charging
 get_battery_status 83 "charging"
 get_battery_status 74 "charging"
 get_battery_status 65 "charging"
