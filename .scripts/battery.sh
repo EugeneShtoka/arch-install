@@ -13,12 +13,12 @@ get_battery_info() {
 get_battery_icon() {
   if (( "$2" = "charging" )); then
     printf "\uf1e6"
-  elif (( $1 >= 92 )); then
-    printf "󰁹"
+  # elif (( $1 >= 92 )); then
+  #   printf "󰁹"
   elif (( $1 >= 84 )); then
     printf "󰂂"
   elif (( $1 >= 75 )); then
-    printf "󰁹"
+    printf "󰂁"
   elif (( $1 >= 67 )); then
     printf "\uf241"
   elif (( $1 >= 59 )); then
