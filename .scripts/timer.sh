@@ -23,9 +23,9 @@ sleep $seconds
 
 # Play a sound using the 'play' command (assuming 'sox' is installed)
 play -n synth 0.1 sine 440  # You can customize this sound further
-sleep 0.2
+sleep 0.1
 play -n synth 0.1 sine 440
-sleep 0.2
+sleep 0.1
 play -n synth 0.1 sine 440
 
 echo "Time's up!"
