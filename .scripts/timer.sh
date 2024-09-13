@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $SCRIPTS_PATH/beep.sh
+
 # Check if the correct number of arguments is provided
 if [ $# -ne 2 ]; then
     echo "Usage: $0 <number> <h|m|s>"
