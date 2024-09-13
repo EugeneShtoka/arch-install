@@ -22,7 +22,7 @@ esac
 sleep $seconds
 
 play -n synth 0.05 sine 240
-play -n synth 0.05 sine 240
+play -n synth 0.05 sine 340
 play -n synth 0.05 sine 240
 
 echo "Time's up!"
