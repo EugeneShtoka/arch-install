@@ -11,7 +11,7 @@ get_battery_info() {
 # Battery icon, depending on battery level
 get_battery_icon() {
   local icons=( 󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹 ) 
-  local index=$(( $1 / 9 ))
+  local index=$(( $1 / 9 + 1))
 
   printf "${icons[index]} $1%%" 
 }
