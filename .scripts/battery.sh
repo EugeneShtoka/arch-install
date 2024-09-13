@@ -10,34 +10,6 @@ get_battery_info() {
 }
 
 # Battery icon, depending on battery level
-get_battery_icon_old() {
-  if [ "$2" = "yes" ]; then
-    printf "󰂄"
-  elif (( $1 >= 90 )); then
-    printf "󰁹"
-  elif (( $1 >= 81 )); then
-    printf "󰂂"
-  elif (( $1 >= 72 )); then
-    printf "󰂁"
-  elif (( $1 >= 63 )); then
-    printf "󰂀"
-  elif (( $1 >= 54 )); then
-    printf "󰁿"
-  elif (( $1 >= 45 )); then 
-   printf "󰁾"
-  elif (( $1 >= 36 )); then
-    printf "󰁽"
-  elif (( $1 >= 27 )); then
-    printf "󰁼"
-  elif (( $1 >= 18 )); then
-    printf "󰁻"
-  elif (( $1 >= 9 )); then
-    printf "󰁺"
-  else
-    printf "󰂎"
-  fi
-}
-
 get_battery_icon() {
   local icons=( 󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹 ) 
   local index=$(( $1 / 9 ))
