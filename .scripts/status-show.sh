@@ -23,7 +23,7 @@ ram_usage=$(free -m | awk 'NR==2{printf "%.0f%%", $3*100/$2 }')
 hardware_info="$(print_glyph 'f013') $cpu_usage $(print_glyph 'f2db') $ram_usage"
 if [[ "$IS_LAPTOP" = "1" ]]; then
   get_battery_info
-  hardware_info="$(get_battery_status $battery_level $charging)$cpu_and_ram $hardware_info"
+  hardware_info="$(get_battery_status $battery_level $discharging)$cpu_and_ram $hardware_info"
 fi
 
 # Construct the message for notify-send
