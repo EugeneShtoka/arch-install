@@ -23,4 +23,3 @@ sleep $seconds
 
 beep
 beep
-beep
