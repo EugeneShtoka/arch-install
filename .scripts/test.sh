@@ -1,3 +1,3 @@
 source $SCRIPTS_PATH/wifi.sh
 
-echo $(get_wifi_icon 10)
+echo "$(get_wifi_icon 10)"
