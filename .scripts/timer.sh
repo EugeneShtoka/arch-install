@@ -21,8 +21,8 @@ esac
 # Sleep for the calculated time
 sleep $seconds
 
-play -n synth 0.05 sine 240
-play -n synth 0.05 sine 240
-play -n synth 0.05 sine 240
+play -n synth 0.05 sine 240 &> /dev/null
+play -n synth 0.05 sine 240 &> /dev/null
+play -n synth 0.05 sine 240 &> /dev/null
 
 echo "Time's up!"
