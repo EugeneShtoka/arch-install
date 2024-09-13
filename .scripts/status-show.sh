@@ -35,5 +35,5 @@ $(get_wifi_signal_strength) $(iwgetid -r)
 $hardware_info</span>"
 
 # Send the notification
-notify-send "$(date +%H:%M)" "$message" --icon=" " -r 101039
+notify-send "$(date +%H:%M get_battery_status $battery_level $discharging)" "$message" --icon=" " -r 101039
 
