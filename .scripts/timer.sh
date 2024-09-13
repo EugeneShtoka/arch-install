@@ -23,7 +23,6 @@ sleep $seconds
 
 play -n synth 0.1 sine 440  # You can customize this sound further
 play -n synth 0.1 sine 440
-sleep 0.1
 play -n synth 0.1 sine 440
 
 echo "Time's up!"
