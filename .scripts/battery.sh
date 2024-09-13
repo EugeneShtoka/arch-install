@@ -17,8 +17,8 @@ get_battery_icon() {
   #   printf "󰁹"
   # elif (( $1 >= 84 )); then
   #   printf "󰂂"
-  elif (( $1 >= 75 )); then
-    printf "󰂁"
+  # elif (( $1 >= 75 )); then
+  #   printf "󰂁"
   elif (( $1 >= 67 )); then
     printf "\uf241"
   elif (( $1 >= 59 )); then
