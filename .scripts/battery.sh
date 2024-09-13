@@ -18,7 +18,6 @@ get_battery_icon() {
 
 get_battery_status() {
   if [ "$2" != "discharging" ]; then
-    echo aaa $2
     printf "󰂄 $1%%"
   else
     echo "$(get_battery_icon $1)"
