@@ -39,7 +39,7 @@ get_battery_icon_old() {
 }
 
 get_battery_icon() {
-  local icons=( 󰁹 󰂂 󰂁 󰂀 󰁿 󰁾 󰁽 󰁼 󰁻 󰁺 󰂎 )
+  local icons=( 󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹 ) 
   local index=$(( $1 / 9 ))  # 100 / 9 is approximately 11
 
   if [ "$2" = "yes" ]; then
