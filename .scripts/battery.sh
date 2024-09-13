@@ -26,7 +26,7 @@ get_battery_icon() {
   elif (( $1 >= 50 )); then 
    printf "󰁾"
   elif (( $1 >= 42 )); then
-    printf "󰁹"
+    printf "󰁽"
   elif (( $1 >= 34 )); then
     printf "󰁹"
   elif (( $1 >= 25 )); then
