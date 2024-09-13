@@ -2,7 +2,7 @@
 
 source $SCRIPTS_PATH/battery.sh
 
-threshold=105
+threshold=15
 get_battery_info
 
 
