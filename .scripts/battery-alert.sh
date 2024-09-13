@@ -8,7 +8,7 @@ get_battery_info
 # Compare with previous level (divided by 20) stored in environment variable
 if [ $((battery_level / 20)) -lt ${prev_battery_level:-0} ]; then
     # Notify user (replace with your preferred notification method)
-    notify-send "$(get_battery_status $battery_level $discharging)" --icon " " -r 101031
+    notify-send "$(get_battery_status $battery_level $discharging)" --icon " " -r 101033
 fi
 
 # Update environment variable with current level (divided by 20)
