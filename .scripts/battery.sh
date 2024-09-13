@@ -21,5 +21,10 @@ get_battery_icon() {
 }
 
 get_battery_status() {
+  if [ "$2" = "yes" ]; then
+    printf "󰂄"
+  else
+    echo "$(get_battery_icon $1)"
+  fi
   echo "$(get_battery_icon $1 $2) $1%"
 }
