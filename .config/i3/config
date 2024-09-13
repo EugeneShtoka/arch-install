@@ -79,7 +79,7 @@ bindsym $mod+x kill
 bindsym $mod+l exec i3lock
 
 # show status
-bindsym $mod+s exec --no-startup-id source $SCRIPTS_PATH/status-show.sh
+bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/status-show.sh
 
 # A more modern dmenu replacement is rofi:
 bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
