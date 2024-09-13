@@ -22,5 +22,4 @@ get_battery_status() {
   else
     echo "$(get_battery_icon $1)"
   fi
-  echo "$(get_battery_icon $1 $2) $1%"
 }
