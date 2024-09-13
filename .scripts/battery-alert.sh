@@ -21,6 +21,6 @@ fi
 
 if [ $((battery_level / 20)) -lt $prev_battery_level ]; then
     notify-send "$(get_battery_status $battery_level $discharging)" --icon " " -r 101033
-
+    beep
     echo $((battery_level / 20)) > "$BATTERY_LEVEL_FILE"
 fi
