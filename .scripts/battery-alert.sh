@@ -13,6 +13,6 @@ fi
 
 # Update environment variable with current level (divided by 20)
 export prev_battery_level=$((battery_level / 20))
-if [ $((battery_level / 20)) -lt ${prev_battery_level:-0} ]; then
+if [ $((battery_level / 20)) -lt $prev_battery_level ]; then
     notify-send "$(get_battery_status $battery_level $discharging)" --icon " " -r 101033
 fi
