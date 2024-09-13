@@ -15,7 +15,7 @@ get_wifi_signal_strength() {
 
   strength=$(( (current_signal - min_signal) * 100 / (max_signal - min_signal) ))
   echo $strength
-  echo $(get_wifi_icon $strength)
+  echo $(get_wifi_icon 100)
 }
 
 # CPU, RAM
