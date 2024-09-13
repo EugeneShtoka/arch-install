@@ -14,7 +14,7 @@ get_battery_icon() {
   if (( "$2" = "charging" )); then
     printf "\uf0079"
   elif (( $1 >= 80 )); then
-    printf "\uf0079"
+    printf "\uf079"
   elif (( $1 >= 60 )); then
     printf "\uf241"
   elif (( $1 >= 40 )); then
