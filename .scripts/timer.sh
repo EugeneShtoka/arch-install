@@ -21,8 +21,8 @@ esac
 # Sleep for the calculated time
 sleep $seconds
 
-play -n synth 0.1 sine 440  # You can customize this sound further
-play -n synth 0.1 sine 440
-play -n synth 0.1 sine 440
+play -n synth 0.05 sine 440  # You can customize this sound further
+play -n synth 0.05 sine 440
+play -n synth 0.05 sine 440
 
 echo "Time's up!"
