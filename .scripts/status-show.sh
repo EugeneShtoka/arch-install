@@ -2,6 +2,7 @@
 
 source $SCRIPTS_PATH/volume.sh
 source $SCRIPTS_PATH/battery.sh
+source $SCRIPTS_PATH/wifi.sh
 source $SCRIPTS_PATH/meetings.sh
 
 print_glyph() {
@@ -13,7 +14,7 @@ get_wifi_signal_strength() {
   min_signal=-90
   max_signal=-30
 
-  echo $(( (current_signal - min_signal) * 100 / (max_signal - min_signal) ))
+  strength=$(( (current_signal - min_signal) * 100 / (max_signal - min_signal) ))
 }
 
 # CPU, RAM
