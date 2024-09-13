@@ -10,6 +10,15 @@ if [ "$IS_LAPTOP" -eq 1 ]; then
     $SCRIPTS_PATH/laptop-setup.sh
 fi
 
+RULE_FILE="/etc/udev/rules.d/20-pcspkr-beep.rules "
+CONTENT="SUBSYSTEM==\"drm\", ACTION==\"add\", RUN+=\"/home/eugene/.scripts/monitor-setup-hook.sh multi\"\nSUBSYSTEM==\"drm\", ACTION==\"remove\", RUN+=\"/home/eugene/.scripts/monitor-setup-hook.sh single\""
+
+echo -e "$CONTENT" | sudo tee "$RULE_FILE" > /dev/null
+
+$ cat /usr/lib/udev/rules.d/70-pcspkr-beep.rules 
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", GROUP="beep", MODE="0620"
+$ udevadm control --reload
+
 $SCRIPTS_PATH/rofi-theme-install.sh
 
 echo config web browser
