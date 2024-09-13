@@ -8,9 +8,9 @@ get_battery_info
 
 if [ $battery_level -le $threshold ] && [ "$discharging" = "discharging" ]; then
     notify-send -u critical "$(get_battery_status $battery_level $discharging) Low battery" --icon " " -r 101029
-    beep
-    beep
-    beep
+    beep 0.03 440
+    beep 0.03 440
+    beep 0.03 440
 else
     dunstctl close 101029
 fi
