@@ -7,7 +7,7 @@ source $SCRIPTS_PATH/wifi.sh
 print_glyph() {
   printf "\u$1\n"
 }
-echo "$(get_volume_icon 10)"
+echo "$(get_wifi_icon 10)"
 get_wifi_signal_strength() {
   current_signal=$(iwctl station wlan0 show | grep -i 'AverageRSSI' | awk '{print $2}')
   min_signal=-90
