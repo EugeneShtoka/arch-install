@@ -13,6 +13,5 @@ eval "$(ssh-agent)"
 "$SCRIPTS_PATH"/gdrive-auto-sync.sh "$MUSIC_PATH" "$GDRIVE_NAME":"$MUSIC_GDRIVE_PATH" &
 "$SCRIPTS_PATH"/gdrive-auto-sync.sh "$DOCUMENTS_PATH" "$GDRIVE_NAME":"$DOCUMENTS_GDRIVE_PATH" &
 "$SCRIPTS_PATH"/gdrive-auto-sync.sh "$DOCUMENTS_GALINA_PATH" "$GDRIVE_GALINA_NAME":"$DOCUMENTS_GALINA_GDRIVE_PATH" &
-"$SCRIPTS_PATH"/notes-auto-sync.sh &
 
 wait
