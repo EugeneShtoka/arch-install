@@ -90,3 +90,4 @@ $SCRIPTS_PATH/auto-yay.sh ruby
 $SCRIPTS_PATH/auto-yay.sh ruff
 $SCRIPTS_PATH/auto-yay.sh sox
 $SCRIPTS_PATH/auto-yay.sh cuetools
+$SCRIPTS_PATH/auto-yay.sh xdotool
