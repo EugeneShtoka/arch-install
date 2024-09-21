@@ -8,7 +8,7 @@ output_path="$HOME/Screenshots/${current_date}.png"
 if [[ $1 == "window" ]]; then
   maim -u -i $(xdotool getactivewindow) "$output_path"
 else
-  maim -u  "$output_path" 
+  maim -u "$output_path"
 fi
 
 # Copy the filename to the clipboard
