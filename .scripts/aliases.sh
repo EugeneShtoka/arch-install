@@ -18,7 +18,8 @@ alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
-alias download=$SCRIPTS_PATH/music-download.sh
+alias download-music=$SCRIPTS_PATH/music-download.sh
+alias download-music=$SCRIPTS_PATH/music-download.sh
 alias reader=$SCRIPTS_PATH/book-read.sh
 
 alias gemini='setsid $BROWSER "https://gemini.google.com/app" &>/dev/null'
