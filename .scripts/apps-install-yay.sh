@@ -93,3 +93,4 @@ $SCRIPTS_PATH/auto-yay.sh cuetools
 $SCRIPTS_PATH/auto-yay.sh xdotool
 $SCRIPTS_PATH/auto-yay.sh zip
 $SCRIPTS_PATH/auto-yay.sh shntool
+$SCRIPTS_PATH/auto-yay.sh ffmpeg
