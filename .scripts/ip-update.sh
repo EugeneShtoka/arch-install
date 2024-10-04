@@ -1,5 +1,5 @@
 #!/bin/zsh
-# ip address of AWS pi-hole 51.17.181.48
+# IP Address of AWS pi-hole 51.17.181.48
 
 if [[ $(cat /proc/sys/kernel/hostname) != "archlinux-pc" ]]; then
     echo 'Not home PC'
