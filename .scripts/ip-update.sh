@@ -14,7 +14,7 @@ if [[ -f $IP_FILE ]]; then
 
     if [[ $CURRENT_IP == $PREVIOUS_IP ]]; then
         echo 'IP unchanged'
-        sudo sed -i -e "s#^nameserver .*#nameserver 10.0.0.1#" /etc/resolv.conf
+        sudo sed -i -e "s#^nameserver .*#nameserver 51.17.181.48#" /etc/resolv.conf
         exit 0
     fi
 fi
@@ -25,7 +25,7 @@ sed -i -e "s#^mgmt_cidr = .*#mgmt_cidr = \"$CURRENT_IP/32\"#" aws.tfvars
 
 yes | terraform apply -var-file="aws.tfvars"
 
-sudo sed -i -e "s#^nameserver .*#nameserver 10.0.0.1#" /etc/resolv.conf
+sudo sed -i -e "s#^nameserver .*#nameserver 51.17.181.48#" /etc/resolv.conf
 
 echo $CURRENT_IP >$IP_FILE
 echo "Updated ip to $CURRENT_IP" >>$LOG_PATH
