@@ -63,7 +63,7 @@ bindsym XF86AudioStop exec --no-startup-id $SCRIPTS_PATH/music-stop.sh
 bindsym $mod+q exec $SCRIPTS_PATH/headphones-toggle.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier $mod)
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
@@ -87,7 +87,7 @@ bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
 bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
 
 
-bindsym Ctrl+Alt+m exec --no-startup-id $SCRIPTS_PATH/music-download.sh
+bindsym Ctrl+Alt+mT exec --no-startup-id $SCRIPTS_PATH/music-download.sh
 
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
