@@ -193,7 +193,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+w mode "default"
 }
-
 bindsym $mod+w mode "resize"
 
 # Closing zoom nuisance windows
