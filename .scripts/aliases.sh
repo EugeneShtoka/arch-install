@@ -35,6 +35,9 @@ alias syncthing='setsid $BROWSER "http://127.0.0.1:8384" &>/dev/null'
 alias spnd='mirophone-unmute && systemctl suspend'
 alias stdn='mirophone-unmute && shutdown now'
 
+alias epub-download='libgen search -e epub -r 50'
+alias book-download='libgen search -r 50'
+
 alias db-proxy='pkill cloud-sql-proxy &>/dev/null; setsid cloud-sql-proxy swapp-v1-1564402864804:us-central1:swapp-postgres-db -p 5433 -c /usr/share/credentials/swapp-v1-1564402864804.json &>/dev/null'
 
 alias against-the-storm='setsid /mnt/Games/Against\ The\ Storm/start.sh &>/dev/null'
