@@ -87,7 +87,7 @@ bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
 bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
 
 
-bindsym Ctrl+Alt+m exec --no-startup-id $SCRIPTS_PATH/music-download.sh
+bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/music-download.sh
 bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
 
 # Take a screenshot
