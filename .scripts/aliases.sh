@@ -6,7 +6,7 @@ alias slack='setsid /usr/bin/slack -s &>/dev/null'
 alias messenger='setsid beeper --no-sandbox --default-frame &>/dev/null'
 alias zoom='setsid /usr/bin/zoom &>/dev/null'
 alias postman='setsid /opt/postman/Postman &>/dev/null'
-alias notes='env LANG=en_GB.utf8 LC_ALL=en_GB.utf8 LANGUAGE=en_GB setsid obsidian &>/dev/null'
+alias notes=$SCRIPTS_PATH/notes-start.sh
 alias torrent='setsid qbittorrent &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
 alias keyboard-trainer='setsid tipp10 &>/dev/null'
