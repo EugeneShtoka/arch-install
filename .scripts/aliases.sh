@@ -18,8 +18,6 @@ alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
 alias reader=$SCRIPTS_PATH/book-read.sh
-alias notes=$SCRIPTS_PATH/notes-start.sh
-
 alias gemini='setsid $BROWSER "https://gemini.google.com/app" &>/dev/null'
 alias ytb='setsid $BROWSER "https://www.youtube.com" &>/dev/null'
 alias ghb='setsid $BROWSER "https://github.com" &>/dev/null'
