@@ -28,7 +28,6 @@ if [[ $meetingCount -eq 0 ]]; then
 	notify-send "Auto Join meetings" "<span font='20px'>No meetings scheduled soon.<br>Next meeting:<br>  $(formatMeeting $meeting $formatMeeting)</span>" --icon " " -r 101023
 elif [[ $meetingCount -eq 1 ]]; then
 	meeting=$(echo $meetings | jq -c '.[0]')
-	echo $meeting
 	$(connectToMeeting $meeting)
 else
 	availableMeetings=()
