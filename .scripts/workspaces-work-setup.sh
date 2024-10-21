@@ -1,9 +1,8 @@
 sleep 1
 
-i3-msg "[workspace=$ws1] move workspace to output $MONITOR_LAPTOP"
-i3-msg "[workspace=$ws2] move workspace to output $MONITOR_LAPTOP"
 i3-msg "[workspace=$ws3] move workspace to output $MONITOR_LAPTOP"
-
+i3-msg "[workspace=$ws2] move workspace to output $MONITOR_LAPTOP"
+i3-msg "[workspace=$ws1] move workspace to output $MONITOR_LAPTOP"
 
 i3-msg "[workspace=$ws7] move workspace to output $MONITOR_WORK_2"
 i3-msg "[workspace=$ws6] move workspace to output $MONITOR_WORK_2"
