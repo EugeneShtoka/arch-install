@@ -79,7 +79,7 @@ bindsym $mod+x kill
 bindsym $mod+l exec i3lock
 
 # show status
-bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/status-show.sh
+bindsym $mod+t exec --no-startup-id $SCRIPTS_PATH/status-show.sh
 
 # A more modern dmenu replacement is rofi:
 bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
@@ -89,6 +89,8 @@ bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
 bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/music-download.sh
 
 bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
+bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/messenger-start.sh
+bindsym $mod+l exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
 
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
@@ -129,15 +131,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# show weekly agenda
-bindsym $mod+a exec --no-startup-id $SCRIPTS_PATH/agenda-show.sh 7
-
-# show daily agenda
-bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/agenda-show.sh 1
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 exec i3-msg workspace $ws1
