@@ -1,7 +1,6 @@
 #!/bin/zsh
 
 setsid /opt/postman/Postman &>/dev/null &
-notify-send start
 
 # Wait for Postman window to appear
 while ! wmctrl -l | grep -q "Postman"; do
