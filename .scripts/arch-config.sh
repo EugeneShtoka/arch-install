@@ -4,6 +4,7 @@ cd ~
 
 sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 systemctl --user enable start-up-routine.service
+systemctl --user start pipewire-pulse
 systemctl enable bluetooth.service
 
 if [ "$IS_LAPTOP" -eq 1 ]; then
