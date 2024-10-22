@@ -64,11 +64,11 @@ $SCRIPTS_PATH/auto-yay.sh koodo-reader-bin
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli
 $SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 $SCRIPTS_PATH/auto-yay.sh openvpn
-$SCRIPTS_PATH/auto-yay.sh qt6-multimedia-ffmpeg
-#$SCRIPTS_PATH/auto-yay.sh anki
 $SCRIPTS_PATH/auto-yay.sh fzf
 #$SCRIPTS_PATH/auto-yay.sh rust
 #$SCRIPTS_PATH/auto-yay.sh atuin-git
+$SCRIPTS_PATH/auto-yay.sh qt6-multimedia-ffmpeg
+#$SCRIPTS_PATH/auto-yay.sh anki
 $SCRIPTS_PATH/auto-yay.sh mop
 $SCRIPTS_PATH/auto-yay.sh syncthing
 $SCRIPTS_PATH/auto-yay.sh neovim
