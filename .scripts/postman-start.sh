@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-setsid /opt/postman/Postman &>/dev/null
+setsid /opt/postman/Postman &>/dev/null &
 notify-send start
 
 # Wait for Postman window to appear
