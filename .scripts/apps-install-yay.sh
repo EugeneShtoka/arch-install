@@ -98,4 +98,3 @@ $SCRIPTS_PATH/auto-yay.sh wine
 $SCRIPTS_PATH/auto-yay.sh yarn
 # $SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh meld
-$SCRIPTS_PATH/auto-yay.sh pipewire-jack
