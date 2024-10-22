@@ -96,5 +96,5 @@ $SCRIPTS_PATH/auto-yay.sh shntool
 $SCRIPTS_PATH/auto-yay.sh ffmpeg
 $SCRIPTS_PATH/auto-yay.sh wine
 $SCRIPTS_PATH/auto-yay.sh yarn
-$SCRIPTS_PATH/auto-yay.sh jitsi
+# $SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh meld
