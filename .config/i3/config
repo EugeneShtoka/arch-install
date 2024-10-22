@@ -91,7 +91,7 @@ bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/music-download.sh
 bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
 bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/messenger-start.sh
 bindsym $mod+l exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
-bindsym $mod+l exec --no-startup-id $SCRIPTS_PATH/email-start.sh
+bindsym $mod+e exec --no-startup-id $SCRIPTS_PATH/email-start.sh
 
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
