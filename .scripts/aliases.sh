@@ -15,9 +15,8 @@ alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
 alias mail=$SCRIPTS_PATH/email-start.sh
 alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
-alias reader=$SCRIPTS_PATH/book-read.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
-alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
+alias reader=$SCRIPTS_PATH/book-read.sh
 
 alias gemini='setsid $BROWSER "https://gemini.google.com/app" &>/dev/null'
 alias ytb='setsid $BROWSER "https://www.youtube.com" &>/dev/null'
