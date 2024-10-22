@@ -100,8 +100,4 @@ $SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh meld
 $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh vault
-$SCRIPTS_PATH/auto-yay.sh lib32-nvidia-utils
-$SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh gnome-themes-standard
-$SCRIPTS_PATH/auto-yay.sh afdko
-$SCRIPTS_PATH/auto-yay.sh python-ufonormalizer
