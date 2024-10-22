@@ -8,7 +8,5 @@ while ! wmctrl -l | grep -q "Postman"; do
     sleep 0.1
 done
 
-sleep 1.5 # Additional delay if needed
 wmctrl -a Postman
 xdotool Mod4+f
-notify-send test
