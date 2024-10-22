@@ -100,3 +100,4 @@ $SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh afdko
 $SCRIPTS_PATH/auto-yay.sh python-scikit-build
 $SCRIPTS_PATH/auto-yay.sh meld
+$SCRIPTS_PATH/auto-yay.sh pipewire-jack
