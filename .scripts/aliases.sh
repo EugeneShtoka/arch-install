@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-alias browser=$SCRIPTS_PATH/git-squash.sh
 alias slack='setsid /usr/bin/slack -s &>/dev/null'
 alias messenger='setsid beeper --no-sandbox --default-frame &>/dev/null'
 alias zoom='setsid /usr/bin/zoom &>/dev/null'
