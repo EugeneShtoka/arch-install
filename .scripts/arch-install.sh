@@ -3,7 +3,7 @@
 source ~/.env
 
 yes | sudo pacman -Sy alacritty curl zsh
-yes | sudo pacman -R xterm
+yes | sudo pacman -R xterm pipewire pipewire-pulse
 
 localectl set-locale LC_TIME=en_GB.UTF-8
 
@@ -23,4 +23,3 @@ git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_PLUGINS_PATH/zsh-vi-mod
 chsh -s $(which zsh)
 zsh $SCRIPTS_PATH/apps-install.sh
 zsh $SCRIPTS_PATH/arch-config.sh
-
