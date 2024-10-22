@@ -70,7 +70,6 @@ $SCRIPTS_PATH/auto-yay.sh anki
 $SCRIPTS_PATH/auto-yay.sh fzf
 $SCRIPTS_PATH/auto-yay.sh atuin-git
 $SCRIPTS_PATH/auto-yay.sh mop
-$SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh syncthing
 $SCRIPTS_PATH/auto-yay.sh neovim
 $SCRIPTS_PATH/auto-yay.sh ripgrep
@@ -99,3 +98,4 @@ $SCRIPTS_PATH/auto-yay.sh wine
 $SCRIPTS_PATH/auto-yay.sh yarn
 # $SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh meld
+$SCRIPTS_PATH/auto-yay.sh proton
