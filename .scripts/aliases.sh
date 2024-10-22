@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-alias mail=$SCRIPTS_PATH/email-start.sh
 alias slack='setsid /usr/bin/slack -s &>/dev/null'
 alias messenger='setsid beeper --no-sandbox --default-frame &>/dev/null'
 alias zoom='setsid /usr/bin/zoom &>/dev/null'
@@ -13,11 +12,12 @@ alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/nul
 alias browser=$SCRIPTS_PATH/git-squash.sh
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
-alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
+alias mail=$SCRIPTS_PATH/email-start.sh
 alias glb=$SCRIPTS_PATH/gitlab-open.sh
 alias play=$SCRIPTS_PATH/music-play.sh
-alias stop=$SCRIPTS_PATH/music-stop.sh
 alias reader=$SCRIPTS_PATH/book-read.sh
+alias stop=$SCRIPTS_PATH/music-stop.sh
+alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 
 alias gemini='setsid $BROWSER "https://gemini.google.com/app" &>/dev/null'
 alias ytb='setsid $BROWSER "https://www.youtube.com" &>/dev/null'
