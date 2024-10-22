@@ -101,3 +101,4 @@ $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh proton
 $SCRIPTS_PATH/auto-yay.sh gnome-themes-standard
+$SCRIPTS_PATH/auto-yay.sh qt6-multimedia-ffmpeg
