@@ -98,3 +98,4 @@ $SCRIPTS_PATH/auto-yay.sh wine
 $SCRIPTS_PATH/auto-yay.sh yarn
 $SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh afdko
+$SCRIPTS_PATH/auto-yay.sh python-scikit-build
