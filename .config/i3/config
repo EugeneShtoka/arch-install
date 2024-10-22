@@ -94,6 +94,7 @@ bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
 bindsym $mod+e exec --no-startup-id $SCRIPTS_PATH/email-start.sh
 bindsym $mod+z exec --no-startup-id $SCRIPTS_PATH/zoom-start.sh
 bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
+bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
