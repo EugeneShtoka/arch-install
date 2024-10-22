@@ -86,7 +86,7 @@ bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
 
 bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
 
-bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/music-download.sh
+bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/music-download.sh
 
 bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
 bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/messenger-start.sh
@@ -95,10 +95,6 @@ bindsym $mod+l exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
 bindsym Shift+Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh
-
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # move focuse
 bindsym $mod+Left focus left
@@ -120,11 +116,6 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+t layout tabbed
-#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
