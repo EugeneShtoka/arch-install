@@ -11,7 +11,7 @@ done
 
 mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Photo" "Screenshots")
 for mount in "${mounts[@]}"; do
-    rm $HOME/$mount
+    rm -rf $HOME/$mount
     mkdir $HOME/$mount
     # Add dev entry to fstab
     {
