@@ -68,6 +68,7 @@ $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh openvpn
 $SCRIPTS_PATH/auto-yay.sh anki
 $SCRIPTS_PATH/auto-yay.sh fzf
+$SCRIPTS_PATH/auto-yay.sh rust
 $SCRIPTS_PATH/auto-yay.sh atuin-git
 $SCRIPTS_PATH/auto-yay.sh mop
 $SCRIPTS_PATH/auto-yay.sh syncthing
