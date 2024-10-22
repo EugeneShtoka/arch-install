@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-alias slack='setsid /usr/bin/slack -s &>/dev/null'
-alias messenger='setsid beeper --no-sandbox --default-frame &>/dev/null'
 alias zoom='setsid /usr/bin/zoom &>/dev/null'
 alias postman='setsid /opt/postman/Postman &>/dev/null'
 alias torrent='setsid qbittorrent &>/dev/null'
