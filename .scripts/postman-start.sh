@@ -5,5 +5,5 @@ setsid /opt/postman/Postman &>/dev/null & # <--- Note the extra & at the end
 while ! wmctrl -lx | grep -q "postman.Postman"; do
     sleep 0.1
 done
-sleep 0.5
+sleep 1.5
 xdotool key Super+f
