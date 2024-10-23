@@ -9,4 +9,4 @@ done
 notify-send opened
 sleep 1.5 # Additional delay if needed
 wmctrl -a "postman.Postman"
-xdotool Mod4+f
+xdotool key Super+f
