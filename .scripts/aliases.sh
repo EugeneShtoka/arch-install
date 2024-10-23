@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-alias zoom='setsid /usr/bin/zoom &>/dev/null'
-alias postman='setsid /opt/postman/Postman &>/dev/null'
 alias torrent='setsid qbittorrent &>/dev/null'
 alias file-manager='setsid thunar &>/dev/null'
 alias keyboard-trainer='setsid tipp10 &>/dev/null'
