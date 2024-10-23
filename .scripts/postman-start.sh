@@ -3,7 +3,7 @@
 setsid /opt/postman/Postman &>/dev/null & # <--- Note the extra & at the end
 
 # Wait for Postman window to appear
-while ! wmctrl -l | grep -q "Postman"; do
+while ! wmctrl -lx | grep -q "Postman"; do
     sleep 0.1
 done
 
