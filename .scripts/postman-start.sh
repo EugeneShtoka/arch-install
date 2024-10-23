@@ -8,5 +8,5 @@ while ! wmctrl -lx | grep -q "postman.Postman"; do
 done
 notify-send opened
 sleep 1.5 # Additional delay if needed
-wmctrl -a Postman
+wmctrl -a "postman.Postman"
 xdotool Mod4+f
