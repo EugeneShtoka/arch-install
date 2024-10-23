@@ -6,4 +6,5 @@ while ! wmctrl -lx | grep -q "postman.Postman"; do
     sleep 0.1
 done
 sleep 1.5
+wmctrl -a "postman.Postman"
 xdotool key Super+f
