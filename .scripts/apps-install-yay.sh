@@ -100,6 +100,7 @@ $SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh meld
 $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh vault
+$SCRIPTS_PATH/auto-yay.sh gemini-cli
 
 # Dark themes
 $SCRIPTS_PATH/auto-yay.sh adwaita-qt5-git
