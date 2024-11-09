@@ -107,3 +107,4 @@ $SCRIPTS_PATH/auto-yay.sh adwaita-qt5-git
 $SCRIPTS_PATH/auto-yay.sh adwaita-qt6-git
 $SCRIPTS_PATH/auto-yay.sh gnome-themes-extra
 $SCRIPTS_PATH/auto-yay.sh kanata-bin
+$SCRIPTS_PATH/auto-yay.sh kmonad
