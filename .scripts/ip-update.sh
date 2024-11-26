@@ -24,7 +24,7 @@ cd ~/dev/cloudblock/aws/ || exit
 
 sed -i -e "s#^mgmt_cidr = .*#mgmt_cidr = \"$CURRENT_IP/32\"#" aws.tfvars
 
-terraform apply -var-file="aws.tfvars"
+yes | terraform apply -var-file="aws.tfvars"
 
 sudo sed -i -e "s#^nameserver .*#nameserver 51.17.181.48#" /etc/resolv.conf
 
