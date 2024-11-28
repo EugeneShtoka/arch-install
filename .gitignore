@@ -27,6 +27,8 @@
 !.config/dunst/dunstrc
 !.config/mop
 !.config/mop/**/*
+!.config/rimworld
+!.config/rimworld/**/*
 !.config/copyq
 !.config/copyq/copyq-commands.ini
 !.config/copyq/copyq-filter.ini
