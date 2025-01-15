@@ -13,6 +13,10 @@ mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictur
 for mount in "${mounts[@]}"; do
     rm -rf $HOME/$mount
     mkdir $HOME/$mount
+
+    escaped_vault_path=$(echo "$VAULT_PATH/$mount" | sed 's/ /\\040/g') 
+    escaped_home_path=$(echo "$HOME/$mount" | sed 's/ /\\040/g') 
+    
     # Add dev entry to fstab
     {
         echo ""
