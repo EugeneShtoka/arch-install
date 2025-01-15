@@ -16,12 +16,12 @@ for mount in "${mounts[@]}"; do
 
     escaped_vault_path=$(echo "$VAULT_PATH/$mount" | sed 's/ /\\040/g') 
     escaped_home_path=$(echo "$HOME/$mount" | sed 's/ /\\040/g') 
-    
+
     # Add dev entry to fstab
     {
         echo ""
         echo "# $mount"
-        echo "$VAULT_PATH/${mount// /\\040}                    $HOME/${mount// /\\040}    none        bind    0  0"
+        echo "$escaped_vault_path                    $escaped_home_path    none        bind    0  0"
     } | sudo tee -a /etc/fstab2 >/dev/null
 done
 
