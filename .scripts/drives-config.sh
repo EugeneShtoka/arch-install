@@ -9,6 +9,7 @@ for dir in "${dirs[@]}"; do
     ln -s $VAULT_PATH/$dir ~/$dir
 done
 
+#mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Photo" "Screenshots")
 mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Photo" "Screenshots")
 for mount in "${mounts[@]}"; do
     rm -rf $HOME/$mount
