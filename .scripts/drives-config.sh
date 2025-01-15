@@ -16,7 +16,7 @@ for mount in "${mounts[@]}"; do
 
     escaped_vault_path=$(echo "$VAULT_PATH/$mount" | sed 's/ /\\040/g') 
     escaped_home_path=$(echo "$HOME/$mount" | sed 's/ /\\040/g') 
-
+    echo "Mounting $escaped_vault_path to $escaped_home_path"
     # Add dev entry to fstab
     {
         echo ""
