@@ -1,7 +1,7 @@
-mounts=("Galina\'s\ Documents")
+mounts=("Galina's Documents")
 for mount in "${mounts[@]}"; do
-    rm -rf $HOME/$mount
-    mkdir $HOME/$mount
+    rm -rf "$HOME/$mount"
+    mkdir "$HOME/$mount"
     # Add dev entry to fstab
     {
         echo ""
