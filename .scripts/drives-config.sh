@@ -18,7 +18,7 @@ for mount in "${mounts[@]}"; do
         echo ""
         echo "# $mount"
         echo "$VAULT_PATH/$mount					$HOME/$mount	none		bind	0  0"
-    } | sudo tee -a /etc/fstab >/dev/null
+    } | sudo tee -a /etc/fstab2 >/dev/null
 done
 
 rm -rf ~/Games
