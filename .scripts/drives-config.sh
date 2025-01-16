@@ -12,8 +12,8 @@ VAULT_PATH=/mnt/Vault
 #mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Photo" "Screenshots")
 mounts=("Galina's Documents2")
 for mount in "${mounts[@]}"; do
-    # rm -rf $HOME/$mount
-    # mkdir $HOME/$mount
+    # rm -rf "$HOME/$mount"
+    # mkdir "$HOME/$mount"
 
     escaped_vault_path=$(echo "$VAULT_PATH/$mount" | sed 's/o/\\040/g') 
     escaped_home_path=$(echo "$HOME/$mount" | sed 's/ /\\040/g') 
