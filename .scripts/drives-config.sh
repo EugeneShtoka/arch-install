@@ -15,8 +15,6 @@ for mount in "${mounts[@]}"; do
     # rm -rf $HOME/$mount
     # mkdir $HOME/$mount
 
-    echo "$VAULT_PATH/$mount"
-    echo $(echo "$VAULT_PATH/$mount" | sed 's/ /\\040/g') 
     escaped_vault_path=$(echo "$VAULT_PATH/$mount" | sed 's/o/\\040/g') 
     escaped_home_path=$(echo "$HOME/$mount" | sed 's/ /\\040/g') 
     echo "Mounting $escaped_vault_path to $escaped_home_path"
