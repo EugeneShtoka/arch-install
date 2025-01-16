@@ -3,11 +3,11 @@
 $SCRIPTS_PATH/drives-mount.sh
 VAULT_PATH=/mnt/Vault
 
-# dirs=("Downloads" "Torrents")
-# for dir in "${dirs[@]}"; do
-#     rm -rf ~/$dir
-#     ln -s $VAULT_PATH/$dir ~/$dir
-# done
+dirs=("Downloads" "Torrents")
+for dir in "${dirs[@]}"; do
+    rm -rf ~/$dir
+    ln -s $VAULT_PATH/$dir ~/$dir
+done
 
 mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Photo" "Screenshots")
 for mount in "${mounts[@]}"; do
