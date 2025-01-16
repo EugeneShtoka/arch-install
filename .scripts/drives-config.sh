@@ -10,7 +10,7 @@ VAULT_PATH=/mnt/Vault
 # done
 
 #mounts=("dev" "Documents" "Galina's Documents" "Library" "Music" "Notes" "Pictures" "Photo" "Screenshots")
-mounts=("Documents" "Galina's Documents2")
+mounts=("Galina's Documents2")
 for mount in "${mounts[@]}"; do
     rm -rf $HOME/$mount
     mkdir $HOME/$mount
