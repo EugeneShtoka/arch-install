@@ -109,3 +109,4 @@ $SCRIPTS_PATH/auto-yay.sh gnome-themes-extra
 $SCRIPTS_PATH/auto-yay.sh kmonad
 $SCRIPTS_PATH/auto-yay.sh r-linux
 $SCRIPTS_PATH/auto-yay.sh libudev0
+$SCRIPTS_PATH/auto-yay.sh freetube-bin
