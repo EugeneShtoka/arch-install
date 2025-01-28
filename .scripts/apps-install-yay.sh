@@ -57,7 +57,6 @@ $SCRIPTS_PATH/auto-yay.sh beeper-latest-bin
 $SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
 $SCRIPTS_PATH/auto-yay.sh cloud-sql-proxy
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
-$SCRIPTS_PATH/auto-yay.sh autokey-common
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh coolreader
