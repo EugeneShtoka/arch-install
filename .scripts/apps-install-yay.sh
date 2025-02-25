@@ -15,7 +15,6 @@ $SCRIPTS_PATH/auto-yay.sh lazydocker
 $SCRIPTS_PATH/auto-yay.sh gnome-keyring
 $SCRIPTS_PATH/auto-yay.sh bitwarden-cli
 $SCRIPTS_PATH/auto-yay.sh python-packaging
-# $SCRIPTS_PATH/auto-yay.sh gvfs
 $SCRIPTS_PATH/auto-yay.sh p7zip
 $SCRIPTS_PATH/auto-yay.sh dunst
 $SCRIPTS_PATH/auto-yay.sh upower
