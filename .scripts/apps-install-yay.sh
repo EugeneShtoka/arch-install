@@ -57,8 +57,6 @@ $SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
-$SCRIPTS_PATH/auto-yay.sh google-cloud-cli
-$SCRIPTS_PATH/auto-yay.sh google-cloud-cli-gke-gcloud-auth-plugin
 $SCRIPTS_PATH/auto-yay.sh openvpn
 $SCRIPTS_PATH/auto-yay.sh fzf
 $SCRIPTS_PATH/auto-yay.sh rust
