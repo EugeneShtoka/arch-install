@@ -75,27 +75,18 @@ $SCRIPTS_PATH/auto-yay.sh libgen-cli-bin
 $SCRIPTS_PATH/auto-yay.sh fb2converter-bin
 $SCRIPTS_PATH/auto-yay.sh libcurl3-gnutls
 $SCRIPTS_PATH/auto-yay.sh steamcmd
-$SCRIPTS_PATH/auto-yay.sh ruby
-$SCRIPTS_PATH/auto-yay.sh ruff
-$SCRIPTS_PATH/auto-yay.sh sox
-$SCRIPTS_PATH/auto-yay.sh cuetools
 $SCRIPTS_PATH/auto-yay.sh xdotool
 $SCRIPTS_PATH/auto-yay.sh zip
-$SCRIPTS_PATH/auto-yay.sh shntool
 $SCRIPTS_PATH/auto-yay.sh ffmpeg
 $SCRIPTS_PATH/auto-yay.sh wine
 $SCRIPTS_PATH/auto-yay.sh yarn
-$SCRIPTS_PATH/auto-yay.sh jitsi
 $SCRIPTS_PATH/auto-yay.sh meld
 $SCRIPTS_PATH/auto-yay.sh musescore-midi
 $SCRIPTS_PATH/auto-yay.sh vault
 $SCRIPTS_PATH/auto-yay.sh gemini-cli
-
-# Dark themes
 $SCRIPTS_PATH/auto-yay.sh adwaita-qt5-git
 $SCRIPTS_PATH/auto-yay.sh adwaita-qt6-git
 $SCRIPTS_PATH/auto-yay.sh gnome-themes-extra
 $SCRIPTS_PATH/auto-yay.sh kmonad
-$SCRIPTS_PATH/auto-yay.sh r-linux
 $SCRIPTS_PATH/auto-yay.sh libudev0
 $SCRIPTS_PATH/auto-yay.sh freetube-bin
