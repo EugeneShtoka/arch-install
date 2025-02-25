@@ -72,8 +72,6 @@ $SCRIPTS_PATH/auto-yay.sh bottom
 $SCRIPTS_PATH/auto-yay.sh dosfstools
 $SCRIPTS_PATH/auto-yay.sh sysstat
 $SCRIPTS_PATH/auto-yay.sh libgen-cli-bin
-$SCRIPTS_PATH/auto-yay.sh tasker-permissions-git
-$SCRIPTS_PATH/auto-yay.sh android-sdk-platform-tools
 $SCRIPTS_PATH/auto-yay.sh fb2converter-bin
 $SCRIPTS_PATH/auto-yay.sh mambaforge
 $SCRIPTS_PATH/auto-yay.sh libcurl3-gnutls
