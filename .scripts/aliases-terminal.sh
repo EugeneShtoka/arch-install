@@ -25,7 +25,6 @@ alias git-alias-main='git symbolic-ref refs/heads/main refs/heads/$(git rev-pars
 alias home='cd ~ && code . && clr'
 alias figoro='cd $HOME/dev/figoro && code . && clr'
 alias blog='cd $HOME/dev/blog && code . && clr'
-alias plugin='cd $WORK_REPOS_PATH/revit-plugin && code . && clr'
 
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
