@@ -46,10 +46,10 @@ $SCRIPTS_PATH/auto-yay.sh npm
 $SCRIPTS_PATH/auto-yay.sh rclone
 $SCRIPTS_PATH/auto-yay.sh qemu-full
 $SCRIPTS_PATH/auto-yay.sh obsidian
-$SCRIPTS_PATH/auto-yay.sh glab
+# $SCRIPTS_PATH/auto-yay.sh glab
 $SCRIPTS_PATH/auto-yay.sh github-cli
 $SCRIPTS_PATH/auto-yay.sh expac
-$SCRIPTS_PATH/auto-yay.sh slack-desktop
+# $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh zoom
 $SCRIPTS_PATH/auto-yay.sh mailspring-bin
 $SCRIPTS_PATH/auto-yay.sh beeper-latest-bin
