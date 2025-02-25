@@ -22,13 +22,12 @@ alias gcp-airflow='setsid $BROWSER "https://15f236baf9994fd7a4d6ae3be218aaf8-dot
 alias pgd='setsid $BROWSER "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
 alias wgd='setsid $BROWSER "https://drive.google.com/drive/u/1/shared-drive" &>/dev/null'
 alias jira='setsid $BROWSER "https://swapp-ai.atlassian.net/jira/software/c/projects/SWP/boards/1?assignee=712020%3Aee767fac-fcf2-4a03-a591-ccc8a59a097b" &>/dev/null'
-alias coralogix='setsid $BROWSER "https://swapp.app.coralogix.us/#/dashboard" &>/dev/null'
 alias syncthing='setsid $BROWSER "http://127.0.0.1:8384" &>/dev/null'
 
 alias spnd='mirophone-unmute && systemctl suspend'
 alias stdn='mirophone-unmute && shutdown now'
 
-alias epub-download='libgen search -e epub -r 50'
+alias epub-download='c search -e epub -r 50'
 alias book-download='libgen search -r 50'
 
 alias db-proxy='pkill cloud-sql-proxy &>/dev/null; setsid cloud-sql-proxy swapp-v1-1564402864804:us-central1:swapp-postgres-db -p 5433 -c /usr/share/credentials/swapp-v1-1564402864804.json &>/dev/null'
