@@ -22,10 +22,8 @@ $SCRIPTS_PATH/rofi-theme-install.sh
 
 echo config web browser
 source $SCRIPTS_PATH/bw-unlock.sh
-echo work gmail
-$SCRIPTS_PATH/bw-item.sh g.personal
 echo personal gmail
-$SCRIPTS_PATH/bw-item.sh g.work
+$SCRIPTS_PATH/bw-item.sh g.personal
 echo github
 $SCRIPTS_PATH/bw-item.sh g.github
 
@@ -34,11 +32,6 @@ $SCRIPTS_PATH/rclone-config.sh
 $SCRIPTS_PATH/ssh-generate-key.sh $PERSONAL_EMAIL personal
 gh auth login
 git remote set-url origin git@github.com:EugeneShtoka/arch-install.git
-
-$SCRIPTS_PATH/ssh-generate-key.sh $WORK_EMAIL work
-glab auth login
-read -p "Enter ssh key name for GitLab: (PC/Laptop)" keyName
-glab ssh-key add .ssh/id_ed25519_work.pub -t $keyName
 
 mkdir .tmp
 
