@@ -71,7 +71,6 @@ $SCRIPTS_PATH/auto-yay.sh gdu
 $SCRIPTS_PATH/auto-yay.sh bottom
 $SCRIPTS_PATH/auto-yay.sh dosfstools
 $SCRIPTS_PATH/auto-yay.sh sysstat
-$SCRIPTS_PATH/auto-yay.sh gparted
 $SCRIPTS_PATH/auto-yay.sh libgen-cli-bin
 $SCRIPTS_PATH/auto-yay.sh tasker-permissions-git
 $SCRIPTS_PATH/auto-yay.sh android-sdk-platform-tools
