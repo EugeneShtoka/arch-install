@@ -1,6 +1,6 @@
 {
   "application:new-message": "c",
   "core:change-folders": "m",
-  "core:delete-item": ["d", "Del"],
+  "core:delete-item": "d",
   "core:remove-from-view": "backspace"
 }
