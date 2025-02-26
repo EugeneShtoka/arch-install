@@ -18,6 +18,7 @@ set $green        #8ff586
 font pango:monospace 0
 default_border pixel 1
 default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 for_window [class=".*"] title_format " "
 for_window [class=".*"] border pixel 1
 focus_wrapping no
