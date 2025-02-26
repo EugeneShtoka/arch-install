@@ -17,7 +17,6 @@ set $green        #8ff586
 # is used in the bar {} block below.
 font pango:monospace 0
 
-
 for_window [class=".*"] border pixel 1
 for_window [class=".*"] title_format "<span alpha='1'>%title</span>"
 focus_wrapping no
