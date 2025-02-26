@@ -18,7 +18,7 @@ set $green        #8ff586
 font pango:monospace 0
 
 for_window [class=".*"] border pixel 1
-for_window [class=".*"] title_format "<span alpha='1'>%title</span>"
+for_window [class=".*"] title_format " "
 focus_wrapping no
 
 # do not move focus on mouse movement
