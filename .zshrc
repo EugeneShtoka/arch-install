@@ -61,7 +61,6 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 source $SCRIPTS_PATH/aliases-terminal.sh
 source $SCRIPTS_PATH/aliases.sh
-source /etc/profile.d/google-cloud-cli.sh
 source <(fzf --zsh)
 
 # Do not show git status for non-git folders
