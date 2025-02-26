@@ -87,3 +87,4 @@ $SCRIPTS_PATH/auto-yay.sh gnome-themes-extra
 $SCRIPTS_PATH/auto-yay.sh kmonad
 $SCRIPTS_PATH/auto-yay.sh freetube-bin
 $SCRIPTS_PATH/auto-yay.sh coolreader
+$SCRIPTS_PATH/auto-yay.sh udisks2
