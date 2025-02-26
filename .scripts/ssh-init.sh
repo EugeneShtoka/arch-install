@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-notify-send "SSH_INIT" "<span font='15px'>INITIALIZING SSH $SSH_AUTH_SOCK</span>" --icon " " -r 101017
-
 check-ssh-agent() {
     [ -S "$SSH_AUTH_SOCK" ] && { ssh-add -l >& /dev/null || [ $? -ne 2 ]; }
 }
