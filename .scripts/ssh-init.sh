@@ -8,3 +8,5 @@ check-ssh-agent || eval "$(ssh-agent -s -a ~/.tmp/ssh-agent.sock)" > /dev/null
 
 $SCRIPTS_PATH/ssh-add-keys.sh
 notify-send "SSH_INIT" "<span font='15px'>INITIALIZING SSH $SSH_AUTH_SOCK $SCRIPTS_PATH</span>" --icon " " -r 101017
+
+notify-send "test" "<span font='15px'>$(ssh-add -l)</span>" --icon " " -r 101047 
