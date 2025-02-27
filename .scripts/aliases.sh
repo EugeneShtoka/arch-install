@@ -26,9 +26,9 @@ alias epub-download='c search -e epub -r 50'
 alias book-download='libgen search -r 50'
 
 alias against-the-storm='setsid /mnt/Games/Against\ The\ Storm/start.sh &>/dev/null'
-alias europa='setsid /mnt/Games/Europa/start.sh &>/dev/null'
-alias victoria='setsid /mnt/Games/Victoria/binaries/victoria3 &>/dev/null'
-alias rim-world='setsid /mnt/Games/RimWorld/start.sh &>/dev/null'
+alias europa='setsid ~/Games/Europa/start.sh &>/dev/null'
+alias victoria='setsid ~/Games/Victoria/binaries/victoria3 &>/dev/null'
+alias rim-world='setsid ~/Games/RimWorld/start.sh &>/dev/null'
 
 # To maintain this as last item - it should be last in the list
 alias rename='setsid thunar --bulk-rename &>/dev/null'
