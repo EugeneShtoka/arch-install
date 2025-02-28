@@ -25,7 +25,7 @@ alias stdn='mirophone-unmute && shutdown now'
 alias epub-download='c search -e epub -r 50'
 alias book-download='libgen search -r 50'
 
-alias against-the-storm='setsid /mnt/Games/AgainstTheStorm/start.sh &>/dev/null'
+alias against-the-storm='setsid ~/Games/AgainstTheStorm/start.sh &>/dev/null'
 alias europa='setsid ~/Games/Europa/start.sh &>/dev/null'
 alias victoria='setsid ~/Games/Victoria/binaries/victoria3 &>/dev/null'
 alias rim-world='setsid ~/Games/RimWorld/start.sh &>/dev/null'
