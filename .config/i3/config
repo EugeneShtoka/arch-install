@@ -89,7 +89,8 @@ bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
 
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/music-download.sh
 
-bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
+#bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
+bindsym $mod+n exec --no-startup-id export env LANGUAGE=en_GB && . /home/eugene/.scripts/ssh-init.sh && obsidian
 bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/messenger-start.sh
 bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
 bindsym $mod+e exec --no-startup-id $SCRIPTS_PATH/email-start.sh
