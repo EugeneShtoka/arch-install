@@ -88,3 +88,4 @@ $SCRIPTS_PATH/auto-yay.sh kmonad
 $SCRIPTS_PATH/auto-yay.sh freetube-bin
 $SCRIPTS_PATH/auto-yay.sh coolreader
 $SCRIPTS_PATH/auto-yay.sh udisks2
+$SCRIPTS_PATH/auto-yay.sh pgadmin4-py
