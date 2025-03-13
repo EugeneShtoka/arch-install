@@ -91,3 +91,4 @@ $SCRIPTS_PATH/auto-yay.sh udisks2
 $SCRIPTS_PATH/auto-yay.sh postgresql
 $SCRIPTS_PATH/auto-yay.sh sxiv
 $SCRIPTS_PATH/auto-yay.sh exfatprogs
+$SCRIPTS_PATH/auto-yay.sh woeusb
