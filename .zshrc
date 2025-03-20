@@ -105,3 +105,8 @@ sed ':start; /\\$/ { N; s/\\\n/\\\x00/; b start }' $HOME/.zsh_history | nl -nrz 
 
 PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
 eval "$(atuin init zsh --disable-up-arrow)"
+
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
