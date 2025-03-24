@@ -93,3 +93,4 @@ $SCRIPTS_PATH/auto-yay.sh sxiv
 $SCRIPTS_PATH/auto-yay.sh exfatprogs
 $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh nvm
+$SCRIPTS_PATH/auto-yay.sh pnpm
