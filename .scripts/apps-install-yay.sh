@@ -95,3 +95,4 @@ $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh nvm
 $SCRIPTS_PATH/auto-yay.sh pnpm
 $SCRIPTS_PATH/auto-yay.sh xorg-xrandr
+$SCRIPTS_PATH/auto-yay.sh pinta
