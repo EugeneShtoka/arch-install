@@ -6,7 +6,7 @@ source $SCRIPTS_PATH/beep.sh
 threshold=15
 get_battery_info
 
-printf "%s\n" "[ $battery_level -le $threshold ]"
+notify-send "[ $battery_level -le $threshold ]"  --icon " " -r 101030
 if [ $battery_level -le $threshold ] && [ "$discharging" = 'discharging' ]; then
     notify-send -u critical "$(get_battery_status $battery_level $discharging) Low battery" --icon " " -r 101029
     beep 0.03 440
