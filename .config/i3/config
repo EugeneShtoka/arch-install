@@ -45,7 +45,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # start automation tools
-exec --no-startup-id autokey-gtk
+# exec --no-startup-id autokey-gtk
 
 # start clipboard manager
 exec --no-startup-id copyq --start-server hide
