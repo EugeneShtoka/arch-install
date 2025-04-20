@@ -22,8 +22,8 @@ else
     prev_battery_level=5
 fi
 
-if [ $((battery_level / 20)) -lt $prev_battery_level ]; then
-    notify-send "$(get_battery_status $battery_level $discharging)" --icon " " -r 101033
+if [ $((battery_level / 20)) -lt $prev_battery_level ] && [ "$discharging" = "discharging" ]; then
+    notify-send "Discharging $(get_battery_status $battery_level $discharging)" --icon " " -r 101033
     beep
 fi
 
