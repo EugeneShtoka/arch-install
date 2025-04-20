@@ -20,7 +20,7 @@ BATTERY_LEVEL_FILE="$HOME/.previous_battery_level"
 if [ -f "$BATTERY_LEVEL_FILE" ]; then
     prev_battery_level=$(cat "$BATTERY_LEVEL_FILE")
 else
-    prev_battery_level=0
+    prev_battery_level=5
 fi
 
 if [ $((battery_level / 20)) -lt $prev_battery_level ]; then
