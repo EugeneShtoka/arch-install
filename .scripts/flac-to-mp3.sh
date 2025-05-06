@@ -41,14 +41,8 @@ echo "Target Directory: $TARGET_DIR (Flat Structure)"
 # Use find to locate all .flac files (case-insensitive)
 # -print0 and read -d $'\0' handle filenames with spaces, newlines, or special chars safely
 find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0' flac_file; do
-    # Get the base filename (e.g., "Track 01.flac")
-    # Use -- to handle filenames starting with -
     flac_basename=$(basename -- "$flac_file")
-
-    # Construct the output MP3 filename (strip original extension, add .mp3)
     mp3_basename="${flac_basename%.*}.mp3"
-
-    # Construct the full path for the target MP3 file (directly in the flat target dir)
     target_mp3_file="$TARGET_DIR/$mp3_basename"
 
     echo "Processing Source: '$flac_file'"
