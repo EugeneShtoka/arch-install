@@ -97,3 +97,4 @@ $SCRIPTS_PATH/auto-yay.sh pnpm
 $SCRIPTS_PATH/auto-yay.sh xorg-xrandr
 $SCRIPTS_PATH/auto-yay.sh pinta$SCRIPTS_PATH/auto-yay.sh picard
 $SCRIPTS_PATH/auto-yay.sh shntool
+$SCRIPTS_PATH/auto-yay.sh mac
