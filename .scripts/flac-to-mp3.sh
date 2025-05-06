@@ -25,12 +25,6 @@ fi
 # SOURCE_DIR=$(realpath -- "$SOURCE_DIR_ARG")
 # TARGET_DIR=$(realpath -m -- "$TARGET_DIR_ARG")
 
-# Optional: Check if source and target are the same (less critical now, but good to know)
-if [[ "$SOURCE_DIR" == "$TARGET_DIR" ]]; then
-     echo "Warning: Source and Target directories appear to be the same ('$SOURCE_DIR')." >&2
-     echo "Output files will be placed alongside source files." >&2
-fi
-
 # 4. Create Target Directory (once, before the loop)
 echo "Ensuring target directory exists: $TARGET_DIR"
 if ! mkdir -p "$TARGET_DIR"; then
