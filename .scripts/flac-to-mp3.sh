@@ -23,11 +23,6 @@ if [ ! -d "$SOURCE_DIR" ]; then
     exit 1
 fi
 
-# # Get absolute paths for source and target
-# # Use realpath -m for target to handle non-existent paths gracefully for mkdir later
-# SOURCE_DIR=$(realpath -- "$SOURCE_DIR_ARG")
-# TARGET_DIR=$(realpath -m -- "$TARGET_DIR_ARG")
-
 # 4. Create Target Directory (once, before the loop)
 echo "Ensuring target directory exists: $TARGET_DIR"
 if ! mkdir -p "$TARGET_DIR"; then
