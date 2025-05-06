@@ -61,7 +61,6 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
     # Execute ffmpeg conversion
     ffmpeg -nostdin -i "$flac_file" -codec:a libmp3lame -q:a 2 -vn "$target_mp3_file"
 
-    # Check ffmpeg's exit status
     if [ $? -eq 0 ]; then
         echo "  Success!"
     else
