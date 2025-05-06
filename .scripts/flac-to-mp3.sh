@@ -55,7 +55,7 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
            echo "  Note: This might be due to a filename collision from different source subdirectories." >&2
         fi
         echo "-------------------------------------------"
-        continue # Move to the next file
+        continue
     fi
 
     echo "  Converting..."
