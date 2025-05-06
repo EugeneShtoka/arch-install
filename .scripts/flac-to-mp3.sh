@@ -14,12 +14,12 @@ fi
 echo $1
 echo $2
 
-SOURCE_DIR_ARG="$1"
-TARGET_DIR_ARG="$2"
+SOURCE_DIR="$1"
+TARGET_DIR="$2"
 
 # 3. Validate source directory
-if [ ! -d "$SOURCE_DIR_ARG" ]; then
-    echo "Error: Source directory '$SOURCE_DIR_ARG' not found or is not a directory." >&2
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo "Error: Source directory '$SOURCE_DIR' not found or is not a directory." >&2
     exit 1
 fi
 
