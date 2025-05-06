@@ -48,10 +48,8 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
     echo "Processing Source: '$flac_file'"
     echo "  Target File:     '$target_mp3_file'"
 
-    # Check if MP3 already exists in the target location and if we should skip
     if [ -f "$target_mp3_file" ]; then
         echo "  Skipping: Target file already exists."
-        # Add extra warning for potential collision if the source wasn't top-level
         flac_file_dir=$(dirname -- "$flac_file")
         if [[ "$flac_file_dir" != "$SOURCE_DIR" ]]; then
            echo "  Note: This might be due to a filename collision from different source subdirectories." >&2
