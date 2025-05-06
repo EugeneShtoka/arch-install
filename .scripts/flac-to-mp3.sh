@@ -5,21 +5,6 @@ usage() {
     exit 1
 }
 
-# 1. Check dependencies
-if ! command -v ffmpeg &> /dev/null; then
-    echo "Error: ffmpeg is not installed or not in PATH." >&2
-    echo "Please install it first (e.g., 'sudo pacman -S ffmpeg')." >&2
-    exit 1
-fi
-# Check coreutils commands needed (less needed now, but good practice)
-for cmd in basename dirname mkdir realpath find; do
-    if ! command -v "$cmd" &> /dev/null; then
-        echo "Error: command '$cmd' not found (usually part of coreutils)." >&2
-        echo "Please ensure 'coreutils' is installed ('sudo pacman -S coreutils')." >&2
-        exit 1
-    fi
-done
-
 # 2. Check arguments
 if [ "$#" -ne 2 ]; then
     echo "Error: Incorrect number of arguments." >&2
@@ -35,10 +20,10 @@ if [ ! -d "$SOURCE_DIR_ARG" ]; then
     exit 1
 fi
 
-# Get absolute paths for source and target
-# Use realpath -m for target to handle non-existent paths gracefully for mkdir later
-SOURCE_DIR=$(realpath -- "$SOURCE_DIR_ARG")
-TARGET_DIR=$(realpath -m -- "$TARGET_DIR_ARG")
+# # Get absolute paths for source and target
+# # Use realpath -m for target to handle non-existent paths gracefully for mkdir later
+# SOURCE_DIR=$(realpath -- "$SOURCE_DIR_ARG")
+# TARGET_DIR=$(realpath -m -- "$TARGET_DIR_ARG")
 
 # Optional: Check if source and target are the same (less critical now, but good to know)
 if [[ "$SOURCE_DIR" == "$TARGET_DIR" ]]; then
