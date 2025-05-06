@@ -65,7 +65,6 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
         echo "  Success!"
     else
         echo "  Error: ffmpeg failed to convert '$flac_file'. Check ffmpeg output." >&2
-        # remove partially created/failed mp3 file
         rm -f "$target_mp3_file"
     fi
     echo "-------------------------------------------"
