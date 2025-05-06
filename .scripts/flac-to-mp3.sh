@@ -38,8 +38,6 @@ echo "Starting FLAC to MP3 conversion..."
 echo "Source Directory: $SOURCE_DIR"
 echo "Target Directory: $TARGET_DIR (Flat Structure)"
 
-# Use find to locate all .flac files (case-insensitive)
-# -print0 and read -d $'\0' handle filenames with spaces, newlines, or special chars safely
 find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0' flac_file; do
     flac_basename=$(basename -- "$flac_file")
     mp3_basename="${flac_basename%.*}.mp3"
