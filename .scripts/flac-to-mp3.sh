@@ -72,17 +72,17 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
     # -i: input file
     # -nostdin: Prevents ffmpeg from accidentally reading from standard input.
     # -codec:a libmp3lame: Use the LAME MP3 encoder.
-    # -q:a $MP3_QUALITY: Set the VBR quality.
+    # -q:a 2: Set the VBR quality.
     # -vn: Disable video recording/copying (ensures only audio is processed).
-    ffmpeg -nostdin -i "$flac_file" -codec:a libmp3lame -q:a "$MP3_QUALITY" -vn "$target_mp3_file"
+    ffmpeg -nostdin -i "$flac_file" -codec:a libmp3lame -q:a 2 -vn "$target_mp3_file"
 
     # Check ffmpeg's exit status
     if [ $? -eq 0 ]; then
         echo "  Success!"
     else
         echo "  Error: ffmpeg failed to convert '$flac_file'. Check ffmpeg output." >&2
-        # Optional: remove partially created/failed mp3 file
-        # rm -f "$target_mp3_file"
+        # remove partially created/failed mp3 file
+        rm -f "$target_mp3_file"
     fi
     echo "-------------------------------------------"
 
