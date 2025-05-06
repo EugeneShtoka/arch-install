@@ -11,6 +11,9 @@ if [ "$#" -ne 2 ]; then
     usage
 fi
 
+echo $1
+echo $2
+
 SOURCE_DIR_ARG="$1"
 TARGET_DIR_ARG="$2"
 
