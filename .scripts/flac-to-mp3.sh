@@ -37,9 +37,6 @@ fi
 echo "Starting FLAC to MP3 conversion..."
 echo "Source Directory: $SOURCE_DIR"
 echo "Target Directory: $TARGET_DIR (Flat Structure)"
-echo "MP3 Quality (-q:a): $MP3_QUALITY"
-echo "Overwrite existing MP3s: $OVERWRITE_EXISTING"
-echo "-------------------------------------------"
 
 # Use find to locate all .flac files (case-insensitive)
 # -print0 and read -d $'\0' handle filenames with spaces, newlines, or special chars safely
@@ -58,7 +55,7 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
     echo "  Target File:     '$target_mp3_file'"
 
     # Check if MP3 already exists in the target location and if we should skip
-    if [[ "$OVERWRITE_EXISTING" == "no" ]] && [ -f "$target_mp3_file" ]; then
+    if [ -f "$target_mp3_file" ]; then
         echo "  Skipping: Target file already exists."
         # Add extra warning for potential collision if the source wasn't top-level
         flac_file_dir=$(dirname -- "$flac_file")
@@ -67,8 +64,6 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
         fi
         echo "-------------------------------------------"
         continue # Move to the next file
-    elif [[ "$OVERWRITE_EXISTING" == "yes" ]] && [ -f "$target_mp3_file" ]; then
-         echo "  Warning: Overwriting existing target file '$target_mp3_file'." >&2
     fi
 
     echo "  Converting..."
