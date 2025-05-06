@@ -59,11 +59,6 @@ find "$SOURCE_DIR" -type f -iname '*.flac' -print0 | while IFS= read -r -d $'\0'
     echo "  Converting..."
 
     # Execute ffmpeg conversion
-    # -i: input file
-    # -nostdin: Prevents ffmpeg from accidentally reading from standard input.
-    # -codec:a libmp3lame: Use the LAME MP3 encoder.
-    # -q:a 2: Set the VBR quality.
-    # -vn: Disable video recording/copying (ensures only audio is processed).
     ffmpeg -nostdin -i "$flac_file" -codec:a libmp3lame -q:a 2 -vn "$target_mp3_file"
 
     # Check ffmpeg's exit status
