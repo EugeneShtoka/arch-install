@@ -59,11 +59,11 @@ while [[ "$#" -gt 0 ]]; do
       jira_ticket="$2"
       shift 2
       ;;
-    --category)
+    -c|--category)
       category="$2"
       shift 2
       ;;
-    --platform)
+    -p|--platform)
       platform_input=$(echo "$2" | tr '[:upper:]' '[:lower:]') # Convert to lowercase
       if [[ "$platform_input" == "gitlab" || "$platform_input" == "github" ]]; then
         platform="$platform_input"
