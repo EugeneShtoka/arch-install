@@ -58,7 +58,7 @@ else
 fi
 
 # Open the URL in the default browser
-if command -v xdg-open >/dev/null 2>&1; then
+if command -v xdg-open  then
   xdg-open "$web_url"
 else
   echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
