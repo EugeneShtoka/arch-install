@@ -55,7 +55,7 @@ while [[ "$#" -gt 0 ]]; do
       title="$2"
       shift 2
       ;;
-    --jira-ticket)
+    -j|--jira-ticket)
       jira_ticket="$2"
       shift 2
       ;;
