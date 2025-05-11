@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-# Script to open the GitHub/GitLab page of the current Git repository.
-
 # 1. Check if 'git' command is available
 if ! command -v git &> /dev/null; then
   echo "Error: 'git' command not found. Please install Git." >&2
