@@ -85,7 +85,6 @@ fi
 
 
 # 6. Open the URL in the default browser
-opened=0
 if command -v xdg-open &> /dev/null; then
   xdg-open "$web_url" && opened=1
 elif
