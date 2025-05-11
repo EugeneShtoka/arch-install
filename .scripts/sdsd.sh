@@ -89,13 +89,6 @@ if command -v xdg-open &> /dev/null; then
   xdg-open "$web_url"
 elif
   echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
-  exit 1
-fi
-
-if [[ "$opened" -eq 1 ]]; then
-  echo "Info: Web page should be opening in your browser."
-else
-  echo "Error: Could not automatically open the URL." >&2
   echo "Please open this URL manually: $web_url" >&2
   exit 1
 fi
