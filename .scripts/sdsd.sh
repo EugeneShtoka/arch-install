@@ -6,7 +6,7 @@ if ! git rev-parse --is-inside-work-tree &> /dev/null; then
   exit 1
 fi
 
-# 3. Get the URL of the 'origin' remote
+# Get the URL of the 'origin' remote
 remote_url=$(git remote get-url origin 2>/dev/null)
 exit_status=$?
 
