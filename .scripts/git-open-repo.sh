@@ -58,6 +58,6 @@ else
 fi
 
 # Open the URL in the default browser
-setsid xdg-open "$web_url"
+xdg-open "$web_url"
 
 exit 0
