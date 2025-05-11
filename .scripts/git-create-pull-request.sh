@@ -3,7 +3,7 @@
 title=$1
 category=$2
 if [[ -n $category ]]; then
-    category=eugene
+    category=$GIT_DEFAULT_CATEGORY
 fi
 branchName=$category/${title// /-}
 
