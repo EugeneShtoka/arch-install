@@ -41,7 +41,6 @@ fi
 if [[ -z "$GIT_DEFAULT_CATEGORY" ]]; then
   echo "Warning: GIT_DEFAULT_CATEGORY environment variable is not set."
   echo "Branch will be created without a category."
-  exit 1
 fi
 
 # --- Usage Function ---
