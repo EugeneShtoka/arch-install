@@ -17,4 +17,5 @@ git stash apply
 
 git add -A
 git commit -m "$title"
+git push --set-upstream origin $branchName
 gh pr create -B $GIT_WORK_BRANCH --fill
