@@ -54,18 +54,7 @@ else
   echo "Warning: The remote URL does not point to a recognized GitHub or GitLab domain." >&2
   echo "Remote URL was: $remote_url" >&2
   echo "Parsed web URL: $web_url" >&2
-  # Ask user if they still want to try opening this URL
-  if read -q "choice?Do you want to try opening this URL anyway? (y/N): "; then
-      echo # newline after read -q
-      if [[ "$choice" != "y" && "$choice" != "Y" ]]; then
-          echo "Aborted opening."
-          exit 0
-      fi
-  else
-      echo # newline if read timed out or failed
-      echo "Aborted opening."
-      exit 0
-  fi
+  exit 1
 fi
 
 
