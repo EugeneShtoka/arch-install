@@ -68,7 +68,7 @@ while [[ "$#" -gt 0 ]]; do
       if [[ "$platform_input" == "gitlab" || "$platform_input" == "github" ]]; then
         platform="$platform_input"
       else
-        echo "Error: Invalid value for --platform. Use 'gitlab' or 'github'." >&2
+        echo "Error: Invalid value for --platform. Only 'github' and 'gitlab' are supported for now." >&2
         usage
       fi
       shift 2
