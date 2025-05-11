@@ -76,8 +76,6 @@ elif [[ -z "$category" ]]; then
 fi
 
 # --- Construct Branch Name ---
-# Sanitize title for branch name: replace spaces with hyphens, remove most non-alphanumeric chars
-# Allows letters, numbers, underscore, hyphen, dot. Converts other sequences of special chars to a single hyphen.
 sanitized_title=$(echo "$title" | tr '[:space:]' '-' | tr -cs 'a-zA-Z0-9_.-' '-' | sed 's/--\+/-/g' | sed 's/^-//;s/-$//')
 
 local branch_name_parts=()
