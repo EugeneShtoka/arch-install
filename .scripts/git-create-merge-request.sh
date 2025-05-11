@@ -1,16 +1,24 @@
 #!/bin/zsh
 # Usage: git-create-merge-request.sh "branch" "jira-id" "jira-url"
 
+title=$1
+jira_ticket=$2
+category=$3
+if [[ -n $category ]]; then
+    category=$GIT_DEFAULT_CATEGORY
+fi
+branchName=$category/$jira_ticket-${title// /-}
+
 git stash  
 
 git switch $GIT_WORK_BRANCH;  
 git pull;  
-git checkout -b eugene/$2-$1;  
+git checkout -b $branchName;  
 	
 git stash apply  
 	
 git add .;  
-git commit -m $1;
-git push --set-upstream origin eugene/$2-$1
-glab mr create -t $1 -d "[jira](https://work-url-$2)";
+git commit -m $title;
+git push --set-upstream origin branchName
+glab mr create -t $title -d "[jira](https://work-url-$jira_ticket)";
 
