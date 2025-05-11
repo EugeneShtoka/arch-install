@@ -11,7 +11,6 @@ remote_url=$(git remote get-url origin 2>/dev/null)
 exit_status=$?
 
 if [[ $exit_status -ne 0 || -z "$remote_url" ]]; then
-  # Try to see if there are other remotes if 'origin' fails or is not set up
   remotes=$(git remote 2>/dev/null)
   if [[ -z "$remotes" ]]; then
     echo "Warning: This Git repository has no remotes configured." >&2
