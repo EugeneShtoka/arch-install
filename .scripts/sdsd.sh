@@ -47,7 +47,7 @@ else
   exit 1
 fi
 
-# 5. Check if it's a known GitHub or GitLab URL
+# Check if it's a known GitHub or GitLab URL
 if [[ "$hostname" == *github.com* || "$hostname" == *gitlab.com* ]]; then
   echo "Info: Opening repository page: $web_url"
 else
