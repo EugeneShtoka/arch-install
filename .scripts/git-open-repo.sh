@@ -57,5 +57,7 @@ else
   exit 1
 fi
 
+echo "Script's PATH: $PATH"
+
 # Open the URL in the default browser
 xdg-open "$web_url"
