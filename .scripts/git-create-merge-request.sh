@@ -3,7 +3,7 @@
 
 git stash  
 
-git switch main;  
+git switch $GIT_WORK_BRANCH;  
 git pull;  
 git checkout -b eugene/$2-$1;  
 	
