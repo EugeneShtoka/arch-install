@@ -115,7 +115,6 @@ git checkout -b "$branchName" || { echo "Error: git checkout -b $branchName fail
 
 echo "Info: Applying stashed changes..."
 git stash apply || { echo "Error: 'git stash apply' failed. Please resolve conflicts or issues manually and try again." >&2; exit 1; }
-# You might want to consider `git stash pop` or error handling if apply fails.
 
 echo "Info: Adding all changes..."
 git add . || { echo "Error: git add . failed." >&2; exit 1; }
