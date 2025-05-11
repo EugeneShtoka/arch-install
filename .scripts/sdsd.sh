@@ -88,16 +88,9 @@ fi
 opened=0
 if command -v xdg-open &> /dev/null; then
   xdg-open "$web_url" && opened=1
-elif command -v open &> /dev/null; then # macOS
-  open "$web_url" && opened=1
-elif command -v wslview &> /dev/null; then # WSL (newer)
-  wslview "$web_url" && opened=1
-elif command -v explorer.exe &> /dev/null; then # WSL (older) / Cygwin
-  # explorer.exe needs a URL, not a path starting with /
-  # For WSL, ensure it's treated as a URL
-  if [[ $(uname -r) == *microsoft* || $(uname -r) == *WSL* ]]; then
-    explorer.exe "$web_url" && opened=1
-  fi
+elif
+echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
+exit 1
 fi
 
 if [[ "$opened" -eq 1 ]]; then
