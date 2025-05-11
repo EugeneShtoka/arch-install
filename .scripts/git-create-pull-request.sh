@@ -17,4 +17,4 @@ git stash apply
 
 git add -A
 git commit -m "$title"
-gh pr create -B main --fill
+gh pr create -B $GIT_WORK_BRANCH --fill
