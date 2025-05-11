@@ -59,5 +59,3 @@ fi
 
 # Open the URL in the default browser
 xdg-open "$web_url"
-
-exit 0
