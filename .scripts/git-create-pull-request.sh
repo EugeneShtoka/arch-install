@@ -6,8 +6,8 @@ local category=""
 local platform="github"
 local title=""
 
-if [[ -z "$GIT_WORK_BRANCH" ]]; then
-  echo "Error: GIT_WORK_BRANCH environment variable is not set."
+if [[ -z "$GIT_DEFAULT_BRANCH" ]]; then
+  echo "Error: GIT_DEFAULT_BRANCH environment variable is not set."
   echo "Please set it to your main development branch (e.g., main, master, develop)."
   exit 1
 fi
@@ -102,11 +102,11 @@ echo "Info: Creating branch: $branchName"
 echo "Info: Stashing any current changes..."
 git stash || { echo "Error: git stash failed." >&2; exit 1; }
 
-echo "Info: Switching to '$GIT_WORK_BRANCH' branch..."
-git switch "$GIT_WORK_BRANCH" || { echo "Error: git switch $GIT_WORK_BRANCH failed." >&2; exit 1; }
+echo "Info: Switching to '$GIT_DEFAULT_BRANCH' branch..."
+git switch "$GIT_DEFAULT_BRANCH" || { echo "Error: git switch $GIT_DEFAULT_BRANCH failed." >&2; exit 1; }
 
-echo "Info: Pulling latest changes for '$GIT_WORK_BRANCH'..."
-git pull || { echo "Error: git pull on $GIT_WORK_BRANCH failed." >&2; exit 1; }
+echo "Info: Pulling latest changes for '$GIT_DEFAULT_BRANCH'..."
+git pull || { echo "Error: git pull on $GIT_DEFAULT_BRANCH failed." >&2; exit 1; }
 
 echo "Info: Creating and checking out new branch '$branchName'..."
 git checkout -b "$branchName" || { echo "Error: git checkout -b $branchName failed." >&2; exit 1; }
@@ -143,16 +143,16 @@ case "$platform" in
         echo "Error: glab command not found. Please install it or choose a different platform." >&2
         exit 1
     fi
-    echo "Executing: glab mr create -t \"$title\" -d \"$mr_description\" --source-branch \"$branchName\" --target-branch \"$GIT_WORK_BRANCH\""
-    glab mr create -t "$title" -d "$mr_description" --source-branch "$branchName" --target-branch "$GIT_WORK_BRANCH" || { echo "Error: glab mr create failed." >&2; exit 1; }
+    echo "Executing: glab mr create -t \"$title\" -d \"$mr_description\" --source-branch \"$branchName\" --target-branch \"$GIT_DEFAULT_BRANCH\""
+    glab mr create -t "$title" -d "$mr_description" --source-branch "$branchName" --target-branch "$GIT_DEFAULT_BRANCH" || { echo "Error: glab mr create failed." >&2; exit 1; }
     ;;
   github)
     if ! command -v gh &> /dev/null; then
         echo "Error: gh command not found. Please install it or choose a different platform." >&2
         exit 1
     fi
-    echo "Executing: gh pr create --title \"$title\" --body \"$mr_description\" --head \"$branchName\" --base \"$GIT_WORK_BRANCH\""
-    gh pr create --title "$title" --body "$mr_description" --head "$branchName" --base "$GIT_WORK_BRANCH" || { echo "Error: gh pr create failed." >&2; exit 1; }
+    echo "Executing: gh pr create --title \"$title\" --body \"$mr_description\" --head \"$branchName\" --base \"$GIT_DEFAULT_BRANCH\""
+    gh pr create --title "$title" --body "$mr_description" --head "$branchName" --base "$GIT_DEFAULT_BRANCH" || { echo "Error: gh pr create failed." >&2; exit 1; }
     ;;
 esac
 
