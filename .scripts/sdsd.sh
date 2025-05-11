@@ -89,8 +89,8 @@ opened=0
 if command -v xdg-open &> /dev/null; then
   xdg-open "$web_url" && opened=1
 elif
-echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
-exit 1
+  echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
+  exit 1
 fi
 
 if [[ "$opened" -eq 1 ]]; then
