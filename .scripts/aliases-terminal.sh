@@ -26,7 +26,6 @@ alias ll='eza --icons -al'
 alias clr='/usr/bin/clear'
 alias copy='xclip -selection c'
 alias paste='xclip -out -selection c'
-alias yayr='sudo pacman -R'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias install=$SCRIPTS_PATH/app-search-and-install.sh
 alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
