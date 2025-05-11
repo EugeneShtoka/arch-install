@@ -114,7 +114,6 @@ fi
 branch_name_parts+=("$core_branch_name")
 
 # Join parts with '/'
-# zsh specific way to join array with a character:
 branchName="${(j:/:)branch_name_parts}"
 
 if [[ -z "$branchName" ]]; then
