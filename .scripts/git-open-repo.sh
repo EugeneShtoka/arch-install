@@ -58,6 +58,6 @@ else
 fi
 
 # Open the URL in the default browser
-/usr/bin/xdg-open "$web_url"
+xdg-open "$web_url"
 
 exit 0
