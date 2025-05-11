@@ -17,7 +17,6 @@ if [[ $exit_status -ne 0 || -z "$remote_url" ]]; then
     echo "Warning: This Git repository has no remotes configured." >&2
     exit 1
   else
-    # Take the first remote in the list if 'origin' wasn't found
     first_remote=$(echo "$remotes" | head -n1)
     remote_url=$(git remote get-url "$first_remote" 2>/dev/null)
     if [[ -z "$remote_url" ]]; then
