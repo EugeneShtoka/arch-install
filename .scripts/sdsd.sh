@@ -40,9 +40,7 @@ if [[ "$parsed_url" == git@* ]]; then
   path="${temp_url#*:}"
   web_url="https://$hostname/$path"
 elif [[ "$parsed_url" == http://* || "$parsed_url" == https://* ]]; then
-  # HTTP/HTTPS format: https://hostname/user/repo
   web_url="$parsed_url"
-  # Extract hostname for checking
   hostname=$(echo "$web_url" | sed -E 's#^https?://([^/]+)/.*#\1#')
 else
   echo "Warning: Unrecognized remote URL format: $remote_url" >&2
