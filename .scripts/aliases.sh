@@ -25,6 +25,11 @@ alias stdn='mirophone-unmute && shutdown now'
 alias epub-download='c search -e epub -r 50'
 alias book-download='libgen search -r 50'
 
+alias home='cd ~ && code . && clr'
+alias figoro='cd $HOME/dev/figoro && code . && clr'
+alias blog='cd $HOME/dev/blog && code . && clr'
+alias backend='cd ~/dev/work/exbetz-be-api && code . && clr'
+
 alias against-the-storm='setsid ~/Games/AgainstTheStorm/start.sh &>/dev/null'
 alias europa='setsid ~/Games/Europa/start.sh &>/dev/null'
 alias victoria='setsid ~/Games/Victoria/binaries/victoria3 &>/dev/null'
