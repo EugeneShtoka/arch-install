@@ -9,7 +9,7 @@ branchName=$category/${title// /-}
 
 git stash
 
-git switch main
+git switch $GIT_WORK_BRANCH
 git pull
 git checkout -b $branchName
 
