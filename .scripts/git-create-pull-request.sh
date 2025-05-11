@@ -25,13 +25,9 @@ gh pr create -B $GIT_WORK_BRANCH --fill
 # Default values for optional parameters
 local jira_ticket=""
 local category=""
-local platform="gitlab" # Default to GitLab
+local platform="github" # Default to GitLab
 local title=""
 
-# --- Configuration ---
-# GIT_WORK_BRANCH: The primary branch to pull updates from and base new branches off.
-# Ensure this is set in your environment, or set a default here.
-# Example: GIT_WORK_BRANCH="${GIT_WORK_BRANCH:-main}"
 if [[ -z "$GIT_WORK_BRANCH" ]]; then
   echo "Error: GIT_WORK_BRANCH environment variable is not set."
   echo "Please set it to your main development branch (e.g., main, master, develop)."
