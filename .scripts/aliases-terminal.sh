@@ -22,11 +22,6 @@ alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
 alias gcmr=$SCRIPTS_PATH/git-create-merge-request.sh
 alias git-alias-main='git symbolic-ref refs/heads/main refs/heads/$(git rev-parse --abbrev-ref HEAD)'
 
-alias home='cd ~ && code . && clr'
-alias figoro='cd $HOME/dev/figoro && code . && clr'
-alias blog='cd $HOME/dev/blog && code . && clr'
-alias backend='cd ~/dev/work/exbetz-be-api && code . && clr'
-
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
 alias clr='/usr/bin/clear'
