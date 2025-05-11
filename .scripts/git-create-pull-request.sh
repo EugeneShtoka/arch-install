@@ -34,15 +34,6 @@ if [[ -z "$GIT_WORK_BRANCH" ]]; then
   exit 1
 fi
 
-# GIT_DEFAULT_CATEGORY: Default category if --category is not provided.
-# Ensure this is set in your environment if you want a fallback.
-# Example: GIT_DEFAULT_CATEGORY="${GIT_DEFAULT_CATEGORY:-feat}"
-
-if [[ -z "$GIT_DEFAULT_CATEGORY" ]]; then
-  echo "Warning: GIT_DEFAULT_CATEGORY environment variable is not set."
-  echo "Branch will be created without a category."
-fi
-
 # --- Usage Function ---
 usage() {
   echo "Usage: $0 --title \"<Your Title>\" [options]"
@@ -60,7 +51,7 @@ usage() {
 # --- Parse Command-Line Arguments ---
 while [[ "$#" -gt 0 ]]; do
   case "$1" in
-    --title)
+    -t|--title)
       title="$2"
       shift 2
       ;;
