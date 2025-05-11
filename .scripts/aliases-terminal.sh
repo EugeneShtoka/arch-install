@@ -19,7 +19,7 @@ alias ghr='git reset --hard HEAD^ && git pull'
 alias gsq=$SCRIPTS_PATH/git-squash.sh
 alias gpc=$SCRIPTS_PATH/git-push-commit.sh
 alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
-alias git-alias-main='git symbolic-ref refs/heads/$GIT_WORK_BRANCH refs/heads/$(git rev-parse --abbrev-ref HEAD)'
+alias git-alias-work-branch='git symbolic-ref refs/heads/$GIT_WORK_BRANCH refs/heads/$(git rev-parse --abbrev-ref HEAD)'
 
 alias ls='eza --icons -a'
 alias ll='eza --icons -al'
