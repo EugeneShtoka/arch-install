@@ -37,8 +37,8 @@ parsed_url="${remote_url%.git}"
 if [[ "$parsed_url" == git@* ]]; then
   temp_url="${parsed_url#git@}"
   hostname="${temp_url%%:*}"
-  git_path="${temp_url#*:}"
-  web_url="https://$hostname/$git_path"
+  path="${temp_url#*:}"
+  web_url="https://$hostname/$path"
 elif [[ "$parsed_url" == http://* || "$parsed_url" == https://* ]]; then
   web_url="$parsed_url"
   hostname=$(echo "$web_url" | sed -E 's#^https?://([^/]+)/.*#\1#')
@@ -58,6 +58,12 @@ else
 fi
 
 # Open the URL in the default browser
-$browser "$web_url"
+if command -v xdg-open &> /dev/null; then
+  xdg-open "$web_url"
+else
+  echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
+  echo "Please open this URL manually: $web_url" >&2
+  exit 1
+fi
 
 exit 0
