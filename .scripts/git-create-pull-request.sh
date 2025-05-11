@@ -25,7 +25,7 @@ gh pr create -B $GIT_WORK_BRANCH --fill
 # Default values for optional parameters
 local jira_ticket=""
 local category=""
-local platform="github" # Default to GitLab
+local platform="github"
 local title=""
 
 if [[ -z "$GIT_WORK_BRANCH" ]]; then
