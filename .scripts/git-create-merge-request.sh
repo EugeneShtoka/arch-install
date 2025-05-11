@@ -19,6 +19,6 @@ git stash apply
 	
 git add .;  
 git commit -m $title;
-git push --set-upstream origin branchName
+git push --set-upstream origin $branchName
 glab mr create -t $title -d "[jira](https://work-url-$jira_ticket)";
 
