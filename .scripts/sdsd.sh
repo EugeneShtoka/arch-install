@@ -36,7 +36,6 @@ parsed_url="${remote_url%.git}"
 
 if [[ "$parsed_url" == git@* ]]; then
   temp_url="${parsed_url#git@}"
-  # Split hostname and path
   hostname="${temp_url%%:*}"
   path="${temp_url#*:}"
   web_url="https://$hostname/$path"
