@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-setsid zsh -c "$SCRIPTS_PATH/notes-start.sh" &>/dev/null
+export env LANGUAGE=en_GB && . /home/eugene/.scripts/ssh-init.sh && obsidian
