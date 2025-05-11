@@ -130,10 +130,18 @@ git push --set-upstream origin "$branchName" || { echo "Error: git push failed."
 mr_description="$title" # Start with the title as the base description
 
 if [[ -n "$jira_ticket" ]]; then
-  # Assuming a generic JIRA URL structure; adjust if yours differs
-  # Example: https://your-jira-instance.com/browse/TICKET-ID
-  local jira_base_url="${JIRA_BASE_URL:-https://your-jira.example.com/browse}"
-  mr_description="$mr_description\n\n[Jira Ticket]($jira_base_url/$jira_ticket)"
+  if [[ -n "$JIRA_BASE_URL" ]]; then
+    # JIRA_BASE_URL environment variable is set, so append the link
+    # Ensure no double slashes if JIRA_BASE_URL ends with one and jira_ticket starts with one (unlikely for ticket IDs)
+    # Basic concatenation is usually fine here.
+    mr_description="$mr_description\n\n[Jira Ticket]($JIRA_BASE_URL/$jira_ticket)"
+    echo "Info: JIRA link will be added to the description using JIRA_BASE_URL."
+  else
+    # --jira-ticket was provided, but JIRA_BASE_URL is not set
+    echo "Warning: A JIRA ticket ('$jira_ticket') was provided, but the JIRA_BASE_URL environment variable is not set." >&2
+    echo "         The JIRA link will NOT be added to the merge/pull request description." >&2
+    # mr_description remains as just the title in this specific scenario if JIRA_BASE_URL is missing
+  fi
 fi
 
 echo "Info: Creating Merge/Pull Request on $platform..."
