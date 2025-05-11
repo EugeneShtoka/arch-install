@@ -1,27 +1,5 @@
 #!/bin/zsh
 
-title=$1
-category=$2
-if [[ -n $category ]]; then
-    category=$GIT_DEFAULT_CATEGORY
-fi
-branchName=$category/${title// /-}
-
-git stash
-
-git switch $GIT_WORK_BRANCH
-git pull
-git checkout -b $branchName
-
-git stash apply
-
-git add -A
-git commit -m "$title"
-git push --set-upstream origin $branchName
-gh pr create -B $GIT_WORK_BRANCH --fill
-
-#!/bin/zsh
-
 # Default values for optional parameters
 local jira_ticket=""
 local category=""
@@ -154,8 +132,7 @@ mr_description="$title" # Start with the title as the base description
 if [[ -n "$jira_ticket" ]]; then
   # Assuming a generic JIRA URL structure; adjust if yours differs
   # Example: https://your-jira-instance.com/browse/TICKET-ID
-  # The original script used "https://work-url-$jira_ticket", let's make it more configurable or use a placeholder
-  local jira_base_url="${JIRA_BASE_URL:-https://your-jira.example.com/browse}" # Set JIRA_BASE_URL env var
+  local jira_base_url="${JIRA_BASE_URL:-https://your-jira.example.com/browse}"
   mr_description="$mr_description\n\n[Jira Ticket]($jira_base_url/$jira_ticket)"
 fi
 
