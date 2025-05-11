@@ -35,8 +35,6 @@ hostname=""
 parsed_url="${remote_url%.git}"
 
 if [[ "$parsed_url" == git@* ]]; then
-  # SSH format: git@hostname:user/repo
-  # Remove "git@" prefix
   temp_url="${parsed_url#git@}"
   # Split hostname and path
   hostname="${temp_url%%:*}"
