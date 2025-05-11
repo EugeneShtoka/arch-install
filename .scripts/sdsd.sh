@@ -1,12 +1,6 @@
 #!/bin/zsh
 
-# 1. Check if 'git' command is available
-if ! command -v git &> /dev/null; then
-  echo "Error: 'git' command not found. Please install Git." >&2
-  exit 1
-fi
-
-# 2. Check if the current directory is a Git repository
+# Check if the current directory is a Git repository
 if ! git rev-parse --is-inside-work-tree &> /dev/null; then
   echo "Warning: This is not a Git repository." >&2
   exit 1
