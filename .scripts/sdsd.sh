@@ -57,8 +57,7 @@ else
   exit 1
 fi
 
-
-# 6. Open the URL in the default browser
+# Open the URL in the default browser
 if command -v xdg-open &> /dev/null; then
   xdg-open "$web_url"
 elif
