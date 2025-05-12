@@ -19,7 +19,7 @@ fi
 
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme='style-9-wide'
-playlist_extension="xspf"
+playlist_extension="xspf-ppppp"
 
 search_path=""
 
