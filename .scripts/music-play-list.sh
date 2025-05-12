@@ -58,13 +58,11 @@ while IFS= read -r -d '' fullpath; do
     playlist_map["$display_name"]="$fullpath"
     playlist_options+=("$display_name")
 
-done # The find output is piped directly into the while loop
+done
 
-# Check if any playlists were found in the search path
 if [ ${#playlist_options[@]} -eq 0 ]; then
     echo "No playlists found with extension .${playlist_extension} in '$search_path' or its subdirectories."
-    # Optional: Add a desktop notification if desired
-    # notify-send "Music Player" "No playlists found in '$search_path'."
+    notify-send "Music Player" "No playlists found in '$search_path'."
     exit 0 # Exit gracefully if no playlists are found
 fi
 
