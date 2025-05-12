@@ -33,6 +33,8 @@ alias calc=$SCRIPTS_PATH/calculate.sh
 alias timer="setsid $SCRIPTS_PATH/timer.sh"
 alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 
+alias mail=$SCRIPTS_PATH/email-start.sh
+
 alias tsm='mop -profile ~/.config/mop/market.moprc'
 alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
 
