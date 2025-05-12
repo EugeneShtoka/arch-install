@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
-rofi_theme='style-9-columns'
+rofi_theme='style-9-colum'
 playlist_extension="xspf"
 
 search_path=""
