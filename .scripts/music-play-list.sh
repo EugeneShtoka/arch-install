@@ -17,64 +17,40 @@ fi
 
 #!/bin/zsh
 
-# --- Configuration ---
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme='style-9-wide'
-# Define the playlist file extension (change this to your actual extension like .m3u, .pls, etc.)
-# Use lowercase here if using -iname for case-insensitivity.
-playlist_extension="m3u" # Example: Use "m3u" for files ending in ".m3u" or ".M3U"
-# ---------------------
+playlist_extension="xspf"
 
-# Variable to store the directory to search
 search_path=""
 
-# Determine the search path based on the argument $1
 if [[ -n "$1" ]]; then
-    # Argument $1 is provided, use it as the potential search path
     if [[ -d "$1" ]]; then
-        # If $1 is a valid directory, use it
         search_path="$1"
     else
-        # If $1 is provided but is not a directory, print an error and exit
         echo "Error: Provided argument '$1' is not a valid directory."
         exit 1
     fi
 else
-    # No argument provided, default to MUSIC_PATH
     if [ -z "$MUSIC_PATH" ]; then
         echo "Error: MUSIC_PATH environment variable is not set and no directory argument was provided."
         exit 1
     elif [[ ! -d "$MUSIC_PATH" ]]; then
-         # If MUSIC_PATH is set but is not a valid directory, print an error and exit
          echo "Error: MUSIC_PATH environment variable is set to '$MUSIC_PATH', which is not a valid directory."
          exit 1
     else
-        # MUSIC_PATH is set and is a valid directory, use it as default
         search_path="$MUSIC_PATH"
     fi
 fi
 
-# --- Start of the main Rofi Selection Logic ---
-# This block now operates on the determined search_path
-
-# Declare an associative array to map the display names (shown in Rofi) to their full paths
 declare -A playlist_map
-# Declare a standard array to hold the display names for Rofi
 declare -a playlist_options
 
-# Find playlist files recursively starting from the determined search_path
-# -type f filters for files
-# -iname "*.${playlist_extension}" searches for files ending in the extension, case-insensitively
-# -print0 prints the full path of each found file, terminated by a null character (safer for spaces/special chars)
 find "$search_path" -type f -iname "*.${playlist_extension}" -print0 |
 while IFS= read -r -d '' fullpath; do
-    # Derive the path relative to the search_path
-    # This is used to create a potentially more unique display name in Rofi
-    # Handle the case where search_path is the root directory "/"
     if [[ "$search_path" == "/" ]]; then
-        relativepath="${fullpath#/}" # Remove only the leading slash if search_path is root
+        relativepath="${fullpath#/}"
     else
-        relativepath="${fullpath#"$search_path"/}" # Remove the $search_path/ prefix
+        relativepath="${fullpath#"$search_path"/}"
     fi
 
     # Create the display name by removing the file extension from the relative path
