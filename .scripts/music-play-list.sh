@@ -59,7 +59,6 @@ if [[ -n "$choice" ]]; then
         echo "Error: Could not retrieve full path for '$choice' or file not found: $pathToPlay"
         notify-send "Music Player" "Could not play playlist: $choice"
     fi
-# else: User cancelled Rofi (made no choice), do nothing.
 fi
 
 # --- End of Rofi Selection Logic ---
