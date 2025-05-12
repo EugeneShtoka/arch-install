@@ -53,8 +53,6 @@ choice=$(printf "%s\n" "${playlist_options[@]}" | sort | rofi -i -theme "${rofi_
 
 if [[ -n "$choice" ]]; then
     pathToPlay="${playlist_map["$choice"]}"
-
-    # Check if the lookup was successful (i.e., pathToPlay is not empty) and the file actually exists
     if [[ -n "$pathToPlay" && -f "$pathToPlay" ]]; then
          # Execute cvlc with the full, correct path in the background
          # setsid detaches the process from the terminal
