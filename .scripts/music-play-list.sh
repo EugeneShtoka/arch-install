@@ -10,7 +10,7 @@ if [[ -n "$1" ]]; then
     if [[ -d "$1" ]]; then
         search_path="$1"
     else
-        echo "Error: Provided argument '$1' is not a valid directory."
+        notify-send "Music Player"  "Provided argument '$1' is not a valid directory."
         exit 1
     fi
 else
