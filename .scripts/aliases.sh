@@ -10,7 +10,7 @@ alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
 alias reader=$SCRIPTS_PATH/book-read.sh
 
 alias play=$SCRIPTS_PATH/music-play.sh
-alias play-list=$SCRIPTS_PATH/music-play.sh
+alias play-list=$SCRIPTS_PATH/music-play-list.sh
 alias stop=$SCRIPTS_PATH/music-stop.sh
 
 alias gemini='setsid xdg-open "https://gemini.google.com/app" &>/dev/null'
