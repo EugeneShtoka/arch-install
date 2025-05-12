@@ -7,6 +7,7 @@ if [ -z "$1" ]; then
     choice=$(find "$MUSIC_PATH" -type f -name "*${playlist_extension}" -printf "%f\n" | sed "s/${playlist_extension}$//" | rofi -i -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
     if [[ -n $choice ]]; then
         pathToPlay="$MUSIC_PATH/$choice$playlist_extension"
+        echo $pathToPlay
         setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
     fi
 else
