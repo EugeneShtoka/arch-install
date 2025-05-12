@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
     if [[ -n $choice ]]; then
         pathToPlay="$MUSIC_PATH/$choice$playlist_extension"
         echo $pathToPlay
-        setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
+        setsid cvlc $pathToPlay > /dev/null 2>&1 &
     fi
 else
     pathToPlay=$MUSIC_PATH/$1
