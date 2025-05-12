@@ -55,7 +55,7 @@ while IFS= read -r -d '' fullpath; do
 
     display_name="${relativepath%.*}"
 
-     if [[ -z "$display_name" && -n "$relativepath" ]]; then
+    if [[ -z "$display_name" && -n "$relativepath" ]]; then
         display_name="$relativepath"
     fi
 
