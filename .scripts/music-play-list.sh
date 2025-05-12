@@ -60,8 +60,3 @@ if [[ -n "$choice" ]]; then
         notify-send "Music Player" "Could not play playlist: $choice"
     fi
 fi
-
-# --- End of Rofi Selection Logic ---
-
-# The original 'else' block that handled playing a specific file passed as $1 is removed,
-# as $1 is now used exclusively to specify the search directory for the menu.
