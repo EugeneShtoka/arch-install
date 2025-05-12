@@ -48,10 +48,5 @@ choice=$(printf "%s\n" "${playlist_options[@]}" | sort | rofi -i -theme "${rofi_
 
 if [[ -n "$choice" ]]; then
     pathToPlay="${playlist_map["$choice"]}"
-    if [[ -n "$pathToPlay" && -f "$pathToPlay" ]]; then
-         setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
-    else
-        echo "Error: Could not retrieve full path for '$choice' or file not found: $pathToPlay"
-        notify-send "Music Player" "Could not play playlist: $choice"
-    fi
+    setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
 fi
