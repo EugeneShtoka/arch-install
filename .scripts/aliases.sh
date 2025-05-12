@@ -13,7 +13,6 @@ alias stop=$SCRIPTS_PATH/music-stop.sh
 alias reader=$SCRIPTS_PATH/book-read.sh
 
 alias gemini='setsid xdg-open "https://gemini.google.com/app" &>/dev/null'
-alias ytb='setsid xdg-open "https://www.youtube.com" &>/dev/null'
 alias ghb='setsid xdg-open "https://github.com" &>/dev/null'
 alias pgd='setsid xdg-open "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
 alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
