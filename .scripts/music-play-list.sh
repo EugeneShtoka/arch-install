@@ -51,7 +51,6 @@ fi
 
 choice=$(printf "%s\n" "${playlist_options[@]}" | sort | rofi -i -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -matching prefix)
 
-# Check if a choice was made by the user in Rofi (rofi returns empty if cancelled)
 if [[ -n "$choice" ]]; then
     # Look up the full path using the chosen display name from the associative array
     pathToPlay="${playlist_map["$choice"]}"
