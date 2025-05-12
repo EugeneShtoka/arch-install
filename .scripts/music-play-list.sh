@@ -54,10 +54,6 @@ while IFS= read -r -d '' fullpath; do
     fi
 
     display_name="${relativepath%.*}"
-    if [[ -z "$display_name" && -n "$relativepath" ]]; then
-        display_name="$relativepath"
-    fi
-
 
     # Store the mapping: display name -> full path
     playlist_map["$display_name"]="$fullpath"
