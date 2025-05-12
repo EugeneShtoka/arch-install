@@ -2,7 +2,7 @@
 
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme='style-9-wide'
-playlist_extension="xspf-ppppp"
+playlist_extension="xspf"
 
 search_path=""
 
