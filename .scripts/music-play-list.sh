@@ -56,8 +56,6 @@ while IFS= read -r -d '' fullpath; do
     display_name="${relativepath%.*}"
 
     playlist_map["$display_name"]="$fullpath"
-
-    # Add the display name to the list for Rofi
     playlist_options+=("$display_name")
 
 done # The find output is piped directly into the while loop
