@@ -53,13 +53,8 @@ while IFS= read -r -d '' fullpath; do
         relativepath="${fullpath#"$search_path"/}"
     fi
 
-    # Create the display name by removing the file extension from the relative path
-    # ${variable%.pattern} removes the shortest match of pattern from the end
     display_name="${relativepath%.*}"
 
-    # Handle potential empty display_name if the relative path was just the extension (e.g., ".m3u")
-    # or if stripping the extension resulted in an empty string for some edge case.
-    # In such cases, use the full relative path as the display name.
      if [[ -z "$display_name" && -n "$relativepath" ]]; then
         display_name="$relativepath"
     fi
