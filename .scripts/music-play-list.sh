@@ -12,7 +12,7 @@ if [ -z "$1" ]; then
     fi
 else
     pathToPlay=$MUSIC_PATH/$1
-    setsid cvlc --random $pathToPlay > /dev/null 2>&1 &
+    setsid cvlc $pathToPlay > /dev/null 2>&1 &
 fi
 
 
