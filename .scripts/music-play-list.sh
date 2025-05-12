@@ -30,14 +30,9 @@ declare -a playlist_options
 
 find "$search_path" -type f -iname "*.${playlist_extension}" -print0 |
 while IFS= read -r -d '' fullpath; do
-    if [[ "$search_path" == "/" ]]; then
-        relativepath="${fullpath#/}"
-    else
-        relativepath="${fullpath#"$search_path"/}"
-    fi
-
-    display_name="${relativepath%.*}"
-
+    filename="${fullpath##*/}"
+    display_name="${filename%.*}"
+    
     playlist_map["$display_name"]="$fullpath"
     playlist_options+=("$display_name")
 
