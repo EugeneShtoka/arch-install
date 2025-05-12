@@ -2,7 +2,7 @@
 
 if [ -z "$1" ]; then
 	dir="$HOME/.config/rofi/launchers/type-4"
-	theme='style-9-columns'
+	theme='style-8-columns'
     choice=$(find "$MUSIC_PATH" -type f -name "*.xspf" -printf "%f\n" | rofi -i -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
     if [[ -n $choice ]]; then
         pathToPlay=$MUSIC_PATH/$choice
