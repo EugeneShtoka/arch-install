@@ -49,8 +49,6 @@ if [ ${#playlist_options[@]} -eq 0 ]; then
     exit 0
 fi
 
-# Pipe the list of display names to Rofi (sorted for easier navigation)
-# printf "%s\n" handles display names with spaces correctly
 choice=$(printf "%s\n" "${playlist_options[@]}" | sort | rofi -i -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -matching prefix)
 
 # Check if a choice was made by the user in Rofi (rofi returns empty if cancelled)
