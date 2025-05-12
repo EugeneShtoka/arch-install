@@ -1,12 +1,12 @@
 #!/bin/zsh
 
 alias torrent='setsid qbittorrent &>/dev/null'
-alias file-manager='setsid thunar &>/dev/null'
 alias keyboard-trainer='setsid tipp10 &>/dev/null'
 alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/null'
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
+
 alias reader=$SCRIPTS_PATH/book-read.sh
 
 alias play=$SCRIPTS_PATH/music-play.sh
