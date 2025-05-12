@@ -57,7 +57,7 @@ if [[ -n "$choice" ]]; then
          setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
     else
         echo "Error: Could not retrieve full path for '$choice' or file not found: $pathToPlay"
-        notify-send "Music Player Error" "Could not play playlist: $choice"
+        notify-send "Could not play playlist: $choice"
     fi
 # else: User cancelled Rofi (made no choice), do nothing.
 fi
