@@ -59,7 +59,7 @@ fi
 
 # Open the URL in the default browser
 if command -v xdg-open &> /dev/null; then
-  xdg-open "$web_url"
+  setsid xdg-open "$web_url" >/dev/null 2>&1
 else
   echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
   echo "Please open this URL manually: $web_url" >&2
