@@ -7,7 +7,6 @@ alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/nul
 
 alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
 alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
-alias mail=$SCRIPTS_PATH/email-start.sh
 alias reader=$SCRIPTS_PATH/book-read.sh
 
 alias play=$SCRIPTS_PATH/music-play.sh
