@@ -36,5 +36,5 @@ alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 alias tsm='mop -profile ~/.config/mop/market.moprc'
 alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
 
-alias mirophone-mute='pactl set-source-mute $(pactl get-default-source) 1'
-alias mirophone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
+alias microphone-mute='pactl set-source-mute $(pactl get-default-source) 1'
+alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
