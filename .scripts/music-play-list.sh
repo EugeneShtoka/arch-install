@@ -55,7 +55,6 @@ while IFS= read -r -d '' fullpath; do
 
     display_name="${relativepath%.*}"
 
-    # Store the mapping: display name -> full path
     playlist_map["$display_name"]="$fullpath"
 
     # Add the display name to the list for Rofi
