@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-playlist_extension="xspf"
+playlist_extension=".xspf"
 if [ -z "$1" ]; then
 	dir="$HOME/.config/rofi/launchers/type-4"
 	theme='style-9-wide'
