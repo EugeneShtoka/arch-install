@@ -63,7 +63,7 @@ done
 if [ ${#playlist_options[@]} -eq 0 ]; then
     echo "No playlists found with extension .${playlist_extension} in '$search_path' or its subdirectories."
     notify-send "Music Player" "No playlists found in '$search_path'."
-    exit 0s
+    exit 0
 fi
 
 # Pipe the list of display names to Rofi (sorted for easier navigation)
