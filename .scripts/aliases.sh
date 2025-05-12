@@ -16,8 +16,8 @@ alias gemini='setsid xdg-open "https://gemini.google.com/app" &>/dev/null'
 alias pgd='setsid xdg-open "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
 alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
 
-alias spnd='mirophone-unmute && systemctl suspend'
-alias stdn='mirophone-unmute && shutdown now'
+alias spnd='systemctl suspend'
+alias stdn='shutdown now'
 
 alias epub-download='c search -e epub -r 50'
 alias book-download='libgen search -r 50'
