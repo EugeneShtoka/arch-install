@@ -1,4 +1,5 @@
 #!/bin/zsh
+
 if [ -z "$1" ]; then
 	dir="$HOME/.config/rofi/launchers/type-4"
 	theme='style-9-columns'
