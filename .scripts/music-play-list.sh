@@ -54,10 +54,6 @@ choice=$(printf "%s\n" "${playlist_options[@]}" | sort | rofi -i -theme "${rofi_
 if [[ -n "$choice" ]]; then
     pathToPlay="${playlist_map["$choice"]}"
     if [[ -n "$pathToPlay" && -f "$pathToPlay" ]]; then
-         # Execute cvlc with the full, correct path in the background
-         # setsid detaches the process from the terminal
-         # > /dev/null 2>&1 redirects stdout and stderr to null
-         # & runs the command in the background
          setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
     else
         # This case should ideally not be reached unless the file was deleted after the menu was shown
