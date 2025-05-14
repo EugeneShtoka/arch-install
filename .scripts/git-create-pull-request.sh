@@ -118,7 +118,7 @@ done
 if [[ ${#args_for_title[@]} -gt 0 ]]; then
   title="${args_for_title[*]}" # Joins with space by default with [*]
 else
- if [[ -n "$jira_ticket" ]]; then
+  if [[ -n "$jira_ticket" ]]; then
     echo "Info: Title not provided directly. Attempting to fetch from JIRA ticket '$jira_ticket'..."
     if ! command -v curl &>/dev/null; then echo "Error: curl is required to fetch JIRA title." >&2; exit 1; fi
     if ! command -v jq &>/dev/null; then echo "Error: jq is required to parse JIRA title." >&2; exit 1; fi
