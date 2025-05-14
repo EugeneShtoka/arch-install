@@ -54,10 +54,11 @@ while [[ "$#" -gt 0 ]]; do
     -h|--help)
       usage
       ;;
-    *)
-      echo "Unknown option: $1" >&2
-      usage
-      ;;
+    -*)
+      echo "Unknown option: $arg" >&2;
+      usage ;;
+    *) # Positional argument (part of title)
+      args_for_title+=("$arg") ;;
   esac
 done
 
