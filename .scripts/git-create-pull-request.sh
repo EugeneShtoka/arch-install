@@ -114,7 +114,6 @@ if [[ -z "$actual_base_branch_for_pr" || "$actual_base_branch_for_pr" == "HEAD" 
 fi
 echo "Info: '$GIT_DEFAULT_BRANCH' resolved to actual branch '$actual_base_branch_for_pr'. This will be the PR target base."
 
-
 echo "Info: Pulling latest changes for '$GIT_DEFAULT_BRANCH'..."
 git pull || { echo "Error: git pull on $GIT_DEFAULT_BRANCH failed." >&2; exit 1; }
 
