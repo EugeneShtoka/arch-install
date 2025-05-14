@@ -63,8 +63,12 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # --- Validate Mandatory Parameters ---
-if [[ -z "$title" ]]; then
-  echo "Error: --title is a mandatory parameter." >&2
+if [[ ${#args_for_title[@]} -gt 0 ]]; then
+  title="${args_for_title[*]}" # Joins with space by default with [*]
+else
+  # Title is mandatory, and now comes from positional args
+  echo "Error: Title is a mandatory parameter and must be provided as positional arguments." >&2
+  echo "Example: $0 \"Your Actual Title\" --category feat" >&2
   usage
 fi
 
