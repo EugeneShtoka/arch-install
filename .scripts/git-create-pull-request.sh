@@ -6,52 +6,6 @@ local category=""
 local platform="github"
 local title=""
 
-fetch_jira_ticket_summary() {
-  local issue_key="$1"
-  local jira_summary_val="" # Renamed to avoid conflict with global
-
-  # Check for necessary JIRA environment variables
-  if [[ -z "$JIRA_BASE_URL" ]]; then
-    echo "Error: JIRA_BASE_URL environment variable is not set. Cannot fetch JIRA ticket summary." >&2
-    return 1
-  fi
-
-  # Ensure JIRA_BASE_URL does not end with a slash for robust concatenation
-  local clean_jira_base_url="${JIRA_BASE_URL%/}"
-  # Using JIRA Cloud API v3 endpoint. For JIRA Server, this might be /rest/api/2/
-  local api_url="$clean_jira_base_url$issue_key?fields=summary"
-
-  echo "Info: Fetching summary from JIRA API: $api_url" >&2
-
-  local http_response
-  echo 'curl --silent --write-out "HTTPSTATUS:%{http_code}" -H "Accept: application/json" "$web_url"'
-  http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -H "Accept: application/json" "https://tipmaster.atlassian.net/browse/TMDV-781") # Added a generic User-Agent
-
-  echo "$http_response">>jira_page_response.log
-  local http_status=$(echo "$http_response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
-  # Important: Extract body *before* any other processing that might consume it if it's large.
-  local response_body=$(echo "$http_response" | sed -e 's/HTTPSTATUS:.*//')
-
-
-  if [[ "$http_status" -ne 200 ]]; then
-    echo "Error: JIRA page request for '$issue_key' failed with HTTP status $http_status." >&2
-    echo "URL: $web_url" >&2
-    # Consider logging a snippet of response_body for debugging if needed, but be mindful of size/sensitivity.
-    return 1
-  fi
-
-  page_title_val=$(echo "$response_body" | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' | head -n 1)
-
-  if [[ -z "$page_title_val" ]]; then
-    echo "Error: Could not extract content from <title> tag on JIRA page for '$issue_key'." >&2
-    echo "The <title> tag might be missing, multi-line, or the page structure is not as expected for parsing." >&2
-    return 1
-  fi
-
-  echo "$page_title_val" # Output the extracted title
-  return 0 # Success
-}
-
 if [[ -z "$GIT_DEFAULT_BRANCH" ]]; then
   echo "Error: GIT_DEFAULT_BRANCH environment variable is not set."
   echo "Please set it to your main development branch (e.g., main, master, develop)."
