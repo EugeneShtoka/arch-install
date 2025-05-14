@@ -29,10 +29,6 @@ usage() {
 # --- Parse Command-Line Arguments ---
 while [[ "$#" -gt 0 ]]; do
   case "$1" in
-    -t|--title)
-      title="$2"
-      shift 2
-      ;;
     -j|--jira-ticket)
       jira_ticket="$2"
       shift 2
