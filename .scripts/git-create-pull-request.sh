@@ -25,7 +25,6 @@ fetch_jira_ticket_summary() {
 
   local http_response
   http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" \
-    -u "$JIRA_USER_EMAIL:$JIRA_API_TOKEN" \
     -H "Accept: application/json" \
     "$api_url")
 
