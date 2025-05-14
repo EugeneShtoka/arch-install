@@ -110,7 +110,6 @@ actual_base_branch_for_pr=$(git rev-parse --abbrev-ref HEAD)
 
 if [[ -z "$actual_base_branch_for_pr" || "$actual_base_branch_for_pr" == "HEAD" ]]; then
   echo "Error: Could not determine the canonical name of the base branch from '$GIT_DEFAULT_BRANCH'." >&2
-  echo "       After attempting to switch to '$GIT_DEFAULT_BRANCH', HEAD is at '$actual_base_branch_for_pr'." >&2
   exit 1
 fi
 echo "Info: '$GIT_DEFAULT_BRANCH' resolved to actual branch '$actual_base_branch_for_pr'. This will be the PR target base."
