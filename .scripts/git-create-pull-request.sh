@@ -19,7 +19,7 @@ fetch_jira_ticket_summary() {
   # Ensure JIRA_BASE_URL does not end with a slash for robust concatenation
   local clean_jira_base_url="${JIRA_BASE_URL%/}"
   # Using JIRA Cloud API v3 endpoint. For JIRA Server, this might be /rest/api/2/
-  local api_url="$clean_jira_base_url-$issue_key?fields=summary"
+  local api_url="$clean_jira_base_url$issue_key?fields=summary"
 
   echo "Info: Fetching summary from JIRA API: $api_url" >&2
 
