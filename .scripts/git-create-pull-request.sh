@@ -127,7 +127,7 @@ else
     fetched_jira_title=$(fetch_jira_ticket_summary "$jira_ticket") # Errors/info echoed from function
 
     if [[ $? -eq 0 && -n "$fetched_jira_title" ]]; then # $? is the return status of fetch_jira_ticket_summary
-      title="$fetched_jira_title"
+      title=$(gemini-cli-wrapper "Convert this jira task to git branch name 5 words max: $fetched_jira_title")
       echo "Info: Using JIRA ticket summary as title: \"$title\""
     else
       echo "Error: Failed to obtain a valid title from JIRA ticket '$jira_ticket'." >&2
