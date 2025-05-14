@@ -25,7 +25,7 @@ fetch_jira_ticket_summary() {
 
   local http_response
   echo 'curl --silent --write-out "HTTPSTATUS:%{http_code}" -H "Accept: application/json" "$web_url"'
-  http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -H "Accept: application/json" "$web_url") # Added a generic User-Agent
+  http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -H "Accept: application/json" "https://tipmaster.atlassian.net/browse/TMDV-781") # Added a generic User-Agent
 
   echo "$http_response" >> jira_page_response.log
   local http_status=$(echo "$http_response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
