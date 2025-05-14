@@ -40,14 +40,7 @@ fetch_jira_ticket_summary() {
     return 1
   fi
 
-  # Attempt to extract title using sed. This assumes title is on a single line.
-  # This regex tries to find <title>...</title> and capture the content.
   page_title_val=$(echo "$response_body" | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' | head -n 1)
-
-  # Alternative using grep with Perl-compatible regex (PCRE) if available and sed is problematic:
-  # if grep -P "test" <<< "test" &>/dev/null; then # Quick check for grep -P support
-  #    page_title_val=$(echo "$response_body" | grep -oP '<\s*title\s*>\K.*?(?=<\s*/\s*title\s*>)' | head -n 1)
-  # fi
 
   if [[ -z "$page_title_val" ]]; then
     echo "Error: Could not extract content from <title> tag on JIRA page for '$issue_key'." >&2
