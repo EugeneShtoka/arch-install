@@ -28,26 +28,39 @@ fetch_jira_ticket_summary() {
     -H "Accept: application/json" \
     "$api_url")
 
-curl --silent --write-out "HTTPSTATUS:%{http_code}" -H "Accept: application/json" "https://tipmaster.atlassian.net/browse/TMDV-781"
+  http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -L \
+    "${curl_auth_args[@]}" \
+    -A "Mozilla/5.0 (compatible; Script Fetcher)" \
+    "$web_url") # Added a generic User-Agent
 
   local http_status=$(echo "$http_response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+  # Important: Extract body *before* any other processing that might consume it if it's large.
   local response_body=$(echo "$http_response" | sed -e 's/HTTPSTATUS:.*//')
 
+
   if [[ "$http_status" -ne 200 ]]; then
-    echo "Error: JIRA API request failed with status $http_status for issue '$issue_key'." >&2
-    echo "Response (first 500 chars): $(echo "$response_body" | head -c 500)" >&2 # Avoid overly verbose output
+    echo "Error: JIRA page request for '$issue_key' failed with HTTP status $http_status." >&2
+    echo "URL: $web_url" >&2
+    # Consider logging a snippet of response_body for debugging if needed, but be mindful of size/sensitivity.
     return 1
   fi
 
-  jira_summary_val=$(echo "$response_body" | jq -r '.fields.summary')
+  # Attempt to extract title using sed. This assumes title is on a single line.
+  # This regex tries to find <title>...</title> and capture the content.
+  page_title_val=$(echo "$response_body" | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p' | head -n 1)
 
-  if [[ -z "$jira_summary_val" || "$jira_summary_val" == "null" ]]; then
-    echo "Error: Could not parse summary from JIRA response, or summary is empty/null for issue '$issue_key'." >&2
-    echo "Response Body (first 500 chars): $(echo "$response_body" | head -c 500)" >&2
+  # Alternative using grep with Perl-compatible regex (PCRE) if available and sed is problematic:
+  # if grep -P "test" <<< "test" &>/dev/null; then # Quick check for grep -P support
+  #    page_title_val=$(echo "$response_body" | grep -oP '<\s*title\s*>\K.*?(?=<\s*/\s*title\s*>)' | head -n 1)
+  # fi
+
+  if [[ -z "$page_title_val" ]]; then
+    echo "Error: Could not extract content from <title> tag on JIRA page for '$issue_key'." >&2
+    echo "The <title> tag might be missing, multi-line, or the page structure is not as expected for parsing." >&2
     return 1
   fi
 
-  echo "$jira_summary_val" # Output the summary to be captured by command substitution
+  echo "$page_title_val" # Output the extracted title
   return 0 # Success
 }
 
