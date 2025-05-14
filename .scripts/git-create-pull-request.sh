@@ -54,6 +54,10 @@ while [[ "$#" -gt 0 ]]; do
     -h|--help)
       usage
       ;;
+    *)
+      echo "Unknown option: $1" >&2
+      usage
+      ;;
     -*)
       echo "Unknown option: $arg" >&2;
       usage ;;
@@ -63,29 +67,9 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # --- Validate Mandatory Parameters ---
-if [[ ${#args_for_title[@]} -gt 0 ]]; then
-  title="${args_for_title[*]}" # Joins with space by default with [*]
-else
-  if [[ -n "$jira_ticket" ]]; then
-    echo "Info: Title not provided directly. Attempting to fetch from JIRA ticket '$jira_ticket'..."
-    if ! command -v curl &>/dev/null; then echo "Error: curl is required to fetch JIRA title." >&2; exit 1; fi
-    if ! command -v jq &>/dev/null; then echo "Error: jq is required to parse JIRA title." >&2; exit 1; fi
-
-    local fetched_jira_title
-    fetched_jira_title=$(fetch_jira_ticket_summary "$jira_ticket") # Errors/info echoed from function
-
-    if [[ $? -eq 0 && -n "$fetched_jira_title" ]]; then # $? is the return status of fetch_jira_ticket_summary
-      title=$(gemini-cli-wrapper "Convert this jira task to git branch name 5 words max: $fetched_jira_title")
-      echo "Info: Using JIRA ticket summary as title: \"$title\""
-    else
-      echo "Error: Failed to obtain a valid title from JIRA ticket '$jira_ticket'." >&2
-      echo "Please check JIRA details, environment variables, and network access, or provide a title manually." >&2
-      exit 1
-    fi
-  else
-    echo "Error: Title is mandatory. Provide it as positional arguments or specify a --jira-ticket to fetch its summary." >&2
-    usage
-  fi
+if [[ -z "$title" ]]; then
+  echo "Error: --title is a mandatory parameter." >&2
+  usage
 fi
 
 # --- Set Category Default ---
