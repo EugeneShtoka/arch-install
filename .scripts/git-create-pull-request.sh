@@ -6,6 +6,58 @@ local category=""
 local platform="github"
 local title=""
 
+fetch_jira_ticket_summary() {
+  local issue_key="$1"
+  local jira_summary_val="" # Renamed to avoid conflict with global
+
+  # Check for necessary JIRA environment variables
+  if [[ -z "$JIRA_BASE_URL" ]]; then
+    echo "Error: JIRA_BASE_URL environment variable is not set. Cannot fetch JIRA ticket summary." >&2
+    return 1
+  fi
+  if [[ -z "$JIRA_USER_EMAIL" ]]; then
+    echo "Error: JIRA_USER_EMAIL environment variable is not set. Cannot fetch JIRA ticket summary." >&2
+    return 1
+  fi
+  if [[ -z "$JIRA_API_TOKEN" ]]; then
+    echo "Error: JIRA_API_TOKEN environment variable is not set. Cannot fetch JIRA ticket summary." >&2
+    return 1
+  fi
+
+  # Ensure JIRA_BASE_URL does not end with a slash for robust concatenation
+  local clean_jira_base_url="${JIRA_BASE_URL%/}"
+  # Using JIRA Cloud API v3 endpoint. For JIRA Server, this might be /rest/api/2/
+  local api_url="$clean_jira_base_url/rest/api/3/issue/$issue_key?fields=summary"
+
+  echo "Info: Fetching summary from JIRA API: $api_url" >&2
+
+  local http_response
+  http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" \
+    -u "$JIRA_USER_EMAIL:$JIRA_API_TOKEN" \
+    -H "Accept: application/json" \
+    "$api_url")
+
+  local http_status=$(echo "$http_response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+  local response_body=$(echo "$http_response" | sed -e 's/HTTPSTATUS:.*//')
+
+  if [[ "$http_status" -ne 200 ]]; then
+    echo "Error: JIRA API request failed with status $http_status for issue '$issue_key'." >&2
+    echo "Response (first 500 chars): $(echo "$response_body" | head -c 500)" >&2 # Avoid overly verbose output
+    return 1
+  fi
+
+  jira_summary_val=$(echo "$response_body" | jq -r '.fields.summary')
+
+  if [[ -z "$jira_summary_val" || "$jira_summary_val" == "null" ]]; then
+    echo "Error: Could not parse summary from JIRA response, or summary is empty/null for issue '$issue_key'." >&2
+    echo "Response Body (first 500 chars): $(echo "$response_body" | head -c 500)" >&2
+    return 1
+  fi
+
+  echo "$jira_summary_val" # Output the summary to be captured by command substitution
+  return 0 # Success
+}
+
 if [[ -z "$GIT_DEFAULT_BRANCH" ]]; then
   echo "Error: GIT_DEFAULT_BRANCH environment variable is not set."
   echo "Please set it to your main development branch (e.g., main, master, develop)."
