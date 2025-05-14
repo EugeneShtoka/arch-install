@@ -24,7 +24,7 @@ fetch_jira_ticket_summary() {
   echo "Info: Fetching summary from JIRA API: $api_url" >&2
 
   local http_response
-  http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -L "$web_url") # Added a generic User-Agent
+  http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" "$web_url") # Added a generic User-Agent
 
   echo "$http_response" >> jira_page_response.log
   local http_status=$(echo "$http_response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
