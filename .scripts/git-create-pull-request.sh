@@ -52,8 +52,9 @@ while [[ "$#" -gt 0 ]]; do
       echo "Unknown option: $arg" >&2;
       usage ;;
     *) # Positional argument (part of title)
-      args_for_title+=("$arg") ;;
+      args_for_title+=("$arg")
       echo "Argument: $arg to title"
+      ;;
   esac
 done
 
