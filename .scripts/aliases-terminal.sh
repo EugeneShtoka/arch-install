@@ -9,7 +9,7 @@ alias bw-item='source $SCRIPTS_PATH/bw-item.sh'
 alias bw-pass='source $SCRIPTS_PATH/bw-copy-pass.sh'
 alias postal-code='source $SCRIPTS_PATH/postal-code-get.sh'
 
-alias gsd='git stash && git switch $GIT_DEFAULT_BRANCH && git pull'
+alias gsd='git stash && git switch $GIT_DEFAULT_BRANCH && git pull && clear'
 alias grf='git checkout $GIT_DEFAULT_BRANCH --'
 alias gsp='git switch -'
 alias gsb='git fetch && git switch'
