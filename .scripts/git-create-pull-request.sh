@@ -54,6 +54,7 @@ while [[ "$#" -gt 0 ]]; do
     *) # Positional argument (part of title)
       args_for_title+=("$arg")
       echo "Argument: $arg to title"
+      shift 1
       ;;
   esac
 done
