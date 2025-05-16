@@ -49,10 +49,10 @@ while [[ "$#" -gt 0 ]]; do
       usage
       ;;
     -*)
-      echo "Unknown option: $arg" >&2;
+      echo "Unknown option: $2" >&2;
       usage ;;
     *) # Positional argument (part of title)
-      args_for_title+=("$arg")
+      args_for_title+=("$2")
       echo "Argument: $arg to title"
       shift 1
       ;;
