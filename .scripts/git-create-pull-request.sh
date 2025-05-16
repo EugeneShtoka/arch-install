@@ -82,6 +82,10 @@ fi
 # --- Construct Branch Name ---
 sanitized_title=$(echo "$title" | tr '[:space:]' '-' | tr -cs 'a-zA-Z0-9_.-' '-' | sed 's/--\+/-/g' | sed 's/^-//;s/-$//')
 
+echo "Info: Sanitized title: $sanitized_title"
+echo "Info: Category: $category"
+echo "Info: JIRA Ticket: $jira_ticket"
+
 local branch_name_parts=()
 if [[ -n "$category" ]]; then
   branch_name_parts+=("$category")
