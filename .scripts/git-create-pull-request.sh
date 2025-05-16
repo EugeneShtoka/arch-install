@@ -53,6 +53,7 @@ while [[ "$#" -gt 0 ]]; do
       usage ;;
     *) # Positional argument (part of title)
       args_for_title+=("$arg") ;;
+      echo "Argument: $arg"
   esac
 done
 
