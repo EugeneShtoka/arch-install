@@ -50,10 +50,6 @@ while [[ "$#" -gt 0 ]]; do
     -h|--help)
       usage
       ;;
-    *)
-      echo "Unknown option: $1" >&2
-      usage
-      ;;
     -*)
       echo "Unknown option: $arg" >&2;
       usage ;;
