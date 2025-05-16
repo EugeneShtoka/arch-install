@@ -14,10 +14,8 @@ fi
 
 # --- Usage Function ---
 usage() {
-  echo "Usage: $0 --title \"<Your Title>\" [options]"
+  echo "Usage: $0 \"<Your Title>\" [options]"
   echo "Creates a new git branch, commits changes, and opens a merge/pull request."
-  echo "Mandatory:"
-  echo "  --title \"<string>\"       The title for the commit and merge request."
   echo "Options:"
   echo "  --jira-ticket \"<id>\"   Optional JIRA ticket ID (e.g., PROJ-123)."
   echo "  --category \"<name>\"    Optional category for the branch name (e.g., feat, fix, chore)."
