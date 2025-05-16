@@ -98,6 +98,7 @@ bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
 bindsym $mod+y exec --no-startup-id $SCRIPTS_PATH/youtube-viewer-start.sh
+bindsym $mod+a exec --no-startup-id $SCRIPTS_PATH/youtube-viewer-start.sh
 
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
