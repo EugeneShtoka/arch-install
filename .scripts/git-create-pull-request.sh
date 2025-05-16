@@ -53,7 +53,7 @@ while [[ "$#" -gt 0 ]]; do
       usage ;;
     *) # Positional argument (part of title)
       args_for_title+=("$1")
-      echo "Argument: $1 to title"
+      echo "Argument: $1 added to title"
       shift 1
       ;;
   esac
