@@ -56,6 +56,8 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
+echo ${args_for_title[@]}
+
 if [[ ${#args_for_title[@]} -gt 0 ]]; then
   title="${args_for_title[*]}" # Joins with space by default with [*]
 else
