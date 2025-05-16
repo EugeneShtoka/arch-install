@@ -165,16 +165,16 @@ case "$platform" in
         echo "Error: glab command not found. Please install it or choose a different platform." >&2
         exit 1
     fi
-    echo "Executing: glab mr create -t \"$title\" -d \"$mr_description\" --source-branch \"$branchName\" --target-branch \"$GIT_DEFAULT_BRANCH\""
-    glab mr create -t "$title" -d "$mr_description" --source-branch "$branchName" --target-branch "$GIT_DEFAULT_BRANCH" || { echo "Error: glab mr create failed." >&2; exit 1; }
+    echo "Executing: glab mr create -t \"$title\" -d \"$mr_description\" --source-branch \"$branchName\" --target-branch \"$actual_base_branch_for_pr\""
+    glab mr create -t "$title" -d "$mr_description" --source-branch "$branchName" --target-branch "$actual_base_branch_for_pr" || { echo "Error: glab mr create failed." >&2; exit 1; }
     ;;
   github)
     if ! command -v gh &> /dev/null; then
         echo "Error: gh command not found. Please install it or choose a different platform." >&2
         exit 1
     fi
-    echo "Executing: gh pr create --title \"$title\" --body \"$mr_description\" --head \"$branchName\" --base \"$GIT_DEFAULT_BRANCH\""
-    gh pr create --title "$title" --body "$mr_description" --head "$branchName" --base "$GIT_DEFAULT_BRANCH" || { echo "Error: gh pr create failed." >&2; exit 1; }
+    echo "Executing: gh pr create --title \"$title\" --body \"$mr_description\" --head \"$branchName\" --base \"$actual_base_branch_for_pr\""
+    gh pr create --title "$title" --body "$mr_description" --head "$branchName" --base "$actual_base_branch_for_pr" || { echo "Error: gh pr create failed." >&2; exit 1; }
     ;;
 esac
 
