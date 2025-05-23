@@ -29,7 +29,7 @@ alias backend='cd ~/dev/work/exbetz-be-api && code . && clr'
 
 alias against-the-storm='setsid ~/Games/AgainstTheStorm/start.sh &>/dev/null'
 alias europa='setsid ~/Games/Europa/start.sh &>/dev/null'
-alias victoria='setsid ~/Games/Victoria/binaries/victoria3 &>/dev/null'
+alias victoria='setsid ~/Games/Victoria\ 3/start.sh &>/dev/null'
 alias rim-world='setsid ~/Games/RimWorld/start.sh &>/dev/null'
 
 # To maintain this as last item - it should be last in the list
