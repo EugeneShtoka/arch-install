@@ -18,8 +18,7 @@ if [ $DBUS_GET_STATUS_EXIT_CODE -ne 0 ]; then
     echo "D-Bus output: $STATUS_RAW_OUTPUT"
     echo "==> ACTION: Assuming VLC is not playing. Trigger your script to START PLAYING music."
 else
-        dbus-send --session --type=method_call --dest="$DBUS_DEST" "$DBUS_PATH" \
-                  "$DBUS_PLAYER_INTERFACE.PlayPause" >/dev/null
+    dbus-send --session --type=method_call --dest="$DBUS_DEST" "$DBUS_PATH" "$DBUS_PLAYER_INTERFACE.PlayPause" >/dev/null
 
     echo "VLC current status: $CURRENT_STATUS"
 
