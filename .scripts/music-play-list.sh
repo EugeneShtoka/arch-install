@@ -46,6 +46,7 @@ fi
 choice=$(printf "%s\n" "${playlist_options[@]}" | sort | rofi -i -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -matching prefix)
 
 if [[ -n "$choice" ]]; then
+    $SCRIPTS_PATH/music-stop.sh
     pathToPlay="${playlist_map["$choice"]}"
     setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
 fi
