@@ -100,7 +100,7 @@ bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
 bindsym $mod+y exec --no-startup-id $SCRIPTS_PATH/youtube-viewer-start.sh
 bindsym $mod+a exec --no-startup-id $SCRIPTS_PATH/music-play-list.sh
 bindsym $mod+Shift+a exec --no-startup-id $SCRIPTS_PATH/music-play.sh
-bindsym $mod+c exec --no-startup-id $SCRIPTS_PATH/music-play-list.sh
+bindsym $mod+c exec --no-startup-id $SCRIPTS_PATH/music-toggle.sh
 
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
