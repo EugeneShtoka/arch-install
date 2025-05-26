@@ -18,16 +18,8 @@ if [ $DBUS_GET_STATUS_EXIT_CODE -ne 0 ]; then
     echo "D-Bus output: $STATUS_RAW_OUTPUT"
     echo "==> ACTION: Assuming VLC is not playing. Trigger your script to START PLAYING music."
 else
-    CURRENT_STATUS=$(echo "$STATUS_RAW_OUTPUT" | sed -n 's/.*string "\([^"]*\)".*/\1/p')
-
-    if [ -z "$CURRENT_STATUS" ]; then
-        echo "Could not parse playback status from D-Bus reply:"
-        echo "$STATUS_RAW_OUTPUT"
-        echo "==> ACTION: Attempting a generic PlayPause toggle as a fallback due to parse error."
         dbus-send --session --type=method_call --dest="$DBUS_DEST" "$DBUS_PATH" \
                   "$DBUS_PLAYER_INTERFACE.PlayPause" >/dev/null
-        exit 1 # Exit, as we couldn't determine state reliably
-    fi
 
     echo "VLC current status: $CURRENT_STATUS"
 
