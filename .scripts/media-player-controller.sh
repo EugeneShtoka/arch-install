@@ -14,20 +14,10 @@ STATUS_RAW_OUTPUT=$(dbus-send --session --print-reply --dest="$DBUS_DEST" "$DBUS
 DBUS_GET_STATUS_EXIT_CODE=$?
 
 if [ $DBUS_GET_STATUS_EXIT_CODE -ne 0 ]; then
-    # An error occurred getting the status.
-    # This could mean VLC is not running or its D-Bus service is not reachable.
     echo "Error getting VLC status (exit code $DBUS_GET_STATUS_EXIT_CODE)."
     echo "D-Bus output: $STATUS_RAW_OUTPUT"
     echo "==> ACTION: Assuming VLC is not playing. Trigger your script to START PLAYING music."
-    # Example: Call your script to start VLC with music
-    # if [ -x "$SCRIPT_TO_START_PLAYING_MUSIC" ]; then
-    #     "$SCRIPT_TO_START_PLAYING_MUSIC"
-    # else
-    #     echo "Error: Start script not found or not executable."
-    # fi
 else
-    # Successfully queried D-Bus, now parse the PlaybackStatus
-    # Expected output format contains something like: variant       string "Playing"
     CURRENT_STATUS=$(echo "$STATUS_RAW_OUTPUT" | sed -n 's/.*string "\([^"]*\)".*/\1/p')
 
     if [ -z "$CURRENT_STATUS" ]; then
