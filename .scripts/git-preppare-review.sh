@@ -13,6 +13,7 @@ while read -r filepath; do
 done
 
 gsp
+echo $(git branch --show-current)
 
 git diff --name-only main...$feature_branch | \
 while read -r filepath; do
@@ -21,3 +22,4 @@ while read -r filepath; do
 done
 
 gsp
+$(git branch --show-current)
