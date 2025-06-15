@@ -8,6 +8,7 @@ mkdir -p ~/toReview
 
 git diff --name-only main...$feature_branch | \
 while read -r filepath; do
+  echo "File: $filepath"
   cp "$filepath" "~/toReview/$(basename "$filepath").orig"
 done
 
