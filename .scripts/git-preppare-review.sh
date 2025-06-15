@@ -16,4 +16,4 @@ while read -r filepath; do
   cp "$filepath" "~/toReview/$(basename "$filepath").orig"
 done
 
-
+gsp
