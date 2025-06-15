@@ -5,7 +5,6 @@ echo "Feature branch: $feature_branch"
 
 review_dir="$HOME/toReview"
 
-# Re-create the review directory
 echo "Cleaning and creating directory: $review_dir"
 rm -rf "$review_dir"
 mkdir -p "$review_dir"
