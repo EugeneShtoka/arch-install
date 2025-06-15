@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 feature_branch=$(git branch --show-current)
+echo "Feature branch: $feature_branch"
 
 rm -rf ~/toReview
 mkdir -p ~/toReview
