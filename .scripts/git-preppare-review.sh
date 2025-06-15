@@ -15,7 +15,7 @@ echo "Copying original files to $review_dir from" $(git branch --show-current)
 
 git diff --name-only "development...$feature_branch" | while read -r filepath; do
   if [ -f "$filepath" ]; then
-    dest_filename="$(basename "$filepath").orig"
+    dest_filename="orig_$(basename "$filepath")"
     echo "  -> Copying $filepath to $review_dir/$dest_filename"
     cp "$filepath" "$review_dir/$dest_filename"
   else
