@@ -104,3 +104,4 @@ $SCRIPTS_PATH/auto-yay.sh kid3
 $SCRIPTS_PATH/auto-yay.sh sshuttle
 $SCRIPTS_PATH/auto-yay.sh ethtool
 $SCRIPTS_PATH/auto-yay.sh cursor-bin
+$SCRIPTS_PATH/auto-yay.sh rabbitmq
