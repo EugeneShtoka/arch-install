@@ -41,3 +41,4 @@ alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
 
 alias microphone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
+alias wifi=$SCRIPTS_PATH/wifi-connect.sh
