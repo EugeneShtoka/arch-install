@@ -67,9 +67,9 @@ show_network_status() {
 
 # Main function
 main() {
-    # Check if NetworkManager is running
-    if ! systemctl is-active --quiet NetworkManager; then
-        echo -e "${RED}NetworkManager is not running. Please start it first.${NC}"
+    # Check if iwctl is available
+    if ! command -v iwctl &> /dev/null; then
+        echo -e "${RED}iwctl is not installed. Please install iwd package first.${NC}"
         exit 1
     fi
 
