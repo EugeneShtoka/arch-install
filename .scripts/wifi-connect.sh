@@ -5,10 +5,8 @@ rofi_theme='style-9-wide'
 
 
 get_available_networks() {
-    iwctl station wlan0 scan
-    sleep 2
-    
-    iwctl station wlan0 get-networks | \
+    # Get known networks (networks with saved passwords)
+    iwctl known-networks | \
     grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
     awk '{
         ssid = $1
