@@ -93,7 +93,7 @@ main() {
     fi
     
     # Show networks in rofi
-    selected_network=$(echo "$available_networks" | rofi -dmenu -p "Select WiFi Network:" -i)
+    selected_network=$(echo "$available_networks" | rofi -i -dmenu -p "Select WiFi Network:")
     
     # Check if a network was selected
     if [ -z "$selected_network" ]; then
