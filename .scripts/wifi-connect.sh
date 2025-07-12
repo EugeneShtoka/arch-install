@@ -5,32 +5,29 @@ WIFI_INTERFACE="wlan0" # <--- IMPORTANT: Replace with your actual Wi-Fi interfac
                         # You can find it using `iwctl device list` or `ip link show`
 ROFI_PROMPT="Select Wi-Fi Network  " # Rofi prompt text (U+F1EB is the Font Awesome Wi-Fi icon)
 
-echo "Scanning for Wi-Fi networks on $WIFI_INTERFACE..."
+echo "--- Wi-Fi Selector (Scan with iw, Connect with iwctl) ---"
+echo "Scanning for Wi-Fi networks on $WIFI_INTERFACE using iw..."
 
-# Ensure iwd is running and the device is powered on
-# This is crucial for iwctl commands to work.
-sudo iwctl device "$WIFI_INTERFACE" set-property Powered on
+# Ensure the wireless interface is up and ready for scanning using 'ip'
+sudo ip link set dev "$WIFI_INTERFACE" up
 
-# Perform the scan using iwctl
-# Note: iwctl station scan doesn't print output immediately,
-# it just tells the device to scan.
-sudo iwctl station "$WIFI_INTERFACE" scan
+# Perform the scan using 'iw' and extract unique SSIDs.
+# The `iw dev <interface> scan` command might take a few seconds.
+# We'll parse the output to get just the SSIDs.
+NETWORKS=$(sudo iw dev "$WIFI_INTERFACE" scan | awk '/SSID:/ {print $2}' | sort -u)
 
-# Wait a moment for the scan to complete
-sleep 2
+if [ -z "$NETWORKS" ]; then
+    echo "No Wi-Fi networks found. Ensure the interface '$WIFI_INTERFACE' is up and working."
+    echo "Also, confirm that 'iwd.service' is running: 'systemctl status iwd.service'"
+    exit 1
+fi
 
-# Get the list of available networks using iwctl, extract SSIDs, and sort uniquely.
-# We also include a "Disconnect" option for convenience.
-NETWORKS_RAW=$(sudo iwctl station "$WIFI_INTERFACE" get-networks)
+# Get the currently connected network using iwctl (best to rely on the daemon)
+ACTIVE_NETWORK=$(sudo iwctl station "$WIFI_INTERFACE" show | awk '/Connected network/ {print $3}')
 
-# Parse SSIDs. We use awk to get the second field and then filter out headers/empty lines.
-# We also want to capture "active" networks to display them differently.
-AVAILABLE_NETWORKS=$(echo "$NETWORKS_RAW" | awk 'NR > 1 {print $2}' | grep -v '^\s*$' | sort -u)
-ACTIVE_NETWORK=$(sudo iwctl station "$WIFI_INTERFACE" show | awk '/Connected network/ {print $3}') # Get currently connected network
-
-# Prepare networks for Rofi, marking the active one
+# Prepare networks for Rofi, marking the active one and adding a Disconnect option
 ROFI_NETWORKS=""
-for net in $AVAILABLE_NETWORKS; do
+for net in $NETWORKS; do
     if [ "$net" = "$ACTIVE_NETWORK" ]; then
         ROFI_NETWORKS+="$net (connected)\n"
     else
@@ -41,11 +38,6 @@ done
 # Add a "Disconnect" option if currently connected
 if [ -n "$ACTIVE_NETWORK" ]; then
     ROFI_NETWORKS+="Disconnect\n"
-fi
-
-if [ -z "$ROFI_NETWORKS" ]; then
-    echo "No Wi-Fi networks found or available. Exiting."
-    exit 1
 fi
 
 echo "Networks found. Displaying with Rofi..."
@@ -66,7 +58,7 @@ echo "You selected: $SELECTED_NETWORK"
 # --- Handle Disconnect Option ---
 if [ "$SELECTED_NETWORK" = "Disconnect" ]; then
     if [ -n "$ACTIVE_NETWORK" ]; then
-        echo "Disconnecting from $ACTIVE_NETWORK..."
+        echo "Disconnecting from $ACTIVE_NETWORK using iwctl..."
         if sudo iwctl station "$WIFI_INTERFACE" disconnect; then
             echo "Successfully disconnected from $ACTIVE_NETWORK."
             notify-send "Wi-Fi Disconnected" "Disconnected from $ACTIVE_NETWORK"
@@ -91,19 +83,19 @@ echo "" # Newline after password input
 
 echo "Attempting to connect to $SELECTED_NETWORK using iwctl..."
 
+# Ensure iwd daemon is aware of the device and powered on for connection
+# This usually happens automatically if iwd is running, but doesn't hurt to explicitly state.
+sudo iwctl device "$WIFI_INTERFACE" set-property Powered on
+
 # Connect to the network using iwctl
-# iwctl will prompt for passphrase if not provided or if the network is hidden.
-# We're providing it directly with --passphrase.
 if sudo iwctl --passphrase "$WIFI_PASSWORD" station "$WIFI_INTERFACE" connect "$SELECTED_NETWORK"; then
     echo "Successfully connected to $SELECTED_NETWORK."
-    # Optional: Display a desktop notification
     notify-send "Wi-Fi Connected" "Connected to $SELECTED_NETWORK"
     echo "Remember to ensure a DHCP client (like systemd-networkd or dhcpcd) is configured to get an IP address."
-    # If using iwd's built-in DHCP, make sure EnableNetworkConfiguration=true in /etc/iwd/main.conf
+    echo "If using iwd's built-in DHCP, make sure EnableNetworkConfiguration=true in /etc/iwd/main.conf."
 else
     echo "Failed to connect to $SELECTED_NETWORK."
     echo "Please check the password and ensure iwd is running and configured correctly."
     echo "Troubleshoot with 'journalctl -u iwd'."
-    # Optional: Display a desktop notification
     notify-send "Wi-Fi Connection Failed" "Could not connect to $SELECTED_NETWORK" -u critical
 fi
