@@ -20,7 +20,6 @@ get_available_networks() {
         }' | sort)
     
     iwctl station wlan0 get-networks | echo
-    echo "Available networks: $available_ssids"
     # Get known networks from iwd configuration directory
     local known_ssids=""
     if [ -d "/var/lib/iwd" ]; then
