@@ -1,5 +1,5 @@
 #!/bin/bash
-dir="$HOME/.config/rofi/launchers/type-3"
+dir="$HOME/.config/rofi/launchers/type-2"
 theme='style-1'
 
 ROFI_PROMPT="Select Wi-Fi Network  "
