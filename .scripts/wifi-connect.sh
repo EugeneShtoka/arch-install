@@ -35,7 +35,7 @@ connect_to_network() {
 }
 
 main() {
-    echo -e "Scanning for available networks..."
+    echo -e "Getting known networks..."
     available_networks=$(get_available_networks)
     
     if [ -z "$available_networks" ]; then
