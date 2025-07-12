@@ -52,6 +52,13 @@ connect_to_network() {
     fi
 }
 
+# Function to extract SSID from rofi selection
+extract_ssid() {
+    local selection="$1"
+    # Extract SSID from the formatted line (first column)
+    echo "$selection" | awk '{print $1}'
+}
+
 # Function to show network status
 show_network_status() {
     echo -e "${BLUE}Current WiFi Status:${NC}"
