@@ -3,9 +3,7 @@
 WIFI_INTERFACE="wlan0"
 ROFI_PROMPT="Select Wi-Fi Network  "
 
-sudo ip link set dev wlan0 up
-
-NETWORKS=$(sudo iw dev "$WIFI_INTERFACE" scan | awk '/SSID:/ {print $2}' | sort -u)
+NETWORKS=$(sudo iw dev wlan0 scan | awk '/SSID:/ {print $2}' | sort -u)
 
 if [ -z "$NETWORKS" ]; then
     echo "No Wi-Fi networks found. Ensure the interface '$WIFI_INTERFACE' is up and working."
