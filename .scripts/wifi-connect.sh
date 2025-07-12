@@ -36,13 +36,6 @@ connect_to_network() {
     fi
 }
 
-# Function to extract SSID from rofi selection
-extract_ssid() {
-    local selection="$1"
-    # Since we're now showing only SSID names, return the selection as is
-    echo "$selection"
-}
-
 # Function to show network status
 show_network_status() {
     echo -e "Current WiFi Status:"
@@ -73,9 +66,7 @@ main() {
         exit 0
     fi
 
-    # Extract SSID from selection and connect
-    ssid=$(extract_ssid "$selected_network")
-    connect_to_network "$ssid"
+    connect_to_network "$selected_network"
 }
 
 # Run main function
