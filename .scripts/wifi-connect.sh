@@ -1,26 +1,13 @@
 #!/bin/zsh
 
-# WiFi Network Selection Script
-# Uses rofi to select from available networks and connects using iwctl
-
-# Rofi configuration
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme='style-9-wide'
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
 
-# Function to get available networks
 get_available_networks() {
-    # Scan for available networks using iwctl
     iwctl station wlan0 scan
-    sleep 2  # Give some time for scan to complete
+    sleep 2
     
-    # Get scan results and format for rofi
     iwctl station wlan0 get-networks | \
     grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
     awk '{
