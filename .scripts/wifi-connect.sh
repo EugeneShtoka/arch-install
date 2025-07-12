@@ -19,6 +19,7 @@ get_available_networks() {
             }
         }' | sort)
     
+    echo -e "Available networks: $available_ssids"
     # Get known networks from iwd configuration directory
     local known_ssids=""
     if [ -d "/var/lib/iwd" ]; then
