@@ -39,8 +39,8 @@ connect_to_network() {
 # Function to extract SSID from rofi selection
 extract_ssid() {
     local selection="$1"
-    # Extract SSID from the formatted line (first column)
-    echo "$selection" | awk '{print $1}'
+    # Since we're now showing only SSID names, return the selection as is
+    echo "$selection"
 }
 
 # Function to show network status
