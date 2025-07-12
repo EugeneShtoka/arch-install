@@ -12,13 +12,11 @@ get_available_networks() {
     grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
     awk '{
         ssid = $1
-        security = $2
-        signal = $3
         if (ssid != "" && ssid != "SSID") {
-            printf "%-30s %s %s\n", ssid, signal, security
+            print ssid
         }
     }' | \
-    sort -k2 -nr
+    sort
 }
 
 # Function to connect to a network
