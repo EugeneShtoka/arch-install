@@ -7,7 +7,7 @@ rofi_theme='style-9-wide'
 get_available_networks() {
     # Get known networks from iwd configuration directory
     if [ -d "/var/lib/iwd" ]; then
-        find /var/lib/iwd -name "*.psk" -o -name "*.open" | \
+        sudo find /var/lib/iwd -name "*.psk" -o -name "*.open" | \
         sed 's|/var/lib/iwd/||' | \
         sed 's|\.psk$||' | \
         sed 's|\.open$||' | \
