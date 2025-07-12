@@ -3,6 +3,10 @@
 # WiFi Network Selection Script
 # Uses rofi to select from known networks and connects to the chosen one
 
+# Rofi configuration
+rofi_dir="$HOME/.config/rofi/launchers/type-4"
+rofi_theme='style-9-wide'
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
