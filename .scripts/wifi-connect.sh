@@ -38,7 +38,7 @@ fi
 
 echo "Networks found. Displaying with Rofi..."
 
-SELECTED_FULL=$(echo -e "$ROFI_NETWORKS" | rofi -theme "$dir/$theme.rasi" -dmenu -matching prefix)
+SELECTED_FULL=$(echo -e "$ROFI_NETWORKS" | rofi -theme "$dir/$theme.rasi" -dmenu)
 
 if [ -z "$SELECTED_FULL" ]; then
     echo "No network selected. Exiting."
