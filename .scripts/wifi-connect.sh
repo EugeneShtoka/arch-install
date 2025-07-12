@@ -60,7 +60,7 @@ main() {
     available_networks=$(get_available_networks)
     
     if [ -z "$available_networks" ]; then
-        echo -e "No available networks found.${NC}"
+        echo -e "No available networks found."
         exit 1
     fi
     
@@ -69,7 +69,7 @@ main() {
     
     # Check if a network was selected
     if [ -z "$selected_network" ]; then
-        echo -e "${YELLOW}No network selected. Exiting.${NC}"
+        echo -e "No network selected. Exiting."
         exit 0
     fi
 
