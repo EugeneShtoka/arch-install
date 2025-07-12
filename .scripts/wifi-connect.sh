@@ -61,7 +61,7 @@ extract_ssid() {
 # Function to show network status
 show_network_status() {
     echo -e "${BLUE}Current WiFi Status:${NC}"
-    nmcli device wifi list --rescan no | head -10
+    iwctl station wlan0 show
     echo ""
 }
 
