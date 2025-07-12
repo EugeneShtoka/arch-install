@@ -34,6 +34,12 @@ get_available_networks() {
     else
         echo "No known networks found"
     fi
+    
+    # Debug: Show what we found (uncomment to debug)
+    # echo "Available SSIDs:"
+    # echo "$available_ssids"
+    # echo "Known SSIDs:"
+    # echo "$known_ssids"
 }
 
 # Function to connect to a network
