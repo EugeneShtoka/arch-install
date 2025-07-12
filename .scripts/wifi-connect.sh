@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # WiFi Network Selection Script
-# Uses rofi to select from known networks and connects to the chosen one
+# Uses rofi to select from available networks and connects using iwctl
 
 # Rofi configuration
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
@@ -14,25 +14,20 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Function to get known networks
-get_known_networks() {
-    # Get list of known networks from NetworkManager
-    nmcli -t -f NAME,TYPE connection show | \
-    grep -E "wifi|wlan" | \
-    cut -d: -f1 | \
-    sort -u
-}
-
 # Function to get available networks
 get_available_networks() {
-    # Scan for available networks and format for rofi
-    nmcli -t -f SSID,SIGNAL,SECURITY device wifi list --rescan yes | \
-    grep -v "^$" | \
-    awk -F: '{
+    # Scan for available networks using iwctl
+    iwctl station wlan0 scan
+    sleep 2  # Give some time for scan to complete
+    
+    # Get scan results and format for rofi
+    iwctl station wlan0 get-networks | \
+    grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
+    awk '{
         ssid = $1
-        signal = $2
-        security = $3
-        if (ssid != "" && ssid != "*") {
+        security = $2
+        signal = $3
+        if (ssid != "" && ssid != "SSID") {
             printf "%-30s %s %s\n", ssid, signal, security
         }
     }' | \
@@ -45,8 +40,8 @@ connect_to_network() {
     
     echo -e "${BLUE}Attempting to connect to: ${YELLOW}$ssid${NC}"
     
-    # Try to connect using NetworkManager
-    if nmcli device wifi connect "$ssid"; then
+    # Try to connect using iwctl
+    if iwctl station wlan0 connect "$ssid"; then
         echo -e "${GREEN}Successfully connected to $ssid${NC}"
         return 0
     else
