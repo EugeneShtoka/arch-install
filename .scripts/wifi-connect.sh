@@ -10,36 +10,14 @@ get_available_networks() {
     sleep 2
     
     # Get currently available networks
-    local available_ssids=$(iwctl station wlan0 get-networks | \
-        grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
-        awk '{
-            ssid = $1
-            if (ssid != "" && ssid != "SSID" && ssid != "Available" && ssid != "Name") {
-                print ssid
-            }
-        }' | sort)
-    
-    # Get known networks from iwd configuration directory
-    local known_ssids=""
-    if [ -d "/var/lib/iwd" ]; then
-        known_ssids=$(sudo find /var/lib/iwd -name "*.psk" -o -name "*.open" | \
-            sed 's|/var/lib/iwd/||' | \
-            sed 's|\.psk$||' | \
-            sed 's|\.open$||' | sort)
-    fi
-    
-    # Find intersection of available and known networks
-    if [ -n "$known_ssids" ]; then
-        echo "$available_ssids" | grep -Fxf <(echo "$known_ssids")
-    else
-        echo "No known networks found"
-    fi
-    
-    # Debug: Show what we found (uncomment to debug)
-    # echo "Available SSIDs:"
-    # echo "$available_ssids"
-    # echo "Known SSIDs:"
-    # echo "$known_ssids"
+    iwctl station wlan0 get-networks | \
+    grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
+    awk '{
+        ssid = $1
+        if (ssid != "" && ssid != "SSID" && ssid != "Available" && ssid != "Name") {
+            print ssid
+        }
+    }' | sort
 }
 
 # Function to connect to a network
