@@ -39,40 +39,18 @@ SELECTED_NETWORK=$(echo "$SELECTED_FULL" | sed 's/ (connected)//')
 echo "You selected: $SELECTED_NETWORK"
 
 if [ "$SELECTED_NETWORK" = "Disconnect" ]; then
-    if [ -n "$ACTIVE_NETWORK" ]; then
-        echo "Disconnecting from $ACTIVE_NETWORK using iwctl..."
-        if sudo iwctl station "$WIFI_INTERFACE" disconnect; then
-            echo "Successfully disconnected from $ACTIVE_NETWORK."
-            notify-send "Wi-Fi Disconnected" "Disconnected from $ACTIVE_NETWORK"
-        else
-            echo "Failed to disconnect from $ACTIVE_NETWORK."
-        fi
-    else
-        echo "Not currently connected to any network."
-    fi
+    sudo iwctl station wlan0 disconnect
+    notify-send "Wi-Fi Disconnected"
     exit 0
 fi
 
 if [ "$SELECTED_NETWORK" = "$ACTIVE_NETWORK" ]; then
-    echo "Already connected to $SELECTED_NETWORK. No action needed."
     exit 0
 fi
 
-read -s -p "Enter password for $SELECTED_NETWORK: " WIFI_PASSWORD
-echo ""
-
-echo "Attempting to connect to $SELECTED_NETWORK using iwctl..."
-
-sudo iwctl device "$WIFI_INTERFACE" set-property Powered on
-
-if sudo iwctl --passphrase "$WIFI_PASSWORD" station "$WIFI_INTERFACE" connect "$SELECTED_NETWORK"; then
-    echo "Successfully connected to $SELECTED_NETWORK."
-    notify-send "Wi-Fi Connected" "Connected to $SELECTED_NETWORK"
-    echo "Remember to ensure a DHCP client (like systemd-networkd or dhcpcd) is configured to get an IP address."
-    echo "If using iwd's built-in DHCP, make sure EnableNetworkConfiguration=true in /etc/iwd/main.conf."
-else
-    echo "Failed to connect to $SELECTED_NETWORK."
-    echo "Please check the password and ensure iwd is running and configured correctly."
-    echo "Troubleshoot with 'journalctl -u iwd'."
-    notify-send "Wi-Fi Connection Failed" "Could not connect to $SELECTED_NETWORK" -u critical
+if [ -z "$WIFI_PASSWORD" ]; then
+    read -s -p "Enter password for $SELECTED_NETWORK: " WIFI_PASSWORD
+    echo ""
 fi
+
+sudo iwctl --passphrase "$WIFI_PASSWORD" station wlan0 connect "$SELECTED_NETWORK" && notify-send "Wi-Fi Connected" "Connected to $SELECTED_NETWORK"
