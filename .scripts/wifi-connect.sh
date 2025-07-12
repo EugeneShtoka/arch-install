@@ -43,7 +43,6 @@ show_network_status() {
     echo ""
 }
 
-# Main function
 main() {
     show_network_status
 
