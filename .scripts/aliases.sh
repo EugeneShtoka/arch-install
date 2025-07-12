@@ -34,4 +34,3 @@ alias rim-world='setsid ~/Games/RimWorld/start.sh &>/dev/null'
 
 # To maintain this as last item - it should be last in the list
 alias rename='setsid thunar --bulk-rename &>/dev/null'
-alias wifi=$SCRIPTS_PATH/wifi-connect.sh
