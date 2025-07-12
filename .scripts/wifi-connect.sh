@@ -12,7 +12,7 @@ get_available_networks() {
     grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
     awk '{
         ssid = $1
-        if (ssid != "" && ssid != "SSID") {
+        if (ssid != "" && ssid != "SSID" && ssid != "Available") {
             print ssid
         }
     }' | \
@@ -36,15 +36,7 @@ connect_to_network() {
     fi
 }
 
-show_network_status() {
-    echo -e "Current WiFi Status:"
-    iwctl station wlan0 show
-    echo ""
-}
-
 main() {
-    show_network_status
-
     echo -e "Scanning for available networks..."
     available_networks=$(get_available_networks)
     
