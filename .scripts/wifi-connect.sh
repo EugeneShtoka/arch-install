@@ -48,9 +48,4 @@ if [ "$SELECTED_NETWORK" = "$ACTIVE_NETWORK" ]; then
     exit 0
 fi
 
-if [ -z "$WIFI_PASSWORD" ]; then
-    read -s -p "Enter password for $SELECTED_NETWORK: " WIFI_PASSWORD
-    echo ""
-fi
-
-sudo iwctl --passphrase "$WIFI_PASSWORD" station wlan0 connect "$SELECTED_NETWORK" && notify-send "Wi-Fi Connected" "Connected to $SELECTED_NETWORK"
+sudo iwctl station wlan0 connect "$SELECTED_NETWORK"
