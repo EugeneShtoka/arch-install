@@ -1,17 +1,16 @@
 #!/bin/bash
 
-WIFI_INTERFACE="wlan0"
 ROFI_PROMPT="Select Wi-Fi Network  "
 
 NETWORKS=$(sudo iw dev wlan0 scan | awk '/SSID:/ {print $2}' | sort -u)
 
 if [ -z "$NETWORKS" ]; then
-    echo "No Wi-Fi networks found. Ensure the interface '$WIFI_INTERFACE' is up and working."
+    echo "No Wi-Fi networks found. Ensure the interface wlan0 is up and working."
     echo "Also, confirm that 'iwd.service' is running: 'systemctl status iwd.service'"
     exit 1
 fi
 
-ACTIVE_NETWORK=$(sudo iwctl station "$WIFI_INTERFACE" show | awk '/Connected network/ {print $3}')
+ACTIVE_NETWORK=$(sudo iwctl station wlan0 show | awk '/Connected network/ {print $3}')
 
 ROFI_NETWORKS=""
 for net in $NETWORKS; do
