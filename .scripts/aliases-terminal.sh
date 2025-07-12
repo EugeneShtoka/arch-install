@@ -32,6 +32,7 @@ alias gmn=$SCRIPTS_PATH/gemini-call.sh
 alias calc=$SCRIPTS_PATH/calculate.sh
 alias timer="setsid $SCRIPTS_PATH/timer.sh"
 alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
+alias wifi=$SCRIPTS_PATH/wifi-connect.sh
 
 alias mail=$SCRIPTS_PATH/email-start.sh
 alias file-manager=$SCRIPTS_PATH/file-manager-start.sh
@@ -41,4 +42,3 @@ alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
 
 alias microphone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
-alias wifi=$SCRIPTS_PATH/wifi-connect.sh
