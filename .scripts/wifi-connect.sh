@@ -5,16 +5,16 @@ rofi_theme='style-9-wide'
 
 
 get_available_networks() {
-    # Get known networks (networks with saved passwords)
-    iwctl known-networks | \
-    grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
-    awk '{
-        ssid = $1
-        if (ssid != "" && ssid != "SSID" && ssid != "Available") {
-            print ssid
-        }
-    }' | \
-    sort
+    # Get known networks from iwd configuration directory
+    if [ -d "/var/lib/iwd" ]; then
+        find /var/lib/iwd -name "*.psk" -o -name "*.open" | \
+        sed 's|/var/lib/iwd/||' | \
+        sed 's|\.psk$||' | \
+        sed 's|\.open$||' | \
+        sort
+    else
+        echo "No known networks found"
+    fi
 }
 
 # Function to connect to a network
