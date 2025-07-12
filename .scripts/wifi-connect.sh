@@ -14,12 +14,11 @@ get_available_networks() {
         grep -E "^[[:space:]]*[A-Za-z0-9_-]+" | \
         awk '{
             ssid = $1
-            if (ssid != "" && ssid != "SSID" && ssid != "Available") {
+            if (ssid != "" && ssid != "SSID" && ssid != "Available" && ssid != "Name") {
                 print ssid
             }
         }' | sort)
     
-    iwctl station wlan0 get-networks | echo
     # Get known networks from iwd configuration directory
     local known_ssids=""
     if [ -d "/var/lib/iwd" ]; then
