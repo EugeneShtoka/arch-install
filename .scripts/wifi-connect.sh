@@ -13,7 +13,7 @@ NC='\033[0m' # No Color
 # Function to get known networks
 get_known_networks() {
     # Get list of known networks from NetworkManager
-    nmcli -t -f SSID,TYPE,DEVICE connection show --active | \
+    nmcli -t -f NAME,TYPE connection show | \
     grep -E "wifi|wlan" | \
     cut -d: -f1 | \
     sort -u
@@ -21,11 +21,18 @@ get_known_networks() {
 
 # Function to get available networks
 get_available_networks() {
-    # Scan for available networks
+    # Scan for available networks and format for rofi
     nmcli -t -f SSID,SIGNAL,SECURITY device wifi list --rescan yes | \
     grep -v "^$" | \
-    sort -k2 -nr | \
-    cut -d: -f1
+    awk -F: '{
+        ssid = $1
+        signal = $2
+        security = $3
+        if (ssid != "" && ssid != "*") {
+            printf "%-30s %s %s\n", ssid, signal, security
+        }
+    }' | \
+    sort -k2 -nr
 }
 
 # Function to connect to a network
