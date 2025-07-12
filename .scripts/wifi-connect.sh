@@ -3,10 +3,7 @@
 WIFI_INTERFACE="wlan0"
 ROFI_PROMPT="Select Wi-Fi Network  "
 
-echo "--- Wi-Fi Selector (Scan with iw, Connect with iwctl) ---"
-echo "Scanning for Wi-Fi networks on $WIFI_INTERFACE using iw..."
-
-sudo ip link set dev "$WIFI_INTERFACE" up
+sudo ip link set dev wlan0 up
 
 NETWORKS=$(sudo iw dev "$WIFI_INTERFACE" scan | awk '/SSID:/ {print $2}' | sort -u)
 
