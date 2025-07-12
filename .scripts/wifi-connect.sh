@@ -36,7 +36,6 @@ connect_to_network() {
     fi
 }
 
-# Function to show network status
 show_network_status() {
     echo -e "Current WiFi Status:"
     iwctl station wlan0 show
