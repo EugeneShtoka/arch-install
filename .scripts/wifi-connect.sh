@@ -45,10 +45,8 @@ show_network_status() {
 
 # Main function
 main() {
-    # Show current status
     show_network_status
 
-    # Get available networks
     echo -e "Scanning for available networks..."
     available_networks=$(get_available_networks)
     
