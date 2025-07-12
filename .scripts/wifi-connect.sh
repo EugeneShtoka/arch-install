@@ -4,7 +4,15 @@ theme='style-9'
 
 ROFI_PROMPT="Select Wi-Fi Network  "
 
-NETWORKS=$(sudo iw dev wlan0 scan | awk '/SSID:/ {print $2}' | sort -u)
+ALL_NETWORKS=$(sudo iw dev wlan0 scan | awk '/SSID:/ {print $2}' | sort -u)
+KNOWN_NETWORKS=$(sudo iwctl known-networks list | awk '{print $1}' | tail -n +2)
+NETWORKS=""
+for net in $ALL_NETWORKS; do
+    if echo "$KNOWN_NETWORKS" | grep -q "^$net$"; then
+        NETWORKS+="$net\n"
+    fi
+done
+NETWORKS=$(echo -e "$NETWORKS" | grep -v '^$')
 
 if [ -z "$NETWORKS" ]; then
     echo "No Wi-Fi networks found. Ensure the interface wlan0 is up and working."
