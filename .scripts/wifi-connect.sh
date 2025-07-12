@@ -6,6 +6,9 @@ ROFI_PROMPT="Select Wi-Fi Network  "
 
 ALL_NETWORKS=$(sudo iw dev wlan0 scan | awk '/SSID:/ {print $2}' | sort -u)
 KNOWN_NETWORKS=$(sudo ls /var/lib/iwd/*.psk 2>/dev/null | sed 's|/var/lib/iwd/||' | sed 's|\.psk$||')
+echo "Known networks: $KNOWN_NETWORKS"
+echo "All networks: $ALL_NETWORKS"  
+
 NETWORKS=""
 for net in $ALL_NETWORKS; do
     if echo "$KNOWN_NETWORKS" | grep -q "^$net$"; then
