@@ -45,7 +45,7 @@ extract_ssid() {
 
 # Function to show network status
 show_network_status() {
-    echo -e "${BLUE}Current WiFi Status:${NC}"
+    echo -e "Current WiFi Status:"
     iwctl station wlan0 show
     echo ""
 }
