@@ -83,35 +83,27 @@ main() {
     # Show current status
     show_network_status
 
-    # Get known networks
-    echo -e "${BLUE}Getting known networks...${NC}"
-    known_networks=$(get_known_networks)
+    # Get available networks
+    echo -e "${BLUE}Scanning for available networks...${NC}"
+    available_networks=$(get_available_networks)
     
-    if [ -z "$known_networks" ]; then
-        echo -e "${YELLOW}No known networks found.${NC}"
-        echo -e "${BLUE}Getting available networks...${NC}"
-        available_networks=$(get_available_networks)
-        
-        if [ -z "$available_networks" ]; then
-            echo -e "${RED}No available networks found.${NC}"
-            exit 1
-        fi
-        
-        # Use available networks
-        selected_network=$(echo "$available_networks" | rofi -dmenu -p "Select WiFi Network:")
-    else
-        # Use known networks
-        selected_network=$(echo "$known_networks" | rofi -dmenu -p "Select Known WiFi Network:")
+    if [ -z "$available_networks" ]; then
+        echo -e "${RED}No available networks found.${NC}"
+        exit 1
     fi
-
+    
+    # Show networks in rofi
+    selected_network=$(echo "$available_networks" | rofi -dmenu -p "Select WiFi Network:" -i)
+    
     # Check if a network was selected
     if [ -z "$selected_network" ]; then
         echo -e "${YELLOW}No network selected. Exiting.${NC}"
         exit 0
     fi
 
-    # Connect to the selected network
-    connect_to_network "$selected_network"
+    # Extract SSID from selection and connect
+    ssid=$(extract_ssid "$selected_network")
+    connect_to_network "$ssid"
 }
 
 # Run main function
