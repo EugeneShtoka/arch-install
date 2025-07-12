@@ -65,5 +65,4 @@ main() {
     connect_to_network "$selected_network"
 }
 
-# Run main function
 main "$@" 
