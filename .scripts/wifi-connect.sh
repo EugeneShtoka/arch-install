@@ -25,7 +25,7 @@ if [ -z "$NETWORKS" ]; then
     exit 1
 fi
 
-ACTIVE_NETWORK=$(sudo iwctl station wlan0 show | awk '/Connected network/ {print $3}')
+ACTIVE_NETWORK=$(sudo iwctl station wlan0 show | awk '/Connected network/ {sub(/^[[:space:]]*Connected network[[:space:]]*/, ""); print}')
 
 ROFI_NETWORKS=""
 for net in $NETWORKS; do
