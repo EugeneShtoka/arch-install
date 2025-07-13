@@ -8,11 +8,11 @@ ALL_NETWORKS=$(sudo iw dev wlan0 scan | awk '/SSID:/ {sub(/^[[:space:]]*SSID:[[:
 KNOWN_NETWORKS=$(sudo find /var/lib/iwd/ -name "*.psk" -type f 2>/dev/null | sed 's|/var/lib/iwd/||' | sed 's|\.psk$||')
 
 NETWORKS=""
-for net in $ALL_NETWORKS; do
-    if echo "$KNOWN_NETWORKS" | grep -q "^$net$"; then
+while IFS= read -r net; do
+    if [ -n "$net" ] && echo "$KNOWN_NETWORKS" | grep -q "^$net$"; then
         NETWORKS+="$net\n"
     fi
-done
+done <<< "$ALL_NETWORKS"
 NETWORKS=$(echo -e "$NETWORKS" | grep -v '^$')
 
 echo "All networks: $ALL_NETWORKS"
