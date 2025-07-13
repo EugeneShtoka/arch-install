@@ -28,13 +28,15 @@ fi
 ACTIVE_NETWORK=$(sudo iwctl station wlan0 show | awk '/Connected network/ {sub(/^[[:space:]]*Connected network[[:space:]]*/, ""); print}')
 
 ROFI_NETWORKS=""
-for net in $NETWORKS; do
-    if [ "$net" = "$ACTIVE_NETWORK" ]; then
-        ROFI_NETWORKS+="$net (connected)\n"
-    else
-        ROFI_NETWORKS+="$net\n"
+while IFS= read -r net; do
+    if [ -n "$net" ]; then
+        if [ "$net" = "$ACTIVE_NETWORK" ]; then
+            ROFI_NETWORKS+="$net (connected)\n"
+        else
+            ROFI_NETWORKS+="$net\n"
+        fi
     fi
-done
+done <<< "$NETWORKS"
 
 if [ -n "$ACTIVE_NETWORK" ]; then
     ROFI_NETWORKS+="Disconnect\n"
