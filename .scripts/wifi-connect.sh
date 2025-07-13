@@ -7,10 +7,6 @@ ROFI_PROMPT="Select Wi-Fi Network  "
 ALL_NETWORKS=$(sudo iw dev wlan0 scan | awk '/^[[:space:]]*SSID:/ {sub(/^[[:space:]]*SSID:[[:space:]]*/, ""); print}' | sort -u)
 KNOWN_NETWORKS=$(sudo find /var/lib/iwd/ -name "*.psk" -type f 2>/dev/null | sed 's|/var/lib/iwd/||' | sed 's|\.psk$||')
 
-# Debug: Show raw awk output
-echo "Debug - Raw awk output:"
-sudo iw dev wlan0 scan | awk '/^[[:space:]]*SSID:/ {sub(/^[[:space:]]*SSID:[[:space:]]*/, ""); print}' | sort -u
-
 NETWORKS=""
 while IFS= read -r net; do
     if [ -n "$net" ] && echo "$KNOWN_NETWORKS" | grep -q "^$net$"; then
@@ -18,10 +14,6 @@ while IFS= read -r net; do
     fi
 done <<< "$ALL_NETWORKS"
 NETWORKS=$(echo -e "$NETWORKS" | grep -v '^$')
-
-echo "All networks: $ALL_NETWORKS"
-echo "Known networks: $KNOWN_NETWORKS"
-echo "Networks found: $NETWORKS"
 
 if [ -z "$NETWORKS" ]; then
     echo "No Wi-Fi networks found. Ensure the interface wlan0 is up and working."
