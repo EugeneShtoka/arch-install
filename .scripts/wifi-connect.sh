@@ -4,7 +4,7 @@ theme='style-9'
 
 ROFI_PROMPT="Select Wi-Fi Network  "
 
-ALL_NETWORKS=$(sudo iw dev wlan0 scan | awk '/[[:space:]]*SSID:/ {sub(/^[[:space:]]*SSID:[[:space:]]*/, ""); print}' | sort -u)
+ALL_NETWORKS=$(sudo iw dev wlan0 scan | awk '/^[[:space:]]*SSID:/ {sub(/^[[:space:]]*SSID:[[:space:]]*/, ""); print}' | sort -u)
 KNOWN_NETWORKS=$(sudo find /var/lib/iwd/ -name "*.psk" -type f 2>/dev/null | sed 's|/var/lib/iwd/||' | sed 's|\.psk$||')
 
 NETWORKS=""
