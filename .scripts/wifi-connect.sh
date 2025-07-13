@@ -15,6 +15,10 @@ for net in $ALL_NETWORKS; do
 done
 NETWORKS=$(echo -e "$NETWORKS" | grep -v '^$')
 
+echo "All networks: $ALL_NETWORKS"
+echo "Known networks: $KNOWN_NETWORKS"
+echo "Networks found: $NETWORKS"
+
 if [ -z "$NETWORKS" ]; then
     echo "No Wi-Fi networks found. Ensure the interface wlan0 is up and working."
     echo "Also, confirm that 'iwd.service' is running: 'systemctl status iwd.service'"
