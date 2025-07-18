@@ -108,3 +108,4 @@ $SCRIPTS_PATH/auto-yay.sh rabbitmq
 $SCRIPTS_PATH/auto-yay.sh iw
 $SCRIPTS_PATH/auto-yay.sh openra
 $SCRIPTS_PATH/auto-yay.sh warzone2100
+$SCRIPTS_PATH/auto-yay.sh lm_sensors
