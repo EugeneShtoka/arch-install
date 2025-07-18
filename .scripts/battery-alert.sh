@@ -1,13 +1,13 @@
 #!/bin/bash
 
-source $SCRIPTS_PATH/battery.sh
-source $SCRIPTS_PATH/beep.sh
+source $HOME/.scripts/battery.sh
+source $HOME/.scripts/beep.sh
 
 threshold=15
 get_battery_info
 
-if [ $battery_level -le $threshold ] && [ "$discharging" = "discharging" ]; then
-    notify-send -u critical "$(get_battery_status $battery_level $discharging) Low battery" --icon " " -r 101029
+if [ $battery_level -le $threshold ] && [ "$battery_state" = "discharging" ]; then
+    notify-send -u critical "$(get_battery_status $battery_level $battery_state) Low battery" --icon " " -r 101029
     beep 0.03 440
     beep 0.03 440
     beep 0.03 440
@@ -22,9 +22,10 @@ else
     prev_battery_level=5
 fi
 
-if [ $((battery_level / 20)) -lt $prev_battery_level ] && [ "$discharging" = "discharging" ]; then
-    notify-send "Discharging $(get_battery_status $battery_level $discharging)" --icon " " -r 101033
+# Notify every 20% drop while discharging
+current_level_step=$((battery_level / 20))
+if [ $current_level_step -lt $prev_battery_level ] && [ "$battery_state" = "discharging" ]; then
+    notify-send "Discharging $(get_battery_status $battery_level $battery_state)" --icon " " -r 101033
     beep
 fi
-
-echo $((battery_level / 20)) > "$BATTERY_LEVEL_FILE"
+echo $current_level_step > "$BATTERY_LEVEL_FILE"
