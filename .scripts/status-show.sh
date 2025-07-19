@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-source $HOME/.scripts/volume.sh
-source $HOME/.scripts/battery.sh
-source $HOME/.scripts/wifi-icon.sh
+source $SCRIPTS_PATH/volume.sh
+source $SCRIPTS_PATH/battery.sh
+source $SCRIPTS_PATH/wifi-icon.sh
 
 print_glyph() {
   printf "\u$1\n"
