@@ -110,4 +110,3 @@ $SCRIPTS_PATH/auto-yay.sh openra
 $SCRIPTS_PATH/auto-yay.sh warzone2100
 $SCRIPTS_PATH/auto-yay.sh lm_sensors
 $SCRIPTS_PATH/auto-yay.sh zed
-$SCRIPTS_PATH/auto-yay.sh claude-code
