@@ -3,7 +3,7 @@
 branchFullName=$(git branch --show-current);  
 git switch main;  
 git pull;  
-git checkout $branchFullName;  
+git checkout "$branchFullName";  
 git pull;  
 git reset "$(git merge-base main "$branchFullName")";  
 git add .;  
