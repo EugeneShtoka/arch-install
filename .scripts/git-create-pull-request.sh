@@ -159,6 +159,7 @@ if [[ -n "$jira_ticket" ]]; then
 fi
 
 echo "Info: Creating Merge/Pull Request on $platform..."
+local pr_url=""
 case "$platform" in
   gitlab)
     if ! command -v glab &> /dev/null; then
@@ -166,7 +167,11 @@ case "$platform" in
         exit 1
     fi
     echo "Executing: glab mr create -t \"$title\" -d \"$mr_description\" --source-branch \"$branchName\" --target-branch \"$actual_base_branch_for_pr\""
-    glab mr create -t "$title" -d "$mr_description" --source-branch "$branchName" --target-branch "$actual_base_branch_for_pr" || { echo "Error: glab mr create failed." >&2; exit 1; }
+    pr_url=$(glab mr create -t "$title" -d "$mr_description" --source-branch "$branchName" --target-branch "$actual_base_branch_for_pr" 2>&1 | grep -oE 'https://[^[:space:]]+' | head -1)
+    if [[ $? -ne 0 || -z "$pr_url" ]]; then
+        echo "Error: glab mr create failed or could not extract URL." >&2
+        exit 1
+    fi
     ;;
   github)
     if ! command -v gh &> /dev/null; then
@@ -174,8 +179,30 @@ case "$platform" in
         exit 1
     fi
     echo "Executing: gh pr create --title \"$title\" --body \"$mr_description\" --head \"$branchName\" --base \"$actual_base_branch_for_pr\""
-    gh pr create --title "$title" --body "$mr_description" --head "$branchName" --base "$actual_base_branch_for_pr" || { echo "Error: gh pr create failed." >&2; exit 1; }
+    pr_url=$(gh pr create --title "$title" --body "$mr_description" --head "$branchName" --base "$actual_base_branch_for_pr" 2>&1 | grep -oE 'https://[^[:space:]]+' | head -1)
+    if [[ $? -ne 0 || -z "$pr_url" ]]; then
+        echo "Error: gh pr create failed or could not extract URL." >&2
+        exit 1
+    fi
     ;;
 esac
+
+# Copy PR URL to clipboard
+if [[ -n "$pr_url" ]]; then
+    if command -v xclip &> /dev/null; then
+        echo -n "$pr_url" | xclip -selection clipboard
+        echo "Info: PR URL copied to clipboard: $pr_url"
+    elif command -v wl-copy &> /dev/null; then
+        echo -n "$pr_url" | wl-copy
+        echo "Info: PR URL copied to clipboard: $pr_url"
+    elif command -v pbcopy &> /dev/null; then
+        echo -n "$pr_url" | pbcopy
+        echo "Info: PR URL copied to clipboard: $pr_url"
+    else
+        echo "Warning: No clipboard utility found (xclip, wl-copy, or pbcopy). PR URL: $pr_url"
+    fi
+else
+    echo "Warning: Could not extract PR URL from command output."
+fi
 
 echo "Info: Successfully created branch and merge/pull request."
