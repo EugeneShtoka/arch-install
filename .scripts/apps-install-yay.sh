@@ -114,3 +114,4 @@ $SCRIPTS_PATH/auto-yay.sh shfmt
 $SCRIPTS_PATH/auto-yay.sh aws-session-manager-plugin
 $SCRIPTS_PATH/auto-yay.sh aws-cli-bin
 $SCRIPTS_PATH/auto-yay.sh kubie
+$SCRIPTS_PATH/auto-yay.sh eksctl
