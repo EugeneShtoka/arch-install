@@ -113,3 +113,4 @@ $SCRIPTS_PATH/auto-yay.sh zed
 $SCRIPTS_PATH/auto-yay.sh claude-code
 $SCRIPTS_PATH/auto-yay.sh shfmt
 $SCRIPTS_PATH/auto-yay.sh aws-session-manager-plugin
+$SCRIPTS_PATH/auto-yay.sh aws-cli-bin
