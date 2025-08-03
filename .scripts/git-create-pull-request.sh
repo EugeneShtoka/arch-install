@@ -189,18 +189,8 @@ esac
 
 # Copy PR URL to clipboard
 if [[ -n "$pr_url" ]]; then
-    if command -v xclip &> /dev/null; then
         echo -n "$pr_url" | xclip -selection clipboard
         echo "Info: PR URL copied to clipboard: $pr_url"
-    elif command -v wl-copy &> /dev/null; then
-        echo -n "$pr_url" | wl-copy
-        echo "Info: PR URL copied to clipboard: $pr_url"
-    elif command -v pbcopy &> /dev/null; then
-        echo -n "$pr_url" | pbcopy
-        echo "Info: PR URL copied to clipboard: $pr_url"
-    else
-        echo "Warning: No clipboard utility found (xclip, wl-copy, or pbcopy). PR URL: $pr_url"
-    fi
 else
     echo "Warning: Could not extract PR URL from command output."
 fi
