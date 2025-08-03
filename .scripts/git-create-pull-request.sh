@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 # Default values for optional parameters
-local jira_ticket=""
-local category=""
-local platform="github"
-local title=""
+jira_ticket=""
+category=""
+platform="github"
+title=""
 
 if [[ -z "$GIT_DEFAULT_BRANCH" ]]; then
   echo "Error: GIT_DEFAULT_BRANCH environment variable is not set."
@@ -19,7 +19,7 @@ usage() {
   echo "Options:"
   echo "  --jira-ticket \"<id>\"   Optional JIRA ticket ID (e.g., PROJ-123)."
   echo "  --category \"<name>\"    Optional category for the branch name (e.g., feat, fix, chore)."
-  echo "  --platform \"<tool>\"    Platform for MR/PR. Options: 'gitlab' (default) or 'github'."
+  echo "  --platform \"<tool>\"    Platform for MR/PR. Options: 'github' (default) or 'gitlab'."
   echo "  -h, --help               Show this help message."
   exit 1
 }
@@ -53,13 +53,12 @@ while [[ "$#" -gt 0 ]]; do
       usage ;;
     *) # Positional argument (part of title)
       args_for_title+=("$1")
-      echo "Argument: $1 added to title"
       shift 1
       ;;
   esac
 done
 
-echo ${args_for_title[@]}
+echo "${args_for_title[@]}"
 
 if [[ ${#args_for_title[@]} -gt 0 ]]; then
   title="${args_for_title[*]}" # Joins with space by default with [*]
@@ -91,19 +90,19 @@ echo "Info: Sanitized title: $sanitized_title"
 echo "Info: Category: $category"
 echo "Info: JIRA Ticket: $jira_ticket"
 
-local branch_name_parts=()
+branch_name_parts=()
 if [[ -n "$category" ]]; then
   branch_name_parts+=("$category")
 fi
 
-local core_branch_name="$sanitized_title"
+core_branch_name="$sanitized_title"
 if [[ -n "$jira_ticket" ]]; then
   core_branch_name="$jira_ticket-${core_branch_name}"
 fi
 branch_name_parts+=("$core_branch_name")
 
 # Join parts with '/'
-branchName="${(j:/:)branch_name_parts}"
+IFS='/'; branchName="${branch_name_parts[*]}"; unset IFS
 
 if [[ -z "$branchName" ]]; then
     echo "Error: Could not determine a valid branch name from the title." >&2
@@ -118,7 +117,7 @@ git stash || { echo "Error: git stash failed." >&2; exit 1; }
 echo "Info: Switching to '$GIT_DEFAULT_BRANCH' branch..."
 git switch "$GIT_DEFAULT_BRANCH" || { echo "Error: git switch $GIT_DEFAULT_BRANCH failed." >&2; exit 1; }
 
-local actual_base_branch_for_pr
+actual_base_branch_for_pr
 actual_base_branch_for_pr=$(git rev-parse --abbrev-ref HEAD)
 
 if [[ -z "$actual_base_branch_for_pr" || "$actual_base_branch_for_pr" == "HEAD" ]]; then
@@ -159,7 +158,7 @@ if [[ -n "$jira_ticket" ]]; then
 fi
 
 echo "Info: Creating Merge/Pull Request on $platform..."
-local pr_url=""
+pr_url=""
 case "$platform" in
   gitlab)
     if ! command -v glab &> /dev/null; then
