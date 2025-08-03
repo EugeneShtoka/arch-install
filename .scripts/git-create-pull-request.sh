@@ -189,8 +189,8 @@ esac
 
 # Copy PR URL to clipboard
 if [[ -n "$pr_url" ]]; then
-        echo -n "$pr_url" | xclip -selection clipboard
-        echo "Info: PR URL copied to clipboard: $pr_url"
+    echo -n "$pr_url" | xclip -selection clipboard
+    echo "Info: PR URL copied to clipboard: $pr_url"
 else
     echo "Warning: Could not extract PR URL from command output."
 fi
