@@ -30,7 +30,6 @@ $SCRIPTS_PATH/auto-yay.sh ttf-adobe-source-code-pro-fonts
 $SCRIPTS_PATH/auto-yay.sh ttf-nerd-fonts-symbols
 $SCRIPTS_PATH/auto-yay.sh ttf-font-awesome
 $SCRIPTS_PATH/auto-yay.sh terraform
-$SCRIPTS_PATH/auto-yay.sh aws-cli
 $SCRIPTS_PATH/auto-yay.sh kubectl
 $SCRIPTS_PATH/auto-yay.sh jq
 $SCRIPTS_PATH/auto-yay.sh maim
