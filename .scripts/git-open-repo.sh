@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Check if the current directory is a Git repository
-if ! git rev-parse --is-inside-work-tree &> /dev/null; then
+if ! git rev-parse --is-inside-work-tree &>/dev/null; then
   echo "Warning: This is not a Git repository." >&2
   exit 1
 fi
@@ -19,10 +19,10 @@ if [[ $exit_status -ne 0 || -z "$remote_url" ]]; then
     first_remote=$(echo "$remotes" | head -n1)
     remote_url=$(git remote get-url "$first_remote" 2>/dev/null)
     if [[ -z "$remote_url" ]]; then
-        echo "Warning: Could not retrieve a valid remote URL for remote '$first_remote'." >&2
-        exit 1
+      echo "Warning: Could not retrieve a valid remote URL for remote '$first_remote'." >&2
+      exit 1
     else
-        echo "Info: No 'origin' remote found. Using remote '$first_remote' instead: $remote_url"
+      echo "Info: No 'origin' remote found. Using remote '$first_remote' instead: $remote_url"
     fi
   fi
 fi
@@ -58,7 +58,7 @@ else
 fi
 
 # Open the URL in the default browser
-if command -v xdg-open &> /dev/null; then
+if command -v xdg-open &>/dev/null; then
   setsid xdg-open "$web_url" >/dev/null 2>&1
 else
   echo "Error: 'xdg-open' command not found. Please install xdg-utils." >&2
