@@ -19,3 +19,5 @@ kubie ctx "$CONTEXT" || {
     echo "❌ Failed to switch context"
     exit 1
 }
+
+k9s
