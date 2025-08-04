@@ -115,6 +115,3 @@ source /usr/share/nvm/bash_completion
 
 bindkey '^U' backward-kill-line
 bindkey '^[k' kill-whole-line
-
-# Force rehash for alias recognition
-rehash
