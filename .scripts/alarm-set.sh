@@ -48,13 +48,13 @@ echo "Alarm set for today at $alarm_time"
 
 echo "Waiting for $(($seconds_to_wait / 3600))h $(($seconds_to_wait % 3600 / 60))m $(($seconds_to_wait % 60))s..."
 
-# Run the alarm in completely detached background process
-nohup bash -c "
+# Run the alarm in background process
+(
     sleep $seconds_to_wait
     beep
     beep
     beep
-" &
+) &
 
 # Get the background process ID
 alarm_pid=$!
