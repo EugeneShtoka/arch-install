@@ -110,4 +110,4 @@ eval "$(atuin init zsh --disable-up-arrow)"
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 
-bindkey '^A' backward-kill-line
+bindkey '^U' backward-kill-line

@@ -63,11 +63,6 @@ key = "CapsLock"
 action = "ToggleViMode"
 
 [[keyboard.bindings]]
-key = "A"
-mods = "Alt"
-chars = "\u0015"
-
-[[keyboard.bindings]]
 key = "E"
 mods = "Alt"
 chars = "\u000b"
