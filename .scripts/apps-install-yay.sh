@@ -88,7 +88,6 @@ $SCRIPTS_PATH/auto-yay.sh freetube-bin
 $SCRIPTS_PATH/auto-yay.sh coolreader
 $SCRIPTS_PATH/auto-yay.sh udisks2
 $SCRIPTS_PATH/auto-yay.sh postgresql
-$SCRIPTS_PATH/auto-yay.sh sxiv
 $SCRIPTS_PATH/auto-yay.sh exfatprogs
 $SCRIPTS_PATH/auto-yay.sh slack-desktop
 $SCRIPTS_PATH/auto-yay.sh nvm
