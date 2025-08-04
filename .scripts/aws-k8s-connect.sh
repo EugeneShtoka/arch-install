@@ -20,5 +20,4 @@ kubie ctx "$CONTEXT" || {
     exit 1
 }
 
-echo "📋 Cluster nodes:"
-kubectl get nodes
+k9s
