@@ -58,6 +58,13 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting sudo dirhistory z)
 
 source $ZSH/oh-my-zsh.sh
+
+# Configure zsh-syntax-highlighting to recognize aliases
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_STYLES[alias]='fg=green'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
+ZSH_HIGHLIGHT_STYLES[global-alias]='fg=green'
+
 source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 source $SCRIPTS_PATH/aliases-terminal.sh
 source $SCRIPTS_PATH/aliases.sh
