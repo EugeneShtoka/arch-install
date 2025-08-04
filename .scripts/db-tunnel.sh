@@ -12,7 +12,6 @@ LOCAL_PORT="5433"
 
 echo "Logging into AWS SSO..."
 
-aws ssm start-session --target i-044a14fdab0f8ad29 --document-name AWS-StartPortForwardingSessionToRemoteHost --parameters '{"host":["tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com"],"portNumber":["5432"],"localPortNumber":["5433"]}'
 if aws sso login; then
     echo "AWS SSO login successful"
     echo "Starting port forwarding session..."
