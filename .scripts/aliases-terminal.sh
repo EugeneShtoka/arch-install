@@ -46,4 +46,4 @@ alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
 # TipMaster
 alias db-tunnel-start='ssh -fN -i ~/.ssh/tm-bastion -L 5433:tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com:5432 ec2-user@3.130.146.14'
 alias db-tunnel-stop='pkill -f "ssh.*3.130.146.14"'
-alias ks="aws sso login && kubie ctx && k8s"
+alias ks="aws sso login && kubie ctx && k9s"
