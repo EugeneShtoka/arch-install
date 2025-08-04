@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTEXT="${2:-dev-cluster}"
+CONTEXT="eshtoka@tm-eks-prd.us-east-2.eksctl.io"
 
 echo "🔐 Checking AWS SSO token for profile: $AWS_PROFILE"
 
@@ -19,5 +19,3 @@ kubie ctx "$CONTEXT" || {
     echo "❌ Failed to switch context"
     exit 1
 }
-
-k9s
