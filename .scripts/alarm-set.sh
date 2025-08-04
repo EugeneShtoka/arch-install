@@ -51,9 +51,9 @@ echo "Waiting for $(($seconds_to_wait / 3600))h $(($seconds_to_wait % 3600 / 60)
 # Run the alarm in completely detached background process
 nohup bash -c "
     sleep $seconds_to_wait
-    beep >/dev/null 2>&1
-    beep >/dev/null 2>&1
-    beep >/dev/null 2>&1
+    beep
+    beep
+    beep
 " &
 
 # Get the background process ID
