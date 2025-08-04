@@ -5,14 +5,14 @@ alias keyboard-trainer='setsid tipp10 &>/dev/null'
 alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/null'
 alias view='feh --scale-down --borderless --auto-zoom --image-bg black'
 
-alias cs-pull='"$SCRIPTS_PATH"/custom-scripts-pull.sh'
-alias cs-push='"$SCRIPTS_PATH"/custom-scripts-push.sh'
+alias cs-pull='"$SCRIPTS_PATH/custom-scripts-pull.sh"'
+alias cs-push='"$SCRIPTS_PATH/custom-scripts-push.sh"'
 
-alias reader='"$SCRIPTS_PATH"/book-read.sh'
+alias reader='"$SCRIPTS_PATH/book-read.sh"'
 
-alias play-list='"$SCRIPTS_PATH"/music-play-list.sh'
-alias play='"$SCRIPTS_PATH"/music-play.sh'
-alias stop='"$SCRIPTS_PATH"/music-stop.sh'
+alias play-list='"$SCRIPTS_PATH/music-play-list.sh"'
+alias play='"$SCRIPTS_PATH/music-play.sh"'
+alias stop='"$SCRIPTS_PATH/music-stop.sh"'
 
 alias pgd='setsid xdg-open "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
 alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
