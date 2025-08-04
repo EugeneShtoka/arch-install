@@ -98,7 +98,6 @@ $SCRIPTS_PATH/auto-yay.sh pinta
 $SCRIPTS_PATH/auto-yay.sh picard
 $SCRIPTS_PATH/auto-yay.sh shntool
 $SCRIPTS_PATH/auto-yay.sh mac
-$SCRIPTS_PATH/auto-yay.sh jami-qt
 $SCRIPTS_PATH/auto-yay.sh gemini-cli-go-git
 $SCRIPTS_PATH/auto-yay.sh redli-bin
 $SCRIPTS_PATH/auto-yay.sh kid3
