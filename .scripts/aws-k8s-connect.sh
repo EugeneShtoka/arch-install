@@ -1,7 +1,5 @@
 #!/bin/bash
 
-CONTEXT="eshtoka@tm-eks-prd.us-east-2.eksctl.io"
-
 echo "🔐 Checking AWS SSO token for profile: $AWS_PROFILE"
 
 if aws sts get-caller-identity --profile "$AWS_PROFILE" >/dev/null 2>&1; then
@@ -14,8 +12,8 @@ else
     }
 fi
 
-echo "🔄 Switching k8s context to: $CONTEXT"
-kubie ctx "$CONTEXT" || {
+echo "🔄 Switching k8s context to: $AWS_K8S_CONTEXT"
+kubie ctx "$AWS_K8S_CONTEXT" || {
     echo "❌ Failed to switch context"
     exit 1
 }
