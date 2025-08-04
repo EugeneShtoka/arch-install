@@ -100,7 +100,6 @@ $SCRIPTS_PATH/auto-yay.sh mac
 $SCRIPTS_PATH/auto-yay.sh jami-qt
 $SCRIPTS_PATH/auto-yay.sh gemini-cli-go-git$SCRIPTS_PATH/auto-yay.sh redli-bin
 $SCRIPTS_PATH/auto-yay.sh kid3
-$SCRIPTS_PATH/auto-yay.sh sshuttle
 $SCRIPTS_PATH/auto-yay.sh ethtool
 $SCRIPTS_PATH/auto-yay.sh cursor-bin
 $SCRIPTS_PATH/auto-yay.sh rabbitmq
