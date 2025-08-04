@@ -102,7 +102,6 @@ $SCRIPTS_PATH/auto-yay.sh gemini-cli-go-git$SCRIPTS_PATH/auto-yay.sh redli-bin
 $SCRIPTS_PATH/auto-yay.sh kid3
 $SCRIPTS_PATH/auto-yay.sh cursor-bin
 $SCRIPTS_PATH/auto-yay.sh iw
-$SCRIPTS_PATH/auto-yay.sh openra
 $SCRIPTS_PATH/auto-yay.sh lm_sensors
 $SCRIPTS_PATH/auto-yay.sh zed
 $SCRIPTS_PATH/auto-yay.sh claude-code
