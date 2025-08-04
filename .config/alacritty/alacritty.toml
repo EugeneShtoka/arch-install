@@ -61,3 +61,29 @@ chars = "\u0003"
 [[keyboard.bindings]]
 key = "CapsLock"
 action = "ToggleViMode"
+
+[[keyboard.bindings]]
+key = "A"
+mods = "Alt"
+chars = "\u0015"
+
+[[keyboard.bindings]]
+key = "E"
+mods = "Alt"
+chars = "\u000b"
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Alt"
+chars = "\u0017"
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Control"
+chars = "\u001bb"
+
+# Ctrl+d = move cursor forward one word  
+[[keyboard.bindings]]
+key = "D"
+mods = "Control"
+chars = "\u001bf"
