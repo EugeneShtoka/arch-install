@@ -33,8 +33,8 @@ alias timer='setsid $SCRIPTS_PATH/timer.sh'
 alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 alias wifi=$SCRIPTS_PATH/wifi-connect.sh
 
-alias mail='$SCRIPTS_PATH/email-start.sh'
-alias file-manager='$SCRIPTS_PATH/file-manager-start.sh'
+alias mail=$SCRIPTS_PATH/email-start.sh
+alias file-manager=$SCRIPTS_PATH/file-manager-start.sh
 
 alias tsm='mop -profile ~/.config/mop/market.moprc'
 alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
