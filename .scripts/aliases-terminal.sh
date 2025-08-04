@@ -15,10 +15,10 @@ alias gsb='git fetch && git switch'
 alias gpl='git pull'
 alias ghr='git reset --hard HEAD^ && git pull'
 
-alias gsq='$SCRIPTS_PATH/git-squash.sh'
-alias gpc='$SCRIPTS_PATH/git-push-commit.sh'
-alias gcpr='$SCRIPTS_PATH/git-create-pull-request.sh'
-alias gor='$SCRIPTS_PATH/git-open-repo.sh'
+alias gsq=$SCRIPTS_PATH/git-squash.sh
+alias gpc=$SCRIPTS_PATH/git-push-commit.sh
+alias gcpr=$SCRIPTS_PATH/git-create-pull-request.sh
+alias gor=$SCRIPTS_PATH/git-open-repo.sh
 alias git-alias-default-branch='git symbolic-ref refs/heads/$GIT_DEFAULT_BRANCH refs/heads/$(git rev-parse --abbrev-ref HEAD)'
 
 alias ls='eza --icons -a'
