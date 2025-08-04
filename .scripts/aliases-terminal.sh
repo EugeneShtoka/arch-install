@@ -29,7 +29,7 @@ alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias install=$SCRIPTS_PATH/app-search-and-install.sh
 alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
 alias gmn=$SCRIPTS_PATH/gemini-call.sh
-alias calc=$SCRIPTS_PATH/calculate.sh
+alias calc="$SCRIPTS_PATH"/calculate.sh
 alias timer="setsid $SCRIPTS_PATH/timer.sh"
 alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 alias wifi=$SCRIPTS_PATH/wifi-connect.sh
@@ -46,4 +46,4 @@ alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
 # TipMaster
 alias db-tunnel-start='ssh -fN -i ~/.ssh/tm-bastion -L 5433:tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com:5432 ec2-user@3.130.146.14'
 alias db-tunnel-stop='pkill -f "ssh.*3.130.146.14"'
-alias ks="aws sso login && kubie ctx && k9s"
+alias ks=
