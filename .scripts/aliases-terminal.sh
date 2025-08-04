@@ -1,5 +1,5 @@
 #!/bin/zsh
-alias yayi='$SCRIPTS_PATH/auto-yay.sh'
+alias yayi=$SCRIPTS_PATH/auto-yay.sh
 
 alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
 alias bw-unlock='source $SCRIPTS_PATH/bw-unlock.sh'
