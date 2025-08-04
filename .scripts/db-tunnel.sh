@@ -1,13 +1,27 @@
 #!/bin/zsh
 
+# Database tunnel script - connects to tipmaster-prd via SSM port forwarding
+
+set -e # Exit on any error
+
+# Configuration
+TARGET_INSTANCE="i-044a14fdab0f8ad29"
+RDS_HOST="tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com"
+REMOTE_PORT="5432"
+LOCAL_PORT="5433"
+
 echo "Logging into AWS SSO..."
+
 if aws sso login; then
+    echo "AWS SSO login successful"
     echo "Starting port forwarding session..."
+    echo "Tunneling ${RDS_HOST}:${REMOTE_PORT} -> localhost:${LOCAL_PORT}"
+
     aws ssm start-session \
-        --target i-044a14fdab0f8ad29 \
+        --target "${TARGET_INSTANCE}" \
         --document-name AWS-StartPortForwardingSessionToRemoteHost \
-        --parameters '{"host":["tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com"],"portNumber":["5432"],"localPortNumber":["5433"]}'
+        --parameters "{\"host\":[\"${RDS_HOST}\"],\"portNumber\":[\"${REMOTE_PORT}\"],\"localPortNumber\":[\"${LOCAL_PORT}\"]}"
 else
     echo "AWS SSO login failed"
-    return 1
+    exit 1
 fi
