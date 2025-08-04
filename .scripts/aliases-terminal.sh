@@ -27,11 +27,11 @@ alias clr='/usr/bin/clear'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias install='$SCRIPTS_PATH/app-search-and-install.sh'
 alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
-alias gmn='$SCRIPTS_PATH/gemini-call.sh'
-alias calc='$SCRIPTS_PATH/calculate.sh'
+alias gmn=$SCRIPTS_PATH/gemini-call.sh
+alias calc=$SCRIPTS_PATH/calculate.sh
 alias timer='setsid $SCRIPTS_PATH/timer.sh'
-alias upgrade='$SCRIPTS_PATH/system-upgrade.sh'
-alias wifi='$SCRIPTS_PATH/wifi-connect.sh'
+alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
+alias wifi=$SCRIPTS_PATH/wifi-connect.sh
 
 alias mail='$SCRIPTS_PATH/email-start.sh'
 alias file-manager='$SCRIPTS_PATH/file-manager-start.sh'
