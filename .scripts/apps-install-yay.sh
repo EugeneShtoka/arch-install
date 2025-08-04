@@ -101,7 +101,6 @@ $SCRIPTS_PATH/auto-yay.sh jami-qt
 $SCRIPTS_PATH/auto-yay.sh gemini-cli-go-git$SCRIPTS_PATH/auto-yay.sh redli-bin
 $SCRIPTS_PATH/auto-yay.sh kid3
 $SCRIPTS_PATH/auto-yay.sh cursor-bin
-$SCRIPTS_PATH/auto-yay.sh rabbitmq
 $SCRIPTS_PATH/auto-yay.sh iw
 $SCRIPTS_PATH/auto-yay.sh openra
 $SCRIPTS_PATH/auto-yay.sh warzone2100
