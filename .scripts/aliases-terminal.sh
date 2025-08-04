@@ -1,12 +1,12 @@
 #!/bin/zsh
 alias yayi='"$SCRIPTS_PATH"/auto-yay.sh'
 
-alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
-alias bw-unlock='source $SCRIPTS_PATH/bw-unlock.sh'
-alias bw-create='source $SCRIPTS_PATH/bw-create.sh'
-alias bw-item='source $SCRIPTS_PATH/bw-item.sh'
-alias bw-pass='source $SCRIPTS_PATH/bw-copy-pass.sh'
-alias postal-code='source $SCRIPTS_PATH/postal-code-get.sh'
+alias zrc='source "$SCRIPTS_PATH"/zsh-reload-config.sh'
+alias bw-unlock='source "$SCRIPTS_PATH"/bw-unlock.sh'
+alias bw-create='source "$SCRIPTS_PATH"/bw-create.sh'
+alias bw-item='source "$SCRIPTS_PATH"/bw-item.sh'
+alias bw-pass='source "$SCRIPTS_PATH"/bw-copy-pass.sh'
+alias postal-code='source "$SCRIPTS_PATH"/postal-code-get.sh'
 
 alias gsd='git stash && git switch $GIT_DEFAULT_BRANCH && git pull && clear'
 alias grf='git checkout $GIT_DEFAULT_BRANCH --'
@@ -45,4 +45,3 @@ alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
 # TipMaster
 alias db-tunnel-start='ssh -fN -i ~/.ssh/tm-bastion -L 5433:tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com:5432 ec2-user@3.130.146.14'
 alias db-tunnel-stop='pkill -f "ssh.*3.130.146.14"'
-alias ks=
