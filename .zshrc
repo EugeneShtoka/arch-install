@@ -111,3 +111,4 @@ source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 
 bindkey '^U' backward-kill-line
+bindkey '^[k' kill-whole-line
