@@ -63,11 +63,6 @@ source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 source $SCRIPTS_PATH/aliases-terminal.sh
 source $SCRIPTS_PATH/aliases.sh
 
-# Configure zsh-syntax-highlighting to recognize aliases (after aliases are loaded)
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-ZSH_HIGHLIGHT_STYLES[alias]='fg=green'
-ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
-ZSH_HIGHLIGHT_STYLES[global-alias]='fg=green'
 source <(fzf --zsh)
 
 # Do not show git status for non-git folders
