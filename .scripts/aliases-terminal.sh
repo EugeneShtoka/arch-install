@@ -42,3 +42,6 @@ alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
 
 alias microphone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
+
+# TipMaster
+alias db-tunnel-start='ssh -fN -i ~/.ssh/tm-bastion -L 5433:tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com:5432 ec2-user@3.130.146.14'
