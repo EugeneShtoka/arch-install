@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 echo "Logging into AWS SSO..."
 if aws sso login; then
     echo "Starting port forwarding session..."
