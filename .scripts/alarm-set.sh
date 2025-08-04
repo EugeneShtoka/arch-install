@@ -48,9 +48,16 @@ echo "Alarm set for today at $alarm_time"
 
 echo "Waiting for $(($seconds_to_wait / 3600))h $(($seconds_to_wait % 3600 / 60))m $(($seconds_to_wait % 60))s..."
 
-# Sleep until the target time
-sleep $seconds_to_wait
+# Run the alarm in background process
+(
+    sleep $seconds_to_wait
+    beep
+    beep
+    beep
+) &
 
-beep
-beep
-beep
+# Get the background process ID
+alarm_pid=$!
+
+echo "Alarm running in background (PID: $alarm_pid)"
+echo "To cancel the alarm, run: kill $alarm_pid"
