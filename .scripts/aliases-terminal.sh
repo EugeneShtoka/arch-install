@@ -31,6 +31,7 @@ alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
 alias gmn=$SCRIPTS_PATH/gemini-call.sh
 alias calc=$SCRIPTS_PATH/calculate.sh
 alias timer=$SCRIPTS_PATH/timer-set.sh
+alias alarm=$SCRIPTS_PATH/alarm-set.sh
 alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 alias wifi=$SCRIPTS_PATH/wifi-connect.sh
 
