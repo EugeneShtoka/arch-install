@@ -1,4 +1,5 @@
 #!/bin/zsh
+
 alias yayi=$SCRIPTS_PATH/auto-yay.sh
 
 alias zrc='source $SCRIPTS_PATH/zsh-reload-config.sh'
