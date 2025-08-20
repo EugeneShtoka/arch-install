@@ -176,7 +176,7 @@ mr_description="$title" # Start with the title as the base description
 
 if [[ -n "$jira_ticket" ]]; then
 	if [[ -n "$JIRA_BASE_URL" ]]; then
-		mr_description="$mr_description\n\n[Jira Ticket]($JIRA_BASE_URL$jira_ticket)"
+		mr_description="$mr_description</br></br>[Jira Ticket]($JIRA_BASE_URL$jira_ticket)"
 		echo "Info: JIRA link will be added to the description using JIRA_BASE_URL."
 	else
 		echo "Warning: A JIRA ticket ('$jira_ticket') was provided, but the JIRA_BASE_URL environment variable is not set." >&2
