@@ -50,9 +50,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-source $SCRIPTS_PATH/aliases-terminal.sh
-source $SCRIPTS_PATH/aliases.sh
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -63,6 +60,9 @@ plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting sudo dirhisto
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
+
+source $SCRIPTS_PATH/aliases-terminal.sh
+source $SCRIPTS_PATH/aliases.sh
 
 source <(fzf --zsh)
 
