@@ -23,7 +23,7 @@ alias gor=$SCRIPTS_PATH/git-open-repo.sh
 alias git-alias-default-branch='git symbolic-ref refs/heads/$GIT_DEFAULT_BRANCH refs/heads/$(git rev-parse --abbrev-ref HEAD)'
 
 alias ls='eza --icons -a'
-alias ll='eza --icons -al'
+alias la='eza --icons -al'
 alias clr='/usr/bin/clear'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias install=$SCRIPTS_PATH/app-search-and-install.sh
