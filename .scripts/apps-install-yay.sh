@@ -116,3 +116,4 @@ $SCRIPTS_PATH/auto-yay.sh winetricks
 $SCRIPTS_PATH/auto-yay.sh dwarffortress
 $SCRIPTS_PATH/auto-yay.sh dfhack
 $SCRIPTS_PATH/auto-yay.sh dfhack-bin
+$SCRIPTS_PATH/auto-yay.sh dfhack-twbt
