@@ -3,6 +3,12 @@ function bluetooth_status() {
 }
 
 function is_bluetooth_connected() {
+    # Check if bluetooth is powered on first
+    if ! bluetoothctl show | grep -q "Powered: yes"; then
+        echo "no"
+        return
+    fi
+    
     echo $(timeout 0.5s bluetoothctl info $HEADPHONES_MAC_ADDR | grep Connected | awk '{print $2}')
 }
 
