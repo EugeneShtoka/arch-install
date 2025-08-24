@@ -113,6 +113,3 @@ $SCRIPTS_PATH/auto-yay.sh feh
 $SCRIPTS_PATH/auto-yay.sh protonup-qt
 $SCRIPTS_PATH/auto-yay.sh lutris
 $SCRIPTS_PATH/auto-yay.sh winetricks
-$SCRIPTS_PATH/auto-yay.sh dfhack
-$SCRIPTS_PATH/auto-yay.sh dfhack-bin
-$SCRIPTS_PATH/auto-yay.sh dfhack-twbt
