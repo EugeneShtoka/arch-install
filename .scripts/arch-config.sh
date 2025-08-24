@@ -6,6 +6,8 @@ sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-
 systemctl --user enable start-up-routine.service
 systemctl --user start pipewire-pulse
 systemctl enable bluetooth.service
+sudo systemctl enable tlp.service
+sudo systemctl start tlp.service
 
 if [ "$IS_LAPTOP" -eq 1 ]; then
     $SCRIPTS_PATH/laptop-setup.sh
