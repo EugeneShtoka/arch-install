@@ -3,8 +3,8 @@ function bluetooth_status() {
 }
 
 function is_bluetooth_connected() {
-    # Check if bluetooth is powered on first
-    if ! bluetoothctl show | grep -q "Powered: yes"; then
+    # Check if bluetooth service is active first
+    if ! systemctl is-active --quiet bluetooth; then
         echo "no"
         return
     fi
