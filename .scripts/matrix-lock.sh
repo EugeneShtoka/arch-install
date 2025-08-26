@@ -8,7 +8,7 @@ cmatrix -ab -u 2 &
 CMATRIX_PID=$!
 
 # Lock screen with transparent background to show cmatrix
-i3lock-color \
+i3lock \
     --insidever-color=ffffff00 \
     --ringver-color=ffffff00 \
     --insidewrong-color=ffffff00 \
