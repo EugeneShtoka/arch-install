@@ -116,3 +116,4 @@ $SCRIPTS_PATH/auto-yay.sh winetricks
 $SCRIPTS_PATH/auto-yay.sh xorg-xdpyinfo
 $SCRIPTS_PATH/auto-yay.sh tlp
 $SCRIPTS_PATH/auto-yay.sh i3lock-color
+$SCRIPTS_PATH/auto-yay.sh betterlockscreen
