@@ -118,3 +118,4 @@ $SCRIPTS_PATH/auto-yay.sh tlp
 $SCRIPTS_PATH/auto-yay.sh cmatrix
 $SCRIPTS_PATH/auto-yay.sh i3lock-color
 $SCRIPTS_PATH/auto-yay.sh cxxmatrix-git
+$SCRIPTS_PATH/auto-yay.sh xscreensaver
