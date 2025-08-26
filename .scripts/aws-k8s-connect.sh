@@ -18,4 +18,5 @@ kubie ctx "$AWS_K8S_CONTEXT" || {
     exit 1
 }
 
+sleep 2
 k9s
