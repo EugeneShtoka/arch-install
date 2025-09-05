@@ -118,3 +118,4 @@ $SCRIPTS_PATH/auto-yay.sh tlp
 $SCRIPTS_PATH/auto-yay.sh i3lock-color
 $SCRIPTS_PATH/auto-yay.sh betterlockscreen
 $SCRIPTS_PATH/auto-yay.sh libgendesktop
+$SCRIPTS_PATH/auto-yay.sh okular
