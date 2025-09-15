@@ -54,7 +54,6 @@ authenticate_fingerprint() {
 		log_info "Fingerprint authentication successful"
 		return 0
 	else
-		fprintd-verify "$USER"
 		log_error "Fingerprint authentication failed"
 		return 1
 	fi
