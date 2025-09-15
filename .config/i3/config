@@ -42,7 +42,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- env XSECURELOCK_PAM_SERVICE=login xsecurelock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- env XSECURELOCK_PAM_SERVICE=login XSECURELOCK_AUTH_BACKGROUND_PROGRAM=auth_pam_x11 xsecurelock
 
 # start automation tools
 exec --no-startup-id autokey-gtk
