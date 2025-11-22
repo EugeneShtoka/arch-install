@@ -119,3 +119,4 @@ $SCRIPTS_PATH/auto-yay.sh betterlockscreen
 $SCRIPTS_PATH/auto-yay.sh libgendesktop
 $SCRIPTS_PATH/auto-yay.sh foliate
 $SCRIPTS_PATH/auto-yay.sh zmk-studio-bin]8;;\
+$SCRIPTS_PATH/auto-yay.sh zmk-studio]8;;\
