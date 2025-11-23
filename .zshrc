@@ -68,11 +68,11 @@ source <(fzf --zsh)
 
 # Do not show git status for non-git folders
 git_prompt_info_wrapper() {
-    if [[ -d .git ]]; then
-        echo $(git_super_status)
-    else
-        echo $Status
-    fi
+	if [[ -d .git ]]; then
+		echo $(git_super_status)
+	else
+		echo $Status
+	fi
 }
 
 PROMPT='%B%~%b$(git_prompt_info_wrapper) '
@@ -95,8 +95,8 @@ PROMPT='%B%~%b$(git_prompt_info_wrapper) '
 # export ARCHFLAGS="-arch x86_64"
 
 # Reload zsh functions. Uncomment, when adding at least one
-#fpath=($ZSHFN_PATH $fpath);
-#autoload -Uz $fpath[1]/*(.:t);
+fpath=($ZSHFN_PATH $fpath)
+autoload -Uz $fpath[1]/*(.:t)
 
 $SCRIPTS_PATH/ssh-init.sh >/dev/null 2>&1
 #$SCRIPTS_PATH/status-show.sh
