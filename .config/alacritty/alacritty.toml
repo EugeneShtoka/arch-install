@@ -82,8 +82,20 @@ key = "W"
 mods = "Control"
 chars = "\u001bb"
 
-# Ctrl+d = move cursor forward one word  
+# Ctrl+d = move cursor forward one word
 [[keyboard.bindings]]
 key = "D"
 mods = "Control"
 chars = "\u001bf"
+
+# Ctrl+Delete = delete word after cursor
+[[keyboard.bindings]]
+key = "Delete"
+mods = "Control"
+chars = "\u001bd"
+
+# Ctrl+Backspace = delete word after cursor
+[[keyboard.bindings]]
+key = "Backspace"
+mods = "Control"
+chars = "\u0017"
