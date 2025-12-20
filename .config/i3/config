@@ -103,7 +103,7 @@ bindsym $mod+Shift+a exec --no-startup-id $SCRIPTS_PATH/music-play.sh
 bindsym $mod+c exec --no-startup-id $SCRIPTS_PATH/music-toggle.sh
 
 # Keyboard layout switching
-bindsym Control+Shift+Mod4+Mod1+1 exec --no-startup-id setxkbmap us
+bindsym Control+Shift+Mod4+Mod1+1 exec --no-startup-id setxkbmap us -variant altgr-intl
 bindsym Control+Shift+Mod4+Mod1+2 exec --no-startup-id setxkbmap ru
 bindsym Control+Shift+Mod4+Mod1+3 exec --no-startup-id setxkbmap il
 
