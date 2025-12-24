@@ -34,7 +34,7 @@ cyan    = '#6cbc67'
 white   = '#8ff586'
 
 [font]
-normal.family = "Universal"
+normal.family = "Source Code Pro"
 size = 10.0
 
 [cursor]
