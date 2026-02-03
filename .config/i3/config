@@ -76,8 +76,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+x kill
 
-# lock screen
-bindsym $mod+l exec i3lock -c 000000
+# lock screen (switches to English first)
+bindsym $mod+l exec --no-startup-id $SCRIPTS_PATH/lock.sh
 
 # show status
 bindsym $mod+t exec --no-startup-id $SCRIPTS_PATH/status-show.sh
