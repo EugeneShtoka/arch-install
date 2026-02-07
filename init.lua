@@ -137,10 +137,6 @@ vim.o.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
--- Terminal key code timeout - allows Neovim to recognize F-key escape sequences
--- in terminal mode before passing them through to the underlying process
-vim.o.ttimeoutlen = 50
-
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
@@ -167,7 +163,7 @@ vim.o.scrolloff = 10
 
 -- Show borders between window splits
 vim.o.laststatus = 3
-vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = '│', vertleft = '┤', vertright = '├', verthoriz = '┼', diff = '░' }
+vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = '│', vertleft = '┤', vertright = '├', verthoriz = '┼' }
 
 -- Disable the intro message (Help poor children in Uganda, etc.)
 --vim.opt.shortmess:append 'I'
