@@ -137,6 +137,10 @@ vim.o.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
+-- Terminal key code timeout - allows Neovim to recognize F-key escape sequences
+-- in terminal mode before passing them through to the underlying process
+vim.o.ttimeoutlen = 50
+
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
@@ -163,7 +167,7 @@ vim.o.scrolloff = 10
 
 -- Show borders between window splits
 vim.o.laststatus = 3
-vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = '│', vertleft = '┤', vertright = '├', verthoriz = '┼' }
+vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = '│', vertleft = '┤', vertright = '├', verthoriz = '┼', diff = '░' }
 
 -- Disable the intro message (Help poor children in Uganda, etc.)
 --vim.opt.shortmess:append 'I'
@@ -176,7 +180,7 @@ vim.o.confirm = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
-vim.cmd('cabbrev qq quit!')
+vim.cmd 'cabbrev qq quit!'
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -362,6 +366,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]erminal / [T]oggle' },
         { '<leader>c', group = '[C]laude' },
+        { '<leader>g', group = '[G]it' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
@@ -580,11 +585,11 @@ require('lazy').setup({
           map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
 
           map('gm', function()
-            require('telescope.builtin').lsp_document_symbols({ symbols = { 'method'} })
+            require('telescope.builtin').lsp_document_symbols { symbols = { 'method' } }
           end, 'Open Document Methods')
 
           map('gf', function()
-            require('telescope.builtin').lsp_document_symbols({ symbols = { 'function'} })
+            require('telescope.builtin').lsp_document_symbols { symbols = { 'function' } }
           end, 'Open Document Functions')
 
           -- Fuzzy find all the symbols in your current workspace.
@@ -917,6 +922,16 @@ require('lazy').setup({
           vim.wo.winhighlight = 'Normal:TermNormal'
         end,
       })
+
+      -- Diff highlighting (VS Code style: red/green only, no yellow)
+      local function set_diff_colors()
+        vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#1a4d1a' }) -- green background for added lines
+        vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#4d1a1a' }) -- red background for deleted lines
+        vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#2a2a2a' }) -- subtle dark background for changed lines (no yellow)
+        vim.api.nvim_set_hl(0, 'DiffText', { bg = '#2d7a2d', bold = true }) -- brighter green for changed text
+      end
+      set_diff_colors()
+      vim.api.nvim_create_autocmd('ColorScheme', { callback = set_diff_colors })
     end,
   },
 
@@ -1002,6 +1017,39 @@ require('lazy').setup({
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
+  { -- Git diff viewer (VSCode-style side-by-side diff)
+    'esmuellert/codediff.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    cmd = 'CodeDiff',
+    keys = {
+      { '<leader>gd', '<cmd>CodeDiff<cr>', desc = '[G]it [D]iff' },
+      { '<leader>gD', '<cmd>CodeDiff main...<cr>', desc = '[G]it [D]iff vs main (PR-style)' },
+      {
+        '<leader>gq',
+        function()
+          local dominated = {}
+          for _, tp in ipairs(vim.api.nvim_list_tabpages()) do
+            for _, win in ipairs(vim.api.nvim_tabpage_list_wins(tp)) do
+              local buf = vim.api.nvim_win_get_buf(win)
+              local ft = vim.bo[buf].filetype
+              if ft == 'codediff-explorer' or ft == 'codediff-history' then
+                dominated[tp] = true
+                break
+              end
+            end
+          end
+          for tp, _ in pairs(dominated) do
+            if vim.api.nvim_tabpage_is_valid(tp) then
+              vim.cmd('tabclose ' .. vim.api.nvim_tabpage_get_number(tp))
+            end
+          end
+        end,
+        desc = '[G]it diff [Q]uit all',
+      },
+    },
+    opts = {},
+  },
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
@@ -1020,7 +1068,6 @@ require('lazy').setup({
       'folke/snacks.nvim',
     },
     opts = {
-      log_level = 'debug', -- Temporarily enable to diagnose disconnects
       terminal = {
         provider = 'snacks',
         split_side = 'right',
@@ -1065,9 +1112,9 @@ require('lazy').setup({
 
         -- Create or reuse window
         if not _G.term_win or not vim.api.nvim_win_is_valid(_G.term_win) then
-          vim.cmd('botright split')
+          vim.cmd 'botright split'
           _G.term_win = vim.api.nvim_get_current_win()
-          vim.cmd('wincmd J')
+          vim.cmd 'wincmd J'
         else
           vim.api.nvim_set_current_win(_G.term_win)
         end
@@ -1078,7 +1125,7 @@ require('lazy').setup({
         -- Show buffer in window
         vim.api.nvim_win_set_buf(_G.term_win, _G.term_bufs[name])
         _G.current_term = name
-        vim.cmd('startinsert')
+        vim.cmd 'startinsert'
       end
 
       local function toggle_term_panel()
@@ -1091,22 +1138,49 @@ require('lazy').setup({
       end
 
       vim.keymap.set('n', '<leader>tt', toggle_term_panel, { desc = '[T]erminal [T]oggle' })
-      vim.keymap.set('n', '<leader>ts', function() open_term_panel('shell', nil) end, { desc = '[T]erminal [S]hell' })
-      vim.keymap.set('n', '<leader>tj', function() open_term_panel('jsdbg', 'node --inspect') end, { desc = '[T]erminal [J]S debug' })
-      vim.keymap.set('n', '<leader>tu', function() open_term_panel('test', 'npm test') end, { desc = '[T]erminal [U]nit tests' })
+      vim.keymap.set('n', '<leader>ts', function()
+        open_term_panel('shell', nil)
+      end, { desc = '[T]erminal [S]hell' })
+      vim.keymap.set('n', '<leader>tj', function()
+        open_term_panel('jsdbg', 'node --inspect')
+      end, { desc = '[T]erminal [J]S debug' })
+      vim.keymap.set('n', '<leader>tu', function()
+        open_term_panel('test', 'npm test')
+      end, { desc = '[T]erminal [U]nit tests' })
 
       -- Terminal/Normal mode keymaps using F-keys (reliable in all terminals)
       -- F2=main, F3=claude code, F4=shell, F5=debug, F6=unit tests, F7=toggle
       local term_keymaps = {
-        { '<F4>', function() open_term_panel('shell', nil) end, 'Terminal: shell' },
-        { '<F5>', function() open_term_panel('js-debug', 'node --inspect') end, 'Terminal: JS debug' },
-        { '<F6>', function() open_term_panel('test', 'npm test') end, 'Terminal: unit tests' },
+        {
+          '<F4>',
+          function()
+            open_term_panel('shell', nil)
+          end,
+          'Terminal: shell',
+        },
+        {
+          '<F5>',
+          function()
+            open_term_panel('js-debug', 'node --inspect')
+          end,
+          'Terminal: JS debug',
+        },
+        {
+          '<F6>',
+          function()
+            open_term_panel('test', 'npm test')
+          end,
+          'Terminal: unit tests',
+        },
         { '<F7>', toggle_term_panel, 'Toggle terminal' },
       }
 
       for _, map in ipairs(term_keymaps) do
         vim.keymap.set('n', map[1], map[2], { desc = map[3] })
-        vim.keymap.set('t', map[1], function() vim.cmd('stopinsert') map[2]() end, { desc = map[3] })
+        vim.keymap.set('t', map[1], function()
+          vim.cmd 'stopinsert'
+          map[2]()
+        end, { desc = map[3] })
       end
 
       -- Find main editor window (not terminal, not Claude)
@@ -1125,14 +1199,24 @@ require('lazy').setup({
 
       -- F2 = focus main editor window (from terminal or claude)
       vim.keymap.set('t', '<F2>', function()
-        vim.cmd('stopinsert')
+        vim.cmd 'stopinsert'
         focus_main_editor()
       end, { desc = 'Focus main window' })
-      vim.keymap.set('n', '<F2>', focus_main_editor, { desc = 'Focus main window' })
+      vim.keymap.set('n', '<F2>', function()
+        vim.cmd 'stopinsert'
+        focus_main_editor()
+      end, { desc = 'Focus main window' })
 
-      -- F3 = focus Claude Code
-      vim.keymap.set('t', '<F3>', '<C-\\><C-n><cmd>ClaudeCodeFocus<cr>', { desc = 'Focus Claude Code' })
-      vim.keymap.set('n', '<F3>', '<cmd>ClaudeCodeFocus<cr>', { desc = 'Focus Claude Code' })
+      -- F3 = focus Claude Code and enter insert mode
+      vim.keymap.set('t', '<F3>', function()
+        vim.cmd 'stopinsert'
+        vim.cmd 'ClaudeCodeFocus'
+        vim.cmd 'startinsert'
+      end, { desc = 'Focus Claude Code' })
+      vim.keymap.set('n', '<F3>', function()
+        vim.cmd 'ClaudeCodeFocus'
+        vim.cmd 'startinsert'
+      end, { desc = 'Focus Claude Code' })
 
       -- Redraw Claude Code terminal when it gains focus (fixes rendering after popups)
       vim.api.nvim_create_autocmd('WinEnter', {
@@ -1140,24 +1224,48 @@ require('lazy').setup({
           local buf = vim.api.nvim_get_current_buf()
           local bt = vim.bo[buf].buftype
           if bt == 'terminal' then
-            -- Force terminal redraw by triggering a resize signal
+            -- Force terminal redraw
             vim.defer_fn(function()
               local win = vim.api.nvim_get_current_win()
               if vim.api.nvim_win_is_valid(win) then
-                -- Send SIGWINCH to terminal to force redraw
-                local chan = vim.bo[buf].channel
-                if chan and chan > 0 then
-                  local width = vim.api.nvim_win_get_width(win)
-                  local height = vim.api.nvim_win_get_height(win)
-                  pcall(vim.api.nvim_chan_send, chan, string.format('\x1b[8;%d;%dt', height, width))
-                end
-                vim.cmd('redraw!')
+                vim.cmd 'redraw!'
               end
             end, 50)
           end
         end,
       })
     end,
+  },
+
+  { -- Render markdown with nice formatting in-buffer
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    ft = { 'markdown', 'Avante' },
+    opts = {},
+  },
+
+  { -- Obsidian vault integration (only loads in vault directory)
+    -- TODO: Configure templates, daily notes, note naming, and link appearance
+    'epwalsh/obsidian.nvim',
+    version = '*',
+    lazy = true,
+    event = {
+      'BufReadPre ' .. vim.fn.expand '~' .. '/Notes/**.md',
+      'BufNewFile ' .. vim.fn.expand '~' .. '/Notes/**.md',
+    },
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      workspaces = {
+        {
+          name = 'notes',
+          path = '~/Notes',
+        },
+      },
+      completion = {
+        nvim_cmp = false,
+        blink = true,
+      },
+    },
   },
 }, {
   ui = {
