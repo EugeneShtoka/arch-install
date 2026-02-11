@@ -84,6 +84,8 @@ bindsym $mod+t exec --no-startup-id $SCRIPTS_PATH/status-show.sh
 
 # A more modern dmenu replacement is rofi:
 bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
+bindsym $mod+g exec --no-startup-id $SCRIPTS_PATH/rofi-games.sh
+bindsym $mod+v exec --no-startup-id $SCRIPTS_PATH/rofi-projects.sh
 
 bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
 
