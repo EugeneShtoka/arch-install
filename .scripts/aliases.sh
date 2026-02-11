@@ -21,7 +21,7 @@ alias stdn='shutdown now'
 alias epub-download='c search -e epub -r 50'
 alias book-download='libgen search -r 50'
 
-source $SCRIPTS_PATH/vim-projects-aliases.sh
+source $SCRIPTS_PATH/projects-aliases.sh
 source $SCRIPTS_PATH/games-aliases.sh
 
 # To maintain this as last item - it should be last in the list
