@@ -182,12 +182,16 @@ mode "resize" {
         bindsym j resize shrink height 5 ppt
         bindsym l resize grow width 5 ppt
 
+        bindsym h+Shift resize shrink width 10 ppt
+        bindsym k+Shift resize grow height 10 ppt
+        bindsym j+Shift resize shrink height 10 ppt
+        bindsym l+Shift resize grow width 10 ppt
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
+        indsym Down resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
+    
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
