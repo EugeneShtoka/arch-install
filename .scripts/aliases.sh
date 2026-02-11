@@ -26,6 +26,7 @@ alias blog='cd $HOME/dev/blog && nvim . && clr'
 alias keyboard='cd $HOME/dev/zmk-config && nvim . && clr'
 alias work-be='cd $HOME/dev/work/exbetz-be-api && nvim . && clr'
 alias system='cd $HOME && nvim . && clr'
+alias nvim-config='cd $HOME/.config/nvim && nvim . && clr'
 
 alias against-the-storm='setsid ~/Games/AgainstTheStorm/start.sh &>/dev/null'
 alias europa='setsid ~/Games/Europa/start.sh &>/dev/null'
