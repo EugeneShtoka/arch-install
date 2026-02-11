@@ -1,0 +1,37 @@
+#!/bin/zsh
+
+alias torrent='setsid qbittorrent &>/dev/null'
+alias music-notation='setsid /usr/bin/env XDG_SESSION_TYPE=x11 mscore &>/dev/null'
+
+alias cs-pull=$SCRIPTS_PATH/custom-scripts-pull.sh
+alias cs-push=$SCRIPTS_PATH/custom-scripts-push.sh
+
+alias reader=$SCRIPTS_PATH/book-read.sh
+
+alias play-list=$SCRIPTS_PATH/music-play-list.sh
+alias play=$SCRIPTS_PATH/music-play.sh
+alias stop=$SCRIPTS_PATH/music-stop.sh
+
+alias pgd='setsid xdg-open "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
+alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
+
+alias spnd='suspend'
+alias stdn='shutdown now'
+
+alias figoro='cd $HOME/dev/figoro && nvim . && clr'
+alias blog='cd $HOME/dev/blog && nvim . && clr'
+alias keyboard='cd $HOME/dev/zmk-config && nvim . && clr'
+alias work-be='cd $HOME/dev/work/exbetz-be-api && nvim . && clr'
+alias system='cd $HOME && nvim . && clr'
+alias nvim-config='cd $HOME/.config/nvim && nvim . && clr'
+
+alias against-the-storm='setsid ~/Games/AgainstTheStorm/start.sh &>/dev/null'
+alias europa='setsid ~/Games/Europa/start.sh &>/dev/null'
+alias victoria='setsid ~/Games/Victoria\ 3/start &>/dev/null'
+alias rim-world='setsid ~/Games/RimWorld/start.sh &>/dev/null'
+alias bar='setsid ~/Games/Beyond\ All\ Reason/Beyond-All-Reason-1.2988.0.AppImage &>/dev/null'
+alias grim-dawn='setsid ~/Games/Grim\ Dawn/start.sh &>/dev/null'
+alias factorio='steam -applaunch 427520'
+
+# To maintain this as last item - it should be last in the list
+alias rename='setsid thunar --bulk-rename &>/dev/null'
