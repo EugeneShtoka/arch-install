@@ -56,7 +56,7 @@ exec --no-startup-id keynav
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) +10% && $SCRIPTS_PATH/volume-status-show.sh Volume increased
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) -10% && $SCRIPTS_PATH/volume-status-show.sh Volume decreased
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl get-default-sink) toggle && $SCRIPTS_PATH/volume-status-show.sh Volume muted 
-bindsym $mod+/ exec --no-startup-id pactl set-source-mute $(pactl get-default-source) toggle && $SCRIPTS_PATH/volume-status-show.sh Microphone muted
+bindsym $mod+slash exec --no-startup-id pactl set-source-mute $(pactl get-default-source) toggle && $SCRIPTS_PATH/volume-status-show.sh Microphone muted
 bindsym XF86AudioPlay exec --no-startup-id $SCRIPTS_PATH/music-toggle.sh
 bindsym XF86AudioStop exec --no-startup-id $SCRIPTS_PATH/music-stop.sh
 
