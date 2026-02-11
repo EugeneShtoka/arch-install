@@ -18,11 +18,20 @@ alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
 alias spnd='suspend'
 alias stdn='shutdown now'
 
-alias epub-download='c search -e epub -r 50'
-alias book-download='libgen search -r 50'
+alias figoro='cd $HOME/dev/figoro && nvim . && clr'
+alias blog='cd $HOME/dev/blog && nvim . && clr'
+alias keyboard='cd $HOME/dev/zmk-config && nvim . && clr'
+alias work-be='cd $HOME/dev/work/exbetz-be-api && nvim . && clr'
+alias system='cd $HOME && nvim . && clr'
+alias nvim-config='cd $HOME/.config/nvim && nvim . && clr'
 
-source $SCRIPTS_PATH/projects-aliases.sh
-source $SCRIPTS_PATH/games-aliases.sh
+alias against-the-storm='setsid ~/Games/AgainstTheStorm/start.sh &>/dev/null'
+alias europa='setsid ~/Games/Europa/start.sh &>/dev/null'
+alias victoria='setsid ~/Games/Victoria\ 3/start &>/dev/null'
+alias rim-world='setsid ~/Games/RimWorld/start.sh &>/dev/null'
+alias bar='setsid ~/Games/Beyond\ All\ Reason/Beyond-All-Reason-1.2988.0.AppImage &>/dev/null'
+alias grim-dawn='setsid ~/Games/Grim\ Dawn/start.sh &>/dev/null'
+alias factorio='steam -applaunch 427520'
 
 # To maintain this as last item - it should be last in the list
 alias rename='setsid thunar --bulk-rename &>/dev/null'
