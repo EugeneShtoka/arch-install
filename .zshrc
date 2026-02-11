@@ -61,8 +61,10 @@ source $ZSH/oh-my-zsh.sh
 
 source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 
-source $SCRIPTS_PATH/aliases-terminal.sh
 source $SCRIPTS_PATH/aliases.sh
+source $SCRIPTS_PATH/aliases-terminal.sh
+source $SCRIPTS_PATH/aliases-games.sh
+source $SCRIPTS_PATH/aliases-projects.sh
 
 source <(fzf --zsh)
 
