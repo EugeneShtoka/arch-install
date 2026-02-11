@@ -37,8 +37,6 @@ alias alarm=$SCRIPTS_PATH/alarm-set.sh
 alias upgrade=$SCRIPTS_PATH/system-upgrade.sh
 alias wifi=$SCRIPTS_PATH/wifi-connect.sh
 
-alias epub-download='c search -e epub -r 50'
-alias book-download='libgen search -r 50'
 alias mail=$SCRIPTS_PATH/email-start.sh
 alias file-manager=$SCRIPTS_PATH/file-manager-start.sh
 
