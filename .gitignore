@@ -65,5 +65,7 @@
 !.config/rofi/launchers/type-4/style-9-no-search.rasi
 !.config/rofi/launchers/type-4/style-9-wide.rasi
 !.config/rofi/launchers/type-4/style-9-columns.rasi
+!.config/nvim
+!.config/nvim/**/*
 !.vscode
 !.vscode/argv.json
