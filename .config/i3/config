@@ -52,6 +52,9 @@ exec --no-startup-id copyq --start-server hide
 
 exec --no-startup-id keynav
 
+# Auto-detect and configure monitors on startup
+exec --no-startup-id $SCRIPTS_PATH/monitor-setup-hook.sh
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) +10% && $SCRIPTS_PATH/volume-status-show.sh Volume increased
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) -10% && $SCRIPTS_PATH/volume-status-show.sh Volume decreased
