@@ -17,7 +17,4 @@ if [[ "$monitorsCount" -eq 1 ]]; then
     sleep 1
     echo "`date` disabling laptop monitor $MONITOR_LAPTOP" >> $LOG_PATH
     xrandr --output $MONITOR_LAPTOP --off
-
-    export MONITOR_LAPTOP MONITOR_EXTERNAL
-    $SCRIPTS_PATH/workspaces-work-setup.sh
 fi
