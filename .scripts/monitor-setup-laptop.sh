@@ -2,7 +2,7 @@
 
 source /home/eugene/.env
 
-MONITOR_LAPTOP=${MONITOR_LAPTOP:-eDP-1}
+MONITOR_LAPTOP=eDP-1
 
 echo "`date` enabling laptop monitor $MONITOR_LAPTOP" >> $LOG_PATH
 xrandr --output $MONITOR_LAPTOP --auto
