@@ -10,8 +10,12 @@ if [[ -z "$MONITOR_EXTERNAL" ]]; then
     exit 0
 fi
 
-monitorsCount=$(xrandr --listactivemonitors | grep 'Monitors:' | awk '{print $2}')
-if [[ "$monitorsCount" -eq 1 ]]; then
+externalActive=$(xrandr --listactivemonitors | grep "$MONITOR_EXTERNAL")
+laptopActive=$(xrandr --listactivemonitors | grep "$MONITOR_LAPTOP")
+if [[ -n "$externalActive" && -n "$laptopActive" ]]; then
+    echo "`date` external active, disabling laptop monitor $MONITOR_LAPTOP" >> $LOG_PATH
+    xrandr --output $MONITOR_LAPTOP --off
+elif [[ -z "$externalActive" ]]; then
     echo "`date` connecting monitor $MONITOR_EXTERNAL" >> $LOG_PATH
     xrandr --output $MONITOR_EXTERNAL --auto
     sleep 1
