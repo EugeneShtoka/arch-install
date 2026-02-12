@@ -5,7 +5,7 @@ systemctl --user start battery-alert.timer
 
 # Create rule to auto-hook monitors on connect
 RULE_FILE="/etc/udev/rules.d/10-monitor.rules"
-CONTENT="SUBSYSTEM==\"drm\", ACTION==\"add\", RUN+=\"/home/eugene/.scripts/monitor-setup-hook.sh external\"\nSUBSYSTEM==\"drm\", ACTION==\"remove\", RUN+=\"/home/eugene/.scripts/monitor-setup-hook.sh laptop\""
+CONTENT="SUBSYSTEM==\"drm\", ACTION==\"change\", RUN+=\"/home/eugene/.scripts/monitor-setup-hook.sh external\""
 
 echo -e "$CONTENT" | sudo tee "$RULE_FILE" > /dev/null
 
