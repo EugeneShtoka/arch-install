@@ -12,6 +12,7 @@ return {
   lazy = false,
   keys = {
     { '\\', ':Neotree toggle<CR>', desc = 'NeoTree toggle', silent = true },
+    { '<F10>', ':Neotree focus<CR>', desc = 'NeoTree focus', silent = true },
   },
   init = function()
     vim.api.nvim_create_autocmd('VimEnter', {

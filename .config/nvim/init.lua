@@ -240,6 +240,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Set conceallevel for markdown files (needed for render-markdown.nvim and obsidian.nvim)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'markdown' },
+  callback = function()
+    vim.opt_local.conceallevel = 2
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -1274,6 +1282,9 @@ require('lazy').setup({
       completion = {
         nvim_cmp = false,
         blink = true,
+      },
+      ui = {
+        enable = false,
       },
     },
   },
