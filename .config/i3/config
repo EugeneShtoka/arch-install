@@ -198,7 +198,13 @@ mode "resize" {
         bindsym k+Shift resize grow height 10 ppt
         bindsym j+Shift resize shrink height 10 ppt
         bindsym l+Shift resize grow width 10 ppt
+
         # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Up resize grow height 10 px or 10 ppt
         bindsym Down resize shrink height 10 px or 10 ppt
