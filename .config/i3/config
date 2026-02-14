@@ -35,7 +35,7 @@ client.background       $transp
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id feh --bg-fill --image-bg black --no-fehbg /dev/null 2>/dev/null; xsetroot -solid "#000000" 2>/dev/null; true
+exec --no-startup-id feh --bg-fill --no-fehbg ~/.config/i3/black.pnm
 exec --no-startup-id dex --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
