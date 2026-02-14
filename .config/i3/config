@@ -194,10 +194,10 @@ mode "resize" {
         bindsym j resize shrink height 5 ppt
         bindsym l resize grow width 5 ppt
 
-        bindsym h+Shift resize shrink width 10 ppt
-        bindsym k+Shift resize grow height 10 ppt
-        bindsym j+Shift resize shrink height 10 ppt
-        bindsym l+Shift resize grow width 10 ppt
+        bindsym Shift+h resize shrink width 10 ppt
+        bindsym Shift+k resize grow height 10 ppt
+        bindsym Shift+j resize shrink height 10 ppt
+        bindsym Shift+l resize grow width 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 5 ppt
@@ -205,10 +205,10 @@ mode "resize" {
         bindsym Down resize shrink height 5 ppt
         bindsym Right resize grow width 5 ppt
 
-        bindsym Left+Shift resize shrink width 10 ppt
-        bindsym Up+Shift resize grow height 10 ppt
-        bindsym Down+Shift resize shrink height 10 ppt
-        bindsym Right+Shift resize grow width 10 ppt
+        bindsym Shift+Left resize shrink width 10 ppt
+        bindsym Shift+Up resize grow height 10 ppt
+        bindsym Shift+Down resize shrink height 10 ppt
+        bindsym Shift+Right resize grow width 10 ppt
     
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
