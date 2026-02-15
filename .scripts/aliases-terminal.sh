@@ -28,6 +28,7 @@ alias clr='/usr/bin/clear'
 alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias mnt='sudo mount'
 alias scp='sudo cp'
+alias clbr='xclip -selection clipboard'
 alias install=$SCRIPTS_PATH/app-search-and-install.sh
 alias uninstall=$SCRIPTS_PATH/app-uninstall.sh
 alias gmn=$SCRIPTS_PATH/gemini-call.sh
