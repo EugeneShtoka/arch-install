@@ -23,7 +23,7 @@
 !.config/dbus-1/services
 !.config/dbus-1/services/**/*
 !.config/i3
-!.config/i3/config
+!.config/i3/**/*
 !.config/dunst
 !.config/dunst/dunstrc
 !.config/mop

@@ -58,7 +58,7 @@ exec --no-startup-id keynav
 exec --no-startup-id $SCRIPTS_PATH/monitor-setup-hook.sh
 
 # Focus workspace 1 on startup
-exec --no-startup-id i3-msg workspace 1
+exec --no-startup-id i3-msg workspace $ws1
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl get-default-sink) +10% && $SCRIPTS_PATH/volume-status-show.sh Volume increased
