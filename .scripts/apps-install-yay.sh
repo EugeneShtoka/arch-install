@@ -98,7 +98,6 @@ $SCRIPTS_PATH/auto-yay.sh shntool
 $SCRIPTS_PATH/auto-yay.sh mac
 $SCRIPTS_PATH/auto-yay.sh gemini-cli-go-git
 $SCRIPTS_PATH/auto-yay.sh redli-bin
-$SCRIPTS_PATH/auto-yay.sh cursor-bin
 $SCRIPTS_PATH/auto-yay.sh lm_sensors
 $SCRIPTS_PATH/auto-yay.sh claude-code
 $SCRIPTS_PATH/auto-yay.sh shfmt
