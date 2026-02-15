@@ -49,7 +49,6 @@ $SCRIPTS_PATH/auto-yay.sh expac
 $SCRIPTS_PATH/auto-yay.sh zoom
 $SCRIPTS_PATH/auto-yay.sh mailspring-bin
 $SCRIPTS_PATH/auto-yay.sh beeper-latest-bin
-$SCRIPTS_PATH/auto-yay.sh visual-studio-code-bin
 $SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
