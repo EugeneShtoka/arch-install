@@ -173,6 +173,11 @@ vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = 
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Use 4 spaces for indentation
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
