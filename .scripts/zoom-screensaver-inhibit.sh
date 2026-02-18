@@ -20,5 +20,5 @@ while true; do
         xset s reset
     fi
 
-    sleep 55
+    sleep 120
 done
