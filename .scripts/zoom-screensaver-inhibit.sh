@@ -17,7 +17,10 @@ while true; do
     done < <(xdotool search --class zoom 2>/dev/null)
 
     if $meeting_active; then
+        printf "meeting active\n"
         xset s reset
+    else
+        printf "no meeting\n"
     fi
 
     sleep 120
