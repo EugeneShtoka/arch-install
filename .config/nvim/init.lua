@@ -1100,6 +1100,17 @@ require('lazy').setup({
     keys = {
       { '<leader>cc', '<cmd>ClaudeCode<cr>', desc = '[C]laude [C]ode toggle' },
       { '<leader>cs', '<cmd>ClaudeCodeSend<cr>', desc = '[C]laude [S]end selection', mode = 'v' },
+      { '<leader>cs', '<cmd>ClaudeCodeSend<cr>', desc = '[C]laude [S]end (tree file)', mode = 'n' },
+      {
+        '<leader>ca',
+        function()
+          local path = vim.api.nvim_buf_get_name(0)
+          if path ~= '' then
+            vim.cmd('ClaudeCodeAdd ' .. vim.fn.fnameescape(path))
+          end
+        end,
+        desc = '[C]laude [A]dd current file',
+      },
       { '<leader>cr', '<cmd>ClaudeCode<cr><cmd>ClaudeCode<cr>', desc = '[C]laude [R]estart' },
     },
   },
