@@ -40,8 +40,6 @@
 !.config/autokey/data
 !.config/autokey/data/**/*
 !.config/autokey/autokey.json
-!.config/kanata
-!.config/kanata/**/*
 !.config/vivaldi
 !.config/vivaldi/.gitignore
 !.config/vivaldi/styles
