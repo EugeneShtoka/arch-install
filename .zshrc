@@ -117,3 +117,4 @@ source /usr/share/nvm/bash_completion
 
 bindkey '^U' backward-kill-line
 bindkey '^[k' kill-whole-line
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
