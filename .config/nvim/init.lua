@@ -173,9 +173,9 @@ vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = 
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- Use 4 spaces for indentation
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+-- Use 2 spaces for indentation
+vim.o.tabstop = 2
+vim.o.shiftwidth = 1
 vim.o.expandtab = true
 
 -- [[ Basic Keymaps ]]
@@ -450,6 +450,18 @@ require('lazy').setup({
             '--column',
             '--smart-case',
           },
+          mappings = {
+            i = {
+              ['<C-v>'] = false,
+              ['<C-x>'] = false,
+              ['<C-S-s>'] = require('telescope.actions').select_vertical,
+            },
+            n = {
+              ['<C-v>'] = false,
+              ['<C-x>'] = false,
+              ['<C-S-s>'] = require('telescope.actions').select_vertical,
+            },
+          },
         },
         extensions = {
           ['ui-select'] = {
@@ -592,15 +604,101 @@ require('lazy').setup({
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('gdf', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
-          map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          map('gdc', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
+          map('gO', function()
+            local ft = vim.bo.filetype
+            local is_ts = ft == 'typescript' or ft == 'typescriptreact' or ft == 'javascript' or ft == 'javascriptreact'
+
+            local pickers = require 'telescope.pickers'
+            local finders = require 'telescope.finders'
+            local conf = require('telescope.config').values
+            local make_entry = require 'telescope.make_entry'
+
+            local buf = vim.api.nvim_get_current_buf()
+            local params = { textDocument = { uri = vim.uri_from_bufnr(buf) } }
+
+            vim.lsp.buf_request_all(buf, 'textDocument/documentSymbol', params, function(responses)
+              local result
+              for _, resp in pairs(responses) do
+                if resp.result and #resp.result > 0 then
+                  result = resp.result
+                  break
+                end
+              end
+              if not result then
+                vim.notify('LSP: no symbols found', vim.log.levels.WARN)
+                return
+              end
+
+              -- Flatten nested DocumentSymbol tree, but only recurse into
+              -- container kinds (Class=5, Interface=11, Namespace=3, Module=2,
+              -- Enum=10, Struct=23) to avoid including properties of object literals
+              local container_kinds = { [2]=true, [3]=true, [5]=true, [10]=true, [11]=true, [23]=true }
+              local syms = {}
+              local function flatten(list)
+                for _, s in ipairs(list or {}) do
+                  table.insert(syms, s)
+                  if s.children and container_kinds[s.kind] then
+                    flatten(s.children)
+                  end
+                end
+              end
+              flatten(result)
+
+              -- TypeScript/JS: exclude functions (kind 12) and variables (kind 13)
+              if is_ts then
+                syms = vim.tbl_filter(function(s)
+                  return s.kind ~= 12 and s.kind ~= 13
+                end, syms)
+              end
+
+              -- Sort by kind (type) first, then alphabetically by name
+              table.sort(syms, function(a, b)
+                if a.kind ~= b.kind then
+                  return a.kind < b.kind
+                end
+                return a.name < b.name
+              end)
+
+              local kind_names = {}
+              for name, num in pairs(vim.lsp.protocol.SymbolKind) do
+                if type(num) == 'number' then kind_names[num] = name end
+              end
+
+              local filename = vim.api.nvim_buf_get_name(buf)
+              local items = vim.tbl_map(function(s)
+                local sr = s.selectionRange or s.range
+                local start = sr and sr.start or { line = 0, character = 0 }
+                local kind_name = kind_names[s.kind] or 'Unknown'
+                return {
+                  filename = filename,
+                  lnum = start.line + 1,
+                  col = start.character + 1,
+                  kind = s.kind,
+                  text = '[' .. kind_name .. '] ' .. s.name,
+                }
+              end, syms)
+
+              pickers
+                .new({}, {
+                  prompt_title = 'Document Symbols',
+                  finder = finders.new_table {
+                    results = items,
+                    entry_maker = make_entry.gen_from_lsp_symbols {},
+                  },
+                  sorter = conf.generic_sorter {},
+                  previewer = conf.qflist_previewer {},
+                })
+                :find()
+            end)
+          end, 'Open Document Symbols')
 
           map('gm', function()
             require('telescope.builtin').lsp_document_symbols { symbols = { 'method' } }
