@@ -175,7 +175,7 @@ vim.o.confirm = true
 
 -- Use 2 spaces for indentation
 vim.o.tabstop = 2
-vim.o.shiftwidth = 1
+vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
 -- [[ Basic Keymaps ]]
@@ -826,7 +826,21 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
+        eslint = {},
+        ts_ls = {
+          settings = {
+            typescript = {
+              preferences = {
+                importModuleSpecifier = 'non-relative',
+              },
+            },
+            javascript = {
+              preferences = {
+                importModuleSpecifier = 'non-relative',
+              },
+            },
+          },
+        },
         --
 
         lua_ls = {
@@ -917,7 +931,10 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
