@@ -852,8 +852,12 @@ require('lazy').setup({
               completion = {
                 callSnippet = 'Replace',
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              runtime = { version = 'LuaJIT' },
+              diagnostics = { globals = { 'vim' } },
+              workspace = {
+                library = { vim.env.VIMRUNTIME },
+                checkThirdParty = false,
+              },
             },
           },
         },
@@ -918,12 +922,18 @@ require('lazy').setup({
         local disable_filetypes = { c = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
-        else
-          return {
-            timeout_ms = 500,
-            lsp_format = 'fallback',
-          }
         end
+
+        -- Run ESLint fix first (sorts imports, removes unused imports)
+        local ft = vim.bo[bufnr].filetype
+        if ft == 'typescript' or ft == 'typescriptreact' or ft == 'javascript' or ft == 'javascriptreact' then
+          pcall(vim.cmd, 'EslintFixAll')
+        end
+
+        return {
+          timeout_ms = 2000,
+          lsp_format = 'fallback',
+        }
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
