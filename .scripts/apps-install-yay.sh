@@ -119,4 +119,3 @@ $SCRIPTS_PATH/auto-yay.sh noto-fonts-emoji
 $SCRIPTS_PATH/auto-yay.sh xorg-xev
 $SCRIPTS_PATH/auto-yay.sh xorg-xsetroot
 $SCRIPTS_PATH/auto-yay.sh nodejs
-$SCRIPTS_PATH/auto-yay.sh ticket
