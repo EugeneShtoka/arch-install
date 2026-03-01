@@ -3,7 +3,7 @@
 REPO="EugeneShtoka/zmk-config"
 MOUNT_POINT="/tmp/qmk"
 TEMP_DIR=$(mktemp -d /tmp/zmk_XXXXXX)
-BOOTLOADER_LABEL="${BOOTLOADER_LABEL:-NICENANO}"
+BOOTLOADER_LABEL="${BOOTLOADER_LABEL:-KEEBART}"
 
 cleanup() {
     mountpoint -q $MOUNT_POINT 2>/dev/null && sudo umount $MOUNT_POINT 2>/dev/null
