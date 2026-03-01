@@ -12,7 +12,7 @@ cleanup() {
 trap cleanup EXIT
 
 wait_for_bootloader() {
-    echo "Waiting for bootloader ($BOOTLOADER_LABEL)..."
+    echo "Waiting for bootloader ($BOOTLOADER_LABEL)..." >&2
     for i in {1..60}; do
         local dev=$(readlink -f /dev/disk/by-label/$BOOTLOADER_LABEL 2>/dev/null)
         [[ -b $dev ]] && echo $dev && return
@@ -28,10 +28,10 @@ flash() {
 
     local dev=$(wait_for_bootloader)
     echo "Mounting $dev..."
-    sudo mount $dev $MOUNT_POINT
+    sudo mount $dev $MOUNT_POINT || { echo "Error: failed to mount $dev" >&2; exit 1; }
 
     echo "Flashing $label..."
-    sudo cp $fw $MOUNT_POINT/
+    sudo cp $fw $MOUNT_POINT/ || { sudo umount $MOUNT_POINT 2>/dev/null; echo "Error: failed to copy firmware" >&2; exit 1; }
     sync
 
     local waited=0
