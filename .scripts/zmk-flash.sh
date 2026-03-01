@@ -60,22 +60,22 @@ right_fw=$(find $TEMP_DIR -name "*.uf2" | grep -v settings_reset | grep right)
 echo "\n=== LEFT KEYBOARD ==="
 
 if [[ -n $left_reset ]]; then
-    read "?Double-tap reset on LEFT keyboard, then press Enter..."
+    echo "Double-tap reset on LEFT keyboard..."
     flash $left_reset "left settings_reset"
 fi
 
-read "?Double-tap reset on LEFT keyboard again, then press Enter..."
+echo "Double-tap reset on LEFT keyboard..."
 flash $left_fw "left firmware"
 
 # Flash right
 echo "\n=== RIGHT KEYBOARD ==="
 
 if [[ -n $right_reset ]]; then
-    read "?Double-tap reset on RIGHT keyboard, then press Enter..."
+    echo "Double-tap reset on RIGHT keyboard..."
     flash $right_reset "right settings_reset"
 fi
 
-read "?Double-tap reset on RIGHT keyboard again, then press Enter..."
+echo "Double-tap reset on RIGHT keyboard..."
 flash $right_fw "right firmware"
 
 echo "\nDone! Both halves updated."
