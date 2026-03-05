@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 git fetch origin
-base=$(git merge-base HEAD origin/HEAD)
+base=$(git merge-base HEAD origin/$(git default_branch))
 
 if [[ -n $1 ]]; then
   msg=$1
