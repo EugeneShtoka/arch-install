@@ -6,7 +6,6 @@
 !.zshfn/**
 !.xprofile
 !.env
-!aliases.zsh
 !.scripts
 !.scripts/**
 !.icons
@@ -26,8 +25,6 @@
 !.config/i3/**/*
 !.config/dunst
 !.config/dunst/dunstrc
-!.config/mop
-!.config/mop/**/*
 !.config/rimworld
 !.config/rimworld/**/*
 !.config/copyq
@@ -60,6 +57,7 @@
 !.config/rofi
 !.config/rofi/launchers
 !.config/rofi/launchers/type-4
+!.config/rofi/launchers/type-4/shared/fonts.rasi
 !.config/rofi/launchers/type-4/style-9-no-search.rasi
 !.config/rofi/launchers/type-4/style-9-wide.rasi
 !.config/rofi/launchers/type-4/style-9-columns.rasi
