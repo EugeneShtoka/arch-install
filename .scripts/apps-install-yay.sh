@@ -120,3 +120,4 @@ $SCRIPTS_PATH/auto-yay.sh xorg-xev
 $SCRIPTS_PATH/auto-yay.sh xorg-xsetroot
 $SCRIPTS_PATH/auto-yay.sh nodejs
 $SCRIPTS_PATH/auto-yay.sh ticker
+$SCRIPTS_PATH/auto-yay.sh google-chrome
