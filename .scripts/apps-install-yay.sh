@@ -53,6 +53,7 @@ $SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh fzf
+$SCRIPTS_PATH/auto-yay.sh zsh-git-prompt
 $SCRIPTS_PATH/auto-yay.sh rust
 $SCRIPTS_PATH/auto-yay.sh atuin-git
 $SCRIPTS_PATH/auto-yay.sh qt6-multimedia-ffmpeg
