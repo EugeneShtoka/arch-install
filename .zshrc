@@ -27,6 +27,8 @@ git_prompt_info_wrapper() {
 	fi
 }
 
+PROMPT='%B%~%b$(git_prompt_info_wrapper) '
+
 # Aliases
 alias gst='git status'
 source $SCRIPTS_PATH/aliases.sh
@@ -51,4 +53,4 @@ source /usr/share/nvm/bash_completion
 PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
 
 # SSH
-$SCRIPTS_PATH/ssh-init.sh >/dev/null 2>&1
+source $SCRIPTS_PATH/ssh-init.sh >/dev/null 2>&1
