@@ -6,8 +6,8 @@ fpath=($ZSHFN_PATH $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_PLUGINS_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PLUGINS_PATH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS_PATH/sudo/sudo.plugin.zsh
 source $ZSH_PLUGINS_PATH/dirhistory/dirhistory.plugin.zsh
 source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
