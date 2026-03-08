@@ -2,7 +2,7 @@
 
 source ~/.env
 
-yes | sudo pacman -Sy alacritty curl zsh zsh-autosuggestions zsh-syntax-highlighting
+yes | sudo pacman -Sy alacritty curl zsh zsh-autosuggestions zsh-syntax-highlighting zoxide
 yes | sudo pacman -R xterm pipewire pipewire-pulse
 
 localectl set-locale LC_TIME=en_GB.UTF-8
