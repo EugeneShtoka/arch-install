@@ -10,6 +10,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/sudo/sudo.plugin.zsh
 source ~/.zsh/plugins/dirhistory/dirhistory.plugin.zsh
+source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 
 # History - managed by atuin
 unset HISTFILE
