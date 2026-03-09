@@ -1,0 +1,6 @@
+[mgr]
+prepend_keymap = [
+  { on = "e", run = "shell 'case \"$(file -b --mime-type %s)\" in image/*) pinta %s & ;; esac'", desc = "Edit image with pinta" },
+  { on = "J", run = "arrow 5",  desc = "Move down 5" },
+  { on = "K", run = "arrow -5", desc = "Move up 5" },
+]

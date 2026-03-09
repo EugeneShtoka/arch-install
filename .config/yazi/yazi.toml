@@ -1,0 +1,16 @@
+[opener]
+open = [
+  { run = 'feh "$@"', desc = "Open with feh" }
+]
+edit = [
+  { run = 'pinta "$@"', desc = "Edit with pinta" }
+]
+
+[[open.rules]]
+mime = "image/*"
+use = ["open", "edit"]
+
+[preview]
+image_quality = 90
+max_width = 3000
+max_height = 3000

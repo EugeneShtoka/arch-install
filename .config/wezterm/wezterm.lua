@@ -17,6 +17,8 @@ config.color_scheme = 'My Cobalt 2'
 config.font = wezterm.font 'Source Code Pro'
 config.font_size = 12.0
 
+config.term = "wezterm"
+
 config.enable_tab_bar = false
 config.window_decorations = 'NONE'
 config.window_close_confirmation = 'NeverPrompt'
