@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-setsid thunar &>/dev/null
+setsid wezterm start -- yazi &>/dev/null
