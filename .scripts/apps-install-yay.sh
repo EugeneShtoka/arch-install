@@ -123,5 +123,4 @@ $SCRIPTS_PATH/auto-yay.sh nodejs
 $SCRIPTS_PATH/auto-yay.sh ticker
 $SCRIPTS_PATH/auto-yay.sh yazi
 $SCRIPTS_PATH/auto-yay.sh tmux
-$SCRIPTS_PATH/auto-yay.sh wezterm
 $SCRIPTS_PATH/auto-yay.sh ghostty
