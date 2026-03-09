@@ -113,7 +113,6 @@ $SCRIPTS_PATH/auto-yay.sh winetricks
 $SCRIPTS_PATH/auto-yay.sh xorg-xdpyinfo
 $SCRIPTS_PATH/auto-yay.sh tlp
 $SCRIPTS_PATH/auto-yay.sh i3lock-color
-$SCRIPTS_PATH/auto-yay.sh betterlockscreen
 $SCRIPTS_PATH/auto-yay.sh libgendesktop
 $SCRIPTS_PATH/auto-yay.sh foliate
 $SCRIPTS_PATH/auto-yay.sh noto-fonts-emoji
