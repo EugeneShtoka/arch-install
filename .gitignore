@@ -14,8 +14,6 @@
 !dev/work
 !dev/work/.gitconfig
 !.config
-!.config/alacritty
-!.config/alacritty/alacritty.toml
 !.config/gtk-3.0
 !.config/gtk-3.0/settings.ini
 !.config/dbus-1
@@ -63,5 +61,5 @@
 !.config/rofi/launchers/type-4/style-9-columns.rasi
 !.config/nvim
 !.config/nvim/**/*
-!.vscode
-!.vscode/argv.json
+!.config/wezterm
+!.config/wezterm/**/*
