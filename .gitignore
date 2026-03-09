@@ -65,3 +65,7 @@
 !.config/wezterm/**/*
 !.config/yazi
 !.config/yazi/**/*
+!.config/xdg-desktop-portal
+!.config/xdg-desktop-portal/portals.conf
+!.config/xdg-desktop-portal-termfilechooser
+!.config/xdg-desktop-portal-termfilechooser/**/*

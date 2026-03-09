@@ -5,6 +5,8 @@ cd ~
 sudo ln -s $SERVICES_PATH/org.freedesktop.Notifications.service /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 systemctl --user enable start-up-routine.service
 systemctl --user start pipewire-pulse
+systemctl --user restart xdg-desktop-portal-termfilechooser
+systemctl --user restart xdg-desktop-portal
 systemctl disable bluetooth.service
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service

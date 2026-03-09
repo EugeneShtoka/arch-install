@@ -1,0 +1,3 @@
+[filechooser]
+cmd=/home/eugene/.config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+default_dir=/home/eugene
