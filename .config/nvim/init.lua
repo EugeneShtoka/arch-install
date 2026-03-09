@@ -173,6 +173,9 @@ vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = 
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- GUI font (for neovide, etc.)
+vim.o.guifont = 'Source Code Pro:h12'
+
 -- Use 2 spaces for indentation
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
@@ -640,7 +643,7 @@ require('lazy').setup({
               -- Flatten nested DocumentSymbol tree, but only recurse into
               -- container kinds (Class=5, Interface=11, Namespace=3, Module=2,
               -- Enum=10, Struct=23) to avoid including properties of object literals
-              local container_kinds = { [2]=true, [3]=true, [5]=true, [10]=true, [11]=true, [23]=true }
+              local container_kinds = { [2] = true, [3] = true, [5] = true, [10] = true, [11] = true, [23] = true }
               local syms = {}
               local function flatten(list)
                 for _, s in ipairs(list or {}) do
@@ -669,7 +672,9 @@ require('lazy').setup({
 
               local kind_names = {}
               for name, num in pairs(vim.lsp.protocol.SymbolKind) do
-                if type(num) == 'number' then kind_names[num] = name end
+                if type(num) == 'number' then
+                  kind_names[num] = name
+                end
               end
 
               local filename = vim.api.nvim_buf_get_name(buf)
@@ -1058,23 +1063,42 @@ require('lazy').setup({
     dependencies = { 'tjdevries/colorbuddy.nvim', tag = 'v1.0.0' },
     config = function()
       require('colorbuddy').colorscheme 'cobalt2'
-      vim.api.nvim_set_hl(0, 'WinSeparator', { fg = '#00AAFF' })
-      vim.api.nvim_set_hl(0, 'TermNormal', { fg = '#8ff586' })
+      -- TermOpen fires while the window is focused; apply focused style immediately
       vim.api.nvim_create_autocmd('TermOpen', {
         callback = function()
-          vim.wo.winhighlight = 'Normal:TermNormal'
+          vim.wo.winhighlight = 'Normal:TermNormalFocused'
+        end,
+      })
+      -- BufWinEnter = terminal re-shown; WinEnter (deferred) will set focused if needed
+      vim.api.nvim_create_autocmd('BufWinEnter', {
+        callback = function()
+          if vim.bo.buftype == 'terminal' then
+            vim.wo.winhighlight = 'Normal:TermNormal'
+          end
         end,
       })
 
       -- Diff highlighting (VS Code style: red/green only, no yellow)
-      local function set_diff_colors()
+      local function set_colors()
+        local green = '#8ff586'
+        -- Preserve cobalt2's Normal.bg; only override fg
+        local normal_hl = vim.api.nvim_get_hl(0, { name = 'Normal', link = false })
+        vim.api.nvim_set_hl(0, 'Normal', { fg = green, bg = normal_hl.bg })
+        vim.api.nvim_set_hl(0, 'NormalNC', { fg = green, bg = normal_hl.bg })
+        vim.api.nvim_set_hl(0, 'WinSeparator', { fg = '#00AAFF' })
+        vim.api.nvim_set_hl(0, 'TermNormal', { fg = green })
+        vim.api.nvim_set_hl(0, 'TermNormalFocused', { fg = green, bg = '#172f42' })
+        vim.api.nvim_set_hl(0, 'NormalFocused', { bg = '#172f42' })
         vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#1a4d1a' }) -- green background for added lines
         vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#4d1a1a' }) -- red background for deleted lines
         vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#2a2a2a' }) -- subtle dark background for changed lines (no yellow)
         vim.api.nvim_set_hl(0, 'DiffText', { bg = '#2d7a2d', bold = true }) -- brighter green for changed text
+        -- Restore green in terminal ANSI palette (cobalt2 remaps color 2 to blue)
+        vim.g.terminal_color_10 = green -- ANSI bright green
       end
-      set_diff_colors()
-      vim.api.nvim_create_autocmd('ColorScheme', { callback = set_diff_colors })
+      -- vim.schedule defers until after colorbuddy finishes all deferred highlight setup
+      vim.schedule(set_colors)
+      vim.api.nvim_create_autocmd('ColorScheme', { callback = vim.schedule_wrap(set_colors) })
     end,
   },
 
@@ -1377,19 +1401,47 @@ require('lazy').setup({
         vim.cmd 'startinsert'
       end, { desc = 'Focus Claude Code' })
 
-      -- Redraw Claude Code terminal when it gains focus (fixes rendering after popups)
+      -- F10 = focus NeoTree
+      vim.keymap.set({ 'n', 't' }, '<F10>', function()
+        vim.cmd 'stopinsert'
+        vim.cmd 'Neotree focus'
+      end, { desc = 'NeoTree focus' })
+
+      -- All windows: focused gets darker bg, unfocused reverts
+      vim.api.nvim_create_autocmd('WinLeave', {
+        callback = function()
+          local buf = vim.api.nvim_get_current_buf()
+          local win = vim.api.nvim_get_current_win()
+          if vim.api.nvim_win_is_valid(win) then
+            if vim.bo[buf].buftype == 'terminal' then
+              vim.wo[win].winhighlight = 'Normal:TermNormal'
+            elseif vim.bo[buf].filetype == 'neo-tree' then
+              vim.api.nvim_set_hl(0, 'NeoTreeNormal', { link = 'Normal' })
+              vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { link = 'Normal' })
+            else
+              vim.wo[win].winhighlight = ''
+            end
+          end
+        end,
+      })
       vim.api.nvim_create_autocmd('WinEnter', {
         callback = function()
           local buf = vim.api.nvim_get_current_buf()
           local bt = vim.bo[buf].buftype
           if bt == 'terminal' then
-            -- Force terminal redraw
+            -- Defer to override snacks winhighlight reset on terminal re-show
             vim.defer_fn(function()
               local win = vim.api.nvim_get_current_win()
               if vim.api.nvim_win_is_valid(win) then
+                vim.wo[win].winhighlight = 'Normal:TermNormalFocused'
                 vim.cmd 'redraw!'
               end
             end, 50)
+          elseif vim.bo[buf].filetype == 'neo-tree' then
+            vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#172f42' })
+            vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#172f42' })
+          else
+            vim.wo.winhighlight = 'Normal:NormalFocused'
           end
         end,
       })

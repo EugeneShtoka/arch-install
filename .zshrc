@@ -6,6 +6,7 @@ fpath=($ZSHFN_PATH $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
 # Plugins
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#e9f06d'
 source $ZSH_PLUGINS_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS_PATH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS_PATH/sudo/sudo.plugin.zsh
