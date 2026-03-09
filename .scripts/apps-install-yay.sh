@@ -3,7 +3,6 @@
 $SCRIPTS_PATH/qbittorrent-install.sh
 
 $SCRIPTS_PATH/auto-yay.sh inotify-tools
-$SCRIPTS_PATH/auto-yay.sh thunar
 $SCRIPTS_PATH/auto-yay.sh rofi
 $SCRIPTS_PATH/auto-yay.sh bluez
 $SCRIPTS_PATH/auto-yay.sh bluez-utils
