@@ -1,6 +1,11 @@
 [mgr]
 linemode = "size_and_info"
 
+[[plugin.prepend_fetchers]]
+id  = "ffmpeg_stats"
+url = "*"
+run = "ffmpeg-stats"
+
 [preview]
 image_quality = 90
 max_width = 3000
