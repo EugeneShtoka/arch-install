@@ -5,20 +5,20 @@ autoload -Uz compinit && compinit
 fpath=($ZSHFN_PATH $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
+# History
+HISTFILE=~/.config/zsh/.history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY HIST_IGNORE_SPACE
+
 # Plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#e9f06d'
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 source $ZSH_PLUGINS_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS_PATH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS_PATH/sudo/sudo.plugin.zsh
 source $ZSH_PLUGINS_PATH/dirhistory/dirhistory.plugin.zsh
 source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
-
-# History - managed by atuin
-unset HISTFILE
-
-# Key bindings
-bindkey '^U' backward-kill-line
-bindkey '^[k' kill-whole-line
 
 git_prompt_info_wrapper() {
 	if [[ -d .git ]]; then
@@ -43,7 +43,7 @@ eval "$(zoxide init zsh)"
 
 # Atuin
 . "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # NVM
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"

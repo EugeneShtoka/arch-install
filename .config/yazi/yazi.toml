@@ -1,14 +1,5 @@
-[opener]
-open = [
-  { run = 'feh "$@"', desc = "Open with feh" }
-]
-edit = [
-  { run = 'pinta "$@"', desc = "Edit with pinta" }
-]
-
-[[open.rules]]
-mime = "image/*"
-use = ["open", "edit"]
+[mgr]
+linemode = "size_and_info"
 
 [preview]
 image_quality = 90
