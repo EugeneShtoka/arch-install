@@ -1,30 +1,38 @@
 [mgr]
 linemode = "size_and_info"
 
-[[plugin.prepend_fetchers]]
-id  = "ffmpeg_stats"
-url = "*"
-run = "ffmpeg-stats"
+[plugin]
+prepend_fetchers = [
+	{ id = "mime", url = "local://*",  run = "mime-ext.local",  prio = "high" },
+	{ id = "mime", url = "remote://*", run = "mime-ext.remote", prio = "high" },
+	{ id = "ffmpeg_stats", url = "*", run = "ffmpeg-stats" },
+]
 
-[[plugin.prepend_previewers]]
-mime = "application/epub+zip"
-run  = "epub"
+prepend_previewers = [
+	{ mime = "application/epub+zip",                            run = "epub"   },
+	{ name = "*.epub",                                          run = "epub"   },
+	{ mime = "application/msword",                              run = "office" },
+	{ mime = "application/vnd.openxmlformats-officedocument.*", run = "office" },
+	{ mime = "application/openxmlformats-officedocument.*",     run = "office" },
+	{ mime = "application/vnd.ms-*",                            run = "office" },
+	{ mime = "application/ms-*",                                run = "office" },
+	{ mime = "application/vnd.oasis.opendocument.*",            run = "office" },
+	{ mime = "application/oasis.opendocument.*",                run = "office" },
+	{ name = "*.docx",                                          run = "office" },
+]
 
-[[plugin.prepend_previewers]]
-mime = "application/msword"
-run  = "office"
-
-[[plugin.prepend_previewers]]
-mime = "application/vnd.openxmlformats-officedocument.*"
-run  = "office"
-
-[[plugin.prepend_previewers]]
-mime = "application/vnd.ms-*"
-run  = "office"
-
-[[plugin.prepend_previewers]]
-mime = "application/vnd.oasis.opendocument.*"
-run  = "office"
+prepend_preloaders = [
+	{ mime = "application/epub+zip",                            run = "epub"   },
+	{ name = "*.epub",                                          run = "epub"   },
+	{ mime = "application/msword",                              run = "office" },
+	{ mime = "application/vnd.openxmlformats-officedocument.*", run = "office" },
+	{ mime = "application/openxmlformats-officedocument.*",     run = "office" },
+	{ mime = "application/vnd.ms-*",                            run = "office" },
+	{ mime = "application/ms-*",                                run = "office" },
+	{ mime = "application/vnd.oasis.opendocument.*",            run = "office" },
+	{ mime = "application/oasis.opendocument.*",                run = "office" },
+	{ name = "*.docx",                                          run = "office" },
+]
 
 [preview]
 image_quality = 90

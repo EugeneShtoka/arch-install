@@ -1,3 +1,10 @@
+require("mime-ext.local"):setup {
+	with_exts = {
+		epub = "application/epub+zip",
+	},
+	fallback_file1 = true,
+}
+
 -- Disable ffmpeg-stats children_add display; we call its methods directly in our linemode
 require("ffmpeg-stats"):setup({
 	duration = false,
