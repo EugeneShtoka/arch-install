@@ -5,6 +5,17 @@ save="$3"
 path="$4"
 out="$5"
 
+logfile="/tmp/yazi-wrapper-debug.log"
+echo "--- $(date) ---" >> "$logfile"
+echo "multiple=$multiple directory=$directory save=$save" >> "$logfile"
+echo "path=$path" >> "$logfile"
+echo "out=$out" >> "$logfile"
+if   [ "$save" = "1" ];      then echo "mode=SAVE" >> "$logfile"
+elif [ "$directory" = "1" ]; then echo "mode=DIRECTORY" >> "$logfile"
+elif [ "$multiple" = "1" ];  then echo "mode=MULTIPLE" >> "$logfile"
+else                               echo "mode=SINGLE_FILE" >> "$logfile"
+fi
+
 sentinel="/tmp/yazi-chooser-done-$$"
 termcmd="wezterm start --always-new-process --"
 
