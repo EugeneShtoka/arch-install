@@ -23,4 +23,11 @@ config.enable_tab_bar = false
 config.window_decorations = 'NONE'
 config.window_close_confirmation = 'NeverPrompt'
 
+config.keys = {
+  { key = 'c', mods = 'CTRL',       action = wezterm.action.CopyTo 'Clipboard' },
+  { key = 'v', mods = 'CTRL',       action = wezterm.action.PasteFrom 'Clipboard' },
+  { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.SendString '\x03' },
+  { key = 'v', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+}
+
 return config
