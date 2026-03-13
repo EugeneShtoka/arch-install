@@ -5,16 +5,6 @@ save="$3"
 path="$4"
 out="$5"
 
-logfile="/tmp/yazi-wrapper-debug.log"
-echo "--- $(date) ---" >> "$logfile"
-echo "multiple=$multiple directory=$directory save=$save" >> "$logfile"
-echo "path=$path" >> "$logfile"
-echo "out=$out" >> "$logfile"
-if   [ "$save" = "1" ];      then echo "mode=SAVE" >> "$logfile"
-elif [ "$directory" = "1" ]; then echo "mode=DIRECTORY" >> "$logfile"
-elif [ "$multiple" = "1" ];  then echo "mode=MULTIPLE" >> "$logfile"
-else                               echo "mode=SINGLE_FILE" >> "$logfile"
-fi
 
 sentinel="/tmp/yazi-chooser-done-$$"
 termcmd="wezterm start --always-new-process --"
@@ -22,6 +12,9 @@ termcmd="wezterm start --always-new-process --"
 wait_sentinel() {
     while [ ! -f "$sentinel" ]; do sleep 0.2; done
     rm -f "$sentinel"
+    if [ -f /tmp/yazi-multi-result ]; then
+        cp /tmp/yazi-multi-result "$out"
+    fi
 }
 
 if [ "$save" = "1" ]; then
@@ -54,6 +47,13 @@ if [ "$save" = "1" ]; then
         fi
     fi
 
+elif [ "$directory" = "1" ] && [ "$multiple" = "1" ]; then
+    # Chromium bug: sends directory=1,multiple=1 for file attachment dialogs
+    echo "$out" > /tmp/yazi-chooser-path
+    $termcmd sh -c 'yazi --chooser-file="$1" "$2"; touch "$3"' -- \
+        "$out" "${path:-$HOME}" "$sentinel"
+    wait_sentinel
+
 elif [ "$directory" = "1" ]; then
     cwd_file="/tmp/yazi-cwd-$$"
     $termcmd sh -c 'yazi --cwd-file="$1" "$2"; touch "$3"' -- \
@@ -65,11 +65,13 @@ elif [ "$directory" = "1" ]; then
     fi
 
 elif [ "$multiple" = "1" ]; then
+    echo "$out" > /tmp/yazi-chooser-path
     $termcmd sh -c 'yazi --chooser-file="$1" "$2"; touch "$3"' -- \
         "$out" "${path:-$HOME}" "$sentinel"
     wait_sentinel
 
 else
+    echo "$out" > /tmp/yazi-chooser-path
     $termcmd sh -c 'yazi --chooser-file="$1" "$2"; touch "$3"' -- \
         "$out" "${path:-$HOME}" "$sentinel"
     wait_sentinel
