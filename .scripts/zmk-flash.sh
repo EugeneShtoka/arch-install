@@ -65,6 +65,8 @@ flash() {
     echo "$label done"
 }
 
+bt_disconnect
+
 # Download latest artifact
 echo "Fetching latest run from $REPO..."
 run_id=$(gh run list -R $REPO --status success -L 1 --json databaseId -q '.[0].databaseId')
