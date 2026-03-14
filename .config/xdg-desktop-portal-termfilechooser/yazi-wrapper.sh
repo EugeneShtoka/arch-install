@@ -1,78 +1,128 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+if [[ "$6" == "1" ]]; then
+  set -x
+fi
+
+# This wrapper script is invoked by xdg-desktop-portal-termfilechooser.
+#
+# Inputs:
+# 1. "1" if multiple files can be chosen, "0" otherwise.
+# 2. "1" if a directory should be chosen, "0" otherwise.
+# 3. "0" if opening files was requested, "1" if writing to a file was
+#    requested. For example, when uploading files in Firefox, this will be "0".
+#    When saving a web page in Firefox, this will be "1".
+# 4. If writing to a file, this is recommended path provided by the caller. For
+#    example, when saving a web page in Firefox, this will be the recommended
+#    path Firefox provided, such as "~/Downloads/webpage_title.html".
+#    Note that if the path already exists, we keep appending "_" to it until we
+#    get a path that does not exist.
+# 5. The output path, to which results should be written.
+# 6. "1" if log level >= DEBUG, "0" otherwise.
+#
+# Output:
+# The script should print the selected paths to the output path (argument #5),
+# one path per line.
+# If nothing is printed, then the operation is assumed to have been canceled.
+
 multiple="$1"
 directory="$2"
 save="$3"
 path="$4"
 out="$5"
+cmd="/usr/bin/yazi"
+# "wezterm start --always-new-process" if you use wezterm
+if [ "$save" = "1" ]; then
+  TITLE="Save File:"
+elif [ "$directory" = "1" ]; then
+  TITLE="Select Directory:"
+else
+  TITLE="Select File:"
+fi
 
+quote_string() {
+  local input="$1"
+  echo "'${input//\'/\'\\\'\'}'"
+}
 
-sentinel="/tmp/yazi-chooser-done-$$"
-termcmd="wezterm start --always-new-process --"
+termcmd="${TERMCMD:-wezterm start --always-new-process}"
 
-wait_sentinel() {
-    while [ ! -f "$sentinel" ]; do sleep 0.2; done
-    rm -f "$sentinel"
-    if [ -f /tmp/yazi-multi-result ]; then
-        cp /tmp/yazi-multi-result "$out"
-    fi
+tmpfile=""
+
+cleanup() {
+  if [ -f "$tmpfile" ]; then
+    /usr/bin/rm "$tmpfile" || :
+  fi
+  if [ "$save" = "1" ] && [ ! -s "$out" ]; then
+    /usr/bin/rm "$path" || :
+  fi
+}
+
+trap cleanup EXIT HUP INT QUIT ABRT TERM
+
+# Returns 0 if safe to overwrite: file absent, empty, or tiny+freshly created
+check_safe_to_save() {
+  local target="$1" size mtime age
+  [ ! -e "$target" ] && return 0
+  size=$(stat -c%s "$target" 2>/dev/null) || return 1
+  [ "$size" = "0" ] && return 0
+  mtime=$(stat -c%Y "$target" 2>/dev/null) || return 1
+  age=$(( $(date +%s) - mtime ))
+  [ "$size" -le 512 ] && [ "$age" -le 30 ] && return 0
+  return 1
+}
+
+write_path_checked() {
+  local target="$1" result
+  if check_safe_to_save "$target"; then
+    printf '%s\n' "$target" > "$out"
+  else
+    result=$(printf 'Cancel\nOverwrite anyway' | \
+      rofi -dmenu -p "WARNING: '$(basename "$target")' already has content!")
+    [ "$result" = "Overwrite anyway" ] && printf '%s\n' "$target" > "$out"
+  fi
 }
 
 if [ "$save" = "1" ]; then
-    suggest_dir=$(dirname "$path")
-    suggest_name=$(basename "$path")
+  suggest_name=$(basename "$path")
 
-    # Auto-save directories: just use the suggested path, no dialog
-    auto_save_dirs="$HOME/Downloads $HOME/Desktop"
-    for dir in $auto_save_dirs; do
-        case "$suggest_dir" in
-            "$dir"|"$dir/"*)
-                printf '%s' "$path" > "$out"
-                exit 0
-                ;;
-        esac
-    done
+  # Copy suggested filename to clipboard for easy empty-file creation
+  printf '%s' "$suggest_name" | xclip -selection clipboard
 
-    # Otherwise: pick directory in yazi, then type filename in rofi
-    cwd_file="/tmp/yazi-cwd-$$"
-    $termcmd sh -c 'yazi --cwd-file="$1" "$2"; touch "$3"' -- \
-        "$cwd_file" "$suggest_dir" "$sentinel"
-    wait_sentinel
+  # Offer quick save to Downloads or custom location via yazi
+  choice=$(printf 'Downloads: %s\nCustom location' "$suggest_name" | \
+    rofi -dmenu -p "Save file:")
 
-    if [ -f "$cwd_file" ]; then
-        save_dir=$(cat "$cwd_file")
-        rm -f "$cwd_file"
-        filename=$(rofi -dmenu -p "Save as:" -filter "$suggest_name")
-        if [ -n "$filename" ]; then
-            printf '%s/%s' "$save_dir" "$filename" > "$out"
-        fi
-    fi
-
-elif [ "$directory" = "1" ] && [ "$multiple" = "1" ]; then
-    # Chromium bug: sends directory=1,multiple=1 for file attachment dialogs
-    echo "$out" > /tmp/yazi-chooser-path
-    $termcmd sh -c 'yazi --chooser-file="$1" "$2"; touch "$3"' -- \
-        "$out" "${path:-$HOME}" "$sentinel"
-    wait_sentinel
+  case "$choice" in
+    "Downloads: $suggest_name")
+      write_path_checked "$HOME/Downloads/$suggest_name"
+      ;;
+    "Custom location")
+      tmpfile=$(/usr/bin/mktemp)
+      # Create empty placeholder so user can navigate to it in yazi
+      touch "$path"
+      eval "$termcmd -- $cmd $(quote_string "--chooser-file=$tmpfile") $(quote_string "$path")"
+      if [ -s "$tmpfile" ]; then
+        selected_file=$(/usr/bin/head -n 1 "$tmpfile")
+        write_path_checked "$selected_file"
+        path="$selected_file"
+      fi
+      ;;
+  esac
 
 elif [ "$directory" = "1" ]; then
-    cwd_file="/tmp/yazi-cwd-$$"
-    $termcmd sh -c 'yazi --cwd-file="$1" "$2"; touch "$3"' -- \
-        "$cwd_file" "${path:-$HOME}" "$sentinel"
-    wait_sentinel
-    if [ -f "$cwd_file" ]; then
-        cat "$cwd_file" > "$out"
-        rm -f "$cwd_file"
-    fi
-
+  # upload files from a directory
+  # Use this if you want to select folder by 'quit' function in yazi.
+  set -- --cwd-file="$(quote_string "$out")" "$(quote_string "$path")"
+  # NOTE: Use this if you want to select folder by enter a.k.a yazi keybind for 'open' funtion ('run = "open") .
+  # set -- --chooser-file="$out" "$path"
+  eval "$termcmd -- $cmd $@"
 elif [ "$multiple" = "1" ]; then
-    echo "$out" > /tmp/yazi-chooser-path
-    $termcmd sh -c 'yazi --chooser-file="$1" "$2"; touch "$3"' -- \
-        "$out" "${path:-$HOME}" "$sentinel"
-    wait_sentinel
-
+  # upload multiple files
+  set -- --chooser-file="$(quote_string "$out")" "$(quote_string "$path")"
+  eval "$termcmd -- $cmd $@"
 else
-    echo "$out" > /tmp/yazi-chooser-path
-    $termcmd sh -c 'yazi --chooser-file="$1" "$2"; touch "$3"' -- \
-        "$out" "${path:-$HOME}" "$sentinel"
-    wait_sentinel
+  # upload only 1 file
+  set -- --chooser-file="$(quote_string "$out")" "$(quote_string "$path")"
+  eval "$termcmd -- $cmd $@"
 fi
