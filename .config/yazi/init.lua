@@ -1,3 +1,5 @@
+require("folder-rules"):setup()
+
 require("mime-ext.local"):setup {
 	with_exts = {
 		epub = "application/epub+zip",
