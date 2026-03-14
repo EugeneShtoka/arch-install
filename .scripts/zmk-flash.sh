@@ -4,12 +4,37 @@ REPO="EugeneShtoka/zmk-config"
 MOUNT_POINT="/tmp/qmk"
 TEMP_DIR=$(mktemp -d /tmp/zmk_XXXXXX)
 BOOTLOADER_LABEL="${BOOTLOADER_LABEL:-KEEBART}"
+BT_NAME_PATTERN="[Pp]iantor"
 
 cleanup() {
     mountpoint -q $MOUNT_POINT 2>/dev/null && sudo umount $MOUNT_POINT 2>/dev/null
     rm -rf $TEMP_DIR
 }
 trap cleanup EXIT
+
+bt_disconnect() {
+    local mac=$(bluetoothctl devices | grep -i "$BT_NAME_PATTERN" | awk '{print $2}' | head -1)
+    [[ -n $mac ]] || { echo "Piantor Pro BT not found in paired devices, skipping disconnect"; return; }
+    echo "Disconnecting Piantor Pro BT ($mac)..."
+    bluetoothctl disconnect $mac
+}
+
+bt_scan_and_connect() {
+    echo "Scanning for Piantor Pro BT (10s)..."
+    bluetoothctl scan on &
+    local scan_pid=$!
+    sleep 10
+    bluetoothctl scan off
+    wait $scan_pid 2>/dev/null
+
+    local mac=$(bluetoothctl devices | grep -i "$BT_NAME_PATTERN" | awk '{print $2}' | head -1)
+    if [[ -n $mac ]]; then
+        echo "Connecting to Piantor Pro BT ($mac)..."
+        bluetoothctl connect $mac
+    else
+        echo "Piantor Pro BT not found after scan" >&2
+    fi
+}
 
 wait_for_bootloader() {
     echo "Waiting for bootloader ($BOOTLOADER_LABEL)..." >&2
