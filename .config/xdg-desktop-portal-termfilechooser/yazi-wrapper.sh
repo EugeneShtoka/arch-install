@@ -45,7 +45,7 @@ quote_string() {
   echo "'${input//\'/\'\\\'\'}'"
 }
 
-termcmd="${TERMCMD:-wezterm start --always-new-process}"
+termcmd="${TERMCMD:-/usr/bin/wezterm start --always-new-process}"
 
 tmpfile=""
 
@@ -72,32 +72,38 @@ check_safe_to_save() {
   return 1
 }
 
+rofi_theme="$HOME/.config/rofi/launchers/type-4/style-9-columns.rasi"
+
 write_path_checked() {
   local target="$1" result
   if check_safe_to_save "$target"; then
     printf '%s\n' "$target" > "$out"
   else
     result=$(printf 'Cancel\nOverwrite anyway' | \
-      rofi -dmenu -p "WARNING: '$(basename "$target")' already has content!")
+      rofi -theme "$rofi_theme" -dmenu -p "WARNING: '$(basename "$target")' already has content!")
     [ "$result" = "Overwrite anyway" ] && printf '%s\n' "$target" > "$out"
   fi
 }
 
 if [ "$save" = "1" ]; then
   suggest_name=$(basename "$path")
+  { [ -z "$suggest_name" ] || [ "$suggest_name" = "." ]; } && suggest_name="file-$(date +%s)"
 
   # Copy suggested filename to clipboard for easy empty-file creation
   printf '%s' "$suggest_name" | xclip -selection clipboard
 
-  # Offer quick save to Downloads or custom location via yazi
-  choice=$(printf 'Downloads: %s\nCustom location' "$suggest_name" | \
-    rofi -dmenu -p "Save file:")
+  # Offer quick save locations or custom location via yazi
+  choice=$(printf 'Downloads: %s\nMusic: %s\nPictures: %s\nDocuments: %s\nTorrents: %s\nCustom location' \
+    "$suggest_name" "$suggest_name" "$suggest_name" "$suggest_name" "$suggest_name" | \
+    rofi -theme "$rofi_theme" -dmenu -p "Save file:")
 
   case "$choice" in
-    "Downloads: $suggest_name")
-      write_path_checked "$HOME/Downloads/$suggest_name"
-      ;;
-    "Custom location")
+    "downloads: $suggest_name")  write_path_checked "$HOME/Downloads/$suggest_name" ;;
+    "documents: $suggest_name")  write_path_checked "$HOME/Documents/$suggest_name" ;;
+    "torrents: $suggest_name")   write_path_checked "$HOME/Torrents/$suggest_name" ;;
+    "music: $suggest_name")      write_path_checked "$HOME/Music/$suggest_name" ;;
+    "pictures: $suggest_name")   write_path_checked "$HOME/Pictures/$suggest_name" ;;
+    "custom location")
       tmpfile=$(/usr/bin/mktemp)
       # Create empty placeholder so user can navigate to it in yazi
       touch "$path"
