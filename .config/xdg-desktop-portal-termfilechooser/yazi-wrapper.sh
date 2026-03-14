@@ -72,42 +72,48 @@ check_safe_to_save() {
   return 1
 }
 
-rofi_theme="$HOME/.config/rofi/launchers/type-4/style-9-columns.rasi"
+zenity_cobalt2() {
+  XDG_CONFIG_HOME="$HOME/.config/zenity-cobalt2" ADW_DEBUG_COLOR_SCHEME=prefer-dark zenity "$@"
+}
 
 write_path_checked() {
-  local target="$1" result
+  local target="$1"
   if check_safe_to_save "$target"; then
     printf '%s\n' "$target" > "$out"
   else
-    result=$(printf 'Cancel\nOverwrite anyway' | \
-      rofi -theme "$rofi_theme" -dmenu -p "WARNING: '$(basename "$target")' already has content!")
-    [ "$result" = "Overwrite anyway" ] && printf '%s\n' "$target" > "$out"
+    zenity_cobalt2 --question --no-wrap \
+      --title="File already exists" \
+      --text="<b>$(basename "$target")</b> already has content.\nOverwrite it?" \
+      --ok-label="Overwrite" --cancel-label="Cancel" \
+      && printf '%s\n' "$target" > "$out"
   fi
 }
 
 if [ "$save" = "1" ]; then
   suggest_name=$(basename "$path")
-  { [ -z "$suggest_name" ] || [ "$suggest_name" = "." ]; } && suggest_name="file-$(date +%s)"
+  { [ -z "$suggest_name" ] || [ "$suggest_name" = "." ] || [ "$suggest_name" = "(null)" ]; } && suggest_name="file-$(date +%s)"
 
   # Copy suggested filename to clipboard for easy empty-file creation
   printf '%s' "$suggest_name" | xclip -selection clipboard
 
   # Offer quick save locations or custom location via yazi
-  choice=$(printf 'Downloads: %s\nMusic: %s\nPictures: %s\nDocuments: %s\nTorrents: %s\nCustom location' \
-    "$suggest_name" "$suggest_name" "$suggest_name" "$suggest_name" "$suggest_name" | \
-    rofi -theme "$rofi_theme" -dmenu -p "Save file:")
+  choice=$(zenity_cobalt2 --list \
+    --title="Save file" \
+    --text="Save <b>$suggest_name</b> to:" \
+    --column="Location" --hide-header \
+    --height=380 --width=400 \
+    "Downloads" "Music" "Pictures" "Documents" "Torrents" "Custom location")
 
   case "$choice" in
-    "downloads: $suggest_name")  write_path_checked "$HOME/Downloads/$suggest_name" ;;
-    "documents: $suggest_name")  write_path_checked "$HOME/Documents/$suggest_name" ;;
-    "torrents: $suggest_name")   write_path_checked "$HOME/Torrents/$suggest_name" ;;
-    "music: $suggest_name")      write_path_checked "$HOME/Music/$suggest_name" ;;
-    "pictures: $suggest_name")   write_path_checked "$HOME/Pictures/$suggest_name" ;;
-    "custom location")
+    "Downloads")  write_path_checked "$HOME/Downloads/$suggest_name" ;;
+    "Music")      write_path_checked "$HOME/Music/$suggest_name" ;;
+    "Pictures")   write_path_checked "$HOME/Pictures/$suggest_name" ;;
+    "Documents")  write_path_checked "$HOME/Documents/$suggest_name" ;;
+    "Torrents")   write_path_checked "$HOME/Torrents/$suggest_name" ;;
+    "Custom location")
       tmpfile=$(/usr/bin/mktemp)
-      # Create empty placeholder so user can navigate to it in yazi
-      touch "$path"
-      eval "$termcmd -- $cmd $(quote_string "--chooser-file=$tmpfile") $(quote_string "$path")"
+      suggest_dir=$(dirname "$path")
+      eval "$termcmd -- $cmd $(quote_string "--chooser-file=$tmpfile") $(quote_string "$suggest_dir")"
       if [ -s "$tmpfile" ]; then
         selected_file=$(/usr/bin/head -n 1 "$tmpfile")
         write_path_checked "$selected_file"

@@ -122,3 +122,4 @@ $SCRIPTS_PATH/auto-yay.sh yazi
 $SCRIPTS_PATH/auto-yay.sh xdg-desktop-portal-termfilechooser-git
 $SCRIPTS_PATH/auto-yay.sh libreoffice-fresh
 $SCRIPTS_PATH/auto-yay.sh xdg-desktop-portal-termfilechooser-boydaihungst-git
+$SCRIPTS_PATH/auto-yay.sh yad
