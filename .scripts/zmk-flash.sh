@@ -106,3 +106,4 @@ echo "Double-tap reset on RIGHT keyboard..."
 flash $right_fw "right firmware"
 
 echo "\nDone! Both halves updated."
+bt_scan_and_connect
