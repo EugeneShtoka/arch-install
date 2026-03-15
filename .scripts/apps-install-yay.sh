@@ -114,6 +114,7 @@ $SCRIPTS_PATH/auto-yay.sh i3lock-color
 $SCRIPTS_PATH/auto-yay.sh libgendesktop
 $SCRIPTS_PATH/auto-yay.sh foliate
 $SCRIPTS_PATH/auto-yay.sh noto-fonts-emoji
+$SCRIPTS_PATH/auto-yay.sh noto-fonts
 $SCRIPTS_PATH/auto-yay.sh xorg-xev
 $SCRIPTS_PATH/auto-yay.sh xorg-xsetroot
 $SCRIPTS_PATH/auto-yay.sh nodejs

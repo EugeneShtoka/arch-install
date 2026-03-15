@@ -14,8 +14,13 @@ scheme.brights[5] = light_blue
 config.color_schemes = { ['My Cobalt 2'] = scheme }
 config.color_scheme = 'My Cobalt 2'
 
-config.font = wezterm.font 'Source Code Pro'
+config.font = wezterm.font_with_fallback {
+  'Source Code Pro',
+  'Noto Sans Mono',
+}
 config.font_size = 12.0
+config.use_cap_height_to_scale_fallback_fonts = true
+config.unicode_version = 15
 
 config.term = "wezterm"
 
