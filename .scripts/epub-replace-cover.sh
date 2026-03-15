@@ -63,7 +63,7 @@ unzip -q "$epub" -d "$tmpdir"
 cp "$cover" "$tmpdir/$cover_zip_path"
 
 out=$(mktemp --suffix=.epub)
-(cd "$tmpdir" && zip -qX "$out" mimetype && zip -qrg "$out" . --exclude mimetype)
+(cd "$tmpdir" && zip -qX "$out" mimetype && zip -qrg "$out" $(ls | grep -v '^mimetype$'))
 
 # Verify
 if ! zip -T "$out" > /dev/null 2>&1; then
