@@ -62,7 +62,7 @@ echo "Cover image in EPUB: $cover_zip_path"
 unzip -q "$epub" -d "$tmpdir"
 cp "$cover" "$tmpdir/$cover_zip_path"
 
-out=$(mktemp --suffix=.epub)
+out=$(mktemp --suffix=.epub) && rm -f "$out"
 (cd "$tmpdir" && zip -qX "$out" mimetype && zip -qrg "$out" $(ls | grep -v '^mimetype$'))
 
 # Verify
