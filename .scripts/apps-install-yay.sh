@@ -120,6 +120,5 @@ $SCRIPTS_PATH/auto-yay.sh xorg-xsetroot
 $SCRIPTS_PATH/auto-yay.sh nodejs
 $SCRIPTS_PATH/auto-yay.sh ticker
 $SCRIPTS_PATH/auto-yay.sh yazi
-$SCRIPTS_PATH/auto-yay.sh xdg-desktop-portal-termfilechooser-git
 $SCRIPTS_PATH/auto-yay.sh libreoffice-fresh
 $SCRIPTS_PATH/auto-yay.sh xdg-desktop-portal-termfilechooser-boydaihungst-git
