@@ -9,11 +9,10 @@ autoload -Uz $fpath[1]/*(.:t)
 HISTFILE=~/.config/zsh/.history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt SHARE_HISTORY HIST_IGNORE_SPACE
+setopt SHARE_HISTORY HIST_IGNORE_SPACE HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS
 
 # Plugins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#e9f06d'
-ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 source $ZSH_PLUGINS_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS_PATH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS_PATH/sudo/sudo.plugin.zsh
@@ -40,6 +39,13 @@ source $SCRIPTS_PATH/aliases-projects.sh
 # Tools
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
+
+# Prefix-based history search on up/down arrows
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
 
 # Atuin
 . "$HOME/.atuin/bin/env"
