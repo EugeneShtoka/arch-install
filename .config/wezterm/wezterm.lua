@@ -16,13 +16,8 @@ config.color_scheme = "My Cobalt 2"
 
 config.font = wezterm.font_with_fallback({
 	"Source Code Pro",
-	"Miriam Mono CLM",
+	{ family = "Miriam Mono CLM", weight = "DemiBold", scale = 1.1 },
 })
-
-config.unicode_width_rules = {
-	-- Force Hebrew block to 1 cell wide (prevents uneven spacing)
-	{ range = { first = 0x0590, last = 0x05FF }, width = 1 },
-}
 config.font_size = 12.0
 
 config.term = "wezterm"
