@@ -1042,7 +1042,7 @@ require('lazy').setup({
           },
           path_gitignore = {
             name = 'path_gitignore',
-            module = 'blink.cmp.sources.path',
+            module = 'gitignore_path',
             opts = {
               show_hidden_files_by_default = true,
               get_cwd = function()
