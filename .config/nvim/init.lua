@@ -1032,8 +1032,24 @@ require('lazy').setup({
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        per_filetype = {
+          gitignore = { 'path_gitignore' },
+        },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          path = {
+            opts = { show_hidden_files_by_default = true },
+          },
+          path_gitignore = {
+            name = 'path_gitignore',
+            module = 'blink.cmp.sources.path',
+            opts = {
+              show_hidden_files_by_default = true,
+              get_cwd = function()
+                return vim.fn.expand '%:p:h'
+              end,
+            },
+          },
         },
       },
 
