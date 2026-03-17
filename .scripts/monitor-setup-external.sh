@@ -10,15 +10,14 @@ if [[ -z "$MONITOR_EXTERNAL" ]]; then
     exit 0
 fi
 
-externalActive=$(xrandr --listactivemonitors | grep "$MONITOR_EXTERNAL")
-laptopActive=$(xrandr --listactivemonitors | grep "$MONITOR_LAPTOP")
-if [[ -n "$externalActive" && -n "$laptopActive" ]]; then
-    echo "`date` external active, disabling laptop monitor $MONITOR_LAPTOP" >> $LOG_PATH
-    xrandr --output $MONITOR_LAPTOP --off
-elif [[ -z "$externalActive" ]]; then
-    echo "`date` connecting monitor $MONITOR_EXTERNAL" >> $LOG_PATH
-    xrandr --output $MONITOR_EXTERNAL --auto
-    sleep 1
-    echo "`date` disabling laptop monitor $MONITOR_LAPTOP" >> $LOG_PATH
+echo "`date` connecting monitor $MONITOR_EXTERNAL" >> $LOG_PATH
+xrandr --output $MONITOR_EXTERNAL --auto --primary
+
+lid_state=$(cat /proc/acpi/button/lid/LID0/state 2>/dev/null | awk '{print $2}')
+if [[ "$lid_state" == "open" ]]; then
+    echo "`date` lid open, placing $MONITOR_LAPTOP to the right of $MONITOR_EXTERNAL" >> $LOG_PATH
+    xrandr --output $MONITOR_LAPTOP --auto --right-of $MONITOR_EXTERNAL
+else
+    echo "`date` lid closed, disabling $MONITOR_LAPTOP" >> $LOG_PATH
     xrandr --output $MONITOR_LAPTOP --off
 fi
