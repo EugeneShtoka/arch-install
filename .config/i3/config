@@ -156,6 +156,18 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# workspace output assignments
+workspace $ws1 output $laptop
+workspace $ws2 output $laptop
+workspace $ws3 output $laptop
+workspace $ws4 output $external
+workspace $ws5 output $external
+workspace $ws6 output $external
+workspace $ws7 output $external
+workspace $ws8 output $external
+workspace $ws9 output $external
+workspace $ws10 output $external
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
