@@ -4,12 +4,17 @@ rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme="style-9-wide"
 
 ws_list=$(i3-msg -t get_tree | jq -r '
+  def rename: {
+    "org.wezfurlong.wezterm": "Terminal",
+    "Vivaldi-stable": "Browser",
+    "Mailspring": "eMail"
+  } as $names | $names[.] // .;
   [.. | objects | select(.type == "workspace") | select(.name != "__i3_scratch")] |
   sort_by(.name | try tonumber catch .) |
   .[] |
   {
     name: .name,
-    apps: ([.. | objects | select(.window != null) | .window_properties.class] | unique | join("  "))
+    apps: ([.. | objects | select(.window != null) | .window_properties.class | rename] | unique | join(", "))
   } |
   if .apps == "" then .name else "\(.name) : \(.apps)" end
 ')
