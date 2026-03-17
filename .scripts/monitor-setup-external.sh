@@ -11,7 +11,7 @@ if [[ -z "$MONITOR_EXTERNAL" ]]; then
 fi
 
 echo "`date` connecting monitor $MONITOR_EXTERNAL" >> $LOG_PATH
-xrandr --output $MONITOR_EXTERNAL --auto --primary
+xrandr --output $MONITOR_EXTERNAL --mode 3840x2160 --rate 120 --primary
 
 # Turn off any other outputs (e.g. leftover HDMI config when switching to DP)
 for monitor in $(xrandr | grep -v "^${MONITOR_LAPTOP} " | grep -v "^${MONITOR_EXTERNAL} " | grep -E ' connected| disconnected' | awk '{print $1}'); do
