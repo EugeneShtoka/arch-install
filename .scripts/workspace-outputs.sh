@@ -13,9 +13,9 @@ assign_workspaces() {
     done
 }
 
-# Active = connected AND currently on (has a resolution in xrandr output)
-active_external=$(xrandr | grep ' connected [0-9]' | grep -v "^${MONITOR_LAPTOP} " | head -n 1 | awk '{print $1}')
-laptop_active=$(xrandr | grep "^${MONITOR_LAPTOP} connected [0-9]")
+# Active = connected AND currently on (has WxH+X+Y geometry; handles "primary" keyword)
+active_external=$(xrandr | grep ' connected' | grep -v "^${MONITOR_LAPTOP} " | grep -E '[0-9]+x[0-9]+\+' | head -n 1 | awk '{print $1}')
+laptop_active=$(xrandr | grep "^${MONITOR_LAPTOP} connected" | grep -E '[0-9]+x[0-9]+\+')
 
 if [[ -n "$active_external" && -n "$laptop_active" ]]; then
     # Combined: split workspaces across both monitors
