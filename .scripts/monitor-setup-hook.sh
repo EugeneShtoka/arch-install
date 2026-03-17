@@ -5,7 +5,7 @@ SCRIPTS_PATH=$USR_HOME/.scripts
 MONITOR_LAPTOP=eDP-1
 
 # Small delay to let the monitor be recognized by xrandr
-sleep 2
+sleep 5
 
 # Determine if running as root (udev) or as user (i3 startup)
 if [[ "$EUID" -eq 0 ]]; then
