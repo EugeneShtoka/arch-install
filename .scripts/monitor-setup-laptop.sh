@@ -12,3 +12,5 @@ for monitor in $(xrandr | grep ' connected' | grep -v "^${MONITOR_LAPTOP} " | aw
     echo "`date` disconnecting monitor $monitor" >> $LOG_PATH
     xrandr --output $monitor --off
 done
+
+$SCRIPTS_PATH/workspace-outputs.sh
