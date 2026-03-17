@@ -26,3 +26,5 @@ else
     echo "`date` lid closed, disabling $MONITOR_LAPTOP" >> $LOG_PATH
     xrandr --output $MONITOR_LAPTOP --off
 fi
+
+$SCRIPTS_PATH/workspace-outputs.sh
