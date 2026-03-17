@@ -8,8 +8,7 @@ CONF=~/.config/i3/workspace-outputs.conf
 assign_workspaces() {
     local start=$1 end=$2 monitor=$3
     for i in $(seq $start $end); do
-        varname="ws$i"
-        echo "workspace \$ws$i output $monitor"
+        echo "workspace $i output $monitor"
     done
 }
 
