@@ -2,5 +2,11 @@ source ~/.env
 
 echo "`date` source xprofile" >> ~/.scripts.log
 
-# Pre-generate i3 workspace-outputs.conf before i3 starts (so $ws1..$ws10 are defined on first load)
+# Generate i3 workspace variable definitions from .env (single source of truth)
+for i in {1..10}; do
+    varname="ws$i"
+    echo "set \$ws$i ${(P)varname}"
+done > ~/.config/i3/workspace-vars.conf
+
+# Pre-generate i3 workspace-outputs.conf before i3 starts
 ~/.scripts/workspace-outputs.sh
