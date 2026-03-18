@@ -58,7 +58,6 @@ exec --no-startup-id copyq --start-server hide
 
 exec --no-startup-id keynav
 exec --no-startup-id $SCRIPTS_PATH/music-notify.sh
-exec --no-startup-id $SCRIPTS_PATH/workspace-notify.sh
 exec --no-startup-id $SCRIPTS_PATH/zoom-screensaver-inhibit.sh
 
 # Auto-detect and configure monitors on startup
