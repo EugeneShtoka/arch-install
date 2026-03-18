@@ -22,6 +22,8 @@ config.font_size = 12.0
 
 config.term = "wezterm"
 
+config.enable_kitty_keyboard = true
+
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
