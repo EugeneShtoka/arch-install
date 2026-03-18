@@ -20,4 +20,4 @@ ws_list=$(i3-msg -t get_tree | jq -r '
 ')
 
 ws=$(echo "$ws_list" | rofi -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "workspace" -matching prefix)
-[[ -n "$ws" ]] && i3-msg workspace "$(echo "$ws" | awk '{print $1}')"
+[[ -n "$ws" ]] && $SCRIPTS_PATH/workspace-goto.sh "$(echo "$ws" | awk '{print $1}')"
