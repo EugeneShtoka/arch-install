@@ -124,4 +124,3 @@ $SCRIPTS_PATH/auto-yay.sh xdg-desktop-portal-termfilechooser-boydaihungst-git
 $SCRIPTS_PATH/auto-yay.sh culmus
 $SCRIPTS_PATH/auto-yay.sh filemanager1-common-systemd-git
 $SCRIPTS_PATH/auto-yay.sh jdk-openjdk
-$SCRIPTS_PATH/auto-yay.sh brave-bin
