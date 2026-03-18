@@ -4,4 +4,4 @@ dir="$HOME/.config/rofi/launchers/type-4"
 theme='style-9'
 
 command=$(. $SCRIPTS_PATH/projects-list.sh | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
-wezterm start -- zsh -ic $command
+[[ -n $command ]] && wezterm start -- zsh -ic $command
