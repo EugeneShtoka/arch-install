@@ -161,16 +161,16 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 1
+bindsym $mod+2 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 2
+bindsym $mod+3 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 3
+bindsym $mod+4 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 4
+bindsym $mod+5 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 5
+bindsym $mod+6 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 6
+bindsym $mod+7 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 7
+bindsym $mod+8 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 8
+bindsym $mod+9 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 9
+bindsym $mod+0 exec --no-startup-id $SCRIPTS_PATH/workspace-goto.sh 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
