@@ -18,9 +18,15 @@ laptop_active=$(xrandr | grep "^${MONITOR_LAPTOP} connected" | grep -E '[0-9]+x[
 
 move_workspaces() {
     local start=$1 end=$2 monitor=$3
+    # Get existing workspace numbers from i3
+    existing=$(i3-msg -t get_workspaces | jq -r '.[].name')
     for i in $(seq $start $end); do
+        echo "$existing" | grep -qx "$i" || continue
         i3-msg "workspace $i; move workspace to output $monitor" 2>/dev/null
     done
+    # Restore focused workspace
+    focused=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused) | .name')
+    [[ -n "$focused" ]] && i3-msg "workspace $focused" 2>/dev/null
 }
 
 if [[ -n "$active_external" && -n "$laptop_active" ]]; then
