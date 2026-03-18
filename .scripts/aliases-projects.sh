@@ -1,11 +1,17 @@
 #!/bin/zsh
 
-alias work-be='cd $HOME/dev/work/exbetz-be-api && nvim . && clr'
-alias nvim-config='cd $HOME/.config/nvim && nvim . && clr'
-alias system='cd $HOME && nvim . && clr'
-alias i3-config='cd $HOME/.config/i3 && nvim . && clr'
-alias terminal='cd $HOME/.config/wezterm && nvim . && clr'
-alias file-browser='cd $HOME/.config/yazi && nvim . && clr'
-alias keyboard='cd $HOME/dev/zmk-config && nvim . && clr'
-alias figoro='cd $HOME/dev/figoro && nvim . && clr'
-alias blog='cd $HOME/dev/blog && nvim . && clr'
+nvim_project() {
+	local name=$1
+	local path=$2
+	alias $name="wezterm cli set-tab-title '$name' && cd '$path' && nvim . && clr"
+}
+
+nvim_project work-be      $HOME/dev/work/exbetz-be-api
+nvim_project nvim-config  $HOME/.config/nvim
+nvim_project system       $HOME
+nvim_project i3-config    $HOME/.config/i3
+nvim_project terminal     $HOME/.config/wezterm
+nvim_project file-browser $HOME/.config/yazi
+nvim_project keyboard     $HOME/dev/zmk-config
+nvim_project figoro       $HOME/dev/figoro
+nvim_project blog         $HOME/dev/blog

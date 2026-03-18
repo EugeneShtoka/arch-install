@@ -33,6 +33,7 @@ config.keys = {
 	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x03") },
 	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "t", mods = "CTRL|SHIFT|ALT", action = wezterm.action.ShowTabNavigator },
 }
 
 return config
