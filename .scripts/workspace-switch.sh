@@ -6,8 +6,9 @@ rofi_theme="style-9-wide"
 ws_list=$(i3-msg -t get_tree | jq -r '
   def rename: {
     "org.wezfurlong.wezterm": "Terminal",
-    "Vivaldi-stable": "Browser",
-    "Mailspring": "eMail"
+    "Vivaldi-stable": "Web browser",
+    "Mailspring": "eMail",
+    "Yazi": "File browser"
   } as $names | $names[.] // .;
   [.. | objects | select(.type == "workspace") | select(.name != "__i3_scratch")] |
   sort_by(.name | try tonumber catch .) |
