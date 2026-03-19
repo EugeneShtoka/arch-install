@@ -8,7 +8,8 @@ ws_list=$(i3-msg -t get_tree | jq -r '
     "org.wezfurlong.wezterm": "Terminal",
     "Vivaldi-stable": "Web browser",
     "Mailspring": "eMail",
-    "Yazi": "File browser"
+    "Yazi": "File browser",
+    "ticker": "Stocks",
   } as $names | $names[.] // .;
   [.. | objects | select(.type == "workspace") | select(.name != "__i3_scratch")] |
   sort_by(.name | try tonumber catch .) |
