@@ -28,6 +28,17 @@ config.enable_tab_bar = false
 config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
 
+wezterm.on("format-tab-title", function(tab)
+	local process = tab.active_pane.foreground_process_name
+	local name = process:match("([^/]+)$") or process
+	if name == "yazi" then
+		return "File browser"
+	elseif name == "ticker" then
+		return "Stock market"
+	end
+	return tab.active_pane.title
+end)
+
 config.keys = {
 	{ key = "c", mods = "CTRL", action = wezterm.action.CopyTo("Clipboard") },
 	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
