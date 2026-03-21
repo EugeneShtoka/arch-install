@@ -21,6 +21,7 @@ for d in $HOME/dev/*(N/) $HOME/dev/work/*(N/); do
 	[[ ${d:t} == work ]] && continue
 	[[ -d $d/.git ]] || continue
 	[[ -v projects[${d:t}] ]] && continue
+	[[ -n ${projects[(r)$d]} ]] && continue
 	projects[${d:t}]=$d
 	ordered+=(${d:t})
 done
