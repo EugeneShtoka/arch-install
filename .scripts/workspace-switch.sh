@@ -21,5 +21,5 @@ ws_list=$(i3-msg -t get_tree | jq -r '
   if .apps == "" then .name else "\(.name) : \(.apps)" end
 ')
 
-ws=$(echo "$ws_list" | rofi -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "workspace" -matching prefix)
+ws=$(echo "$ws_list" | $SCRIPTS_PATH/rofi-run.sh -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "workspace" -matching prefix)
 [[ -n "$ws" ]] && $SCRIPTS_PATH/workspace-goto.sh "$(echo "$ws" | awk '{print $1}')"
