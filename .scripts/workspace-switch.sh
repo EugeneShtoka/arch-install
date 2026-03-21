@@ -10,7 +10,7 @@ wez_json=$(wezterm cli list --format json 2>/dev/null) || wez_json='[]'
 # tab_title is already formatted by format-tab-title (respects set-tab-title)
 wez_tabs=$(echo "$wez_json" | jq -r '
   group_by(.tab_id) | map(.[0]) | sort_by(.tab_id) |
-  .[] | "\(.window_id)\t\(.tab_id)\t\(.tab_title)"
+  .[] | "\(.window_id)\t\(.tab_id)\t\(if .tab_title != "" then .tab_title else .title end)"
 ')
 
 # Wezterm windows from i3 tree: "ws_name\tpane_title"
