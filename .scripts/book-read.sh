@@ -9,7 +9,7 @@ else
 fi
 
 while true; do
-	choice=$(ls -a "$current_path" | grep -v "^\.$" | rofi -i -theme "$dir/$theme.rasi" -dmenu -matching prefix)
+	choice=$(ls -a "$current_path" | grep -v "^\.$" | $SCRIPTS_PATH/rofi-run.sh -i -theme "$dir/$theme.rasi" -dmenu -matching prefix)
 
 	if [[ -z "$choice" ]]; then # User cancelled
 		return 1
