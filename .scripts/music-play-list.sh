@@ -43,7 +43,7 @@ if [ ${#playlist_options[@]} -eq 0 ]; then
     exit 0
 fi
 
-choice=$(printf "%s\n" "${playlist_options[@]}" | sort | rofi -i -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -matching prefix)
+choice=$(printf "%s\n" "${playlist_options[@]}" | sort | $SCRIPTS_PATH/rofi-run.sh -i -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -matching prefix)
 
 if [[ -n "$choice" ]]; then
     $SCRIPTS_PATH/music-stop.sh
