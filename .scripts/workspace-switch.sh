@@ -78,9 +78,9 @@ while IFS='|' read -r ws_name has_wez other_apps; do
     while IFS=$'\t' read -r tab_id tab_title; do
       [[ -z "$tab_id" ]] && continue
       if [[ -n "$other_apps" ]]; then
-        label="${ws_name}.${tab_num} : ${other_apps} | ${tab_title}"
+        label="${ws_name}${tab_num} : ${other_apps} | ${tab_title}"
       else
-        label="${ws_name}.${tab_num} : ${tab_title}"
+        label="${ws_name}${tab_num} : ${tab_title}"
       fi
       entries+=("$label")
       actions+=("${ws_name}"$'\t'"${tab_id}")
