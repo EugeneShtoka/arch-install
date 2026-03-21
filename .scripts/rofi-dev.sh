@@ -7,11 +7,11 @@ typeset -A projects
 
 for d in $HOME/dev/*(N/); do
 	[[ ${d:t} == work ]] && continue
-	projects[${d:t}]=$d
+	[[ -d $d/.git ]] && projects[${d:t}]=$d
 done
 
 for d in $HOME/dev/work/*(N/); do
-	projects[${d:t}]=$d
+	[[ -d $d/.git ]] && projects[${d:t}]=$d
 done
 
 name=$(print -l ${(k)projects} | sort | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
