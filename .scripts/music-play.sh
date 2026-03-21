@@ -3,7 +3,7 @@
 if [ -z "$1" ]; then
 	dir="$HOME/.config/rofi/launchers/type-4"
 	theme='style-9-columns'
-    choice=$(ls $MUSIC_PATH | rofi -i -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
+    choice=$(ls $MUSIC_PATH | $SCRIPTS_PATH/rofi-run.sh -i -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
     if [[ -n $choice ]]; then
         $SCRIPTS_PATH/music-stop.sh
         pathToPlay=$MUSIC_PATH/$choice
