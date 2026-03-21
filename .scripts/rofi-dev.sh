@@ -12,7 +12,9 @@ nvim_project() {
 	projects[$name]=$path
 	ordered+=($name)
 }
-source $SCRIPTS_PATH/aliases-projects.sh
+grep '^nvim_project ' $SCRIPTS_PATH/aliases-projects.sh | while read -r line; do
+	eval $line
+done
 
 # Append git repos from ~/dev and ~/dev/work not already listed
 for d in $HOME/dev/*(N/) $HOME/dev/work/*(N/); do
