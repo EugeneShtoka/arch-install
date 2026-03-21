@@ -38,7 +38,7 @@ if [ -n "$ACTIVE_NETWORK" ]; then
     ROFI_NETWORKS+="Disconnect\n"
 fi
 
-SELECTED_FULL=$(echo -e "$ROFI_NETWORKS" | rofi -theme "$dir/$theme.rasi" -dmenu -matching prefix -theme-str 'inputbar { enabled: false; }')
+SELECTED_FULL=$(echo -e "$ROFI_NETWORKS" | $SCRIPTS_PATH/rofi-run.sh -theme "$dir/$theme.rasi" -dmenu -matching prefix -theme-str 'inputbar { enabled: false; }')
 
 if [ -z "$SELECTED_FULL" ]; then
     echo "No network selected. Exiting."
