@@ -888,6 +888,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'markdownlint-cli2',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -1204,8 +1205,8 @@ require('lazy').setup({
   --
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
@@ -1380,7 +1381,7 @@ require('lazy').setup({
 
       for _, map in ipairs(term_keymaps) do
         vim.keymap.set('n', map[1], map[2], { desc = map[3] })
-        vim.keymap.set('t', map[1], function()
+        vim.keymap.set({ 'i', 't' }, map[1], function()
           vim.cmd 'stopinsert'
           map[2]()
         end, { desc = map[3] })
@@ -1405,7 +1406,7 @@ require('lazy').setup({
         vim.cmd 'stopinsert'
         focus_main_editor()
       end, { desc = 'Focus main window' })
-      vim.keymap.set('n', '<F2>', function()
+      vim.keymap.set({ 'n', 'i' }, '<F2>', function()
         vim.cmd 'stopinsert'
         focus_main_editor()
       end, { desc = 'Focus main window' })
@@ -1416,13 +1417,14 @@ require('lazy').setup({
         vim.cmd 'ClaudeCodeFocus'
         vim.cmd 'startinsert'
       end, { desc = 'Focus Claude Code' })
-      vim.keymap.set('n', '<F3>', function()
+      vim.keymap.set({ 'n', 'i' }, '<F3>', function()
+        vim.cmd 'stopinsert'
         vim.cmd 'ClaudeCodeFocus'
         vim.cmd 'startinsert'
       end, { desc = 'Focus Claude Code' })
 
       -- F10 = focus NeoTree
-      vim.keymap.set({ 'n', 't' }, '<F10>', function()
+      vim.keymap.set({ 'n', 'i', 't' }, '<F10>', function()
         vim.cmd 'stopinsert'
         vim.cmd 'Neotree focus'
       end, { desc = 'NeoTree focus' })
