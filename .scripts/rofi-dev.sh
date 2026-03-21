@@ -26,7 +26,7 @@ for d in $HOME/dev/*(N/) $HOME/dev/work/*(N/); do
 	ordered+=(${d:t})
 done
 
-name=$(print -l $ordered | rofi -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
+name=$(print -l $ordered | $SCRIPTS_PATH/rofi-run.sh -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
 [[ -z $name ]] && exit
 
 path=${projects[$name]}
