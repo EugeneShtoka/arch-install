@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 source $SCRIPTS_PATH/meetings.sh
+source $SCRIPTS_PATH/notify-lib.sh
 
 daysToShow=$1
 title=Agenda

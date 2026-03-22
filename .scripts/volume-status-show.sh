@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 source $SCRIPTS_PATH/volume.sh
+source $SCRIPTS_PATH/notify-lib.sh
 
 target=$1
 action=$2

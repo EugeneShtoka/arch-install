@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source $SCRIPTS_PATH/notify-lib.sh
+
 url=$(xclip -o -selection c)
 mkdir ~/yt-temp
 html_file=~/yt-temp/song.html

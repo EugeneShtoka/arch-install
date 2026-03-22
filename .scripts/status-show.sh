@@ -3,6 +3,7 @@
 source $SCRIPTS_PATH/volume.sh
 source $SCRIPTS_PATH/battery.sh
 source $SCRIPTS_PATH/wifi-icon.sh
+source $SCRIPTS_PATH/notify-lib.sh
 
 print_glyph() {
   printf "\u$1\n"
