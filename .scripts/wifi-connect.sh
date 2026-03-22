@@ -1,4 +1,5 @@
 #!/bin/bash
+source $SCRIPTS_PATH/notify-lib.sh
 dir="$HOME/.config/rofi/launchers/type-4"
 theme='style-9'
 
@@ -51,7 +52,7 @@ echo "You selected: $SELECTED_NETWORK"
 
 if [ "$SELECTED_NETWORK" = "Disconnect" ]; then
     sudo iwctl station wlan0 disconnect
-    notify-send "Wi-Fi Disconnected"
+    notify_send "Wi-Fi Disconnected"
     exit 0
 fi
 
