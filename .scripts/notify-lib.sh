@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Returns the dunst monitor index: external (DP-*) if connected, internal (eDP-*) otherwise
 get_notify_monitor() {
     xrandr --listmonitors | awk '
