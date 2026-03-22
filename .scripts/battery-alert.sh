@@ -26,7 +26,7 @@ fi
 # Notify every 20% drop while discharging
 current_level_step=$((battery_level / 20))
 if [ $current_level_step -lt $prev_battery_level ] && [ "$battery_state" = "discharging" ]; then
-    notify-send "Discharging $(get_battery_status $battery_level $battery_state)" --icon " " -r 101033
+    notify_send "Discharging $(get_battery_status $battery_level $battery_state)" --icon " " -r 101033
     beep
 fi
 echo $current_level_step > "$BATTERY_LEVEL_FILE"
