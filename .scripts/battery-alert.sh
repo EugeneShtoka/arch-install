@@ -2,12 +2,13 @@
 
 source $HOME/.scripts/battery.sh
 source $HOME/.scripts/beep.sh
+source $HOME/.scripts/notify-lib.sh
 
 threshold=15
 get_battery_info
 
 if [ $battery_level -le $threshold ] && [ "$battery_state" = "discharging" ]; then
-    notify-send -u critical "$(get_battery_status $battery_level $battery_state) Low battery" --icon " " -r 101029
+    notify_send -u critical "$(get_battery_status $battery_level $battery_state) Low battery" --icon " " -r 101029
     beep 0.03 440
     beep 0.03 440
     beep 0.03 440
