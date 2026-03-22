@@ -11,6 +11,6 @@ if [[ -n "$title" ]]; then
   if [[ -n "$artist" ]]; then
     notify_send "$artist" "<span font='20px'>$title</span>" -r 101029
   else
-    notify-send "Now Playing" "<span font='20px'>$title</span>" -r 101029
+    notify_send "Now Playing" "<span font='20px'>$title</span>" -r 101029
   fi
 fi

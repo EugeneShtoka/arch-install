@@ -12,15 +12,15 @@ if [[ -n "$1" ]]; then
     if [[ -d "$1" ]]; then
         search_path="$1"
     else
-        notify-send "Music Player" "Provided argument '$1' is not a valid directory."
+        notify_send "Music Player" "Provided argument '$1' is not a valid directory."
         exit 1
     fi
 else
     if [ -z "$MUSIC_PATH" ]; then
-        notify-send "Music Player" "MUSIC_PATH environment variable is not set and no directory argument was provided."
+        notify_send "Music Player" "MUSIC_PATH environment variable is not set and no directory argument was provided."
         exit 1
     elif [[ ! -d "$MUSIC_PATH" ]]; then
-        notify-send "Music Player" "MUSIC_PATH environment variable is set to '$MUSIC_PATH', which is not a valid directory."
+        notify_send "Music Player" "MUSIC_PATH environment variable is set to '$MUSIC_PATH', which is not a valid directory."
          exit 1
     else
         search_path="$MUSIC_PATH"
@@ -41,7 +41,7 @@ while IFS= read -r -d '' fullpath; do
 done
 
 if [ ${#playlist_options[@]} -eq 0 ]; then
-    notify-send "Music Player" "No playlists found in '$search_path'."
+    notify_send "Music Player" "No playlists found in '$search_path'."
     exit 0
 fi
 
