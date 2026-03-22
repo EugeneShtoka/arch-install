@@ -52,3 +52,5 @@ else
     i3-msg reload 2>/dev/null
     move_all_workspaces "1 10 $MONITOR_LAPTOP"
 fi
+
+pkill dunst; dunst &
