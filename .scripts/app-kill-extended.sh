@@ -72,6 +72,8 @@ target="${action#*$'\t'}"
 
 if [[ "$action_type" == "gui" ]]; then
   xdotool search --class "$target" 2>/dev/null | xargs -I{} xdotool windowclose {} 2>/dev/null
+  sleep 0.3
+  pkill -if "$target" 2>/dev/null
 else
   pkill -x "$target" 2>/dev/null
 fi
