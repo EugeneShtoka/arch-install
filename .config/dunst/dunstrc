@@ -484,7 +484,7 @@
     history_ignore = yes
 
 [pinned]
-    summary = "[pinned] *"
+    appname = "pinned"
     history_ignore = yes
 
 #[stack-volumes]
