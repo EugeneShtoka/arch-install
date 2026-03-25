@@ -481,7 +481,7 @@
 #
 [pinned]
     appname = "pinned"
-    origin = center
+    origin = top-right
     timeout = 0
 
 #[stack-volumes]
