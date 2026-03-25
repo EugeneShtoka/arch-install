@@ -128,6 +128,8 @@ bindsym Control+Shift+Mod4+Mod1+3 exec --no-startup-id setxkbmap il
 
 # dismiss all notifications
 bindsym $mod+c exec --no-startup-id dunstctl close-all
+# pin last notification
+bindsym $mod+a exec --no-startup-id $SCRIPTS_PATH/notify-pin.sh
 
 # Take a screenshot
 bindsym Print exec --no-startup-id $SCRIPTS_PATH/screenshot.sh window
