@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-pkill vlc
+pkill -9 -f vlc
