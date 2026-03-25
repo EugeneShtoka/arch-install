@@ -17,14 +17,14 @@ else
 fi
 
 BATTERY_LEVEL_FILE="$HOME/.previous_battery_level"
+current_level_step=$((battery_level / 5))
 if [ -f "$BATTERY_LEVEL_FILE" ]; then
     prev_battery_level=$(cat "$BATTERY_LEVEL_FILE")
 else
-    prev_battery_level=5
+    prev_battery_level=$current_level_step
 fi
 
-# Notify every 20% drop while discharging
-current_level_step=$((battery_level / 5))
+# Notify every 5% drop while discharging
 if [ $current_level_step -lt $prev_battery_level ] && [ "$battery_state" = "discharging" ]; then
     notify_send -a "system-notify" "Discharging $(get_battery_status $battery_level $battery_state)" --icon " " -r 101033
     beep
