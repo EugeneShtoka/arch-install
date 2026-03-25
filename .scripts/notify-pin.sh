@@ -11,8 +11,4 @@ read -r summary body < <(dunstctl history | tr -d '\000-\037' | jq -r '
 
 [[ -z "$summary" && -z "$body" ]] && exit
 
-# Strip pango markup and unescape \n
-clean=$(printf '%s\n%s' "$summary" "$body" | sed 's/<[^>]*>//g')
-
-rofi -dmenu -p "" -mesg "$clean" -theme "$HOME/.config/rofi/launchers/type-4/style-9.rasi" \
-  -no-custom < /dev/null
+notify-send -t 0 "$summary" "$body"
