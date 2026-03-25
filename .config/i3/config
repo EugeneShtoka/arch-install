@@ -104,7 +104,7 @@ bindsym $mod+t exec --no-startup-id $SCRIPTS_PATH/status-show.sh
 bindsym $mod+r exec --no-startup-id $SCRIPTS_PATH/rofi-launch.sh
 bindsym $mod+g exec --no-startup-id $SCRIPTS_PATH/rofi-games.sh
 bindsym $mod+i exec --no-startup-id $SCRIPTS_PATH/rofi-projects.sh
-bindsym $mod+shift+i exec --no-startup-id $SCRIPTS_PATH/rofi-dev.sh
+bindsym $mod+Shift+i exec --no-startup-id $SCRIPTS_PATH/rofi-dev.sh
 
 bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
 
