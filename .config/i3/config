@@ -12,8 +12,6 @@
 set $mod Mod4
 set $transp       #00000000
 set $green        #8ff586
-set $laptop       eDP-1
-set $external     DP-2
 
 include ~/.config/i3/workspace-outputs.conf
 
