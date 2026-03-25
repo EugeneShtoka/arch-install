@@ -122,9 +122,6 @@ bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
 bindsym $mod+y exec --no-startup-id $SCRIPTS_PATH/youtube-viewer-start.sh
-bindsym $mod+a exec --no-startup-id $SCRIPTS_PATH/music-play-list.sh
-bindsym $mod+Shift+a exec --no-startup-id $SCRIPTS_PATH/music-play.sh
-bindsym $mod+c exec --no-startup-id $SCRIPTS_PATH/music-toggle.sh
 
 # Keyboard layout switching
 bindsym Control+Shift+Mod4+Mod1+1 exec --no-startup-id setxkbmap us -variant altgr-intl
