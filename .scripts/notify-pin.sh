@@ -11,12 +11,8 @@ read -r summary body < <(dunstctl history | tr -d '\000-\037' | jq -r '
 
 [[ -z "$summary" && -z "$body" ]] && exit
 
-# Temporarily change global origin to center (section-aware)
-sed -i '/^\[global\]/,/^\[/{s/^\s*origin = .*/    origin = center/}' ~/.config/dunst/dunstrc
-dunstctl reload 2>/dev/null
+# Strip pango markup and unescape \n
+clean=$(printf '%s\n%s' "$summary" "$body" | sed 's/<[^>]*>//g')
 
-notify-send -a "pinned" -t 0 "$summary" "$body"
-
-# Restore
-sed -i '/^\[global\]/,/^\[/{s/^\s*origin = .*/    origin = top-right/}' ~/.config/dunst/dunstrc
-dunstctl reload 2>/dev/null
+rofi -dmenu -p "" -mesg "$clean" -theme "$HOME/.config/rofi/launchers/type-4/style-9.rasi" \
+  -no-custom < /dev/null
