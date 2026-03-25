@@ -54,7 +54,7 @@ entries=()
 actions=()
 typeset -A ws_wez_done
 
-while IFS=$'\t' read -r ws_name con_id class app_name i3_title; do
+while IFS=$'\t' read -r ws_name con_id class app_name; do
   [[ -z "$ws_name" ]] && continue
 
   if [[ "$class" == "org.wezfurlong.wezterm" ]]; then
