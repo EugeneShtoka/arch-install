@@ -6,82 +6,58 @@ rofi_theme="style-9-wide"
 i3_tree=$(i3-msg -t get_tree)
 wez_json=$(wezterm cli list --format json 2>/dev/null) || wez_json='[]'
 
-# One row per tab sorted by tab_id: "window_id\ttab_id\ttab_title"
-wez_tabs=$(echo "$wez_json" | jq -r '
-  group_by(.tab_id) | map(.[0]) | sort_by(.tab_id) |
-  .[] | "\(.window_id)\t\(.tab_id)\t\(if .tab_title != "" then .tab_title else .title end)"
-')
+entries=()
+actions=()
 
-# pane_title -> window_id lookup
-wez_pane_to_winid=$(echo "$wez_json" | jq -r '.[] | "\(.title)\t\(.window_id)"' | sort -u)
+# Wezterm tabs: one entry per tab
+if [[ "$wez_json" != "[]" ]]; then
+  # pane_title -> i3 con_id (via i3 tree wezterm windows)
+  wez_i3_map=$(echo "$i3_tree" | jq -r '
+    [.. | objects | select(.window != null)
+      | select(.window_properties.class == "org.wezfurlong.wezterm")] |
+    .[] | "\(.name)\t\(.id)"
+  ' | sed 's/\[[0-9]*\/[0-9]*\] //')
 
-# Build ws_name -> space-separated wezterm window_ids
-typeset -A ws_to_winids
-while IFS=$'\t' read -r ws_name pane_title; do
-  [[ -z "$ws_name" ]] && continue
-  winid=$(echo "$wez_pane_to_winid" | awk -F'\t' -v t="$pane_title" '$1 == t {print $2; exit}')
-  [[ -n "$winid" ]] && ws_to_winids[$ws_name]+="${ws_to_winids[$ws_name]:+ }$winid"
+  # pane_title -> wezterm window_id
+  pane_to_winid=$(echo "$wez_json" | jq -r '.[] | "\(.title)\t\(.window_id)"' | sort -u)
+
+  # wezterm window_id -> i3 con_id
+  typeset -A winid_to_conid
+  while IFS=$'\t' read -r pane_title con_id; do
+    winid=$(echo "$pane_to_winid" | awk -F'\t' -v t="$pane_title" '$1 == t {print $2; exit}')
+    [[ -n "$winid" ]] && winid_to_conid[$winid]="$con_id"
+  done <<< "$wez_i3_map"
+
+  while IFS=$'\t' read -r win_id tab_id tab_title; do
+    con_id="${winid_to_conid[$win_id]}"
+    entries+=("$tab_title")
+    actions+=("wez"$'\t'"${con_id}"$'\t'"${tab_id}")
+  done < <(echo "$wez_json" | jq -r '
+    group_by(.tab_id) | map(.[0]) | sort_by(.tab_id) |
+    .[] | "\(.window_id)\t\(.tab_id)\t\(if .tab_title != "" then .tab_title else .title end)"
+  ')
+fi
+
+# Non-wezterm i3 windows
+while IFS=$'\t' read -r con_id app_name; do
+  entries+=("$app_name")
+  actions+=("i3"$'\t'"${con_id}")
 done < <(echo "$i3_tree" | jq -r '
-  [.. | objects | select(.type == "workspace") | select(.name != "__i3_scratch")] |
-  .[] | . as $ws |
-  [.. | objects | select(.window != null)
-    | select(.window_properties.class == "org.wezfurlong.wezterm")] |
-  .[] | "\($ws.name)\t\(.name)"
-' | sed 's/\t\[[0-9]*\/[0-9]*\] /\t/')
-
-tabs_for_winids() {
-  echo "$wez_tabs" | awk -F'\t' -v ids="$1" '
-    BEGIN { n = split(ids, a, " "); for (i=1; i<=n; i++) map[a[i]]=1 }
-    $1 in map { print $2"\t"$3 }
-  '
-}
-
-# All i3 windows sorted by workspace: "ws\tcon_id\tclass\tapp_name\ttitle"
-i3_wins=$(echo "$i3_tree" | jq -r '
   def rename: {
     "Vivaldi-stable": "Web browser",
     "Mailspring": "eMail",
     "Yazi": "File browser",
     "ticker": "Stocks"
   } as $names | $names[.] // .;
-  [.. | objects | select(.type == "workspace") | select(.name != "__i3_scratch")] |
-  sort_by(.name | try tonumber catch .) | .[] | . as $ws |
-  [.. | objects | select(.window != null)] | .[] |
-  "\($ws.name)\t\(.id)\t\(.window_properties.class)\t\(.window_properties.class | rename)"
+  [.. | objects | select(.window != null)
+    | select(.window_properties.class != "org.wezfurlong.wezterm")] |
+  .[] | "\(.id)\t\(.window_properties.class | rename)"
 ')
-
-entries=()
-actions=()
-typeset -A ws_wez_done
-
-while IFS=$'\t' read -r ws_name con_id class app_name; do
-  [[ -z "$ws_name" ]] && continue
-
-  if [[ "$class" == "org.wezfurlong.wezterm" ]]; then
-    # Add all wezterm tabs for this workspace once
-    [[ -n "${ws_wez_done[$ws_name]}" ]] && continue
-    ws_wez_done[$ws_name]=1
-    winids="${ws_to_winids[$ws_name]}"
-    if [[ -n "$winids" ]]; then
-      tabs=$(tabs_for_winids "$winids")
-    else
-      tabs=$(echo "$wez_tabs" | awk -F'\t' '{print $2"\t"$3}')
-    fi
-    while IFS=$'\t' read -r tab_id tab_title; do
-      [[ -z "$tab_id" ]] && continue
-      entries+=("${ws_name} : ${tab_title}")
-      actions+=("wez"$'\t'"${ws_name}"$'\t'"${tab_id}")
-    done <<< "$tabs"
-  else
-    entries+=("${ws_name} : ${app_name}")
-    actions+=("i3"$'\t'"${con_id}")
-  fi
-done <<< "$i3_wins"
 
 [[ ${#entries[@]} -eq 0 ]] && exit
 
 selected_idx=$(printf "%s\n" "${entries[@]}" | \
-  $SCRIPTS_PATH/rofi-run.sh -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "workspace" -matching fuzzy -i -format i)
+  $SCRIPTS_PATH/rofi-run.sh -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "window" -matching fuzzy -i -format i)
 
 [[ -z "$selected_idx" || "$selected_idx" == "-1" ]] && exit
 
@@ -90,9 +66,9 @@ action_type="${action%%$'\t'*}"
 rest="${action#*$'\t'}"
 
 if [[ "$action_type" == "wez" ]]; then
-  ws_num="${rest%%$'\t'*}"
+  con_id="${rest%%$'\t'*}"
   tab_id="${rest#*$'\t'}"
-  $SCRIPTS_PATH/workspace-goto.sh "$ws_num"
+  [[ -n "$con_id" ]] && i3-msg "[con_id=${con_id}] focus"
   wezterm cli activate-tab --tab-id "$tab_id" 2>/dev/null
 else
   i3-msg "[con_id=${rest}] focus"
