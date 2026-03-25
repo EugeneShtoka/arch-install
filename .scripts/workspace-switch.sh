@@ -73,7 +73,7 @@ while IFS=$'\t' read -r ws_name con_id class app_name i3_title; do
       actions+=("wez"$'\t'"${ws_name}"$'\t'"${tab_id}")
     done <<< "$tabs"
   else
-    entries+=("${ws_name} : ${app_name} | ${i3_title}")
+    entries+=("${ws_name} : ${app_name}")
     actions+=("i3"$'\t'"${con_id}")
   fi
 done <<< "$i3_wins"
