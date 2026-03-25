@@ -11,4 +11,4 @@ read -r summary body < <(dunstctl history | tr -d '\000-\037' | jq -r '
 
 [[ -z "$summary" && -z "$body" ]] && exit
 
-notify-send -t 0 "[pinned] $summary" "$body"
+notify-send -a "pinned" -t 0 -r 999999 "[pinned] $summary" "$body"
