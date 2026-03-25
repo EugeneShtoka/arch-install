@@ -41,7 +41,7 @@ fi
 
 # VLC if running
 if pgrep -x vlc &>/dev/null || pgrep -x cvlc &>/dev/null; then
-  entries+=("VLC")
+  entries+=("Media player")
   actions+=("proc"$'\t'"vlc")
 fi
 
