@@ -8,7 +8,7 @@ threshold=15
 get_battery_info
 
 if [ $battery_level -le $threshold ] && [ "$battery_state" = "discharging" ]; then
-    notify_send -u critical "$(get_battery_status $battery_level $battery_state) Low battery" --icon " " -r 101029
+    notify_send -u critical -a "system-notify" "$(get_battery_status $battery_level $battery_state) Low battery" --icon " " -r 101029
     beep 0.03 440
     beep 0.03 440
     beep 0.03 440
