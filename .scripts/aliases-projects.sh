@@ -3,7 +3,7 @@
 nvim_project() {
 	local name=$1
 	local path=$2
-	alias $name="$SCRIPTS_PATH/nvim-project.sh '$name' '$path'"
+	alias $name="$SCRIPTS_PATH/nvim-open-project.sh '$name' '$path'"
 }
 
 nvim_project work-be      $HOME/dev/work/exbetz-be-api
