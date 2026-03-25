@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-latest=$(dunstctl history | jq -r '.data[0][0]')
+latest=$(dunstctl history | jq -r '.data[0] | sort_by(.timestamp.data) | last')
 summary=$(echo "$latest" | jq -r '.summary.data // ""')
 body=$(echo "$latest" | jq -r '.body.data // ""')
 
