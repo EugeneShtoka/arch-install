@@ -36,3 +36,5 @@ selected_idx=$(printf "%s\n" "${entries[@]}" | \
 class="${classes[$((selected_idx + 1))]}"
 
 xdotool search --class "$class" 2>/dev/null | xargs -I{} xdotool windowclose {} 2>/dev/null
+sleep 0.3
+pkill -if "$class" 2>/dev/null
