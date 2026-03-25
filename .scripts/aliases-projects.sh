@@ -3,7 +3,7 @@
 nvim_project() {
 	local name=$1
 	local path=$2
-	alias $name="wezterm cli set-tab-title '$name' && cd '$path' && nvim . && clr"
+	alias $name="wezterm cli set-tab-title 'nvim: $name' && cd '$path' && nvim . && clr"
 }
 
 nvim_project work-be      $HOME/dev/work/exbetz-be-api
