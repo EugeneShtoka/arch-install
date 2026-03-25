@@ -81,7 +81,7 @@ done <<< "$i3_wins"
 [[ ${#entries[@]} -eq 0 ]] && exit
 
 selected_idx=$(printf "%s\n" "${entries[@]}" | \
-  $SCRIPTS_PATH/rofi-run.sh -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "workspace" -matching fuzzy -format i)
+  $SCRIPTS_PATH/rofi-run.sh -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "workspace" -matching fuzzy -i -format i)
 
 [[ -z "$selected_idx" || "$selected_idx" == "-1" ]] && exit
 
