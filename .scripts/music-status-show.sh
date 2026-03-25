@@ -9,8 +9,8 @@ title=$(echo "$metadata" | grep -A1 '"xesam:title"' | grep -v 'xesam:title' | gr
 
 if [[ -n "$title" ]]; then
   if [[ -n "$artist" ]]; then
-    notify_send "$artist" "<span font='20px'>$title</span>" -r 101029
+    notify_send "$artist" "<span font='20px'>$title</span>" -r 101029 -a "system-notify"
   else
-    notify_send "Now Playing" "<span font='20px'>$title</span>" -r 101029
+    notify_send "Now Playing" "<span font='20px'>$title</span>" -r 101029 -a "system-notify"
   fi
 fi
