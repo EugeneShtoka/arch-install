@@ -30,6 +30,6 @@ name=$(print -l $ordered | $SCRIPTS_PATH/rofi-run.sh -theme ${dir}/${theme}.rasi
 [[ -z $name ]] && exit
 
 path=${projects[$name]}
-cmd="wezterm cli set-tab-title '$name' && cd '$path' && nvim . && clr"
+cmd="wezterm cli set-tab-title 'nvim: $name' && cd '$path' && nvim . && clr"
 
 wezterm cli spawn -- zsh -ic $cmd 2>/dev/null || wezterm start -- zsh -ic $cmd
