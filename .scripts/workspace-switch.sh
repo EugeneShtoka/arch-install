@@ -47,7 +47,7 @@ i3_wins=$(echo "$i3_tree" | jq -r '
   [.. | objects | select(.type == "workspace") | select(.name != "__i3_scratch")] |
   sort_by(.name | try tonumber catch .) | .[] | . as $ws |
   [.. | objects | select(.window != null)] | .[] |
-  "\($ws.name)\t\(.id)\t\(.window_properties.class)\t\(.window_properties.class | rename)\t\(.name)"
+  "\($ws.name)\t\(.id)\t\(.window_properties.class)\t\(.window_properties.class | rename)"
 ')
 
 entries=()
