@@ -480,7 +480,7 @@
 #    urgency = normal
 #
 [no-history]
-    summary = "Workspace *"
+    appname = "system-notify"
     history_ignore = yes
 
 [pinned]
