@@ -115,7 +115,7 @@ bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
 bindsym $mod+e exec --no-startup-id $SCRIPTS_PATH/email-start.sh
 bindsym $mod+z exec --no-startup-id $SCRIPTS_PATH/zoom-start.sh
 bindsym $mod+u exec --no-startup-id $SCRIPTS_PATH/workspace-show-id.sh
-bindsym $mod+Tab exec --no-startup-id $SCRIPTS_PATH/workspace-switch.sh
+bindsym $mod+Tab exec --no-startup-id $SCRIPTS_PATH/app-switch.sh
 bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
