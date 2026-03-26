@@ -2,8 +2,10 @@
 
 LOG=/tmp/nvim-open-project.log
 exec >>"$LOG" 2>&1
+export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
 echo "=== $(date) args: $@ ==="
 echo "DISPLAY=$DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR"
+echo "PATH=$PATH"
 
 name=$1
 dir=$2
