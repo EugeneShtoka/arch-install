@@ -3,7 +3,10 @@
 
 return {
   'nvim-neo-tree/neo-tree.nvim',
-  version = '*',
+  -- TODO: pinned to 3.37.x due to gitignore regression in 3.38+ (race condition in
+  -- git worktree init causes gitignored files to appear). Check if fixed and bump to '*'.
+  -- Broken commits: 4925f31 (refactor git), dfe9d8b (renderer). Issue introduced ~Nov 2025.
+  version = '~3.37',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
