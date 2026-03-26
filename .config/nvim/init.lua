@@ -1036,12 +1036,13 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        default = { 'lsp', 'path', 'snippets', 'lazydev', 'dadbod' },
         per_filetype = {
           gitignore = { 'path_gitignore' },
         },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          dadbod = { name = 'Dadbod', module = 'vim_dadbod_completion.blink' },
           path = {
             opts = { show_hidden_files_by_default = true },
           },
@@ -1247,7 +1248,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
@@ -1381,10 +1382,11 @@ require('lazy').setup({
 
       for _, map in ipairs(term_keymaps) do
         vim.keymap.set('n', map[1], map[2], { desc = map[3] })
-        vim.keymap.set({ 'i', 't' }, map[1], function()
+        vim.keymap.set('i', map[1], function()
           vim.cmd 'stopinsert'
           map[2]()
         end, { desc = map[3] })
+        vim.keymap.set('t', map[1], map[2], { desc = map[3] })
       end
 
       -- Find main editor window (not terminal, not Claude)
@@ -1411,17 +1413,41 @@ require('lazy').setup({
         focus_main_editor()
       end, { desc = 'Focus main window' })
 
-      -- F3 = focus Claude Code and enter insert mode
-      vim.keymap.set('t', '<F3>', function()
-        vim.cmd 'stopinsert'
-        vim.cmd 'ClaudeCodeFocus'
-        vim.cmd 'startinsert'
+      -- F3 = focus Claude Code (open if closed, focus if open, nop if already focused)
+      -- S-F3 = close Claude Code (nop if already closed)
+      local function claude_win()
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+          if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == 'snacks_terminal' then
+            return win
+          end
+        end
+      end
+      vim.keymap.set({ 'n', 'i', 't' }, '<F3>', function()
+        local win = claude_win()
+        if win == nil then
+          vim.cmd 'stopinsert'
+          vim.cmd 'ClaudeCode'
+          vim.schedule(function()
+            vim.cmd 'startinsert'
+          end)
+        elseif vim.api.nvim_get_current_win() ~= win then
+          vim.cmd 'stopinsert'
+          vim.api.nvim_set_current_win(win)
+          vim.schedule(function()
+            if vim.api.nvim_win_is_valid(win) then
+              vim.cmd 'startinsert'
+            end
+          end)
+        elseif vim.fn.mode() ~= 't' then
+          vim.cmd 'startinsert'
+        end
       end, { desc = 'Focus Claude Code' })
-      vim.keymap.set({ 'n', 'i' }, '<F3>', function()
+      vim.keymap.set({ 'n', 'i', 't' }, '<S-F3>', function()
         vim.cmd 'stopinsert'
-        vim.cmd 'ClaudeCodeFocus'
-        vim.cmd 'startinsert'
-      end, { desc = 'Focus Claude Code' })
+        if claude_win() ~= nil then
+          vim.cmd 'ClaudeCodeClose'
+        end
+      end, { desc = 'Close Claude Code' })
 
       -- F10 = focus NeoTree
       vim.keymap.set({ 'n', 'i', 't' }, '<F10>', function()

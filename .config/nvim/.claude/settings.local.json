@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(time wezterm:*)",
+      "Bash(zsh -i -c \"zmodload zsh/zprof && zprof\")",
+      "Bash(nvm --version)",
+      "Bash(time bash:*)"
+    ]
+  }
+}
