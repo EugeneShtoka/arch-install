@@ -1,11 +1,12 @@
 #!/bin/zsh
 
-dir="$HOME/.config/rofi/launchers/type-4"
+rofi_dir="$HOME/.config/rofi/launchers/type-4"
 theme='style-9'
 
-command=$(. $SCRIPTS_PATH/projects-list.sh | $SCRIPTS_PATH/rofi-run.sh -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
-if [[ -n $command ]]; then
-    wezterm cli spawn -- zsh -ic $command 2>/dev/null || wezterm start -- zsh -ic $command
-    (sleep 2 && $SCRIPTS_PATH/wezterm-tabs-update.sh) &
-    disown
-fi
+selected=$(. $SCRIPTS_PATH/projects-list.sh | cut -d'|' -f1 | $SCRIPTS_PATH/rofi-run.sh -theme ${rofi_dir}/${theme}.rasi -dmenu -matching prefix)
+[[ -z $selected ]] && exit
+
+path=$(. $SCRIPTS_PATH/projects-list.sh | awk -F'|' -v name="$selected" '$1 == name {print $2}')
+[[ -z $path ]] && exit
+
+$SCRIPTS_PATH/nvim-open-project.sh "$selected" "$path"
