@@ -28,6 +28,18 @@ config.enable_tab_bar = false
 config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
 
+local function update_tabs_cache()
+	wezterm.run_child_process({ os.getenv("SCRIPTS_PATH") .. "/wezterm-tabs-update.sh" })
+end
+
+wezterm.on("mux-tab-created", function(tab, mux_window)
+	update_tabs_cache()
+end)
+
+wezterm.on("mux-tab-closed", function(window_id, tab_id)
+	update_tabs_cache()
+end)
+
 wezterm.on("format-tab-title", function(tab)
 	local process = tab.active_pane.foreground_process_name
 	local name = process:match("([^/]+)$") or process
