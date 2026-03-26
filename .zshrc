@@ -51,10 +51,19 @@ bindkey "^[[B" down-line-or-beginning-search
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh --disable-up-arrow)"
 
-# NVM
+# NVM (lazy-load)
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh --no-use
-source /usr/share/nvm/bash_completion
+_nvm_load() {
+    unset -f nvm node npm npx yarn pnpm
+    source /usr/share/nvm/nvm.sh
+    source /usr/share/nvm/bash_completion
+}
+nvm()  { _nvm_load; nvm "$@"; }
+node() { _nvm_load; node "$@"; }
+npm()  { _nvm_load; npm "$@"; }
+npx()  { _nvm_load; npx "$@"; }
+yarn() { _nvm_load; yarn "$@"; }
+pnpm() { _nvm_load; pnpm "$@"; }
 
 # Ruby gems
 PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
