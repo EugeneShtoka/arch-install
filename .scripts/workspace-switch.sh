@@ -4,7 +4,13 @@ rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme="style-9-narrow"
 
 i3_tree=$(i3-msg -t get_tree)
-wez_json=$(wezterm cli list --format json 2>/dev/null) || wez_json='[]'
+
+_wez_cache="$HOME/.cache/wezterm-tabs.json"
+if [[ -f "$_wez_cache" && $(( $(date +%s) - $(stat -c %Y "$_wez_cache") )) -lt 90 ]]; then
+  wez_json=$(< "$_wez_cache")
+else
+  wez_json=$(wezterm cli list --format json 2>/dev/null) || wez_json='[]'
+fi
 
 entries=()
 actions=()
