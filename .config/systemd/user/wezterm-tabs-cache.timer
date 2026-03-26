@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh WezTerm tabs cache every minute
+
+[Timer]
+OnBootSec=30
+OnUnitActiveSec=1min
+Unit=wezterm-tabs-cache.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=Update WezTerm tabs cache
+
+[Service]
+Type=oneshot
+ExecStart=%h/.scripts/wezterm-tabs-update.sh

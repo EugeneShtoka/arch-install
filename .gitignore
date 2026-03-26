@@ -48,6 +48,8 @@
 !.config/systemd/user/start-up-routine.service
 !.config/systemd/user/battery-alert.service
 !.config/systemd/user/battery-alert.timer
+!.config/systemd/user/wezterm-tabs-cache.service
+!.config/systemd/user/wezterm-tabs-cache.timer
 !.config/systemd/user/filemanager1-common.service.d
 !.config/systemd/user/filemanager1-common.service.d/display.conf
 !.config/qBittorrent
