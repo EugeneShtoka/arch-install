@@ -64,6 +64,8 @@ case "$action_type" in
     ;;
   wez-tab)
     wezterm cli kill-pane --pane-id "$target" 2>/dev/null
+    (sleep 1 && $SCRIPTS_PATH/wezterm-tabs-update.sh) &
+    disown
     ;;
   proc)
     pkill -9 -f "$target" 2>/dev/null
