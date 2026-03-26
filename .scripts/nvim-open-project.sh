@@ -5,7 +5,7 @@ dir=$2
 
 cmd="cd '$dir' && nvim ."
 
-if [[ -S $XDG_RUNTIME_DIR/wezterm/sock ]]; then
+if pgrep -x wezterm-gui &>/dev/null; then
     pane_id=$(/usr/bin/wezterm cli spawn -- /usr/bin/zsh -ilc "$cmd")
     wezterm cli set-tab-title --pane-id $pane_id "Neovim: $name"
     wezterm cli activate-pane --pane-id $pane_id
