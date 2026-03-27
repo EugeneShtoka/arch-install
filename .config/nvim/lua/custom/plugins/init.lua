@@ -13,10 +13,10 @@ return {
     cmd = { 'DBUI', 'DBUIToggle', 'DBUIAddConnection', 'DBUIFindBuffer' },
     keys = {
       { '<leader>d', group = '[D]atabase' },
-      { '<leader>dt', '<cmd>DBUIToggle<cr>',        desc = '[D]atabase [T]oggle UI' },
-      { '<leader>da', '<cmd>DBUIAddConnection<cr>',  desc = '[D]atabase [A]dd connection' },
-      { '<leader>df', '<cmd>DBUIFindBuffer<cr>',     desc = '[D]atabase [F]ind buffer' },
-      { '<leader>dr', '<cmd>DBUIRenameBuffer<cr>',   desc = '[D]atabase [R]ename buffer' },
+      { '<leader>dt', '<cmd>DBUIToggle<cr>', desc = '[D]atabase [T]oggle UI' },
+      { '<leader>da', '<cmd>DBUIAddConnection<cr>', desc = '[D]atabase [A]dd connection' },
+      { '<leader>df', '<cmd>DBUIFindBuffer<cr>', desc = '[D]atabase [F]ind buffer' },
+      { '<leader>dr', '<cmd>DBUIRenameBuffer<cr>', desc = '[D]atabase [R]ename buffer' },
       {
         '<F9>',
         function()
@@ -34,9 +34,10 @@ return {
           end
         end,
         desc = 'Database focus UI',
+        mode = { 'n', 't', 'i' },
       },
       {
-        '<S-F9>',
+        '<F21>',
         function()
           for _, win in ipairs(vim.api.nvim_list_wins()) do
             if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == 'dbui' then
@@ -46,6 +47,7 @@ return {
           end
         end,
         desc = 'Database close UI',
+        mode = { 'n', 't', 'i' },
       },
     },
     init = function()

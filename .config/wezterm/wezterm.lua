@@ -53,7 +53,14 @@ end)
 
 config.keys = {
 	{ key = "c", mods = "CTRL", action = wezterm.action.CopyTo("Clipboard") },
-	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
+	{
+		key = "v",
+		mods = "CTRL",
+		action = wezterm.action_callback(function(window, pane)
+			local text = wezterm.clipboard.get_text("Clipboard")
+			window:perform_action(wezterm.action.PasteText(text:match("^%s*(.-)%s*$")), pane)
+		end),
+	},
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x03") },
 	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 	{ key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action.ShowTabNavigator },
