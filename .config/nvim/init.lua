@@ -1219,6 +1219,22 @@ require('lazy').setup({
       { '<leader>gd', '<cmd>CodeDiff<cr>', desc = '[G]it [D]iff' },
       { '<leader>gD', '<cmd>CodeDiff main...<cr>', desc = '[G]it [D]iff vs main (PR-style)' },
       {
+        '<F12>',
+        function()
+          for _, tp in ipairs(vim.api.nvim_list_tabpages()) do
+            for _, win in ipairs(vim.api.nvim_tabpage_list_wins(tp)) do
+              local ft = vim.bo[vim.api.nvim_win_get_buf(win)].filetype
+              if ft == 'codediff-explorer' or ft == 'codediff-history' then
+                vim.cmd('tabclose ' .. vim.api.nvim_tabpage_get_number(tp))
+                return
+              end
+            end
+          end
+          vim.cmd('CodeDiff')
+        end,
+        desc = '[G]it [D]iff toggle',
+      },
+      {
         '<leader>gq',
         function()
           local dominated = {}
