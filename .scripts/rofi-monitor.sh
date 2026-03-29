@@ -5,9 +5,9 @@ rofi_theme="style-9-narrow"
 
 source /home/eugene/.env
 
-options=("external" "laptop" "dual")
+modes=("external" "laptop" "dual")
 
-selected=$(printf "%s\n" "${options[@]}" | \
+selected=$(printf "%s\n" "${modes[@]}" | \
   $SCRIPTS_PATH/rofi-run.sh -theme "${rofi_dir}/${rofi_theme}.rasi" -dmenu -p "monitor" -i)
 
 [[ -z "$selected" ]] && exit
