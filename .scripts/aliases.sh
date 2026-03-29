@@ -15,6 +15,10 @@ alias stop=$SCRIPTS_PATH/music-stop.sh
 alias pgd='setsid xdg-open "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
 alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
 
+alias monitor-external="$SCRIPTS_PATH/monitor-setup.sh external"
+alias monitor-laptop="$SCRIPTS_PATH/monitor-setup.sh laptop"
+alias monitor-dual="$SCRIPTS_PATH/monitor-setup.sh dual"
+
 alias spnd='systemctl suspend'
 alias stdn='shutdown now'
 
