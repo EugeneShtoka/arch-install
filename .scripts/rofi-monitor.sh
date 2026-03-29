@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
-rofi_theme="style-9-narrow"
+rofi_theme="style-9-narrow-short"
 
 source /home/eugene/.env
 
