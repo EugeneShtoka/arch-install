@@ -20,14 +20,18 @@ else
     run_cmd() { eval "$1"; }
 fi
 
-# Auto-detect: check if any non-laptop monitor is connected
 external=$(run_cmd "xrandr" 2>/dev/null | grep ' connected' | grep -v "^${MONITOR_LAPTOP} " | head -n 1 | awk '{print $1}')
 
 if [[ -n "$external" ]]; then
-    mode="external"
+    lid_state=$(cat /proc/acpi/button/lid/LID0/state 2>/dev/null | awk '{print $2}')
+    if [[ "$lid_state" == "open" ]]; then
+        mode="dual"
+    else
+        mode="external"
+    fi
 else
     mode="laptop"
 fi
 
 echo "`date` monitor-setup-hook: detected mode=$mode" >> $USR_HOME/.scripts.log
-run_cmd "$SCRIPTS_PATH/monitor-setup-$mode.sh" >> $USR_HOME/.scripts.log 2>&1
+run_cmd "$SCRIPTS_PATH/monitor-setup.sh $mode" >> $USR_HOME/.scripts.log 2>&1
