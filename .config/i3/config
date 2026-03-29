@@ -112,6 +112,7 @@ bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
 bindsym $mod+Shift+n exec --no-startup-id wezterm start -- nvim ~/Notes
 bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/messenger-start.sh
 bindsym $mod+Shift+m exec --no-startup-id $SCRIPTS_PATH/rofi-monitor.sh
+bindsym $mod+Shift+p exec --no-startup-id $SCRIPTS_PATH/rofi-power.sh
 bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
 bindsym $mod+e exec --no-startup-id $SCRIPTS_PATH/email-start.sh
 bindsym $mod+z exec --no-startup-id $SCRIPTS_PATH/zoom-start.sh
