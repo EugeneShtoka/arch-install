@@ -127,3 +127,4 @@ $SCRIPTS_PATH/auto-yay.sh jdk-openjdk
 $SCRIPTS_PATH/auto-yay.sh fio
 $SCRIPTS_PATH/auto-yay.sh mutt-wizard
 $SCRIPTS_PATH/auto-yay.sh lieer-git
+$SCRIPTS_PATH/auto-yay.sh python-cryptography
