@@ -126,3 +126,4 @@ $SCRIPTS_PATH/auto-yay.sh filemanager1-common-systemd-git
 $SCRIPTS_PATH/auto-yay.sh jdk-openjdk
 $SCRIPTS_PATH/auto-yay.sh fio
 $SCRIPTS_PATH/auto-yay.sh mutt-wizard
+$SCRIPTS_PATH/auto-yay.sh lieer-git
