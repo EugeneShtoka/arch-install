@@ -36,6 +36,7 @@ if [[ "$wez_json" != "[]" ]]; then
 
   while IFS=$'\t' read -r win_id tab_id tab_title; do
     con_id="${winid_to_conid[$win_id]}"
+    [[ -z "$con_id" ]] && continue
     entries+=("$tab_title")
     actions+=("wez"$'\t'"${con_id}"$'\t'"${tab_id}")
   done < <(echo "$wez_json" | jq -r '
