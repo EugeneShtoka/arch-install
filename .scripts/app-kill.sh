@@ -15,17 +15,11 @@ while IFS=$'\t' read -r class display_name; do
   [[ -z "$class" ]] && continue
   entries+=("$display_name")
   actions+=("gui"$'\t'"$class")
-done < <(echo "$i3_tree" | jq -r '
-  def rename: {
-    "Vivaldi-stable": "Web browser",
-    "NeoMutt": "Email",
-    "Yazi": "File browser",
-    "ticker": "Stocks"
-  } as $names | $names[.] // .;
+done < <(echo "$i3_tree" | jq -r --argjson names "$APP_NAMES_JQ" '
   [.. | objects | select(.window != null)
     | select(.window_properties.class != "org.wezfurlong.wezterm")
     | .window_properties.class] | unique | sort |
-  .[] | "\(.)\t\(. | rename)"
+  .[] | "\(.)\t\(. as $k | $names[$k] // $k)"
 ')
 
 # Wezterm tabs
