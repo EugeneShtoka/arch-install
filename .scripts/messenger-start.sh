@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-setsid beeper --no-sandbox --default-frame &>/dev/null
+$SCRIPTS_PATH/app-focus-or-launch.sh "BeeperTexts" beeper --no-sandbox --default-frame
