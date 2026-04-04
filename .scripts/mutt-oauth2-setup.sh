@@ -11,7 +11,7 @@ CLIENT_SECRET=$(python3 -c "import json; d=json.load(open('$CREDS')); print(d['c
 python3 ~/.scripts/mutt_oauth2.py \
   --verbose \
   --authorize \
-  --authflow devicecode \
+  --authflow localhostauthcode \
   --provider google \
   --email e.shtoka@gmail.com \
   --client-id "$CLIENT_ID" \
