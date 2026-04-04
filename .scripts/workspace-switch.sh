@@ -50,16 +50,10 @@ fi
 while IFS=$'\t' read -r con_id app_name; do
   entries+=("$app_name")
   actions+=("i3"$'\t'"${con_id}")
-done < <(echo "$i3_tree" | jq -r '
-  def rename: {
-    "Vivaldi-stable": "Web browser",
-    "NeoMutt": "Email",
-    "Yazi": "File browser",
-    "ticker": "Stocks"
-  } as $names | $names[.] // .;
+done < <(echo "$i3_tree" | jq -r --argjson names "$APP_NAMES_JQ" '
   [.. | objects | select(.window != null)
     | select(.window_properties.class != "org.wezfurlong.wezterm")] |
-  .[] | "\(.id)\t\(.window_properties.class | rename)"
+  .[] | "\(.id)\t\(.window_properties.class as $k | $names[$k] // $k)"
 ')
 
 [[ ${#entries[@]} -eq 0 ]] && exit
