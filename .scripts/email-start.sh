@@ -1,3 +1,2 @@
 #!/bin/zsh
-
-setsid wezterm start --class NeoMutt -- neomutt &>/dev/null
+$SCRIPTS_PATH/wezterm-focus-or-launch.sh "Email" neomutt
