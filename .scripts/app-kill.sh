@@ -3,6 +3,7 @@
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme="style-9-narrow"
 
+source "$SCRIPTS_PATH/app-names.sh"
 i3_tree=$(i3-msg -t get_tree)
 wez_json=$($SCRIPTS_PATH/wezterm-tabs-get.sh)
 
