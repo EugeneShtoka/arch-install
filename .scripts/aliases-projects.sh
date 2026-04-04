@@ -7,8 +7,8 @@ nvim_project() {
 }
 
 nvim_project work-be      $HOME/dev/work/exbetz-be-api
-nvim_project nvim-config  $HOME/.config/nvim
 nvim_project system       $HOME
+nvim_project nvim-config  $HOME/.config/nvim
 nvim_project i3-config    $HOME/.config/i3
 nvim_project terminal     $HOME/.config/wezterm
 nvim_project file-browser $HOME/.config/yazi
