@@ -52,8 +52,6 @@
 !.config/systemd/user/filemanager1-common.service.d/display.conf
 !.config/qBittorrent
 !.config/qBittorrent/qBittorrent.conf
-!.config/Mailspring
-!.config/Mailspring/keymap.json
 !.config/fontconfig
 !.config/fontconfig/fonts.conf
 !.config/rofi
