@@ -56,3 +56,5 @@ alias db-tunnel-stop='pkill -f "ssh.*3.130.146.14"'
 alias tm-prd-db-pass='db-tunnel-start && aws sso login && AWS_REGION=us-east-2  aws secretsmanager get-secret-value --secret-id 'rds!db-63c263e4-a52a-4bd0-9aed-28bef7b293f0' --query SecretString --output text | jq -r .password | xclip -selection clipboard'
 alias tm-stg-db-pass='$SCRIPTS_PATH/tm-stg-db-get-password.sh'
 alias ks=$SCRIPTS_PATH/aws-k8s-connect.sh
+
+alias neomutt='wezterm cli set-tab-title "Email" 2>/dev/null; command neomutt'
