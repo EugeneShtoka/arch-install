@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-setsid mailspring --password-store="gnome-libsecret" &>/dev/null
+setsid wezterm start --class NeoMutt -- neomutt &>/dev/null
