@@ -119,6 +119,7 @@ bindsym $mod+z exec --no-startup-id $SCRIPTS_PATH/zoom-start.sh
 bindsym $mod+u exec --no-startup-id $SCRIPTS_PATH/workspace-show-id.sh
 bindsym $mod+Tab exec --no-startup-id $SCRIPTS_PATH/app-switch.sh
 bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
+bindsym $mod+shift+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh --new
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
 bindsym $mod+y exec --no-startup-id $SCRIPTS_PATH/youtube-viewer-start.sh
