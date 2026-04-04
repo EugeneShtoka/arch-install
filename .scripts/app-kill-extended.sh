@@ -32,7 +32,7 @@ actions=()
 rename_app() {
   case "$1" in
     "Vivaldi-stable") echo "Web browser" ;;
-    "Mailspring")     echo "eMail" ;;
+    "NeoMutt")        echo "Email" ;;
     "Yazi")           echo "File browser" ;;
     "ticker")         echo "Stocks" ;;
     *)                echo "$1" ;;
