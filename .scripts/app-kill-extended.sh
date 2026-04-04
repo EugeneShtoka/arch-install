@@ -33,7 +33,7 @@ actions=()
 # Add GUI apps
 while IFS= read -r class; do
   [[ -z "$class" ]] && continue
-  entries+=("$(rename_app "$class")")
+  entries+=("$(app_display_name "$class")")
   actions+=("gui"$'\t'"$class")
 done <<< "$gui_classes"
 
