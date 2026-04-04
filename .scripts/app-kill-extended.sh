@@ -30,16 +30,6 @@ bg_procs=$(ps --user "$USER" -o comm= | sort -u | grep -vE "${exclude//[$'\n']/}
 entries=()
 actions=()
 
-rename_app() {
-  case "$1" in
-    "Vivaldi-stable") echo "Web browser" ;;
-    "NeoMutt")        echo "Email" ;;
-    "Yazi")           echo "File browser" ;;
-    "ticker")         echo "Stocks" ;;
-    *)                echo "$1" ;;
-  esac
-}
-
 # Add GUI apps
 while IFS= read -r class; do
   [[ -z "$class" ]] && continue
