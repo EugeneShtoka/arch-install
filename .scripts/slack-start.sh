@@ -1,3 +1,2 @@
 #!/bin/zsh
-
-setsid /usr/bin/slack -s &>/dev/null
+$SCRIPTS_PATH/app-focus-or-launch.sh "Slack" /usr/bin/slack -s
