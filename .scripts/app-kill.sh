@@ -17,7 +17,7 @@ while IFS=$'\t' read -r class display_name; do
 done < <(echo "$i3_tree" | jq -r '
   def rename: {
     "Vivaldi-stable": "Web browser",
-    "Mailspring": "eMail",
+    "NeoMutt": "Email",
     "Yazi": "File browser",
     "ticker": "Stocks"
   } as $names | $names[.] // .;
