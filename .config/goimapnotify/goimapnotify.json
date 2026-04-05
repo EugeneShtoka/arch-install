@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "alias": "e.shtoka@gmail.com",
+      "host": "imap.gmail.com",
+      "port": 993,
+      "tls": true,
+      "tlsOptions": {
+        "rejectUnauthorized": true
+      },
+      "username": "e.shtoka@gmail.com",
+      "passwordCMD": "python3 ~/.scripts/mutt_oauth2.py ~/.cache/mutt_oauth2/e.shtoka@gmail.com.gpg",
+      "xoauth2": true,
+      "boxes": [
+        {
+          "mailbox": "INBOX",
+          "onNewMail": "~/.scripts/gmi-pull.sh",
+          "onNewMailPost": "notify-send -i mail-unread 'New mail' 'New messages in Inbox'",
+          "onDeletedMail": ""
+        }
+      ]
+    }
+  ]
+}

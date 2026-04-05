@@ -71,6 +71,8 @@
 !.config/notmuch/**/*
 !.config/neomutt
 !.config/neomutt/**/*
+!.config/goimapnotify
+!.config/goimapnotify/**/*
 !.config/xdg-desktop-portal
 !.config/xdg-desktop-portal/portals.conf
 !.config/xdg-desktop-portal-termfilechooser
