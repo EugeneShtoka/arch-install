@@ -67,6 +67,10 @@
 !.config/wezterm/**/*
 !.config/yazi
 !.config/yazi/**/*
+!.config/notmuch
+!.config/notmuch/**/*
+!.config/neomutt
+!.config/neomutt/**/*
 !.config/xdg-desktop-portal
 !.config/xdg-desktop-portal/portals.conf
 !.config/xdg-desktop-portal-termfilechooser

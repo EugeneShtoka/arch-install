@@ -1,0 +1,14 @@
+[database]
+path=/home/eugene/.local/share/mail
+[user]
+name=e.shtoka
+primary_email=e.shtoka@gmail.com
+[new]
+tags=
+ignore=.mbsyncstate;.uidvalidity;.gmailieer.json;.state.gmailieer.json;.state.gmailieer.json.bak;.credentials.gmailieer.json;.lock
+[search]
+exclude_tags=deleted;spam;trash;
+[maildir]
+synchronize_flags=false
+[crypto]
+gpg_path=gpg

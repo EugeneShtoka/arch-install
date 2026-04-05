@@ -1,0 +1,56 @@
+# vim: filetype=neomuttrc
+# Cobalt2 color theme for neomutt
+
+# General UI — use default bg to inherit terminal cobalt2 background
+color normal        color252  default         # default text: light grey
+color error         color203  default
+color tilde         color240  default         # padding tildes: dim
+color message       color109  default         # status messages: muted blue
+color markers       color240  default         # wrapped line markers
+color attachment    color109  default
+color search        color0    color221        # search highlight: black on muted yellow
+color status        color240  default         # status bar: subtle, blends with bg
+color indicator     color255  color24         # selected row: white on dark teal
+color tree          color67   default         # thread tree arrows
+
+# Index — use ".*" to fully override mutt-wizard defaults
+color index         color244  default  ".*"                  # all: dim grey
+color index         color252  default  "~N"                  # new: light
+color index_author  color109  default  ".*"                  # sender: muted blue
+color index_author  color153  default  "~N"                  # sender new: light blue
+color index_subject color244  default  ".*"                  # subject: dim
+color index_subject color252  default  "~N"                  # subject new: light
+color index_date    color240  default  ".*"
+color index_flags   color109  default  ".*"                  # flags: muted blue
+color index_tag     color139  default  ".*"                  # tags: muted purple
+
+# Quoted text
+color quoted        color109  default         # muted blue
+color quoted1       color139  default         # muted purple
+color quoted2       color173  default         # muted orange
+color quoted3       color107  default         # muted green
+color quoted4       color109  default
+
+# Headers
+color hdrdefault    color240  default
+color header        color109  default  "^(From|To|Cc|Bcc):"
+color header        color221  default  "^Subject:"
+color header        color240  default  "^Date:"
+
+# Body
+color bold          color255  default
+color underline     color109  default
+color signature     color240  default
+
+# Sidebar
+color sidebar_ordinary   color244  default
+color sidebar_new        color153  default
+color sidebar_unread     color252  default
+color sidebar_flagged    color173  default
+color sidebar_highlight  color255  color24
+color sidebar_indicator  color255  color24
+color sidebar_divider    color238  default
+
+# URL / email highlight
+color body  color109  default  "(https?|ftp)://[^ \t\r\n]*"
+color body  color139  default  "[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+"

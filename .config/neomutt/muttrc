@@ -1,0 +1,14 @@
+# vim: filetype=neomuttrc
+source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
+source /home/eugene/.config/neomutt/accounts/e.shtoka@gmail.com.muttrc
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/eugene/.config/neomutt/accounts/e.shtoka@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to e.shtoka@gmail.com"
+set header_cache_backend = "lmdb"
+source /home/eugene/.config/neomutt/cobalt2.muttrc
+
+# Override mutt-wizard binds — must be after all sources
+unbind index D
+unbind index L
+unbind index R
+macro index,pager D "<modify-labels>+trash -inbox\n<change-folder>!<enter>" "delete message"
+macro index,pager L "<modify-labels>" "modify labels"
+macro index R "<change-folder>!<enter>" "refresh inbox"
