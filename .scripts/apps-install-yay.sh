@@ -128,6 +128,5 @@ $SCRIPTS_PATH/auto-yay.sh lieer-git
 $SCRIPTS_PATH/auto-yay.sh python-cryptography
 $SCRIPTS_PATH/auto-yay.sh goimapnotify
 $SCRIPTS_PATH/auto-yay.sh w3m
-$SCRIPTS_PATH/auto-yay.sh pandoc
 $SCRIPTS_PATH/auto-yay.sh urlscan
 $SCRIPTS_PATH/auto-yay.sh lynx
