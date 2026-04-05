@@ -5,11 +5,17 @@ set from = "e.shtoka@gmail.com"
 set sendmail = "msmtp -a e.shtoka@gmail.com"
 alias me e.shtoka <e.shtoka@gmail.com>
 set folder = "/home/eugene/.local/share/mail/e.shtoka@gmail.com/mail"
-set header_cache = "/home/eugene/.cache/mutt-wizard/e.shtoka_gmail.com/headers"
-set message_cachedir = "/home/eugene/.cache/mutt-wizard/e.shtoka_gmail.com/bodies"
-set mbox_type = Maildir
-set hostname = "gmail.com"
-source /usr/local/share/mutt-wizard/switch.muttrc
+set header_cache     = "/home/eugene/.cache/neomutt/e.shtoka_gmail.com/headers"
+set message_cachedir = "/home/eugene/.cache/neomutt/e.shtoka_gmail.com/bodies"
+set mbox_type        = Maildir
+set hostname         = "gmail.com"
+
+# Reset account-specific state (for account switching)
+unset hostname
+unmy_hdr Organization
+unmailboxes *
+unalternates *
+unset signature
 set spool_file = "notmuch://?query=tag:inbox"
 set postponed = "notmuch://?query=tag:draft"
 unset trash
