@@ -5,6 +5,10 @@ macro index,pager i1 '<sync-mailbox><enter-command>source /home/eugene/.config/n
 set header_cache_backend = "lmdb"
 source /home/eugene/.config/neomutt/cobalt2.muttrc
 
+set date_format="%d-%m-%y %H:%M"
+set hidden_tags="inbox,unread,social,important,attachment,signed,encrypted"
+set index_format="%2C %Z %?X?A& ? %D %-20.20F %-20.20g %-60.60s"
+
 # Override mutt-wizard binds — must be after all sources
 unbind index D
 unbind index L
