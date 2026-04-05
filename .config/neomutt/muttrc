@@ -11,5 +11,5 @@ unbind index L
 unbind index R
 macro index,pager D "<modify-labels>+trash -inbox\n<shell-escape>~/.scripts/gmi-push.sh<enter>" "delete message"
 macro index,pager L "<pipe-message>~/.scripts/mutt-label.sh<enter><sync-mailbox><change-folder>!<enter>" "add label"
-macro index,pager \eL "<modify-labels><shell-escape>~/.scripts/gmi-push.sh<enter>" "modify labels manually"
+macro index,pager \el "<modify-labels><shell-escape>~/.scripts/gmi-push.sh<enter>" "modify labels manually"
 macro index R "<change-folder>!<enter>" "refresh inbox"

@@ -13,7 +13,7 @@ available=$(comm -23 \
 [[ -z $available ]] && exit 0
 
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
-selected=$(echo "$available" | $HOME/.scripts/rofi-run.sh -theme "${rofi_dir}/style-9-narrow.rasi" -dmenu -p "label" -matching fuzzy -i)
+selected=$(echo "$available" | $HOME/.scripts/rofi-run.sh -theme "${rofi_dir}/style-9-narrow.rasi" -dmenu -p "label" -matching fuzzy -i -multi-select)
 [[ -z $selected ]] && exit 0
 
 notmuch tag "+$selected" "id:$msg_id"
