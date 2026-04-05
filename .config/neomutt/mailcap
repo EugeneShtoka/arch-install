@@ -1,5 +1,5 @@
 # HTML — inline rendering with w3m
-text/html; w3m -I %{charset} -T text/html -dump %s; nametemplate=%s.html; copiousoutput
+text/html; pandoc -f html -t plain --wrap=auto %s; nametemplate=%s.html; copiousoutput
 
 # HTML — open in browser
 text/html; xdg-open %s; nametemplate=%s.html
@@ -12,8 +12,8 @@ application/pdf; xdg-open %s
 application/*; xdg-open %s
 
 # Video / audio
-video/*; setsid wezterm start -- mpv %s &; copiousoutput
-audio/*; setsid wezterm start -- mpv %s &; copiousoutput
+video/*; setsid wezterm start -- vlc %s &; copiousoutput
+audio/*; setsid wezterm start -- vlc %s &; copiousoutput
 
 # PGP
 application/pgp-encrypted; gpg -d '%s'; copiousoutput

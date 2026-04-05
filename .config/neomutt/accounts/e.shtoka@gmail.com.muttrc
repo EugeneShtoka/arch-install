@@ -23,10 +23,19 @@ set record = "notmuch://?query=tag:sent"
 
 set nm_default_url = "notmuch:///home/eugene/.local/share/mail"
 
+# Mailbox queries — referenced by both virtual-mailboxes and folder nav macros
+# Spaces are URL-encoded as %20 so they work in both virtual-mailboxes and macros
+set my_q_inbox   = "notmuch://?query=tag:inbox"
+set my_q_unread  = "notmuch://?query=tag:unread%20AND%20NOT%20tag:trash%20AND%20NOT%20tag:spam"
+set my_q_sent    = "notmuch://?query=tag:sent"
+set my_q_drafts  = "notmuch://?query=tag:draft"
+set my_q_trash   = "notmuch://?query=tag:trash"
+set my_q_archive = "notmuch://?query=NOT%20tag:inbox%20AND%20NOT%20tag:trash%20AND%20NOT%20tag:spam"
+
 virtual-mailboxes \
-    "Inbox"    "notmuch://?query=tag:inbox AND NOT tag:trash AND NOT tag:spam" \
-    "Unread"   "notmuch://?query=tag:unread AND NOT tag:trash AND NOT tag:spam" \
-    "Sent"     "notmuch://?query=tag:sent" \
-    "Drafts"   "notmuch://?query=tag:draft" \
-    "Trash"    "notmuch://?query=tag:trash" \
-    "Archive"  "notmuch://?query=tag:/[A-Z].*/"
+    "Inbox"   $my_q_inbox   \
+    "Unread"  $my_q_unread  \
+    "Sent"    $my_q_sent    \
+    "Drafts"  $my_q_drafts  \
+    "Trash"   $my_q_trash   \
+    "Archive" $my_q_archive

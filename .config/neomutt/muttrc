@@ -19,6 +19,13 @@ set forward_format   = "Fwd: %s"
 set mime_forward     = no             # forward body as text, not attachment
 set forward_attachments = yes
 
+# --- Pager ---
+set pager_index_lines = 8      # show index context while reading
+set pager_context     = 3      # lines of context when scrolling pages
+set pager_stop               # don't move to next message at end of pager
+set wrap              = 100    # wrap long lines
+set tilde                    # show ~ for lines past end of message
+
 # --- Reading ---
 set sort             = reverse-date
 set rfc2047_parameters = yes          # decode RFC2047 encoded filenames
@@ -38,7 +45,7 @@ alternative_order text/plain text/enriched text/html
 # --- Index display ---
 set header_cache_backend = "lmdb"
 set date_format      = "%d-%m-%y %H:%M"
-set hidden_tags      = "inbox,unread,social,important,attachment,signed,encrypted"
+set hidden_tags      = "inbox,unread,social,important,attachment,signed,encrypted,sent"
 set index_format     = "%2C %Z %?X?A& ? %D %-20.20F %-20.20g %-60.60s"
 
 # --- Sidebar ---
@@ -79,12 +86,23 @@ bind browser     gg   top-page
 bind browser     G    bottom-page
 macro browser    h    '<change-dir><kill-line>..<enter>' "go to parent folder"
 
+# --- Pager view ---
+macro pager V "<view-attachments><search>text/html<enter><view-mailcap><exit>" "open HTML in browser"
+
 # --- Actions ---
 bind index,pager S sync-mailbox
 bind index,query <space> tag-entry
 bind editor      <Tab> complete-query
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>printf 'Enter notmuch search: '; read x; echo \$x >\"${XDG_CACHE_HOME:-$HOME/.cache}/mutt_terms\"<enter><limit>~i \"\`notmuch search --output=messages \$(cat \"${XDG_CACHE_HOME:-$HOME/.cache}/mutt_terms\") | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/g for@a; s/\\$/\\\\\\$/g for@a;print@a' \`\"<enter>" "notmuch search"
+
+# --- Folder navigation ---
+macro index,pager gi "<change-folder>$my_q_inbox<enter>"   "go to inbox"
+macro index,pager gu "<change-folder>$my_q_unread<enter>"  "go to unread"
+macro index,pager gs "<change-folder>$my_q_sent<enter>"    "go to sent"
+macro index,pager gd "<change-folder>$my_q_drafts<enter>"  "go to drafts"
+macro index,pager gt "<change-folder>$my_q_trash<enter>"   "go to trash"
+macro index,pager ga "<change-folder>$my_q_archive<enter>" "go to archive"
 
 # --- Mail actions (custom) ---
 macro index,pager d "<modify-labels>+trash -inbox\n<shell-escape>~/.scripts/gmi-push.sh<enter><change-folder>!<enter>" "delete message"
