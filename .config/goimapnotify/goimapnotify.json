@@ -14,8 +14,8 @@
       "boxes": [
         {
           "mailbox": "INBOX",
-          "onNewMail": "~/.scripts/gmi-pull.sh",
-          "onNewMailPost": "notify-send -i mail-unread 'New mail' 'New messages in Inbox'",
+          "onNewMail": "~/.scripts/gmi-pull.sh e.shtoka@gmail.com",
+          "onNewMailPost": "",
           "onDeletedMail": ""
         }
       ]
