@@ -1,5 +1,5 @@
 # HTML — inline rendering with w3m
-text/html; pandoc -f html -t plain --wrap=auto %s; nametemplate=%s.html; copiousoutput
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=100 -nolist %s; nametemplate=%s.html; copiousoutput
 
 # HTML — open in browser
 text/html; xdg-open %s; nametemplate=%s.html
