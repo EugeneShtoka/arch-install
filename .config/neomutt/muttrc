@@ -9,6 +9,6 @@ source /home/eugene/.config/neomutt/cobalt2.muttrc
 unbind index D
 unbind index L
 unbind index R
-macro index,pager D "<modify-labels>+trash -inbox\n<change-folder>!<enter>" "delete message"
-macro index,pager L "<modify-labels>" "modify labels"
+macro index,pager D "<modify-labels>+trash -inbox\n<shell-escape>~/.scripts/gmi-push.sh '$from'<enter>" "delete message"
+macro index,pager L "<modify-labels><shell-escape>~/.scripts/gmi-push.sh '$from'<enter>" "modify labels"
 macro index R "<change-folder>!<enter>" "refresh inbox"
