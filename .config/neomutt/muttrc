@@ -86,6 +86,9 @@ bind browser     gg   top-page
 bind browser     G    bottom-page
 macro browser    h    '<change-dir><kill-line>..<enter>' "go to parent folder"
 
+# --- URL handling ---
+macro index,pager \cb "<pipe-message>urlscan<enter>" "pick URL to open"
+
 # --- Pager view ---
 macro pager V "<view-attachments><search>text/html<enter><view-mailcap><exit>" "open HTML in browser"
 
