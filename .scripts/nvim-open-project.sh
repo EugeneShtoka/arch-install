@@ -21,7 +21,7 @@ if pgrep -x wezterm-gui &>/dev/null; then
 else
     setsid /usr/bin/wezterm start -- /usr/bin/zsh -ilc "$cmd" &
     until pane_id=$(wezterm cli list --format json 2>/dev/null | jq -r '.[0].pane_id // empty') && [[ -n $pane_id ]]; do sleep 0.1; done
-    wezterm cli set-tab-title --pane-id $pane_id "$TAB_TITLE"
+    until wezterm cli set-tab-title --pane-id $pane_id "$TAB_TITLE" 2>/dev/null; do sleep 0.1; done
     wezterm cli activate-pane --pane-id $pane_id
 fi
 
