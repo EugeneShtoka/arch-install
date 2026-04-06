@@ -113,5 +113,5 @@ bind index,pager a noop
 macro index,pager a "<modify-labels>-inbox\n<sync-mailbox><shell-escape>~/.scripts/gmi-push.sh<enter><sidebar-open><check-stats>" "archive message"
 bind index,pager A create-alias
 macro index,pager u "<modify-labels>-trash +inbox\n<sync-mailbox><shell-escape>~/.scripts/gmi-push.sh<enter><sidebar-open><check-stats>" "undelete message"
-macro index,pager l "<pipe-message>~/.scripts/mutt-label.sh<enter><sync-mailbox><sidebar-open><check-stats>" "add label"
+macro index,pager l "<pipe-message>~/.scripts/neomutt-label-append.sh<enter><sync-mailbox><sidebar-open><check-stats>" "add label"
 macro index       R "<sidebar-open>" "refresh inbox"
