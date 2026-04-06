@@ -4,7 +4,7 @@ msg_id=$(grep -m1 -i "^Message-ID:" | awk '{print $2}' | tr -d '<>')
 
 current_tags=$(notmuch search --output=tags "id:$msg_id" | sort)
 all_tags=$(notmuch search --output=tags '*' | sort)
-excluded="spam\ntrash\ninbox"
+excluded="spam\ntrash\ninbox\nattachment"
 
 available=$(comm -23 \
     <(echo "$all_tags") \
