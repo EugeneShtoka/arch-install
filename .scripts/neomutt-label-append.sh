@@ -13,7 +13,7 @@ available=$(comm -23 \
 [[ -z $available ]] && exit 0
 
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
-selected=$(echo "$available" | $HOME/.scripts/rofi-run.sh -theme "${rofi_dir}/style-9-narrow.rasi" -dmenu -p "label" -matching fuzzy -i -multi-select)
+selected=$(echo "$available" | $HOME/.scripts/rofi-run.sh -theme "${rofi_dir}/style-9-narrow.rasi" -dmenu -p "label" -matching fuzzy -i -multi-select -kb-accept-entry 'ctrl+Return' -kb-accept-alt 'Return,space')
 [[ -z $selected ]] && exit 0
 
 echo "$selected" | while read -r tag; do
