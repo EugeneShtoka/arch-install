@@ -173,6 +173,9 @@ vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = 
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Source project-local .nvim.lua files (e.g. for vim-dadbod-ui connections)
+vim.o.exrc = true
+
 -- GUI font (for neovide, etc.)
 vim.o.guifont = 'Source Code Pro:h12'
 
