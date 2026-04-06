@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 if [[ $1 == --window ]]; then
-    setsid wezterm start --tab-title "Browser" -- yazi &>/dev/null
+    setsid wezterm start -- yazi &>/dev/null
 else
-    ~/.scripts/wezterm-focus-or-launch.sh "Browser" yazi
+    ~/.scripts/wezterm-focus-or-launch.sh "File browser" yazi
 fi
