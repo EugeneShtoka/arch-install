@@ -122,6 +122,7 @@ bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
 bindsym $mod+shift+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh --new
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
+bindsym $mod+shift+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh --window
 bindsym $mod+y exec --no-startup-id $SCRIPTS_PATH/youtube-viewer-start.sh
 
 # Keyboard layout switching
