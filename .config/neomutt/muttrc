@@ -108,6 +108,10 @@ macro index,pager gt "<change-folder>$my_q_trash<enter>"   "go to trash"
 macro index,pager ga "<change-folder>$my_q_archive<enter>" "go to archive"
 
 # --- Mail actions (custom) ---
-macro index,pager d "<modify-labels>+trash -inbox\n<shell-escape>~/.scripts/gmi-push.sh<enter><change-folder>!<enter>" "delete message"
-macro index,pager l "<pipe-message>~/.scripts/mutt-label.sh<enter><sync-mailbox><change-folder>!<enter>" "add label"
-macro index       R   "<change-folder>!<enter>" "refresh inbox"
+macro index,pager d "<modify-labels>+trash -inbox\n<shell-escape>~/.scripts/gmi-push.sh<enter><sidebar-open>" "delete message"
+bind index,pager a noop
+macro index,pager a "<modify-labels>-inbox\n<shell-escape>~/.scripts/gmi-push.sh<enter><sidebar-open>" "archive message"
+bind index,pager A create-alias
+macro index,pager u "<modify-labels>-trash +inbox\n<shell-escape>~/.scripts/gmi-push.sh<enter><sidebar-open>" "undelete message"
+macro index,pager l "<pipe-message>~/.scripts/mutt-label.sh<enter><sidebar-open>" "add label"
+macro index       R "<sidebar-open>" "refresh inbox"
