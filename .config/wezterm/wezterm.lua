@@ -52,13 +52,29 @@ wezterm.on("format-tab-title", function(tab)
 end)
 
 config.keys = {
+	{
+		key = "h",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action_callback(function(window, pane)
+			local text = pane:get_lines_as_text(10000)
+			local tmp = os.tmpname() .. ".sh"
+			local f = io.open(tmp, "w")
+			f:write(text)
+			f:close()
+			window:perform_action(
+				wezterm.action.SpawnCommandInNewTab({
+					args = { "nvim", "-R", "-c", "set buftype=nofile | set noswapfile | normal G", tmp },
+				}),
+				pane
+			)
+		end),
+	},
 	{ key = "c", mods = "CTRL", action = wezterm.action.CopyTo("Clipboard") },
 	{
 		key = "v",
 		mods = "CTRL",
 		action = wezterm.action_callback(function(window, pane)
-			local text = wezterm.clipboard.get_text("Clipboard")
-			window:perform_action(wezterm.action.PasteText(text:match("^%s*(.-)%s*$")), pane)
+			window:perform_action(wezterm.action.PasteFrom("Clipboard"), pane)
 		end),
 	},
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x03") },
