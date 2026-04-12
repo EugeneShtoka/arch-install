@@ -65,6 +65,8 @@
 !.config/nvim/**/*
 !.config/wezterm
 !.config/wezterm/**/*
+!.config/iamb
+!.config/iamb/**/*
 !.config/yazi
 !.config/yazi/**/*
 !.config/notmuch

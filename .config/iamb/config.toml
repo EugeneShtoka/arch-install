@@ -1,0 +1,28 @@
+[settings]
+default_profile = "hetzner"
+auto_accept_invites = true
+username_display = "displayname"
+
+[settings.image_preview]
+protocol.type = "sixel"
+protocol.font_size = [8, 16]
+size = { width = 80, height = 24 }
+
+[settings.users]
+"@slack_t01k2d5tcac-u08fys2bbhb:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@eugene:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_bg_359884650326:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_il_972545347450:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_il_lid-273173559930881:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_bg_lid-181222537961625:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+
+"@whatsapp_bg_972545347460:matrix.cloud-surf.com" = { name = "Galina Shtoka", color = "magenta" }
+"@whatsapp_bg_lid-243069496594544:matrix.cloud-surf.com" = { name = "Lior Tager", color = "magenta" }
+"@whatsapp_bg_lid-165334799663337:matrix.cloud-surf.com" = { name = "Michael Livertovsky", color = "light-cyan" }
+"@whatsapp_bg_lid-101567520882906:matrix.cloud-surf.com" = { name = "Evyatar Tamir", color = "yellow" }
+"@slack_t01k2d5tcac-u022uk1u65s:matrix.cloud-surf.com" = { name = "Evgeny Subotin" }
+
+[profiles.hetzner]
+user_id = "@eugene:matrix.cloud-surf.com"
+url = "https://matrix.cloud-surf.com"
