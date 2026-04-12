@@ -131,6 +131,5 @@ $SCRIPTS_PATH/auto-yay.sh w3m
 $SCRIPTS_PATH/auto-yay.sh urlscan
 $SCRIPTS_PATH/auto-yay.sh lynx
 $SCRIPTS_PATH/auto-yay.sh libolm
-$SCRIPTS_PATH/auto-yay.sh tuwunel-bin
 $SCRIPTS_PATH/auto-yay.sh mautrix-whatsapp-bin
 $SCRIPTS_PATH/auto-yay.sh element-desktop
