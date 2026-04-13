@@ -2,7 +2,7 @@
 # Shared app display name mapping
 # Source this file; use APP_NAMES_JQ for jq calls, app_display_name() for shell
 
-APP_NAMES_JQ='{"Vivaldi-stable":"Web browser","NeoMutt":"Email","Yazi":"File browser","ticker":"Stocks","iamb":"Messenger"}'
+APP_NAMES_JQ='{"Vivaldi-stable":"Web browser","NeoMutt":"Email","Yazi":"File browser","ticker":"Stocks","iamb":"Messenger","Element":"Messenger (V)"}'
 
 app_display_name() {
   case "$1" in
@@ -11,6 +11,7 @@ app_display_name() {
     "Yazi")           echo "File browser" ;;
     "ticker")         echo "Stocks" ;;
     "iamb")          echo "Messenger" ;;
+    "Element")        echo "Messenger (V)" ;;
     *)                echo "$1" ;;
   esac
 }
