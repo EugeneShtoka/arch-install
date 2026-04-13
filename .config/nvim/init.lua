@@ -136,6 +136,9 @@ vim.o.updatetime = 250
 
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
+-- With wezterm KKP enabled, Alt keys are CSI sequences (not ESC prefix), so 0 is safe.
+-- Fixes BLE keyboard latency causing ESC to be misread as Alt modifier.
+vim.o.ttimeoutlen = 0
 
 -- Configure how new splits should be opened
 vim.o.splitright = true

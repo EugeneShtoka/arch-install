@@ -26,7 +26,7 @@ done < <(echo "$i3_tree" | jq -r --argjson names "$APP_NAMES_JQ" '
 if [[ "$wez_json" != "[]" ]]; then
   while IFS=$'\t' read -r pane_id tab_title; do
     [[ -z "$pane_id" ]] && continue
-    entries+=("Terminal: $tab_title")
+    entries+=("$tab_title")
     actions+=("wez-tab"$'\t'"$pane_id")
   done < <(echo "$wez_json" | jq -r '
     group_by(.tab_id) | map(.[0]) | sort_by(.tab_id) |
