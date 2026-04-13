@@ -23,6 +23,7 @@ else
     until pane_id=$(wezterm cli list --format json 2>/dev/null | jq -r '.[0].pane_id // empty') && [[ -n $pane_id ]]; do sleep 0.1; done
     until wezterm cli set-tab-title --pane-id $pane_id "$TAB_TITLE" 2>/dev/null; do sleep 0.1; done
     wezterm cli activate-pane --pane-id $pane_id
+    sleep 2 && wezterm cli set-tab-title --pane-id $pane_id "$TAB_TITLE" 2>/dev/null &
 fi
 
 i3-msg '[class="org.wezfurlong.wezterm"] focus'
