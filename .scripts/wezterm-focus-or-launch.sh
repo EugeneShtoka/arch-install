@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Focus a wezterm tab by title, or open a new one running CMD
-# Usage: wez-focus-or-open.sh "Tab Title" cmd [args...]
+# Usage: wezterm-focus-or-launch.sh "Tab Title" cmd [args...]
 
 TAB_TITLE="$1"
 shift
@@ -43,5 +43,7 @@ else
     until wezterm cli set-tab-title --pane-id "$pane_id" "$TAB_TITLE" 2>/dev/null; do sleep 0.1; done
     wezterm cli activate-pane --pane-id "$pane_id" 2>/dev/null
   fi
+  # Re-assert title after app starts (apps may push OSC title sequences on init)
+  sleep 2 && wezterm cli set-tab-title --pane-id "$pane_id" "$TAB_TITLE" 2>/dev/null &
   i3-msg '[class="org.wezfurlong.wezterm"] focus' &>/dev/null
 fi
