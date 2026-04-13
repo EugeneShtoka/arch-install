@@ -33,10 +33,15 @@ if [[ -n "$tab_entry" ]]; then
   [[ -n "$con_id" ]] && i3-msg "[con_id=$con_id] focus"
   wezterm cli activate-tab --tab-id "$tab_id" 2>/dev/null
 else
-  if [[ "$wez_json" != "[]" ]]; then
+  if pgrep -x wezterm-gui &>/dev/null; then
     pane_id=$(wezterm cli spawn -- "$@" 2>/dev/null)
     [[ -n "$pane_id" ]] && wezterm cli set-tab-title --pane-id "$pane_id" "$TAB_TITLE" 2>/dev/null
+    [[ -n "$pane_id" ]] && wezterm cli activate-pane --pane-id "$pane_id" 2>/dev/null
   else
-    setsid wezterm start --tab-title "$TAB_TITLE" -- "$@" &>/dev/null
+    setsid wezterm start -- "$@" &
+    until pane_id=$(wezterm cli list --format json 2>/dev/null | jq -r '.[0].pane_id // empty') && [[ -n "$pane_id" ]]; do sleep 0.1; done
+    until wezterm cli set-tab-title --pane-id "$pane_id" "$TAB_TITLE" 2>/dev/null; do sleep 0.1; done
+    wezterm cli activate-pane --pane-id "$pane_id" 2>/dev/null
   fi
+  i3-msg '[class="org.wezfurlong.wezterm"] focus' &>/dev/null
 fi
