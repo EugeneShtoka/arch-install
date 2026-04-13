@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-$SCRIPTS_PATH/app-focus-or-launch.sh "Beeper" beeper --no-sandbox --default-frame
+$SCRIPTS_PATH/wezterm-focus-or-launch.sh "Messenger" iamb
