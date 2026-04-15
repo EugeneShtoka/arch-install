@@ -16,4 +16,6 @@ ip netns exec $NS ip route add default via 192.168.99.1
 mkdir -p /etc/netns/$NS
 echo "nameserver 1.1.1.1" > /etc/netns/$NS/resolv.conf
 iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -o $IFACE -j MASQUERADE
+iptables -I FORWARD -i veth0 -o $IFACE -j ACCEPT
+iptables -I FORWARD -i $IFACE -o veth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 echo 1 > /proc/sys/net/ipv4/ip_forward
