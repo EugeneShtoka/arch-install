@@ -133,3 +133,4 @@ $SCRIPTS_PATH/auto-yay.sh lynx
 $SCRIPTS_PATH/auto-yay.sh element-desktop
 $SCRIPTS_PATH/auto-yay.sh tailscale
 $SCRIPTS_PATH/auto-yay.sh proxychains-ng
+$SCRIPTS_PATH/auto-yay.sh tcpdump
