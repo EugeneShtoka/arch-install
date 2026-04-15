@@ -1,5 +1,5 @@
 #!/bin/zsh
-NS=direct
+NS=direct # test
 IFACE=wlan0
 
 ip netns list | grep -q "^$NS " && exit 0
