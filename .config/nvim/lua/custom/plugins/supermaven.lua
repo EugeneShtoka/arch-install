@@ -12,7 +12,7 @@ return {
       suggestion_color = '#5c6370',
       cterm = 244,
     },
-    disable_inline_completion = false,
+    disable_inline_completion = true, -- blink.cmp handles display via supermaven_blink source
     disable_keymaps = false,
   },
 }
