@@ -18,6 +18,6 @@ echo "nameserver 1.1.1.1" > /etc/netns/$NS/resolv.conf
 iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -o $IFACE -j MASQUERADE
 ip rule add from 192.168.99.0/24 lookup main priority 5260
 ip rule add to 192.168.99.0/24 lookup main priority 5261
-iptables -I FORWARD -i veth0 -o $IFACE -j ACCEPT
-iptables -I FORWARD -i $IFACE -o veth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+nft insert rule ip filter FORWARD iifname "veth0" oifname "$IFACE" accept
+nft insert rule ip filter FORWARD iifname "$IFACE" oifname "veth0" ct state related,established accept
 echo 1 > /proc/sys/net/ipv4/ip_forward
