@@ -112,6 +112,7 @@ bindsym $mod+n exec --no-startup-id $SCRIPTS_PATH/notes-start.sh
 bindsym $mod+Shift+n exec --no-startup-id wezterm start -- nvim ~/Notes
 bindsym $mod+m exec --no-startup-id $SCRIPTS_PATH/messenger-start.sh
 bindsym $mod+Mod1+m exec --no-startup-id $SCRIPTS_PATH/visual-messenger-start.sh
+bindsym $mod+Mod1+b exec --no-startup-id $SCRIPTS_PATH/app-focus-or-launch.sh "VivaldiBanking" $SCRIPTS_PATH/banking-browser.sh
 bindsym $mod+Shift+m exec --no-startup-id $SCRIPTS_PATH/rofi-monitor.sh
 bindsym $mod+Shift+p exec --no-startup-id $SCRIPTS_PATH/rofi-power.sh
 bindsym $mod+s exec --no-startup-id $SCRIPTS_PATH/slack-start.sh
