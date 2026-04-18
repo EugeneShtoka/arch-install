@@ -121,6 +121,10 @@ bindsym $mod+z exec --no-startup-id $SCRIPTS_PATH/zoom-start.sh
 bindsym $mod+u exec --no-startup-id $SCRIPTS_PATH/workspace-show-id.sh
 bindsym $mod+Tab exec --no-startup-id $SCRIPTS_PATH/app-switch.sh
 bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
+
+# clipboard utils
+bindsym ctrl+Mod1+t exec --no-startup-id sh -c "xclip -o -selection clipboard | clipkit --collapse --strip-borders --strip-timestamps | xclip -i -selection clipboard"
+bindsym ctrl+Mod1+g exec --no-startup-id sh -c "xdg-open \"\$(xclip -o -selection clipboard | grep -oE 'https?://[^[:space:]]+' | head -1)\""
 bindsym $mod+shift+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh --new
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
