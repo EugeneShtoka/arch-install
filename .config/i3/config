@@ -123,8 +123,8 @@ bindsym $mod+Tab exec --no-startup-id $SCRIPTS_PATH/app-switch.sh
 bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
 
 # clipboard utils
-bindcode Control+Mod1+28 exec --no-startup-id $SCRIPTS_PATH/clipboard-trim.sh
-bindcode Control+Mod1+42 exec --no-startup-id $SCRIPTS_PATH/clipboard-open-url.sh
+bindsym Control+Mod1+t exec --no-startup-id $SCRIPTS_PATH/clipboard-trim.sh
+bindsym Control+Mod1+g exec --no-startup-id $SCRIPTS_PATH/clipboard-open-url.sh
 bindsym $mod+shift+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh --new
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
