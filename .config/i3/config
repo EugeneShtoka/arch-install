@@ -123,7 +123,7 @@ bindsym $mod+Tab exec --no-startup-id $SCRIPTS_PATH/app-switch.sh
 bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
 
 # clipboard utils
-bindcode Control+Mod1+28 exec --no-startup-id sh -c "/usr/bin/xclip -o -selection clipboard | /home/eugene/go/bin/clipkit --collapse --strip-borders --strip-timestamps | /usr/bin/xclip -i -selection clipboard"
+bindcode Control+Mod1+28 exec --no-startup-id sh -c "/usr/bin/xclip -o -selection clipboard | /home/eugene/go/bin/clipkit --collapse --strip-borders --strip-timestamps | /usr/bin/xclip -i -selection clipboard && xdotool key ctrl+v"
 bindcode Control+Mod1+42 exec --no-startup-id sh -c "xdg-open \"\$(/usr/bin/xclip -o -selection clipboard | grep -oE 'https?://[^[:space:]]+' | head -1)\""
 bindsym $mod+shift+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh --new
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
