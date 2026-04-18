@@ -1,6 +1,6 @@
 source ~/.env
 
-echo "`date` source xprofile" >> ~/.scripts.log
+xsetroot -cursor_name left_ptr
 
 # Pre-generate i3 workspace-outputs.conf before i3 starts
 ~/.scripts/workspace-outputs.sh

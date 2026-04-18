@@ -1,5 +1,6 @@
 # Completion
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi
 
 # Zsh functions
 fpath=($ZSHFN_PATH $fpath)
@@ -20,7 +21,7 @@ source $ZSH_PLUGINS_PATH/dirhistory/dirhistory.plugin.zsh
 source $ZSH_GIT_PROMPT_PLUGIN/zshrc.sh
 
 git_prompt_info_wrapper() {
-	if [[ -d .git ]]; then
+	if git rev-parse --git-dir &>/dev/null 2>&1; then
 		echo $(git_super_status)
 	else
 		echo $Status
