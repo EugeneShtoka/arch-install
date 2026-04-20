@@ -19,10 +19,10 @@ url=$(printf '%s' "$body" | grep -oP 'https?://[^\s<>"]+' | head -1)
 
 if [[ -n "$code" ]]; then
     jq -n --arg val "$code" \
-        '{"type":"clipboard+notify","value":$val,"title":"Copied to clipboard","body":("Code copied: "+$val)}'
+        '{"type":"clipboard+notify","value":$val,"title":"[mxctl] Copied to clipboard","body":("Code copied: "+$val)}'
 elif [[ -n "$url" ]]; then
     short=$(printf '%s' "$url" | head -c 60)
     [[ "${#url}" -gt 60 ]] && short="${short}…"
     jq -n --arg val "$url" --arg b "Link copied: $short" \
-        '{"type":"clipboard+notify","value":$val,"title":"Copied to clipboard","body":$b}'
+        '{"type":"clipboard+notify","value":$val,"title":"[mxctl] Copied to clipboard","body":$b}'
 fi
