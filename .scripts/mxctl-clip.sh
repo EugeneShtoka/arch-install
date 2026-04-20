@@ -25,14 +25,14 @@ fi
 url=$(printf '%s' "$body" | grep -oP 'https?://[^\s<>"]+' | head -1)
 
 if [[ -n "$code" ]]; then
-    jq -n --arg val "$code" \
-        '{"type":"clipboard+notify","value":$val,"title":"[mxctl] Copied to clipboard","body":("Code copied: "+$val)}'
+    jq -n --arg val "$code" --arg s "$sender" \
+        '{"type":"clipboard+notify","value":$val,"title":"Copied to clipboard","body":($s+": Code copied: "+$val)}'
 elif [[ -n "$url" ]]; then
     short=$(printf '%s' "$url" | head -c 60)
     [[ "${#url}" -gt 60 ]] && short="${short}…"
-    jq -n --arg val "$url" --arg b "Link copied: $short" \
-        '{"type":"clipboard+notify","value":$val,"title":"[mxctl] Copied to clipboard","body":$b}'
+    jq -n --arg val "$url" --arg s "$sender" --arg b "Link copied: $short" \
+        '{"type":"clipboard+notify","value":$val,"title":"Copied to clipboard","body":($s+": "+$b)}'
 else
-    jq -n --arg title "[mxctl] $room" --arg body "$body" \
+    jq -n --arg title "$room" --arg body "$sender: $body" \
         '{"type":"notify","title":$title,"body":$body}'
 fi
