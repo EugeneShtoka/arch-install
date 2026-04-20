@@ -3,6 +3,9 @@
 # stdin:  JSON {"event_id","room_id","room_name","sender","body","msg_type","ts"}
 # stdout: JSON action, or nothing if nothing actionable found
 
+sender=$(jq -r '.sender // empty')
+# [[ "$sender" == "@eugene:matrix.cloud-surf.com" ]] && exit 0
+
 body=$(jq -r '.body // empty')
 [[ -z "$body" ]] && exit 0
 
