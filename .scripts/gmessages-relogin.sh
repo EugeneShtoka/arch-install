@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-MATRIX_TOKEN="uTTTo9OcDSVN0YLHJFRzJjSOkbq6jtsw"
+MATRIX_TOKEN=$(secret-tool lookup service "matrix" username "eugene")
 MATRIX_BASE="https://matrix.cloud-surf.com"
 BOT_ROOM="!PcleGWfeA4dFQYbtZT:matrix.cloud-surf.com"
 BOT_ROOM_ENC="%21PcleGWfeA4dFQYbtZT%3Amatrix.cloud-surf.com"
