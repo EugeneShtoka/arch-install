@@ -4,7 +4,7 @@
 # Usage: meta-relogin.sh [facebook|messenger|instagram]
 # If bridge is pre-configured with a mode, omit arg and script will prompt.
 
-MATRIX_TOKEN="uTTTo9OcDSVN0YLHJFRzJjSOkbq6jtsw"
+MATRIX_TOKEN=$(secret-tool lookup service "matrix" username "eugene")
 MATRIX_BASE="https://matrix.cloud-surf.com"
 MATRIX_USER="@eugene:matrix.cloud-surf.com"
 META_BOT="@metabot:matrix.cloud-surf.com"
