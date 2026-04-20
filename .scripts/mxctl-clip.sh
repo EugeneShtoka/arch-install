@@ -3,11 +3,15 @@
 # stdin:  JSON {"event_id","room_id","room_name","sender","body","msg_type","ts"}
 # stdout: JSON action, or nothing if nothing actionable found
 
-sender=$(jq -r '.sender // empty')
+input=$(cat)
+
+sender=$(jq -r '.sender // empty' <<< "$input")
 # [[ "$sender" == "@eugene:matrix.cloud-surf.com" ]] && exit 0
 
-body=$(jq -r '.body // empty')
+body=$(jq -r '.body // empty' <<< "$input")
 [[ -z "$body" ]] && exit 0
+
+room=$(jq -r '.room_name // empty' <<< "$input")
 
 # OTP/code: keyword-prefixed (higher priority, more specific)
 code=$(printf '%s' "$body" | grep -oP '(?i)(?:code|otp|pin|token|passcode)\D*\K\d{4,8}' | head -1)
@@ -19,9 +23,6 @@ fi
 
 # URL
 url=$(printf '%s' "$body" | grep -oP 'https?://[^\s<>"]+' | head -1)
-
-input=$(cat /dev/stdin 2>/dev/null; echo "$input")
-room=$(jq -r '.room_name // empty' <<< "$input")
 
 if [[ -n "$code" ]]; then
     jq -n --arg val "$code" \
