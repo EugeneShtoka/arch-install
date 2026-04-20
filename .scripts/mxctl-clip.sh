@@ -20,6 +20,9 @@ fi
 # URL
 url=$(printf '%s' "$body" | grep -oP 'https?://[^\s<>"]+' | head -1)
 
+input=$(cat /dev/stdin 2>/dev/null; echo "$input")
+room=$(jq -r '.room_name // empty' <<< "$input")
+
 if [[ -n "$code" ]]; then
     jq -n --arg val "$code" \
         '{"type":"clipboard+notify","value":$val,"title":"[mxctl] Copied to clipboard","body":("Code copied: "+$val)}'
@@ -28,4 +31,7 @@ elif [[ -n "$url" ]]; then
     [[ "${#url}" -gt 60 ]] && short="${short}…"
     jq -n --arg val "$url" --arg b "Link copied: $short" \
         '{"type":"clipboard+notify","value":$val,"title":"[mxctl] Copied to clipboard","body":$b}'
+else
+    jq -n --arg title "[mxctl] $room" --arg body "$body" \
+        '{"type":"notify","title":$title,"body":$body}'
 fi
