@@ -5,7 +5,7 @@
 
 input=$(cat)
 
-sender=$(jq -r '.sender // empty' <<< "$input")
+sender=$(jq -r '.sender_name // .sender // empty' <<< "$input")
 # [[ "$sender" == "@eugene:matrix.cloud-surf.com" ]] && exit 0
 
 body=$(jq -r '.body // empty' <<< "$input")
