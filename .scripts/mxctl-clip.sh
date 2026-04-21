@@ -32,7 +32,4 @@ elif [[ -n "$url" ]]; then
     [[ "${#url}" -gt 60 ]] && short="${short}…"
     jq -n --arg val "$url" --arg s "$sender" --arg b "Link copied: $short" \
         '{"type":"clipboard+notify","value":$val,"title":"Copied to clipboard","body":($s+": "+$b)}'
-else
-    jq -n --arg title "$room" --arg body "$sender: $body" \
-        '{"type":"notify","title":$title,"body":$body}'
 fi
