@@ -29,7 +29,6 @@ done
 name=$(print -l $ordered | $SCRIPTS_PATH/rofi-run.sh -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
 [[ -z $name ]] && exit
 
-path=${projects[$name]}
-echo "name='$name' path='$path'" >> /tmp/rofi-dev-debug.log
-[[ -z $path ]] && exit
-$SCRIPTS_PATH/nvim-open-project.sh "$name" "$path"
+proj_path=${projects[$name]}
+[[ -z $proj_path ]] && exit
+$SCRIPTS_PATH/nvim-open-project.sh "$name" "$proj_path"
