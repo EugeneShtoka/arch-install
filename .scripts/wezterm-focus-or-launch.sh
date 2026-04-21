@@ -9,6 +9,7 @@ wez_json=$(wezterm cli list --format json 2>/dev/null) || wez_json='[]'
 
 tab_entry=$(echo "$wez_json" | jq -rc --arg t "$TAB_TITLE" '.[] | select(.tab_title == $t)' | head -1)
 
+echo "TAB_TITLE='$TAB_TITLE' cmd='$*' tab_entry='$tab_entry'" >> /tmp/rofi-dev-debug.log
 if [[ -n "$tab_entry" ]]; then
   tab_id=$(echo "$tab_entry" | jq -r '.tab_id')
   win_id=$(echo "$tab_entry" | jq -r '.window_id')
