@@ -5,6 +5,8 @@
 
 input=$(cat)
 
+echo "[mxctl-notify debug] $(date -Iseconds) $input" >&2
+
 sender=$(printf '%s' "$input" | jq -r '.sender // empty')
 [[ -z "$sender" ]] && exit 0
 
