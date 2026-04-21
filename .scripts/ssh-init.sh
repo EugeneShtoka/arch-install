@@ -1,7 +1,9 @@
 #!/bin/zsh
 
 check-ssh-agent() {
-    [ -S "$SSH_AUTH_SOCK" ] && ssh-add -l &>/dev/null; [ $? -ne 2 ]
+    [ -S "$SSH_AUTH_SOCK" ] || return 1
+    ssh-add -l &>/dev/null
+    [ $? -ne 2 ]
 }
 mkdir -p ~/.tmp
 export SSH_AUTH_SOCK=~/.tmp/ssh-agent.sock
