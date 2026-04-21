@@ -11,5 +11,4 @@ selected=$(echo "$projects" | cut -d'|' -f1 | $SCRIPTS_PATH/rofi-run.sh -theme $
 proj_path=$(echo "$projects" | awk -F'|' -v name="$selected" '$1 == name {print $2}')
 [[ -z $proj_path ]] && exit
 
-echo "name='$name' path='$path'" >> /tmp/rofi-projects-debug.log
 $SCRIPTS_PATH/nvim-open-project.sh "$selected" "$proj_path"
