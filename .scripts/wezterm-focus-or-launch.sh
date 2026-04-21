@@ -34,8 +34,7 @@ if [[ -n "$tab_entry" ]]; then
   wezterm cli activate-tab --tab-id "$tab_id" 2>/dev/null
 else
   if pgrep -x wezterm-gui &>/dev/null; then
-    pane_id=$(wezterm cli spawn -- "$@" 2>/tmp/rofi-dev-spawn-err.log)
-    echo "spawn pane_id='$pane_id'" >> /tmp/rofi-dev-debug.log
+    pane_id=$(wezterm cli spawn -- "$@" 2>/dev/null)
     [[ -n "$pane_id" ]] && wezterm cli set-tab-title --pane-id "$pane_id" "$TAB_TITLE" 2>/dev/null
     [[ -n "$pane_id" ]] && wezterm cli activate-pane --pane-id "$pane_id" 2>/dev/null
   else
