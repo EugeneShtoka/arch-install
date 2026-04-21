@@ -18,9 +18,9 @@ self_ids=(
     "@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com"
     "@whatsapp_bg_lid-181222537961625:matrix.cloud-surf.com"
 )
-for id in "${self_ids[@]}"; do
-    [[ "$sender" == "$id" ]] && exit 0
-done
+#for id in "${self_ids[@]}"; do
+#    [[ "$sender" == "$id" ]] && exit 0
+#done
 
 room=$(printf '%s' "$input" | jq -r '.room_name // empty')
 body=$(printf '%s' "$input" | jq -r '.body // empty')
