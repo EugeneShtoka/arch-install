@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-TAB_TITLE="k9s: TM"
+TAB_TITLE="k9s: TipMaster"
 
 if [[ -z "$AWS_K8S_LAUNCHED" ]]; then
   exec $SCRIPTS_PATH/wezterm-focus-or-launch.sh "$TAB_TITLE" \
