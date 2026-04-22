@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-TAB_TITLE="k8s: TM Staging"
+TAB_TITLE="k9s"
 
 if [[ -z "$AWS_K8S_LAUNCHED" ]]; then
   exec $SCRIPTS_PATH/wezterm-focus-or-launch.sh "$TAB_TITLE" \
@@ -20,10 +20,4 @@ else
 fi
 
 echo "🔄 Switching k8s context to: $AWS_K8S_CONTEXT"
-kubie ctx "$AWS_K8S_CONTEXT" || {
-    echo "❌ Failed to switch context"
-    exit 1
-}
-
-sleep 1
-k9s
+kubie exec "$AWS_K8S_CONTEXT" -- k9s
