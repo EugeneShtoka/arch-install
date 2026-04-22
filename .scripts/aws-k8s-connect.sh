@@ -15,7 +15,7 @@ else
     echo "⚠ Token expired/invalid, logging in..."
     aws sso login --profile "$AWS_PROFILE" || {
         echo "❌ Login failed"
-        exit 1
+        exec zsh
     }
 fi
 
