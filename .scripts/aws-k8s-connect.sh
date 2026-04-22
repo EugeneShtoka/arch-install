@@ -20,4 +20,4 @@ else
 fi
 
 echo "🔄 Switching k8s context to: $AWS_K8S_CONTEXT"
-kubie exec "$AWS_K8S_CONTEXT" -- k9s
+kubie exec "$AWS_K8S_CONTEXT" -- k9s || { echo "❌ Failed to launch k9s"; exec zsh }
