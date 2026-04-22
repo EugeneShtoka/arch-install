@@ -47,7 +47,6 @@ $SCRIPTS_PATH/auto-yay.sh github-cli
 $SCRIPTS_PATH/auto-yay.sh expac
 $SCRIPTS_PATH/auto-yay.sh zoom
 $SCRIPTS_PATH/auto-yay.sh iamb-bin
-$SCRIPTS_PATH/auto-yay.sh autokey-gtk
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh fzf
