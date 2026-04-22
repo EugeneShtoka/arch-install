@@ -101,7 +101,7 @@ bindsym $mod+i exec --no-startup-id $SCRIPTS_PATH/rofi-projects.sh
 bindsym $mod+Shift+i exec --no-startup-id $SCRIPTS_PATH/rofi-dev.sh
 
 bindsym $mod+j exec --no-startup-id $SCRIPTS_PATH/zoom-join-meeting.sh
-bindsym $mod+k exec --no-startup-id notify-send "mod+k fired"
+bindsym $mod+k exec --no-startup-id $SCRIPTS_PATH/aws-k8s-connect.sh
 
 bindsym $mod+o exec --no-startup-id $SCRIPTS_PATH/music-download.sh
 
