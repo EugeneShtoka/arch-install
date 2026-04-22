@@ -34,10 +34,6 @@
 !.config/copyq/copyq.conf
 !.config/copyq/themes
 !.config/copyq/themes/*.ini
-!.config/autokey
-!.config/autokey/data
-!.config/autokey/data/**/*
-!.config/autokey/autokey.json
 !.config/vivaldi
 !.config/vivaldi/.gitignore
 !.config/vivaldi/styles
