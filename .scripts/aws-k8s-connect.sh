@@ -4,7 +4,7 @@ TAB_TITLE="k9s: TipMaster"
 
 if [[ -z "$AWS_K8S_LAUNCHED" ]]; then
   exec $SCRIPTS_PATH/wezterm-focus-or-launch.sh "$TAB_TITLE" \
-    /usr/bin/zsh -ilc "AWS_K8S_LAUNCHED=1 $SCRIPTS_PATH/aws-k8s-connect.sh"
+    /usr/bin/zsh -il -c "AWS_K8S_LAUNCHED=1 $SCRIPTS_PATH/aws-k8s-connect.sh; exec zsh -i"
 fi
 
 echo "🔐 Checking AWS SSO token for profile: $AWS_PROFILE"
