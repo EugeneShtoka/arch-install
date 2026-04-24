@@ -24,6 +24,7 @@ return {
     })
   end,
   opts = {
+    window = { width = 30 },
     filesystem = {
       filtered_items = {
         visible = false,

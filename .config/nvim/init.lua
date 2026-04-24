@@ -1172,6 +1172,27 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
+      local orig_filename = statusline.section_filename
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_filename = function(args)
+        if vim.b.is_claude_terminal then
+          return 'Claude Code'
+        end
+        if vim.bo.filetype == 'neo-tree' then
+          return 'File Tree'
+        end
+        return orig_filename(args)
+      end
+
+      local orig_fileinfo = statusline.section_fileinfo
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_fileinfo = function(args)
+        if vim.b.is_claude_terminal or vim.bo.filetype == 'neo-tree' then
+          return ''
+        end
+        return orig_fileinfo(args)
+      end
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
@@ -1340,7 +1361,8 @@ require('lazy').setup({
           vim.api.nvim_buf_call(buf, function()
             vim.fn.termopen(cmd or vim.o.shell)
           end)
-          vim.api.nvim_buf_set_name(buf, 'term://' .. name)
+          pcall(vim.api.nvim_buf_set_name, buf, name)
+          vim.api.nvim_buf_set_var(buf, 'term_title', name)
         end
 
         -- Create or reuse window
@@ -1366,19 +1388,19 @@ require('lazy').setup({
           vim.api.nvim_win_close(_G.term_win, false)
           _G.term_win = nil
         else
-          open_term_panel(_G.current_term or 'shell', nil)
+          open_term_panel(_G.current_term or 'Shell', nil)
         end
       end
 
       vim.keymap.set('n', '<leader>tt', toggle_term_panel, { desc = '[T]erminal [T]oggle' })
       vim.keymap.set('n', '<leader>ts', function()
-        open_term_panel('shell', nil)
+        open_term_panel('Shell', nil)
       end, { desc = '[T]erminal [S]hell' })
       vim.keymap.set('n', '<leader>tj', function()
-        open_term_panel('jsdbg', 'node --inspect')
+        open_term_panel('JS Debug', 'node --inspect')
       end, { desc = '[T]erminal [J]S debug' })
       vim.keymap.set('n', '<leader>tu', function()
-        open_term_panel('test', 'npm test')
+        open_term_panel('Tests', 'npm test')
       end, { desc = '[T]erminal [U]nit tests' })
 
       -- Terminal/Normal mode keymaps using F-keys (reliable in all terminals)
@@ -1387,21 +1409,21 @@ require('lazy').setup({
         {
           '<F4>',
           function()
-            open_term_panel('shell', nil)
+            open_term_panel('Shell', nil)
           end,
           'Terminal: shell',
         },
         {
           '<F5>',
           function()
-            open_term_panel('js-debug', 'node --inspect')
+            open_term_panel('JS Debug', 'node --inspect')
           end,
           'Terminal: JS debug',
         },
         {
           '<F6>',
           function()
-            open_term_panel('test', 'npm test')
+            open_term_panel('Tests', 'npm test')
           end,
           'Terminal: unit tests',
         },
@@ -1441,11 +1463,22 @@ require('lazy').setup({
         focus_main_editor()
       end, { desc = 'Focus main window' })
 
+      -- Stamp Claude Code terminal buffer with a consistent name on creation
+      vim.api.nvim_create_autocmd('TermOpen', {
+        pattern = 'term://*claude*',
+        callback = function()
+          vim.b.is_claude_terminal = true
+          vim.b.term_title = 'Claude Code'
+          pcall(vim.api.nvim_buf_set_name, 0, 'Claude Code')
+        end,
+      })
+
       -- F3 = focus Claude Code (open if closed, focus if open, nop if already focused)
       -- S-F3 = close Claude Code (nop if already closed)
       local function claude_win()
         for _, win in ipairs(vim.api.nvim_list_wins()) do
-          if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == 'snacks_terminal' then
+          local buf = vim.api.nvim_win_get_buf(win)
+          if vim.b[buf].is_claude_terminal then
             return win
           end
         end
@@ -1477,11 +1510,65 @@ require('lazy').setup({
         end
       end, { desc = 'Close Claude Code' })
 
-      -- F10 = focus NeoTree
+      -- Layout management: predefined panel sizes
+      local NEOTREE_WIDTH = 30
+      local TERM_HEIGHT_PCT = 0.25
+      local CLAUDE_WIDTH_PCT = 0.40
+
+      local layout_timer = nil
+      local function recalculate_layout()
+        local total_cols = vim.o.columns
+        local editor_height = vim.o.lines - vim.o.cmdheight - 1
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+          if not vim.api.nvim_win_is_valid(win) then goto continue end
+          if vim.api.nvim_win_get_config(win).relative ~= '' then goto continue end -- skip floats
+          local buf = vim.api.nvim_win_get_buf(win)
+          local ft = vim.bo[buf].filetype
+          if ft == 'neo-tree' then
+            vim.api.nvim_win_set_width(win, NEOTREE_WIDTH)
+          elseif ft == 'snacks_terminal' then
+            local w = math.max(40, math.floor(total_cols * CLAUDE_WIDTH_PCT))
+            vim.api.nvim_win_set_width(win, w)
+          end
+          ::continue::
+        end
+        if _G.term_win and vim.api.nvim_win_is_valid(_G.term_win) then
+          local h = math.max(8, math.floor(editor_height * TERM_HEIGHT_PCT))
+          vim.api.nvim_win_set_height(_G.term_win, h)
+        end
+      end
+
+      local function schedule_layout()
+        if layout_timer then pcall(function() layout_timer:stop() end) end
+        layout_timer = vim.defer_fn(recalculate_layout, 50)
+      end
+
+      -- F10 = open/focus NeoTree; S-F10 (=F22) = close NeoTree
       vim.keymap.set({ 'n', 'i', 't' }, '<F10>', function()
         vim.cmd 'stopinsert'
         vim.cmd 'Neotree focus'
-      end, { desc = 'NeoTree focus' })
+        schedule_layout()
+      end, { desc = 'NeoTree open/focus' })
+      vim.keymap.set({ 'n', 'i', 't' }, '<F22>', function()
+        vim.cmd 'stopinsert'
+        vim.cmd 'Neotree close'
+      end, { desc = 'NeoTree close' })
+
+      -- Recalculate layout on terminal resize or panel close/open
+      vim.api.nvim_create_autocmd('VimResized', { callback = schedule_layout })
+      vim.api.nvim_create_autocmd({ 'WinClosed', 'WinNew' }, { callback = schedule_layout })
+
+      -- Auto-open terminal and Claude Code on startup
+      vim.api.nvim_create_autocmd('UIEnter', {
+        once = true,
+        callback = function()
+          vim.schedule(function()
+            open_term_panel('Shell', nil)
+            vim.cmd 'stopinsert'
+            vim.cmd 'ClaudeCode'
+          end)
+        end,
+      })
 
       -- All windows: focused gets darker bg, unfocused reverts
       vim.api.nvim_create_autocmd('WinLeave', {

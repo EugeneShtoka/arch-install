@@ -7,8 +7,9 @@ prepend_keymap = [
 
   # Go-to shortcuts
   { on = ["g", "h"], run = "cd ~",             desc = "Go to home" },
-  { on = ["g", "d"], run = "cd ~/Downloads",   desc = "Go to Downloads" },
+  { on = ["g", "d"], run = "cd ~/Downloads",    desc = "Go to Downloads" },
   { on = ["g", "c"], run = "cd ~/Documents",   desc = "Go to Documents" },
+  { on = ["g", "s"], run = "cd ~/Screenshots", desc = "Go to Screenshots" },
   { on = ["g", "m"], run = "cd ~/Music",       desc = "Go to Music" },
   { on = ["g", "l"], run = "cd ~/Library",     desc = "Go to Library" },
   { on = ["g", "p"], run = "cd ~/Pictures",    desc = "Go to Pictures" },
