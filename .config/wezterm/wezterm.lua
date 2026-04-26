@@ -73,14 +73,7 @@ config.keys = {
 	{
 		key = "v",
 		mods = "CTRL",
-		action = wezterm.action_callback(function(window, pane)
-			local ok, stdout, _ = wezterm.run_child_process({ "xclip", "-o", "-sel", "clipboard" })
-			if ok then
-				pane:send_text(stdout:gsub("%s+$", ""))
-			else
-				window:perform_action(wezterm.action.PasteFrom("Clipboard"), pane)
-			end
-		end),
+		action = wezterm.action.PasteFrom("Clipboard"),
 	},
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x03") },
 	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
