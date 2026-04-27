@@ -44,9 +44,14 @@ ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /e
 stty sane 2>/dev/null
 
 echo "==> Starting SSH tunnel to VPS tinyproxy (port 8888)..."
-ssh -n -L 8888:localhost:8888 -N hetzner &
-SSH_PID=$!
-sleep 2
+if ss -tlnp 2>/dev/null | grep -q ":8888 "; then
+  echo "    (tunnel already running, reusing)"
+  SSH_PID=""
+else
+  ssh -n -L 8888:localhost:8888 -N hetzner &
+  SSH_PID=$!
+  sleep 2
+fi
 
 cleanup() {
   echo "==> Cleaning up tunnel..."
