@@ -23,33 +23,10 @@ fi
 
 BOT_ROOM_ENC=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BOT_ROOM")
 
-MODE="${1:-}"
-if [[ -z "$MODE" ]]; then
-  echo "Mode? [facebook/messenger/instagram]: "
-  read MODE
-fi
-
-case "$MODE" in
-  facebook)
-    OPEN_URL="https://www.facebook.com"
-    COOKIE_DOMAIN=".facebook.com"
-    COOKIE_KEYS=(datr c_user sb xs)
-    ;;
-  messenger)
-    OPEN_URL="https://www.messenger.com"
-    COOKIE_DOMAIN=".facebook.com"
-    COOKIE_KEYS=(datr c_user sb xs)
-    ;;
-  instagram)
-    OPEN_URL="https://www.instagram.com"
-    COOKIE_DOMAIN=".instagram.com"
-    COOKIE_KEYS=(sessionid csrftoken mid ig_did ds_user_id)
-    ;;
-  *)
-    echo "ERROR: Unknown mode '$MODE'. Use: facebook, messenger, instagram"
-    exit 1
-    ;;
-esac
+MODE="messenger"
+OPEN_URL="https://www.messenger.com"
+COOKIE_DOMAIN=".facebook.com"
+COOKIE_KEYS=(datr c_user sb xs)
 
 matrix_send() {
   local body="$1"
