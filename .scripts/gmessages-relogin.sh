@@ -64,7 +64,7 @@ vivaldi \
   --remote-debugging-port=$CDP_PORT \
   --incognito \
   "$GOOGLE_URL" \
-  &>/dev/null &
+  </dev/null &>/dev/null &
 
 echo "==> Waiting for CDP..."
 until curl -s "http://localhost:$CDP_PORT/json" > /dev/null 2>&1; do sleep 0.5; done
