@@ -38,7 +38,7 @@ ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /e
 stty sane 2>/dev/null
 
 echo "==> Starting SSH SOCKS tunnel..."
-ssh -D $SOCKS_PORT -N hetzner &
+ssh -n -D $SOCKS_PORT -N hetzner &
 SSH_PID=$!
 sleep 2
 
