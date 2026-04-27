@@ -87,7 +87,7 @@ api_event=$(
     echo '{"id":2,"method":"Page.reload","params":{}}'
     sleep 3600
   } \
-  | websocat "$cdp_url" \
+  | websocat -B 5000000 "$cdp_url" \
   | grep -m1 "voyager/api"
 )
 
