@@ -91,12 +91,11 @@ if [[ -z "$raw" ]]; then
   exit 1
 fi
 
-json=$(echo "$raw" | jq '{} + ([
+json=$(echo "$raw" | jq '[
   .result.cookies[]
   | select(.name as $n | ["datr","c_user","sb","xs"] | index($n) != null)
   | select(.domain | test("facebook\\.com|messenger\\.com"))
-  | {(.name): .value}
-] | add)')
+] | unique_by(.name) | map({(.name): .value}) | add | {datr,c_user,sb,xs}')
 
 if [[ -z "$json" || "$json" == "null" || "$json" == "{}" ]]; then
   echo "ERROR: No cookies extracted"
