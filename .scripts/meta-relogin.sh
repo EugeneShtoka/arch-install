@@ -32,17 +32,17 @@ fi
 case "$MODE" in
   facebook)
     OPEN_URL="https://www.facebook.com"
-    GRAPHQL_PATTERN="facebook.com/api/graphql"
+    COOKIE_DOMAIN=".facebook.com"
     COOKIE_KEYS=(datr c_user sb xs)
     ;;
   messenger)
     OPEN_URL="https://www.messenger.com"
-    GRAPHQL_PATTERN="messenger.com/api/graphql"
+    COOKIE_DOMAIN=".facebook.com"
     COOKIE_KEYS=(datr c_user sb xs)
     ;;
   instagram)
     OPEN_URL="https://www.instagram.com"
-    GRAPHQL_PATTERN="instagram.com/graphql"
+    COOKIE_DOMAIN=".instagram.com"
     COOKIE_KEYS=(sessionid csrftoken mid ig_did ds_user_id)
     ;;
   *)
@@ -69,7 +69,6 @@ sleep 1
 echo "==> Killing Vivaldi..."
 pkill -9 -f vivaldi 2>/dev/null
 sleep 0.5
-# Wait until all vivaldi processes are gone
 while pgrep -f vivaldi > /dev/null 2>&1; do sleep 0.3; done
 
 echo "==> Launching Vivaldi (incognito, CDP port $CDP_PORT)..."
@@ -86,38 +85,25 @@ sleep 2
 cdp_url=$(curl -s "http://localhost:$CDP_PORT/json" | jq -r 'map(select(.type=="page")) | .[0].webSocketDebuggerUrl')
 echo "==> CDP: $cdp_url"
 
-echo "==> Log in at $OPEN_URL now — waiting for graphql request..."
+echo ""
+echo "==> Log in at $OPEN_URL in the Vivaldi window."
+echo "==> Press Enter here when you are logged in and on the main page..."
+read
 
-result=$(
-  { echo '{"id":1,"method":"Network.enable","params":{}}'; sleep 3600; } \
-  | websocat "$cdp_url" \
-  | grep -m1 "$GRAPHQL_PATTERN"
-)
+echo "==> Fetching cookies via CDP..."
+raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
 
-pkill -f "websocat $cdp_url" 2>/dev/null
-
-echo "==> Got graphql request, extracting cookies..."
-
-cookie_header=$(echo "$result" | jq -r '.params.request.headers.Cookie // .params.request.headers.cookie // ""')
-
-if [[ -z "$cookie_header" ]]; then
-  echo "ERROR: No Cookie header found in captured request"
+if [[ -z "$raw" ]]; then
+  echo "ERROR: No response from CDP"
   exit 1
 fi
-
-parse_cookie() {
-  local name="$1"
-  echo "$cookie_header" \
-    | tr ';' '\n' \
-    | grep -m1 "^[[:space:]]*${name}=" \
-    | sed "s/^[[:space:]]*${name}=//; s/[[:space:]]*$//" \
-    | python3 -c "import sys,urllib.parse; print(urllib.parse.unquote(sys.stdin.read().strip()))"
-}
 
 json="{"
 first=1
 for key in "${COOKIE_KEYS[@]}"; do
-  val=$(parse_cookie "$key")
+  val=$(echo "$raw" | jq -r --arg k "$key" --arg d "$COOKIE_DOMAIN" \
+    '.result.cookies[] | select(.name==$k and (.domain==$d or .domain==($d|ltrimstr(".")))) | .value' \
+    2>/dev/null | head -1)
   if [[ -n "$val" ]]; then
     [[ $first -eq 0 ]] && json+=","
     json+="\"$key\":$(python3 -c "import sys,json; print(json.dumps(sys.argv[1]))" "$val")"
