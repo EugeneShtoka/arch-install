@@ -89,12 +89,12 @@ while true; do
   [[ -n "$li_at_check" ]] && break
   sleep 3
 done
-echo "==> Logged in! Reloading page to capture API headers..."
+echo "==> Logged in! Navigating to feed to capture API headers..."
 
 api_event=$(
   {
     echo '{"id":1,"method":"Network.enable","params":{}}'
-    echo '{"id":2,"method":"Page.reload","params":{}}'
+    echo '{"id":2,"method":"Page.navigate","params":{"url":"https://www.linkedin.com/feed/"}}'
     sleep 30
   } \
   | websocat -B 5000000 "$cdp_url" 2>/dev/null \
