@@ -132,14 +132,16 @@ fi
 cookie_header="li_at=${li_at}"
 [[ -n "$jsessionid" ]] && cookie_header+="; JSESSIONID=${jsessionid}"
 
+# requestWillBeSentExtraInfo has headers at .params.headers
+# requestWillBeSent has headers at .params.request.headers
 x_li_track=$(echo "$api_event" | jq -r '
-  .params.request.headers
+  (.params.headers // .params.request.headers)
   | to_entries[]
   | select(.key | ascii_downcase == "x-li-track")
   | .value' | head -1)
 
 x_li_page_instance=$(echo "$api_event" | jq -r '
-  .params.request.headers
+  (.params.headers // .params.request.headers)
   | to_entries[]
   | select(.key | ascii_downcase == "x-li-page-instance")
   | .value' | head -1)
