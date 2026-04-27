@@ -80,21 +80,12 @@ echo "==> CDP: $cdp_url"
 
 echo ""
 echo "==> Verify IP at http://ifconfig.me — must show VPS IP (65.21.3.202)."
-echo "==> If already logged in, log out first (session was under wrong UA)."
-echo "==> Log into linkedin.com, then navigate to the feed."
-echo "==> Press Enter here when you are on the LinkedIn feed page..."
-read
+echo "==> If already logged in, log out first. Then log in fresh and go to the feed."
+echo "==> Waiting for LinkedIn feed API request (you have 5 minutes)..."
 
-echo "==> Capturing LinkedIn API request headers (reloading page)..."
-cdp_url=$(curl -s "http://localhost:${CDP_PORT}/json" | jq -r 'map(select(.type=="page")) | .[0].webSocketDebuggerUrl')
-echo "==> CDP: $cdp_url"
 api_event=$(
-  {
-    echo '{"id":1,"method":"Network.enable","params":{}}'
-    echo '{"id":2,"method":"Page.reload","params":{}}'
-    sleep 3600
-  } \
-  | websocat -B 5000000 "$cdp_url" \
+  { echo '{"id":1,"method":"Network.enable","params":{}}'; sleep 300; } \
+  | websocat -B 5000000 "$cdp_url" 2>/dev/null \
   | grep -m1 "x-li-track"
 )
 
