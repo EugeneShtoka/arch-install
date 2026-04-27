@@ -80,20 +80,26 @@ echo "==> CDP: $cdp_url"
 
 echo ""
 echo "==> Verify IP at http://ifconfig.me — must show VPS IP (65.21.3.202)."
-echo "==> If already logged in, log out first. Then log in fresh and go to the feed."
-echo "==> Waiting for LinkedIn feed API request (reconnects on page reload)..."
+echo "==> If already logged in, log out first. Then log in fresh."
+echo "==> Waiting for li_at cookie (polling every 3s)..."
 
-api_event=""
-deadline=$(( $(date +%s) + 300 ))
-while [[ -z "$api_event" && $(date +%s) -lt $deadline ]]; do
-  cdp_url=$(curl -s "http://localhost:${CDP_PORT}/json" | jq -r 'map(select(.type=="page" and (.url|contains("linkedin")))) | .[0].webSocketDebuggerUrl // empty')
-  [[ -z "$cdp_url" ]] && sleep 2 && continue
-  api_event=$(
-    { echo '{"id":1,"method":"Network.enable","params":{}}'; sleep 30; } \
-    | websocat -B 5000000 "$cdp_url" 2>/dev/null \
-    | grep -m1 "x-li-track"
-  )
+while true; do
+  raw_cookies=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
+  li_at_check=$(echo "$raw_cookies" | jq -r '.result.cookies[] | select(.name=="li_at") | .value' 2>/dev/null | head -1)
+  [[ -n "$li_at_check" ]] && break
+  sleep 3
 done
+echo "==> Logged in! Reloading page to capture API headers..."
+
+api_event=$(
+  {
+    echo '{"id":1,"method":"Network.enable","params":{}}'
+    echo '{"id":2,"method":"Page.reload","params":{}}'
+    sleep 30
+  } \
+  | websocat -B 5000000 "$cdp_url" 2>/dev/null \
+  | grep -m1 "x-li-track"
+)
 
 if [[ -z "$api_event" ]]; then
   echo "ERROR: Could not capture LinkedIn API request (timed out)"
