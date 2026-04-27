@@ -38,13 +38,18 @@ ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /e
 stty sane 2>/dev/null
 
 echo "==> Starting SSH SOCKS tunnel..."
-ssh -n -D $SOCKS_PORT -N hetzner &
-SSH_PID=$!
-sleep 2
+if ss -tlnp 2>/dev/null | grep -q ":${SOCKS_PORT} "; then
+  echo "    (tunnel already running, reusing)"
+  SSH_PID=""
+else
+  ssh -n -D $SOCKS_PORT -N hetzner &
+  SSH_PID=$!
+  sleep 2
+fi
 
 cleanup() {
   echo "==> Cleaning up tunnel..."
-  kill $SSH_PID 2>/dev/null
+  [[ -n "$SSH_PID" ]] && kill $SSH_PID 2>/dev/null
   ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" &>/dev/null &
 }
 trap cleanup EXIT
