@@ -34,7 +34,7 @@ matrix_send() {
 }
 
 echo "==> Enabling TCP forwarding on VPS..."
-ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh" || true
+ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
 stty sane 2>/dev/null
 
 echo "==> Starting SSH tunnel to VPS tinyproxy (port $PROXY_PORT)..."
@@ -50,7 +50,7 @@ fi
 cleanup() {
   echo "==> Cleaning up tunnel..."
   [[ -n "$SSH_PID" ]] && kill $SSH_PID 2>/dev/null
-  ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh" &>/dev/null &
+  ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" &>/dev/null &
 }
 trap cleanup EXIT
 

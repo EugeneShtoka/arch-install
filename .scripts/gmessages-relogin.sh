@@ -34,7 +34,7 @@ matrix_send() {
 }
 
 echo "==> Enabling TCP forwarding on VPS..."
-ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh" || true
+ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
 stty sane 2>/dev/null
 
 echo "==> Starting SSH SOCKS tunnel..."
@@ -45,7 +45,7 @@ sleep 2
 cleanup() {
   echo "==> Cleaning up tunnel..."
   kill $SSH_PID 2>/dev/null
-  ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh" &>/dev/null &
+  ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" &>/dev/null &
 }
 trap cleanup EXIT
 
