@@ -95,17 +95,14 @@ while [[ -z "$api_event" && $(date +%s) -lt $deadline ]]; do
   )
 done
 
-echo "==> DEBUG: api_event length=${#api_event}"
-echo "==> DEBUG: api_event[:200]=${api_event:0:200}"
-
 if [[ -z "$api_event" ]]; then
-  echo "ERROR: Could not capture LinkedIn API request"
+  echo "ERROR: Could not capture LinkedIn API request (timed out)"
   exit 1
 fi
 
-echo "==> Fetching cookies via CDP..."
+echo "==> Got API event, fetching cookies..."
+cdp_url=$(curl -s "http://localhost:${CDP_PORT}/json" | jq -r 'map(select(.type=="page" and (.url|contains("linkedin")))) | .[0].webSocketDebuggerUrl')
 raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
-echo "==> DEBUG: raw length=${#raw}"
 
 li_at=$(echo "$raw" | jq -r '
   .result.cookies[]
