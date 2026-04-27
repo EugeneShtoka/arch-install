@@ -80,13 +80,95 @@ echo "==> Log into linkedin.com, then navigate to the feed."
 echo "==> Press Enter here when you are on the LinkedIn feed page..."
 read
 
-echo "==> Fetching cookies via CDP..."
-raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
+echo "==> Capturing LinkedIn API request headers (reloading page)..."
+api_event=$(python3 - "$cdp_url" <<'PYEOF'
+import sys, json, socket, base64, threading
+from urllib.request import urlopen
+from urllib.parse import urlparse
 
-if [[ -z "$raw" ]]; then
-  echo "ERROR: No response from CDP"
+cdp_url = sys.argv[1]
+
+# Minimal websocket client
+parsed = urlparse(cdp_url)
+host = parsed.hostname
+port = parsed.port or 80
+path = parsed.path
+
+sock = socket.create_connection((host, port))
+key = base64.b64encode(b'linkedin-cdp-key0').decode()
+handshake = (
+    f"GET {path} HTTP/1.1\r\n"
+    f"Host: {host}:{port}\r\n"
+    f"Upgrade: websocket\r\n"
+    f"Connection: Upgrade\r\n"
+    f"Sec-WebSocket-Key: {key}\r\n"
+    f"Sec-WebSocket-Version: 13\r\n\r\n"
+)
+sock.sendall(handshake.encode())
+# Read HTTP response
+buf = b""
+while b"\r\n\r\n" not in buf:
+    buf += sock.recv(1)
+
+def ws_send(sock, msg):
+    data = msg.encode()
+    frame = bytearray([0x81])
+    l = len(data)
+    if l < 126:
+        frame.append(0x80 | l)
+    else:
+        frame.append(0x80 | 126)
+        frame += l.to_bytes(2, 'big')
+    mask = b'\x00\x00\x00\x00'
+    frame += mask
+    frame += bytes(b ^ m for b, m in zip(data, mask * (l // 4 + 1)))
+    sock.sendall(bytes(frame))
+
+def ws_recv(sock):
+    header = sock.recv(2)
+    if not header:
+        return None
+    fin = header[0] & 0x80
+    opcode = header[0] & 0x0f
+    masked = header[1] & 0x80
+    plen = header[1] & 0x7f
+    if plen == 126:
+        plen = int.from_bytes(sock.recv(2), 'big')
+    elif plen == 127:
+        plen = int.from_bytes(sock.recv(8), 'big')
+    payload = b""
+    while len(payload) < plen:
+        payload += sock.recv(plen - len(payload))
+    return payload.decode('utf-8', errors='replace')
+
+ws_send(sock, json.dumps({"id": 1, "method": "Network.enable", "params": {}}))
+ws_send(sock, json.dumps({"id": 2, "method": "Page.reload", "params": {}}))
+
+while True:
+    msg = ws_recv(sock)
+    if not msg:
+        break
+    try:
+        data = json.loads(msg)
+    except:
+        continue
+    if data.get("method") == "Network.requestWillBeSent":
+        url = data.get("params", {}).get("request", {}).get("url", "")
+        headers = data.get("params", {}).get("request", {}).get("headers", {})
+        if "voyager/api" in url and "x-li-track" in {k.lower() for k in headers}:
+            print(json.dumps(data))
+            sock.close()
+            break
+PYEOF
+)
+
+if [[ -z "$api_event" ]]; then
+  echo "ERROR: Could not capture LinkedIn API request"
   exit 1
 fi
+
+echo "==> Fetching cookies via CDP..."
+raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
 
 li_at=$(echo "$raw" | jq -r '
   .result.cookies[]
@@ -106,12 +188,26 @@ fi
 cookie_header="li_at=${li_at}"
 [[ -n "$jsessionid" ]] && cookie_header+="; JSESSIONID=${jsessionid}"
 
+x_li_track=$(echo "$api_event" | jq -r '
+  .params.request.headers
+  | to_entries[]
+  | select(.key | ascii_downcase == "x-li-track")
+  | .value' | head -1)
+
+x_li_page_instance=$(echo "$api_event" | jq -r '
+  .params.request.headers
+  | to_entries[]
+  | select(.key | ascii_downcase == "x-li-page-instance")
+  | .value' | head -1)
+
 json=$(python3 -c "
 import sys, json
-print(json.dumps({'fi.mau.linkedin.login.cookie_header': sys.argv[1]}))
-" "$cookie_header")
+d = {'fi.mau.linkedin.login.cookie_header': sys.argv[1]}
+if sys.argv[2]: d['fi.mau.linkedin.login.x_li_track'] = sys.argv[2]
+if sys.argv[3]: d['fi.mau.linkedin.login.x_li_page_instance'] = sys.argv[3]
+print(json.dumps(d))
+" "$cookie_header" "$x_li_track" "$x_li_page_instance")
 
-echo "==> Cookie header: $cookie_header"
 echo "==> Sending to Matrix bot (keep browser open)..."
 matrix_send "$json"
 
