@@ -75,22 +75,24 @@ if [[ -z "$raw" ]]; then
   exit 1
 fi
 
-json="{"
-first=1
+cookie_str=""
 for key in "${COOKIE_KEYS[@]}"; do
   val=$(echo "$raw" | jq -r --arg k "$key" --arg d "$COOKIE_DOMAIN" \
     '.result.cookies[] | select(.name==$k and (.domain==$d or .domain==($d|ltrimstr(".")))) | .value' \
     2>/dev/null | head -1)
   if [[ -n "$val" ]]; then
-    [[ $first -eq 0 ]] && json+=","
-    json+="\"$key\":$(python3 -c "import sys,json; print(json.dumps(sys.argv[1]))" "$val")"
-    first=0
+    [[ -n "$cookie_str" ]] && cookie_str+="; "
+    cookie_str+="${key}=${val}"
   fi
 done
-json+="}"
 
-echo "==> Cookies: $json"
+if [[ -z "$cookie_str" ]]; then
+  echo "ERROR: No cookies extracted"
+  exit 1
+fi
+
+echo "==> Cookies: $cookie_str"
 echo "==> Sending to Matrix bot..."
-matrix_send "$json"
+matrix_send "$cookie_str"
 
 echo "==> Done! Check the meta bot room."
