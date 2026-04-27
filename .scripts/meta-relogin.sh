@@ -81,16 +81,16 @@ echo "==> CDP: $cdp_url"
 
 echo ""
 echo "==> Log in at $OPEN_URL in the Vivaldi window."
-echo "==> Press Enter here when you are logged in and on the main page..."
-read
+echo "==> Waiting for login cookies (polling every 3s)..."
 
-echo "==> Fetching cookies via CDP..."
-raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
-
-if [[ -z "$raw" ]]; then
-  echo "ERROR: No response from CDP"
-  exit 1
-fi
+raw=""
+while true; do
+  raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
+  c_user=$(echo "$raw" | jq -r '.result.cookies[] | select(.name=="c_user") | .value' 2>/dev/null | head -1)
+  [[ -n "$c_user" ]] && break
+  sleep 3
+done
+echo "==> Logged in!"
 
 json=$(echo "$raw" | jq '[
   .result.cookies[]
