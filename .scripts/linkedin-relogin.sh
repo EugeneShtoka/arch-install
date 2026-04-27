@@ -37,7 +37,7 @@ echo "==> Enabling TCP forwarding on VPS..."
 ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh"
 
 echo "==> Starting SSH tunnel to VPS tinyproxy (port $PROXY_PORT)..."
-ssh -L $PROXY_PORT:localhost:$PROXY_PORT -N hetzner &
+ssh -L "${PROXY_PORT}:localhost:${PROXY_PORT}" -N hetzner &
 SSH_PID=$!
 sleep 2
 
