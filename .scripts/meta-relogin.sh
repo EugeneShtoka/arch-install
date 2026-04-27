@@ -88,7 +88,7 @@ echo "==> CDP: $cdp_url"
 
 cdp_pipe=$(mktemp -u /tmp/cdp-pipe-XXXXX)
 mkfifo "$cdp_pipe"
-exec 4>"$cdp_pipe"
+exec 4<>"$cdp_pipe"
 
 > /tmp/cdp-events.log
 websocat "$cdp_url" < "$cdp_pipe" >> /tmp/cdp-events.log &
