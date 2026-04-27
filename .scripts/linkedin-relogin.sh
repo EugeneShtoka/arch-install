@@ -81,85 +81,14 @@ echo "==> Press Enter here when you are on the LinkedIn feed page..."
 read
 
 echo "==> Capturing LinkedIn API request headers (reloading page)..."
-api_event=$(python3 - "$cdp_url" <<'PYEOF'
-import sys, json, socket, base64, threading
-from urllib.request import urlopen
-from urllib.parse import urlparse
-
-cdp_url = sys.argv[1]
-
-# Minimal websocket client
-parsed = urlparse(cdp_url)
-host = parsed.hostname
-port = parsed.port or 80
-path = parsed.path
-
-sock = socket.create_connection((host, port))
-key = base64.b64encode(b'linkedin-cdp-key0').decode()
-handshake = (
-    f"GET {path} HTTP/1.1\r\n"
-    f"Host: {host}:{port}\r\n"
-    f"Upgrade: websocket\r\n"
-    f"Connection: Upgrade\r\n"
-    f"Sec-WebSocket-Key: {key}\r\n"
-    f"Sec-WebSocket-Version: 13\r\n\r\n"
-)
-sock.sendall(handshake.encode())
-# Read HTTP response
-buf = b""
-while b"\r\n\r\n" not in buf:
-    buf += sock.recv(1)
-
-def ws_send(sock, msg):
-    data = msg.encode()
-    frame = bytearray([0x81])
-    l = len(data)
-    if l < 126:
-        frame.append(0x80 | l)
-    else:
-        frame.append(0x80 | 126)
-        frame += l.to_bytes(2, 'big')
-    mask = b'\x00\x00\x00\x00'
-    frame += mask
-    frame += bytes(b ^ m for b, m in zip(data, mask * (l // 4 + 1)))
-    sock.sendall(bytes(frame))
-
-def ws_recv(sock):
-    header = sock.recv(2)
-    if not header:
-        return None
-    fin = header[0] & 0x80
-    opcode = header[0] & 0x0f
-    masked = header[1] & 0x80
-    plen = header[1] & 0x7f
-    if plen == 126:
-        plen = int.from_bytes(sock.recv(2), 'big')
-    elif plen == 127:
-        plen = int.from_bytes(sock.recv(8), 'big')
-    payload = b""
-    while len(payload) < plen:
-        payload += sock.recv(plen - len(payload))
-    return payload.decode('utf-8', errors='replace')
-
-ws_send(sock, json.dumps({"id": 1, "method": "Network.enable", "params": {}}))
-ws_send(sock, json.dumps({"id": 2, "method": "Page.reload", "params": {}}))
-
-while True:
-    msg = ws_recv(sock)
-    if not msg:
-        break
-    try:
-        data = json.loads(msg)
-    except:
-        continue
-    if data.get("method") == "Network.requestWillBeSent":
-        url = data.get("params", {}).get("request", {}).get("url", "")
-        headers = data.get("params", {}).get("request", {}).get("headers", {})
-        if "voyager/api" in url and "x-li-track" in {k.lower() for k in headers}:
-            print(json.dumps(data))
-            sock.close()
-            break
-PYEOF
+api_event=$(
+  {
+    echo '{"id":1,"method":"Network.enable","params":{}}'
+    echo '{"id":2,"method":"Page.reload","params":{}}'
+    sleep 3600
+  } \
+  | websocat "$cdp_url" \
+  | grep -m1 "voyager/api"
 )
 
 if [[ -z "$api_event" ]]; then
