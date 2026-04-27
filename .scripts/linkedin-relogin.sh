@@ -86,6 +86,8 @@ echo "==> Press Enter here when you are on the LinkedIn feed page..."
 read
 
 echo "==> Capturing LinkedIn API request headers (reloading page)..."
+cdp_url=$(curl -s "http://localhost:${CDP_PORT}/json" | jq -r 'map(select(.type=="page")) | .[0].webSocketDebuggerUrl')
+echo "==> CDP: $cdp_url"
 api_event=$(
   {
     echo '{"id":1,"method":"Network.enable","params":{}}'
