@@ -82,7 +82,7 @@ echo "==> CDP: $cdp_url"
 echo ""
 echo "==> Log in at $OPEN_URL in the Vivaldi window."
 echo "==> Press Enter here when you are logged in and on the main page..."
-read </dev/tty
+read
 
 echo "==> Fetching cookies via CDP..."
 raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
