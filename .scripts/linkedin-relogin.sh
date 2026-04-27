@@ -83,7 +83,7 @@ echo "==> Verify IP at http://ifconfig.me — must show VPS IP (65.21.3.202)."
 echo "==> If already logged in, log out first (session was under wrong UA)."
 echo "==> Log into linkedin.com, then navigate to the feed."
 echo "==> Press Enter here when you are on the LinkedIn feed page..."
-read
+read </dev/tty
 
 echo "==> Capturing LinkedIn API request headers (reloading page)..."
 cdp_url=$(curl -s "http://localhost:${CDP_PORT}/json" | jq -r 'map(select(.type=="page")) | .[0].webSocketDebuggerUrl')
