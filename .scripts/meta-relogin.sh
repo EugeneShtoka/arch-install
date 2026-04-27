@@ -67,8 +67,10 @@ matrix_send "login $MODE"
 sleep 1
 
 echo "==> Killing Vivaldi..."
-pkill -f vivaldi 2>/dev/null
-sleep 1
+pkill -9 -f vivaldi 2>/dev/null
+sleep 0.5
+# Wait until all vivaldi processes are gone
+while pgrep -f vivaldi > /dev/null 2>&1; do sleep 0.3; done
 
 echo "==> Launching Vivaldi (incognito, CDP port $CDP_PORT)..."
 vivaldi \
@@ -79,7 +81,7 @@ vivaldi \
 
 echo "==> Waiting for CDP..."
 until curl -s "http://localhost:$CDP_PORT/json" > /dev/null 2>&1; do sleep 0.5; done
-sleep 1
+sleep 2
 
 cdp_url=$(curl -s "http://localhost:$CDP_PORT/json" | jq -r 'map(select(.type=="page")) | .[0].webSocketDebuggerUrl')
 echo "==> CDP: $cdp_url"
