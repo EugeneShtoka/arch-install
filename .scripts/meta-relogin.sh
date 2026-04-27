@@ -39,6 +39,21 @@ matrix_send() {
     > /dev/null
 }
 
+echo "==> Enabling TCP forwarding on VPS..."
+ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh"
+
+echo "==> Starting SSH tunnel to VPS tinyproxy (port 8888)..."
+ssh -L 8888:localhost:8888 -N hetzner &
+SSH_PID=$!
+sleep 2
+
+cleanup() {
+  echo "==> Cleaning up tunnel..."
+  kill $SSH_PID 2>/dev/null
+  ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh" &>/dev/null &
+}
+trap cleanup EXIT
+
 echo "==> Sending 'login $MODE' to meta bot (room $BOT_ROOM)..."
 matrix_send "login $MODE"
 sleep 1
@@ -48,9 +63,10 @@ pkill -9 -f vivaldi 2>/dev/null
 sleep 0.5
 while pgrep -f vivaldi > /dev/null 2>&1; do sleep 0.3; done
 
-echo "==> Launching Vivaldi (incognito, CDP port $CDP_PORT)..."
+echo "==> Launching Vivaldi (incognito, via VPS proxy, CDP port $CDP_PORT)..."
 vivaldi \
   --remote-debugging-port=$CDP_PORT \
+  --proxy-server="http://localhost:8888" \
   --incognito \
   "$OPEN_URL" \
   &>/dev/null &
