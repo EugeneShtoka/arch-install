@@ -114,10 +114,6 @@ jsessionid=$(echo "$raw" | jq -r '
   | select(.name == "JSESSIONID" and (.domain | test("linkedin\\.com")))
   | .value' | head -1)
 
-echo "==> DEBUG: li_at length=${#li_at}, jsessionid length=${#jsessionid}"
-echo "==> DEBUG: x_li_track=${x_li_track:0:80}"
-echo "==> DEBUG: x_li_page_instance=${x_li_page_instance:0:80}"
-
 if [[ -z "$li_at" ]]; then
   echo "ERROR: li_at cookie not found — are you logged in?"
   exit 1
