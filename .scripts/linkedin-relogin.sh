@@ -81,13 +81,19 @@ echo "==> CDP: $cdp_url"
 echo ""
 echo "==> Verify IP at http://ifconfig.me — must show VPS IP (65.21.3.202)."
 echo "==> If already logged in, log out first. Then log in fresh and go to the feed."
-echo "==> Waiting for LinkedIn feed API request (you have 5 minutes)..."
+echo "==> Waiting for LinkedIn feed API request (reconnects on page reload)..."
 
-api_event=$(
-  { echo '{"id":1,"method":"Network.enable","params":{}}'; sleep 300; } \
-  | websocat -B 5000000 "$cdp_url" 2>/dev/null \
-  | grep -m1 "x-li-track"
-)
+api_event=""
+deadline=$(( $(date +%s) + 300 ))
+while [[ -z "$api_event" && $(date +%s) -lt $deadline ]]; do
+  cdp_url=$(curl -s "http://localhost:${CDP_PORT}/json" | jq -r 'map(select(.type=="page" and (.url|contains("linkedin")))) | .[0].webSocketDebuggerUrl // empty')
+  [[ -z "$cdp_url" ]] && sleep 2 && continue
+  api_event=$(
+    { echo '{"id":1,"method":"Network.enable","params":{}}'; sleep 30; } \
+    | websocat -B 5000000 "$cdp_url" 2>/dev/null \
+    | grep -m1 "x-li-track"
+  )
+done
 
 echo "==> DEBUG: api_event length=${#api_event}"
 echo "==> DEBUG: api_event[:200]=${api_event:0:200}"
