@@ -87,7 +87,7 @@ while true; do
   raw_cookies=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
   li_at_check=$(echo "$raw_cookies" | jq -r '.result.cookies[] | select(.name=="li_at") | .value' 2>/dev/null | head -1)
   [[ -n "$li_at_check" ]] && break
-  sleep 3
+  sleep 1
 done
 echo "==> Logged in! Navigating to feed to capture API headers..."
 
