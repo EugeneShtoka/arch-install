@@ -86,23 +86,15 @@ sleep 2
 cdp_url=$(curl -s "http://localhost:$CDP_PORT/json" | jq -r 'map(select(.type=="page")) | .[0].webSocketDebuggerUrl')
 echo "==> CDP: $cdp_url"
 
-cdp_pipe=$(mktemp -u /tmp/cdp-pipe-XXXXX)
-mkfifo "$cdp_pipe"
-exec 4<>"$cdp_pipe"
-
-> /tmp/cdp-events.log
-websocat "$cdp_url" < "$cdp_pipe" >> /tmp/cdp-events.log &
-WS_PID=$!
-
-echo '{"id":1,"method":"Network.enable","params":{}}' >&4
-
 echo "==> Log in at $OPEN_URL now — waiting for graphql request..."
 
-result=$(tail -f /tmp/cdp-events.log 2>/dev/null | grep -m1 "$GRAPHQL_PATTERN")
+result=$(
+  { echo '{"id":1,"method":"Network.enable","params":{}}'; sleep 3600; } \
+  | websocat "$cdp_url" \
+  | grep -m1 "$GRAPHQL_PATTERN"
+)
 
-exec 4>&-
-kill $WS_PID 2>/dev/null
-rm -f "$cdp_pipe"
+pkill -f "websocat $cdp_url" 2>/dev/null
 
 echo "==> Got graphql request, extracting cookies..."
 
