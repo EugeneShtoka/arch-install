@@ -95,7 +95,7 @@ api_event=$(
     sleep 3600
   } \
   | websocat -B 5000000 "$cdp_url" \
-  | grep -m1 "voyager/api"
+  | grep -m1 "x-li-track"
 )
 
 echo "==> DEBUG: api_event length=${#api_event}"
