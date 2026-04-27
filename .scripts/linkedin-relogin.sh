@@ -99,6 +99,9 @@ api_event=$(
   | grep -m1 "voyager/api"
 )
 
+echo "==> DEBUG: api_event length=${#api_event}"
+echo "==> DEBUG: api_event[:200]=${api_event:0:200}"
+
 if [[ -z "$api_event" ]]; then
   echo "ERROR: Could not capture LinkedIn API request"
   exit 1
@@ -106,6 +109,7 @@ fi
 
 echo "==> Fetching cookies via CDP..."
 raw=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
+echo "==> DEBUG: raw length=${#raw}"
 
 li_at=$(echo "$raw" | jq -r '
   .result.cookies[]
