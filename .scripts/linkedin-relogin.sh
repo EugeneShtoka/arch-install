@@ -37,13 +37,18 @@ echo "==> Enabling TCP forwarding on VPS..."
 ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh"
 
 echo "==> Starting SSH tunnel to VPS tinyproxy (port $PROXY_PORT)..."
-ssh -L "${PROXY_PORT}:localhost:${PROXY_PORT}" -N hetzner &
-SSH_PID=$!
-sleep 2
+if ss -tlnp 2>/dev/null | grep -q ":${PROXY_PORT} "; then
+  echo "    (tunnel already running, reusing)"
+  SSH_PID=""
+else
+  ssh -L "${PROXY_PORT}:localhost:${PROXY_PORT}" -N hetzner &
+  SSH_PID=$!
+  sleep 2
+fi
 
 cleanup() {
   echo "==> Cleaning up tunnel..."
-  kill $SSH_PID 2>/dev/null
+  [[ -n "$SSH_PID" ]] && kill $SSH_PID 2>/dev/null
   ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl restart ssh" &>/dev/null &
 }
 trap cleanup EXIT
