@@ -94,7 +94,7 @@ fi
 json=$(echo "$raw" | jq '{} + ([
   .result.cookies[]
   | select(.name as $n | ["datr","c_user","sb","xs"] | index($n) != null)
-  | select(.domain == ".facebook.com" or .domain == "facebook.com")
+  | select(.domain | test("facebook\\.com|messenger\\.com"))
   | {(.name): .value}
 ] | add)')
 
