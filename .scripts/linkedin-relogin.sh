@@ -34,15 +34,14 @@ matrix_send() {
 }
 
 echo "==> Enabling TCP forwarding on VPS..."
-ssh hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
-stty sane 2>/dev/null
+ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
 
 echo "==> Starting SSH tunnel to VPS tinyproxy (port $PROXY_PORT)..."
 if ss -tlnp 2>/dev/null | grep -q ":${PROXY_PORT} "; then
   echo "    (tunnel already running, reusing)"
   SSH_PID=""
 else
-  ssh -L "${PROXY_PORT}:localhost:${PROXY_PORT}" -N hetzner &
+  ssh -n -L "${PROXY_PORT}:localhost:${PROXY_PORT}" -N hetzner &
   SSH_PID=$!
   sleep 2
 fi
