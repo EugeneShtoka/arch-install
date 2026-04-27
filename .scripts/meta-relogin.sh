@@ -91,24 +91,20 @@ if [[ -z "$raw" ]]; then
   exit 1
 fi
 
-cookie_str=""
-for key in "${COOKIE_KEYS[@]}"; do
-  val=$(echo "$raw" | jq -r --arg k "$key" --arg d "$COOKIE_DOMAIN" \
-    '.result.cookies[] | select(.name==$k and (.domain==$d or .domain==($d|ltrimstr(".")))) | .value' \
-    2>/dev/null | head -1)
-  if [[ -n "$val" ]]; then
-    [[ -n "$cookie_str" ]] && cookie_str+="; "
-    cookie_str+="${key}=${val}"
-  fi
-done
+json=$(echo "$raw" | jq '{} + ([
+  .result.cookies[]
+  | select(.name as $n | ["datr","c_user","sb","xs"] | index($n) != null)
+  | select(.domain == ".facebook.com" or .domain == "facebook.com")
+  | {(.name): .value}
+] | add)')
 
-if [[ -z "$cookie_str" ]]; then
+if [[ -z "$json" || "$json" == "null" || "$json" == "{}" ]]; then
   echo "ERROR: No cookies extracted"
   exit 1
 fi
 
-echo "==> Cookies: $cookie_str"
+echo "==> Cookies: $json"
 echo "==> Sending to Matrix bot..."
-matrix_send "$cookie_str"
+matrix_send "$json"
 
 echo "==> Done! Check the meta bot room."
