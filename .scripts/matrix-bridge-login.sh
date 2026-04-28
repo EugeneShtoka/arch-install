@@ -43,17 +43,10 @@ create_dm() {
 show_qr() {
   local mxc=$1
   local media_path="${mxc#mxc://}"
-  local tmp=$(mktemp /tmp/qr-XXXXX)
+  local tmp=$(mktemp /tmp/qr-XXXXX.png)
   curl -s -L "${SERVER}/_matrix/media/v3/download/${media_path}" \
     -H "Authorization: Bearer $TOKEN" -o "$tmp"
-  # Convert to PNG if needed (handles webp/unknown formats)
-  if command -v convert &>/dev/null; then
-    local png=$(mktemp /tmp/qr-XXXXX.png)
-    convert "$tmp" "$png" 2>/dev/null && wezterm imgcat "$png" || wezterm imgcat "$tmp"
-    rm -f "$png"
-  else
-    wezterm imgcat "$tmp"
-  fi
+  wezterm imgcat "$tmp"
   rm -f "$tmp"
 }
 
