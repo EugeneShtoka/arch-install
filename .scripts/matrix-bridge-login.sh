@@ -4,6 +4,9 @@ SERVER="https://matrix.cloud-surf.com"
 DOMAIN="matrix.cloud-surf.com"
 APPSERVICE_TOKEN="656a56520c3b6175e98ff0ad94f15875609f8a9a4b22600bdc7e156ca04784a0"
 
+RESET=0
+[[ "$1" == "--reset" || "$1" == "-r" ]] && RESET=1
+
 # QR-based logins (sequential — scan one at a time)
 QR_BOTS=(whatsapp-bg-bot whatsapp-il-bot gmessagesbot)
 # Other logins (just trigger, handle manually in Element)
