@@ -180,6 +180,7 @@ echo ""
 
 for bot in "${QR_BOTS[@]}"; do
   echo "--- $bot ---"
+  [[ $RESET == 1 ]] && reset_dm "$bot"
   room=$(get_or_create_dm "$bot")
   if [[ -z "$room" ]]; then
     echo "  Failed to get room, skipping"
