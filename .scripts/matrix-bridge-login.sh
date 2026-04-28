@@ -145,8 +145,9 @@ for bot in "${QR_BOTS[@]}"; do
   fi
   echo "  Room: $room"
   sleep 3
+  local since_ts=$(( $(date +%s%3N) ))
   send_msg "$room" "login qr" >/dev/null
-  wait_for_qr "$room" "$bot"
+  wait_for_qr "$room" "$bot" "$since_ts"
   echo "  Press Enter to continue to next bridge..."
   read
   echo ""
