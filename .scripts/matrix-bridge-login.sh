@@ -43,11 +43,18 @@ create_dm() {
 show_qr() {
   local mxc=$1
   local media_path="${mxc#mxc://}"
-  local tmp=$(mktemp /tmp/qr-XXXXX.png)
+  local tmp=$(mktemp /tmp/qr-XXXXX)
   curl -s -L "${SERVER}/_matrix/media/v3/download/${media_path}" \
     -H "Authorization: Bearer $TOKEN" -o "$tmp"
-  wezterm imgcat "$tmp"
-  rm "$tmp"
+  # Convert to PNG if needed (handles webp/unknown formats)
+  if command -v convert &>/dev/null; then
+    local png=$(mktemp /tmp/qr-XXXXX.png)
+    convert "$tmp" "$png" 2>/dev/null && wezterm imgcat "$png" || wezterm imgcat "$tmp"
+    rm -f "$png"
+  else
+    wezterm imgcat "$tmp"
+  fi
+  rm -f "$tmp"
 }
 
 wait_for_qr() {
@@ -57,7 +64,7 @@ wait_for_qr() {
   echo "  Waiting for QR code..."
 
   for i in {1..120}; do
-    sleep 1
+    sleep 2
     local result
     result=$(curl -s "${SERVER}/_matrix/client/v3/rooms/${room}/messages?dir=b&limit=10" \
       -H "Authorization: Bearer $TOKEN" | python3 -c "
