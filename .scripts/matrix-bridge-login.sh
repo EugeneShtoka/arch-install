@@ -40,49 +40,71 @@ create_dm() {
     | python3 -c "import sys,json; print(json.load(sys.stdin).get('room_id',''))"
 }
 
+show_qr() {
+  local mxc=$1
+  local media_path="${mxc#mxc://}"
+  local tmp=$(mktemp /tmp/qr-XXXXX.png)
+  curl -s -L "${SERVER}/_matrix/media/v3/download/${media_path}" \
+    -H "Authorization: Bearer $TOKEN" -o "$tmp"
+  wezterm imgcat "$tmp"
+  rm "$tmp"
+}
+
 wait_for_qr() {
   local room=$1 bot=$2
+  local since_ts=$(( $(date +%s%3N) - 1000 ))  # ms timestamp, 1s ago
+  local last_mxc=""
   echo "  Waiting for QR code..."
-  for i in {1..60}; do
+
+  for i in {1..120}; do
     sleep 1
     local result
     result=$(curl -s "${SERVER}/_matrix/client/v3/rooms/${room}/messages?dir=b&limit=10" \
       -H "Authorization: Bearer $TOKEN" | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
-for ev in data.get('chunk', []):
+since_ts = ${since_ts}
+for ev in reversed(data.get('chunk', [])):
+    if ev.get('origin_server_ts', 0) < since_ts:
+        continue
     sender = ev.get('sender','')
+    if 'bot' not in sender:
+        continue
     ct = ev.get('content', {})
+    body = ct.get('body','')
+    # Success
+    if ct.get('msgtype') == 'm.text' and any(w in body.lower() for w in ['logged in', 'successfully', 'connected']):
+        print('SUCCESS:' + body)
+        break
     # QR as image
-    if ct.get('msgtype') == 'm.image' and 'bot' in sender:
+    if ct.get('msgtype') == 'm.image':
         print('IMAGE:' + ct.get('url',''))
         break
-    # QR as text/code block
-    if ct.get('msgtype') == 'm.text' and 'bot' in sender:
-        body = ct.get('body','')
-        if len(body) > 20 and 'Hello' not in body and 'help' not in body.lower():
-            print('TEXT:' + body)
-            break
+    # QR as text
+    if ct.get('msgtype') == 'm.text' and len(body) > 20 and 'hello' not in body.lower() and 'help' not in body.lower():
+        print('TEXT:' + body)
+        break
 " 2>/dev/null)
-    [[ -n "$result" ]] && break
+
+    [[ -z "$result" ]] && continue
+
+    if [[ "$result" == SUCCESS:* ]]; then
+      echo "  ✓ ${result#SUCCESS:}"
+      return 0
+    elif [[ "$result" == IMAGE:* ]]; then
+      local mxc="${result#IMAGE:}"
+      if [[ "$mxc" != "$last_mxc" ]]; then
+        last_mxc="$mxc"
+        echo "  QR code (scan with phone):"
+        show_qr "$mxc"
+      fi
+    elif [[ "$result" == TEXT:* ]]; then
+      echo "${result#TEXT:}"
+    fi
   done
 
-  if [[ -z "$result" ]]; then
-    echo "  Timed out waiting for QR from $bot"
-    return 1
-  fi
-
-  if [[ "$result" == IMAGE:* ]]; then
-    local mxc="${result#IMAGE:}"
-    local media_path="${mxc#mxc://}"
-    local tmp=$(mktemp /tmp/qr-XXXXX.png)
-    curl -s -L "${SERVER}/_matrix/media/v3/download/${media_path}" \
-      -H "Authorization: Bearer $TOKEN" -o "$tmp"
-    wezterm imgcat "$tmp"
-    rm "$tmp"
-  else
-    echo "${result#TEXT:}"
-  fi
+  echo "  Timed out waiting for $bot"
+  return 1
 }
 
 echo "=== Matrix Bridge Login ==="
