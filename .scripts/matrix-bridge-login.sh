@@ -71,26 +71,35 @@ show_qr() {
 }
 
 wait_for_qr() {
-  local room=$1 bot=$2
-  local since_ts=$(( $(date +%s%3N) - 1000 ))
+  local room=$1 bot=$2 since_ts=$3
   local last_mxc=""
+  # Get pagination token from current end of timeline
+  local page_token
+  page_token=$(curl -s "${SERVER}/_matrix/client/v3/rooms/${room}/messages?dir=b&limit=1" \
+    -H "Authorization: Bearer $TOKEN" | python3 -c "import sys,json; print(json.load(sys.stdin).get('end',''))" 2>/dev/null)
+
   echo "  Waiting for QR code..."
 
   for i in {1..60}; do
     sleep 2
-    local result
-    result=$(curl -s "${SERVER}/_matrix/client/v3/rooms/${room}/messages?dir=b&limit=10" \
-      -H "Authorization: Bearer $TOKEN" | python3 -c "
+    local resp result new_token
+    # Poll forward from our saved position
+    resp=$(curl -s "${SERVER}/_matrix/client/v3/rooms/${room}/messages?dir=f&from=${page_token}&limit=20" \
+      -H "Authorization: Bearer $TOKEN")
+    new_token=$(echo "$resp" | python3 -c "import sys,json; print(json.load(sys.stdin).get('end',''))" 2>/dev/null)
+    [[ -n "$new_token" ]] && page_token="$new_token"
+
+    result=$(echo "$resp" | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
-since_ts = ${since_ts}
-for ev in reversed(data.get('chunk', [])):
-    if ev.get('origin_server_ts', 0) < since_ts:
-        continue
+for ev in data.get('chunk', []):
     sender = ev.get('sender','')
     if 'bot' not in sender:
         continue
     ct = ev.get('content', {})
+    # For replacement events, prefer m.new_content
+    if 'm.new_content' in ct:
+        ct = ct['m.new_content']
     body = ct.get('body','')
     if ct.get('msgtype') == 'm.text' and any(w in body.lower() for w in ['logged in', 'successfully', 'connected']):
         print('SUCCESS:' + body)
@@ -98,7 +107,7 @@ for ev in reversed(data.get('chunk', [])):
     if ct.get('msgtype') == 'm.image':
         print('IMAGE:' + ct.get('url',''))
         break
-    if ct.get('msgtype') == 'm.text' and len(body) > 20 and 'hello' not in body.lower() and 'help' not in body.lower():
+    if ct.get('msgtype') == 'm.text' and len(body) > 20 and 'hello' not in body.lower() and 'help' not in body.lower() and 'timed out' not in body.lower():
         print('TEXT:' + body)
         break
 " 2>/dev/null)
@@ -112,16 +121,11 @@ for ev in reversed(data.get('chunk', [])):
       local mxc="${result#IMAGE:}"
       if [[ "$mxc" != "$last_mxc" ]]; then
         last_mxc="$mxc"
-        echo "  Scan this QR code (refreshes every ~20s, press Enter when done):"
+        echo "  Scan this QR code (refreshes every ~20s):"
         show_qr "$mxc"
       fi
-      # Check if user pressed Enter (non-blocking)
-      if read -t 0 -k 1; then
-        echo "  Continuing..."
-        return 0
-      fi
     elif [[ "$result" == TEXT:* ]]; then
-      echo "${result#TEXT:}"
+      echo "  ${result#TEXT:}"
     fi
   done
 
