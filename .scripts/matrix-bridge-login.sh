@@ -31,8 +31,28 @@ send_msg() {
     -d "{\"msgtype\":\"m.text\",\"body\":\"${msg}\"}" | python3 -c "import sys,json; print(json.load(sys.stdin).get('event_id',''))"
 }
 
-create_dm() {
+# Return existing DM room with bot, or empty string
+get_existing_dm() {
   local bot=$1
+  curl -s "${SERVER}/_matrix/client/v3/user/@eugene:${DOMAIN}/account_data/m.direct" \
+    -H "Authorization: Bearer $TOKEN" | python3 -c "
+import sys, json
+try:
+    data = json.load(sys.stdin)
+    rooms = data.get('@${bot}:${DOMAIN}', [])
+    if rooms: print(rooms[-1])
+except: pass
+" 2>/dev/null
+}
+
+get_or_create_dm() {
+  local bot=$1
+  local room=$(get_existing_dm "$bot")
+  if [[ -n "$room" ]]; then
+    echo "  (reusing existing room $room)" >&2
+    echo "$room"
+    return
+  fi
   curl -s -X POST "${SERVER}/_matrix/client/v3/createRoom" \
     -H "Authorization: Bearer $TOKEN" \
     -H "Content-Type: application/json" \
@@ -52,11 +72,11 @@ show_qr() {
 
 wait_for_qr() {
   local room=$1 bot=$2
-  local since_ts=$(( $(date +%s%3N) - 1000 ))  # ms timestamp, 1s ago
+  local since_ts=$(( $(date +%s%3N) - 1000 ))
   local last_mxc=""
   echo "  Waiting for QR code..."
 
-  for i in {1..120}; do
+  for i in {1..60}; do
     sleep 2
     local result
     result=$(curl -s "${SERVER}/_matrix/client/v3/rooms/${room}/messages?dir=b&limit=10" \
@@ -72,15 +92,12 @@ for ev in reversed(data.get('chunk', [])):
         continue
     ct = ev.get('content', {})
     body = ct.get('body','')
-    # Success
     if ct.get('msgtype') == 'm.text' and any(w in body.lower() for w in ['logged in', 'successfully', 'connected']):
         print('SUCCESS:' + body)
         break
-    # QR as image
     if ct.get('msgtype') == 'm.image':
         print('IMAGE:' + ct.get('url',''))
         break
-    # QR as text
     if ct.get('msgtype') == 'm.text' and len(body) > 20 and 'hello' not in body.lower() and 'help' not in body.lower():
         print('TEXT:' + body)
         break
@@ -95,43 +112,49 @@ for ev in reversed(data.get('chunk', [])):
       local mxc="${result#IMAGE:}"
       if [[ "$mxc" != "$last_mxc" ]]; then
         last_mxc="$mxc"
-        echo "  QR code (scan with phone):"
+        echo "  Scan this QR code (refreshes every ~20s, press Enter when done):"
         show_qr "$mxc"
+      fi
+      # Check if user pressed Enter (non-blocking)
+      if read -t 0 -k 1; then
+        echo "  Continuing..."
+        return 0
       fi
     elif [[ "$result" == TEXT:* ]]; then
       echo "${result#TEXT:}"
     fi
   done
 
-  echo "  Timed out waiting for $bot"
+  echo "  Timed out for $bot"
   return 1
 }
 
 echo "=== Matrix Bridge Login ==="
 echo ""
 
-# QR bridges — sequential
 for bot in "${QR_BOTS[@]}"; do
   echo "--- $bot ---"
-  room=$(create_dm "$bot")
+  room=$(get_or_create_dm "$bot")
   if [[ -z "$room" ]]; then
-    echo "  Failed to create room, skipping"
+    echo "  Failed to get room, skipping"
     continue
   fi
   echo "  Room: $room"
-  sleep 3  # wait for bot to join
+  sleep 3
   send_msg "$room" "login qr" >/dev/null
   wait_for_qr "$room" "$bot"
-  echo ""
-  echo "  Scan the QR, then press Enter to continue..."
+  echo "  Press Enter to continue to next bridge..."
   read
   echo ""
 done
 
-# Other bridges — create rooms and trigger login
 echo "--- Other bridges (handle auth in Element) ---"
 for bot in "${OTHER_BOTS[@]}"; do
-  room=$(create_dm "$bot")
+  room=$(get_or_create_dm "$bot")
+  if [[ -z "$room" ]]; then
+    echo "  $bot: failed to get room"
+    continue
+  fi
   sleep 2
   send_msg "$room" "login" >/dev/null
   echo "  $bot → $room"
