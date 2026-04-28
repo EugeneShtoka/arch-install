@@ -75,4 +75,28 @@ curl -s -X PUT "${SERVER}/_matrix/client/v3/user/@eugene:${DOMAIN}/account_data/
   -H "Content-Type: application/json" \
   -d "$mdirect_cleaned" >/dev/null
 
+echo ""
+echo "=== Wiping bridge DBs on VPS ==="
+ssh hetzner "
+  set -e
+  echo 'Stopping bridge services...'
+  sudo systemctl stop mautrix-gmessages mautrix-linkedin mautrix-meta mautrix-signal mautrix-slack mautrix-telegram mautrix-whatsapp-bg mautrix-whatsapp-il
+
+  echo 'Deleting bridge DBs...'
+  sudo rm -f \
+    /var/lib/mautrix-gmessages/bridge.db \
+    /var/lib/mautrix-linkedin/bridge.db \
+    /var/lib/mautrix-meta/bridge.db \
+    /var/lib/mautrix-slack/bridge.db \
+    /var/lib/mautrix-whatsapp-bg/bridge.db \
+    /var/lib/mautrix-whatsapp-il/bridge.db
+
+  echo 'Restarting bridge services...'
+  sudo systemctl start mautrix-gmessages mautrix-linkedin mautrix-meta mautrix-signal mautrix-slack mautrix-telegram mautrix-whatsapp-bg mautrix-whatsapp-il
+
+  echo 'Bridge services status:'
+  sudo systemctl is-active mautrix-gmessages mautrix-linkedin mautrix-meta mautrix-signal mautrix-slack mautrix-telegram mautrix-whatsapp-bg mautrix-whatsapp-il
+"
+
+echo ""
 echo "Done. Run matrix-bridge-login.sh to start fresh."
