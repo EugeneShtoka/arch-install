@@ -48,6 +48,45 @@ except: pass
 " 2>/dev/null
 }
 
+reset_dm() {
+  local bot=$1
+  # Get all rooms for this bot from m.direct
+  local rooms
+  rooms=$(curl -s "${SERVER}/_matrix/client/v3/user/@eugene:${DOMAIN}/account_data/m.direct" \
+    -H "Authorization: Bearer $TOKEN" | python3 -c "
+import sys, json
+try:
+    data = json.load(sys.stdin)
+    rooms = data.get('@${bot}:${DOMAIN}', [])
+    for r in rooms: print(r)
+except: pass
+" 2>/dev/null)
+
+  for room in ${(f)rooms}; do
+    echo "  Leaving $room..." >&2
+    curl -s -X POST "${SERVER}/_matrix/client/v3/rooms/${room}/leave" \
+      -H "Authorization: Bearer $TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{}' >/dev/null
+  done
+
+  # Remove bot from m.direct account data
+  local mdirect
+  mdirect=$(curl -s "${SERVER}/_matrix/client/v3/user/@eugene:${DOMAIN}/account_data/m.direct" \
+    -H "Authorization: Bearer $TOKEN")
+  local updated
+  updated=$(echo "$mdirect" | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+data.pop('@${bot}:${DOMAIN}', None)
+print(json.dumps(data))
+" 2>/dev/null)
+  curl -s -X PUT "${SERVER}/_matrix/client/v3/user/@eugene:${DOMAIN}/account_data/m.direct" \
+    -H "Authorization: Bearer $TOKEN" \
+    -H "Content-Type: application/json" \
+    -d "$updated" >/dev/null
+}
+
 get_or_create_dm() {
   local bot=$1
   local room=$(get_existing_dm "$bot")
