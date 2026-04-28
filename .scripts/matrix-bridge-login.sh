@@ -120,7 +120,7 @@ for bot in "${QR_BOTS[@]}"; do
   fi
   echo "  Room: $room"
   sleep 3  # wait for bot to join
-  send_msg "$room" "login" >/dev/null
+  send_msg "$room" "login qr" >/dev/null
   wait_for_qr "$room" "$bot"
   echo ""
   echo "  Scan the QR, then press Enter to continue..."
