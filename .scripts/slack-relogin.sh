@@ -50,9 +50,6 @@ echo "==> Waiting for CDP..."
 until curl -s "http://localhost:$CDP_PORT/json" > /dev/null 2>&1; do sleep 0.5; done
 sleep 2
 
-cdp_url=$(curl -s "http://localhost:$CDP_PORT/json" | jq -r 'map(select(.type=="page")) | .[0].webSocketDebuggerUrl')
-echo "==> CDP: $cdp_url"
-
 echo ""
 echo "==> Log into your Slack workspace in the Vivaldi window."
 echo "==> Waiting for xoxc token in localStorage (polling every 3s)..."
@@ -60,6 +57,10 @@ echo "==> Waiting for xoxc token in localStorage (polling every 3s)..."
 auth_token=""
 d_cookie=""
 while true; do
+  # Re-fetch cdp_url each iteration — page URL changes after login redirect
+  cdp_url=$(curl -s "http://localhost:$CDP_PORT/json" | jq -r 'map(select(.type=="page" and (.url|test("slack\\.com")))) | .[0].webSocketDebuggerUrl // empty')
+  [[ -z "$cdp_url" ]] && { sleep 3; continue; }
+
   raw_cookies=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
   raw_token=$(echo '{"id":2,"method":"Runtime.evaluate","params":{"expression":"(function(){try{return Object.values(JSON.parse(localStorage.localConfig_v2).teams)[0].token}catch(e){return \"\"}})()"}}' | websocat -1 "$cdp_url" 2>/dev/null)
 
