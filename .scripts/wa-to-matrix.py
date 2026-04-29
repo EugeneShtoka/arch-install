@@ -57,7 +57,7 @@ BOT_USER = "@whatsapp-bg-bot:matrix.cloud-surf.com"
 # Both must be in the appservice namespace (whatsapp_bg_*) to support backdated timestamps
 SENDER_MAP = {
     "Eugene":       "@whatsapp_bg_lid-181222537961625:matrix.cloud-surf.com",
-    "Galina Shtoka": "@whatsapp_bg_lid-159828718669891:matrix.cloud-surf.com",
+    "Galina Shtoka": "@whatsapp_bg_972545347460:matrix.cloud-surf.com",
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
