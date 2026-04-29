@@ -180,8 +180,8 @@ def main():
                         help="Skip first N messages (for resuming)")
     args = parser.parse_args()
 
-    # Build name → matrix user mapping
-    name_map = {}
+    # Build name → matrix user mapping (CLI overrides SENDER_MAP)
+    name_map = dict(SENDER_MAP)
     if args.map:
         for entry in args.map:
             if '=' not in entry:
