@@ -235,7 +235,8 @@ def main():
         abs_i = i + args.skip
         sender = msg['sender']
         user_id = name_map.get(sender, BOT_USER)
-        body = msg['body'] if sender in name_map else f"[{sender}] {msg['body']}"
+        # Only add [Name] prefix for truly unmapped senders (bot fallback)
+        body = msg['body'] if user_id != BOT_USER else f"[{sender}] {msg['body']}"
         ts_ms = msg['ts'] or 0
 
         try:
