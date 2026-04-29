@@ -47,11 +47,11 @@ except ImportError:
 # Your homeserver URL (local or VPS)
 HOMESERVER = "http://localhost:6167"
 
-# Appservice token — get from: sudo cat /etc/mautrix-whatsapp/registration.yaml | grep as_token
-AS_TOKEN = "PASTE_AS_TOKEN_HERE"
+# Appservice token — from /etc/tuwunel/tuwunel.toml [global.appservice.whatsapp-bg]
+AS_TOKEN = "JlgbB8Tf1TTAl0kjV9s5gImRmTRu3uFtqZlbkUak3kLElv50nhxWVUswt5o6pMGv"
 
 # The bridge bot user (must be within the appservice namespace)
-BOT_USER = "@whatsappbot:localhost"
+BOT_USER = "@whatsapp-bg-bot:matrix.cloud-surf.com"
 
 # ─────────────────────────────────────────────────────────────────────────────
 
