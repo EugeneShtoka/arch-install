@@ -50,8 +50,15 @@ HOMESERVER = "http://localhost:6167"
 # Appservice token — from /etc/tuwunel/tuwunel.toml [global.appservice.whatsapp-bg]
 AS_TOKEN = "JlgbB8Tf1TTAl0kjV9s5gImRmTRu3uFtqZlbkUak3kLElv50nhxWVUswt5o6pMGv"
 
-# The bridge bot user (must be within the appservice namespace)
+# The bridge bot user (fallback for unmapped senders)
 BOT_USER = "@whatsapp-bg-bot:matrix.cloud-surf.com"
+
+# Auto sender map — display name as it appears in the WA export → Matrix user ID
+# Both must be in the appservice namespace (whatsapp_bg_*) to support backdated timestamps
+SENDER_MAP = {
+    "Eugene":       "@whatsapp_bg_lid-181222537961625:matrix.cloud-surf.com",
+    "Galina Shtoka": "@whatsapp_bg_lid-159828718669891:matrix.cloud-surf.com",
+}
 
 # ─────────────────────────────────────────────────────────────────────────────
 
