@@ -1558,10 +1558,14 @@ require('lazy').setup({
       vim.api.nvim_create_autocmd('VimResized', { callback = schedule_layout })
       vim.api.nvim_create_autocmd({ 'WinClosed', 'WinNew' }, { callback = schedule_layout })
 
-      -- Auto-open terminal and Claude Code on startup
+      -- Auto-open terminal and Claude Code on startup (only when opening a directory, not a file)
       vim.api.nvim_create_autocmd('UIEnter', {
         once = true,
         callback = function()
+          local arg = vim.fn.argv(0)
+          if arg ~= '' and vim.fn.isdirectory(arg) == 0 then
+            return
+          end
           vim.schedule(function()
             open_term_panel('Shell', nil)
             vim.cmd 'stopinsert'
