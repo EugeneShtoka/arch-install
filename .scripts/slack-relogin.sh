@@ -54,7 +54,7 @@ cleanup() {
 trap cleanup EXIT
 
 echo "==> Sending 'login' to slack bot (room $BOT_ROOM)..."
-matrix_send "login"
+matrix_send "login token"
 sleep 1
 
 echo "==> Killing Vivaldi..."
