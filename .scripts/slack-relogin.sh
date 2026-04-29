@@ -67,6 +67,7 @@ while true; do
   auth_token=$(echo "$raw_token" | jq -r '.result.result.value // empty' 2>/dev/null)
   d_cookie=$(echo "$raw_cookies" | jq -r '.result.cookies[] | select(.name=="d" and (.domain|test("slack\\.com"))) | .value' 2>/dev/null | head -1)
 
+  echo "  cdp_url=${cdp_url:0:60} auth=${auth_token:0:15} d=${d_cookie:0:15}"
   [[ "$auth_token" == xoxc-* && -n "$d_cookie" ]] && break
   sleep 3
 done
