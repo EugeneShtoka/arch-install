@@ -61,11 +61,13 @@ while true; do
   cdp_url=$(curl -s "http://localhost:$CDP_PORT/json" | jq -r 'map(select(.type=="page" and (.url|test("slack\\.com")))) | .[0].webSocketDebuggerUrl // empty')
   [[ -z "$cdp_url" ]] && { sleep 3; continue; }
 
-  raw_cookies=$(echo '{"id":1,"method":"Network.getAllCookies","params":{}}' | websocat -1 "$cdp_url" 2>/dev/null)
-  raw_token=$(echo '{"id":2,"method":"Runtime.evaluate","params":{"expression":"(function(){try{return Object.values(JSON.parse(localStorage.localConfig_v2).teams)[0].token}catch(e){return \"\"}})()"}}' | websocat -1 "$cdp_url" 2>/dev/null)
+  # Send both commands in one WebSocket session, collect all responses for 3s
+  raw=$(printf \
+    '{"id":1,"method":"Network.getAllCookies","params":{}}\n{"id":2,"method":"Runtime.evaluate","params":{"expression":"(function(){try{return Object.values(JSON.parse(localStorage.localConfig_v2).teams)[0].token}catch(e){return \"\"}})()"}}' \
+    | timeout 3 websocat "$cdp_url" 2>/dev/null)
 
-  auth_token=$(echo "$raw_token" | jq -r '.result.result.value // empty' 2>/dev/null)
-  d_cookie=$(echo "$raw_cookies" | jq -r '.result.cookies[] | select(.name=="d" and (.domain|test("slack\\.com"))) | .value' 2>/dev/null | head -1)
+  auth_token=$(echo "$raw" | jq -rs 'map(select(.id==2)) | .[0].result.result.value // empty' 2>/dev/null)
+  d_cookie=$(echo "$raw" | jq -rs 'map(select(.id==1)) | .[0].result.cookies[] | select(.name=="d" and (.domain|test("slack\\.com"))) | .value' 2>/dev/null | head -1)
 
   echo "  cdp_url=${cdp_url:0:60} auth=${auth_token:0:15} d=${d_cookie:0:15}"
   [[ "$auth_token" == xoxc-* && -n "$d_cookie" ]] && break
