@@ -37,7 +37,7 @@ for item in $items; do
   if [[ -n ${scores[$item]} ]]; then
     known+=("${scores[$item]}"$'\t'"$item")
   else
-    unknown+=($item)
+    unknown+=("$item")
   fi
 done
 
