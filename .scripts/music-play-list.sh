@@ -49,6 +49,6 @@ echo $playlist_map
 if [[ -n "$choice" ]]; then
     $SCRIPTS_PATH/music-stop.sh
     pathToPlay="${playlist_map["$choice"]}"
-    echo $pathToPlay
+    echo $playlist_map["$choice"]
     setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
 fi
