@@ -44,7 +44,7 @@ fi
 
 choice=$(printf "%s\n" "${playlist_options[@]}" | $SCRIPTS_PATH/rofi-freq.sh music-play-list -i -theme "${rofi_dir}/${rofi_theme}.rasi" -matching prefix)
 notify_send "Music Player" "Playlist '$choice' was selected."
-echo $playlist_map
+for k v in "${(@kv)playlist_map}"; do echo "$k -> $v"; done
 
 if [[ -n "$choice" ]]; then
     $SCRIPTS_PATH/music-stop.sh
