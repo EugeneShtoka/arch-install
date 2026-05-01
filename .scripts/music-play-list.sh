@@ -42,11 +42,10 @@ if [ ${#playlist_options[@]} -eq 0 ]; then
     exit 0
 fi
 
-choice=$(printf "%s" "${playlist_options[@]}" | $SCRIPTS_PATH/rofi-freq.sh music-play-list -i -theme "${rofi_dir}/${rofi_theme}.rasi" -matching prefix)
+choice=$(printf "%s\n" "${playlist_options[@]}" | $SCRIPTS_PATH/rofi-freq.sh music-play-list -i -theme "${rofi_dir}/${rofi_theme}.rasi" -matching prefix)
 
 if [[ -n "$choice" ]]; then
-    notify_send "Music Player" "Playlist '$choice' was selected."
     $SCRIPTS_PATH/music-stop.sh
-    pathToPlay="${playlist_map[$choice]}"
+    pathToPlay="${playlist_map[${choice%$'\n'}]}"
     setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
 fi
