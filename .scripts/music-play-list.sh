@@ -30,15 +30,12 @@ fi
 declare -A playlist_map
 declare -a playlist_options
 
-find "$search_path" -type f -iname "*.${playlist_extension}" -print0 |
 while IFS= read -r -d '' fullpath; do
     filename="${fullpath##*/}"
     display_name="${filename%.*}"
-    
-    playlist_map["$display_name"]="$fullpath"
-    playlist_options+=("$display_name")
-
-done
+    playlist_map[$display_name]=$fullpath
+    playlist_options+=($display_name)
+done < <(find "$search_path" -type f -iname "*.${playlist_extension}" -print0)
 
 if [ ${#playlist_options[@]} -eq 0 ]; then
     notify_send "Music Player" "No playlists found in '$search_path'."
