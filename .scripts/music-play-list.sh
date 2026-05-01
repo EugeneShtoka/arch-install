@@ -34,7 +34,7 @@ while IFS= read -r -d '' fullpath; do
     filename="${fullpath##*/}"
     display_name="${filename%.*}"
     playlist_map[$display_name]=$fullpath
-    playlist_options+=($display_name)
+    playlist_options+=("$display_name")
 done < <(find "$search_path" -type f -iname "*.${playlist_extension}" -print0)
 
 if [ ${#playlist_options[@]} -eq 0 ]; then
