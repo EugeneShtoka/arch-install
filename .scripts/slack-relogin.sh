@@ -1,34 +1,9 @@
 #!/bin/zsh
 
-MATRIX_TOKEN=$(secret-tool lookup service "matrix" username "eugene")
-MATRIX_BASE="https://matrix.cloud-surf.com"
-SLACK_BOT="@slackbot:matrix.cloud-surf.com"
-MATRIX_USER="@eugene:matrix.cloud-surf.com"
+source ~/.scripts/matrix-lib.sh
+matrix_connect "slackbot" || exit 1
+
 CDP_PORT=9222
-
-# Resolve slackbot DM room via m.direct account data
-BOT_ROOM=$(curl -s \
-  "$MATRIX_BASE/_matrix/client/v3/user/$MATRIX_USER/account_data/m.direct" \
-  -H "Authorization: Bearer $MATRIX_TOKEN" \
-  | jq -r --arg bot "$SLACK_BOT" '.[$bot][0] // empty')
-
-if [[ -z "$BOT_ROOM" ]]; then
-  echo "ERROR: Could not find DM room with $SLACK_BOT"
-  exit 1
-fi
-
-BOT_ROOM_ENC=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BOT_ROOM")
-
-matrix_send() {
-  local body="$1"
-  local txn=$(date +%s%N)
-  curl -s -X PUT \
-    "$MATRIX_BASE/_matrix/client/v3/rooms/$BOT_ROOM_ENC/send/m.room.message/$txn" \
-    -H "Authorization: Bearer $MATRIX_TOKEN" \
-    -H "Content-Type: application/json" \
-    -d "{\"msgtype\":\"m.text\",\"body\":$(python3 -c "import sys,json; print(json.dumps(sys.argv[1]))" "$body")}" \
-    > /dev/null
-}
 
 cdp_eval() {
   local cdp_url="$1" cmd="$2"
