@@ -4,25 +4,10 @@
 # Usage: meta-relogin.sh [facebook|messenger|instagram]
 # If bridge is pre-configured with a mode, omit arg and script will prompt.
 
-MATRIX_TOKEN=$(secret-tool lookup service "matrix" username "eugene")
-MATRIX_BASE="https://matrix.cloud-surf.com"
-MATRIX_USER="@eugene:matrix.cloud-surf.com"
-META_BOT="@metabot:matrix.cloud-surf.com"
+source ~/.scripts/matrix-lib.sh
+matrix_connect "metabot" || exit 1
+
 CDP_PORT=9222
-
-# Resolve meta bot DM room via m.direct account data
-BOT_ROOM=$(curl -s \
-  "$MATRIX_BASE/_matrix/client/v3/user/$MATRIX_USER/account_data/m.direct" \
-  -H "Authorization: Bearer $MATRIX_TOKEN" \
-  | jq -r --arg bot "$META_BOT" '.[$bot][0] // empty')
-
-if [[ -z "$BOT_ROOM" ]]; then
-  echo "ERROR: Could not find DM room with $META_BOT"
-  exit 1
-fi
-
-BOT_ROOM_ENC=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BOT_ROOM")
-
 MODE="messenger"
 OPEN_URL="https://www.messenger.com"
 COOKIE_DOMAIN=".facebook.com"
