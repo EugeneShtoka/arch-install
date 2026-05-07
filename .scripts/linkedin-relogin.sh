@@ -1,37 +1,12 @@
 #!/bin/zsh
 
-MATRIX_TOKEN=$(secret-tool lookup service "matrix" username "eugene")
-MATRIX_BASE="https://matrix.cloud-surf.com"
-LINKEDIN_BOT="@linkedinbot:matrix.cloud-surf.com"
-MATRIX_USER="@eugene:matrix.cloud-surf.com"
+source ~/.scripts/matrix-lib.sh
+matrix_connect "linkedinbot" || exit 1
+
 CDP_PORT=9222
 PROXY_PORT=8888
 LINKEDIN_URL="https://www.linkedin.com"
 BRIDGE_UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
-
-# Resolve linkedin bot DM room via m.direct account data
-BOT_ROOM=$(curl -s \
-  "$MATRIX_BASE/_matrix/client/v3/user/$MATRIX_USER/account_data/m.direct" \
-  -H "Authorization: Bearer $MATRIX_TOKEN" \
-  | jq -r --arg bot "$LINKEDIN_BOT" '.[$bot][0] // empty')
-
-if [[ -z "$BOT_ROOM" ]]; then
-  echo "ERROR: Could not find DM room with $LINKEDIN_BOT"
-  exit 1
-fi
-
-BOT_ROOM_ENC=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BOT_ROOM")
-
-matrix_send() {
-  local body="$1"
-  local txn=$(date +%s%N)
-  curl -s -X PUT \
-    "$MATRIX_BASE/_matrix/client/v3/rooms/$BOT_ROOM_ENC/send/m.room.message/$txn" \
-    -H "Authorization: Bearer $MATRIX_TOKEN" \
-    -H "Content-Type: application/json" \
-    -d "{\"msgtype\":\"m.text\",\"body\":$(python3 -c "import sys,json; print(json.dumps(sys.argv[1]))" "$body")}" \
-    > /dev/null
-}
 
 echo "==> Enabling TCP forwarding on VPS..."
 ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
