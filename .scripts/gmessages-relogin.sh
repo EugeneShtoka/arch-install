@@ -1,37 +1,12 @@
 #!/bin/zsh
 
-MATRIX_TOKEN=$(secret-tool lookup service "matrix" username "eugene")
-MATRIX_BASE="https://matrix.cloud-surf.com"
-GMESSAGES_BOT="@gmessagesbot:matrix.cloud-surf.com"
-MATRIX_USER="@eugene:matrix.cloud-surf.com"
+source ~/.scripts/matrix-lib.sh
+matrix_connect "gmessagesbot" || exit 1
+
 SOCKS_PORT=1080
 CDP_PORT=9222
 GOOGLE_URL="https://accounts.google.com/AccountChooser?continue=https://messages.google.com/web/config"
 COOKIE_KEYS=(SID HSID SSID OSID APISID SAPISID __Secure-1PSIDTS)
-
-# Resolve gmessages bot DM room via m.direct account data
-BOT_ROOM=$(curl -s \
-  "$MATRIX_BASE/_matrix/client/v3/user/$MATRIX_USER/account_data/m.direct" \
-  -H "Authorization: Bearer $MATRIX_TOKEN" \
-  | jq -r --arg bot "$GMESSAGES_BOT" '.[$bot][0] // empty')
-
-if [[ -z "$BOT_ROOM" ]]; then
-  echo "ERROR: Could not find DM room with $GMESSAGES_BOT"
-  exit 1
-fi
-
-BOT_ROOM_ENC=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BOT_ROOM")
-
-matrix_send() {
-  local body="$1"
-  local txn=$(date +%s%N)
-  curl -s -X PUT \
-    "$MATRIX_BASE/_matrix/client/v3/rooms/$BOT_ROOM_ENC/send/m.room.message/$txn" \
-    -H "Authorization: Bearer $MATRIX_TOKEN" \
-    -H "Content-Type: application/json" \
-    -d "{\"msgtype\":\"m.text\",\"body\":$(python3 -c "import sys,json; print(json.dumps(sys.argv[1]))" "$body")}" \
-    > /dev/null
-}
 
 echo "==> Enabling TCP forwarding on VPS..."
 ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
