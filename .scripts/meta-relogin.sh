@@ -13,17 +13,6 @@ OPEN_URL="https://www.messenger.com"
 COOKIE_DOMAIN=".facebook.com"
 COOKIE_KEYS=(datr c_user sb xs)
 
-matrix_send() {
-  local body="$1"
-  local txn=$(date +%s%N)
-  curl -s -X PUT \
-    "$MATRIX_BASE/_matrix/client/v3/rooms/$BOT_ROOM_ENC/send/m.room.message/$txn" \
-    -H "Authorization: Bearer $MATRIX_TOKEN" \
-    -H "Content-Type: application/json" \
-    -d "{\"msgtype\":\"m.text\",\"body\":$(python3 -c "import sys,json; print(json.dumps(sys.argv[1]))" "$body")}" \
-    > /dev/null
-}
-
 echo "==> Enabling TCP forwarding on VPS..."
 ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
 stty sane 2>/dev/null
