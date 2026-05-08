@@ -11,7 +11,7 @@ cdp_eval() {
 }
 
 echo "==> Sending 'login' to slack bot (room $BOT_ROOM)..."
-matrix_send "login"
+matrix_send "login token"
 sleep 1
 
 # Launch Vivaldi with CDP if not already running, or if no CDP port is open
