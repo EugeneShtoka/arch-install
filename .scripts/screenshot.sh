@@ -12,7 +12,7 @@ else
 fi
 
 # Copy the filename to the clipboard
-echo "$output_filename" | xclip -selection clipboard
+echo -n "$output_path" | xclip -selection clipboard
 
 # Notify the user if successful
 if [[ $? -eq 0 ]]; then
