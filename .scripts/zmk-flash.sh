@@ -66,3 +66,4 @@ flash() {
 }
 
 bt_disconnect
+wait_for_bootloader
