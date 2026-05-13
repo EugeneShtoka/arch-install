@@ -17,6 +17,7 @@ bt_disconnect() {
     [[ -n $mac ]] || { echo "Piantor Pro BT not found in paired devices, skipping disconnect"; return; }
     echo "Disconnecting Piantor Pro BT ($mac)..."
     bluetoothctl disconnect $mac
+    bluetoothctl remove $mac
 }
 
 bt_scan_and_connect() {
