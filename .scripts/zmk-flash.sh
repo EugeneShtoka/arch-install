@@ -30,7 +30,7 @@ bt_scan_and_connect() {
     local mac=$(bluetoothctl devices | grep -i "$BT_NAME_PATTERN" | awk '{print $2}' | head -1)
     if [[ -n $mac ]]; then
         echo "Connecting to Piantor Pro BT ($mac)..."
-        bluetoothctl connect $mac
+        bluetoothctl pair $mac
     else
         echo "Piantor Pro BT not found after scan" >&2
     fi
