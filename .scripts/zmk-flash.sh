@@ -66,4 +66,4 @@ flash() {
 }
 
 bt_disconnect
-wait_for_bootloader
+bt_scan_and_connect
