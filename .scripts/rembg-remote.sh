@@ -2,11 +2,14 @@
 
 model="u2net"
 rembg_flags=""
+alpha_thresh=0
 
 while [[ $1 == -* ]]; do
     case $1 in
         -light)  model="u2netp" ;;
+        -isnet)  model="isnet-general-use" ;;
         -refine) rembg_flags="$rembg_flags --alpha-matting" ;;
+        -thresh) alpha_thresh=${2:?"-thresh requires a value (0-255)"}; shift ;;
         *) echo "Unknown flag: $1" >&2; exit 1 ;;
     esac
     shift
