@@ -1,7 +1,19 @@
 #!/bin/zsh
 
+model="u2net"
+rembg_flags=""
+
+while [[ $1 == -* ]]; do
+    case $1 in
+        -light)  model="u2netp" ;;
+        -refine) rembg_flags="$rembg_flags --alpha-matting" ;;
+        *) echo "Unknown flag: $1" >&2; exit 1 ;;
+    esac
+    shift
+done
+
 src=$1
-[[ -z $src ]] && { echo "Usage: rembg-remote <image> [output]" >&2; exit 1; }
+[[ -z $src ]] && { echo "Usage: rembg-remote [-light] [-refine] <image> [output]" >&2; exit 1; }
 [[ ! -f $src ]] && { echo "Error: file not found: $src" >&2; exit 1; }
 
 filename=$(basename $src)
@@ -15,7 +27,7 @@ echo "Uploading..."
 command scp -q -P 47293 -i ~/.ssh/hetzner_vps "$src" eugene@65.21.3.202:${remote}
 
 echo "Removing background..."
-ssh hetzner "sudo podman run --rm -v /tmp:/data danielgatis/rembg i /data/$(basename $remote) /data/$(basename $remote_out)"
+ssh hetzner "sudo podman run --rm -v /tmp:/data danielgatis/rembg i -m ${model} ${rembg_flags} /data/$(basename $remote) /data/$(basename $remote_out)"
 
 echo "Downloading..."
 command scp -q -P 47293 -i ~/.ssh/hetzner_vps eugene@65.21.3.202:${remote_out} "$out"
