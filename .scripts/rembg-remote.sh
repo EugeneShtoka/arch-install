@@ -24,7 +24,7 @@ remote="/tmp/rembg-$$-${filename}"
 remote_out="/tmp/rembg-$$-${stem}-nobg.png"
 
 echo "Uploading..."
-command scp -q -P $VPS_PORT -i $VPS_SSH_KEY "$src" ${VPS_USER}@${VPS_HOST}:${remote}
+command scp -q "$src" vps:${remote}
 
 echo "Removing background..."
 ssh vps "sudo podman run --rm -v /tmp:/data danielgatis/rembg i -m ${model} ${rembg_flags} /data/$(basename $remote) /data/$(basename $remote_out)"
