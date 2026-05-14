@@ -1,13 +1,13 @@
 #!/bin/zsh
 
 src=$1
-[[ -z $src ]] && { echo "Usage: rembg-remote <image>" >&2; exit 1; }
+[[ -z $src ]] && { echo "Usage: rembg-remote <image> [output]" >&2; exit 1; }
 [[ ! -f $src ]] && { echo "Error: file not found: $src" >&2; exit 1; }
 
 filename=$(basename $src)
 stem=${filename%.*}
-ext=${filename##*.}
-out="$(dirname $src)/${stem}-nobg.png"
+ts=$(date +%Y%m%d_%H%M%S)
+out=${2:-"$(dirname $src)/${stem}-nobg-${ts}.png"}
 remote="/tmp/rembg-$$-${filename}"
 remote_out="/tmp/rembg-$$-${stem}-nobg.png"
 
