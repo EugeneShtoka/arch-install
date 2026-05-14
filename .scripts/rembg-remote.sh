@@ -24,13 +24,13 @@ remote="/tmp/rembg-$$-${filename}"
 remote_out="/tmp/rembg-$$-${stem}-nobg.png"
 
 echo "Uploading..."
-command scp -q -P 47293 -i ~/.ssh/hetzner_vps "$src" eugene@65.21.3.202:${remote}
+command scp -q -P $VPS_PORT -i $VPS_SSH_KEY "$src" ${VPS_USER}@${VPS_HOST}:${remote}
 
 echo "Removing background..."
 ssh hetzner "sudo podman run --rm -v /tmp:/data danielgatis/rembg i -m ${model} ${rembg_flags} /data/$(basename $remote) /data/$(basename $remote_out)"
 
 echo "Downloading..."
-command scp -q -P 47293 -i ~/.ssh/hetzner_vps eugene@65.21.3.202:${remote_out} "$out"
+command scp -q -P $VPS_PORT -i $VPS_SSH_KEY ${VPS_USER}@${VPS_HOST}:${remote_out} "$out"
 
 ssh hetzner "sudo rm -f ${remote} ${remote_out}"
 
