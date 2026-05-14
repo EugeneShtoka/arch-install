@@ -9,7 +9,7 @@ LINKEDIN_URL="https://www.linkedin.com"
 BRIDGE_UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
 
 echo "==> Enabling TCP forwarding on VPS..."
-ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
+ssh -n vps "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
 
 echo "==> Starting SSH tunnel to VPS tinyproxy (port $PROXY_PORT)..."
 if ss -tlnp 2>/dev/null | grep -q ":${PROXY_PORT} "; then
@@ -24,7 +24,7 @@ fi
 cleanup() {
   echo "==> Cleaning up tunnel..."
   [[ -n "$SSH_PID" ]] && kill $SSH_PID 2>/dev/null
-  ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" &>/dev/null &
+  ssh vps "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" &>/dev/null &
 }
 trap cleanup EXIT
 
@@ -54,7 +54,7 @@ cdp_url=$(curl -s "http://localhost:$CDP_PORT/json" | jq -r 'map(select(.type=="
 echo "==> CDP: $cdp_url"
 
 echo ""
-echo "==> Verify IP at http://ifconfig.me — must show VPS IP (65.21.3.202)."
+echo "==> Verify IP at http://ifconfig.me — must show VPS IP ($VPS_HOST)."
 echo "==> If already logged in, log out first. Then log in fresh."
 echo "==> Waiting for li_at cookie (polling every 3s)..."
 

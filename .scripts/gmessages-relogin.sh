@@ -9,7 +9,7 @@ GOOGLE_URL="https://accounts.google.com/AccountChooser?continue=https://messages
 COOKIE_KEYS=(SID HSID SSID OSID APISID SAPISID __Secure-1PSIDTS)
 
 echo "==> Enabling TCP forwarding on VPS..."
-ssh -n hetzner "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
+ssh -n vps "sudo sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" || true
 stty sane 2>/dev/null
 
 echo "==> Starting SSH SOCKS tunnel..."
@@ -25,7 +25,7 @@ fi
 cleanup() {
   echo "==> Cleaning up tunnel..."
   [[ -n "$SSH_PID" ]] && kill $SSH_PID 2>/dev/null
-  ssh hetzner "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" &>/dev/null &
+  ssh vps "sudo sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config.d/hardening.conf && sudo systemctl reload ssh" &>/dev/null &
 }
 trap cleanup EXIT
 
