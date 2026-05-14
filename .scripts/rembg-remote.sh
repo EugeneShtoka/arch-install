@@ -32,6 +32,11 @@ command scp -q "$src" vps:${remote}
 echo "Removing background..."
 ssh vps "sudo podman run --rm -v /tmp:/data danielgatis/rembg i -m ${model} ${rembg_flags} /data/$(basename $remote) /data/$(basename $remote_out)"
 
+if (( alpha_thresh > 0 )); then
+    echo "Thresholding alpha at ${alpha_thresh}..."
+    ssh vps "python3 ~/rembg-thresh.py ${remote_out} ${alpha_thresh}"
+fi
+
 echo "Downloading..."
 command scp -q vps:${remote_out} "$out"
 
