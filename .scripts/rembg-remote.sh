@@ -20,6 +20,6 @@ ssh hetzner "sudo podman run --rm -v /tmp:/data danielgatis/rembg i /data/$(base
 echo "Downloading..."
 command scp -q -P 47293 -i ~/.ssh/hetzner_vps eugene@65.21.3.202:${remote_out} "$out"
 
-ssh hetzner "rm -f ${remote} ${remote_out}"
+ssh hetzner "sudo rm -f ${remote} ${remote_out}"
 
 echo "Done: $out"
