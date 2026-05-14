@@ -22,4 +22,5 @@ command scp -q -P 47293 -i ~/.ssh/hetzner_vps eugene@65.21.3.202:${remote_out} "
 
 ssh hetzner "sudo rm -f ${remote} ${remote_out}"
 
+echo -n "$out" | xclip -selection clipboard
 echo "Done: $out"
