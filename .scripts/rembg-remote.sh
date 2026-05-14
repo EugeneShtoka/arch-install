@@ -30,7 +30,7 @@ echo "Removing background..."
 ssh vps "sudo podman run --rm -v /tmp:/data danielgatis/rembg i -m ${model} ${rembg_flags} /data/$(basename $remote) /data/$(basename $remote_out)"
 
 echo "Downloading..."
-command scp -q -P $VPS_PORT -i $VPS_SSH_KEY ${VPS_USER}@${VPS_HOST}:${remote_out} "$out"
+command scp -q vps:${remote_out} "$out"
 
 ssh vps "sudo rm -f ${remote} ${remote_out}"
 
