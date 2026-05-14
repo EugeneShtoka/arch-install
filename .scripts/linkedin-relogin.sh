@@ -16,7 +16,7 @@ if ss -tlnp 2>/dev/null | grep -q ":${PROXY_PORT} "; then
   echo "    (tunnel already running, reusing)"
   SSH_PID=""
 else
-  ssh -n -L "${PROXY_PORT}:localhost:${PROXY_PORT}" -N hetzner &
+  ssh -n -L "${PROXY_PORT}:localhost:${PROXY_PORT}" -N vps &
   SSH_PID=$!
   sleep 2
 fi

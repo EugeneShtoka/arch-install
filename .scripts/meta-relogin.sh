@@ -22,7 +22,7 @@ if ss -tlnp 2>/dev/null | grep -q ":8888 "; then
   echo "    (tunnel already running, reusing)"
   SSH_PID=""
 else
-  ssh -n -L 8888:localhost:8888 -N hetzner &
+  ssh -n -L 8888:localhost:8888 -N vps &
   SSH_PID=$!
   sleep 2
 fi
