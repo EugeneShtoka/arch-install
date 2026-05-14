@@ -15,5 +15,7 @@ alias stop=$SCRIPTS_PATH/music-stop.sh
 alias pgd='setsid xdg-open "https://drive.google.com/drive/u/0/my-drive" &>/dev/null'
 alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
 
+alias rembg=$SCRIPTS_PATH/rembg-remote.sh
+
 # To maintain this as last item - it should be last in the list
 alias rename='setsid thunar --bulk-rename &>/dev/null'
