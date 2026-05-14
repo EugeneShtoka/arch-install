@@ -30,7 +30,7 @@ echo "Uploading..."
 command scp -q "$src" vps:${remote}
 
 echo "Removing background..."
-ssh vps "sudo podman run --rm -v /tmp:/data danielgatis/rembg i -m ${model} ${rembg_flags} /data/$(basename $remote) /data/$(basename $remote_out)"
+ssh vps "sudo podman run --rm -v /tmp:/data -v /home/eugene/.u2net:/root/.u2net danielgatis/rembg i -m ${model} ${rembg_flags} /data/$(basename $remote) /data/$(basename $remote_out)"
 
 if (( alpha_thresh > 0 )); then
     echo "Thresholding alpha at ${alpha_thresh}..."
