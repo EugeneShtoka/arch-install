@@ -49,9 +49,7 @@ echo "Waiting for $(($seconds_to_wait / 3600))h $(($seconds_to_wait % 3600 / 60)
 # Run the alarm in background process
 (
     sleep $seconds_to_wait
-    beep
-    beep
-    beep
+    printf '\a\a\a'
 ) &
 
 # Get the background process ID
