@@ -24,7 +24,11 @@ config.term = "wezterm"
 
 config.enable_kitty_keyboard = true
 
-config.audible_bell = "SystemBeep"
+config.audible_bell = "Disabled"
+
+wezterm.on("bell", function(window, pane)
+	wezterm.run_child_process({ "paplay", "/usr/share/sounds/freedesktop/stereo/bell.oga" })
+end)
 
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
