@@ -21,6 +21,4 @@ esac
 # Sleep for the calculated time
 sleep $seconds
 
-beep
-beep
-beep
+printf '\a\a\a'
