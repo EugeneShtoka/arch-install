@@ -166,6 +166,7 @@ vim.o.scrolloff = 10
 
 -- Show borders between window splits
 vim.o.laststatus = 3
+vim.o.belloff = ""
 vim.opt.fillchars = { horiz = '─', horizup = '┴', horizdown = '┬', vert = '│', vertleft = '┤', vertright = '├', verthoriz = '┼', diff = ' ' }
 
 -- Disable the intro message (Help poor children in Uganda, etc.)

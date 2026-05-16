@@ -11,6 +11,8 @@ else
   maim -u "$output_path"
 fi
 
+paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga &
+
 # Copy the filename to the clipboard
 echo -n "$output_path" | xclip -selection clipboard
 
