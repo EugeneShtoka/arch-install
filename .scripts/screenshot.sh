@@ -18,5 +18,5 @@ echo -n "$output_path" | xclip -selection clipboard
 
 # Notify the user if successful
 if [[ $? -eq 0 ]]; then
-  echo "Screenshot saved as $output_path"
+  notify-send "Screenshot saved" "$output_path"
 fi
