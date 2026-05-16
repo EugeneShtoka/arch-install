@@ -10,6 +10,8 @@
 !.scripts/**
 !.icons
 !.icons/**
+!.sounds
+!.sounds/**
 !dev
 !dev/work
 !dev/work/.gitconfig

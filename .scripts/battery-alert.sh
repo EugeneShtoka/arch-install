@@ -8,9 +8,7 @@ get_battery_info
 
 if [ $battery_level -le $threshold ] && [ "$battery_state" = "discharging" ]; then
     notify_send -u critical -a "system-notify" "$(get_battery_status $battery_level $battery_state) Low battery" --icon " " -r 101029
-    paplay /usr/share/sounds/freedesktop/stereo/bell.oga
-    paplay /usr/share/sounds/freedesktop/stereo/bell.oga
-    paplay /usr/share/sounds/freedesktop/stereo/bell.oga
+    paplay $HOME/.sounds/battery_low.mp3
 else
     dunstctl close 101029
 fi
