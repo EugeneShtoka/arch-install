@@ -8,3 +8,4 @@ source $SCRIPTS_PATH/battery.sh
 
 get_battery_info
 root-notify-send "Charging $battery_level%" -i $ICONS_PATH/plug.png -r 101029
+paplay $USR_HOME/.sounds/charging.mp3
