@@ -1,3 +1,3 @@
 function beep() {
-    printf '\a'
+    paplay /usr/share/sounds/freedesktop/stereo/bell.oga
 }
