@@ -20,13 +20,15 @@ done < <(grep '^nvim_project ' $SCRIPTS_PATH/aliases-projects.sh)
 for d in $HOME/dev/*(N/) $HOME/dev/work/*(N/); do
 	[[ ${d:t} == work ]] && continue
 	[[ -d $d/.git ]] || continue
-	[[ -v projects[${d:t}] ]] && continue
+	local name=${d:t}
+	[[ $d == $HOME/dev/work/* ]] && name="work-$name"
+	[[ -v projects[$name] ]] && continue
 	[[ -n ${projects[(r)$d]} ]] && continue
-	projects[${d:t}]=$d
-	ordered+=(${d:t})
+	projects[$name]=$d
+	ordered+=($name)
 done
 
-name=$(print -l $ordered | $SCRIPTS_PATH/rofi-run.sh -theme ${dir}/${theme}.rasi -dmenu -matching prefix)
+name=$(print -l $ordered | $SCRIPTS_PATH/rofi-freq.sh projects -theme ${dir}/${theme}.rasi -matching prefix)
 [[ -z $name ]] && exit
 
 proj_path=${projects[$name]}
