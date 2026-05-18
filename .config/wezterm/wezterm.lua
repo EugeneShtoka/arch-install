@@ -1,17 +1,19 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local green = "#8ff586"
-local light_blue = "#3aa5ff"
-local cobalt2_bg = "#193549"
-
-local scheme = wezterm.color.get_builtin_schemes()["Cobalt 2 (Gogh)"]
-scheme.foreground = green
-scheme.background = cobalt2_bg
-scheme.ansi[5] = light_blue -- blue -> light blue
-scheme.brights[5] = light_blue
-
-config.color_schemes = { ["My Cobalt 2"] = scheme }
+config.color_schemes = {
+	["My Cobalt 2"] = {
+		background = "#193549",
+		foreground = "#8ff586",
+		cursor_bg = "#f0cc09",
+		cursor_fg = "#fefff2",
+		cursor_border = "#f0cc09",
+		selection_bg = "#18354f",
+		selection_fg = "#b5b5b5",
+		ansi = { "#000000", "#ff0000", "#38de21", "#ffe50a", "#3aa5ff", "#ff005d", "#00bbbb", "#bbbbbb" },
+		brights = { "#555555", "#f40e17", "#3bd01d", "#edc809", "#3aa5ff", "#ff55ff", "#6ae3fa", "#ffffff" },
+	},
+}
 config.color_scheme = "My Cobalt 2"
 
 config.font = wezterm.font_with_fallback({
