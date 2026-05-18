@@ -15,6 +15,4 @@ git push
 
 chmod -R +x $SCRIPTS_PATH
 
-git pull
-
 $SCRIPTS_PATH/zsh-reload-config.sh
