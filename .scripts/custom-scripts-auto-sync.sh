@@ -17,5 +17,4 @@ chmod -R +x $SCRIPTS_PATH
 
 git pull
 
-$SCRIPTS_PATH/custom-scripts-delete-license-and-readme.sh
 $SCRIPTS_PATH/zsh-reload-config.sh
