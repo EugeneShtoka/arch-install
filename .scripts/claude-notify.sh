@@ -13,7 +13,10 @@ now=$(date +%s)
 
 if [[ -f $THROTTLE_FILE ]]; then
     last=$(< $THROTTLE_FILE)
-    (( now - last < THROTTLE_SECS )) && exit 0
+    if (( now - last < THROTTLE_SECS )); then
+        echo $now > $THROTTLE_FILE
+        exit 0
+    fi
 fi
 
 echo $now > $THROTTLE_FILE

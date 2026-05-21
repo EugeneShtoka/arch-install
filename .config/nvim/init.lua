@@ -1317,6 +1317,9 @@ require('lazy').setup({
         split_side = 'right',
         split_width_percentage = 0.4,
       },
+      diff_opts = {
+        keep_terminal_focus = true,
+      },
     },
     keys = {
       { '<leader>cc', '<cmd>ClaudeCode<cr>', desc = '[C]laude [C]ode toggle' },
