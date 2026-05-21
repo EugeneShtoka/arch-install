@@ -94,6 +94,14 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action_callback(function(window, pane)
 			wezterm.run_child_process({ "sh", "-c", "date +%s > /tmp/claude-context-switch" })
+			window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
+		end),
+	},
+	{
+		key = "Tab",
+		mods = "CTRL|ALT",
+		action = wezterm.action_callback(function(window, pane)
+			wezterm.run_child_process({ "sh", "-c", "date +%s > /tmp/claude-context-switch" })
 			window:perform_action(wezterm.action.ShowTabNavigator, pane)
 		end),
 	},
