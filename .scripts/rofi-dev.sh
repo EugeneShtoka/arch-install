@@ -31,6 +31,8 @@ done
 name=$(print -l $ordered | $SCRIPTS_PATH/rofi-freq.sh projects -theme ${dir}/${theme}.rasi -matching prefix)
 [[ -z $name ]] && exit
 
+echo $(date +%s) > /tmp/claude-context-switch
+
 proj_path=${projects[$name]}
 [[ -z $proj_path ]] && exit
 $SCRIPTS_PATH/nvim-open-project.sh "$name" "$proj_path"
