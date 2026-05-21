@@ -11,14 +11,9 @@ sound=$3
 
 now=$(date +%s)
 
-if [[ -f $THROTTLE_FILE ]]; then
-    last=$(< $THROTTLE_FILE)
-    if (( now - last < THROTTLE_SECS )); then
-        echo $now > $THROTTLE_FILE
-        exit 0
-    fi
-fi
-
+last=0
+[[ -f $THROTTLE_FILE ]] && last=$(< $THROTTLE_FILE)
 echo $now > $THROTTLE_FILE
+(( now - last < THROTTLE_SECS )) && exit 0
 notify-send "$title" "$body"
 paplay "$sound"
