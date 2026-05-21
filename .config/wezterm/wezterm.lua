@@ -81,7 +81,22 @@ config.keys = {
 	},
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x03") },
 	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
-	{ key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action.ShowTabNavigator },
+	{
+		key = "Tab",
+		mods = "CTRL",
+		action = wezterm.action_callback(function(window, pane)
+			wezterm.run_child_process({ "sh", "-c", "date +%s > /tmp/claude-context-switch" })
+			window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
+		end),
+	},
+	{
+		key = "Tab",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action_callback(function(window, pane)
+			wezterm.run_child_process({ "sh", "-c", "date +%s > /tmp/claude-context-switch" })
+			window:perform_action(wezterm.action.ShowTabNavigator, pane)
+		end),
+	},
 }
 
 return config
