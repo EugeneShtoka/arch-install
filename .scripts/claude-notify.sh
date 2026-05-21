@@ -14,6 +14,14 @@ now=$(date +%s)
 last=0
 [[ -f $THROTTLE_FILE ]] && last=$(< $THROTTLE_FILE)
 echo $now > $THROTTLE_FILE
-(( now - last < THROTTLE_SECS )) && exit 0
-notify-send "$title" "$body"
-paplay "$sound"
+
+if (( now - last >= THROTTLE_SECS )); then
+    notify-send "$title" "$body"
+    paplay "$sound"
+    exit 0
+fi
+
+# Within throttle window: show popup silently if user switched context since last notification
+ctx=0
+[[ -f /tmp/claude-context-switch ]] && ctx=$(< /tmp/claude-context-switch)
+(( ctx > last )) && notify-send "$title" "$body"
