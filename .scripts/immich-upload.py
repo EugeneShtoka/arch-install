@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, sys, json, hashlib, datetime, mimetypes, urllib.request, urllib.error
 
-IMMICH_URL = "http://localhost:2283"
+IMMICH_URL = "https://immich.cloud-surf.com"
 API_KEY = "Jo96b47uH02oAJ0WxGneGG3PlNWnLTYV7Myd7g0OJjU"
 FILES_LIST = "/tmp/missing_local_paths.txt"
 
