@@ -44,8 +44,31 @@ matrix_connect() {
     | jq -r --arg bot "$BOT_ID" '.[$bot][0] // empty')
 
   if [[ -z "$BOT_ROOM" ]]; then
-    echo "ERROR: No DM room found with $BOT_ID" >&2
-    return 1
+    echo "==> No DM room with $BOT_ID — creating..."
+    local create_resp
+    create_resp=$(curl -s -X POST "$MATRIX_BASE/_matrix/client/v3/createRoom" \
+      -H "Authorization: Bearer $MATRIX_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d "{\"is_direct\":true,\"invite\":[\"$BOT_ID\"],\"preset\":\"private_chat\"}")
+    BOT_ROOM=$(echo "$create_resp" | jq -r '.room_id // empty')
+    if [[ -z "$BOT_ROOM" ]]; then
+      echo "ERROR: Failed to create DM room: $(echo "$create_resp" | jq -r '.error // .errcode')" >&2
+      return 1
+    fi
+    # Persist to m.direct account data
+    local direct_data
+    direct_data=$(curl -s \
+      "$MATRIX_BASE/_matrix/client/v3/user/$MATRIX_USER/account_data/m.direct" \
+      -H "Authorization: Bearer $MATRIX_TOKEN")
+    [[ "$direct_data" == *errcode* ]] && direct_data="{}"
+    local updated
+    updated=$(echo "$direct_data" | jq --arg bot "$BOT_ID" --arg room "$BOT_ROOM" '.[$bot] = [$room]')
+    curl -s -X PUT \
+      "$MATRIX_BASE/_matrix/client/v3/user/$MATRIX_USER/account_data/m.direct" \
+      -H "Authorization: Bearer $MATRIX_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d "$updated" > /dev/null
+    echo "==> Created DM room $BOT_ROOM"
   fi
 
   BOT_ROOM_ENC=$(_matrix_urlencode "$BOT_ROOM")
