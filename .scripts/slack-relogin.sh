@@ -40,10 +40,22 @@ while true; do
   fi
 
   raw_token=$(cdp_eval "$cdp_url" '{"id":2,"method":"Runtime.evaluate","params":{"expression":"(function(){try{return Object.values(JSON.parse(localStorage.localConfig_v2).teams)[0].token}catch(e){return \"\"}})()"}}')
-  raw_cookies=$(cdp_eval "$cdp_url" '{"id":1,"method":"Network.getAllCookies","params":{}}')
+
+  # Use browser-level CDP for cookies — more reliable for httpOnly cookies than tab-level
+  browser_cdp=$(curl -s "http://localhost:$CDP_PORT/json/version" | jq -r '.webSocketDebuggerUrl // empty')
+  if [[ -n "$browser_cdp" ]]; then
+    raw_cookies=$(cdp_eval "$browser_cdp" '{"id":1,"method":"Network.getAllCookies","params":{}}')
+  else
+    raw_cookies=$(cdp_eval "$cdp_url" '{"id":1,"method":"Network.getAllCookies","params":{}}')
+  fi
 
   auth_token=$(echo "$raw_token" | jq -r '.result.result.value // empty' 2>/dev/null)
-  d_cookie=$(echo "$raw_cookies" | jq -r '.result.cookies[] | select(.name=="d" and (.domain|test("slack\\.com"))) | .value' 2>/dev/null | head -1)
+  d_cookie=$(echo "$raw_cookies" | jq -r '.result.cookies[]? | select(.name=="d" and (.domain|test("slack\\.com"))) | .value' 2>/dev/null | head -1)
+
+  # Debug: show all slack.com cookies when d is still missing
+  if [[ -z "$d_cookie" ]]; then
+    echo "$raw_cookies" | jq -r '.result.cookies[]? | select(.domain|test("slack\\.com")) | "  [cookie] \(.name)=\(.value|.[0:20]) (\(.domain))"' 2>/dev/null
+  fi
 
   echo "  auth=${auth_token:0:15} d=${d_cookie:0:15}"
   [[ "$auth_token" == xoxc-* && -n "$d_cookie" ]] && break
