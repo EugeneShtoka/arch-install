@@ -65,6 +65,8 @@ while true; do
   sleep 3
 done
 echo "==> Logged in!"
+echo "==> Google cookies found:"
+echo "$raw" | jq -r '.result.cookies[] | select(.domain|test("google")) | "  \(.name) (\(.domain))"' 2>/dev/null | sort
 
 json=$(echo "$raw" | jq '[
   .result.cookies[]
