@@ -54,7 +54,9 @@ while true; do
 
   # Debug: show all slack.com cookies when d is still missing
   if [[ -z "$d_cookie" ]]; then
-    echo "$raw_cookies" | jq -r '.result.cookies[]? | select(.domain|test("slack\\.com")) | "  [cookie] \(.name)=\(.value|.[0:20]) (\(.domain))"' 2>/dev/null
+    echo "  [dbg] browser_cdp=${browser_cdp:0:60}"
+    echo "  [dbg] raw_cookies len=${#raw_cookies} preview=${raw_cookies:0:120}"
+    echo "$raw_cookies" | jq -r '.result.cookies[]? | "  [cookie] \(.name)=\(.value|.[0:20]) (\(.domain))"' 2>/dev/null | head -20
   fi
 
   echo "  auth=${auth_token:0:15} d=${d_cookie:0:15}"
