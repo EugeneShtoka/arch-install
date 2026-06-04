@@ -133,3 +133,4 @@ $SCRIPTS_PATH/auto-yay.sh tailscale
 $SCRIPTS_PATH/auto-yay.sh proxychains-ng
 $SCRIPTS_PATH/auto-yay.sh tcpdump
 $SCRIPTS_PATH/auto-yay.sh musikcube-bin
+$SCRIPTS_PATH/auto-yay.sh kew
