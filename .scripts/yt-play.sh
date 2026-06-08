@@ -6,13 +6,14 @@ url=""
 for arg in "$@"; do
   case "$arg" in
     -p|--podcast) podcast=1 ;;
-    -*) print "Unknown flag: $arg" >&2; exit 1 ;;
+    -c|--clipboard) url=$(xclip -o -selection clipboard) ;;
+    -*) print "Usage: ${0:t} [-p|--podcast] [-c|--clipboard] [<url>]" >&2; exit 1 ;;
     *) url="$arg" ;;
   esac
 done
 
 if [[ -z "$url" ]]; then
-  print "Usage: ${0:t} [-p|--podcast] <url>" >&2
+  print "Usage: ${0:t} [-p|--podcast] [-c|--clipboard] [<url>]" >&2
   exit 1
 fi
 
