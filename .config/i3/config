@@ -120,6 +120,8 @@ bindsym $mod+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh
 # clipboard utils
 bindsym Control+Mod1+t exec --no-startup-id $SCRIPTS_PATH/clipboard-trim.sh
 bindsym Control+Mod1+g exec --no-startup-id $SCRIPTS_PATH/clipboard-open-url.sh
+bindsym $mod+Mod1+v exec --no-startup-id wezterm start -- zsh -c 'url=$(xclip -selection clipboard -o); $SCRIPTS_PATH/yt-play.sh "$url"'
+bindsym $mod+Mod1+l exec --no-startup-id wezterm start -- zsh -c 'url=$(xclip -selection clipboard -o); $SCRIPTS_PATH/yt-play.sh --podcast "$url"'
 bindsym $mod+shift+b exec --no-startup-id $SCRIPTS_PATH/browser-start.sh --new
 bindsym $mod+p exec --no-startup-id $SCRIPTS_PATH/postman-start.sh
 bindsym $mod+d exec --no-startup-id $SCRIPTS_PATH/file-manager-start.sh
