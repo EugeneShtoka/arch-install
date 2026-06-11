@@ -18,7 +18,6 @@ if [[ -z "$url" ]]; then
 fi
 
 tmpdir=$(mktemp -d /tmp/yt-play.XXXXXX)
-trap 'rm -rf "$tmpdir"' EXIT
 
 if (( podcast )); then
   yt-dlp -x --audio-format mp3 \
