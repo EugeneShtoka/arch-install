@@ -73,3 +73,10 @@ PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
 
 # SSH
 source $SCRIPTS_PATH/ssh-init.sh >/dev/null 2>&1
+
+# bun completions
+[ -s "/home/eugene/.bun/_bun" ] && source "/home/eugene/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
