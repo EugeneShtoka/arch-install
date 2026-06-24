@@ -4,45 +4,54 @@ db_path     = "/home/eugene/.local/state/vortex/state.db"
 
 [[inputs.sse]]
 url          = "https://ntfy.cloud-surf.com/mx-notify/json"
-workflow     = "play-sound"
+workflow     = "notify-incoming"
 event_filter = "message"
+fields       = ["title", "message"]
 [inputs.sse.params]
 sound = "/usr/share/sounds/freedesktop/stereo/message-new-instant.oga"
 
 [[inputs.sse]]
 url          = "https://ntfy.cloud-surf.com/mx-notify-friends/json"
-workflow     = "play-sound"
+workflow     = "notify-incoming"
 event_filter = "message"
+fields       = ["title", "message"]
 [inputs.sse.params]
 sound = "/usr/share/sounds/freedesktop/stereo/phone-incoming-call.oga"
 
 [[inputs.sse]]
 url          = "https://ntfy.cloud-surf.com/mx-notify-work/json"
-workflow     = "play-sound"
+workflow     = "notify-incoming"
 event_filter = "message"
+fields       = ["title", "message"]
 [inputs.sse.params]
 sound = "/usr/share/sounds/freedesktop/stereo/bell.oga"
 
 [[inputs.sse]]
 url          = "https://ntfy.cloud-surf.com/mx-notify-social/json"
-workflow     = "play-sound"
+workflow     = "notify-incoming"
 event_filter = "message"
+fields       = ["title", "message"]
 [inputs.sse.params]
 sound = "/usr/share/sounds/freedesktop/stereo/message.oga"
 
 [[inputs.sse]]
 url          = "https://ntfy.cloud-surf.com/mx-notify-colleagues/json"
-workflow     = "play-sound"
+workflow     = "notify-incoming"
 event_filter = "message"
+fields       = ["title", "message"]
 [inputs.sse.params]
 sound = "/usr/share/sounds/freedesktop/stereo/dialog-information.oga"
 
 [[inputs.sse]]
 url          = "https://ntfy.cloud-surf.com/mx-clipboard/json"
-workflow     = "play-sound"
+workflow     = "notify-incoming"
 event_filter = "message"
+fields       = ["title", "message"]
 [inputs.sse.params]
 sound = "/usr/share/sounds/freedesktop/stereo/complete.oga"
 
-[workflows.play-sound]
-tasks = [{ id = "play", type = "spawn", exe = "paplay", args = ["{{trigger.sound}}"] }]
+[workflows.notify-incoming]
+tasks = [
+  { id = "play",   type = "spawn", exe = "paplay",      args = ["{{trigger.sound}}"] },
+  { id = "notify", type = "spawn", exe = "notify-send", args = ["{{trigger.title}}", "{{trigger.message}}"] },
+]
