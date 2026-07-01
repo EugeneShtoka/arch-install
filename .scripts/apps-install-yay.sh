@@ -33,7 +33,8 @@ $SCRIPTS_PATH/auto-yay.sh kubectl
 $SCRIPTS_PATH/auto-yay.sh jq
 $SCRIPTS_PATH/auto-yay.sh maim
 $SCRIPTS_PATH/auto-yay.sh pipewire-jack
-$SCRIPTS_PATH/auto-yay.sh vlc
+$SCRIPTS_PATH/auto-yay.sh mpv
+$SCRIPTS_PATH/auto-yay.sh mpv-mpris
 $SCRIPTS_PATH/auto-yay.sh bc
 $SCRIPTS_PATH/auto-yay.sh eza
 $SCRIPTS_PATH/auto-yay.sh upx
