@@ -1,0 +1,25 @@
+download_dir = "/home/eugene/Videos/yt-tui"
+browser = "vivaldi+gnomekeyring"
+player = "mpv"
+max_concurrent_downloads = 3
+sponsorblock = true
+sponsorblock_categories = ["sponsor", "selfpromo", "interaction"]
+audio_format = "mp3"
+tabs = ["recommended", "subscriptions", "playlists", "search", "downloading", "local", "history"]
+recommended_max_age_days = 7
+recommended_fetch_count = 150
+recommended_max_pages = 3
+
+[keybindings]
+  download = "d"
+  download_audio = "D"
+  delete = "x"
+  play = "p"
+  hide_channel = "R"
+  search = "/"
+  watch_later = "w"
+  add_to_playlist = "a"
+  new_playlist = "n"
+  toggle_mode = "t"
+  help = "?"
+  quit = "q"
