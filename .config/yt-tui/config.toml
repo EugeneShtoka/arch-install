@@ -25,5 +25,6 @@ recommended_max_pages = 3
   toggle_mode = "m"
   subscribe = "S"
   unsubscribe = "u"
+  sort_channels = "s"
   help = "?"
   quit = "q"
