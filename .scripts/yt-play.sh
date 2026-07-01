@@ -37,4 +37,4 @@ if (( ${#files} == 0 )); then
   exit 1
 fi
 
-vlc "${files[1]}"
+mpv "${files[1]}"

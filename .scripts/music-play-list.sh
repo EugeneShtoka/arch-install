@@ -47,5 +47,5 @@ choice=$(printf "%s\n" "${playlist_options[@]}" | $SCRIPTS_PATH/rofi-freq.sh mus
 if [[ -n "$choice" ]]; then
     $SCRIPTS_PATH/music-stop.sh
     pathToPlay="${playlist_map[${choice%$'\n'}]}"
-    setsid cvlc "$pathToPlay" > /dev/null 2>&1 &
+    setsid mpv --no-video --playlist="$pathToPlay" > /dev/null 2>&1 &
 fi

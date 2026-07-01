@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-pkill -9 -f vlc
+pkill -9 -x mpv

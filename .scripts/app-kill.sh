@@ -34,10 +34,10 @@ if [[ "$wez_json" != "[]" ]]; then
   ')
 fi
 
-# VLC if running
-if pgrep -x vlc &>/dev/null || pgrep -x cvlc &>/dev/null; then
+# mpv if running
+if pgrep -x mpv &>/dev/null; then
   entries+=("Media player")
-  actions+=("proc"$'\t'"vlc")
+  actions+=("proc"$'\t'"mpv")
 fi
 
 [[ ${#entries[@]} -eq 0 ]] && exit
