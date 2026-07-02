@@ -16,6 +16,7 @@ recommended_max_pages = 3
   download_audio = "D"
   delete = "x"
   play = "p"
+  play_audio = "P"
   hide_video = "b"
   hide_channel = "B"
   copy_url = "c"
