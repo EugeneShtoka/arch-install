@@ -13,6 +13,8 @@ recommended_fetch_count = 150
 recommended_max_pages = 3
 channel_latest_count = 3
 channel_strikes = 2
+subtitles = true
+subtitle_langs = ["en.*"]
 
 [keybindings]
   download = "d"
