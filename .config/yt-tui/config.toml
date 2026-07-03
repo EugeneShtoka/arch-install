@@ -11,6 +11,8 @@ hint_mode = "full"
 recommended_max_age_days = 7
 recommended_fetch_count = 150
 recommended_max_pages = 3
+channel_latest_count = 3
+channel_strikes = 2
 
 [keybindings]
   download = "d"
@@ -29,6 +31,8 @@ recommended_max_pages = 3
   unsubscribe = "u"
   help = "?"
   quit = "q"
+  refresh = "r"
+  force_refresh = "R"
   drill_down = "enter"
   back = "h,backspace"
   filter = "/"
