@@ -35,6 +35,7 @@ subtitle_langs = ["en.*"]
   quit = "q"
   refresh = "r"
   force_refresh = "R"
+  video_info = "i"
   drill_down = "enter"
   back = "h,backspace"
   filter = "/"
