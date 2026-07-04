@@ -49,7 +49,6 @@ subtitle_langs = ["en.*"]
     channel = "c"
     duration = "D"
     subscribers = "s"
-    saved = "a"
   [keybindings.tab_keys]
     recommended = "r"
     subscriptions = "s"
