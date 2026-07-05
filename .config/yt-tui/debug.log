@@ -1,36 +1,34 @@
-[01:05:04.136] === session start 2026-07-06 01:05:04 ===
-[01:05:05.339] parseCookieFile: cookies=40 sapisid_len=34
-[01:05:08.277] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:08.277] → sort chord pending
-[01:05:08.440] key="c" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="s" gPending=false numPrefix=""
-[01:05:08.440] → resolveChord("c") pending="s" buf=""
-[01:05:11.735] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:12.035] key="2" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="4"
-[01:05:12.095] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="42"
-[01:05:13.475] key="shift+tab" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="424"
-[01:05:13.476] → tab switch ← history
-[01:05:16.250] key="s" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:16.250] → dispatch to history handler
-[01:05:17.030] key="r" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:17.030] → refresh
-[01:05:19.295] key="t" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:19.295] → tab chord pending
-[01:05:19.505] key="r" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="t" gPending=false numPrefix=""
-[01:05:19.505] → resolveChord("r") pending="t" buf=""
-[01:05:20.795] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:20.795] → sort chord pending
-[01:05:20.945] key="c" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="s" gPending=false numPrefix=""
-[01:05:20.945] → resolveChord("c") pending="s" buf=""
-[01:05:24.590] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:24.860] key="2" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="4"
-[01:05:25.070] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="42"
-[01:05:25.598] key="G" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="424"
-[01:05:28.897] key="S" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:28.897] → dispatch to recommended handler
-[01:05:28.897] updateRecommended: key="S" hideVideo="b" hideChannel="B"
-[01:05:29.087] subscribe response: {
+[01:11:56.591] === session start 2026-07-06 01:11:56 ===
+[01:11:57.908] parseCookieFile: cookies=13 names=[YSC VISITOR_INFO1_LIVE LOGIN_INFO APISID HSID SAPISID SID SSID __Secure-1PAPISID __Secure-1PSID __Secure-3PAPISID __Secure-3PSID PREF] sapisid_len=34
+[01:12:00.927] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:01.283] key="2" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="4"
+[01:12:01.509] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="42"
+[01:12:02.169] key="G" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="424"
+[01:12:03.367] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:03.368] → dispatch to recommended handler
+[01:12:03.368] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:03.623] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:03.623] → dispatch to recommended handler
+[01:12:03.623] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:03.759] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:03.759] → dispatch to recommended handler
+[01:12:03.759] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:03.954] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:03.954] → dispatch to recommended handler
+[01:12:03.954] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:04.103] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:04.103] → dispatch to recommended handler
+[01:12:04.103] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:04.284] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:04.284] → dispatch to recommended handler
+[01:12:04.284] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:05.183] key="S" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:05.183] → dispatch to recommended handler
+[01:12:05.183] updateRecommended: key="S" hideVideo="b" hideChannel="B"
+[01:12:05.184] sapisidhash: ts=1783289525 sapisid_prefix="wABoxq"
+[01:12:05.409] subscribe response: {
   "responseContext": {
-    "visitorData": "CgtFTG1kMmZzdmxpOCipqqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgbg%3D%3D",
+    "visitorData": "CgtGbjNWbEVvQjlRbyi1ravSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgUA%3D%3D",
     "serviceTrackingParams": [
       {
         "service": "CSI",
@@ -49,7 +47,7 @@
           },
           {
             "key": "Subscribe_rid",
-            "value": "0x6b37d6a277a9dc8d"
+            "value": "0x9a3b3e69f74224f1"
           }
         ]
       },
@@ -62,7 +60,7 @@
           },
           {
             "key": "visitor_data",
-            "value": "CgtFTG1kMmZzdmxpOCipqqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgbg%3D%3D"
+            "value": "CgtGbjNWbEVvQjlRbyi1ravSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgUA%3D%3D"
           }
         ]
       },
@@ -91,9 +89,9 @@
     ],
     "mainAppWebResponseContext": {
       "loggedOut": true,
-      "trackingParam": "kVAfmPxhojaR_hC477DFEAAXfMVJf4Mi4bLRjdFDMdI80j4kklBbkMI3MKdcMrPacJ1WQUiBwOcC069TnuslLKPQSTS"
+      "trackingParam": "kVAfmPxhojaR7hHgD-CBcyipPpcHfq1E8kAfLURwYV2m4MDjMcNI4i7_Ed1fMrPacJ1WQUiBwOcC069TnuslLKPQSTS"
     },
-    "responseId": "IhMIwsbG2MW8lQMVJMtPCB3GxiOz",
+    "responseId": "IhMIzb_Clce8lQMVv8RPCB1aDitu",
     "webResponseContextExtensionData": {
       "webResponseContextPreloadData": {
         "preloadMessageNames": [
@@ -106,7 +104,7 @@
   },
   "actions": [
     {
-      "clickTrackingParams": "CAAQ2YYDIhMIwsbG2MW8lQMVJMtPCB3GxiOzygEEw9clBg==",
+      "clickTrackingParams": "CAAQ2YYDIhMIzb_Clce8lQMVv8RPCB1aDituygEE-l_CrA==",
       "openPopupAction": {
         "popup": {
           "modalWithTitleAndButtonRenderer": {
@@ -133,7 +131,7 @@
                   "simpleText": "Sign in"
                 },
                 "navigationEndpoint": {
-                  "clickTrackingParams": "CAEQ8FsiEwjCxsbYxbyVAxUky08IHcbGI7PKAQTD1yUG",
+                  "clickTrackingParams": "CAEQ8FsiEwjNv8KVx7yVAxW_xE8IHVoOK27KAQT6X8Ks",
                   "commandMetadata": {
                     "webCommandMetadata": {
                       "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fchannel%252FUCFNCcuk2pvAU0BXwPh3rMjA&hl=en",
@@ -143,7 +141,7 @@
                   },
                   "signInEndpoint": {
                     "nextEndpoint": {
-                      "clickTrackingParams": "CAEQ8FsiEwjCxsbYxbyVAxUky08IHcbGI7PKAQTD1yUG",
+                      "clickTrackingParams": "CAEQ8FsiEwjNv8KVx7yVAxW_xE8IHVoOK27KAQT6X8Ks",
                       "commandMetadata": {
                         "webCommandMetadata": {
                           "url": "/channel/UCFNCcuk2pvAU0BXwPh3rMjA",
@@ -158,7 +156,7 @@
                     }
                   }
                 },
-                "trackingParams": "CAEQ8FsiEwjCxsbYxbyVAxUky08IHcbGI7M="
+                "trackingParams": "CAEQ8FsiEwjNv8KVx7yVAxW_xE8IHVoOK24="
               }
             }
           }
@@ -167,25 +165,232 @@
       }
     },
     {
-      "clickTrackingParams": "CAAQ2YYDIhMIwsbG2MW8lQMVJMtPCB3GxiOzygEEw9clBg==",
+      "clickTrackingParams": "CAAQ2YYDIhMIzb_Clce8lQMVv8RPCB1aDituygEE-l_CrA==",
       "updateSubscribeButtonAction": {
         "subscribed": false,
         "channelId": "UCFNCcuk2pvAU0BXwPh3rMjA"
       }
     }
   ],
-  "trackingParams": "CAAQ2YYDIhMIwsbG2MW8lQMVJMtPCB3GxiOzygEEw9clBg=="
+  "trackingParams": "CAAQ2YYDIhMIzb_Clce8lQMVv8RPCB1aDituygEE-l_CrA=="
 }
-[01:05:32.540] key="t" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:32.540] → tab chord pending
-[01:05:32.750] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="t" gPending=false numPrefix=""
-[01:05:32.750] → resolveChord("s") pending="t" buf=""
-[01:05:34.085] key="m" tab=subscriptions localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:34.085] → dispatch to subscriptions handler
-[01:05:34.085] updateSubscriptions: key="m" toggleKey="m" match=true subMode=0 subChLoaded=true subChLoading=false
-[01:05:34.085] → toggle subModeAll→subModeChannels (chLoaded=true chLoading=false)
-[01:05:35.705] key="r" tab=subscriptions localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:05:35.705] → refresh
-[01:06:19.897] key="enter" tab=subscriptions localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[01:06:19.897] → dispatch to subscriptions handler
-[01:06:19.897] updateSubscriptions: key="enter" toggleKey="m" match=false subMode=1 subChLoaded=true subChLoading=false
+[01:12:09.518] key="right" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:09.518] → dispatch to recommended handler
+[01:12:09.518] updateRecommended: key="right" hideVideo="b" hideChannel="B"
+[01:12:15.728] key="ctrl+d" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:15.728] → dispatch to recommended handler
+[01:12:15.728] updateRecommended: key="ctrl+d" hideVideo="b" hideChannel="B"
+[01:12:20.844] key="ctrl+u" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:20.844] → dispatch to recommended handler
+[01:12:20.844] updateRecommended: key="ctrl+u" hideVideo="b" hideChannel="B"
+[01:12:21.938] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:21.938] → dispatch to recommended handler
+[01:12:21.938] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:22.823] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:22.823] → dispatch to recommended handler
+[01:12:22.823] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:24.234] key="ctrl+g" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:24.234] → dispatch to recommended handler
+[01:12:24.234] updateRecommended: key="ctrl+g" hideVideo="b" hideChannel="B"
+[01:12:26.154] key="ctrl+d" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:26.154] → dispatch to recommended handler
+[01:12:26.154] updateRecommended: key="ctrl+d" hideVideo="b" hideChannel="B"
+[01:12:28.178] key="ctrl+d" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:28.178] → dispatch to recommended handler
+[01:12:28.178] updateRecommended: key="ctrl+d" hideVideo="b" hideChannel="B"
+[01:12:29.109] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:29.109] → dispatch to recommended handler
+[01:12:29.109] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:29.769] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:29.769] → dispatch to recommended handler
+[01:12:29.769] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:29.810] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:29.810] → dispatch to recommended handler
+[01:12:29.810] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:29.858] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:29.858] → dispatch to recommended handler
+[01:12:29.858] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:29.906] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:29.906] → dispatch to recommended handler
+[01:12:29.906] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:29.952] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:29.952] → dispatch to recommended handler
+[01:12:29.952] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:29.990] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:29.991] → dispatch to recommended handler
+[01:12:29.991] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.023] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.023] → dispatch to recommended handler
+[01:12:30.023] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.055] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.055] → dispatch to recommended handler
+[01:12:30.055] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.091] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.091] → dispatch to recommended handler
+[01:12:30.091] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.137] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.137] → dispatch to recommended handler
+[01:12:30.137] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.171] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.172] → dispatch to recommended handler
+[01:12:30.172] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.212] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.212] → dispatch to recommended handler
+[01:12:30.212] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.252] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.252] → dispatch to recommended handler
+[01:12:30.252] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.293] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.293] → dispatch to recommended handler
+[01:12:30.293] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.335] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.335] → dispatch to recommended handler
+[01:12:30.335] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.372] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.372] → dispatch to recommended handler
+[01:12:30.372] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.413] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.413] → dispatch to recommended handler
+[01:12:30.413] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.455] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.455] → dispatch to recommended handler
+[01:12:30.455] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.493] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.493] → dispatch to recommended handler
+[01:12:30.493] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.533] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.533] → dispatch to recommended handler
+[01:12:30.533] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.573] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.573] → dispatch to recommended handler
+[01:12:30.573] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.617] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.617] → dispatch to recommended handler
+[01:12:30.617] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.653] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.653] → dispatch to recommended handler
+[01:12:30.653] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.694] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.694] → dispatch to recommended handler
+[01:12:30.694] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.736] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.736] → dispatch to recommended handler
+[01:12:30.736] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.776] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.776] → dispatch to recommended handler
+[01:12:30.776] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.817] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.817] → dispatch to recommended handler
+[01:12:30.817] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.856] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.856] → dispatch to recommended handler
+[01:12:30.856] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.897] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.897] → dispatch to recommended handler
+[01:12:30.897] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.937] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.937] → dispatch to recommended handler
+[01:12:30.937] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:30.977] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:30.977] → dispatch to recommended handler
+[01:12:30.977] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:31.017] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:31.017] → dispatch to recommended handler
+[01:12:31.017] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:31.058] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:31.058] → dispatch to recommended handler
+[01:12:31.058] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:31.106] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:31.106] → dispatch to recommended handler
+[01:12:31.106] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:31.138] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:31.138] → dispatch to recommended handler
+[01:12:31.138] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:32.199] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:32.199] → dispatch to recommended handler
+[01:12:32.199] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:32.860] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:32.860] → dispatch to recommended handler
+[01:12:32.860] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:32.900] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:32.900] → dispatch to recommended handler
+[01:12:32.900] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:32.960] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:32.960] → dispatch to recommended handler
+[01:12:32.960] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:32.993] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:32.993] → dispatch to recommended handler
+[01:12:32.993] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.026] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.026] → dispatch to recommended handler
+[01:12:33.026] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.060] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.060] → dispatch to recommended handler
+[01:12:33.060] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.101] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.101] → dispatch to recommended handler
+[01:12:33.101] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.146] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.146] → dispatch to recommended handler
+[01:12:33.146] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.181] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.181] → dispatch to recommended handler
+[01:12:33.181] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.222] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.222] → dispatch to recommended handler
+[01:12:33.222] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.269] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.269] → dispatch to recommended handler
+[01:12:33.269] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.303] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.303] → dispatch to recommended handler
+[01:12:33.303] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:33.593] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:33.593] → dispatch to recommended handler
+[01:12:33.593] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.254] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.254] → dispatch to recommended handler
+[01:12:34.254] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.293] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.293] → dispatch to recommended handler
+[01:12:34.293] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.333] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.333] → dispatch to recommended handler
+[01:12:34.333] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.373] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.373] → dispatch to recommended handler
+[01:12:34.373] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.414] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.414] → dispatch to recommended handler
+[01:12:34.414] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.453] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.453] → dispatch to recommended handler
+[01:12:34.453] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.494] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.494] → dispatch to recommended handler
+[01:12:34.494] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.535] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.535] → dispatch to recommended handler
+[01:12:34.535] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.574] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.574] → dispatch to recommended handler
+[01:12:34.574] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:34.614] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:34.614] → dispatch to recommended handler
+[01:12:34.614] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:35.244] key="up" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:35.244] → dispatch to recommended handler
+[01:12:35.244] updateRecommended: key="up" hideVideo="b" hideChannel="B"
+[01:12:36.233] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:36.233] → sort chord pending
+[01:12:36.399] key="c" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="s" gPending=false numPrefix=""
+[01:12:36.399] → resolveChord("c") pending="s" buf=""
+[01:12:37.314] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:37.314] → dispatch to recommended handler
+[01:12:37.314] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:37.509] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:37.509] → dispatch to recommended handler
+[01:12:37.509] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:37.688] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:37.688] → dispatch to recommended handler
+[01:12:37.688] updateRecommended: key="down" hideVideo="b" hideChannel="B"
