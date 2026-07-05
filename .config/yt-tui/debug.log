@@ -1,0 +1,160 @@
+[00:56:07.708] === session start 2026-07-06 00:56:07 ===
+[00:56:24.030] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[00:56:24.375] key="2" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="4"
+[00:56:24.525] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="42"
+[00:56:25.487] key="G" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="424"
+[00:56:28.665] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[00:56:28.665] → sort chord pending
+[00:56:28.905] key="c" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="s" gPending=false numPrefix=""
+[00:56:28.905] → resolveChord("c") pending="s" buf=""
+[00:56:30.990] key="S" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[00:56:30.990] → dispatch to recommended handler
+[00:56:30.990] updateRecommended: key="S" hideVideo="b" hideChannel="B"
+[00:56:31.183] subscribe response: {
+  "responseContext": {
+    "visitorData": "CgtUOEpQY1IwOGlJQSiPpqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgPg%3D%3D",
+    "serviceTrackingParams": [
+      {
+        "service": "CSI",
+        "params": [
+          {
+            "key": "c",
+            "value": "WEB"
+          },
+          {
+            "key": "cver",
+            "value": "2.20231219.04.00"
+          },
+          {
+            "key": "yt_li",
+            "value": "0"
+          },
+          {
+            "key": "Subscribe_rid",
+            "value": "0x1629f6868bb28261"
+          }
+        ]
+      },
+      {
+        "service": "GFEEDBACK",
+        "params": [
+          {
+            "key": "logged_in",
+            "value": "0"
+          },
+          {
+            "key": "visitor_data",
+            "value": "CgtUOEpQY1IwOGlJQSiPpqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgPg%3D%3D"
+          }
+        ]
+      },
+      {
+        "service": "GUIDED_HELP",
+        "params": [
+          {
+            "key": "logged_in",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "service": "ECATCHER",
+        "params": [
+          {
+            "key": "client.version",
+            "value": "2.20250331"
+          },
+          {
+            "key": "client.name",
+            "value": "WEB"
+          }
+        ]
+      }
+    ],
+    "mainAppWebResponseContext": {
+      "loggedOut": true,
+      "trackingParam": "kVAfmPxhojaRbViMzqWHoPjU65iJ_H37L6ckm3Go7P0HT95en_CAjMI4QkeVLrPacJ1WQUiBwOcC069TnuslLKPQSTS"
+    },
+    "responseId": "IhMI0tCH2MO8lQMV4-ZPCB3zODIB",
+    "webResponseContextExtensionData": {
+      "webResponseContextPreloadData": {
+        "preloadMessageNames": [
+          "modalWithTitleAndButtonRenderer",
+          "buttonRenderer"
+        ]
+      },
+      "hasDecorated": true
+    }
+  },
+  "actions": [
+    {
+      "clickTrackingParams": "CAAQ2YYDIhMI0tCH2MO8lQMV4-ZPCB3zODIBygEEPizMdw==",
+      "openPopupAction": {
+        "popup": {
+          "modalWithTitleAndButtonRenderer": {
+            "title": {
+              "runs": [
+                {
+                  "text": "Want to subscribe to this channel?"
+                }
+              ]
+            },
+            "content": {
+              "runs": [
+                {
+                  "text": "Your session has expired."
+                }
+              ]
+            },
+            "button": {
+              "buttonRenderer": {
+                "style": "STYLE_MONO_FILLED",
+                "size": "SIZE_DEFAULT",
+                "isDisabled": false,
+                "text": {
+                  "simpleText": "Sign in"
+                },
+                "navigationEndpoint": {
+                  "clickTrackingParams": "CAEQ8FsiEwjS0IfYw7yVAxXj5k8IHfM4MgHKAQQ-LMx3",
+                  "commandMetadata": {
+                    "webCommandMetadata": {
+                      "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fchannel%252FUCFNCcuk2pvAU0BXwPh3rMjA&hl=en",
+                      "webPageType": "WEB_PAGE_TYPE_UNKNOWN",
+                      "rootVe": 83769
+                    }
+                  },
+                  "signInEndpoint": {
+                    "nextEndpoint": {
+                      "clickTrackingParams": "CAEQ8FsiEwjS0IfYw7yVAxXj5k8IHfM4MgHKAQQ-LMx3",
+                      "commandMetadata": {
+                        "webCommandMetadata": {
+                          "url": "/channel/UCFNCcuk2pvAU0BXwPh3rMjA",
+                          "webPageType": "WEB_PAGE_TYPE_CHANNEL",
+                          "rootVe": 3611,
+                          "apiUrl": "/youtubei/v1/browse"
+                        }
+                      },
+                      "browseEndpoint": {
+                        "browseId": "UCFNCcuk2pvAU0BXwPh3rMjA"
+                      }
+                    }
+                  }
+                },
+                "trackingParams": "CAEQ8FsiEwjS0IfYw7yVAxXj5k8IHfM4MgE="
+              }
+            }
+          }
+        },
+        "popupType": "RESPONSIVE_DROPDOWN"
+      }
+    },
+    {
+      "clickTrackingParams": "CAAQ2YYDIhMI0tCH2MO8lQMV4-ZPCB3zODIBygEEPizMdw==",
+      "updateSubscribeButtonAction": {
+        "subscribed": false,
+        "channelId": "UCFNCcuk2pvAU0BXwPh3rMjA"
+      }
+    }
+  ],
+  "trackingParams": "CAAQ2YYDIhMI0tCH2MO8lQMV4-ZPCB3zODIBygEEPizMdw=="
+}
