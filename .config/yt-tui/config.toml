@@ -13,6 +13,7 @@ recommended_fetch_count = 150
 recommended_max_pages = 3
 channel_latest_count = 3
 channel_strikes = 2
+strip_emojis = true
 subtitles = true
 subtitle_langs = ["en.*"]
 
