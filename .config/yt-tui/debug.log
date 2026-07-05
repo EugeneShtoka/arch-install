@@ -394,3 +394,12 @@
 [01:12:37.688] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
 [01:12:37.688] → dispatch to recommended handler
 [01:12:37.688] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:37.868] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:37.868] → dispatch to recommended handler
+[01:12:37.868] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:38.078] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:38.078] → dispatch to recommended handler
+[01:12:38.078] updateRecommended: key="down" hideVideo="b" hideChannel="B"
+[01:12:38.273] key="down" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:12:38.273] → dispatch to recommended handler
+[01:12:38.273] updateRecommended: key="down" hideVideo="b" hideChannel="B"
