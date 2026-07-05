@@ -1,18 +1,36 @@
-[00:56:07.708] === session start 2026-07-06 00:56:07 ===
-[00:56:24.030] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[00:56:24.375] key="2" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="4"
-[00:56:24.525] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="42"
-[00:56:25.487] key="G" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="424"
-[00:56:28.665] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[00:56:28.665] → sort chord pending
-[00:56:28.905] key="c" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="s" gPending=false numPrefix=""
-[00:56:28.905] → resolveChord("c") pending="s" buf=""
-[00:56:30.990] key="S" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
-[00:56:30.990] → dispatch to recommended handler
-[00:56:30.990] updateRecommended: key="S" hideVideo="b" hideChannel="B"
-[00:56:31.183] subscribe response: {
+[01:05:04.136] === session start 2026-07-06 01:05:04 ===
+[01:05:05.339] parseCookieFile: cookies=40 sapisid_len=34
+[01:05:08.277] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:08.277] → sort chord pending
+[01:05:08.440] key="c" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="s" gPending=false numPrefix=""
+[01:05:08.440] → resolveChord("c") pending="s" buf=""
+[01:05:11.735] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:12.035] key="2" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="4"
+[01:05:12.095] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="42"
+[01:05:13.475] key="shift+tab" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="424"
+[01:05:13.476] → tab switch ← history
+[01:05:16.250] key="s" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:16.250] → dispatch to history handler
+[01:05:17.030] key="r" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:17.030] → refresh
+[01:05:19.295] key="t" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:19.295] → tab chord pending
+[01:05:19.505] key="r" tab=history localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="t" gPending=false numPrefix=""
+[01:05:19.505] → resolveChord("r") pending="t" buf=""
+[01:05:20.795] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:20.795] → sort chord pending
+[01:05:20.945] key="c" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="s" gPending=false numPrefix=""
+[01:05:20.945] → resolveChord("c") pending="s" buf=""
+[01:05:24.590] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:24.860] key="2" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="4"
+[01:05:25.070] key="4" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="42"
+[01:05:25.598] key="G" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix="424"
+[01:05:28.897] key="S" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:28.897] → dispatch to recommended handler
+[01:05:28.897] updateRecommended: key="S" hideVideo="b" hideChannel="B"
+[01:05:29.087] subscribe response: {
   "responseContext": {
-    "visitorData": "CgtUOEpQY1IwOGlJQSiPpqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgPg%3D%3D",
+    "visitorData": "CgtFTG1kMmZzdmxpOCipqqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgbg%3D%3D",
     "serviceTrackingParams": [
       {
         "service": "CSI",
@@ -31,7 +49,7 @@
           },
           {
             "key": "Subscribe_rid",
-            "value": "0x1629f6868bb28261"
+            "value": "0x6b37d6a277a9dc8d"
           }
         ]
       },
@@ -44,7 +62,7 @@
           },
           {
             "key": "visitor_data",
-            "value": "CgtUOEpQY1IwOGlJQSiPpqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgPg%3D%3D"
+            "value": "CgtFTG1kMmZzdmxpOCipqqvSBjIoCgJCRxIiEh4SHAsMDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicgbg%3D%3D"
           }
         ]
       },
@@ -73,9 +91,9 @@
     ],
     "mainAppWebResponseContext": {
       "loggedOut": true,
-      "trackingParam": "kVAfmPxhojaRbViMzqWHoPjU65iJ_H37L6ckm3Go7P0HT95en_CAjMI4QkeVLrPacJ1WQUiBwOcC069TnuslLKPQSTS"
+      "trackingParam": "kVAfmPxhojaR_hC477DFEAAXfMVJf4Mi4bLRjdFDMdI80j4kklBbkMI3MKdcMrPacJ1WQUiBwOcC069TnuslLKPQSTS"
     },
-    "responseId": "IhMI0tCH2MO8lQMV4-ZPCB3zODIB",
+    "responseId": "IhMIwsbG2MW8lQMVJMtPCB3GxiOz",
     "webResponseContextExtensionData": {
       "webResponseContextPreloadData": {
         "preloadMessageNames": [
@@ -88,7 +106,7 @@
   },
   "actions": [
     {
-      "clickTrackingParams": "CAAQ2YYDIhMI0tCH2MO8lQMV4-ZPCB3zODIBygEEPizMdw==",
+      "clickTrackingParams": "CAAQ2YYDIhMIwsbG2MW8lQMVJMtPCB3GxiOzygEEw9clBg==",
       "openPopupAction": {
         "popup": {
           "modalWithTitleAndButtonRenderer": {
@@ -115,7 +133,7 @@
                   "simpleText": "Sign in"
                 },
                 "navigationEndpoint": {
-                  "clickTrackingParams": "CAEQ8FsiEwjS0IfYw7yVAxXj5k8IHfM4MgHKAQQ-LMx3",
+                  "clickTrackingParams": "CAEQ8FsiEwjCxsbYxbyVAxUky08IHcbGI7PKAQTD1yUG",
                   "commandMetadata": {
                     "webCommandMetadata": {
                       "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fchannel%252FUCFNCcuk2pvAU0BXwPh3rMjA&hl=en",
@@ -125,7 +143,7 @@
                   },
                   "signInEndpoint": {
                     "nextEndpoint": {
-                      "clickTrackingParams": "CAEQ8FsiEwjS0IfYw7yVAxXj5k8IHfM4MgHKAQQ-LMx3",
+                      "clickTrackingParams": "CAEQ8FsiEwjCxsbYxbyVAxUky08IHcbGI7PKAQTD1yUG",
                       "commandMetadata": {
                         "webCommandMetadata": {
                           "url": "/channel/UCFNCcuk2pvAU0BXwPh3rMjA",
@@ -140,7 +158,7 @@
                     }
                   }
                 },
-                "trackingParams": "CAEQ8FsiEwjS0IfYw7yVAxXj5k8IHfM4MgE="
+                "trackingParams": "CAEQ8FsiEwjCxsbYxbyVAxUky08IHcbGI7M="
               }
             }
           }
@@ -149,12 +167,25 @@
       }
     },
     {
-      "clickTrackingParams": "CAAQ2YYDIhMI0tCH2MO8lQMV4-ZPCB3zODIBygEEPizMdw==",
+      "clickTrackingParams": "CAAQ2YYDIhMIwsbG2MW8lQMVJMtPCB3GxiOzygEEw9clBg==",
       "updateSubscribeButtonAction": {
         "subscribed": false,
         "channelId": "UCFNCcuk2pvAU0BXwPh3rMjA"
       }
     }
   ],
-  "trackingParams": "CAAQ2YYDIhMI0tCH2MO8lQMV4-ZPCB3zODIBygEEPizMdw=="
+  "trackingParams": "CAAQ2YYDIhMIwsbG2MW8lQMVJMtPCB3GxiOzygEEw9clBg=="
 }
+[01:05:32.540] key="t" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:32.540] → tab chord pending
+[01:05:32.750] key="s" tab=recommended localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="t" gPending=false numPrefix=""
+[01:05:32.750] → resolveChord("s") pending="t" buf=""
+[01:05:34.085] key="m" tab=subscriptions localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:34.085] → dispatch to subscriptions handler
+[01:05:34.085] updateSubscriptions: key="m" toggleKey="m" match=true subMode=0 subChLoaded=true subChLoading=false
+[01:05:34.085] → toggle subModeAll→subModeChannels (chLoaded=true chLoading=false)
+[01:05:35.705] key="r" tab=subscriptions localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:05:35.705] → refresh
+[01:06:19.897] key="enter" tab=subscriptions localFilterFocused=false localFilter="" searchFocused=false createMode=false addOverlay=false showHelp=false pendingChord="" gPending=false numPrefix=""
+[01:06:19.897] → dispatch to subscriptions handler
+[01:06:19.897] updateSubscriptions: key="enter" toggleKey="m" match=false subMode=1 subChLoaded=true subChLoading=false
