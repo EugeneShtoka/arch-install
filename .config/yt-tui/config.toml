@@ -54,6 +54,7 @@ subtitle_langs = ["en.*"]
   [keybindings.tab_keys]
     recommended = "r"
     subscriptions = "s"
+    channels = "c"
     playlists = "p"
     search = "S"
     downloading = "d"
