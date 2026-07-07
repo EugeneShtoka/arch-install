@@ -53,6 +53,7 @@ subtitle_langs = ["en.*"]
     channel = "c"
     duration = "D"
     subscribers = "s"
+    tags = "t"
   [keybindings.tab_keys]
     recommended = "r"
     subscriptions = "s"
@@ -62,6 +63,12 @@ subtitle_langs = ["en.*"]
     downloading = "d"
     local = "l"
     history = "h"
+  [keybindings.subscribe_keys]
+    remote = "r"
+    local = "l"
+  [keybindings.playlist_keys]
+    remote = "r"
+    local = "l"
 
 [[blacklisted_channels]]
   id = "UCOpcACMWblDls9Z6GERVi1A"
