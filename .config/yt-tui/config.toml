@@ -45,6 +45,7 @@ subtitle_langs = ["en.*"]
   sort_chord = "s"
   goto_prefix = "g"
   goto_bottom = "G"
+  goto_line = "G"
   [keybindings.sort_keys]
     date = "d"
     views = "v"
