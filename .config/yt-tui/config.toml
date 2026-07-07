@@ -26,7 +26,6 @@ subtitle_langs = ["en.*"]
   hide_video = "b"
   hide_channel = "B"
   copy_url = "c"
-  watch_later = "w"
   add_to_playlist = "a"
   new_playlist = "n"
   toggle_mode = "m"
