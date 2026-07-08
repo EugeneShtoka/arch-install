@@ -15,7 +15,7 @@ channel_latest_count = 3
 channel_strikes = 2
 strip_emojis = true
 close_on_link_open = true
-circular_nav = false
+circular_nav = true
 subtitles = true
 subtitle_langs = ["en.*"]
 
