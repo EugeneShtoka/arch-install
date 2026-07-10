@@ -28,6 +28,8 @@ config.enable_kitty_keyboard = true
 
 config.audible_bell = "Disabled"
 
+config.window_padding = { left = 10, right = 10, top = 10, bottom = 0 }
+
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
