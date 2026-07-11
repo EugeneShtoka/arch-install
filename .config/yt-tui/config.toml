@@ -83,3 +83,7 @@ subtitle_langs = ["en.*"]
 [[blacklisted_channels]]
   id = "UCOpcACMWblDls9Z6GERVi1A"
   name = "Screen Junkies"
+
+[[blacklisted_channels]]
+  id = "UCc9CjaAjsMMvaSghZB7-Kog"
+  name = "BeardMeatsFood"
