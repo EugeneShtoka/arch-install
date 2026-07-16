@@ -89,3 +89,7 @@ subtitle_langs = ["en.*"]
 [[blacklisted_channels]]
   id = "UCc9CjaAjsMMvaSghZB7-Kog"
   name = "BeardMeatsFood"
+
+[[blacklisted_channels]]
+  id = "UCCVFgDdTfiGxQ695BxMBMUg"
+  name = "風雲谷 Whirling Clouds Valley"
