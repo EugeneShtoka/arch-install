@@ -7,7 +7,8 @@ metadata=$(dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.mpv /
 artist=$(echo "$metadata" | grep -A2 '"xesam:artist"' | grep -v 'xesam:artist' | grep 'string "' | head -1 | sed 's/.*string "//;s/"//')
 title=$(echo "$metadata" | grep -A1 '"xesam:title"' | grep -v 'xesam:title' | grep 'string "' | head -1 | sed 's/.*string "//;s/"//')
 
-if [[ -n "$title" ]]; then
+# Skip notification when title is a raw URL or bare YouTube video ID (watch?v=...)
+if [[ -n "$title" ]] && [[ "$title" != http://* ]] && [[ "$title" != https://* ]] && [[ "$title" != watch\?v=* ]]; then
   if [[ -n "$artist" ]]; then
     notify_send "$artist" "<span font='20px'>$title</span>" -r 101029 -a "system-notify"
   else
