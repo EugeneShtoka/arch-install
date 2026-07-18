@@ -1,13 +1,9 @@
 download_dir = "/home/eugene/Videos/yt-tui"
 browser = "vivaldi+gnomekeyring"
-player = "mpv"
-player_backend = "mpris"
 max_concurrent_downloads = 3
 sponsorblock = true
 sponsorblock_categories = ["sponsor", "selfpromo", "interaction"]
 audio_format = "mp3"
-tabs = ["recommended", "subscriptions", "channels", "playlists", "search", "downloading", "local", "history"]
-hint_mode = "full"
 recommended_max_age_days = 7
 recommended_min_duration_secs = 300
 recommended_min_views = 1000
@@ -16,10 +12,26 @@ recommended_max_pages = 3
 channel_latest_count = 3
 channel_strikes = 2
 strip_emojis = true
-close_on_link_open = true
-circular_nav = true
 subtitles = true
 subtitle_langs = ["en.*"]
+player = "mpv"
+player_backend = "mpris"
+tabs = ["recommended", "subscriptions", "channels", "playlists", "search", "downloading", "local", "history"]
+hint_mode = "full"
+close_on_link_open = true
+circular_nav = true
+
+[[blacklisted_channels]]
+  id = "UCOpcACMWblDls9Z6GERVi1A"
+  name = "Screen Junkies"
+
+[[blacklisted_channels]]
+  id = "UCc9CjaAjsMMvaSghZB7-Kog"
+  name = "BeardMeatsFood"
+
+[[blacklisted_channels]]
+  id = "UCCVFgDdTfiGxQ695BxMBMUg"
+  name = "風雲谷 Whirling Clouds Valley"
 
 [keybindings]
   download = "d"
@@ -75,21 +87,10 @@ subtitle_langs = ["en.*"]
     downloading = "d"
     local = "l"
     history = "h"
+    activity = "a"
   [keybindings.subscribe_keys]
     remote = "r"
     local = "l"
   [keybindings.playlist_keys]
     remote = "r"
     local = "l"
-
-[[blacklisted_channels]]
-  id = "UCOpcACMWblDls9Z6GERVi1A"
-  name = "Screen Junkies"
-
-[[blacklisted_channels]]
-  id = "UCc9CjaAjsMMvaSghZB7-Kog"
-  name = "BeardMeatsFood"
-
-[[blacklisted_channels]]
-  id = "UCCVFgDdTfiGxQ695BxMBMUg"
-  name = "風雲谷 Whirling Clouds Valley"
