@@ -18,6 +18,7 @@ player = "mpv"
 player_backend = "mpris"
 tabs = ["recommended", "subscriptions", "channels", "playlists", "search", "downloading", "local", "history"]
 hint_mode = "full"
+duration_format = "hh:mm"
 close_on_link_open = true
 circular_nav = true
 
