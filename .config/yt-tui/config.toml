@@ -5,8 +5,8 @@ sponsorblock = true
 sponsorblock_categories = ["sponsor", "selfpromo", "interaction"]
 audio_format = "mp3"
 recommended_max_age_days = 7
-recommended_min_duration_secs = 300
-recommended_min_views = 1000
+recommended_min_duration_secs = 0
+recommended_min_views = 0
 recommended_fetch_count = 150
 recommended_max_pages = 3
 channel_latest_count = 3
@@ -16,23 +16,11 @@ subtitles = true
 subtitle_langs = ["en.*"]
 player = "mpv"
 player_backend = "mpris"
-tabs = ["recommended", "subscriptions", "channels", "playlists", "search", "downloading", "local", "history"]
+tabs = ["recommended", "subscriptions", "channels", "playlists", "search", "downloading", "local", "history", "activity"]
 hint_mode = "full"
-duration_format = "hh:mm"
+duration_format = "hh:mm:ss"
 close_on_link_open = true
-circular_nav = true
-
-[[blacklisted_channels]]
-  id = "UCOpcACMWblDls9Z6GERVi1A"
-  name = "Screen Junkies"
-
-[[blacklisted_channels]]
-  id = "UCc9CjaAjsMMvaSghZB7-Kog"
-  name = "BeardMeatsFood"
-
-[[blacklisted_channels]]
-  id = "UCCVFgDdTfiGxQ695BxMBMUg"
-  name = "風雲谷 Whirling Clouds Valley"
+circular_nav = false
 
 [keybindings]
   download = "d"
