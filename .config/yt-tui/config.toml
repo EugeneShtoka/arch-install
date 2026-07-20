@@ -71,6 +71,7 @@ circular_nav = false
     recommended = "r"
     subscriptions = "s"
     channels = "c"
+    tags = "t"
     playlists = "p"
     search = "S"
     downloading = "d"
