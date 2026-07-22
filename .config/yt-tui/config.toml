@@ -20,6 +20,7 @@ tabs = ["recommended", "subscriptions", "channels", "playlists", "search", "down
 hint_mode = "full"
 duration_format = "hh:mm:ss"
 close_on_link_open = true
+close_info_on_tab_switch = true
 circular_nav = false
 
 [keybindings]
@@ -46,6 +47,7 @@ circular_nav = false
   refresh = "r"
   force_refresh = "R"
   video_info = "i"
+  focus_switch = "f"
   up = "k,up"
   down = "j,down"
   right = "l,right"
