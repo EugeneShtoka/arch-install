@@ -1,51 +1,27 @@
 #!/bin/zsh
+# Pick an MPD stored playlist via rofi, load it into the queue (in order) and
+# open the rmpc client.
 
 source $SCRIPTS_PATH/notify-lib.sh
 
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme='style-9-wide'
-playlist_extension="xspf"
 
-search_path=""
+# MPD stored playlists (drop any stray .xspf entries mpd may surface from the
+# music root -- those have proper .m3u equivalents now).
+playlists=$(mpc lsplaylists 2>/dev/null | grep -viE '\.xspf$')
 
-if [[ -n "$1" ]]; then
-    if [[ -d "$1" ]]; then
-        search_path="$1"
-    else
-        notify_send "Music Player" "Provided argument '$1' is not a valid directory."
-        exit 1
-    fi
-else
-    if [ -z "$MUSIC_PATH" ]; then
-        notify_send "Music Player" "MUSIC_PATH environment variable is not set and no directory argument was provided."
-        exit 1
-    elif [[ ! -d "$MUSIC_PATH" ]]; then
-        notify_send "Music Player" "MUSIC_PATH environment variable is set to '$MUSIC_PATH', which is not a valid directory."
-         exit 1
-    else
-        search_path="$MUSIC_PATH"
-    fi
-fi
-
-declare -A playlist_map
-declare -a playlist_options
-
-while IFS= read -r -d '' fullpath; do
-    filename="${fullpath##*/}"
-    display_name="${filename%.*}"
-    playlist_map[$display_name]=$fullpath
-    playlist_options+=("$display_name")
-done < <(find "$search_path" -type f -iname "*.${playlist_extension}" -print0)
-
-if [ ${#playlist_options[@]} -eq 0 ]; then
-    notify_send "Music Player" "No playlists found in '$search_path'."
+if [[ -z "$playlists" ]]; then
+    notify_send "Music Player" "No MPD playlists found. Run music-playlists-convert.sh?"
     exit 0
 fi
 
-choice=$(printf "%s\n" "${playlist_options[@]}" | $SCRIPTS_PATH/rofi-freq.sh music-play-list -i -theme "${rofi_dir}/${rofi_theme}.rasi" -matching prefix)
+choice=$(printf "%s\n" "$playlists" | $SCRIPTS_PATH/rofi-freq.sh music-play-list -i -theme "${rofi_dir}/${rofi_theme}.rasi" -matching prefix)
 
 if [[ -n "$choice" ]]; then
-    $SCRIPTS_PATH/music-stop.sh
-    pathToPlay="${playlist_map[${choice%$'\n'}]}"
-    setsid mpv --no-video --playlist="$pathToPlay" > /dev/null 2>&1 &
+    mpc -q clear
+    mpc -q random off
+    mpc -q load "${choice%$'\n'}"
+    mpc -q play
+    $SCRIPTS_PATH/music-client.sh
 fi

@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-pkill -9 -x mpv
+mpc -q stop

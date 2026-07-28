@@ -2,10 +2,11 @@
 
 source $SCRIPTS_PATH/notify-lib.sh
 
-metadata=$(dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.mpv /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' 2>/dev/null)
+# Only notify while actually playing.
+[[ "$(mpc status '%state%' 2>/dev/null)" == "playing" ]] || exit 0
 
-artist=$(echo "$metadata" | grep -A2 '"xesam:artist"' | grep -v 'xesam:artist' | grep 'string "' | head -1 | sed 's/.*string "//;s/"//')
-title=$(echo "$metadata" | grep -A1 '"xesam:title"' | grep -v 'xesam:title' | grep 'string "' | head -1 | sed 's/.*string "//;s/"//')
+artist=$(mpc current -f '%artist%' 2>/dev/null)
+title=$(mpc current -f '%title%' 2>/dev/null)
 
 # Skip notification when title is a raw URL or bare YouTube video ID (watch?v=...)
 if [[ -n "$title" ]] && [[ "$title" != http://* ]] && [[ "$title" != https://* ]] && [[ "$title" != watch\?v=* ]]; then
