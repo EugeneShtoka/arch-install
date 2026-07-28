@@ -7,9 +7,8 @@ source $SCRIPTS_PATH/notify-lib.sh
 rofi_dir="$HOME/.config/rofi/launchers/type-4"
 rofi_theme='style-9-wide'
 
-# MPD stored playlists (drop any stray .xspf entries mpd may surface from the
-# music root -- those have proper .m3u equivalents now).
-playlists=$(mpc lsplaylists 2>/dev/null | grep -viE '\.xspf$')
+# MPD stored playlists (.m3u under playlist_directory).
+playlists=$(mpc lsplaylists 2>/dev/null)
 
 if [[ -z "$playlists" ]]; then
     notify_send "Music Player" "No MPD playlists found. Run music-playlists-convert.sh?"
