@@ -17,13 +17,50 @@ subtitles = true
 subtitle_langs = ["en.*"]
 player = "mpv"
 player_backend = "mpris"
-tabs = ["recommended", "subscriptions", "channels", "playlists", "search", "downloading", "local", "history", "activity"]
 hint_mode = "full"
 duration_format = "hh:mm:ss"
 close_on_link_open = true
 close_info_on_tab_switch = true
 circular_nav = false
+feed_mode = "recommended"
 channels_view = "subscribed"
+tags_mode = "subscribed"
+
+[[panels]]
+  name = "feed"
+  type = "feed"
+
+[[panels]]
+  name = "channels"
+  type = "channels"
+
+[[panels]]
+  name = "tags"
+  type = "tags"
+
+[[panels]]
+  name = "playlists"
+  type = "playlists"
+
+[[panels]]
+  name = "search"
+  type = "search"
+
+[[panels]]
+  name = "downloading"
+  type = "downloading"
+
+[[panels]]
+  name = "local"
+  type = "local"
+
+[[panels]]
+  name = "history"
+  type = "history"
+
+[[panels]]
+  name = "activity"
+  type = "activity"
 
 [keybindings]
   download = "d"
@@ -75,20 +112,20 @@ channels_view = "subscribed"
     duration = "D"
     subscribers = "s"
     tags = "t"
-  [keybindings.tab_keys]
-    recommended = "r"
-    subscriptions = "s"
-    channels = "c"
-    tags = "t"
-    playlists = "p"
-    search = "S"
-    downloading = "d"
-    local = "l"
-    history = "h"
-    activity = "a"
+    size = "z"
   [keybindings.subscribe_keys]
     remote = "r"
     local = "l"
   [keybindings.playlist_keys]
     remote = "r"
     local = "l"
+  [keybindings.tab_keys]
+    S = "search"
+    a = "activity"
+    c = "channels"
+    d = "downloading"
+    f = "feed"
+    h = "history"
+    l = "local"
+    p = "playlists"
+    t = "tags"
