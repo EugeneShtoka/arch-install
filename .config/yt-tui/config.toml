@@ -23,6 +23,7 @@ duration_format = "hh:mm:ss"
 close_on_link_open = true
 close_info_on_tab_switch = true
 circular_nav = false
+channels_view = "subscribed"
 
 [keybindings]
   download = "d"
@@ -40,8 +41,12 @@ circular_nav = false
   toggle_mode = "m"
   subscribe = "S"
   unsubscribe = "u"
+  block = "X"
   rename_channel = "A"
   tag_channel = "T"
+  panel_mode = "M"
+  export = "E"
+  import = "I"
   help = "?"
   quit = "q"
   close = "esc"
