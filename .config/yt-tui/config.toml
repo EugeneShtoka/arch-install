@@ -29,18 +29,24 @@ tags_mode = "subscribed"
 [[panels]]
   name = "feed"
   type = "feed"
+  mode = "recommended"
+  sort = "date"
 
 [[panels]]
   name = "channels"
   type = "channels"
+  mode = "subscribed"
+  sort = "date"
 
 [[panels]]
   name = "tags"
   type = "tags"
+  mode = "subscribed"
 
 [[panels]]
   name = "playlists"
   type = "playlists"
+  sort = "views"
 
 [[panels]]
   name = "search"
@@ -53,10 +59,12 @@ tags_mode = "subscribed"
 [[panels]]
   name = "local"
   type = "local"
+  sort = "views"
 
 [[panels]]
   name = "history"
   type = "history"
+  sort = "views"
 
 [[panels]]
   name = "activity"
