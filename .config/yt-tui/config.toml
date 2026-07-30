@@ -18,7 +18,6 @@ strip_emojis = true
 subtitles = true
 subtitle_langs = ["en.*"]
 save_transcript = false
-transcript_format = "txt"
 player = "mpv"
 player_backend = "mpris"
 hint_mode = "full"
