@@ -103,6 +103,7 @@ stale_tagged_channel_days = 30
   panel_mode = "M"
   export = "E"
   import = "I"
+  command_prompt = ":"
   help = "?"
   quit = "q"
   close = "esc"
