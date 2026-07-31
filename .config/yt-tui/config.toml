@@ -1,5 +1,6 @@
 download_dir = "/home/eugene/Videos/yt-tui"
 browser = "vivaldi+gnomekeyring"
+youtube_enabled = true
 max_concurrent_downloads = 3
 sponsorblock = true
 sponsorblock_categories = ["sponsor", "selfpromo", "interaction"]
@@ -29,6 +30,8 @@ circular_nav = false
 feed_mode = "recommended"
 channels_view = "subscribed"
 tags_mode = "subscribed"
+hide_stale_tagged_channels = false
+stale_tagged_channel_days = 30
 
 [[panels]]
   name = "feed"
