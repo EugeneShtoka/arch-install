@@ -140,7 +140,6 @@ stale_tagged_channel_days = 30
     remote = "r"
     local = "l"
   [keybindings.tab_keys]
-    s = "search"
     a = "activity"
     c = "channels"
     d = "downloading"
@@ -148,4 +147,5 @@ stale_tagged_channel_days = 30
     h = "history"
     l = "local"
     p = "playlists"
+    s = "search"
     t = "tags"
