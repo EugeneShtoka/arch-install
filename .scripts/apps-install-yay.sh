@@ -136,3 +136,4 @@ $SCRIPTS_PATH/auto-yay.sh tcpdump
 $SCRIPTS_PATH/auto-yay.sh musikcube-bin
 $SCRIPTS_PATH/auto-yay.sh kew
 $SCRIPTS_PATH/auto-yay.sh rmpc
+$SCRIPTS_PATH/auto-yay.sh gitleaks
