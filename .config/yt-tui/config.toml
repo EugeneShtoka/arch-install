@@ -24,6 +24,7 @@ player_backend = "mpris"
 hint_mode = "full"
 duration_format = "hh:mm:ss"
 transcript_width = "50%"
+local_thumbnails = false
 close_on_link_open = true
 close_info_on_tab_switch = true
 circular_nav = false
