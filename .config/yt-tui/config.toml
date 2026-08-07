@@ -31,7 +31,6 @@ local_transcripts_max = 0
 local_prewarm = ""
 local_prewarm_concurrency = 0
 close_on_link_open = true
-close_info_on_tab_switch = true
 circular_nav = false
 feed_mode = "recommended"
 channels_view = "subscribed"
