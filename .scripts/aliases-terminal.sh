@@ -43,8 +43,8 @@ alias book-download='libgen search -r 50'
 alias mail=$SCRIPTS_PATH/email-start.sh
 alias file-manager=$SCRIPTS_PATH/file-manager-start.sh
 
-alias tsm='ticker -w "SPY,QQQ,DIA,IWM,GLD,SLV,^VIX" --show-separator'
-alias tsp='ticker --config ~/.config/ticker/config.yaml --show-summary --show-positions --show-separator'
+alias tsm='ticker --config ~/.config/ticker/market.yaml --show-separator'
+alias tsp='ticker --config ~/.config/ticker/portfolio.yaml --show-summary --show-positions --show-separator'
 
 alias microphone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
@@ -52,7 +52,7 @@ alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
 # TipMaster
 alias db-tunnel-start='ssh -fN -i ~/.ssh/tm-bastion -L 5433:tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com:5432 ec2-user@3.130.146.14'
 alias db-tunnel-stop='pkill -f "ssh.*3.130.146.14"'
-alias tm-prd-db-pass='db-tunnel-start && aws sso login && AWS_REGION=us-east-2  aws secretsmanager get-secret-value --secret-id 'rds!db-63c263e4-a52a-4bd0-9aed-28bef7b293f0' --query SecretString --output text | jq -r .password | xclip -selection clipboard'
-alias tm-stg-db-pass='$SCRIPTS_PATH/tm-stg-db-get-password.sh'
+alias tm-prd-db-pass='$SCRIPTS_PATH/tm-db-get-password.sh prd'
+alias tm-stg-db-pass='$SCRIPTS_PATH/tm-db-get-password.sh stg'
 
 alias neomutt='wezterm cli set-tab-title "Email" 2>/dev/null; command neomutt'
