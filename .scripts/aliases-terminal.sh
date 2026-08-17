@@ -43,8 +43,8 @@ alias book-download='libgen search -r 50'
 alias mail=$SCRIPTS_PATH/email-start.sh
 alias file-manager=$SCRIPTS_PATH/file-manager-start.sh
 
-alias tsm='mop -profile ~/.config/mop/market.moprc'
-alias tsp='mop -profile ~/.config/mop/portfolio.moprc'
+alias tsm='ticker -w "SPY,QQQ,DIA,IWM,GLD,SLV,^VIX" --show-separator'
+alias tsp='ticker --config ~/.config/ticker/config.yaml --show-summary --show-positions --show-separator'
 
 alias microphone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
