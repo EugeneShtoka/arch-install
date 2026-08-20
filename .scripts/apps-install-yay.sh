@@ -47,7 +47,6 @@ $SCRIPTS_PATH/auto-yay.sh obsidian
 $SCRIPTS_PATH/auto-yay.sh github-cli
 $SCRIPTS_PATH/auto-yay.sh expac
 $SCRIPTS_PATH/auto-yay.sh zoom
-$SCRIPTS_PATH/auto-yay.sh iamb-bin
 $SCRIPTS_PATH/auto-yay.sh postman-bin
 $SCRIPTS_PATH/auto-yay.sh adw-gtk3
 $SCRIPTS_PATH/auto-yay.sh fzf
@@ -65,7 +64,6 @@ $SCRIPTS_PATH/auto-yay.sh bottom
 $SCRIPTS_PATH/auto-yay.sh dosfstools
 $SCRIPTS_PATH/auto-yay.sh sysstat
 $SCRIPTS_PATH/auto-yay.sh libgen-cli-bin
-$SCRIPTS_PATH/auto-yay.sh fb2converter-bin
 $SCRIPTS_PATH/auto-yay.sh libcurl3-gnutls
 $SCRIPTS_PATH/auto-yay.sh steamcmd
 $SCRIPTS_PATH/auto-yay.sh xdotool
@@ -81,7 +79,6 @@ $SCRIPTS_PATH/auto-yay.sh adwaita-qt5-git
 $SCRIPTS_PATH/auto-yay.sh adwaita-qt6-git
 $SCRIPTS_PATH/auto-yay.sh gnome-themes-extra
 $SCRIPTS_PATH/auto-yay.sh kmonad
-$SCRIPTS_PATH/auto-yay.sh freetube-bin
 $SCRIPTS_PATH/auto-yay.sh udisks2
 $SCRIPTS_PATH/auto-yay.sh postgresql
 $SCRIPTS_PATH/auto-yay.sh exfatprogs
@@ -133,7 +130,6 @@ $SCRIPTS_PATH/auto-yay.sh element-desktop
 $SCRIPTS_PATH/auto-yay.sh tailscale
 $SCRIPTS_PATH/auto-yay.sh proxychains-ng
 $SCRIPTS_PATH/auto-yay.sh tcpdump
-$SCRIPTS_PATH/auto-yay.sh musikcube-bin
 $SCRIPTS_PATH/auto-yay.sh kew
 $SCRIPTS_PATH/auto-yay.sh rmpc
 $SCRIPTS_PATH/auto-yay.sh gitleaks
