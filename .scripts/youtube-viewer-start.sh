@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-setsid /usr/bin/freetube &>/dev/null
+$SCRIPTS_PATH/wezterm-focus-or-launch.sh "YouTube" yt-tui

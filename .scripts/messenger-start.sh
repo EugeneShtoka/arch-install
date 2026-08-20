@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-$SCRIPTS_PATH/wezterm-focus-or-launch.sh "Messenger" iamb
+$SCRIPTS_PATH/wezterm-focus-or-launch.sh "Messenger" mx-tui

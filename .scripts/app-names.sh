@@ -1,16 +1,23 @@
 #!/bin/zsh
-# Shared app display name mapping
-# Source this file; use APP_NAMES_JQ for jq calls, app_display_name() for shell
+# Shared app display name mapping — single source of truth.
+# Keys are X11 window classes (used by app-switch/app-kill for non-wezterm
+# windows); values are the friendly names shown in rofi.
+# Consumers:
+#   - APP_NAMES_JQ            : JSON form for jq calls (--argjson names ...)
+#   - app_display_name <key>  : shell lookup (falls back to the key itself)
 
-APP_NAMES_JQ='{"Vivaldi-stable":"Web browser","NeoMutt":"Email","Yazi":"File browser","ticker":"Stocks","Element":"Messenger (V)"}'
+typeset -A APP_NAMES=(
+  "Vivaldi-stable" "Web browser"
+  "NeoMutt"        "Email"
+  "Yazi"           "File browser"
+  "ticker"         "Stocks"
+  "mx-tui"         "Messenger"
+  "Element"        "Messenger (V)"
+)
+
+# Derive the JSON form from the map above so the mapping is defined only once.
+APP_NAMES_JQ=$(jq -n '$ARGS.positional | [range(0; length; 2) as $i | {(.[$i]): .[$i+1]}] | add' --args "${(@kv)APP_NAMES}")
 
 app_display_name() {
-  case "$1" in
-    "Vivaldi-stable") echo "Web browser" ;;
-    "NeoMutt")        echo "Email" ;;
-    "Yazi")           echo "File browser" ;;
-    "ticker")         echo "Stocks" ;;
-    "Element")        echo "Messenger (V)" ;;
-    *)                echo "$1" ;;
-  esac
+  print -r -- "${APP_NAMES[$1]:-$1}"
 }
