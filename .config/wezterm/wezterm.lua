@@ -34,6 +34,12 @@ config.enable_tab_bar = false
 config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
 
+-- Keep the pane open when its program exits non-zero, so a crash (e.g. an nvim
+-- abort) stays on screen instead of silently taking the window with it.
+-- Clean exits (:q, exiting a shell) still close as usual.
+config.exit_behavior = "CloseOnCleanExit"
+config.exit_behavior_messaging = "Verbose"
+
 local function update_tabs_cache()
 	wezterm.run_child_process({ os.getenv("SCRIPTS_PATH") .. "/wezterm-tabs-update.sh" })
 end
