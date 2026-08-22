@@ -1,6 +1,7 @@
 download_dir = "/home/eugene/Videos/yt-tui"
 browser = "vivaldi+gnomekeyring"
 youtube_enabled = true
+ytdlp_update_check = true
 max_concurrent_downloads = 3
 sponsorblock = true
 sponsorblock_categories = ["sponsor", "selfpromo", "interaction"]
