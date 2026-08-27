@@ -93,7 +93,10 @@ case "$ENV" in
 
         DB_PASSWORD=$(rds_master_password tm-prd-opticodds)
 
-        CONNECT_HINT="psql -h 127.0.0.1 -p 5434 -U postgres -d backend   (sslmode=disable)"
+        # This box REQUIRES SSL — unlike the main prd box, which is plain TCP
+        # behind the same bastion (verified 2026-08-27: pg_hba rejects an
+        # unencrypted connection with "no pg_hba.conf entry ... no encryption").
+        CONNECT_HINT="psql 'host=127.0.0.1 port=5434 user=postgres dbname=backend sslmode=require'"
         ;;
 
     stg)
