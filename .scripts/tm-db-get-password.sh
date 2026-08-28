@@ -89,7 +89,7 @@ case "$ENV" in
     prd-oo)
         open_tunnel 5434 tm-prd-opticodds.clmokqmsk1un.us-east-2.rds.amazonaws.com
 
-        aws sso login
+        aws sso login --use_device-code
 
         DB_PASSWORD=$(rds_master_password tm-prd-opticodds)
 
