@@ -82,3 +82,5 @@
 !.config/xdg-desktop-portal-termfilechooser/**/*
 !.config/yt-tui
 !.config/yt-tui/**/*
+!.config/mx-tui
+!.config/mx-tui/**/*
