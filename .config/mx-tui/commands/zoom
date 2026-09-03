@@ -1,8 +1,8 @@
 #!/bin/sh
-# /zoom [topic] — create a Zoom meeting, join it yourself, and propose the invite.
+# /zoom [topic] — start a Zoom call, join it yourself, and propose the invite text.
 #
 # mx-tui knows nothing about Zoom: it runs this file and puts whatever the file
-# prints on stdout into the composer, for you to send or not. Everything below is
+# prints on stdout into the composer, for you to send or not. Everything here is
 # yours to change.
 #
 # What mx-tui gives this script:
@@ -11,25 +11,73 @@
 #   $MX_ROOM_ID      that room's ID
 #   $MX_USER         your own MXID
 #
-# Credentials: create a Server-to-Server OAuth app at https://marketplace.zoom.us
-# (Develop → Build App → Server-to-Server OAuth), give it the scope
-# `meeting:write:meeting:admin`, then put its three values in
-# ~/.config/mx-tui/zoom.env — chmod 600, and never in mx-tui's config.
+# Two ways to work, and it takes whichever is configured in
+# ~/.config/mx-tui/zoom.env:
+#
+#   1. ZOOM_LINK — your Personal Meeting link, pasted from https://zoom.us/profile.
+#      No API, no app, no network call. Always the same room, which is exactly right
+#      for "jump on a call" and wrong for two calls at once.
+#   2. ZOOM_ACCOUNT_ID + ZOOM_CLIENT_ID + ZOOM_CLIENT_SECRET — a Server-to-Server
+#      OAuth app, which creates a fresh meeting every time.
 set -eu
 
 env_file="${XDG_CONFIG_HOME:-$HOME/.config}/mx-tui/zoom.env"
 # shellcheck source=/dev/null
 [ -r "$env_file" ] && . "$env_file"
 
+topic=${1:-${MX_ROOM:-call}}
+
+# open hands a URL to the desktop client if the scheme is Zoom's own, else to the
+# browser. Detached, and with its output thrown away: a background child that keeps
+# hold of stdout is a script that never appears to finish.
+open_url() {
+	[ -n "${ZOOM_DRY:-}" ] && { echo "would open: $1" >&2; return 0; }
+	setsid xdg-open "$1" >/dev/null 2>&1 &
+}
+
+# ── 1. A personal meeting link: nothing to set up but the link itself ──────────
+if [ -n "${ZOOM_LINK:-}" ]; then
+	# The desktop client starts *your* meeting from its own URL scheme, which needs
+	# the meeting number and passcode out of the link.
+	confno=$(printf '%s' "$ZOOM_LINK" | sed -n 's|.*/j/\([0-9]\{1,\}\).*|\1|p')
+	pwd_param=$(printf '%s' "$ZOOM_LINK" | sed -n 's|.*[?&]pwd=\([^&]*\).*|\1|p')
+	if [ -n "$confno" ] && command -v zoom >/dev/null 2>&1; then
+		start="zoommtg://zoom.us/start?confno=$confno"
+		[ -n "$pwd_param" ] && start="$start&pwd=$pwd_param"
+		open_url "$start"
+	else
+		# No client, or a link in a shape this cannot read: the browser handles both.
+		open_url "$ZOOM_LINK"
+	fi
+	printf '%s — Zoom: %s\n' "$topic" "$ZOOM_LINK"
+	exit 0
+fi
+
+# ── 2. A Server-to-Server OAuth app: a fresh meeting each time ─────────────────
+missing=""
 for var in ZOOM_ACCOUNT_ID ZOOM_CLIENT_ID ZOOM_CLIENT_SECRET; do
 	eval "value=\${$var:-}"
-	if [ -z "$value" ]; then
-		# The first line of stderr is what mx-tui shows on the status line, so it
-		# says the one thing you need to do next.
-		echo "no Zoom credentials: set $var in $env_file" >&2
+	[ -z "$value" ] && missing="$missing $var"
+done
+if [ -n "$missing" ]; then
+	# First time only: put the page with the link on it in front of you, since the
+	# one thing that cannot be automated is the copy-paste. There is no "log in to
+	# Zoom" to run here — every Zoom API route needs an app you register by hand in
+	# their web console, so the shortest honest path is their profile page.
+	#
+	# A marker file, so a second /zoom does not open a second tab.
+	marker="${XDG_STATE_HOME:-$HOME/.local/state}/mx-tui/zoom-setup-opened"
+	if [ ! -e "$marker" ]; then
+		mkdir -p "$(dirname "$marker")" && : >"$marker"
+		open_url "https://zoom.us/profile"
+		echo "opened zoom.us/profile — copy the invite link under your Personal Meeting ID into $env_file as ZOOM_LINK=\"…\"" >&2
 		exit 1
 	fi
-done
+	# The first line of stderr is what mx-tui shows on the status line, so it says
+	# the one thing to do next — and names the cheap option first.
+	echo "no Zoom set up yet: paste your personal meeting link as ZOOM_LINK in $env_file (or set$missing there)" >&2
+	exit 1
+fi
 
 token=$(curl -sS -X POST -u "$ZOOM_CLIENT_ID:$ZOOM_CLIENT_SECRET" \
 	"https://zoom.us/oauth/token?grant_type=account_credentials&account_id=$ZOOM_ACCOUNT_ID" |
@@ -39,8 +87,6 @@ if [ -z "$token" ]; then
 	exit 1
 fi
 
-# The topic defaults to the room you are in, which is nearly always what you mean.
-topic=${1:-${MX_ROOM:-call}}
 meeting=$(curl -sS -X POST \
 	-H "Authorization: Bearer $token" -H 'Content-Type: application/json' \
 	-d "$(jq -nc --arg t "$topic" '{topic:$t, type:1, settings:{join_before_host:true}}')" \
@@ -49,14 +95,8 @@ meeting=$(curl -sS -X POST \
 join=$(printf '%s' "$meeting" | jq -r '.join_url // empty')
 start=$(printf '%s' "$meeting" | jq -r '.start_url // empty')
 if [ -z "$join" ]; then
-	echo "Zoom did not return a meeting: $(printf '%s' "$meeting" | jq -r '.message // "no reason given"')" >&2
+	echo "Zoom did not make a meeting: $(printf '%s' "$meeting" | jq -r '.message // "no reason given"')" >&2
 	exit 1
 fi
-
-# Join it yourself. Detached and with its output thrown away — a background child
-# that keeps hold of stdout is a script that never appears to finish.
-if [ -n "$start" ]; then
-	setsid xdg-open "$start" >/dev/null 2>&1 &
-fi
-
-printf 'Zoom: %s\n' "$join"
+[ -n "$start" ] && open_url "$start"
+printf '%s — Zoom: %s\n' "$topic" "$join"

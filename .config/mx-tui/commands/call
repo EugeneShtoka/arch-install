@@ -1,0 +1,19 @@
+#!/bin/sh
+# /call [topic] — a video call that needs no account, no app and no credentials.
+#
+# Jitsi Meet hosts a room the moment somebody opens its URL, so the whole command is
+# "invent a name, open it, print it". This is the one to reach for when the point is
+# to be talking in ten seconds; /zoom is for when it has to be Zoom.
+#
+# The room name is deliberately long and random: a jitsi room is public to anybody
+# who guesses its name, and a guessable name is an open door.
+set -eu
+
+topic=${1:-${MX_ROOM:-call}}
+# Letters and digits only, from the kernel's random pool.
+slug=$(tr -dc 'a-z0-9' </dev/urandom | head -c 24)
+url="https://meet.jit.si/mxtui-$slug"
+
+[ -n "${CALL_DRY:-}" ] || setsid xdg-open "$url" >/dev/null 2>&1 &
+
+printf '%s — call: %s\n' "$topic" "$url"
