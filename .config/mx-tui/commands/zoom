@@ -111,6 +111,34 @@ set -eu
 
 keyring_service="mx-tui-zoom"
 
+# invite <meeting-number> <passcode> <link> — the message that goes to the room.
+#
+# Shaped like Zoom's own invitation, because that is what people recognise: the
+# number grouped the way Zoom groups it (11 digits 3-4-4, a 10-digit personal ID
+# 3-3-4), the passcode spelled out for anybody dialling in by ID, and the link last
+# so it is the thing you click. Change the printf lines and you change the message —
+# nothing else here reads them.
+invite() {
+	number=$1
+	passcode=$2
+	link=$3
+	# Zoom groups an 11-digit meeting number 3-4-4 and a 10-digit personal ID 3-3-4.
+	case $(printf '%s' "$number" | wc -c | tr -d ' ') in
+	11) pretty=$(printf '%s' "$number" | sed 's|\(...\)\(....\)\(....\)|\1-\2-\3|') ;;
+	10) pretty=$(printf '%s' "$number" | sed 's|\(...\)\(...\)\(....\)|\1-\2-\3|') ;;
+	*) pretty=$number ;;
+	esac
+
+	if [ "$topic_given" = yes ]; then
+		printf 'Zoom meeting: %s\n' "$topic"
+	else
+		printf 'Zoom meeting started\n'
+	fi
+	[ -n "$pretty" ] && printf 'Meeting ID: %s\n' "$pretty"
+	[ -n "$passcode" ] && printf 'Passcode: %s\n' "$passcode"
+	printf '%s\n' "$link"
+}
+
 # secret <ENV_NAME> <keyring-key> — print one value, or nothing at all.
 #
 # Order: the environment first (a one-off override, and how a test runs), then
@@ -142,7 +170,13 @@ ZOOM_ACCOUNT_ID=$(secret ZOOM_ACCOUNT_ID account-id)
 ZOOM_CLIENT_ID=$(secret ZOOM_CLIENT_ID client-id)
 ZOOM_CLIENT_SECRET=$(secret ZOOM_CLIENT_SECRET client-secret)
 
-topic=${1:-${MX_ROOM:-call}}
+if [ "${1:-}" = "" ]; then
+	topic_given=no
+	topic=${MX_ROOM:-call}
+else
+	topic_given=yes
+	topic=$1
+fi
 
 # open hands a URL to the desktop client if the scheme is Zoom's own, else to the
 # browser. Detached, and with its output thrown away: a background child that keeps
@@ -154,19 +188,20 @@ open_url() {
 
 # ── 1. A personal meeting link: nothing to set up but the link itself ──────────
 if [ -n "${ZOOM_LINK:-}" ]; then
-	# The desktop client starts *your* meeting from its own URL scheme, which needs
-	# the meeting number and passcode out of the link.
+	# Open the very link that gets shared, and nothing else.
+	#
+	# This started as `zoommtg://zoom.us/start?confno=<your PMI>`, which looked
+	# tidier and was wrong: the client read it as "start a meeting" and opened an
+	# *instant* one — a different number and a different passcode from the personal
+	# room whose link was being pasted into the chat. So the host sat in one meeting
+	# while everybody else was invited to another.
+	#
+	# Joining your own personal room makes you its host, so one URL does both jobs
+	# and the two cannot disagree by construction.
+	open_url "$ZOOM_LINK"
 	confno=$(printf '%s' "$ZOOM_LINK" | sed -n 's|.*/j/\([0-9]\{1,\}\).*|\1|p')
-	pwd_param=$(printf '%s' "$ZOOM_LINK" | sed -n 's|.*[?&]pwd=\([^&]*\).*|\1|p')
-	if [ -n "$confno" ] && command -v zoom >/dev/null 2>&1; then
-		start="zoommtg://zoom.us/start?confno=$confno"
-		[ -n "$pwd_param" ] && start="$start&pwd=$pwd_param"
-		open_url "$start"
-	else
-		# No client, or a link in a shape this cannot read: the browser handles both.
-		open_url "$ZOOM_LINK"
-	fi
-	printf '%s — Zoom: %s\n' "$topic" "$ZOOM_LINK"
+	pass=$(printf '%s' "$ZOOM_LINK" | sed -n 's|.*[?&]pwd=\([^&]*\).*|\1|p')
+	invite "$confno" "$pass" "$ZOOM_LINK"
 	exit 0
 fi
 
@@ -216,12 +251,9 @@ if [ -z "$join" ]; then
 	echo "Zoom did not make a meeting: $(printf '%s' "$meeting" | jq -r '.message // "no reason given"')" >&2
 	exit 1
 fi
+# start_url is the host's own way in, and it is a different URL from the one that
+# gets shared — which is safe here, unlike the personal-room path above, because
+# both came from the same API call and name the same meeting.
 [ -n "$start" ] && open_url "$start"
-
-# The link carries the passcode, so this is only for whoever dials in by ID — which
-# is exactly what Zoom's own "Copy Invitation" spells out, and the reason a
-# per-meeting passcode is worth more than a permanent one.
-id=$(printf '%s' "$meeting" | jq -r '.id // empty')
-pass=$(printf '%s' "$meeting" | jq -r '.password // empty')
-printf '%s — Zoom: %s\n' "$topic" "$join"
-[ -n "$id" ] && printf 'Meeting ID: %s%s\n' "$id" "$([ -n "$pass" ] && printf ' · passcode %s' "$pass")"
+invite "$(printf '%s' "$meeting" | jq -r '.id // empty')" \
+	"$(printf '%s' "$meeting" | jq -r '.password // empty')" "$join"
