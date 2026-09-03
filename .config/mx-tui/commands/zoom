@@ -11,13 +11,51 @@
 #   $MX_USER         your own MXID
 #
 # ==============================================================================
-# TWO WAYS TO WORK. Both read ~/.config/mx-tui/zoom.env (chmod 600).
+# WHERE THE SECRETS LIVE: your desktop keyring, not a file.
+# ==============================================================================
+#
+# Everything sensitive is read from the Secret Service — the same gnome-keyring
+# that already holds mx-tui's own Matrix access token — under service `mx-tui-zoom`.
+# Nothing is written to disk in plain text, and this script holds no secret itself.
+#
+# Store a value (from a shell, once; it reads the value from stdin so it never
+# appears in your shell history or in `ps`):
+#
+#   printf '%s' 'PASTE_HERE' | secret-tool store --label='mx-tui zoom link' \
+#       service mx-tui-zoom key link
+#
+# List what is stored (values shown, so mind who is looking):
+#
+#   secret-tool search --all service mx-tui-zoom
+#
+# Remove one:
+#
+#   secret-tool clear service mx-tui-zoom key link
+#
+# The keys this script looks for: `link`, `account-id`, `client-id`,
+# `client-secret`.
+#
+# ── Using a different store ────────────────────────────────────────────────────
+#
+# Set ZOOM_SECRET_CMD to any command that prints a value when given a key name.
+# It is split on spaces and run with no shell, so it takes a command and its
+# arguments and nothing else:
+#
+#   ZOOM_SECRET_CMD="pass show mx-tui/zoom"        → runs: pass show mx-tui/zoom link
+#   ZOOM_SECRET_CMD="bw get password mx-tui-zoom"  → …and so on
+#
+# An environment variable of the matching name (ZOOM_LINK, ZOOM_ACCOUNT_ID,
+# ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET) still wins over both, which is what makes a
+# one-off override — or a test — possible without touching anything stored.
+#
+# ==============================================================================
+# TWO WAYS TO WORK.
 # ==============================================================================
 #
 # ── 1. ZOOM_LINK — your Personal Meeting Room. Nothing to register. ───────────
 #
 #   https://zoom.us/profile → "Personal Meeting ID" → copy the invite link under
-#   it. It looks like
+#   it, and store it as `link` (see above). It looks like
 #
 #     https://us04web.zoom.us/j/6530524978?pwd=tYFEL……ItD.1
 #
@@ -54,7 +92,8 @@
 #     e. **Activation** tab → Activate. Zoom will not issue a token for an app
 #        that has not been activated, and this is the step everybody forgets.
 #     f. **App Credentials** tab → copy **Account ID**, **Client ID** and
-#        **Client Secret** into zoom.env.
+#        **Client Secret**, and store each one as `account-id`, `client-id` and
+#        `client-secret` with the secret-tool line above.
 #
 #   Notes on plans and roles: Zoom's documentation does not list a paid plan as a
 #   requirement, but the scopes you are *offered* depend on your role — you need
@@ -62,15 +101,45 @@
 #   you have by being its owner. If the meeting scope is not offered at step (d),
 #   that is the account's plan or role talking, and ZOOM_LINK is the way round it.
 #
-#   Where the secret must not go: not in mx-tui's config.toml, not on a command
-#   line (argv is world-readable in /proc), not in a chat room. zoom.env, mode
-#   600, is the whole of it — this script is the only thing that reads it.
+#   Where a secret must not go: not in mx-tui's config.toml, not on a command line
+#   (argv is world-readable in /proc), not in a chat room, and not in a file next
+#   to this one. The keyring is unlocked with your session and holds it encrypted
+#   at rest, which a mode-600 file does not.
 #
 set -eu
 
-env_file="${XDG_CONFIG_HOME:-$HOME/.config}/mx-tui/zoom.env"
-# shellcheck source=/dev/null
-[ -r "$env_file" ] && . "$env_file"
+keyring_service="mx-tui-zoom"
+
+# secret <ENV_NAME> <keyring-key> — print one value, or nothing at all.
+#
+# Order: the environment first (a one-off override, and how a test runs), then
+# ZOOM_SECRET_CMD if you use another store, then the desktop keyring. It always
+# succeeds: "not stored" is an answer, not an error, and under `set -e` a failing
+# command substitution would take the whole script down with it.
+secret() {
+	eval "value=\${$1:-}"
+	if [ -n "$value" ]; then
+		printf '%s' "$value"
+		return 0
+	fi
+	if [ -n "${ZOOM_SECRET_CMD:-}" ]; then
+		# Deliberately unquoted: the setting is a command *and its arguments*, split
+		# on spaces, with no shell involved — the same rule mx-tui uses for [composer]
+		# editor.
+		# shellcheck disable=SC2086
+		$ZOOM_SECRET_CMD "$2" 2>/dev/null || true
+		return 0
+	fi
+	if command -v secret-tool >/dev/null 2>&1; then
+		secret-tool lookup service "$keyring_service" key "$2" 2>/dev/null || true
+	fi
+	return 0
+}
+
+ZOOM_LINK=$(secret ZOOM_LINK link)
+ZOOM_ACCOUNT_ID=$(secret ZOOM_ACCOUNT_ID account-id)
+ZOOM_CLIENT_ID=$(secret ZOOM_CLIENT_ID client-id)
+ZOOM_CLIENT_SECRET=$(secret ZOOM_CLIENT_SECRET client-secret)
 
 topic=${1:-${MX_ROOM:-call}}
 
@@ -101,11 +170,12 @@ if [ -n "${ZOOM_LINK:-}" ]; then
 fi
 
 # ── 2. A Server-to-Server OAuth app: a fresh meeting each time ─────────────────
+# Named the way you would store them, not the way this script spells them
+# internally: the message has to be something you can paste.
 missing=""
-for var in ZOOM_ACCOUNT_ID ZOOM_CLIENT_ID ZOOM_CLIENT_SECRET; do
-	eval "value=\${$var:-}"
-	[ -z "$value" ] && missing="$missing $var"
-done
+[ -z "$ZOOM_ACCOUNT_ID" ] && missing="$missing account-id"
+[ -z "$ZOOM_CLIENT_ID" ] && missing="$missing client-id"
+[ -z "$ZOOM_CLIENT_SECRET" ] && missing="$missing client-secret"
 if [ -n "$missing" ]; then
 	# First time only: put the page with the link on it in front of you, since the
 	# one thing that cannot be automated is the copy-paste. There is no "log in to
@@ -117,12 +187,12 @@ if [ -n "$missing" ]; then
 	if [ ! -e "$marker" ]; then
 		mkdir -p "$(dirname "$marker")" && : >"$marker"
 		open_url "https://zoom.us/profile"
-		echo "opened zoom.us/profile — copy the invite link under your Personal Meeting ID into $env_file as ZOOM_LINK=\"…\"" >&2
+		echo "opened zoom.us/profile — copy the invite link under your Personal Meeting ID, then: printf '%s' 'THELINK' | secret-tool store --label='mx-tui zoom link' service mx-tui-zoom key link" >&2
 		exit 1
 	fi
 	# The first line of stderr is what mx-tui shows on the status line, so it says
 	# the one thing to do next — and names the cheap option first.
-	echo "no Zoom set up yet: paste your personal meeting link as ZOOM_LINK in $env_file (or set$missing there)" >&2
+	echo "no Zoom set up yet: store your personal meeting link in the keyring — secret-tool store --label='mx-tui zoom link' service mx-tui-zoom key link (or store the app credentials:$missing)" >&2
 	exit 1
 fi
 
@@ -130,7 +200,7 @@ token=$(curl -sS -X POST -u "$ZOOM_CLIENT_ID:$ZOOM_CLIENT_SECRET" \
 	"https://zoom.us/oauth/token?grant_type=account_credentials&account_id=$ZOOM_ACCOUNT_ID" |
 	jq -r '.access_token // empty')
 if [ -z "$token" ]; then
-	echo "Zoom refused the credentials in $env_file" >&2
+	echo "Zoom refused the credentials in the keyring (service mx-tui-zoom)" >&2
 	exit 1
 fi
 
