@@ -1,4 +1,3 @@
-#!/bin/sh
 # /zoom [topic] — start a Zoom call, join it yourself, and propose the invite text.
 #
 # mx-tui knows nothing about Zoom: it runs this file and puts whatever the file
@@ -11,14 +10,62 @@
 #   $MX_ROOM_ID      that room's ID
 #   $MX_USER         your own MXID
 #
-# Two ways to work, and it takes whichever is configured in
-# ~/.config/mx-tui/zoom.env:
+# ==============================================================================
+# TWO WAYS TO WORK. Both read ~/.config/mx-tui/zoom.env (chmod 600).
+# ==============================================================================
 #
-#   1. ZOOM_LINK — your Personal Meeting link, pasted from https://zoom.us/profile.
-#      No API, no app, no network call. Always the same room, which is exactly right
-#      for "jump on a call" and wrong for two calls at once.
-#   2. ZOOM_ACCOUNT_ID + ZOOM_CLIENT_ID + ZOOM_CLIENT_SECRET — a Server-to-Server
-#      OAuth app, which creates a fresh meeting every time.
+# ── 1. ZOOM_LINK — your Personal Meeting Room. Nothing to register. ───────────
+#
+#   https://zoom.us/profile → "Personal Meeting ID" → copy the invite link under
+#   it. It looks like
+#
+#     https://us04web.zoom.us/j/6530524978?pwd=tYFEL……ItD.1
+#
+#   and the ?pwd= part *is* the passcode, which is why the link alone is enough to
+#   join. Paste it as ZOOM_LINK and /zoom works: no app, no API, no network call —
+#   the desktop client is started through its own zoommtg:// scheme.
+#
+#   The catch is worth knowing before you paste that link into a group room: **it
+#   is permanent**. Your personal room has one number and one passcode, so anybody
+#   who keeps the link — anybody still in that room next year, and on a bridged
+#   room, whoever runs the bridge — can walk into any future meeting you hold
+#   there. For a 1:1 with someone you talk to daily that is fine. For a room with
+#   twenty people in it, use the second way.
+#
+# ── 2. Server-to-Server OAuth — a fresh meeting, and a fresh passcode, each time ─
+#
+#   This is the "properly, with a secret" version. The meeting is created on demand,
+#   so its number and passcode are disposable and the link stops working when the
+#   meeting is over.
+#
+#   Getting the three values (verified against developers.zoom.us, Sep 2026):
+#
+#     a. Sign in at https://marketplace.zoom.us with the Zoom account you want the
+#        meetings to belong to.
+#     b. Bottom-left: **Developer** → **Created apps** (or the top-right
+#        **Develop** → **Build an app**).
+#     c. Choose **Server-to-Server OAuth app** → Create, and give it any name
+#        ("mx-tui" will do). This app type has no login flow and no redirect URL —
+#        it is meant for exactly this: a script acting as you.
+#     d. **Scopes** tab → Add scopes → Meeting → tick the one that lets an app
+#        create meetings. Depending on how old your account's marketplace is that
+#        is either the granular `meeting:write:meeting:admin` or the classic
+#        `meeting:write:admin`. Only that one is needed.
+#     e. **Activation** tab → Activate. Zoom will not issue a token for an app
+#        that has not been activated, and this is the step everybody forgets.
+#     f. **App Credentials** tab → copy **Account ID**, **Client ID** and
+#        **Client Secret** into zoom.env.
+#
+#   Notes on plans and roles: Zoom's documentation does not list a paid plan as a
+#   requirement, but the scopes you are *offered* depend on your role — you need
+#   permission to view and edit server-to-server apps, which on a personal account
+#   you have by being its owner. If the meeting scope is not offered at step (d),
+#   that is the account's plan or role talking, and ZOOM_LINK is the way round it.
+#
+#   Where the secret must not go: not in mx-tui's config.toml, not on a command
+#   line (argv is world-readable in /proc), not in a chat room. zoom.env, mode
+#   600, is the whole of it — this script is the only thing that reads it.
+#
 set -eu
 
 env_file="${XDG_CONFIG_HOME:-$HOME/.config}/mx-tui/zoom.env"
@@ -99,4 +146,11 @@ if [ -z "$join" ]; then
 	exit 1
 fi
 [ -n "$start" ] && open_url "$start"
+
+# The link carries the passcode, so this is only for whoever dials in by ID — which
+# is exactly what Zoom's own "Copy Invitation" spells out, and the reason a
+# per-meeting passcode is worth more than a permanent one.
+id=$(printf '%s' "$meeting" | jq -r '.id // empty')
+pass=$(printf '%s' "$meeting" | jq -r '.password // empty')
 printf '%s — Zoom: %s\n' "$topic" "$join"
+[ -n "$id" ] && printf 'Meeting ID: %s%s\n' "$id" "$([ -n "$pass" ] && printf ' · passcode %s' "$pass")"
