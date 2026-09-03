@@ -1,3 +1,4 @@
+#!/bin/sh
 # /zoom [topic] — start a Zoom call, join it yourself, and propose the invite text.
 #
 # mx-tui knows nothing about Zoom: it runs this file and puts whatever the file
