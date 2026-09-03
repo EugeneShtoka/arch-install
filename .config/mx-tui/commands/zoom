@@ -1,0 +1,62 @@
+#!/bin/sh
+# /zoom [topic] — create a Zoom meeting, join it yourself, and propose the invite.
+#
+# mx-tui knows nothing about Zoom: it runs this file and puts whatever the file
+# prints on stdout into the composer, for you to send or not. Everything below is
+# yours to change.
+#
+# What mx-tui gives this script:
+#   "$1" / $MX_ARG   the words after the command, as one argument
+#   $MX_ROOM         the room you are writing in, as it is labelled there
+#   $MX_ROOM_ID      that room's ID
+#   $MX_USER         your own MXID
+#
+# Credentials: create a Server-to-Server OAuth app at https://marketplace.zoom.us
+# (Develop → Build App → Server-to-Server OAuth), give it the scope
+# `meeting:write:meeting:admin`, then put its three values in
+# ~/.config/mx-tui/zoom.env — chmod 600, and never in mx-tui's config.
+set -eu
+
+env_file="${XDG_CONFIG_HOME:-$HOME/.config}/mx-tui/zoom.env"
+# shellcheck source=/dev/null
+[ -r "$env_file" ] && . "$env_file"
+
+for var in ZOOM_ACCOUNT_ID ZOOM_CLIENT_ID ZOOM_CLIENT_SECRET; do
+	eval "value=\${$var:-}"
+	if [ -z "$value" ]; then
+		# The first line of stderr is what mx-tui shows on the status line, so it
+		# says the one thing you need to do next.
+		echo "no Zoom credentials: set $var in $env_file" >&2
+		exit 1
+	fi
+done
+
+token=$(curl -sS -X POST -u "$ZOOM_CLIENT_ID:$ZOOM_CLIENT_SECRET" \
+	"https://zoom.us/oauth/token?grant_type=account_credentials&account_id=$ZOOM_ACCOUNT_ID" |
+	jq -r '.access_token // empty')
+if [ -z "$token" ]; then
+	echo "Zoom refused the credentials in $env_file" >&2
+	exit 1
+fi
+
+# The topic defaults to the room you are in, which is nearly always what you mean.
+topic=${1:-${MX_ROOM:-call}}
+meeting=$(curl -sS -X POST \
+	-H "Authorization: Bearer $token" -H 'Content-Type: application/json' \
+	-d "$(jq -nc --arg t "$topic" '{topic:$t, type:1, settings:{join_before_host:true}}')" \
+	https://api.zoom.us/v2/users/me/meetings)
+
+join=$(printf '%s' "$meeting" | jq -r '.join_url // empty')
+start=$(printf '%s' "$meeting" | jq -r '.start_url // empty')
+if [ -z "$join" ]; then
+	echo "Zoom did not return a meeting: $(printf '%s' "$meeting" | jq -r '.message // "no reason given"')" >&2
+	exit 1
+fi
+
+# Join it yourself. Detached and with its output thrown away — a background child
+# that keeps hold of stdout is a script that never appears to finish.
+if [ -n "$start" ]; then
+	setsid xdg-open "$start" >/dev/null 2>&1 &
+fi
+
+printf 'Zoom: %s\n' "$join"

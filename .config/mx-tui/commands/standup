@@ -1,0 +1,6 @@
+#!/bin/sh
+# /standup — a template to fill in, and proof that the mechanism works without any
+# credentials at all. Nothing is sent: the text lands in the composer.
+set -eu
+printf 'Standup %s\n• yesterday: \n• today: %s\n• blocked: nothing\n' \
+	"$(date +%Y-%m-%d)" "${1:-}"
