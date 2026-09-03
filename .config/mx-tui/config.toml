@@ -76,7 +76,7 @@ room = "!vw0M8u2P6olcIKFsDt:matrix.cloud-surf.com"
 name = "Sasha Popov"
 
 [display.rail]
-order = ["unread", "mentions", "-", "Friends", "Work", "Social", "Colleagues", "-"]
+order = ["unread", "-", "Friends", "Work", "Social", "Colleagues", "-"]
 hidden = ["home", "dms"]
 rename = { "Google Messages" = "SMS", "LinkedIn (Eugene Shtoka)" = "LinkedIn", "Meta (Eugene Shtoka)" = "Meta", "Telegram (+359884650326)" = "Telegram" }
 
