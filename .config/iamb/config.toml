@@ -1,0 +1,74 @@
+# iamb configuration — see iamb(5) and /usr/share/doc/iamb/config.example.toml
+#
+# Homeserver/account mirror ~/.config/mx-tui/config.toml (tuwunel on the Hetzner
+# VPS). matrix.cloud-surf.com serves no /.well-known/matrix/client, so `url`
+# must stay set explicitly.
+
+default_profile = "cloud-surf"
+
+[profiles.cloud-surf]
+user_id = "@eugene:matrix.cloud-surf.com"
+url = "https://matrix.cloud-surf.com"
+
+[settings]
+username_display = "displayname"
+message_user_color = true
+user_gutter_width = 20
+state_event_display = false      # hide join/leave spam from the bridges
+reaction_display = true
+read_receipt_send = true
+read_receipt_display = true
+typing_notice_send = true
+typing_notice_display = true
+normal_after_send = true
+external_edit_file_suffix = ".md"
+log_level = "warn"
+
+[settings.notifications]
+enabled = true
+via = "desktop"
+show_message = true
+
+[settings.sort]
+rooms = ["favorite", "lowpriority", "unread", "recent"]
+members = ["power", "id"]
+
+# wezterm renders sixel; font_size is width/height in pixels.
+[settings.image_preview]
+protocol.type = "sixel"
+protocol.font_size = [8, 16]
+size = { width = 80, height = 24 }
+
+# Every identity that is actually me, across the bridges.
+[settings.users]
+"@eugene:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_bg_359884650326:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_bg_lid-181222537961625:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_il_972545347450:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@whatsapp_il_lid-273173559930881:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@telegram_8735244446:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@meta_100009131024163:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@slack_t01k2d5tcac-u08fys2bbhb:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+"@linkedin__a_co_a_a_c_o8_st8_b_osg-_aq1m_sk_n_f9u_evy6e_t_d4_s6_x_u_y:matrix.cloud-surf.com" = { name = "Eugene", color = "green" }
+
+"@whatsapp_bg_972545347460:matrix.cloud-surf.com" = { name = "Galina Shtoka", color = "magenta" }
+"@whatsapp_bg_lid-243069496594544:matrix.cloud-surf.com" = { name = "Lior Tager", color = "magenta" }
+"@whatsapp_bg_lid-165334799663337:matrix.cloud-surf.com" = { name = "Michael Livertovsky", color = "light-cyan" }
+"@whatsapp_bg_lid-101567520882906:matrix.cloud-surf.com" = { name = "Evyatar Tamir", color = "yellow" }
+"@slack_t01k2d5tcac-u022uk1u65s:matrix.cloud-surf.com" = { name = "Evgeny Subotin" }
+
+[layout]
+style = "config"
+
+[[layout.tabs]]
+window = "iamb://unreads"
+
+[[layout.tabs]]
+window = "iamb://dms"
+
+[[layout.tabs]]
+window = "iamb://rooms"
+
+[[layout.tabs]]
+window = "iamb://spaces"
