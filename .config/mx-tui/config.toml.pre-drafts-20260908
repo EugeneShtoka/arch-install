@@ -1,0 +1,106 @@
+# mx-tui configuration — written by mx-tui.
+#
+# This file records only the settings that differ from the built-in defaults, so
+# anything absent is at its default and will follow if that default ever changes.
+# Editing it by hand is still fine; the app rewrites it when you change a setting
+# from inside it, which keeps the values and drops any comments you added.
+#
+# For every option with its documentation, run: mx-tui --print-config
+# For the current keybindings, press ? in the app.
+
+homeserver = "https://matrix.cloud-surf.com"
+user = "@eugene:matrix.cloud-surf.com"
+
+[display]
+max_name_length = 15
+skin_tone = "light"
+color_messages = true
+archived = ["!zwzBIMEOGfFYoPjoDp:matrix.cloud-surf.com", "!F1npx3Pigwp6CoIGxo:matrix.cloud-surf.com", "!x2FH1TSg7g6wjTZVYc:matrix.cloud-surf.com", "!1nTriUMa0UdBgMTdwn:matrix.cloud-surf.com", "!JMRKPjiGVWSNMUG1dN:matrix.cloud-surf.com", "!6RZZJoLDSUYytV37Jp:matrix.cloud-surf.com", "!xlaYsBvrynaTYYcdyy:matrix.cloud-surf.com", "!pkuTMu1AxvGAzWPdpb:matrix.cloud-surf.com", "!AdHyDHorRvOlIw8fMh:matrix.cloud-surf.com", "!VCb46fYKM1FoBxX6jy:matrix.cloud-surf.com", "!kh2uPYk8Rt1IhWHggd:matrix.cloud-surf.com", "!y1fEfjDt4Aft3EWhYf:matrix.cloud-surf.com", "!6dWiufE4WPASKY5w7w:matrix.cloud-surf.com", "!yqfIzvEOYzLRGnWzgW:matrix.cloud-surf.com", "!D2gPiOTVfIpGKewkzb:matrix.cloud-surf.com", "!7PHMEwM6aYDmPfYoMg:matrix.cloud-surf.com", "!HbvRWh1BLw6H7ijepJ:matrix.cloud-surf.com", "!sn2Agrl9ncMiS6rRKs:matrix.cloud-surf.com", "!7mxMIjQelPfjodtaew:matrix.cloud-surf.com", "!lxW4K1H0d8NHY8QeBk:matrix.cloud-surf.com", "!C0Dfzf5jCTHr6BjZ22:matrix.cloud-surf.com", "!mPpSa0yow4dDSsAz7v:matrix.cloud-surf.com", "!LAfEWxBGz8FTyNye8P:matrix.cloud-surf.com", "!e969l47AsnKFLJhimx:matrix.cloud-surf.com", "!QI5tZGGof4VB8XKHWq:matrix.cloud-surf.com", "!yRc7QQJDiy2azdBO9W:matrix.cloud-surf.com", "!XeuTTvDFRUmXKeHYiU:matrix.cloud-surf.com", "!k2teda2km1Fq8mfqUB:matrix.cloud-surf.com", "!mfL5kOAbvh7iRnKpmS:matrix.cloud-surf.com", "!5llHmumaoENB1hvmjE:matrix.cloud-surf.com", "!HSsLbSEPTtySrG3dRJ:matrix.cloud-surf.com", "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com", "!0jtyWKqgL8H9UHvBk1:matrix.cloud-surf.com", "!LoFs34ZpmOwgGDTo1e:matrix.cloud-surf.com", "!P1toBMnIuHjC00VNZI:matrix.cloud-surf.com"]
+space_priority = ["Friends", "Work", "Social", "Colleagues"]
+
+[[display.space_rule]]
+space = "Friends"
+first_name_only = true
+
+[[display.space_rule]]
+space = "Work"
+first_name_only = true
+
+[[display.identity]]
+alias = "Eugene"
+color = "#8ff586"
+mxids = ["@eugene:matrix.cloud-surf.com", "@whatsapp_bg_359884650326:matrix.cloud-surf.com", "@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com", "@whatsapp_il_972545347450:matrix.cloud-surf.com", "@telegram_8735244446:matrix.cloud-surf.com", "@meta_100009131024163:matrix.cloud-surf.com", "@slack_t01k2d5tcac-u08fys2bbhb:matrix.cloud-surf.com", "@linkedin__a_co_a_a_c_o8_st8_b_osg-_aq1m_sk_n_f9u_evy6e_t_d4_s6_x_u_y:matrix.cloud-surf.com"]
+
+[[display.room_alias]]
+room = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
+name = "Meet at Gig"
+
+[[display.room_alias]]
+room = "!IL4ND5TUmTbUAM8l4P:matrix.cloud-surf.com"
+name = "Freelancers & Founders"
+
+[[display.room_alias]]
+room = "!1kB6TFxPwZ4cHygVXt:matrix.cloud-surf.com"
+name = "Квиз в Софии"
+
+[[display.room_alias]]
+room = "!kbriV0GNCJ083L3sKa:matrix.cloud-surf.com"
+name = "Sofia BlaBla Events"
+
+[[display.room_alias]]
+room = "!ZhADZfMotcg9zgpYvd:matrix.cloud-surf.com"
+name = "Бачата Латин Форс"
+
+[[display.room_alias]]
+room = "!dxr0D9gPd3Reaj926k:matrix.cloud-surf.com"
+name = "Салса на Осогово 19:30"
+
+[[display.room_alias]]
+room = "!DJA9VKOalN45RLH1XL:matrix.cloud-surf.com"
+name = "Improv Theater Jam"
+
+[[display.room_alias]]
+room = "!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
+name = "Discussion"
+
+[[display.room_alias]]
+room = "!IH7VDd6FCAAih0XESb:matrix.cloud-surf.com"
+name = "Sofia BlaBla Events"
+
+[[display.room_alias]]
+room = "!K9HPljDCoyNhe8iK1y:matrix.cloud-surf.com"
+name = "LSport"
+
+[[display.room_alias]]
+room = "!vw0M8u2P6olcIKFsDt:matrix.cloud-surf.com"
+name = "Sasha Popov"
+
+[[display.room_alias]]
+room = "!1nTriUMa0UdBgMTdwn:matrix.cloud-surf.com"
+name = "El-Al"
+
+[[display.room_alias]]
+room = "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com"
+name = "Firman Mariana"
+
+[display.rail]
+order = ["unread", "-", "Friends", "Work", "Social", "Colleagues", "-"]
+hidden = ["home", "dms"]
+rename = { "Google Messages" = "SMS", "LinkedIn (Eugene Shtoka)" = "LinkedIn", "Meta (Eugene Shtoka)" = "Meta", "Telegram (+359884650326)" = "Telegram" }
+
+[display.media]
+mode = "inline"
+
+[[display.media.rule]]
+sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
+
+[notifications]
+enabled = true
+on = "all"
+desktop = true
+
+[keys]
+jump = { "g B" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g G" = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com", "g b" = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com", "g d" = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com", "g e" = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com", "g l" = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com", "g m" = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com", "g n" = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com", "g r" = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com", "g s" = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com", "g w" = "space:Work" }
+
+[commands]
+send = ["zoom", "call"]

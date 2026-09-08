@@ -84,8 +84,14 @@ room = "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com"
 name = "Firman Mariana"
 
 [display.rail]
-order = ["unread", "-", "Friends", "Work", "Social", "Colleagues", "-"]
+# unread, then the rooms holding an unsent message, then the spaces you name, then
+# everything else ("*"), then Archived last. "-" draws a divider after the group it
+# follows.
+order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
 hidden = ["home", "dms"]
+# The Drafts group only exists while something is half-written, so this covers the
+# remaining case: a draft kept for a room that has since left the list.
+hide_when_empty = ["drafts"]
 rename = { "Google Messages" = "SMS", "LinkedIn (Eugene Shtoka)" = "LinkedIn", "Meta (Eugene Shtoka)" = "Meta", "Telegram (+359884650326)" = "Telegram" }
 
 [display.media]
