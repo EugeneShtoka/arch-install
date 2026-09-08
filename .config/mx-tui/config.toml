@@ -100,6 +100,11 @@ on = "all"
 desktop = true
 
 [keys]
+# The defaults, written out so they are visible here. ctrl+i is vim's forward key;
+# this terminal separates it from tab (wezterm enable_kitty_keyboard), and alt+o is
+# the fallback for one that does not.
+jump_back    = "ctrl+o"
+jump_forward = "ctrl+i,alt+o"
 jump = { "g B" = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com", "g D" = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com", "g G" = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com", "g b" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g e" = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com", "g l" = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com", "g m" = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com", "g n" = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com", "g r" = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com", "g s" = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com", "g w" = "space:Work" }
 
 [commands]
