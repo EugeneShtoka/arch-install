@@ -110,3 +110,6 @@ jump = { "g B" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g G" = "room
 
 [commands]
 send = ["zoom", "call"]
+
+[clipboard]
+copy_downloads = true   # the path of a saved attachment goes to the clipboard too
