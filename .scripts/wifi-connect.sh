@@ -5,6 +5,14 @@ IFACE=wlan0
 ROFI_DIR="$HOME/.config/rofi/launchers/type-4"
 ROFI_THEME='style-9'
 
+# Nerd Font (SymbolsNerdFont) status icons
+ICON_CONNECTED=$'\U000F0928'   # wifi full     - connected
+ICON_KNOWN=$'\U000F0306'       # key           - password known
+ICON_LOCKED=$'\U000F033E'      # lock          - password unknown
+ICON_OPEN=$'\U000F0FC6'        # open padlock  - no password needed
+ICON_DISCONNECT=$'\U000F05AA'  # wifi off      - disconnect
+ICON_POWEROFF=$'\U000F0425'    # power         - turn radio off
+
 # UI mode: tui when run from a terminal, gui otherwise.
 # Override with --tui/--gui or WIFI_MENU=tui|gui
 MODE=${WIFI_MENU:-}
@@ -104,8 +112,14 @@ ask_password() {
     if [ "$MODE" = tui ]; then
         read -rsp "Password for \"$ssid\": " pw </dev/tty; echo >&2
     else
+        # style-9 leaves "prompt" out of inputbar children and hardcodes
+        # placeholder "search...", so both have to be overridden here
         pw=$($SCRIPTS_PATH/rofi-run.sh -theme "$ROFI_DIR/$ROFI_THEME.rasi" -dmenu -password \
-                 -p "Password for $ssid" -theme-str 'listview { enabled: false; }')
+                 -p "Password for $ssid" -theme-str '
+                     mainbox  { children: [ "inputbar" ]; }
+                     inputbar { children: [ "prompt", "entry" ]; }
+                     entry    { placeholder: "enter password"; }
+                     listview { enabled: false; }')
     fi
     printf '%s' "$pw"
 }
@@ -164,16 +178,16 @@ while IFS='|' read -r name sec; do
     [ -n "$name" ] || continue
     SEC_OF["$name"]=$sec
     if [ "$name" = "$ACTIVE" ]; then
-        row=$'\x01'"$name"$'\x02'"  ✓ connected"
+        row="$ICON_CONNECTED  "$'\x01'"$name"$'\x02'
         known_rows=("$row" "${known_rows[@]}")
     elif [ "${IS_KNOWN[$name]}" = yes ]; then
-        row=$'\x01'"$name"$'\x02'
+        row="$ICON_KNOWN  "$'\x01'"$name"$'\x02'
         known_rows+=("$row")
     elif [ "$sec" = open ]; then
-        row="$name  ·  open"
+        row="$ICON_OPEN  $name"
         other_rows+=("$row")
     else
-        row="$name  ·  password needed"
+        row="$ICON_LOCKED  $name"
         other_rows+=("$row")
     fi
     ENTRY_SSID["$(printf '%s' "$row" | tr -d '\001\002')"]=$name
@@ -184,9 +198,12 @@ if [ ${#known_rows[@]} -eq 0 ] && [ ${#other_rows[@]} -eq 0 ]; then
     exit 1
 fi
 
+ROW_DISCONNECT="$ICON_DISCONNECT  Disconnect"
+ROW_POWEROFF="$ICON_POWEROFF  Turn Wi-Fi off"
+
 rows=("${known_rows[@]}" "${other_rows[@]}")
-[ -n "$ACTIVE" ] && rows+=("Disconnect")
-rows+=("Turn Wi-Fi off")
+[ -n "$ACTIVE" ] && rows+=("$ROW_DISCONNECT")
+rows+=("$ROW_POWEROFF")
 
 SELECTED=$(printf '%s\n' "${rows[@]}" | menu "Wi-Fi")
 SELECTED=$(printf '%s' "$SELECTED" | tr -d '\001\002')
@@ -194,8 +211,8 @@ SELECTED=$(printf '%s' "$SELECTED" | tr -d '\001\002')
 [ -n "$SELECTED" ] || { echo "Nothing selected." >&2; exit 0; }
 
 case "$SELECTED" in
-    "Turn Wi-Fi off") radio_off; exit 0 ;;
-    "Disconnect")
+    "$ROW_POWEROFF") radio_off; exit 0 ;;
+    "$ROW_DISCONNECT")
         iwctl station $IFACE disconnect
         notify_send "Wi-Fi" "Disconnected"
         echo "Disconnected."
