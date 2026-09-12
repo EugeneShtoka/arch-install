@@ -84,15 +84,10 @@ room = "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com"
 name = "Firman Mariana"
 
 [display.rail]
-# unread, then the rooms holding an unsent message, then the spaces you name, then
-# everything else ("*"), then Archived last. "-" draws a divider after the group it
-# follows.
 order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
 hidden = ["home", "dms"]
-# The Drafts group only exists while something is half-written, so this covers the
-# remaining case: a draft kept for a room that has since left the list.
-hide_when_empty = ["drafts"]
 rename = { "Google Messages" = "SMS", "LinkedIn (Eugene Shtoka)" = "LinkedIn", "Meta (Eugene Shtoka)" = "Meta", "Telegram (+359884650326)" = "Telegram" }
+hide_when_empty = ["drafts"]
 
 [display.media]
 mode = "inline"
@@ -108,8 +103,8 @@ desktop = true
 [keys]
 jump = { "g B" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g G" = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com", "g b" = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com", "g d" = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com", "g e" = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com", "g l" = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com", "g m" = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com", "g n" = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com", "g r" = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com", "g s" = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com", "g w" = "space:Work" }
 
+[clipboard]
+copy_downloads = true
+
 [commands]
 send = ["zoom", "call"]
-
-[clipboard]
-copy_downloads = true   # the path of a saved attachment goes to the clipboard too
