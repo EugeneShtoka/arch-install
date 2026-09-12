@@ -17,5 +17,7 @@ alias syncthing='setsid xdg-open "http://127.0.0.1:8384" &>/dev/null'
 
 alias rembg=$SCRIPTS_PATH/rembg-remote.sh
 
+alias battery-mode=$SCRIPTS_PATH/battery-mode.sh
+
 # To maintain this as last item - it should be last in the list
 alias rename='setsid thunar --bulk-rename &>/dev/null'
