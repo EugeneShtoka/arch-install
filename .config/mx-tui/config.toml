@@ -83,6 +83,10 @@ name = "El-Al"
 room = "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com"
 name = "Firman Mariana"
 
+[[display.thread_alias]]
+thread = "$Auw1ie-hodFQ19rFoadPdMeCVDv0BCpu1c3dRc8tlVI"
+name = "TMDV-1981"
+
 [display.rail]
 order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
 hidden = ["home", "dms"]
