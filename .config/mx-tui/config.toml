@@ -87,6 +87,10 @@ name = "Firman Mariana"
 thread = "$Auw1ie-hodFQ19rFoadPdMeCVDv0BCpu1c3dRc8tlVI"
 name = "TMDV-1981"
 
+[[display.thread_alias]]
+thread = "$ciWxMCg8LgUyOSPKn6r8tIAU1v4TWzHIWIlvhLsfpgY"
+name = "Review PR 893"
+
 [display.rail]
 order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
 hidden = ["home", "dms"]
