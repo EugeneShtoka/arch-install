@@ -109,7 +109,7 @@ on = "all"
 desktop = true
 
 [keys]
-jump = { "g B" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g G" = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com", "g b" = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com", "g d" = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com", "g e" = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com", "g l" = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com", "g m" = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com", "g n" = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com", "g r" = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com", "g s" = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com", "g w" = "space:Work" }
+jump = { "g B" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g G" = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com", "g b" = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com", "g d" = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com", "g e" = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com", "g l" = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com", "g m" = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com", "g n" = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com", "g r" = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com", "g s" = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com", "g u" = "space:unread", "g w" = "space:Work" }
 
 [clipboard]
 copy_downloads = true
