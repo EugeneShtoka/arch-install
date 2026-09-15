@@ -111,6 +111,12 @@ desktop = true
 [keys]
 jump = { "g B" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g G" = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com", "g b" = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com", "g d" = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com", "g e" = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com", "g l" = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com", "g m" = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com", "g n" = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com", "g r" = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com", "g s" = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com", "g u" = "space:unread", "g w" = "space:Work" }
 
+[spell]
+# Send with something misspelled in it and the correction walk opens instead, sending
+# as soon as you are through it. Skipping a word counts as dealing with it; esc stops
+# the walk and the send both, leaving the draft alone.
+check_before_send = true
+
 [keys.spell]
 # z= from the message cursor is the default and stays. Only the composer's key is
 # overridden: alt+s is the default there, and AltGr+s is ß on this layout — the alt
