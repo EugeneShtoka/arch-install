@@ -91,6 +91,12 @@ name = "TMDV-1981"
 thread = "$ciWxMCg8LgUyOSPKn6r8tIAU1v4TWzHIWIlvhLsfpgY"
 name = "Review PR 893"
 
+# Hold on to what a deleted message said, in this machine's cache. Chosen
+# deliberately on 2026-09-16, along with a one-off erase of everything redacted
+# before this was switched on.
+[display.deleted]
+keep = true
+
 [display.rail]
 order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
 hidden = ["home", "dms"]
