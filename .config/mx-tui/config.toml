@@ -170,3 +170,12 @@ encrypted = false
 # than the pathological one.
 max_per_minute = 15
 timeout = "4s"
+
+# gpt-oss-20b is a *reasoning* model and charges its thinking against max_tokens, which is
+# the one setting here worth understanding. Measured against this key on 2026-09-19, six
+# drafts in English and Hebrew: at 32 every ask came back empty, at 192 one in three did,
+# at 384 none did — mean 381ms, worst 533ms. These are the shipped defaults; the block is
+# kept so the numbers stay next to the reason for them.
+[complete.model.complete]
+max_tokens = 384
+reasoning_effort = "low"
