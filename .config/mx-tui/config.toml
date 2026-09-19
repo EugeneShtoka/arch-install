@@ -135,3 +135,32 @@ copy_downloads = true
 
 [commands]
 send = ["zoom", "call"]
+
+# The language-model layer, pointed at Groq's free tier.
+#
+# llama-3.1-8b-instant rather than the 70b: a continuation has to arrive while the
+# sentence is still unfinished, and the small model is the fast one (~1000 tok/s against
+# ~250). Swap `model` for "llama-3.3-70b-versatile" or "openai/gpt-oss-20b" to compare —
+# nothing else changes.
+#
+# **It is off until a room is named below.** Nothing has been named, deliberately: naming
+# a room is what sends that room's recent messages — yours and other people's — to Groq,
+# and that is your decision per room rather than mine. Press alt+m in a room first: it
+# shows the exact request, and sends nothing.
+#
+# The key is in the OS keyring, never here. Set it with:
+#
+#   mx-tui --set-model-key groq
+[complete.model]
+endpoint = "https://api.groq.com/openai/v1/chat/completions"
+model = "llama-3.1-8b-instant"
+key_ref = "groq"
+# Rooms the model may see, by room ID or by the name shown in the rail.
+rooms = []
+# An encrypted room must be named here *as well as* above — two lists because it is two
+# decisions. Naming a room here and not above is refused at startup.
+encrypted = []
+# Free tiers are per-minute rate limited, and a fast typist is the ordinary case rather
+# than the pathological one.
+max_per_minute = 15
+timeout = "4s"
