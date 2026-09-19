@@ -138,10 +138,10 @@ send = ["zoom", "call"]
 
 # The language-model layer, pointed at Groq's free tier.
 #
-# llama-3.1-8b-instant rather than the 70b: a continuation has to arrive while the
-# sentence is still unfinished, and the small model is the fast one (~1000 tok/s against
-# ~250). Swap `model` for "llama-3.3-70b-versatile" or "openai/gpt-oss-20b" to compare —
-# nothing else changes.
+# openai/gpt-oss-20b: the fastest thing this key reaches (~1000 tok/s), which is what a
+# continuation needs — it has to arrive while the sentence is still unfinished. The llama
+# models are gone from Groq's catalogue; `openai/gpt-oss-120b` and `qwen/qwen3.8-27b` are
+# the slower, larger alternatives, and swapping `model` is the whole change.
 #
 # **With both lists empty this is on in every unencrypted room** once the key is stored.
 # Encrypted rooms stay out until `encrypted = true` below, which is the one decision kept
@@ -155,7 +155,7 @@ send = ["zoom", "call"]
 #   mx-tui --set-model-key groq
 [complete.model]
 endpoint = "https://api.groq.com/openai/v1/chat/completions"
-model = "llama-3.1-8b-instant"
+model = "openai/gpt-oss-20b"
 key_ref = "groq"
 # Which rooms, by ID or by the name shown in the rail:
 #   rooms non-empty  → only those; `except` is ignored
