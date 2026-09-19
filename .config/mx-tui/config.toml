@@ -143,10 +143,12 @@ send = ["zoom", "call"]
 # ~250). Swap `model` for "llama-3.3-70b-versatile" or "openai/gpt-oss-20b" to compare —
 # nothing else changes.
 #
-# **It is off until a room is named below.** Nothing has been named, deliberately: naming
-# a room is what sends that room's recent messages — yours and other people's — to Groq,
-# and that is your decision per room rather than mine. Press alt+m in a room first: it
-# shows the exact request, and sends nothing.
+# **With both lists empty this is on in every unencrypted room** once the key is stored.
+# Encrypted rooms stay out until `encrypted = true` below, which is the one decision kept
+# separate: what an encrypted room is for is that its contents do not leave it.
+#
+# Press alt+m in a room before relying on it — that shows the exact request and sends
+# nothing.
 #
 # The key is in the OS keyring, never here. Set it with:
 #
@@ -155,11 +157,15 @@ send = ["zoom", "call"]
 endpoint = "https://api.groq.com/openai/v1/chat/completions"
 model = "llama-3.1-8b-instant"
 key_ref = "groq"
-# Rooms the model may see, by room ID or by the name shown in the rail.
+# Which rooms, by ID or by the name shown in the rail:
+#   rooms non-empty  → only those; `except` is ignored
+#   rooms empty      → every room except the ones in `except`
+#   both empty       → every room
 rooms = []
-# An encrypted room must be named here *as well as* above — two lists because it is two
-# decisions. Naming a room here and not above is refused at startup.
-encrypted = []
+except = []
+# Whether encrypted rooms are included at all. Off: most of this account's conversations
+# are encrypted, and each of those is a room whose contents are not supposed to leave it.
+encrypted = false
 # Free tiers are per-minute rate limited, and a fast typist is the ordinary case rather
 # than the pathological one.
 max_per_minute = 15
