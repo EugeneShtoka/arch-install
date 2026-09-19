@@ -134,7 +134,7 @@ open_insert = "alt+k"
 copy_downloads = true
 
 [commands]
-send = ["zoom", "call"]
+send = ["zoom", "call", "meet"]
 
 # The language-model layer, pointed at Groq's free tier.
 #
