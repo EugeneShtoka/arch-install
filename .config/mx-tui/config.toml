@@ -34,7 +34,6 @@ alias = "Eugene"
 color = "#8ff586"
 mxids = ["@eugene:matrix.cloud-surf.com", "@whatsapp_bg_359884650326:matrix.cloud-surf.com", "@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com", "@whatsapp_il_972545347450:matrix.cloud-surf.com", "@telegram_8735244446:matrix.cloud-surf.com", "@meta_100009131024163:matrix.cloud-surf.com", "@slack_t01k2d5tcac-u08fys2bbhb:matrix.cloud-surf.com", "@linkedin__a_co_a_a_c_o8_st8_b_osg-_aq1m_sk_n_f9u_evy6e_t_d4_s6_x_u_y:matrix.cloud-surf.com"]
 
-
 [[display.room_alias]]
 room = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
 name = "Meet at Gig"
@@ -94,6 +93,10 @@ name = "TMDV-1981"
 [[display.thread_alias]]
 thread = "$ciWxMCg8LgUyOSPKn6r8tIAU1v4TWzHIWIlvhLsfpgY"
 name = "Review PR 893"
+
+[[display.thread_alias]]
+thread = "$MhRzVByw3ya5WLXM0rVSJU7lMOOj5vm_4lEQqmYspZ0"
+name = "Failing Redis"
 
 [display.rail]
 order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
