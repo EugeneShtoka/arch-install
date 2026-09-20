@@ -26,10 +26,18 @@ first_name_only = true
 space = "Work"
 first_name_only = true
 
+[display.deleted]
+keep = true
+
 [[display.identity]]
 alias = "Eugene"
 color = "#8ff586"
 mxids = ["@eugene:matrix.cloud-surf.com", "@whatsapp_bg_359884650326:matrix.cloud-surf.com", "@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com", "@whatsapp_il_972545347450:matrix.cloud-surf.com", "@telegram_8735244446:matrix.cloud-surf.com", "@meta_100009131024163:matrix.cloud-surf.com", "@slack_t01k2d5tcac-u08fys2bbhb:matrix.cloud-surf.com", "@linkedin__a_co_a_a_c_o8_st8_b_osg-_aq1m_sk_n_f9u_evy6e_t_d4_s6_x_u_y:matrix.cloud-surf.com"]
+
+[[display.identity]]
+alias = "Polina Shapiro"
+color = "#ff757f"
+mxids = ["@whatsapp_bg_lid-260588584337480:matrix.cloud-surf.com"]
 
 [[display.room_alias]]
 room = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
@@ -91,12 +99,6 @@ name = "TMDV-1981"
 thread = "$ciWxMCg8LgUyOSPKn6r8tIAU1v4TWzHIWIlvhLsfpgY"
 name = "Review PR 893"
 
-# Hold on to what a deleted message said, in this machine's cache. Chosen
-# deliberately on 2026-09-16, along with a one-off erase of everything redacted
-# before this was switched on.
-[display.deleted]
-keep = true
-
 [display.rail]
 order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
 hidden = ["home", "dms"]
@@ -117,65 +119,25 @@ desktop = true
 [keys]
 jump = { "g B" = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com", "g G" = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com", "g b" = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com", "g d" = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com", "g e" = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com", "g l" = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com", "g m" = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com", "g n" = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com", "g r" = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com", "g s" = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com", "g u" = "space:unread", "g w" = "space:Work" }
 
-[spell]
-# Send with something misspelled in it and the correction walk opens instead, sending
-# as soon as you are through it. Skipping a word counts as dealing with it; esc stops
-# the walk and the send both, leaving the draft alone.
-check_before_send = true
-
 [keys.spell]
-# z= from the message cursor is the default and stays. Only the composer's key is
-# overridden: alt+s is the default there, and AltGr+s is ß on this layout — the alt
-# that falls under the hand already typing s never reaches the app. alt+k is a
-# right-hand letter, which makes the *left* alt the comfortable one.
 open_insert = "alt+k"
 
 [clipboard]
 copy_downloads = true
 
-[commands]
-send = ["zoom", "call", "meet"]
+[spell]
+check_before_send = true
 
-# The language-model layer, pointed at Groq's free tier.
-#
-# openai/gpt-oss-20b: the fastest thing this key reaches (~1000 tok/s), which is what a
-# continuation needs — it has to arrive while the sentence is still unfinished. The llama
-# models are gone from Groq's catalogue; `openai/gpt-oss-120b` and `qwen/qwen3.8-27b` are
-# the slower, larger alternatives, and swapping `model` is the whole change.
-#
-# **With both lists empty this is on in every unencrypted room** once the key is stored.
-# Encrypted rooms stay out until `encrypted = true` below, which is the one decision kept
-# separate: what an encrypted room is for is that its contents do not leave it.
-#
-# Press alt+m in a room before relying on it — that shows the exact request and sends
-# nothing.
-#
-# The key is in the OS keyring, never here. Set it with:
-#
-#   mx-tui --set-model-key groq
 [complete.model]
 endpoint = "https://api.groq.com/openai/v1/chat/completions"
 model = "openai/gpt-oss-20b"
 key_ref = "groq"
-# Which rooms, by ID or by the name shown in the rail:
-#   rooms non-empty  → only those; `except` is ignored
-#   rooms empty      → every room except the ones in `except`
-#   both empty       → every room
-rooms = []
-except = []
-# Whether encrypted rooms are included at all. Off: most of this account's conversations
-# are encrypted, and each of those is a room whose contents are not supposed to leave it.
-encrypted = false
-# Free tiers are per-minute rate limited, and a fast typist is the ordinary case rather
-# than the pathological one.
 max_per_minute = 15
 timeout = "4s"
 
-# gpt-oss-20b is a *reasoning* model and charges its thinking against max_tokens, which is
-# the one setting here worth understanding. Measured against this key on 2026-09-19, six
-# drafts in English and Hebrew: at 32 every ask came back empty, at 192 one in three did,
-# at 384 none did — mean 381ms, worst 533ms. These are the shipped defaults; the block is
-# kept so the numbers stay next to the reason for them.
 [complete.model.complete]
 max_tokens = 384
 reasoning_effort = "low"
+
+[commands]
+send = ["zoom", "call"]
