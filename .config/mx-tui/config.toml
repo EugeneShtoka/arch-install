@@ -207,7 +207,7 @@ copy_downloads = true
 [spell]
 check_before_send = true
 
-[complete.model]
+[assist]
 model = "openai/gpt-oss-20b"
 timeout = "4s"
 
