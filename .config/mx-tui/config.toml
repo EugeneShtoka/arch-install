@@ -150,6 +150,10 @@ name = "Hiking"
 room = "!cEsI0z4NONtpo074Jt:matrix.cloud-surf.com"
 name = "Chatting"
 
+[[display.room_alias]]
+room = "!tWfSnglWJMG4fJ4nTB:matrix.cloud-surf.com"
+name = "City Digest"
+
 [[display.thread_alias]]
 thread = "$Auw1ie-hodFQ19rFoadPdMeCVDv0BCpu1c3dRc8tlVI"
 name = "TMDV-1981"
