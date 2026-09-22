@@ -179,7 +179,7 @@ thread = "$MhRzVByw3ya5WLXM0rVSJU7lMOOj5vm_4lEQqmYspZ0"
 name = "Failing Redis"
 
 [display.rail]
-order = ["unread", "drafts", "-", "Friends", "Work", "Social", "Colleagues", "-", "*", "-", "archived"]
+order = ["unread", "drafts", "-", "Friends", "Work", "Acquaintances", "Social", "Colleagues", "-", "*", "-", "archived"]
 hidden = ["home", "dms"]
 rename = { "Google Messages" = "SMS", "LinkedIn (Eugene Shtoka)" = "LinkedIn", "Meta (Eugene Shtoka)" = "Meta", "Telegram (+359884650326)" = "Telegram", "Дозвілля у Софії" = "Ukranians" }
 hide_when_empty = ["drafts"]
