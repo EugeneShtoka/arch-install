@@ -158,6 +158,14 @@ name = "City Digest"
 room = "!uVV9X38Ou2fGAJJ45I:matrix.cloud-surf.com"
 name = "Culture&Fun"
 
+[[display.room_alias]]
+room = "!JBdsLgFI7RUgoJt3nx:matrix.cloud-surf.com"
+name = "Alexandra Gaykin"
+
+[[display.room_alias]]
+room = "!K6on1NVUMSckNn1R7E:matrix.cloud-surf.com"
+name = "Jonathan Schler"
+
 [[display.thread_alias]]
 thread = "$Auw1ie-hodFQ19rFoadPdMeCVDv0BCpu1c3dRc8tlVI"
 name = "TMDV-1981"
