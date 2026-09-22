@@ -48,15 +48,15 @@ name = "Квиз в Софии"
 
 [[display.room_alias]]
 room = "!kbriV0GNCJ083L3sKa:matrix.cloud-surf.com"
-name = "Sofia BlaBla Events"
+name = "BlaBla Events"
 
 [[display.room_alias]]
 room = "!ZhADZfMotcg9zgpYvd:matrix.cloud-surf.com"
-name = "Бачата Латин Форс"
+name = "Bachata Latin Force"
 
 [[display.room_alias]]
 room = "!dxr0D9gPd3Reaj926k:matrix.cloud-surf.com"
-name = "Салса на Осогово 19:30"
+name = "Salsa Latin Force"
 
 [[display.room_alias]]
 room = "!DJA9VKOalN45RLH1XL:matrix.cloud-surf.com"
@@ -134,6 +134,22 @@ name = "Game Friends Sofia"
 room = "!norA8GTVwUxoOiqDmi:matrix.cloud-surf.com"
 name = "Questoria"
 
+[[display.room_alias]]
+room = "!TSxc6KiyMh0jhfm3Qi:matrix.cloud-surf.com"
+name = "Bulgarian Language"
+
+[[display.room_alias]]
+room = "!x6VV8rX8ti4ChnFSdI:matrix.cloud-surf.com"
+name = "D&D Sofia"
+
+[[display.room_alias]]
+room = "!bx5wQd5NX6phwOh55s:matrix.cloud-surf.com"
+name = "Hiking"
+
+[[display.room_alias]]
+room = "!cEsI0z4NONtpo074Jt:matrix.cloud-surf.com"
+name = "Chatting"
+
 [[display.thread_alias]]
 thread = "$Auw1ie-hodFQ19rFoadPdMeCVDv0BCpu1c3dRc8tlVI"
 name = "TMDV-1981"
@@ -176,15 +192,8 @@ copy_downloads = true
 check_before_send = true
 
 [complete.model]
-endpoint = "https://api.groq.com/openai/v1/chat/completions"
 model = "openai/gpt-oss-20b"
-key_ref = "groq"
-max_per_minute = 15
 timeout = "4s"
-
-[complete.model.complete]
-max_tokens = 384
-reasoning_effort = "low"
 
 [commands]
 send = ["zoom", "call"]
