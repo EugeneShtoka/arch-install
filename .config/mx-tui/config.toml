@@ -507,6 +507,8 @@ model = "openai/gpt-oss-20b"
 key_ref = "groq"
 timeout = "4s"
 name_threads = true
+# A root plus one reply: a thread is a thread as soon as somebody answered.
+name_threads_after = 1
 
 [assist.thread_name]
 max_tokens = 300
