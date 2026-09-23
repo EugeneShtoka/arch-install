@@ -515,3 +515,99 @@ max_tokens = 300
 
 [commands]
 send = ["zoom", "call"]
+
+[[display.name]]
+target = "thread:$0VtAMQFUOABJ0uMGdoJLJJNzFYYgbJrgF9kv3DPQzGY"
+name = "Bookmaker-Aware Parlay Feature Discussion"
+
+[[display.name]]
+target = "thread:$YVaYPHUB05s_V7j1lpF5DR5LyjphA2NQqRlD6_0531M"
+name = "Sagi Chizik? what?"
+
+[[display.name]]
+target = "thread:$uD78_5GWu5N8vT1aBQeGca-grGM9ZKhzU4sDvgDKWQU"
+name = "Rebase and run migrations post-brackets branch"
+
+[[display.name]]
+target = "thread:$FmHq05ErM1Wx12pBELPuGxspIUS9qn-MVGrAYqV4XMo"
+name = "טיפול במומנטום ומניעת רצף שגוי"
+
+[[display.name]]
+target = "thread:$kAZnFscM9ddTVCs13iJ3PWEDf7acG7cqF_jQyKHVdCg"
+name = "League Merge Adjustments for OO and LS"
+
+[[display.name]]
+target = "thread:$x1EdETbs7T_mdsEb2hlujJQARl44efIgdHF58lyWFY0"
+name = "GitHub pull request review request for…"
+
+[[display.name]]
+target = "thread:$kF05wUUEyDcThRHtl6fTE1nnckmUIsD5NUvmrT9gM7I"
+name = "Approve PR 855 before production merge"
+
+[[display.name]]
+target = "thread:$T9X1-5KMEywSw-wv4mGNwskxoqfuhO5UGfQ736DMjtg"
+name = "Проверка открытых сетевых элементов"
+
+[[display.name]]
+target = "thread:$k3_gydyRl49g_OrJIZvGM2a6uqlOwZac2JhcyeG_l1w"
+name = "Admin option to disable leagues discussion"
+
+[[display.name]]
+target = "thread:$kmPB539mjiLDwk9S8cjdh41pCgwowS5WSGr6XQCtInw"
+name = "Missing orderBy match.id comment"
+
+[[display.name]]
+target = "thread:$4aTGSmKX_3TcFosQ3l4evuERUnCQuTl3IMEufyx_7Dc"
+name = "Ensuring Unique Slugs for API Endpoint Review"
+
+[[display.name]]
+target = "thread:$XyAVqRJGhJNAXQBaCK11zALYkeSJw8k6uNN3geiNFlc"
+name = "Slack huddle screenshot shared"
+
+[[display.name]]
+target = "thread:$mJYyjzrNpsoUe91tsBSeUHq-tiqKZNW1801Qw9t1vwY"
+name = "Unable to Join Will Ping Later"
+
+[[display.name]]
+target = "thread:$q7DEA7XPUqv-O1aObc76AXf0fFYVAyMJUGJSpb8YZl4"
+name = "Approval Confirmation and Earlier Items"
+
+[[display.name]]
+target = "thread:$FVjJ6XyLEEZCOcPxhxPSVj2MVPMnqwQ_O___Ta6s9bk"
+name = "Eugene explains quarterly stats and average…"
+
+[[display.name]]
+target = "thread:$D00bOlCE0jzlnjJLoRPJ0d2Dik_qjaEMdTLqnjnQu5k"
+name = "Missing ShareImageRenderer fonts during runtime…"
+
+[[display.name]]
+target = "thread:$DCPiQWbvS7fyBU2C1IHmj1iv_HuGZ728ZXrm3HUaG3o"
+name = "Add Staging Config to Env File"
+
+[[display.name]]
+target = "thread:$PpeB-J82V9mvVDoIMZtrJXXJa4qrCXyQFBIn3H_4Yjw"
+name = "TS_NODE_FILES needed due to type augmentation"
+
+[[display.name]]
+target = "thread:$vi4yKAP4QhWp6hUxy4xz9vWTyqgpxcV5NHEYXJYO8kY"
+name = "Urgent AI Run & Filters Update"
+
+[[display.name]]
+target = "thread:$BJP6PtHImgGMuUVyXMlyIIej1Z1QZdQ8GUHxcVJe4q4"
+name = "Commit fix for World Cup features"
+
+[[display.name]]
+target = "thread:$BNd88VE0Hxq7cG_0uP6iMdz-S2lKWs9jaD-gdby1fTE"
+name = "Bar Worcel Integration Update with Shay"
+
+[[display.name]]
+target = "thread:$FJekIK9xetHDHDSToLKbi775qEr3WOLaSAT_2T31r8A"
+name = "Manual follow notifications missing versus…"
+
+[[display.name]]
+target = "thread:$a1D_LlGLRvK_peJD6hpvw7PjvkdPBBAF1LNZ-PLxXf8"
+name = "Merge Frontend for Staging Release"
+
+[[display.name]]
+target = "thread:$1mnT3U4SPfWMDjkABUgEvMb18-L0oj8Eq-aV7avqQ78"
+name = "Pagination bug fix for matches API"
