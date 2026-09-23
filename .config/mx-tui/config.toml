@@ -251,106 +251,6 @@ name = "Ukranians"
 target = "!tWfSnglWJMG4fJ4nTB:matrix.cloud-surf.com"
 name = "Sofia Digest"
 
-[display.rail]
-order = [
-	"unread",
-	"drafts",
-	"-",
-	"Friends",
-	"Work",
-	"Acquaintances",
-	"Social",
-	"Colleagues",
-	"-",
-	"*",
-	"-",
-	"archived",
-]
-hidden = ["home", "dms"]
-hide_when_empty = ["drafts"]
-
-[display.media]
-mode = "inline"
-
-[[display.media.rule]]
-sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
-
-[notifications]
-enabled = true
-on = "all"
-desktop = true
-
-[[keys.jump]]
-chord = "g B"
-target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g G"
-target = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g b"
-target = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g d"
-target = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g e"
-target = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g l"
-target = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g m"
-target = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g n"
-target = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g r"
-target = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g s"
-target = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g u"
-target = "space:unread"
-
-[[keys.jump]]
-chord = "g w"
-target = "space:Work"
-
-[keys.spell]
-open_insert = "alt+k"
-
-[clipboard]
-copy_downloads = true
-
-[spell]
-check_before_send = true
-
-[assist]
-endpoint = "https://api.groq.com/openai/v1/chat/completions"
-key_ref = "groq"
-model = "openai/gpt-oss-20b"
-timeout = "4s"
-name_threads = true
-
-[assist.thread_name]
-# 24 (the default) is spent on reasoning before gpt-oss-20b writes anything.
-max_tokens = 300
-
-[commands]
-send = ["zoom", "call"]
-
 [[display.name]]
 target = "thread:$Aqpyn4ZQHfqUF7BM6eiFGDykWPKxmeoIi3z9_fmKAOY"
 name = "Refining Odds API for Frontend Efficiency"
@@ -506,3 +406,110 @@ name = "API Error Review and PR Coordination"
 [[display.name]]
 target = "thread:$lz-DVz2hhiJPDThj97W5MFyD3vEQjbT1UFLUcfSA1sQ"
 name = "Opticodds Settlement Coverage for Sports Markets"
+
+[[display.name]]
+target = "thread:$YXpokWw4G2KKqX0w6OMq3tnPw161YvYrfpqd1ilyG-g"
+name = "Deployment to production critical follow-up"
+
+[[display.name]]
+target = "thread:$Fw0BUHn2NvlrlAa2o_LXR6MkFja6ohu0DbqYahLa1Mc"
+name = "Eugene fixes 851 853 issue"
+
+[display.rail]
+order = [
+	"unread",
+	"drafts",
+	"-",
+	"Friends",
+	"Work",
+	"Acquaintances",
+	"Social",
+	"Colleagues",
+	"-",
+	"*",
+	"-",
+	"archived",
+]
+hidden = ["home", "dms"]
+hide_when_empty = ["drafts"]
+
+[display.media]
+mode = "inline"
+
+[[display.media.rule]]
+sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
+
+[notifications]
+enabled = true
+on = "all"
+desktop = true
+
+[[keys.jump]]
+chord = "g B"
+target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g G"
+target = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g b"
+target = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g d"
+target = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g e"
+target = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g l"
+target = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g m"
+target = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g n"
+target = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g r"
+target = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g s"
+target = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g u"
+target = "space:unread"
+
+[[keys.jump]]
+chord = "g w"
+target = "space:Work"
+
+[keys.spell]
+open_insert = "alt+k"
+
+[clipboard]
+copy_downloads = true
+
+[spell]
+check_before_send = true
+
+[assist]
+endpoint = "https://api.groq.com/openai/v1/chat/completions"
+model = "openai/gpt-oss-20b"
+key_ref = "groq"
+timeout = "4s"
+name_threads = true
+
+[assist.thread_name]
+max_tokens = 300
+
+[commands]
+send = ["zoom", "call"]
