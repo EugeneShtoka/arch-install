@@ -1,0 +1,345 @@
+# mx-tui configuration — written by mx-tui.
+#
+# This file records only the settings that differ from the built-in defaults, so
+# anything absent is at its default and will follow if that default ever changes.
+# Editing it by hand is still fine; the app rewrites it when you change a setting
+# from inside it, which keeps the values and drops any comments you added.
+#
+# For every option with its documentation, run: mx-tui --print-config
+# For the current keybindings, press ? in the app.
+
+homeserver = "https://matrix.cloud-surf.com"
+user = "@eugene:matrix.cloud-surf.com"
+
+[display]
+max_name_length = 15
+skin_tone = "light"
+color_messages = true
+archived = [
+	"!zwzBIMEOGfFYoPjoDp:matrix.cloud-surf.com",
+	"!F1npx3Pigwp6CoIGxo:matrix.cloud-surf.com",
+	"!x2FH1TSg7g6wjTZVYc:matrix.cloud-surf.com",
+	"!1nTriUMa0UdBgMTdwn:matrix.cloud-surf.com",
+	"!JMRKPjiGVWSNMUG1dN:matrix.cloud-surf.com",
+	"!6RZZJoLDSUYytV37Jp:matrix.cloud-surf.com",
+	"!xlaYsBvrynaTYYcdyy:matrix.cloud-surf.com",
+	"!pkuTMu1AxvGAzWPdpb:matrix.cloud-surf.com",
+	"!AdHyDHorRvOlIw8fMh:matrix.cloud-surf.com",
+	"!VCb46fYKM1FoBxX6jy:matrix.cloud-surf.com",
+	"!kh2uPYk8Rt1IhWHggd:matrix.cloud-surf.com",
+	"!y1fEfjDt4Aft3EWhYf:matrix.cloud-surf.com",
+	"!6dWiufE4WPASKY5w7w:matrix.cloud-surf.com",
+	"!yqfIzvEOYzLRGnWzgW:matrix.cloud-surf.com",
+	"!D2gPiOTVfIpGKewkzb:matrix.cloud-surf.com",
+	"!7PHMEwM6aYDmPfYoMg:matrix.cloud-surf.com",
+	"!HbvRWh1BLw6H7ijepJ:matrix.cloud-surf.com",
+	"!sn2Agrl9ncMiS6rRKs:matrix.cloud-surf.com",
+	"!7mxMIjQelPfjodtaew:matrix.cloud-surf.com",
+	"!lxW4K1H0d8NHY8QeBk:matrix.cloud-surf.com",
+	"!C0Dfzf5jCTHr6BjZ22:matrix.cloud-surf.com",
+	"!mPpSa0yow4dDSsAz7v:matrix.cloud-surf.com",
+	"!LAfEWxBGz8FTyNye8P:matrix.cloud-surf.com",
+	"!e969l47AsnKFLJhimx:matrix.cloud-surf.com",
+	"!QI5tZGGof4VB8XKHWq:matrix.cloud-surf.com",
+	"!yRc7QQJDiy2azdBO9W:matrix.cloud-surf.com",
+	"!XeuTTvDFRUmXKeHYiU:matrix.cloud-surf.com",
+	"!k2teda2km1Fq8mfqUB:matrix.cloud-surf.com",
+	"!mfL5kOAbvh7iRnKpmS:matrix.cloud-surf.com",
+	"!5llHmumaoENB1hvmjE:matrix.cloud-surf.com",
+	"!HSsLbSEPTtySrG3dRJ:matrix.cloud-surf.com",
+	"!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com",
+	"!0jtyWKqgL8H9UHvBk1:matrix.cloud-surf.com",
+	"!LoFs34ZpmOwgGDTo1e:matrix.cloud-surf.com",
+	"!P1toBMnIuHjC00VNZI:matrix.cloud-surf.com",
+	"!xlgEqTvxTW6BTRfrCb:matrix.cloud-surf.com",
+	"!AZ1kau118C4JPS556m:matrix.cloud-surf.com",
+	"!O4hijJhpG62zJW4WI5:matrix.cloud-surf.com",
+	"!1b3m1FLLb50amnf8MR:matrix.cloud-surf.com",
+	"!iiXW9PGBChZ0dtKHqE:matrix.cloud-surf.com",
+	"!pBmUtY7eJ0dRD9Eb9b:matrix.cloud-surf.com",
+	"!cbEnjGiirTBljMLf1s:matrix.cloud-surf.com",
+	"!JwPVNSgQsEYAi7GvyA:matrix.cloud-surf.com",
+]
+space_priority = ["Friends", "Work", "Social", "Colleagues"]
+
+[[display.space_rule]]
+space = "Friends"
+first_name_only = true
+
+[[display.space_rule]]
+space = "Work"
+first_name_only = true
+
+[display.deleted]
+keep = true
+
+[[display.identity]]
+alias = "Eugene"
+color = "#8ff586"
+mxids = [
+	"@eugene:matrix.cloud-surf.com",
+	"@whatsapp_bg_359884650326:matrix.cloud-surf.com",
+	"@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com",
+	"@whatsapp_il_972545347450:matrix.cloud-surf.com",
+	"@telegram_8735244446:matrix.cloud-surf.com",
+	"@meta_100009131024163:matrix.cloud-surf.com",
+	"@slack_t01k2d5tcac-u08fys2bbhb:matrix.cloud-surf.com",
+	"@linkedin__a_co_a_a_c_o8_st8_b_osg-_aq1m_sk_n_f9u_evy6e_t_d4_s6_x_u_y:matrix.cloud-surf.com",
+]
+
+[[display.name]]
+target = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
+name = "Meet at Gig"
+
+[[display.name]]
+target = "!IL4ND5TUmTbUAM8l4P:matrix.cloud-surf.com"
+name = "Freelancers & Founders"
+
+[[display.name]]
+target = "!1kB6TFxPwZ4cHygVXt:matrix.cloud-surf.com"
+name = "Квиз в Софии"
+
+[[display.name]]
+target = "!kbriV0GNCJ083L3sKa:matrix.cloud-surf.com"
+name = "BlaBla Events"
+
+[[display.name]]
+target = "!ZhADZfMotcg9zgpYvd:matrix.cloud-surf.com"
+name = "Bachata LF"
+
+[[display.name]]
+target = "!dxr0D9gPd3Reaj926k:matrix.cloud-surf.com"
+name = "Salsa LF"
+
+[[display.name]]
+target = "!DJA9VKOalN45RLH1XL:matrix.cloud-surf.com"
+name = "Improv Theater Jam"
+
+[[display.name]]
+target = "!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
+name = "Discussion"
+
+[[display.name]]
+target = "!IH7VDd6FCAAih0XESb:matrix.cloud-surf.com"
+name = "Sofia BlaBla Events"
+
+[[display.name]]
+target = "!K9HPljDCoyNhe8iK1y:matrix.cloud-surf.com"
+name = "LSport"
+
+[[display.name]]
+target = "!vw0M8u2P6olcIKFsDt:matrix.cloud-surf.com"
+name = "Sasha Popov"
+
+[[display.name]]
+target = "!1nTriUMa0UdBgMTdwn:matrix.cloud-surf.com"
+name = "El-Al"
+
+[[display.name]]
+target = "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com"
+name = "Firman Mariana"
+
+[[display.name]]
+target = "!7I6lwfNyNTTmWAf71L:matrix.cloud-surf.com"
+name = "Volodimir"
+
+[[display.name]]
+target = "!RGgui6dVTFhkSb2s6C:matrix.cloud-surf.com"
+name = "Sofia Foodies"
+
+[[display.name]]
+target = "!CpsIRCjJ126C7wyYfp:matrix.cloud-surf.com"
+name = "IT meetups"
+
+[[display.name]]
+target = "!PfMlEimTr98TjojeEI:matrix.cloud-surf.com"
+name = "Sport"
+
+[[display.name]]
+target = "!0IzM8m3g4UPvX1uEEx:matrix.cloud-surf.com"
+name = "Mafia"
+
+[[display.name]]
+target = "!Cb8XZfYm8OPVN2iq80:matrix.cloud-surf.com"
+name = "Coffee meetups"
+
+[[display.name]]
+target = "!HLDrV5IQvQp4VD9LsF:matrix.cloud-surf.com"
+name = "Weekends"
+
+[[display.name]]
+target = "!kZRAOq9bCvhy3hEsR0:matrix.cloud-surf.com"
+name = "Medicine"
+
+[[display.name]]
+target = "!7JyFzi1MpzxGFRhRwf:matrix.cloud-surf.com"
+name = "Pets"
+
+[[display.name]]
+target = "!bdBH2VTuqXiU1GdJkX:matrix.cloud-surf.com"
+name = "Laoko Tango"
+
+[[display.name]]
+target = "!8GhPboOdtZh3q397CM:matrix.cloud-surf.com"
+name = "Game Friends Sofia"
+
+[[display.name]]
+target = "!norA8GTVwUxoOiqDmi:matrix.cloud-surf.com"
+name = "Questoria"
+
+[[display.name]]
+target = "!TSxc6KiyMh0jhfm3Qi:matrix.cloud-surf.com"
+name = "Bulgarian Language"
+
+[[display.name]]
+target = "!x6VV8rX8ti4ChnFSdI:matrix.cloud-surf.com"
+name = "D&D Sofia"
+
+[[display.name]]
+target = "!bx5wQd5NX6phwOh55s:matrix.cloud-surf.com"
+name = "Hiking"
+
+[[display.name]]
+target = "!cEsI0z4NONtpo074Jt:matrix.cloud-surf.com"
+name = "Chatting"
+
+[[display.name]]
+target = "!uVV9X38Ou2fGAJJ45I:matrix.cloud-surf.com"
+name = "Culture&Fun"
+
+[[display.name]]
+target = "!JBdsLgFI7RUgoJt3nx:matrix.cloud-surf.com"
+name = "Alexandra Gaykin"
+
+[[display.name]]
+target = "!K6on1NVUMSckNn1R7E:matrix.cloud-surf.com"
+name = "Jonathan Schler"
+
+[[display.name]]
+target = "thread:$Auw1ie-hodFQ19rFoadPdMeCVDv0BCpu1c3dRc8tlVI"
+name = "TMDV-1981"
+
+[[display.name]]
+target = "thread:$ciWxMCg8LgUyOSPKn6r8tIAU1v4TWzHIWIlvhLsfpgY"
+name = "Review PR 893"
+
+[[display.name]]
+target = "thread:$MhRzVByw3ya5WLXM0rVSJU7lMOOj5vm_4lEQqmYspZ0"
+name = "Failing Redis"
+
+[[display.name]]
+target = "space:Google Messages"
+name = "SMS"
+
+[[display.name]]
+target = "space:LinkedIn (Eugene Shtoka)"
+name = "LinkedIn"
+
+[[display.name]]
+target = "space:Meta (Eugene Shtoka)"
+name = "Meta"
+
+[[display.name]]
+target = "space:Telegram (+359884650326)"
+name = "Telegram"
+
+[[display.name]]
+target = "space:Дозвілля у Софії"
+name = "Ukranians"
+
+[[display.name]]
+target = "!tWfSnglWJMG4fJ4nTB:matrix.cloud-surf.com"
+name = "Sofia Digest"
+
+[display.rail]
+order = [
+	"unread",
+	"drafts",
+	"-",
+	"Friends",
+	"Work",
+	"Acquaintances",
+	"Social",
+	"Colleagues",
+	"-",
+	"*",
+	"-",
+	"archived",
+]
+hidden = ["home", "dms"]
+hide_when_empty = ["drafts"]
+
+[display.media]
+mode = "inline"
+
+[[display.media.rule]]
+sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
+
+[notifications]
+enabled = true
+on = "all"
+desktop = true
+
+[[keys.jump]]
+chord = "g B"
+target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g G"
+target = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g b"
+target = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g d"
+target = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g e"
+target = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g l"
+target = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g m"
+target = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g n"
+target = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g r"
+target = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g s"
+target = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g u"
+target = "space:unread"
+
+[[keys.jump]]
+chord = "g w"
+target = "space:Work"
+
+[keys.spell]
+open_insert = "alt+k"
+
+[clipboard]
+copy_downloads = true
+
+[spell]
+check_before_send = true
+
+[assist]
+model = "openai/gpt-oss-20b"
+timeout = "4s"
+
+[commands]
+send = ["zoom", "call"]

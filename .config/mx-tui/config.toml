@@ -338,6 +338,8 @@ copy_downloads = true
 check_before_send = true
 
 [assist]
+endpoint = "https://api.groq.com/openai/v1/chat/completions"
+key_ref = "groq"
 model = "openai/gpt-oss-20b"
 timeout = "4s"
 
