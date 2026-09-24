@@ -611,3 +611,9 @@ name = "Merge Frontend for Staging Release"
 [[display.name]]
 target = "thread:$1mnT3U4SPfWMDjkABUgEvMb18-L0oj8Eq-aV7avqQ78"
 name = "Pagination bug fix for matches API"
+
+# An assistant attached through mx-mcp may post, unreviewed, to the PR-review room with
+# Evgeny Subotin and Sagi Chizik in it — and only that room. Everywhere else still drafts.
+# Reading scope is left at its default (every room, never an encrypted one).
+[agent]
+send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com"]
