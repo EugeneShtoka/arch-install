@@ -415,107 +415,6 @@ name = "Deployment to production critical follow-up"
 target = "thread:$Fw0BUHn2NvlrlAa2o_LXR6MkFja6ohu0DbqYahLa1Mc"
 name = "Eugene fixes 851 853 issue"
 
-[display.rail]
-order = [
-	"unread",
-	"drafts",
-	"-",
-	"Friends",
-	"Work",
-	"Acquaintances",
-	"Social",
-	"Colleagues",
-	"-",
-	"*",
-	"-",
-	"archived",
-]
-hidden = ["home", "dms"]
-hide_when_empty = ["drafts"]
-
-[display.media]
-mode = "inline"
-
-[[display.media.rule]]
-sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
-
-[notifications]
-enabled = true
-on = "all"
-desktop = true
-
-[[keys.jump]]
-chord = "g B"
-target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g G"
-target = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g b"
-target = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g d"
-target = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g e"
-target = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g l"
-target = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g m"
-target = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g n"
-target = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g r"
-target = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g s"
-target = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com"
-
-[[keys.jump]]
-chord = "g u"
-target = "space:unread"
-
-[[keys.jump]]
-chord = "g w"
-target = "space:Work"
-
-[keys.spell]
-open_insert = "alt+k"
-
-[clipboard]
-copy_downloads = true
-
-[spell]
-check_before_send = true
-
-[assist]
-endpoint = "https://api.groq.com/openai/v1/chat/completions"
-model = "openai/gpt-oss-20b"
-key_ref = "groq"
-timeout = "4s"
-name_threads = true
-# A root plus one reply: a thread is a thread as soon as somebody answered.
-name_threads_after = 1
-
-[assist.thread_name]
-max_tokens = 300
-
-[commands]
-send = ["zoom", "call"]
-
 [[display.name]]
 target = "thread:$0VtAMQFUOABJ0uMGdoJLJJNzFYYgbJrgF9kv3DPQzGY"
 name = "Bookmaker-Aware Parlay Feature Discussion"
@@ -612,8 +511,109 @@ name = "Merge Frontend for Staging Release"
 target = "thread:$1mnT3U4SPfWMDjkABUgEvMb18-L0oj8Eq-aV7avqQ78"
 name = "Pagination bug fix for matches API"
 
-# An assistant attached through mx-mcp may post, unreviewed, to the PR-review room with
-# Evgeny Subotin and Sagi Chizik in it — and only that room. Everywhere else still drafts.
-# Reading scope is left at its default (every room, never an encrypted one).
+[[display.name]]
+target = "thread:$pPLas_x9cEhZJ3dWn7pDXKKZV0tRMiRCk9-2DrKvzhY"
+name = "Review pending for #863 #917 #919"
+
+[display.rail]
+order = [
+	"unread",
+	"drafts",
+	"-",
+	"Friends",
+	"Work",
+	"Acquaintances",
+	"Social",
+	"Colleagues",
+	"-",
+	"*",
+	"-",
+	"archived",
+]
+hidden = ["home", "dms"]
+hide_when_empty = ["drafts"]
+
+[display.media]
+mode = "inline"
+
+[[display.media.rule]]
+sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
+
+[notifications]
+enabled = true
+on = "all"
+desktop = true
+
+[[keys.jump]]
+chord = "g B"
+target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g G"
+target = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g b"
+target = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g d"
+target = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g e"
+target = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g l"
+target = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g m"
+target = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g n"
+target = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g r"
+target = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g s"
+target = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g u"
+target = "space:unread"
+
+[[keys.jump]]
+chord = "g w"
+target = "space:Work"
+
+[keys.spell]
+open_insert = "alt+k"
+
+[clipboard]
+copy_downloads = true
+
+[spell]
+check_before_send = true
+
+[assist]
+endpoint = "https://api.groq.com/openai/v1/chat/completions"
+model = "openai/gpt-oss-20b"
+key_ref = "groq"
+timeout = "4s"
+name_threads = true
+name_threads_after = 1
+
+[assist.thread_name]
+max_tokens = 300
+
 [agent]
 send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com"]
+
+[commands]
+send = ["zoom", "call"]
