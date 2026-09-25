@@ -541,8 +541,11 @@ sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
 
 [notifications]
 enabled = true
-on = "all"
 desktop = true
+
+[[notifications.rule]]
+name = "everything"
+show = "all"
 
 [[keys.jump]]
 chord = "g B"
@@ -618,5 +621,10 @@ rooms = ["space:Work"]
 [agent.write]
 send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com"]
 
-[commands]
-send = ["zoom", "call"]
+[[commands.script]]
+name   = "zoom"
+output = "send"
+
+[[commands.script]]
+name   = "call"
+output = "send"
