@@ -519,6 +519,10 @@ name = "Review pending for #863 #917 #919"
 target = "thread:$dQRW2tmXOE076KzDjoFXqIUatnvCvCsYuSt00HNN3Wg"
 name = "Memory fix for eslint on 919 thread"
 
+[[display.name]]
+target = "!R0f2uhPCtL3qGYPwWa:matrix.cloud-surf.com"
+name = "Israelis in Bulgaria"
+
 [display.rail]
 order = [
 	"unread",
