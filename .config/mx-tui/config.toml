@@ -515,6 +515,10 @@ name = "Pagination bug fix for matches API"
 target = "thread:$pPLas_x9cEhZJ3dWn7pDXKKZV0tRMiRCk9-2DrKvzhY"
 name = "Review pending for #863 #917 #919"
 
+[[display.name]]
+target = "thread:$dQRW2tmXOE076KzDjoFXqIUatnvCvCsYuSt00HNN3Wg"
+name = "Memory fix for eslint on 919 thread"
+
 [display.rail]
 order = [
 	"unread",
@@ -622,9 +626,9 @@ rooms = ["space:Work"]
 send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com"]
 
 [[commands.script]]
-name   = "zoom"
+name = "zoom"
 output = "send"
 
 [[commands.script]]
-name   = "call"
+name = "call"
 output = "send"
