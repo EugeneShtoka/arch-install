@@ -29,13 +29,23 @@ if [[ "$wez_json" != "[]" ]]; then
     [[ -n "$winid" ]] && winid_to_conid[$winid]="$con_id"
   done <<< "$wez_i3_map"
 
+  # ttys running Claude Code: their tabs get the project folder as a prefix
+  claude_ttys=$(ps -eo tty=,comm= | awk '$2 == "claude" && $1 != "?" {print "/dev/" $1}' | jq -R . | jq -sc .)
+
   while IFS=$'\t' read -r win_id tab_id tab_title; do
     con_id="${winid_to_conid[$win_id]}"
     entries+=("$tab_title")
     actions+=("wez"$'\t'"${con_id}"$'\t'"${tab_id}")
-  done < <(echo "$wez_json" | jq -r '
+  done < <(echo "$wez_json" | jq -r --argjson claude "$claude_ttys" --arg home "$HOME" '
     group_by(.tab_id) | map(.[0]) | sort_by(.tab_id) |
-    .[] | "\(.window_id)\t\(.tab_id)\t\(if .tab_title != "" then .tab_title else .title end)"
+    .[] |
+    (if .tab_title != "" then .tab_title else .title end) as $t |
+    (if (.tty_name as $tty | $claude | index($tty)) then
+       (.cwd | sub("^file://[^/]*"; "") | sub("/$"; "")) as $dir |
+       (if $dir == $home or $dir == "" then "~" else ($dir | split("/") | last) end) as $proj |
+       "[\($proj)] \($t)"
+     else $t end) as $label |
+    "\(.window_id)\t\(.tab_id)\t\($label)"
   ')
 fi
 
