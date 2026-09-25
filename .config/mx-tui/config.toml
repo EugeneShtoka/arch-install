@@ -612,7 +612,10 @@ name_threads_after = 1
 [assist.thread_name]
 max_tokens = 300
 
-[agent]
+[agent.read]
+rooms = ["space:Work"]
+
+[agent.write]
 send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com"]
 
 [commands]
