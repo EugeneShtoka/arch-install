@@ -523,6 +523,10 @@ name = "Memory fix for eslint on 919 thread"
 target = "!R0f2uhPCtL3qGYPwWa:matrix.cloud-surf.com"
 name = "Israelis in Bulgaria"
 
+[[display.name]]
+target = "thread:$0dw4W8V96_xzk2TTaLCPX0IWy5FW_EIeUfuLgQhS6II"
+name = "Sitemap fix PR 923 and where"
+
 [display.rail]
 order = [
 	"unread",
