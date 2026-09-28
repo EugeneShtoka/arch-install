@@ -531,6 +531,10 @@ name = "Sitemap fix PR 923 and where"
 target = "thread:$dOC6eN-jeR-7yqWOSpWJnV_QhGQOmo0qAACq02nJALE"
 name = "PR merge scheduled tomorrow morning"
 
+[[display.name]]
+target = "thread:$NpVuEZhOh5KuWLp9XklipnjxUgQhdM5XzLDPnXIGQcw"
+name = "PerformanceStatus added to tipsters review"
+
 [display.rail]
 order = [
 	"unread",
