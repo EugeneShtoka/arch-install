@@ -560,6 +560,7 @@ mode = "inline"
 sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
 
 [display.direction]
+auto = true
 rtl = ["!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"]
 
 [notifications]
