@@ -1,6 +1,6 @@
 # iamb configuration — see iamb(5) and /usr/share/doc/iamb/config.example.toml
 #
-# Homeserver/account mirror ~/.config/mx-tui/config.toml (tuwunel on the Hetzner
+# Homeserver/account mirror ~/.config/kith/config.toml (tuwunel on the Hetzner
 # VPS). matrix.cloud-surf.com serves no /.well-known/matrix/client, so `url`
 # must stay set explicitly.
 

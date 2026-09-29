@@ -11,7 +11,7 @@ typeset -A APP_NAMES=(
   "NeoMutt"        "Email"
   "Yazi"           "File browser"
   "ticker"         "Stocks"
-  "mx-tui"         "Messenger"
+  "kith"           "Messenger"
   "Element"        "Messenger (V)"
 )
 

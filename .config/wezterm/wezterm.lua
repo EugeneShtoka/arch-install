@@ -26,7 +26,7 @@ config.font_size = 12.0
 -- which an emoji-presentation sequence (a base character plus U+FE0F: ‼️ ❤️ ⚠️ 🌧️) is
 -- one cell wide, while every library that lays out a TUI — uniseg, and so lipgloss and
 -- anything built on it — calls it two. Every such glyph then shifted the rest of its
--- row by a column: mx-tui's emoji grid came out with wandering columns and a pane
+-- row by a column: kith's emoji grid came out with wandering columns and a pane
 -- border in pieces. Verified with `wezterm ls-fonts --text`: at version 9, 35 of that
 -- palette's 395 glyphs report cells=1; at 14, all of them report cells=2.
 config.unicode_version = 14
