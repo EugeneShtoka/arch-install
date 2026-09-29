@@ -559,6 +559,9 @@ mode = "inline"
 [[display.media.rule]]
 sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
 
+[display.direction]
+rtl = ["!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"]
+
 [notifications]
 enabled = true
 desktop = true
