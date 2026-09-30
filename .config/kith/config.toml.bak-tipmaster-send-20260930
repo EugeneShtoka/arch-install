@@ -1,11 +1,11 @@
-# mx-tui configuration — written by mx-tui.
+# kith configuration — written by kith.
 #
 # This file records only the settings that differ from the built-in defaults, so
 # anything absent is at its default and will follow if that default ever changes.
 # Editing it by hand is still fine; the app rewrites it when you change a setting
 # from inside it, which keeps the values and drops any comments you added.
 #
-# For every option with its documentation, run: mx-tui --print-config
+# For every option with its documentation, run: kith --print-config
 # For the current keybindings, press ? in the app.
 
 homeserver = "https://matrix.cloud-surf.com"
@@ -535,6 +535,10 @@ name = "PR merge scheduled tomorrow morning"
 target = "thread:$NpVuEZhOh5KuWLp9XklipnjxUgQhdM5XzLDPnXIGQcw"
 name = "PerformanceStatus added to tipsters review"
 
+[[display.name]]
+target = "thread:$x7MuP50UDYlFUzkwptARvBX19a4HGsPBnAjwYaB0OVk"
+name = "Bookmakers Data Inquiry"
+
 [display.rail]
 order = [
 	"unread",
@@ -643,7 +647,7 @@ max_tokens = 300
 rooms = ["space:Work"]
 
 [agent.write]
-send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com", "!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"]
+send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com"]
 
 [[commands.script]]
 name = "zoom"
