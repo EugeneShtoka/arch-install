@@ -643,7 +643,7 @@ max_tokens = 300
 rooms = ["space:Work"]
 
 [agent.write]
-send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com"]
+send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com", "!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"]
 
 [[commands.script]]
 name = "zoom"
