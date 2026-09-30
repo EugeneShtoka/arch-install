@@ -535,6 +535,10 @@ name = "PR merge scheduled tomorrow morning"
 target = "thread:$NpVuEZhOh5KuWLp9XklipnjxUgQhdM5XzLDPnXIGQcw"
 name = "PerformanceStatus added to tipsters review"
 
+[[display.name]]
+target = "thread:$x7MuP50UDYlFUzkwptARvBX19a4HGsPBnAjwYaB0OVk"
+name = "Bookmakers Data Inquiry"
+
 [display.rail]
 order = [
 	"unread",
