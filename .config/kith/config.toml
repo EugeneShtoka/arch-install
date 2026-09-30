@@ -539,6 +539,10 @@ name = "PerformanceStatus added to tipsters review"
 target = "thread:$x7MuP50UDYlFUzkwptARvBX19a4HGsPBnAjwYaB0OVk"
 name = "Bookmakers Data Inquiry"
 
+[[display.name]]
+target = "!3jA4lNjZ0djH4yEDvq:matrix.cloud-surf.com"
+name = "София - Болгария"
+
 [display.rail]
 order = [
 	"unread",
@@ -647,7 +651,10 @@ max_tokens = 300
 rooms = ["space:Work"]
 
 [agent.write]
-send = ["!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com", "!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"]
+send = [
+	"!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com",
+	"!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com",
+]
 
 [[commands.script]]
 name = "zoom"
