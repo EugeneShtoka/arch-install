@@ -76,7 +76,7 @@ keep = true
 [[display.identity]]
 alias = "Eugene"
 color = "#8ff586"
-mxids = [
+ids = [
 	"@eugene:matrix.cloud-surf.com",
 	"@whatsapp_bg_359884650326:matrix.cloud-surf.com",
 	"@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com",
