@@ -543,6 +543,18 @@ name = "Bookmakers Data Inquiry"
 target = "!3jA4lNjZ0djH4yEDvq:matrix.cloud-surf.com"
 name = "София - Болгария"
 
+[[display.name]]
+target = "space:Путешествия по миру! 🌍"
+name = "Travel"
+
+[[display.name]]
+target = "!Up8fLDT48Rt4L8Elk2:matrix.cloud-surf.com"
+name = "Travel"
+
+[[display.name]]
+target = "!O4hijJhpG62zJW4WI5:matrix.cloud-surf.com"
+name = "Services"
+
 [display.rail]
 order = [
 	"unread",
@@ -563,6 +575,7 @@ hide_when_empty = ["drafts"]
 
 [display.media]
 mode = "inline"
+cache_dir = "/home/eugene/.cache/kith/media"
 
 [[display.media.rule]]
 sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
