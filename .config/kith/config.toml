@@ -144,10 +144,6 @@ target = "!7I6lwfNyNTTmWAf71L:matrix.cloud-surf.com"
 name = "Volodimir"
 
 [[display.name]]
-target = "!RGgui6dVTFhkSb2s6C:matrix.cloud-surf.com"
-name = "Sofia Foodies"
-
-[[display.name]]
 target = "!CpsIRCjJ126C7wyYfp:matrix.cloud-surf.com"
 name = "IT meetups"
 
@@ -158,10 +154,6 @@ name = "Sport"
 [[display.name]]
 target = "!0IzM8m3g4UPvX1uEEx:matrix.cloud-surf.com"
 name = "Mafia"
-
-[[display.name]]
-target = "!Cb8XZfYm8OPVN2iq80:matrix.cloud-surf.com"
-name = "Coffee meetups"
 
 [[display.name]]
 target = "!HLDrV5IQvQp4VD9LsF:matrix.cloud-surf.com"
@@ -246,10 +238,6 @@ name = "Telegram"
 [[display.name]]
 target = "space:Дозвілля у Софії"
 name = "Ukranians"
-
-[[display.name]]
-target = "!tWfSnglWJMG4fJ4nTB:matrix.cloud-surf.com"
-name = "Sofia Digest"
 
 [[display.name]]
 target = "thread:$Aqpyn4ZQHfqUF7BM6eiFGDykWPKxmeoIi3z9_fmKAOY"
@@ -554,6 +542,46 @@ name = "Travel"
 [[display.name]]
 target = "!O4hijJhpG62zJW4WI5:matrix.cloud-surf.com"
 name = "Services"
+
+[[display.name]]
+target = "!iiXW9PGBChZ0dtKHqE:matrix.cloud-surf.com"
+name = "General"
+
+[[display.name]]
+target = "!xlgEqTvxTW6BTRfrCb:matrix.cloud-surf.com"
+name = "Help"
+
+[[display.name]]
+target = "!1b3m1FLLb50amnf8MR:matrix.cloud-surf.com"
+name = "Kids"
+
+[[display.name]]
+target = "!AZ1kau118C4JPS556m:matrix.cloud-surf.com"
+name = "Cars"
+
+[[display.name]]
+target = "!pBmUtY7eJ0dRD9Eb9b:matrix.cloud-surf.com"
+name = "Work"
+
+[[display.name]]
+target = "!cbEnjGiirTBljMLf1s:matrix.cloud-surf.com"
+name = "Market"
+
+[[display.name]]
+target = "!Cb8XZfYm8OPVN2iq80:matrix.cloud-surf.com"
+name = "Coffee"
+
+[[display.name]]
+target = "!tWfSnglWJMG4fJ4nTB:matrix.cloud-surf.com"
+name = "Digest"
+
+[[display.name]]
+target = "!RGgui6dVTFhkSb2s6C:matrix.cloud-surf.com"
+name = "Foodies"
+
+[[display.name]]
+target = "!gGT3UZgszxN8ednXM7:matrix.cloud-surf.com"
+name = "Alla Rybalova"
 
 [display.rail]
 order = [
