@@ -663,3 +663,6 @@ output = "send"
 [[commands.script]]
 name = "call"
 output = "send"
+
+[storage]
+instance = "19c882ceddc8615f"
