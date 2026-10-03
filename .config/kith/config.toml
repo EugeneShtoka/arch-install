@@ -566,7 +566,6 @@ auto = true
 rtl = ["!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"]
 
 [notifications]
-enabled = true
 desktop = true
 
 [[notifications.rule]]
@@ -665,9 +664,9 @@ instance = "19c882ceddc8615f"
 name = "Invites"
 rule = ["invite"]
 exclusive = true
+hide_when_empty = true
 first = true
 count_in_label = true
-hide_when_empty = true
 
 [[tag]]
 name = "DMs"
