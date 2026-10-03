@@ -641,12 +641,13 @@ name_threads_after = 1
 max_tokens = 300
 
 [agent.read]
-rooms = ["space:Work"]
+rooms = ["space:Work", "!Mr3bUKzkbufeSz2TEm:matrix.cloud-surf.com"]
 
 [agent.write]
 send = [
 	"!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com",
 	"!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com",
+	"!Mr3bUKzkbufeSz2TEm:matrix.cloud-surf.com",
 ]
 
 [[commands.script]]
