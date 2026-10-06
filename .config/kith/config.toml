@@ -542,6 +542,10 @@ name = "Alla Rybalova"
 target = "thread:$kUoN5DMD0uf5VkqwglSKAmgyWMyJxCyeiiR_2EnB9KA"
 name = "Ticket #936 supersedes #875: per-book odds…"
 
+[[display.name]]
+target = "space:Домашняя выпечка"
+name = "Home food"
+
 [display.rail]
 order = [
 	"tag:Unread",
