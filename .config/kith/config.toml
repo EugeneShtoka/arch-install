@@ -538,6 +538,10 @@ name = "Foodies"
 target = "!gGT3UZgszxN8ednXM7:matrix.cloud-surf.com"
 name = "Alla Rybalova"
 
+[[display.name]]
+target = "thread:$kUoN5DMD0uf5VkqwglSKAmgyWMyJxCyeiiR_2EnB9KA"
+name = "Ticket #936 supersedes #875: per-book odds…"
+
 [display.rail]
 order = [
 	"tag:Unread",
