@@ -546,6 +546,10 @@ name = "Ticket #936 supersedes #875: per-book odds…"
 target = "space:Домашняя выпечка"
 name = "Home food"
 
+[[display.name]]
+target = "thread:$2nFH9rDnwiB8-9Gr0_ro3oWX7ddiZn3P7zlEkeKqA4Y"
+name = "Deploy pull request 936 pending QA approval"
+
 [display.rail]
 order = [
 	"tag:Unread",
