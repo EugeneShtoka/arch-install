@@ -762,3 +762,49 @@ hide_when_empty = true
 name = "All"
 rule = ["*"]
 hidden = true
+
+# WhatsApp chats the bridge names by number, named from the phone's contacts (2026-10-06).
+[[display.name]]
+target = "!I20yHe6JbDdrDpNpbI:matrix.cloud-surf.com"
+name = "Asaf Gershon"
+
+[[display.name]]
+target = "!dIf7MT0LUMSfURQMQp:matrix.cloud-surf.com"
+name = "Dorit"
+
+[[display.name]]
+target = "!DINMRn9QMx6aT0zxBT:matrix.cloud-surf.com"
+name = "Yuval Kagan"
+
+[[display.name]]
+target = "!NCLs6Mk6r3aL6cfyfC:matrix.cloud-surf.com"
+name = "Igal Galkin"
+
+[[display.name]]
+target = "!7qQRgXhvk3vcztgLvd:matrix.cloud-surf.com"
+name = "Tom Shabtay"
+
+[[display.name]]
+target = "!z7r7BjWB2MOx1deTYW:matrix.cloud-surf.com"
+name = "Maria Butusov"
+
+[[display.name]]
+target = "!QQwCkb1DR1uFbOzbwe:matrix.cloud-surf.com"
+name = "Itay Levy"
+
+[[display.name]]
+target = "!RmjYCTZ2hF9o36Ol5u:matrix.cloud-surf.com"
+name = "Sarit Hazan"
+
+[[display.name]]
+target = "!YMGJ0TwOB1tLUdLYwu:matrix.cloud-surf.com"
+name = "Maksim Sheykman"
+
+[[display.name]]
+target = "!ik9UcQfc4hkf5B68i4:matrix.cloud-surf.com"
+name = "Oren Lavie"
+
+[[display.name]]
+target = "!DwWvtQxQo224MJXSPx:matrix.cloud-surf.com"
+name = "Nadia Belkind"
+
