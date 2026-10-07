@@ -590,6 +590,10 @@ name = "Maksim Sheykman"
 target = "space:Возьму/отправлю посылку. Чат TravelAsk"
 name = "Packages"
 
+[[display.name]]
+target = "space:TravelAsk. Черный список мошенников"
+name = "TravelAsk - Blacklist"
+
 [display.rail]
 order = [
 	"tag:Unread",
