@@ -624,6 +624,21 @@ desktop = true
 name = "everything"
 show = "all"
 
+[[notifications.rule]]
+name = "Shieldy"
+sender = "@telegram_771096498:matrix.cloud-surf.com"
+show = "none"
+
+[[notifications.rule]]
+name = "DeFensy AntiSpamBot"
+sender = "@telegram_2122880839:matrix.cloud-surf.com"
+show = "none"
+
+[[notifications.rule]]
+name = "Kovcheg Antispam Bot"
+sender = "@telegram_8675593747:matrix.cloud-surf.com"
+show = "none"
+
 [[keys.jump]]
 chord = "g B"
 target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
@@ -803,6 +818,12 @@ picked = [
 	"!pfZE1KosStVRTvEPKp:matrix.cloud-surf.com",
 	"!KoEN0Gzg81AXWgPbkC:matrix.cloud-surf.com",
 	"!3MeVzxK67BG5XJb9Vn:matrix.cloud-surf.com",
+	"!7K27vVaNVI5THGoMEy:matrix.cloud-surf.com",
+	"!lxnCzfsvFlaFmrPK37:matrix.cloud-surf.com",
+	"!e74bdgrlqSPF0E9MjF:matrix.cloud-surf.com",
+	"!ZyrvkOHt1GYFYJKUgf:matrix.cloud-surf.com",
+	"!k4aYaBp74aIuqmBHVb:matrix.cloud-surf.com",
+	"!JraBbBepJpp3O4rhE2:matrix.cloud-surf.com",
 ]
 counts_unread = false
 exclusive = true
@@ -813,19 +834,3 @@ hide_when_empty = true
 name = "All"
 rule = ["*"]
 hidden = true
-
-# Bots that post in Telegram groups: never notify.
-[[notifications.rule]]
-name   = "Shieldy"
-sender = "@telegram_771096498:matrix.cloud-surf.com"
-show   = "none"
-
-[[notifications.rule]]
-name   = "DeFensy AntiSpamBot"
-sender = "@telegram_2122880839:matrix.cloud-surf.com"
-show   = "none"
-
-[[notifications.rule]]
-name   = "Kovcheg Antispam Bot"
-sender = "@telegram_8675593747:matrix.cloud-surf.com"
-show   = "none"
