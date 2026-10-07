@@ -586,6 +586,10 @@ name = "Sarit Hazan"
 target = "!YMGJ0TwOB1tLUdLYwu:matrix.cloud-surf.com"
 name = "Maksim Sheykman"
 
+[[display.name]]
+target = "space:Возьму/отправлю посылку. Чат TravelAsk"
+name = "Packages"
+
 [display.rail]
 order = [
 	"tag:Unread",
