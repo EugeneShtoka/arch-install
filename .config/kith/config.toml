@@ -813,3 +813,19 @@ hide_when_empty = true
 name = "All"
 rule = ["*"]
 hidden = true
+
+# Bots that post in Telegram groups: never notify.
+[[notifications.rule]]
+name   = "Shieldy"
+sender = "@telegram_771096498:matrix.cloud-surf.com"
+show   = "none"
+
+[[notifications.rule]]
+name   = "DeFensy AntiSpamBot"
+sender = "@telegram_2122880839:matrix.cloud-surf.com"
+show   = "none"
+
+[[notifications.rule]]
+name   = "Kovcheg Antispam Bot"
+sender = "@telegram_8675593747:matrix.cloud-surf.com"
+show   = "none"
