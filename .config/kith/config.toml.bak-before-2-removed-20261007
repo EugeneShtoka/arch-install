@@ -1,0 +1,810 @@
+# kith configuration — written by kith.
+#
+# This file records only the settings that differ from the built-in defaults, so
+# anything absent is at its default and will follow if that default ever changes.
+# Editing it by hand is still fine; the app rewrites it when you change a setting
+# from inside it, which keeps the values and drops any comments you added.
+#
+# For every option with its documentation, run: kith --print-config
+# For the current keybindings, press ? in the app.
+
+homeserver = "https://matrix.cloud-surf.com"
+user = "@eugene:matrix.cloud-surf.com"
+
+[display]
+max_name_length = 15
+skin_tone = "light"
+color_messages = true
+priority = ["Friends", "Work", "Social", "Colleagues"]
+
+[[display.space_rule]]
+space = "Friends"
+first_name_only = true
+
+[[display.space_rule]]
+space = "Work"
+first_name_only = true
+
+[display.deleted]
+keep = true
+
+[[display.identity]]
+alias = "Eugene"
+color = "#8ff586"
+ids = [
+	"@eugene:matrix.cloud-surf.com",
+	"@whatsapp_bg_359884650326:matrix.cloud-surf.com",
+	"@whatsapp_bg_lid-273173559930881:matrix.cloud-surf.com",
+	"@whatsapp_il_972545347450:matrix.cloud-surf.com",
+	"@telegram_8735244446:matrix.cloud-surf.com",
+	"@meta_100009131024163:matrix.cloud-surf.com",
+	"@slack_t01k2d5tcac-u08fys2bbhb:matrix.cloud-surf.com",
+	"@linkedin__a_co_a_a_c_o8_st8_b_osg-_aq1m_sk_n_f9u_evy6e_t_d4_s6_x_u_y:matrix.cloud-surf.com",
+]
+
+[[display.name]]
+target = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
+name = "Meet at Gig"
+
+[[display.name]]
+target = "!IL4ND5TUmTbUAM8l4P:matrix.cloud-surf.com"
+name = "Freelancers & Founders"
+
+[[display.name]]
+target = "!1kB6TFxPwZ4cHygVXt:matrix.cloud-surf.com"
+name = "Квиз в Софии"
+
+[[display.name]]
+target = "!kbriV0GNCJ083L3sKa:matrix.cloud-surf.com"
+name = "BlaBla Events"
+
+[[display.name]]
+target = "!ZhADZfMotcg9zgpYvd:matrix.cloud-surf.com"
+name = "Bachata LF"
+
+[[display.name]]
+target = "!dxr0D9gPd3Reaj926k:matrix.cloud-surf.com"
+name = "Salsa LF"
+
+[[display.name]]
+target = "!DJA9VKOalN45RLH1XL:matrix.cloud-surf.com"
+name = "Improv Theater Jam"
+
+[[display.name]]
+target = "!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
+name = "Discussion"
+
+[[display.name]]
+target = "!IH7VDd6FCAAih0XESb:matrix.cloud-surf.com"
+name = "Sofia BlaBla Events"
+
+[[display.name]]
+target = "!K9HPljDCoyNhe8iK1y:matrix.cloud-surf.com"
+name = "LSport"
+
+[[display.name]]
+target = "!vw0M8u2P6olcIKFsDt:matrix.cloud-surf.com"
+name = "Sasha Popov"
+
+[[display.name]]
+target = "!1nTriUMa0UdBgMTdwn:matrix.cloud-surf.com"
+name = "El-Al"
+
+[[display.name]]
+target = "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com"
+name = "Firman Mariana"
+
+[[display.name]]
+target = "!7I6lwfNyNTTmWAf71L:matrix.cloud-surf.com"
+name = "Volodimir"
+
+[[display.name]]
+target = "!CpsIRCjJ126C7wyYfp:matrix.cloud-surf.com"
+name = "IT meetups"
+
+[[display.name]]
+target = "!PfMlEimTr98TjojeEI:matrix.cloud-surf.com"
+name = "Sport"
+
+[[display.name]]
+target = "!0IzM8m3g4UPvX1uEEx:matrix.cloud-surf.com"
+name = "Mafia"
+
+[[display.name]]
+target = "!HLDrV5IQvQp4VD9LsF:matrix.cloud-surf.com"
+name = "Weekends"
+
+[[display.name]]
+target = "!kZRAOq9bCvhy3hEsR0:matrix.cloud-surf.com"
+name = "Medicine"
+
+[[display.name]]
+target = "!7JyFzi1MpzxGFRhRwf:matrix.cloud-surf.com"
+name = "Pets"
+
+[[display.name]]
+target = "!bdBH2VTuqXiU1GdJkX:matrix.cloud-surf.com"
+name = "Laoko Tango"
+
+[[display.name]]
+target = "!8GhPboOdtZh3q397CM:matrix.cloud-surf.com"
+name = "Game Friends Sofia"
+
+[[display.name]]
+target = "!norA8GTVwUxoOiqDmi:matrix.cloud-surf.com"
+name = "Questoria"
+
+[[display.name]]
+target = "!TSxc6KiyMh0jhfm3Qi:matrix.cloud-surf.com"
+name = "Bulgarian Language"
+
+[[display.name]]
+target = "!x6VV8rX8ti4ChnFSdI:matrix.cloud-surf.com"
+name = "D&D Sofia"
+
+[[display.name]]
+target = "!bx5wQd5NX6phwOh55s:matrix.cloud-surf.com"
+name = "Hiking"
+
+[[display.name]]
+target = "!cEsI0z4NONtpo074Jt:matrix.cloud-surf.com"
+name = "Chatting"
+
+[[display.name]]
+target = "!uVV9X38Ou2fGAJJ45I:matrix.cloud-surf.com"
+name = "Culture&Fun"
+
+[[display.name]]
+target = "!JBdsLgFI7RUgoJt3nx:matrix.cloud-surf.com"
+name = "Alexandra Gaykin"
+
+[[display.name]]
+target = "!K6on1NVUMSckNn1R7E:matrix.cloud-surf.com"
+name = "Jonathan Schler"
+
+[[display.name]]
+target = "thread:$Auw1ie-hodFQ19rFoadPdMeCVDv0BCpu1c3dRc8tlVI"
+name = "TMDV-1981"
+
+[[display.name]]
+target = "thread:$ciWxMCg8LgUyOSPKn6r8tIAU1v4TWzHIWIlvhLsfpgY"
+name = "Review PR 893"
+
+[[display.name]]
+target = "thread:$MhRzVByw3ya5WLXM0rVSJU7lMOOj5vm_4lEQqmYspZ0"
+name = "Failing Redis"
+
+[[display.name]]
+target = "space:Google Messages"
+name = "SMS"
+
+[[display.name]]
+target = "space:LinkedIn (Eugene Shtoka)"
+name = "LinkedIn"
+
+[[display.name]]
+target = "space:Meta (Eugene Shtoka)"
+name = "Meta"
+
+[[display.name]]
+target = "space:Telegram (+359884650326)"
+name = "Telegram"
+
+[[display.name]]
+target = "space:Дозвілля у Софії"
+name = "Ukranians"
+
+[[display.name]]
+target = "thread:$Aqpyn4ZQHfqUF7BM6eiFGDykWPKxmeoIi3z9_fmKAOY"
+name = "Refining Odds API for Frontend Efficiency"
+
+[[display.name]]
+target = "thread:$44dxcoft7tzH09JrTWRW3u-7IWNe7PLcJwXn4HTp3Sw"
+name = "Incorrect Settlements After Optic Odds Switch"
+
+[[display.name]]
+target = "thread:$dUHAzKl0SbDXc_KL5zCBOWDatZH_KeXHRJZCLVPFDT4"
+name = "Provider Metadata vs. Normalized Categories…"
+
+[[display.name]]
+target = "thread:$I7sBEZyGgMo53t5rQudtQhu-LCDJXQn4Wx1r9qeX9tQ"
+name = "tipmaster-prd CPU alarm fluctuations"
+
+[[display.name]]
+target = "thread:$tYNkoTHMf_ljmfX2_7gvurwcy6nc3Q0PCHPcrXQyHA8"
+name = "Image generation CI failure and resolution…"
+
+[[display.name]]
+target = "thread:$9VV1K3UGYXGmwvt7Yyq-UI-_eSoO5U92eB6Zz0xSxzM"
+name = "Pagination bug fix discussion for matches API"
+
+[[display.name]]
+target = "thread:$lYiRSjZmaeb1fvmezjILbfNNKoO3DvfN7HD_dDQZWTw"
+name = "EXPERT_FILTERING_ENABLE flag clarification in…"
+
+[[display.name]]
+target = "thread:$kexzZKW0ElMcmj3hXN3aK8LnDWYIsMgSrT-JKk1qblM"
+name = "Updating Betting_Setup Naming Convention Review…"
+
+[[display.name]]
+target = "thread:$OwYWkieNPGpwGxYFm9fx1HT0w_aqJBvraxTuOJ1DPvw"
+name = "הוספת Wins ורצף בסטייג'"
+
+[[display.name]]
+target = "thread:$IE5PW6psFnoCnUVbsZK_dOMGTpvnezRahsohQY2BYVg"
+name = "Barlow fonts issue with image generator…"
+
+[[display.name]]
+target = "thread:$GPebyvwoOGpBSelPv28OCi3eOjU6hnnsAKf6s0BkSoc"
+name = "Evgeny changes poll id to key, Sagi pushes…"
+
+[[display.name]]
+target = "thread:$a6M2t4SbDBaHn6s8e7ZyeEa_ew1Sz8k5lGaBpqASchU"
+name = "Planning tomorrow morning meeting availability"
+
+[[display.name]]
+target = "thread:$3dJ4BFysOzFsxrxjWlhSnBGw0s4gxf3n3heKtyxExQU"
+name = "Fixing the Free Parlays Bug and Audit Checkup"
+
+[[display.name]]
+target = "thread:$EJaUeDdhndGpp2T4bqmF-bV_GVi97TOfSpQ1w69a0vk"
+name = "Outcome Audit Tool Deployment Discussion"
+
+[[display.name]]
+target = "thread:$et5FGviceBKg1VBAi_5bgnmmCPMGb2jn9i9o0am_xIQ"
+name = "Snapshot API provider inclusion behavior for…"
+
+[[display.name]]
+target = "thread:$ui6FHlcNxgZ1u-CjgESaVZhLOsZ-Y8M3xjQoMkK2mVY"
+name = "Bracket Feature Misunderstanding and LSports…"
+
+[[display.name]]
+target = "thread:$lpKRsKBBYVRvudZ65KbkCod8R-Vqx8-2abcz95ezxPo"
+name = "CORS fix and migration deployment discussion in…"
+
+[[display.name]]
+target = "thread:$ccBUbScu0BoVdCLuMu7EKTORBsb_OY8Ie6eQBVX3MmE"
+name = "Review of match slug logic rewrite required"
+
+[[display.name]]
+target = "thread:$-yxaUsMi7-XEz22u3jn73YUu-GrbCknXCQlvs7RFLjc"
+name = "Merge conflicts on PR 823 and 828 review…"
+
+[[display.name]]
+target = "thread:$mNwULfsUbycMDBd9s2GdAyoX1xmCSxFxSkbsuxc19D0"
+name = "Live Scores Scraper Rate-Limit Decision Meeting"
+
+[[display.name]]
+target = "thread:$v2FSC4zMZIPXkmSsiTMCS7G_JQZr1uMs_EmsmJ9Alf4"
+name = "Security issue: merge from dev required"
+
+[[display.name]]
+target = "thread:$R3bY5Kgcbvl0TXqwwLYlEMM1zt44-DZB1qSVXz_u0H8"
+name = "Browser errors on NBA Blitz link"
+
+[[display.name]]
+target = "thread:$4I0cbMTE2jPR7L4_cuEfsMjW1DtkKdQKlHRIXblbhjU"
+name = "Manual Migration Decision Discussion"
+
+[[display.name]]
+target = "thread:$A41O6nJklPYhS3alzmRFlggzIsFtrBvpa45029f5GcQ"
+name = "Live update discussion for TMDV-1630 with Sagi…"
+
+[[display.name]]
+target = "thread:$5tLfIKgYF5FWwLfWVKyVI2-8ZuyEKwy1HDm3chFjYjw"
+name = "Meta FirstPurchase event review discussion"
+
+[[display.name]]
+target = "thread:$SEi9y_sGmxQ3FAHHQbV7LdleOLkjtu_DfZssGMT2uBM"
+name = "Sagi shares information with Evgeny"
+
+[[display.name]]
+target = "thread:$qq4GpQd7P3Uwhon__5X-IJvuxgFGvuXVJ5ACId-NHUA"
+name = "Fix 851/853, Add Comments"
+
+[[display.name]]
+target = "thread:$y5W3KJKUaChfVrmyDzhrGsOmwp03lEdp76o9qPI8O0M"
+name = "Driving vs PlayStation debate"
+
+[[display.name]]
+target = "thread:$NUaIJhXn0l-oqVxTBSdlYlHHEwBBi8eyTzF_d3nviSE"
+name = "Sagi Chizik awaiting ROI carousel endpoint"
+
+[[display.name]]
+target = "thread:$R57_QJUeCX5T1qQjCs5Y-3aAWlYeJ30PxyfzPRtNDxw"
+name = "Settlement consistency check on prod vs staging"
+
+[[display.name]]
+target = "thread:$6GEEFxhtaWkcTo3WLK4gCLMYVz7t-eIfvxUZqmuo504"
+name = "Exporting t360 account settings verification…"
+
+[[display.name]]
+target = "thread:$GqqiTeNuqu5PqTpUb7qKy2YfU-l0OzUEm52CcDuTcj0"
+name = "Merge announcement and follow-up messaging…"
+
+[[display.name]]
+target = "thread:$7m9Z-mdAe6G0SHmR6yZ2PuYqz3EKuVnggUjykG6vZfo"
+name = "Follow-up on grader issues email not received…"
+
+[[display.name]]
+target = "thread:$nOvEerbDDGfmcdDXPs8HfTDfsUngT3kVmvBBS_hKbz8"
+name = "Requesting more matches, pagination discussion"
+
+[[display.name]]
+target = "thread:$24y5YehpcZ6ku2MK4etVfp0a5_8oouxftm9ajyDBesE"
+name = "FanDuel sportsbook support status…"
+
+[[display.name]]
+target = "thread:$sGZ-gySSJHZ3FkuHxu2pch35S2GhDje14_7fItfgZiA"
+name = "Remove priority for over 10 strike experts"
+
+[[display.name]]
+target = "thread:$akOSWp9pcFF2iDdDVf-2g3DKIck8rbm9MlmSBSeHrqw"
+name = "Adjust FE for PR 766, Deploy"
+
+[[display.name]]
+target = "thread:$cSxzUFP5f0-aK8KglsFpP4w7rqT79KX40VWCPvCtT_w"
+name = "API Error Review and PR Coordination"
+
+[[display.name]]
+target = "thread:$lz-DVz2hhiJPDThj97W5MFyD3vEQjbT1UFLUcfSA1sQ"
+name = "Opticodds Settlement Coverage for Sports Markets"
+
+[[display.name]]
+target = "thread:$YXpokWw4G2KKqX0w6OMq3tnPw161YvYrfpqd1ilyG-g"
+name = "Deployment to production critical follow-up"
+
+[[display.name]]
+target = "thread:$Fw0BUHn2NvlrlAa2o_LXR6MkFja6ohu0DbqYahLa1Mc"
+name = "Eugene fixes 851 853 issue"
+
+[[display.name]]
+target = "thread:$0VtAMQFUOABJ0uMGdoJLJJNzFYYgbJrgF9kv3DPQzGY"
+name = "Bookmaker-Aware Parlay Feature Discussion"
+
+[[display.name]]
+target = "thread:$YVaYPHUB05s_V7j1lpF5DR5LyjphA2NQqRlD6_0531M"
+name = "Sagi Chizik? what?"
+
+[[display.name]]
+target = "thread:$uD78_5GWu5N8vT1aBQeGca-grGM9ZKhzU4sDvgDKWQU"
+name = "Rebase and run migrations post-brackets branch"
+
+[[display.name]]
+target = "thread:$FmHq05ErM1Wx12pBELPuGxspIUS9qn-MVGrAYqV4XMo"
+name = "טיפול במומנטום ומניעת רצף שגוי"
+
+[[display.name]]
+target = "thread:$kAZnFscM9ddTVCs13iJ3PWEDf7acG7cqF_jQyKHVdCg"
+name = "League Merge Adjustments for OO and LS"
+
+[[display.name]]
+target = "thread:$x1EdETbs7T_mdsEb2hlujJQARl44efIgdHF58lyWFY0"
+name = "GitHub pull request review request for…"
+
+[[display.name]]
+target = "thread:$kF05wUUEyDcThRHtl6fTE1nnckmUIsD5NUvmrT9gM7I"
+name = "Approve PR 855 before production merge"
+
+[[display.name]]
+target = "thread:$T9X1-5KMEywSw-wv4mGNwskxoqfuhO5UGfQ736DMjtg"
+name = "Проверка открытых сетевых элементов"
+
+[[display.name]]
+target = "thread:$k3_gydyRl49g_OrJIZvGM2a6uqlOwZac2JhcyeG_l1w"
+name = "Admin option to disable leagues discussion"
+
+[[display.name]]
+target = "thread:$kmPB539mjiLDwk9S8cjdh41pCgwowS5WSGr6XQCtInw"
+name = "Missing orderBy match.id comment"
+
+[[display.name]]
+target = "thread:$4aTGSmKX_3TcFosQ3l4evuERUnCQuTl3IMEufyx_7Dc"
+name = "Ensuring Unique Slugs for API Endpoint Review"
+
+[[display.name]]
+target = "thread:$XyAVqRJGhJNAXQBaCK11zALYkeSJw8k6uNN3geiNFlc"
+name = "Slack huddle screenshot shared"
+
+[[display.name]]
+target = "thread:$mJYyjzrNpsoUe91tsBSeUHq-tiqKZNW1801Qw9t1vwY"
+name = "Unable to Join Will Ping Later"
+
+[[display.name]]
+target = "thread:$q7DEA7XPUqv-O1aObc76AXf0fFYVAyMJUGJSpb8YZl4"
+name = "Approval Confirmation and Earlier Items"
+
+[[display.name]]
+target = "thread:$FVjJ6XyLEEZCOcPxhxPSVj2MVPMnqwQ_O___Ta6s9bk"
+name = "Eugene explains quarterly stats and average…"
+
+[[display.name]]
+target = "thread:$D00bOlCE0jzlnjJLoRPJ0d2Dik_qjaEMdTLqnjnQu5k"
+name = "Missing ShareImageRenderer fonts during runtime…"
+
+[[display.name]]
+target = "thread:$DCPiQWbvS7fyBU2C1IHmj1iv_HuGZ728ZXrm3HUaG3o"
+name = "Add Staging Config to Env File"
+
+[[display.name]]
+target = "thread:$PpeB-J82V9mvVDoIMZtrJXXJa4qrCXyQFBIn3H_4Yjw"
+name = "TS_NODE_FILES needed due to type augmentation"
+
+[[display.name]]
+target = "thread:$vi4yKAP4QhWp6hUxy4xz9vWTyqgpxcV5NHEYXJYO8kY"
+name = "Urgent AI Run & Filters Update"
+
+[[display.name]]
+target = "thread:$BJP6PtHImgGMuUVyXMlyIIej1Z1QZdQ8GUHxcVJe4q4"
+name = "Commit fix for World Cup features"
+
+[[display.name]]
+target = "thread:$BNd88VE0Hxq7cG_0uP6iMdz-S2lKWs9jaD-gdby1fTE"
+name = "Bar Worcel Integration Update with Shay"
+
+[[display.name]]
+target = "thread:$FJekIK9xetHDHDSToLKbi775qEr3WOLaSAT_2T31r8A"
+name = "Manual follow notifications missing versus…"
+
+[[display.name]]
+target = "thread:$a1D_LlGLRvK_peJD6hpvw7PjvkdPBBAF1LNZ-PLxXf8"
+name = "Merge Frontend for Staging Release"
+
+[[display.name]]
+target = "thread:$1mnT3U4SPfWMDjkABUgEvMb18-L0oj8Eq-aV7avqQ78"
+name = "Pagination bug fix for matches API"
+
+[[display.name]]
+target = "thread:$pPLas_x9cEhZJ3dWn7pDXKKZV0tRMiRCk9-2DrKvzhY"
+name = "Review pending for #863 #917 #919"
+
+[[display.name]]
+target = "thread:$dQRW2tmXOE076KzDjoFXqIUatnvCvCsYuSt00HNN3Wg"
+name = "Memory fix for eslint on 919 thread"
+
+[[display.name]]
+target = "!R0f2uhPCtL3qGYPwWa:matrix.cloud-surf.com"
+name = "Israelis in Bulgaria"
+
+[[display.name]]
+target = "thread:$0dw4W8V96_xzk2TTaLCPX0IWy5FW_EIeUfuLgQhS6II"
+name = "Sitemap fix PR 923 and where"
+
+[[display.name]]
+target = "thread:$dOC6eN-jeR-7yqWOSpWJnV_QhGQOmo0qAACq02nJALE"
+name = "PR merge scheduled tomorrow morning"
+
+[[display.name]]
+target = "thread:$NpVuEZhOh5KuWLp9XklipnjxUgQhdM5XzLDPnXIGQcw"
+name = "PerformanceStatus added to tipsters review"
+
+[[display.name]]
+target = "thread:$x7MuP50UDYlFUzkwptARvBX19a4HGsPBnAjwYaB0OVk"
+name = "Bookmakers Data Inquiry"
+
+[[display.name]]
+target = "!3jA4lNjZ0djH4yEDvq:matrix.cloud-surf.com"
+name = "София - Болгария"
+
+[[display.name]]
+target = "space:Путешествия по миру! 🌍"
+name = "Travel"
+
+[[display.name]]
+target = "!Up8fLDT48Rt4L8Elk2:matrix.cloud-surf.com"
+name = "Travel"
+
+[[display.name]]
+target = "!O4hijJhpG62zJW4WI5:matrix.cloud-surf.com"
+name = "Services"
+
+[[display.name]]
+target = "!iiXW9PGBChZ0dtKHqE:matrix.cloud-surf.com"
+name = "General"
+
+[[display.name]]
+target = "!xlgEqTvxTW6BTRfrCb:matrix.cloud-surf.com"
+name = "Help"
+
+[[display.name]]
+target = "!1b3m1FLLb50amnf8MR:matrix.cloud-surf.com"
+name = "Kids"
+
+[[display.name]]
+target = "!AZ1kau118C4JPS556m:matrix.cloud-surf.com"
+name = "Cars"
+
+[[display.name]]
+target = "!pBmUtY7eJ0dRD9Eb9b:matrix.cloud-surf.com"
+name = "Work"
+
+[[display.name]]
+target = "!cbEnjGiirTBljMLf1s:matrix.cloud-surf.com"
+name = "Market"
+
+[[display.name]]
+target = "!Cb8XZfYm8OPVN2iq80:matrix.cloud-surf.com"
+name = "Coffee"
+
+[[display.name]]
+target = "!tWfSnglWJMG4fJ4nTB:matrix.cloud-surf.com"
+name = "Digest"
+
+[[display.name]]
+target = "!RGgui6dVTFhkSb2s6C:matrix.cloud-surf.com"
+name = "Foodies"
+
+[[display.name]]
+target = "!gGT3UZgszxN8ednXM7:matrix.cloud-surf.com"
+name = "Alla Rybalova"
+
+[[display.name]]
+target = "thread:$kUoN5DMD0uf5VkqwglSKAmgyWMyJxCyeiiR_2EnB9KA"
+name = "Ticket #936 supersedes #875: per-book odds…"
+
+[[display.name]]
+target = "space:Домашняя выпечка"
+name = "Home food"
+
+[[display.name]]
+target = "thread:$2nFH9rDnwiB8-9Gr0_ro3oWX7ddiZn3P7zlEkeKqA4Y"
+name = "Deploy pull request 936 pending QA approval"
+
+[display.rail]
+order = [
+	"tag:Unread",
+	"tag:Drafts",
+	"-",
+	"Friends",
+	"Work",
+	"Acquaintances",
+	"Social",
+	"Colleagues",
+	"-",
+	"*",
+	"-",
+	"tag:Archived",
+]
+
+[display.media]
+mode = "inline"
+cache_dir = "/home/eugene/.cache/kith/media"
+
+[[display.media.rule]]
+sender = "@whatsapp_bg_972533342045:matrix.cloud-surf.com"
+
+[display.direction]
+auto = true
+rtl = ["!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"]
+
+[notifications]
+desktop = true
+
+[[notifications.rule]]
+name = "everything"
+show = "all"
+
+[[keys.jump]]
+chord = "g B"
+target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g G"
+target = "room:!PTU4mmzTBWSleGzGkL:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g b"
+target = "room:!Wl5r5WnDMCNxHtFQey:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g d"
+target = "room:!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g e"
+target = "room:!zV8prTApc8FkEe4hR4:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g l"
+target = "room:!siVs8kZaEODmAJPp0C:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g m"
+target = "room:!yV2WNBkQtIC9KXCWG6:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g n"
+target = "room:!f2tB2Rk8hEuZfJKhPG:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g r"
+target = "room:!g3J4xfgrhoMuJnvzAW:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g s"
+target = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com"
+
+[[keys.jump]]
+chord = "g u"
+target = "space:unread"
+
+[[keys.jump]]
+chord = "g w"
+target = "space:Work"
+
+[keys.spell]
+open_insert = "alt+k"
+
+[clipboard]
+copy_downloads = true
+
+[spell]
+check_before_send = true
+
+[assist]
+endpoint = "https://api.groq.com/openai/v1/chat/completions"
+model = "openai/gpt-oss-20b"
+key_ref = "groq"
+timeout = "4s"
+name_threads = true
+name_threads_after = 1
+
+[assist.thread_name]
+max_tokens = 300
+
+[agent.read]
+rooms = ["space:Work", "!Mr3bUKzkbufeSz2TEm:matrix.cloud-surf.com"]
+
+[agent.write]
+send = [
+	"!dbgAOpQQIbyoHHNzKX:matrix.cloud-surf.com",
+	"!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com",
+	"!Mr3bUKzkbufeSz2TEm:matrix.cloud-surf.com",
+]
+
+[[commands.script]]
+name = "zoom"
+output = "send"
+
+[[commands.script]]
+name = "call"
+output = "send"
+
+[storage]
+instance = "19c882ceddc8615f"
+
+[[tag]]
+name = "Invites"
+rule = ["invite"]
+exclusive = true
+hide_when_empty = true
+first = true
+count_in_label = true
+
+[[tag]]
+name = "DMs"
+rule = ["dm"]
+hidden = true
+
+[[tag]]
+name = "Unread"
+rule = ["unread"]
+sticky = true
+
+[[tag]]
+name = "Drafts"
+rule = ["draft"]
+hide_when_empty = true
+
+[[tag]]
+name = "Pinned"
+hide_when_empty = true
+
+[[tag]]
+name = "Spam"
+rule = ["spam"]
+exclusive = true
+hide_when_empty = true
+
+[[tag]]
+name = "Archived"
+picked = [
+	"!zwzBIMEOGfFYoPjoDp:matrix.cloud-surf.com",
+	"!F1npx3Pigwp6CoIGxo:matrix.cloud-surf.com",
+	"!x2FH1TSg7g6wjTZVYc:matrix.cloud-surf.com",
+	"!1nTriUMa0UdBgMTdwn:matrix.cloud-surf.com",
+	"!JMRKPjiGVWSNMUG1dN:matrix.cloud-surf.com",
+	"!6RZZJoLDSUYytV37Jp:matrix.cloud-surf.com",
+	"!xlaYsBvrynaTYYcdyy:matrix.cloud-surf.com",
+	"!pkuTMu1AxvGAzWPdpb:matrix.cloud-surf.com",
+	"!AdHyDHorRvOlIw8fMh:matrix.cloud-surf.com",
+	"!VCb46fYKM1FoBxX6jy:matrix.cloud-surf.com",
+	"!kh2uPYk8Rt1IhWHggd:matrix.cloud-surf.com",
+	"!y1fEfjDt4Aft3EWhYf:matrix.cloud-surf.com",
+	"!6dWiufE4WPASKY5w7w:matrix.cloud-surf.com",
+	"!yqfIzvEOYzLRGnWzgW:matrix.cloud-surf.com",
+	"!D2gPiOTVfIpGKewkzb:matrix.cloud-surf.com",
+	"!7PHMEwM6aYDmPfYoMg:matrix.cloud-surf.com",
+	"!HbvRWh1BLw6H7ijepJ:matrix.cloud-surf.com",
+	"!sn2Agrl9ncMiS6rRKs:matrix.cloud-surf.com",
+	"!7mxMIjQelPfjodtaew:matrix.cloud-surf.com",
+	"!lxW4K1H0d8NHY8QeBk:matrix.cloud-surf.com",
+	"!C0Dfzf5jCTHr6BjZ22:matrix.cloud-surf.com",
+	"!mPpSa0yow4dDSsAz7v:matrix.cloud-surf.com",
+	"!LAfEWxBGz8FTyNye8P:matrix.cloud-surf.com",
+	"!e969l47AsnKFLJhimx:matrix.cloud-surf.com",
+	"!QI5tZGGof4VB8XKHWq:matrix.cloud-surf.com",
+	"!yRc7QQJDiy2azdBO9W:matrix.cloud-surf.com",
+	"!XeuTTvDFRUmXKeHYiU:matrix.cloud-surf.com",
+	"!k2teda2km1Fq8mfqUB:matrix.cloud-surf.com",
+	"!mfL5kOAbvh7iRnKpmS:matrix.cloud-surf.com",
+	"!5llHmumaoENB1hvmjE:matrix.cloud-surf.com",
+	"!HSsLbSEPTtySrG3dRJ:matrix.cloud-surf.com",
+	"!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com",
+	"!0jtyWKqgL8H9UHvBk1:matrix.cloud-surf.com",
+	"!LoFs34ZpmOwgGDTo1e:matrix.cloud-surf.com",
+	"!P1toBMnIuHjC00VNZI:matrix.cloud-surf.com",
+	"!xlgEqTvxTW6BTRfrCb:matrix.cloud-surf.com",
+	"!AZ1kau118C4JPS556m:matrix.cloud-surf.com",
+	"!O4hijJhpG62zJW4WI5:matrix.cloud-surf.com",
+	"!1b3m1FLLb50amnf8MR:matrix.cloud-surf.com",
+	"!iiXW9PGBChZ0dtKHqE:matrix.cloud-surf.com",
+	"!pBmUtY7eJ0dRD9Eb9b:matrix.cloud-surf.com",
+	"!cbEnjGiirTBljMLf1s:matrix.cloud-surf.com",
+	"!JwPVNSgQsEYAi7GvyA:matrix.cloud-surf.com",
+]
+counts_unread = false
+exclusive = true
+space_exclusive = true
+hide_when_empty = true
+
+[[tag]]
+name = "All"
+rule = ["*"]
+hidden = true
+
+# WhatsApp chats the bridge names by number, named from the phone's contacts (2026-10-06).
+[[display.name]]
+target = "!I20yHe6JbDdrDpNpbI:matrix.cloud-surf.com"
+name = "Asaf Gershon"
+
+[[display.name]]
+target = "!dIf7MT0LUMSfURQMQp:matrix.cloud-surf.com"
+name = "Dorit"
+
+[[display.name]]
+target = "!DINMRn9QMx6aT0zxBT:matrix.cloud-surf.com"
+name = "Yuval Kagan"
+
+[[display.name]]
+target = "!NCLs6Mk6r3aL6cfyfC:matrix.cloud-surf.com"
+name = "Igal Galkin"
+
+[[display.name]]
+target = "!7qQRgXhvk3vcztgLvd:matrix.cloud-surf.com"
+name = "Tom Shabtay"
+
+[[display.name]]
+target = "!z7r7BjWB2MOx1deTYW:matrix.cloud-surf.com"
+name = "Maria Butusov"
+
+[[display.name]]
+target = "!QQwCkb1DR1uFbOzbwe:matrix.cloud-surf.com"
+name = "Itay Levy"
+
+[[display.name]]
+target = "!RmjYCTZ2hF9o36Ol5u:matrix.cloud-surf.com"
+name = "Sarit Hazan"
+
+[[display.name]]
+target = "!YMGJ0TwOB1tLUdLYwu:matrix.cloud-surf.com"
+name = "Maksim Sheykman"
+
+[[display.name]]
+target = "!ik9UcQfc4hkf5B68i4:matrix.cloud-surf.com"
+name = "Oren Lavie"
+
+[[display.name]]
+target = "!DwWvtQxQo224MJXSPx:matrix.cloud-surf.com"
+name = "Nadia Belkind"
+
