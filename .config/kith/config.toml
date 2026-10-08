@@ -598,6 +598,14 @@ name = "TravelAsk - Blacklist"
 target = "thread:$c76joOlqx-_IQDOjDuy5-ZhoJTHHG5_P-V5Vxvv8HII"
 name = "GET tipforms by UUID error"
 
+[[display.name]]
+target = "thread:$DJDD1X88t6YJMD7P7DdCSJJ0qzmFw3WuKsh7ymP-6HA"
+name = "Adding cumulative bookmaker odds to locked tips…"
+
+[[display.name]]
+target = "thread:$zKzQxHAo2ppAsGHU1sb6nKXt3mKkKG6YmukDxSmXatU"
+name = "Sagi Chizik plans to check meaning"
+
 [display.rail]
 order = [
 	"tag:Unread",
