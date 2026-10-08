@@ -594,6 +594,10 @@ name = "Packages"
 target = "space:TravelAsk. Черный список мошенников"
 name = "TravelAsk - Blacklist"
 
+[[display.name]]
+target = "thread:$c76joOlqx-_IQDOjDuy5-ZhoJTHHG5_P-V5Vxvv8HII"
+name = "GET tipforms by UUID error"
+
 [display.rail]
 order = [
 	"tag:Unread",
