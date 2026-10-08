@@ -8,4 +8,5 @@ alias bar='setsid ~/Games/Beyond\ All\ Reason/Beyond-All-Reason-1.2988.0.AppImag
 alias grim-dawn='setsid ~/Games/Grim\ Dawn/start.sh &>/dev/null'
 alias factorio='steam -applaunch 427520'
 alias probably-stolen='steam -applaunch 4349200'
+alias mechabellum='steam -applaunch 669330'
 alias dont-starve-together='steam -applaunch 322330'
