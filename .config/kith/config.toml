@@ -614,6 +614,10 @@ name = "Елизавета"
 target = "!7DXVwslf52jGRZjHXD:matrix.cloud-surf.com"
 name = "Board Games: Sale"
 
+[[display.name]]
+target = "thread:$IA1yyZW5VC3DWQyV5nPrMc5g_zDRJo9GNr7b6zuOdls"
+name = "CrashLoopBackOff due to JavaScript heap"
+
 [display.rail]
 order = [
 	"tag:Unread",
