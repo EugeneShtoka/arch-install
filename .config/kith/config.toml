@@ -15,6 +15,7 @@ user = "@eugene:matrix.cloud-surf.com"
 max_name_length = 15
 skin_tone = "light"
 color_messages = true
+network_colors = true
 priority = ["Friends", "Work", "Social", "Colleagues"]
 
 [[display.space_rule]]
@@ -24,12 +25,15 @@ first_name_only = true
 [[display.space_rule]]
 space = "Work"
 first_name_only = true
-network_colors = true
 
 [display.theme.networks]
 whatsapp = "teal"
 telegram = "blue"
 slack = "magenta"
+messenger = "orchid"
+instagram = "orchid"
+linkedin = "periwinkle"
+google_messages = "coral"
 
 [display.deleted]
 keep = true
