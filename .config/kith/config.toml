@@ -24,6 +24,12 @@ first_name_only = true
 [[display.space_rule]]
 space = "Work"
 first_name_only = true
+network_colors = true
+
+[display.network_colors]
+whatsapp = "#2e7d32"
+telegram = "blue"
+slack = "magenta"
 
 [display.deleted]
 keep = true
@@ -633,6 +639,7 @@ order = [
 	"-",
 	"tag:Archived",
 ]
+network_colors = true
 
 [display.media]
 mode = "inline"
