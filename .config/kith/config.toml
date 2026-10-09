@@ -606,6 +606,14 @@ name = "Adding cumulative bookmaker odds to locked tips…"
 target = "thread:$zKzQxHAo2ppAsGHU1sb6nKXt3mKkKG6YmukDxSmXatU"
 name = "Sagi Chizik plans to check meaning"
 
+[[display.name]]
+target = "!sJhSTxqyz3VbRE4R8X:matrix.cloud-surf.com"
+name = "Елизавета"
+
+[[display.name]]
+target = "!7DXVwslf52jGRZjHXD:matrix.cloud-surf.com"
+name = "Board Games: Sale"
+
 [display.rail]
 order = [
 	"tag:Unread",
