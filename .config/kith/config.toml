@@ -27,7 +27,7 @@ first_name_only = true
 network_colors = true
 
 [display.network_colors]
-whatsapp = "#2e7d32"
+whatsapp = "teal"
 telegram = "blue"
 slack = "magenta"
 
