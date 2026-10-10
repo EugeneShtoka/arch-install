@@ -157,10 +157,6 @@ target = "!bx5wQd5NX6phwOh55s:matrix.cloud-surf.com"
 name = "Hiking"
 
 [[display.name]]
-target = "!cEsI0z4NONtpo074Jt:matrix.cloud-surf.com"
-name = "Chatting"
-
-[[display.name]]
 target = "!uVV9X38Ou2fGAJJ45I:matrix.cloud-surf.com"
 name = "Culture&Fun"
 
@@ -643,6 +639,18 @@ name = "Iddo Lev"
 [[display.name]]
 target = "!fd0e1RrI6bPVQnlY9Y:matrix.cloud-surf.com"
 name = "Adi Bonfil"
+
+[[display.name]]
+target = "!cEsI0z4NONtpo074Jt:matrix.cloud-surf.com"
+name = "Chat"
+
+[[display.name]]
+target = "!eb29OcrCKyPfXcQe0A:matrix.cloud-surf.com"
+name = "Board games"
+
+[[display.name]]
+target = "!cgZjf9sLb4e9f3Hygm:matrix.cloud-surf.com"
+name = "Beauty"
 
 [display.rail]
 order = [
