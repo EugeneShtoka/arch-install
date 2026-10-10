@@ -56,6 +56,14 @@ ids = [
 alias = "Adi Bonfil"
 ids = ["@linkedin__a_co_a_a_driu_h_q_btsy_ul_lvl_tw3e_s_kh_vaoi_x_yjr_g1ms:matrix.cloud-surf.com"]
 
+[[display.identity]]
+alias = "Elisaveta"
+ids = ["@telegram_553183378:matrix.cloud-surf.com"]
+
+[[display.identity]]
+alias = "Oleksandr Shumov"
+ids = ["@whatsapp_bg_380508180946:matrix.cloud-surf.com"]
+
 [[display.name]]
 target = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
 name = "Meet at Gig"
@@ -605,10 +613,6 @@ target = "thread:$zKzQxHAo2ppAsGHU1sb6nKXt3mKkKG6YmukDxSmXatU"
 name = "Sagi Chizik plans to check meaning"
 
 [[display.name]]
-target = "!sJhSTxqyz3VbRE4R8X:matrix.cloud-surf.com"
-name = "Елизавета"
-
-[[display.name]]
 target = "!7DXVwslf52jGRZjHXD:matrix.cloud-surf.com"
 name = "Board Games: Sale"
 
@@ -659,6 +663,18 @@ name = "Atmosfera"
 [[display.name]]
 target = "!8W06xuSDAtUnWd8f7u:matrix.cloud-surf.com"
 name = "Juggling"
+
+[[display.name]]
+target = "!sJhSTxqyz3VbRE4R8X:matrix.cloud-surf.com"
+name = "Elisaveta"
+
+[[display.name]]
+target = "!XlUyPKAPdgDfAtk4kb:matrix.cloud-surf.com"
+name = "Saved Messages"
+
+[[display.name]]
+target = "!G2tukxMXX3ePslSclu:matrix.cloud-surf.com"
+name = "Oleksand Shumov"
 
 [display.rail]
 order = [
@@ -929,3 +945,10 @@ hide_when_empty = true
 name = "All"
 rule = ["*"]
 hidden = true
+
+[[tag]]
+name = "Services"
+picked = [
+	"!G2tukxMXX3ePslSclu:matrix.cloud-surf.com",
+	"!TUx8Jd9Ywi73HyALfA:matrix.cloud-surf.com",
+]
