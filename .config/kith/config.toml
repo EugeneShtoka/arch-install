@@ -105,10 +105,6 @@ target = "!fPhVoJ43VRpmcx9nL2:matrix.cloud-surf.com"
 name = "Firman Mariana"
 
 [[display.name]]
-target = "!7I6lwfNyNTTmWAf71L:matrix.cloud-surf.com"
-name = "Volodimir"
-
-[[display.name]]
 target = "!CpsIRCjJ126C7wyYfp:matrix.cloud-surf.com"
 name = "IT meetups"
 
@@ -631,6 +627,18 @@ name = "CrashLoopBackOff due to JavaScript heap"
 [[display.name]]
 target = "thread:$wxZfRGs4jNGSgAPquZSiUcQw239qcofGU7wVcI_hgoU"
 name = "Debugging Argo Environment Variable Issue"
+
+[[display.name]]
+target = "!7I6lwfNyNTTmWAf71L:matrix.cloud-surf.com"
+name = "Vladimir Seleznev"
+
+[[display.name]]
+target = "!HV3XADdiqw1WFPcARW:matrix.cloud-surf.com"
+name = "Iddo Lev"
+
+[[display.name]]
+target = "!fd0e1RrI6bPVQnlY9Y:matrix.cloud-surf.com"
+name = "Adi Bonfil"
 
 [display.rail]
 order = [
