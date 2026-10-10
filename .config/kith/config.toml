@@ -65,10 +65,6 @@ target = "!IL4ND5TUmTbUAM8l4P:matrix.cloud-surf.com"
 name = "Freelancers & Founders"
 
 [[display.name]]
-target = "!1kB6TFxPwZ4cHygVXt:matrix.cloud-surf.com"
-name = "Квиз в Софии"
-
-[[display.name]]
 target = "!kbriV0GNCJ083L3sKa:matrix.cloud-surf.com"
 name = "BlaBla Events"
 
@@ -489,10 +485,6 @@ target = "thread:$x7MuP50UDYlFUzkwptARvBX19a4HGsPBnAjwYaB0OVk"
 name = "Bookmakers Data Inquiry"
 
 [[display.name]]
-target = "!3jA4lNjZ0djH4yEDvq:matrix.cloud-surf.com"
-name = "София - Болгария"
-
-[[display.name]]
 target = "space:Путешествия по миру! 🌍"
 name = "Travel"
 
@@ -651,6 +643,22 @@ name = "Board games"
 [[display.name]]
 target = "!cgZjf9sLb4e9f3Hygm:matrix.cloud-surf.com"
 name = "Beauty"
+
+[[display.name]]
+target = "!3jA4lNjZ0djH4yEDvq:matrix.cloud-surf.com"
+name = "Sofia"
+
+[[display.name]]
+target = "!1kB6TFxPwZ4cHygVXt:matrix.cloud-surf.com"
+name = "Quiz"
+
+[[display.name]]
+target = "!oloKNRohCQRKBCjDjV:matrix.cloud-surf.com"
+name = "Atmosfera"
+
+[[display.name]]
+target = "!8W06xuSDAtUnWd8f7u:matrix.cloud-surf.com"
+name = "Juggling"
 
 [display.rail]
 order = [
