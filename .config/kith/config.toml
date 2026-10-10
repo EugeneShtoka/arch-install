@@ -64,6 +64,14 @@ ids = ["@telegram_553183378:matrix.cloud-surf.com"]
 alias = "Oleksandr Shumov"
 ids = ["@whatsapp_bg_380508180946:matrix.cloud-surf.com"]
 
+[[display.identity]]
+alias = "Unitransbg"
+ids = ["@whatsapp_bg_359894448441:matrix.cloud-surf.com"]
+
+[[display.identity]]
+alias = "BlaBla"
+ids = ["@telegram_channel-1647399776:matrix.cloud-surf.com"]
+
 [[display.name]]
 target = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
 name = "Meet at Gig"
@@ -91,10 +99,6 @@ name = "Improv Theater Jam"
 [[display.name]]
 target = "!H38myIxv8V3ro3LDPK:matrix.cloud-surf.com"
 name = "Discussion"
-
-[[display.name]]
-target = "!IH7VDd6FCAAih0XESb:matrix.cloud-surf.com"
-name = "Sofia BlaBla Events"
 
 [[display.name]]
 target = "!K9HPljDCoyNhe8iK1y:matrix.cloud-surf.com"
@@ -676,6 +680,14 @@ name = "Saved Messages"
 target = "!G2tukxMXX3ePslSclu:matrix.cloud-surf.com"
 name = "Oleksand Shumov"
 
+[[display.name]]
+target = "!fybnBTztNEPjciGBlH:matrix.cloud-surf.com"
+name = "Unitransbg"
+
+[[display.name]]
+target = "!IH7VDd6FCAAih0XESb:matrix.cloud-surf.com"
+name = "BlaBla"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -951,4 +963,5 @@ name = "Services"
 picked = [
 	"!G2tukxMXX3ePslSclu:matrix.cloud-surf.com",
 	"!TUx8Jd9Ywi73HyALfA:matrix.cloud-surf.com",
+	"!fybnBTztNEPjciGBlH:matrix.cloud-surf.com",
 ]
