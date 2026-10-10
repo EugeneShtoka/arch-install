@@ -52,6 +52,10 @@ ids = [
 	"@linkedin__a_co_a_a_c_o8_st8_b_osg-_aq1m_sk_n_f9u_evy6e_t_d4_s6_x_u_y:matrix.cloud-surf.com",
 ]
 
+[[display.identity]]
+alias = "Adi Bonfil"
+ids = ["@linkedin__a_co_a_a_driu_h_q_btsy_ul_lvl_tw3e_s_kh_vaoi_x_yjr_g1ms:matrix.cloud-surf.com"]
+
 [[display.name]]
 target = "!pLuvLxScUHfvWQletT:matrix.cloud-surf.com"
 name = "Meet at Gig"
