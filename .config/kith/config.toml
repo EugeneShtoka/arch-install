@@ -18,14 +18,6 @@ color_messages = true
 network_colors = true
 priority = ["Friends", "Work", "Social", "Colleagues"]
 
-[[display.space_rule]]
-space = "Friends"
-first_name_only = true
-
-[[display.space_rule]]
-space = "Work"
-first_name_only = true
-
 [display.theme.networks]
 whatsapp = "teal"
 telegram = "blue"
@@ -34,6 +26,14 @@ messenger = "orchid"
 instagram = "orchid"
 linkedin = "periwinkle"
 google_messages = "coral"
+
+[[display.space_rule]]
+space = "Friends"
+first_name_only = true
+
+[[display.space_rule]]
+space = "Work"
+first_name_only = true
 
 [display.deleted]
 keep = true
@@ -627,6 +627,10 @@ name = "Board Games: Sale"
 [[display.name]]
 target = "thread:$IA1yyZW5VC3DWQyV5nPrMc5g_zDRJo9GNr7b6zuOdls"
 name = "CrashLoopBackOff due to JavaScript heap"
+
+[[display.name]]
+target = "thread:$wxZfRGs4jNGSgAPquZSiUcQw239qcofGU7wVcI_hgoU"
+name = "Debugging Argo Environment Variable Issue"
 
 [display.rail]
 order = [
