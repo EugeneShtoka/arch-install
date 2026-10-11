@@ -698,6 +698,7 @@ order = [
 	"Acquaintances",
 	"Social",
 	"Colleagues",
+	"Services",
 	"-",
 	"*",
 	"-",
