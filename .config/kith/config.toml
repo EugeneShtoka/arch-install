@@ -16,7 +16,7 @@ max_name_length = 15
 skin_tone = "light"
 color_messages = true
 network_colors = true
-priority = ["Friends", "Work", "Social", "Colleagues"]
+priority = ["space:Friends", "space:Work", "space:Social", "space:Colleagues"]
 
 [display.theme.networks]
 whatsapp = "teal"
@@ -28,11 +28,11 @@ linkedin = "periwinkle"
 google_messages = "coral"
 
 [[display.space_rule]]
-space = "Friends"
+space = "space:Friends"
 first_name_only = true
 
 [[display.space_rule]]
-space = "Work"
+space = "space:Work"
 first_name_only = true
 
 [display.deleted]
@@ -733,12 +733,12 @@ order = [
 	"tag:Unread",
 	"tag:Drafts",
 	"-",
-	"Friends",
-	"Work",
-	"Acquaintances",
-	"Social",
-	"Colleagues",
-	"Services",
+	"space:Friends",
+	"space:Work",
+	"space:Acquaintances",
+	"space:Social",
+	"space:Colleagues",
+	"space:Services",
 	"-",
 	"*",
 	"-",
@@ -820,7 +820,7 @@ target = "room:!cVEiugIeX5d7KjXo5O:matrix.cloud-surf.com"
 
 [[keys.jump]]
 chord = "g u"
-target = "space:unread"
+target = "tag:Unread"
 
 [[keys.jump]]
 chord = "g w"
