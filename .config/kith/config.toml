@@ -870,7 +870,7 @@ instance = "19c882ceddc8615f"
 [[tag]]
 name = "Invites"
 rule = ["invite"]
-exclusive = true
+exclusive = ["tags"]
 hide_when_empty = true
 first = true
 count_in_label = true
@@ -897,7 +897,8 @@ hide_when_empty = true
 [[tag]]
 name = "Spam"
 rule = ["spam"]
-exclusive = true
+counts_unread = false
+exclusive = ["tags", "spaces", "origin"]
 hide_when_empty = true
 
 [[tag]]
@@ -991,11 +992,16 @@ picked = [
 	"!IL4ND5TUmTbUAM8l4P:matrix.cloud-surf.com",
 ]
 counts_unread = false
-exclusive = true
-space_exclusive = true
+exclusive = ["tags", "spaces"]
 hide_when_empty = true
 
 [[tag]]
 name = "All"
 rule = ["*"]
 hidden = true
+
+[[spam.filter]]
+name = "elections"
+words = ["*בחירות"]
+in = ["place:SMS"]
+moves = ["always"]
