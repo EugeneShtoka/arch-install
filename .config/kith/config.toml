@@ -720,6 +720,10 @@ name = "Cronjob opening‑markets email to Bar"
 target = "thread:$Lee3jTN2K-k92o6LPdaZnHHXAHyNpjsBeE7hGO5UXQ0"
 name = "GET favorite bookmakers endpoint discussion"
 
+[[display.name]]
+target = "thread:$fyRo_BfcXRF5fig6fi7a0ZlsiJMvca5p9x1M2u-3-SI"
+name = "Eugene PR957 review request"
+
 [display.rail]
 order = [
 	"tag:Unread",
