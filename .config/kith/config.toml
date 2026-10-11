@@ -716,6 +716,10 @@ name = "Oleksandr Shumov"
 target = "thread:$gRI2EMZzWa1BFFBZOklLzc15mc5p5_oDjTnUwaoqE0s"
 name = "Cronjob opening‑markets email to Bar"
 
+[[display.name]]
+target = "thread:$Lee3jTN2K-k92o6LPdaZnHHXAHyNpjsBeE7hGO5UXQ0"
+name = "GET favorite bookmakers endpoint discussion"
+
 [display.rail]
 order = [
 	"tag:Unread",
