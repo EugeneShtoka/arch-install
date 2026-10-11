@@ -724,6 +724,10 @@ name = "GET favorite bookmakers endpoint discussion"
 target = "thread:$fyRo_BfcXRF5fig6fi7a0ZlsiJMvca5p9x1M2u-3-SI"
 name = "Eugene PR957 review request"
 
+[[display.name]]
+target = "thread:$iQ5dTbG4v3yqPyGoyzOwpU-TejPeL0Z5AxMWOmHLpTk"
+name = "Review of multiple backend pull requests with…"
+
 [display.rail]
 order = [
 	"tag:Unread",
