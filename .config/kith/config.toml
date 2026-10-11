@@ -698,7 +698,6 @@ order = [
 	"Acquaintances",
 	"Social",
 	"Colleagues",
-	"tag:Services",
 	"-",
 	"*",
 	"-",
@@ -957,11 +956,3 @@ hide_when_empty = true
 name = "All"
 rule = ["*"]
 hidden = true
-
-[[tag]]
-name = "Services"
-picked = [
-	"!G2tukxMXX3ePslSclu:matrix.cloud-surf.com",
-	"!TUx8Jd9Ywi73HyALfA:matrix.cloud-surf.com",
-	"!fybnBTztNEPjciGBlH:matrix.cloud-surf.com",
-]
