@@ -681,10 +681,6 @@ target = "!XlUyPKAPdgDfAtk4kb:matrix.cloud-surf.com"
 name = "Saved Messages"
 
 [[display.name]]
-target = "!G2tukxMXX3ePslSclu:matrix.cloud-surf.com"
-name = "Oleksand Shumov"
-
-[[display.name]]
 target = "!fybnBTztNEPjciGBlH:matrix.cloud-surf.com"
 name = "Unitransbg"
 
@@ -707,6 +703,14 @@ name = "Letica"
 [[display.name]]
 target = "!rja1UjiwKdLqGnGUSN:matrix.cloud-surf.com"
 name = "Hipster Storage"
+
+[[display.name]]
+target = "thread:$gu6z-_4GxcRpyes38c-lWHT2MKLCEOsMDXX8ZeFPGxY"
+name = "Avatar upload refactor and timeout fixes in…"
+
+[[display.name]]
+target = "!G2tukxMXX3ePslSclu:matrix.cloud-surf.com"
+name = "Oleksandr Shumov"
 
 [display.rail]
 order = [
