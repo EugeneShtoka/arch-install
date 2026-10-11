@@ -712,6 +712,10 @@ name = "Avatar upload refactor and timeout fixes in…"
 target = "!G2tukxMXX3ePslSclu:matrix.cloud-surf.com"
 name = "Oleksandr Shumov"
 
+[[display.name]]
+target = "thread:$gRI2EMZzWa1BFFBZOklLzc15mc5p5_oDjTnUwaoqE0s"
+name = "Cronjob opening‑markets email to Bar"
+
 [display.rail]
 order = [
 	"tag:Unread",
