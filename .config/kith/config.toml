@@ -1013,9 +1013,9 @@ rule = ["*"]
 hidden = true
 
 [[filter]]
-name = "elections"
+name = "politics"
 tag = "Spam"
-words = ["*בחירות"]
+words = ["*בחירות", "*מילואימניקים"]
 in = ["place:SMS"]
 moves = ["always"]
 
