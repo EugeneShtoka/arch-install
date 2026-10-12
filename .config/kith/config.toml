@@ -743,6 +743,7 @@ order = [
 	"*",
 	"-",
 	"tag:Archived",
+	"tag:Spam",
 ]
 network_colors = true
 
