@@ -78,7 +78,6 @@ ids = ["@whatsapp_bg_359889222650:matrix.cloud-surf.com"]
 
 [[display.identity]]
 alias = "Evgeny"
-color = "#f7768e"
 ids = [
 	"@slack_t01k2d5tcac-u022uk1u65s:matrix.cloud-surf.com",
 	"@whatsapp_bg_972545376312:matrix.cloud-surf.com",
