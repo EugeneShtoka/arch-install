@@ -1030,5 +1030,12 @@ moves = ["always"]
 name = "Adds"
 tag = "Spam"
 words = ["*החזר מס"]
-in = ["space:Google Messages"]
+in = ["place:SMS"]
+moves = ["always"]
+
+[[filter]]
+name = "religion"
+tag = "Spam"
+words = ["*תפילין"]
+in = ["place:SMS"]
 moves = ["always"]
