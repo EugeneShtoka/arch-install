@@ -832,6 +832,12 @@ open_insert = "alt+k"
 [clipboard]
 copy_downloads = true
 
+[[spam.filter]]
+name = "elections"
+words = ["*בחירות"]
+in = ["place:SMS"]
+moves = ["always"]
+
 [spell]
 check_before_send = true
 
@@ -897,6 +903,7 @@ hide_when_empty = true
 [[tag]]
 name = "Spam"
 rule = ["spam"]
+picked = ["!LrDWDpk3q98QCDXGPF:matrix.cloud-surf.com"]
 counts_unread = false
 exclusive = ["tags", "spaces", "origin"]
 hide_when_empty = true
@@ -999,9 +1006,3 @@ hide_when_empty = true
 name = "All"
 rule = ["*"]
 hidden = true
-
-[[spam.filter]]
-name = "elections"
-words = ["*בחירות"]
-in = ["place:SMS"]
-moves = ["always"]
