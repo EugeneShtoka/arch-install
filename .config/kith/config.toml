@@ -1015,7 +1015,7 @@ hidden = true
 [[filter]]
 name = "politics"
 tag = "Spam"
-words = ["*בחירות", "*מילואימניקים"]
+words = ["*בחירות", "*מילואימניקים", "*מפלג*", "*ממשל*"]
 in = ["place:SMS"]
 moves = ["always"]
 
@@ -1024,4 +1024,11 @@ name = "survey"
 tag = "Spam"
 words = ["*סקר"]
 in = ["place:SMS"]
+moves = ["always"]
+
+[[filter]]
+name = "Adds"
+tag = "Spam"
+words = ["*החזר מס"]
+in = ["space:Google Messages"]
 moves = ["always"]
