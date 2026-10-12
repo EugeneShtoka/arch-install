@@ -903,7 +903,10 @@ hide_when_empty = true
 [[tag]]
 name = "Spam"
 rule = ["spam"]
-picked = ["!LrDWDpk3q98QCDXGPF:matrix.cloud-surf.com"]
+picked = [
+	"!LrDWDpk3q98QCDXGPF:matrix.cloud-surf.com",
+	"!BAmphRcOwFkLUUNwZn:matrix.cloud-surf.com",
+]
 counts_unread = false
 exclusive = ["tags", "spaces", "origin"]
 hide_when_empty = true
