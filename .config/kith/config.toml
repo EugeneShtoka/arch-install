@@ -1015,3 +1015,9 @@ tag = "Spam"
 words = ["*בחירות"]
 in = ["place:SMS"]
 moves = ["always"]
+
+[[filter]]
+name = "survey"
+tag = "Spam"
+words = ["סקר"]
+in = ["space:Google Messages"]
