@@ -1046,3 +1046,8 @@ tag = "Spam"
 words = ["*תפילין"]
 in = ["place:SMS"]
 moves = ["always"]
+
+[[filter]]
+name = "cjk or arabic"
+tag = "Spam"
+script = ["Han", "Kana", "Hangul", "Arabic"]
