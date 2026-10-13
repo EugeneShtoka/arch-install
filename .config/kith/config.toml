@@ -735,6 +735,10 @@ name = "Eugene PR957 review request"
 target = "thread:$iQ5dTbG4v3yqPyGoyzOwpU-TejPeL0Z5AxMWOmHLpTk"
 name = "Review of multiple backend pull requests with…"
 
+[[display.name]]
+target = "thread:$D5RHRN6QyJCN_RlQIQDRuuLVF-7O1qdEhJNkHf53wtc"
+name = "LinkedIn post link discussion"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -786,6 +790,9 @@ name = "Kovcheg Antispam Bot"
 sender = "@telegram_8675593747:matrix.cloud-surf.com"
 show = "none"
 
+[keys.spell]
+open_insert = "alt+k"
+
 [[keys.jump]]
 chord = "g B"
 target = "room:!I9Nfaeqd848MKRuelx:matrix.cloud-surf.com"
@@ -833,9 +840,6 @@ target = "tag:Unread"
 [[keys.jump]]
 chord = "g w"
 target = "space:Work"
-
-[keys.spell]
-open_insert = "alt+k"
 
 [clipboard]
 copy_downloads = true
@@ -913,6 +917,7 @@ picked = [
 	"!Ba6dONh33mH5rfCme7:matrix.cloud-surf.com",
 	"!N9xYuIFPu2A5YxZUFo:matrix.cloud-surf.com",
 	"!PErfqjAiOJEHvj1TUI:matrix.cloud-surf.com",
+	"!myrm6dAKvLLVHrRMWl:matrix.cloud-surf.com",
 ]
 excluded = ["!HNUlIzf0fSIIDUxn7W:matrix.cloud-surf.com"]
 counts_unread = false
