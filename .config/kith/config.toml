@@ -739,6 +739,10 @@ name = "Review of multiple backend pull requests with…"
 target = "thread:$D5RHRN6QyJCN_RlQIQDRuuLVF-7O1qdEhJNkHf53wtc"
 name = "LinkedIn post link discussion"
 
+[[display.name]]
+target = "thread:$4rnePXv9dRiphQ4h3qURTfBE6lD696wnQVL3q2Tsohc"
+name = "Review and merge of PR #868 with daily checkins…"
+
 [display.rail]
 order = [
 	"tag:Unread",
