@@ -743,6 +743,10 @@ name = "LinkedIn post link discussion"
 target = "thread:$4rnePXv9dRiphQ4h3qURTfBE6lD696wnQVL3q2Tsohc"
 name = "Review and merge of PR #868 with daily checkins…"
 
+[[display.name]]
+target = "thread:$a4drjxTt5bhUFzOtZsyEODF6wsLqqh09PBjgjndml9g"
+name = "Merge bookies filtering PR to prod?"
+
 [display.rail]
 order = [
 	"tag:Unread",
