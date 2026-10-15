@@ -747,6 +747,14 @@ name = "Review and merge of PR #868 with daily checkins…"
 target = "thread:$a4drjxTt5bhUFzOtZsyEODF6wsLqqh09PBjgjndml9g"
 name = "Merge bookies filtering PR to prod?"
 
+[[display.name]]
+target = "thread:$AxfzPNE66hUPG11iu8PbeNG2dcF3QVSfwMk1_sn9kkA"
+name = "Tipform v2 Refactor & Review Request"
+
+[[display.name]]
+target = "thread:$yT97G0U3fs7dDCpiJ2LOjErOT_dbPLlWYffqVgzyAlM"
+name = "Configurable kickoff odds stop in API pull…"
+
 [display.rail]
 order = [
 	"tag:Unread",
