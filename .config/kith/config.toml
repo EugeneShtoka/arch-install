@@ -1060,7 +1060,7 @@ moves = ["always"]
 [[filter]]
 name = "Adds"
 tag = "Spam"
-words = ["*החזר מס"]
+words = ["*החזר מס", "החזרי מס"]
 in = ["place:SMS"]
 moves = ["always"]
 
