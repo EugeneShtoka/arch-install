@@ -1,0 +1,8 @@
+#!/bin/sh
+# Set the ACPI platform profile. Only accepts a profile the firmware offers.
+# Installed root-owned to /usr/local/bin and allowed via /etc/sudoers.d/platform-profile.
+f=/sys/firmware/acpi/platform_profile
+case " $(cat ${f}_choices) " in
+  *" $1 "*) echo "$1" > "$f" ;;
+  *) echo "usage: $0 {$(tr ' ' '|' < ${f}_choices)}" >&2; exit 1 ;;
+esac
