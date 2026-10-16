@@ -763,6 +763,14 @@ name = "סגירת קובץ פתוח 24 שעות"
 target = "thread:$X4B1El_-ldGQaaerD3v58pU8ilNK3l_YX8RMCOHHIW8"
 name = "סיכום נושאי מערכת המשחקים והסטטיסטיקה"
 
+[[display.name]]
+target = "thread:$7tyfZFgln0Hy-L9bh5ytD_XvaEwpZm9GRIU1q39kLzI"
+name = "Odds By feature update and frontend alignment…"
+
+[[display.name]]
+target = "thread:$vgRj4yuurI5T-U7mgG9xtcBUgYXjxC19ZtA2rUQUrr4"
+name = "Merge PRs faster before production"
+
 [display.rail]
 order = [
 	"tag:Unread",
