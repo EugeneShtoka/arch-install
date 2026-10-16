@@ -755,6 +755,14 @@ name = "Tipform v2 Refactor & Review Request"
 target = "thread:$yT97G0U3fs7dDCpiJ2LOjErOT_dbPLlWYffqVgzyAlM"
 name = "Configurable kickoff odds stop in API pull…"
 
+[[display.name]]
+target = "thread:$6XFSRnPKZs-Xd1iELxojMT2KTv_V6XRxTKDrrP0QXSk"
+name = "סגירת קובץ פתוח 24 שעות"
+
+[[display.name]]
+target = "thread:$X4B1El_-ldGQaaerD3v58pU8ilNK3l_YX8RMCOHHIW8"
+name = "סיכום נושאי מערכת המשחקים והסטטיסטיקה"
+
 [display.rail]
 order = [
 	"tag:Unread",
