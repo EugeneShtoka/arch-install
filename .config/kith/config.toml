@@ -984,6 +984,158 @@ name = "Instagram"
 target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1762507287.521789"
 name = "Accessing GCP Pub/Sub Subscription List"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1749748719.883649"
+name = "Markets Counter Bug Fix Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1750324716.160729"
+name = "Add Cricket, Softball, Volleyball SVGs to…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1783071132.891139"
+name = "Meta FirstPurchase event implementation review"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782379259.666729"
+name = "Pagination bug fix discussion for matches/top…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1759145685.377579"
+name = "Secret Update Approval Thread"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782124723.376749"
+name = "NBA Blitz link browser errors discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1776695450.568339"
+name = "Tipster Sitemap Strategy Meeting"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782376632.860689"
+name = "Matches pagination fix and review request"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1781521533.572079"
+name = "Tagging Sagi Chizik, puzzled reply"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1780588590.634339"
+name = "Sagi sends info to Evgeny"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1749805949.422039"
+name = "New Icons, Noto Emoji, Sports Mapping"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1751441880.656489"
+name = "Adjusting Match Filtering Intervals QA"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782294971.280809"
+name = "Adjusting top‑request pagination limits"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1750152401.177259"
+name = "Sports feature toggle updates and icon requests"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1781103728.061069"
+name = "Live score scraping interval debate with Sagi…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1777988876.708119"
+name = "Add live tabs to tournament and team pages with…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1749760250.472529"
+name = "Testing with Mailinator: team inquiry"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1750863907.720579"
+name = "Eugene Discusses LSports Odds Platform…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1745753254.342579"
+name = "Site speed issue thread"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1746101577.675109"
+name = "Staging Deploy QA: New Homepage Hero and…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1749457324.471389"
+name = "Sports Data Live‑Time Update Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1742972966.834859"
+name = "OpenAI 4O Image Generation Marketing Impact"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1746627583.725859"
+name = "Welcome new member cocktails high energy"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1742202926.348869"
+name = "Password restrictions and Chrome generate"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1751366217.037239"
+name = "Metaverse Future Speculation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1753719752.456299"
+name = "Adjusting Sports Visibility: Football, Hockey…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1750073844.374779"
+name = "Deploying Sports Emojis to Staging and…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1749799250.524249"
+name = "Frontend Production Deployment Celebration"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1748625135.527159"
+name = "Staging Wallet Success Photo"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1745410062.869939"
+name = "Live blog image preview update process"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1756568055.639459"
+name = "Birthday wishes to Sergey Mühlinin"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1745949790.206509"
+name = "Frontend refactor removes matches caching…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1744011739.350689"
+name = "Betting Markets: BI Files and Settlement…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1777724391.125239"
+name = "Managing tennis event ordering in trading system"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1744635312.573769"
+name = "Missing baseline for “Team Scoring First”…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1762275241.614009"
+name = "Odds and market discrepancies in NHL and NBA…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1774875675.489159"
+name = "Reconciling Snapshot vs RMQ Delta Updates in…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1792314386.483819"
+name = "SofaScore API Access Issues"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1103,6 +1255,18 @@ name_threads_after = 1
 
 [assist.thread_name]
 max_tokens = 300
+
+[[commands.script]]
+name = "zoom"
+output = "send"
+
+[[commands.script]]
+name = "call"
+output = "send"
+
+[[commands.script]]
+name = "meet"
+output = "send"
 
 [[whatsapp.account]]
 name = "bg"
@@ -1455,15 +1619,3 @@ moves = ["always"]
 name = "cjk or arabic"
 tag = "Spam"
 script = ["Han", "Kana", "Hangul", "Arabic"]
-
-[[commands.script]]
-name = "zoom"
-output = "send"
-
-[[commands.script]]
-name = "call"
-output = "send"
-
-[[commands.script]]
-name = "meet"
-output = "send"
