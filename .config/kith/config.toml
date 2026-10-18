@@ -912,6 +912,10 @@ output = "send"
 name = "call"
 output = "send"
 
+[[commands.script]]
+name = "meet"
+output = "send"
+
 [[messenger.account]]
 name = "Meta"
 

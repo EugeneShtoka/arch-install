@@ -1,0 +1,328 @@
+#!/bin/sh
+# /meet [topic] — start a Google Meet, open it, and propose the invite text.
+#
+# kith knows nothing about Google: it runs this file and puts whatever the file
+# prints on stdout into the composer, for you to send or not. Everything here is
+# yours to change. This is /zoom's twin and deliberately so — same secrets store,
+# same two ways to work, same shape of message — so that knowing one is knowing
+# both.
+#
+# What kith gives this script:
+#   "$1" / $KITH_ARG   the words after the command, as one argument
+#   $KITH_ROOM         the room you are writing in, as it is labelled there
+#   $KITH_ROOM_ID      that room's ID
+#   $KITH_USER         your own MXID
+#
+# ==============================================================================
+# WHERE THE SECRETS LIVE: your desktop keyring, not a file.
+# ==============================================================================
+#
+# Read from the Secret Service — the same gnome-keyring that already holds
+# kith's Matrix access token — under service `kith-meet`. This script holds no
+# secret itself and writes none to disk.
+#
+# Store a value (it reads the value from stdin, so it never reaches your shell
+# history or `ps`):
+#
+#   printf '%s' 'PASTE_HERE' | secret-tool store --label='kith meet link' \
+#       service kith-meet key link
+#
+# See what is stored:  secret-tool search --all service kith-meet
+# Remove one:          secret-tool clear service kith-meet key link
+#
+# The keys this script looks for: `link`, `client-id`, `client-secret`,
+# `refresh-token`.
+#
+# Another store: set MEET_SECRET_CMD to a command that prints a value when handed
+# a key name (`MEET_SECRET_CMD="pass show kith/meet"` → runs `pass show
+# kith/meet link`). It is split on spaces and run with no shell. An environment
+# variable of the matching name — MEET_LINK, MEET_CLIENT_ID, MEET_CLIENT_SECRET,
+# MEET_REFRESH_TOKEN — still wins over both, which is what makes a one-off
+# override, or a test, possible without touching anything stored.
+#
+# ==============================================================================
+# TWO WAYS TO WORK.
+# ==============================================================================
+#
+# ── 1. MEET_LINK — one meeting you keep. Nothing to register. ─────────────────
+#
+#   Open https://meet.google.com/new — Google makes a meeting on the spot and the
+#   address bar now reads https://meet.google.com/abc-mnop-xyz. Store that as
+#   `link` and /meet works: no project, no API, no OAuth.
+#
+#   The catch, and it is the same one the Zoom personal room has: **the code
+#   outlives the call.** Google keeps an unused meeting code alive for about a
+#   year, so anybody who kept the link — anybody still in that room next year,
+#   and on a bridged room whoever runs the bridge — can turn up at a later one.
+#   Meet softens this where Zoom does not: someone outside your organisation has
+#   to knock and be let in, and nobody can join at all before the host. For a 1:1
+#   that is plenty. For a room with twenty people in it, use the second way.
+#
+# ── 2. The Meet REST API — a fresh space every time ───────────────────────────
+#
+#   The meeting is created on demand, so its code is disposable.
+#
+#   **Read this before spending twenty minutes on it:** Google's own reference for
+#   `spaces.create` states no account requirement, but the API is documented
+#   throughout as a Google Workspace one and the field reports are consistent that
+#   a personal @gmail account is simply refused. eugene@cloud-surf.com is a custom
+#   domain, so if that domain is on Workspace this path is open to you; if the
+#   Google account behind it is a plain consumer one, expect a 403 and keep to
+#   path 1. The script says which it got rather than making you guess.
+#
+#   Setting it up (verified against developers.google.com, Sep 2026):
+#
+#     a. https://console.cloud.google.com → create a project (any name).
+#     b. APIs & Services → Library → **Google Meet API** → Enable.
+#     c. APIs & Services → OAuth consent screen → External, fill the three
+#        required fields, and add your own address under **Test users**. Leave it
+#        unpublished: `meetings.space.created` is a *sensitive* scope, and
+#        publishing would put you in front of Google's verification queue for an
+#        app with one user. A test user is exempt from all of it.
+#     d. Credentials → Create credentials → OAuth client ID → **Desktop app**.
+#        Desktop clients may redirect to any loopback port, which is why there is
+#        no redirect URL to register here and why `--auth` below just works.
+#     e. Store the two values it shows you:
+#
+#          printf '%s' 'CLIENT_ID'     | secret-tool store \
+#              --label='kith meet client id' service kith-meet key client-id
+#          printf '%s' 'CLIENT_SECRET' | secret-tool store \
+#              --label='kith meet client secret' service kith-meet key client-secret
+#
+#     f. Run the consent once and keep the refresh token:
+#
+#          ~/.config/kith/commands/meet --auth
+#
+#        It opens your browser, catches the answer on 127.0.0.1, trades it for a
+#        refresh token and stores that in the keyring. After this the script runs
+#        with no interaction at all.
+#
+#   Where a secret must not go: not in kith's config.toml, not on a command line
+#   (argv is world-readable in /proc — which is why every long-lived value below
+#   is handed to curl over a pipe rather than as an argument), not in a chat room,
+#   and not in a file next to this one.
+#
+set -eu
+
+keyring_service="kith-meet"
+scope="https://www.googleapis.com/auth/meetings.space.created"
+auth_port=${MEET_AUTH_PORT:-47821}
+
+# invite <code> <link> — the message that goes to the room.
+#
+# Two lines and a link, because that is all a Meet invitation has: there is no
+# passcode and no dial-by-ID number worth printing. Change the printf lines and you
+# change the message — nothing else here reads them.
+invite() {
+	code=$1
+	link=$2
+
+	if [ "$topic_given" = yes ]; then
+		printf 'Google Meet: %s\n' "$topic"
+	else
+		printf 'Google Meet started\n'
+	fi
+	[ -n "$code" ] && printf 'Meeting code: %s\n' "$code"
+	printf '%s\n' "$link"
+}
+
+# secret <ENV_NAME> <keyring-key> — print one value, or nothing at all.
+#
+# Order: the environment first, then MEET_SECRET_CMD, then the desktop keyring. It
+# always succeeds: "not stored" is an answer, not an error, and under `set -e` a
+# failing command substitution would take the whole script down with it.
+secret() {
+	eval "value=\${$1:-}"
+	if [ -n "$value" ]; then
+		printf '%s' "$value"
+		return 0
+	fi
+	if [ -n "${MEET_SECRET_CMD:-}" ]; then
+		# Deliberately unquoted: the setting is a command *and its arguments*, split
+		# on spaces, with no shell involved.
+		# shellcheck disable=SC2086
+		$MEET_SECRET_CMD "$2" 2>/dev/null || true
+		return 0
+	fi
+	if command -v secret-tool >/dev/null 2>&1; then
+		secret-tool lookup service "$keyring_service" key "$2" 2>/dev/null || true
+	fi
+	return 0
+}
+
+# open_url hands a URL to the browser, detached and with its output thrown away: a
+# background child holding stdout is a script that never appears to finish.
+open_url() {
+	[ -n "${MEET_DRY:-}" ] && { echo "would open: $1" >&2; return 0; }
+	setsid xdg-open "$1" >/dev/null 2>&1 &
+}
+
+# code_of <url> — the meetingCode out of a meeting URL, empty for anything else.
+# Meet codes are three lowercase groups (abc-mnop-xyz); a /lookup/ nickname link
+# has no code and correctly yields nothing rather than a wrong guess.
+code_of() {
+	printf '%s' "$1" | sed -n 's|.*meet\.google\.com/\([a-z][a-z]*-[a-z][a-z]*-[a-z][a-z]*\).*|\1|p'
+}
+
+MEET_LINK=$(secret MEET_LINK link)
+MEET_CLIENT_ID=$(secret MEET_CLIENT_ID client-id)
+MEET_CLIENT_SECRET=$(secret MEET_CLIENT_SECRET client-secret)
+MEET_REFRESH_TOKEN=$(secret MEET_REFRESH_TOKEN refresh-token)
+
+# ── --auth: the one interactive run ───────────────────────────────────────────
+#
+# Google's loopback flow, which is the only one left for a desktop program: the
+# out-of-band "copy this code" redirect was withdrawn in 2022, and a device-code
+# flow does not carry this scope. So: open the consent page, listen on 127.0.0.1
+# for the redirect Google sends the browser to, and trade the code for a refresh
+# token.
+if [ "${1:-}" = "--auth" ]; then
+	# An `if`, not `A || B && C`: with both tests false that list ends non-zero and
+	# `set -e` would take the script down at the one point it has nothing to say.
+	if [ -z "$MEET_CLIENT_ID" ] || [ -z "$MEET_CLIENT_SECRET" ]; then
+		echo "store client-id and client-secret first — see the header of $0" >&2
+		exit 1
+	fi
+	if ! command -v python3 >/dev/null 2>&1; then
+		echo "--auth needs python3 to catch the redirect on 127.0.0.1:$auth_port" >&2
+		exit 1
+	fi
+
+	redirect="http://127.0.0.1:$auth_port"
+	url="https://accounts.google.com/o/oauth2/v2/auth?client_id=$MEET_CLIENT_ID&redirect_uri=$redirect&response_type=code&scope=$scope&access_type=offline&prompt=consent"
+	echo "opening the Google consent page — approve it in the browser" >&2
+	open_url "$url"
+
+	# A one-shot HTTP server. It ignores anything without a code or an error on it
+	# (a browser asks for /favicon.ico unprompted, and answering that as if it were
+	# the redirect would end the wait with nothing in hand).
+	code=$(python3 - "$auth_port" <<'PY'
+import http.server, sys, time, urllib.parse
+
+port = int(sys.argv[1])
+got = {}
+
+
+class Handler(http.server.BaseHTTPRequestHandler):
+    def do_GET(self):
+        query = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+        if "code" not in query and "error" not in query:
+            self.send_response(204)
+            self.end_headers()
+            return
+        got["code"] = query.get("code", [""])[0]
+        got["error"] = query.get("error", [""])[0]
+        body = b"<html><body style='font:16px sans-serif;padding:3em'>kith has what it needs. You can close this tab.</body></html>"
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def log_message(self, *args):
+        pass
+
+
+server = http.server.HTTPServer(("127.0.0.1", port), Handler)
+server.timeout = 5
+deadline = time.time() + 180
+while not got and time.time() < deadline:
+    server.handle_request()
+
+if got.get("error"):
+    print("", file=sys.stdout)
+    print("google said: " + got["error"], file=sys.stderr)
+else:
+    print(got.get("code", ""))
+PY
+	)
+	[ -n "$code" ] || {
+		echo "no authorization code came back (the wait is three minutes)" >&2
+		exit 1
+	}
+
+	# Over a pipe, not on argv: the client secret is long-lived and /proc is world
+	# readable. Google's own values are URL-safe, so no encoding is needed here.
+	refresh=$(printf 'client_id=%s&client_secret=%s&code=%s&grant_type=authorization_code&redirect_uri=%s' \
+		"$MEET_CLIENT_ID" "$MEET_CLIENT_SECRET" "$code" "$redirect" |
+		curl -sS -X POST https://oauth2.googleapis.com/token \
+			-H 'Content-Type: application/x-www-form-urlencoded' --data-binary @- |
+		jq -r '.refresh_token // empty')
+	[ -n "$refresh" ] || {
+		echo "google returned no refresh token — re-run --auth (the consent must be fresh)" >&2
+		exit 1
+	}
+	printf '%s' "$refresh" | secret-tool store --label='kith meet refresh token' \
+		service "$keyring_service" key refresh-token
+	echo "stored. /meet will now make a new meeting each time." >&2
+	exit 0
+fi
+
+if [ "${1:-}" = "" ]; then
+	topic_given=no
+	topic=${KITH_ROOM:-call}
+else
+	topic_given=yes
+	topic=$1
+fi
+
+# ── 1. A meeting link you keep: nothing to set up but the link itself ─────────
+#
+# Checked before the API on purpose. If you have gone to the trouble of storing a
+# link, that is the meeting you mean, and a script that quietly made a different
+# one would put you in a room nobody was invited to — which is the exact bug /zoom
+# had when it opened an instant meeting instead of the personal room it pasted.
+if [ -n "$MEET_LINK" ]; then
+	open_url "$MEET_LINK"
+	invite "$(code_of "$MEET_LINK")" "$MEET_LINK"
+	exit 0
+fi
+
+# ── 2. The Meet REST API: a fresh space each time ─────────────────────────────
+missing=""
+[ -z "$MEET_CLIENT_ID" ] && missing="$missing client-id"
+[ -z "$MEET_CLIENT_SECRET" ] && missing="$missing client-secret"
+[ -z "$MEET_REFRESH_TOKEN" ] && missing="$missing refresh-token"
+if [ -n "$missing" ]; then
+	# First time only: put the page in front of you, since the one thing that cannot
+	# be automated is the copy-paste. meet.google.com/new *is* the setup for path 1 —
+	# it makes a meeting and the address bar is the value to store — so the cheap
+	# option is one tab and one command away. A marker file, so a second /meet does
+	# not open a second tab.
+	marker="${XDG_STATE_HOME:-$HOME/.local/state}/kith/meet-setup-opened"
+	if [ ! -e "$marker" ]; then
+		mkdir -p "$(dirname "$marker")" && : >"$marker"
+		open_url "https://meet.google.com/new"
+		echo "opened meet.google.com/new — copy the address it lands on, then: printf '%s' 'THELINK' | secret-tool store --label='kith meet link' service kith-meet key link" >&2
+		exit 1
+	fi
+	# The first line of stderr is what kith shows on the status line, so it names
+	# the cheap option first.
+	echo "no Meet set up yet: store a meeting link in the keyring — secret-tool store --label='kith meet link' service kith-meet key link (or run '$0 --auth' for a fresh meeting each time; missing:$missing)" >&2
+	exit 1
+fi
+
+access=$(printf 'client_id=%s&client_secret=%s&refresh_token=%s&grant_type=refresh_token' \
+	"$MEET_CLIENT_ID" "$MEET_CLIENT_SECRET" "$MEET_REFRESH_TOKEN" |
+	curl -sS -X POST https://oauth2.googleapis.com/token \
+		-H 'Content-Type: application/x-www-form-urlencoded' --data-binary @- |
+	jq -r '.access_token // empty')
+if [ -z "$access" ]; then
+	echo "Google refused the credentials in the keyring (service kith-meet) — re-run '$0 --auth'" >&2
+	exit 1
+fi
+
+# The access token lasts an hour, which is the one secret here cheap enough to put
+# on a command line; the refresh token above never goes near one.
+space=$(curl -sS -X POST \
+	-H "Authorization: Bearer $access" -H 'Content-Type: application/json' \
+	-d '{}' https://meet.googleapis.com/v2/spaces)
+
+link=$(printf '%s' "$space" | jq -r '.meetingUri // empty')
+if [ -z "$link" ]; then
+	reason=$(printf '%s' "$space" | jq -r '.error.message // "no reason given"')
+	echo "Google made no meeting: $reason" >&2
+	exit 1
+fi
+open_url "$link"
+invite "$(printf '%s' "$space" | jq -r '.meetingCode // empty')" "$link"

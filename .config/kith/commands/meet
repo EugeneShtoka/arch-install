@@ -155,6 +155,16 @@ secret() {
 open_url() {
 	[ -n "${MEET_DRY:-}" ] && { echo "would open: $1" >&2; return 0; }
 	setsid xdg-open "$1" >/dev/null 2>&1 &
+	focus_browser
+}
+
+# focus_browser brings the browser forward: a meeting opens as a new tab in a browser
+# already running, and i3 does not raise its window for that (an app starting fresh,
+# like Zoom's, gets focus on its own). Set MEET_BROWSER_CLASS for another browser.
+focus_browser() {
+	command -v i3-msg >/dev/null 2>&1 || return 0
+	sleep 1 # let the tab open first
+	i3-msg -q "[class=\"${MEET_BROWSER_CLASS:-(?i)vivaldi}\"] focus" >/dev/null 2>&1 || true
 }
 
 # code_of <url> — the meetingCode out of a meeting URL, empty for anything else.
