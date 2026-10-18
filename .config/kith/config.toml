@@ -771,6 +771,10 @@ name = "Odds By feature update and frontend alignment…"
 target = "thread:$vgRj4yuurI5T-U7mgG9xtcBUgYXjxC19ZtA2rUQUrr4"
 name = "Merge PRs faster before production"
 
+[[display.name]]
+target = "space:Signal (+972545347450)"
+name = "Signal"
+
 [display.rail]
 order = [
 	"tag:Unread",
