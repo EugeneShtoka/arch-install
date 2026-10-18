@@ -1299,6 +1299,9 @@ name = "il"
 [[instagram.account]]
 name = "me"
 
+[[instagram.account]]
+name = "Eugene"
+
 [storage]
 instance = "19c882ceddc8615f"
 
