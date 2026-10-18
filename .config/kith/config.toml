@@ -1136,6 +1136,10 @@ name = "Reconciling Snapshot vs RMQ Delta Updates in…"
 target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1792314386.483819"
 name = "SofaScore API Access Issues"
 
+[[display.name]]
+target = "space:Instagram Eugene"
+name = "Instagram"
+
 [display.rail]
 order = [
 	"tag:Unread",
