@@ -1005,7 +1005,7 @@ network_colors = true
 
 [display.media]
 mode = "inline"
-cache_dir = "/home/eugene/kith-test/cache/media"
+cache_dir = "/home/eugene/.cache/kith/media"
 
 [[display.media.rule]]
 sender = "whatsapp:972533342045@s.whatsapp.net"
