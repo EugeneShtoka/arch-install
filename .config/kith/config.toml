@@ -1144,6 +1144,10 @@ name = "Instagram"
 target = "thread:slack:T01K2D5TCAC/D08FYS2H6DT/1788502355.961649"
 name = "Adjusting League Merges Judgment Calls Discussed"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1792349860.144589"
+name = "Proxy attempt fails; API returns 403 challenge"
+
 [display.rail]
 order = [
 	"tag:Unread",
