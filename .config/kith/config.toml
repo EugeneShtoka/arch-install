@@ -1140,6 +1140,10 @@ name = "SofaScore API Access Issues"
 target = "space:Instagram Eugene"
 name = "Instagram"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H6DT/1788502355.961649"
+name = "Adjusting League Merges Judgment Calls Discussed"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1259,6 +1263,12 @@ name_threads_after = 1
 
 [assist.thread_name]
 max_tokens = 300
+
+[agent.read]
+rooms = ["place:Work"]
+
+[agent.write]
+rooms = ["place:Work"]
 
 [[commands.script]]
 name = "zoom"
@@ -1626,9 +1636,3 @@ moves = ["always"]
 name = "cjk or arabic"
 tag = "Spam"
 script = ["Han", "Kana", "Hangul", "Arabic"]
-
-[agent.read]
-rooms = ["place:Work"]
-
-[agent.write]
-rooms = ["place:Work"]
