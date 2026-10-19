@@ -1266,9 +1266,12 @@ max_tokens = 300
 
 [agent.read]
 rooms = ["place:Work"]
+encrypted = true
 
 [agent.write]
 rooms = ["place:Work"]
+encrypted = true
+send = ["place:Work"]
 
 [[commands.script]]
 name = "zoom"
