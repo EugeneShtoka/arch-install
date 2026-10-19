@@ -1626,3 +1626,9 @@ moves = ["always"]
 name = "cjk or arabic"
 tag = "Spam"
 script = ["Han", "Kana", "Hangul", "Arabic"]
+
+[agent.read]
+rooms = ["place:Work"]
+
+[agent.write]
+rooms = ["place:Work"]
