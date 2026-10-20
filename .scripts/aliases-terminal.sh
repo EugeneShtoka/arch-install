@@ -49,6 +49,9 @@ alias tsp='ticker --config ~/.config/ticker/portfolio.yaml --show-summary --show
 alias microphone-mute='pactl set-source-mute $(pactl get-default-source) 1'
 alias microphone-unmute='pactl set-source-mute $(pactl get-default-source) 0'
 
+# Own window and process for the EliteDesk mux, so the launching tab stays free
+alias elitedesk='setsid -f wezterm connect SSHMUX:elitedesk &>/dev/null'
+
 # TipMaster
 alias db-tunnel-start='ssh -fN -i ~/.ssh/tm-bastion -L 5433:tipmaster-prd.clmokqmsk1un.us-east-2.rds.amazonaws.com:5432 ec2-user@3.130.146.14'
 alias db-tunnel-stop='pkill -f "ssh.*3.130.146.14"'

@@ -106,6 +106,8 @@ config.keys = {
 		action = wezterm.action.PasteFrom("Clipboard"),
 	},
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x03") },
+	-- Close this window's view of a mux (SSHMUX:elitedesk, unix) while its tabs keep running
+	{ key = "d", mods = "CTRL|SHIFT", action = wezterm.action.DetachDomain("CurrentPaneDomain") },
 	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 	{
 		key = "Tab",
