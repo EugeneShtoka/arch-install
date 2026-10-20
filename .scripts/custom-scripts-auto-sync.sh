@@ -3,7 +3,7 @@
 source ~/.env
 
 echo "`date` custom-scripts-auto-sync" >> $LOG_PATH
-$SCRIPTS_PATH/ssh-init.sh
+source $SCRIPTS_PATH/ssh-init.sh
 cd $HOME
 
 git add .
