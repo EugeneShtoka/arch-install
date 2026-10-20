@@ -1281,15 +1281,15 @@ rooms = ["place:Work"]
 encrypted = true
 send = ["place:Work"]
 
-[[commands.script]]
+[[command]]
 name = "zoom"
 output = "send"
 
-[[commands.script]]
+[[command]]
 name = "call"
 output = "send"
 
-[[commands.script]]
+[[command]]
 name = "meet"
 output = "send"
 
