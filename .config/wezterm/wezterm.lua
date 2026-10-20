@@ -35,6 +35,15 @@ config.term = "wezterm"
 
 config.enable_kitty_keyboard = true
 
+-- On the EliteDesk every window attaches to the persistent mux server (systemd user unit
+-- wezterm-mux-server), so its tabs are the same ones the laptop sees through
+-- `wezterm connect SSHMUX:elitedesk`, and they survive the GUI closing.
+-- `wezterm start -- cmd` still opens a local, non-persistent window.
+if wezterm.hostname() == "elitedesk" then
+	config.unix_domains = { { name = "unix" } }
+	config.default_gui_startup_args = { "connect", "unix" }
+end
+
 config.audible_bell = "Disabled"
 
 config.window_padding = { left = 10, right = 10, top = 10, bottom = 0 }
