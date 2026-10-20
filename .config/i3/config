@@ -85,6 +85,8 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec wezterm
+# terminal on the EliteDesk's persistent mux
+bindsym $mod+Shift+Return exec --no-startup-id wezterm connect SSHMUX:elitedesk
 
 # kill focused window
 bindsym $mod+x kill
