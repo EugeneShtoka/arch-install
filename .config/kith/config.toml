@@ -1370,6 +1370,13 @@ picked = [
 	"gmessages:8df1e4ace159/1072",
 	"gmessages:8df1e4ace159/1176",
 ]
+excluded = [
+	"gmessages:8df1e4ace159/759",
+	"gmessages:8df1e4ace159/877",
+	"gmessages:8df1e4ace159/785",
+	"gmessages:8df1e4ace159/1090",
+	"gmessages:8df1e4ace159/1167",
+]
 people = ["telegram:1020327345", "telegram:8465082143"]
 counts_unread = false
 notifies = false
