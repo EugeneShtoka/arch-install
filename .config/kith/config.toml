@@ -1148,6 +1148,10 @@ name = "Adjusting League Merges Judgment Calls Discussed"
 target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1792349860.144589"
 name = "Proxy attempt fails; API returns 403 challenge"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792429789.195869"
+name = "User Activity Notifications Design Discussion"
+
 [display.rail]
 order = [
 	"tag:Unread",
