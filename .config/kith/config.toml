@@ -1152,6 +1152,10 @@ name = "Proxy attempt fails; API returns 403 challenge"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792429789.195869"
 name = "User Activity Notifications Design Discussion"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1792597342.321279"
+name = "סטלמנטס אקסל: דיבורים ופתרונות"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1280,18 +1284,6 @@ encrypted = true
 rooms = ["place:Work"]
 encrypted = true
 send = ["place:Work"]
-
-[[command]]
-name = "zoom"
-output = "send"
-
-[[command]]
-name = "call"
-output = "send"
-
-[[command]]
-name = "meet"
-output = "send"
 
 [[whatsapp.account]]
 name = "bg"
@@ -1654,3 +1646,15 @@ moves = ["always"]
 name = "cjk or arabic"
 tag = "Spam"
 script = ["Han", "Kana", "Hangul", "Arabic"]
+
+[[command]]
+name = "zoom"
+output = "send"
+
+[[command]]
+name = "call"
+output = "send"
+
+[[command]]
+name = "meet"
+output = "send"
