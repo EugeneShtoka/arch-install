@@ -136,3 +136,4 @@ $SCRIPTS_PATH/auto-yay.sh gitleaks
 $SCRIPTS_PATH/auto-yay.sh iamb
 $SCRIPTS_PATH/auto-yay.sh iamb-bin
 $SCRIPTS_PATH/auto-yay.sh llama-cpp
+$SCRIPTS_PATH/auto-yay.sh uv
