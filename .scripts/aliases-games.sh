@@ -8,5 +8,4 @@ alias bar='setsid $SCRIPTS_PATH/game-run.sh ~/Games/Beyond\ All\ Reason/Beyond-A
 alias grim-dawn='setsid $SCRIPTS_PATH/game-run.sh ~/Games/Grim\ Dawn/start.sh &>/dev/null'
 alias factorio='setsid $SCRIPTS_PATH/game-run.sh steam 427520 &>/dev/null'
 alias probably-stolen='setsid $SCRIPTS_PATH/game-run.sh steam 4349200 &>/dev/null'
-alias mechabellum='setsid $SCRIPTS_PATH/game-run.sh steam 669330 &>/dev/null'
 alias dont-starve-together='setsid $SCRIPTS_PATH/game-run.sh steam 322330 &>/dev/null'
