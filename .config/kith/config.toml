@@ -1277,7 +1277,7 @@ name_threads_after = 1
 max_tokens = 300
 
 [agent.read]
-rooms = ["place:Work"]
+rooms = ["place:Work", "protocol:Telegram"]
 encrypted = true
 
 [agent.write]
