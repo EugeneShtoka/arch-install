@@ -1156,6 +1156,10 @@ name = "User Activity Notifications Design Discussion"
 target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1792597342.321279"
 name = "סטלמנטס אקסל: דיבורים ופתרונות"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792609115.676949"
+name = "Review of TipMaster PR 981"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1283,7 +1287,7 @@ encrypted = true
 [agent.write]
 rooms = ["place:Work", "telegram:8735244446/8735244446"]
 encrypted = true
-send = ["place:Work"]
+send = ["place:Work", "telegram:8735244446/8735244446"]
 
 [[whatsapp.account]]
 name = "bg"
