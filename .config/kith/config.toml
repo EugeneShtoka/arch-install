@@ -1281,7 +1281,7 @@ rooms = ["place:Work", "protocol:Telegram"]
 encrypted = true
 
 [agent.write]
-rooms = ["place:Work"]
+rooms = ["place:Work", "telegram:8735244446/8735244446"]
 encrypted = true
 send = ["place:Work"]
 
