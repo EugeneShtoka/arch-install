@@ -17,8 +17,8 @@ config.color_schemes = {
 config.color_scheme = "My Cobalt 2"
 
 config.font = wezterm.font_with_fallback({
-	"Source Code Pro",
-	{ family = "Miriam Mono CLM", weight = "DemiBold", scale = 1.1 },
+	"JetBrains Mono",
+	{ family = "Miriam Mono CLM", weight = "DemiBold", scale = 1.2 },
 })
 config.font_size = 12.0
 
