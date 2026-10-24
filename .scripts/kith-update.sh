@@ -6,7 +6,8 @@
 #   kith-update.sh v0.1.2     install a specific tag
 #
 # Installs kith, kithd, kith-mcp (and kith-signal on Linux) into $BINDIR
-# (default ~/.local/bin), installs the systemd user units if they are missing,
+# (default ~/.local/bin), registers kith as the handler for the link schemes its
+# desktop entry declares, installs the systemd user units if they are missing,
 # and restarts every running kithd unit — daemon and clients must match.
 set -euo pipefail
 
@@ -80,6 +81,23 @@ for b in kith kithd kith-mcp kith-signal; do
   install -m755 "$tmp/x/$b" "$BINDIR/$b"
   echo "==> $BINDIR/$b"
 done
+
+# Link handler: register every scheme the release's desktop entry declares
+# (matrix:, and tg: from releases that can follow Telegram links).
+desktop=$tmp/x/packaging/desktop/kith.desktop
+if [[ $os != darwin && -f $desktop ]]; then
+  appdir=${XDG_DATA_HOME:-$HOME/.local/share}/applications
+  install -d "$appdir"
+  sed "s|^Exec=.*|Exec=$BINDIR/kith --open %u|" "$desktop" > "$appdir/kith.desktop"
+  chmod 0644 "$appdir/kith.desktop"
+  command -v update-desktop-database >/dev/null && update-desktop-database "$appdir" || true
+  schemes=$(sed -n 's/^MimeType=//p' "$desktop" | tr ';' ' ' | xargs)
+  if [[ -n $schemes ]] && command -v xdg-mime >/dev/null; then
+    # shellcheck disable=SC2086
+    xdg-mime default kith.desktop $schemes
+  fi
+  echo "==> handler $appdir/kith.desktop ($schemes)"
+fi
 
 [[ $os == linux ]] && command -v systemctl >/dev/null || {
   echo "==> done; restart kithd yourself so it runs the new binary"
