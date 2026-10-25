@@ -1164,6 +1164,14 @@ name = "Review of TipMaster PR 981"
 target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1792873070.988209"
 name = "תקלות באקסל סטלמנטס 24.10"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792872263.109859"
+name = "Redis timeout fix and tipform feed compacting"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792776224.124819"
+name = "NestJS Upgrade Decision Discussion"
+
 [display.rail]
 order = [
 	"tag:Unread",
