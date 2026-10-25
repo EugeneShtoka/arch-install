@@ -1160,6 +1160,10 @@ name = "סטלמנטס אקסל: דיבורים ופתרונות"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792609115.676949"
 name = "Review of TipMaster PR 981"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1792873070.988209"
+name = "תקלות באקסל סטלמנטס 24.10"
+
 [display.rail]
 order = [
 	"tag:Unread",
