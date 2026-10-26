@@ -1196,6 +1196,10 @@ name = "Acting"
 target = "telegram:8735244446/6225653571"
 name = "NovoSalsa"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1793030216.951399"
+name = "אקסל סטלמנטס ניתוח וסגירת משחקים"
+
 [display.rail]
 order = [
 	"tag:Unread",
