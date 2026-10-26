@@ -1646,10 +1646,20 @@ picked = [
 	"whatsapp:359884650326/972523313570@s.whatsapp.net",
 ]
 
+[[profile]]
+name = "default"
+include = ["*"]
+
 [[filter]]
 name = "politics"
 tag = "Spam"
-words = ["*בחירות", "*מילואימניקים", "*מפלג*", "*ממשל*"]
+words = [
+	"*בחירות",
+	"*מילואימניקים",
+	"*מפלג*",
+	"*ממשל*",
+	"*קלפי",
+]
 in = ["place:SMS"]
 moves = ["always"]
 
@@ -1663,7 +1673,7 @@ moves = ["always"]
 [[filter]]
 name = "adds"
 tag = "Spam"
-words = ["*החזר מס"]
+words = ["*החזר מס", "*החזרי מס"]
 in = ["place:SMS"]
 moves = ["always"]
 
@@ -1690,7 +1700,3 @@ output = "send"
 [[command]]
 name = "meet"
 output = "send"
-
-[[profile]]
-name    = "default"
-include = ["*"]
