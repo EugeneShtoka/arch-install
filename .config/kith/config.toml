@@ -1172,6 +1172,22 @@ name = "Redis timeout fix and tipform feed compacting"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792776224.124819"
 name = "NestJS Upgrade Decision Discussion"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792929078.406769"
+name = "Eugene 993 rebased conflict resolution…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792873239.836749"
+name = "991 single-pod tipforms rebuild merged"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792928603.043909"
+name = "Georgia trip, food, wine, no reviews"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792922572.458079"
+name = "SSE starvation due to HTTP/1.1 connections"
+
 [display.rail]
 order = [
 	"tag:Unread",
