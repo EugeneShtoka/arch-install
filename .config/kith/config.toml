@@ -1188,6 +1188,14 @@ name = "Georgia trip, food, wine, no reviews"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792922572.458079"
 name = "SSE starvation due to HTTP/1.1 connections"
 
+[[display.name]]
+target = "telegram:8735244446/-1004410724531"
+name = "Acting"
+
+[[display.name]]
+target = "telegram:8735244446/6225653571"
+name = "NovoSalsa"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1491,6 +1499,7 @@ picked = [
 	"whatsapp:359884650326/120363419967619640@g.us",
 	"whatsapp:359884650326/380661930715@s.whatsapp.net",
 ]
+excluded = ["telegram:8735244446/640732978"]
 counts_unread = false
 exclusive = ["tags", "spaces"]
 hide_when_empty = true
@@ -1523,6 +1532,12 @@ picked = [
 	"whatsapp:359884650326/359892047770@s.whatsapp.net",
 	"whatsapp:359884650326/79633160295@s.whatsapp.net",
 	"whatsapp:359884650326/447708845809@s.whatsapp.net",
+	"telegram:8735244446/458288642",
+	"telegram:8735244446/284993387",
+	"telegram:8735244446/429541479",
+	"telegram:8735244446/404481744",
+	"telegram:8735244446/640732978",
+	"telegram:8735244446/306771510",
 ]
 
 [[tag]]
@@ -1553,6 +1568,9 @@ picked = [
 	"telegram:8735244446/-1001696384234~11997",
 	"whatsapp:359884650326/120363425050143298@g.us",
 	"telegram:8735244446/-1002143205554",
+	"telegram:8735244446/6225653571",
+	"telegram:8735244446/1496774548",
+	"telegram:8735244446/-1004410724531",
 ]
 
 [[tag]]
