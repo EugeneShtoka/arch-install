@@ -1690,3 +1690,7 @@ output = "send"
 [[command]]
 name = "meet"
 output = "send"
+
+[[profile]]
+name    = "default"
+include = ["*"]
