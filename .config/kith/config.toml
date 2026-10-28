@@ -1723,3 +1723,7 @@ output = "send"
 [[command]]
 name = "meet"
 output = "send"
+
+# Debug while watching why Google refuses the Messages cookies; remove when done.
+[log]
+level = "debug"
