@@ -1,0 +1,1729 @@
+# kith configuration — written by kith.
+#
+# This file records only the settings that differ from the built-in defaults, so
+# anything absent is at its default and will follow if that default ever changes.
+# Editing it by hand is still fine; the app rewrites it when you change a setting
+# from inside it, which keeps the values and drops any comments you added.
+#
+# For every option with its documentation, run: kith --print-config
+# For the current keybindings, press ? in the app.
+
+
+[display]
+max_name_length = 15
+skin_tone = "light"
+color_messages = true
+network_colors = true
+priority = ["tag:Friends", "tag:Work", "tag:Social", "tag:Colleagues"]
+
+[display.theme.networks]
+whatsapp = "teal"
+telegram = "blue"
+slack = "magenta"
+messenger = "orchid"
+instagram = "orchid"
+linkedin = "periwinkle"
+google_messages = "coral"
+
+[[display.space_rule]]
+space = "tag:Friends"
+first_name_only = true
+
+[[display.space_rule]]
+space = "tag:Work"
+first_name_only = true
+
+[display.deleted]
+keep = true
+
+[[display.identity]]
+alias = "Eugene"
+color = "#8ff586"
+ids = [
+	"whatsapp:359884650326@s.whatsapp.net",
+	"whatsapp:273173559930881@lid",
+	"whatsapp:972545347450@s.whatsapp.net",
+	"telegram:8735244446",
+	"messenger:100009131024163",
+	"slack:T01K2D5TCAC.U08FYS2BBHB",
+	"signal:cda9c82c-55ab-4e3b-a77c-7aa9d9fe403f",
+]
+
+[[display.identity]]
+alias = "Elisaveta"
+ids = ["telegram:553183378"]
+
+[[display.identity]]
+alias = "Oleksandr Shumov"
+ids = ["whatsapp:380508180946@s.whatsapp.net"]
+
+[[display.identity]]
+alias = "Unitransbg"
+ids = ["whatsapp:359894448441@s.whatsapp.net"]
+
+[[display.identity]]
+alias = "Borislav Ivanov"
+ids = ["whatsapp:359889222650@s.whatsapp.net"]
+
+[[display.identity]]
+alias = "Evgeny Subotin"
+ids = ["slack:T01K2D5TCAC.U022UK1U65S", "whatsapp:972545376312@s.whatsapp.net"]
+
+[[display.identity]]
+alias = "Galina Shtoka"
+ids = [
+	"whatsapp:359884626245@s.whatsapp.net",
+	"signal:bca08bfa-0aec-4805-963d-2c503ebef70c",
+]
+
+[[display.name]]
+target = "telegram:8735244446/-1001343563058"
+name = "General"
+
+[[display.name]]
+target = "telegram:8735244446/8735244446"
+name = "Saved"
+
+[[display.name]]
+target = "telegram:8735244446/-1002543417183"
+name = "Questoria"
+
+[[display.name]]
+target = "telegram:8735244446/553183378"
+name = "Елизавета"
+
+[[display.name]]
+target = "telegram:8735244446/-1001647399776"
+name = "BlaBla Events"
+
+[[display.name]]
+target = "telegram:8735244446/-1004325405517"
+name = "Board Games: Sale"
+
+[[display.name]]
+target = "telegram:8735244446/-1003705455804"
+name = "Meet at Gig"
+
+[[display.name]]
+target = "whatsapp:359884650326/972523281793-1506430370@g.us"
+name = "Freelancers"
+
+[[display.name]]
+target = "whatsapp:359884650326/120363429032076834@g.us"
+name = "Discussion"
+
+[[display.name]]
+target = "whatsapp:359884650326/120363407898535932@g.us"
+name = "Game Friends Sofia"
+
+[[display.name]]
+target = "whatsapp:359884650326/380508180946@s.whatsapp.net"
+name = "Oleksandr Shumov"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~30307"
+name = "Pets"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5226"
+name = "Chat"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~12743"
+name = "Work"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~11997"
+name = "Digest"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5219"
+name = "Weekend"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5333"
+name = "Sport"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5232"
+name = "Kids"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~19976"
+name = "Board games"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~11995"
+name = "IT meetup"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~6275"
+name = "Cars"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5307"
+name = "Medicine"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~8736"
+name = "Services"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5309"
+name = "Beauty"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5253"
+name = "Coffee"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5234"
+name = "Foodies"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~27628"
+name = "Market"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~9268"
+name = "Mafia"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5233"
+name = "Help"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5468"
+name = "Bulgarian language"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~5235"
+name = "Travel"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234~8735"
+name = "Admin"
+
+[[display.name]]
+target = "telegram:8735244446/-1001696384234"
+name = "General"
+
+[[display.name]]
+target = "space:Дозвілля у Софії"
+name = "Ukranians"
+
+[[display.name]]
+target = "space:Домашняя выпечка"
+name = "Home food"
+
+[[display.name]]
+target = "messenger:100009131024163/1424297952557922"
+name = "Bachata LF"
+
+[[display.name]]
+target = "whatsapp:359884650326/261345253355-1590387098@g.us"
+name = "BlaBla Events"
+
+[[display.name]]
+target = "messenger:100009131024163/9936136333139591"
+name = "Salsa LF"
+
+[[display.name]]
+target = "whatsapp:359884650326/120363407095772261@g.us"
+name = "Improv Theater Jam"
+
+[[display.name]]
+target = "slack:T01K2D5TCAC/C08G9DSFHUL"
+name = "LSport"
+
+[[display.name]]
+target = "whatsapp:359884650326/972545525302@s.whatsapp.net"
+name = "Sasha Popov"
+
+[[display.name]]
+target = "whatsapp:359884650326/97239771111@s.whatsapp.net"
+name = "El-Al"
+
+[[display.name]]
+target = "whatsapp:359884650326/972544771242@s.whatsapp.net"
+name = "Firman Mariana"
+
+[[display.name]]
+target = "messenger:100009131024163/367342269904"
+name = "Laoko Tango"
+
+[[display.name]]
+target = "telegram:8735244446/-1002143205554"
+name = "D&D Sofia"
+
+[[display.name]]
+target = "whatsapp:359884650326/120363421307559381@g.us"
+name = "Hiking"
+
+[[display.name]]
+target = "whatsapp:359884650326/120363425050143298@g.us"
+name = "Culture&Fun"
+
+[[display.name]]
+target = "whatsapp:359884650326/359879858868-1419191746@g.us"
+name = "Israelis in Bulgaria"
+
+[[display.name]]
+target = "whatsapp:359884650326/79633160295@s.whatsapp.net"
+name = "Alla Rybalova"
+
+[[display.name]]
+target = "whatsapp:359884650326/972505204617@s.whatsapp.net"
+name = "Asaf Gershon"
+
+[[display.name]]
+target = "whatsapp:359884650326/972522503526@s.whatsapp.net"
+name = "Dorit"
+
+[[display.name]]
+target = "whatsapp:359884650326/972524078781@s.whatsapp.net"
+name = "Yuval Kagan"
+
+[[display.name]]
+target = "whatsapp:359884650326/972524524965@s.whatsapp.net"
+name = "Igal Galkin"
+
+[[display.name]]
+target = "whatsapp:359884650326/972528692597@s.whatsapp.net"
+name = "Tom Shabtay"
+
+[[display.name]]
+target = "whatsapp:359884650326/972543050559@s.whatsapp.net"
+name = "Maria Butusov"
+
+[[display.name]]
+target = "whatsapp:359884650326/972544488156@s.whatsapp.net"
+name = "Itay Levy"
+
+[[display.name]]
+target = "whatsapp:359884650326/972544918196@s.whatsapp.net"
+name = "Sarit Hazan"
+
+[[display.name]]
+target = "whatsapp:359884650326/972547257696@s.whatsapp.net"
+name = "Maksim Sheykman"
+
+[[display.name]]
+target = "telegram:8735244446/216455255"
+name = "Vladimir Seleznev"
+
+[[display.name]]
+target = "whatsapp:359884650326/972528827466@s.whatsapp.net"
+name = "Iddo Lev"
+
+[[display.name]]
+target = "telegram:8735244446/-1003715438098"
+name = "Quiz"
+
+[[display.name]]
+target = "telegram:8735244446/-1001672165691"
+name = "Atmosfera"
+
+[[display.name]]
+target = "telegram:8735244446/-1004491243278"
+name = "Juggling"
+
+[[display.name]]
+target = "whatsapp:359884650326/359894448441@s.whatsapp.net"
+name = "Unitransbg"
+
+[[display.name]]
+target = "whatsapp:359884650326/359889222650@s.whatsapp.net"
+name = "Borislav Ivanov"
+
+[[display.name]]
+target = "whatsapp:359884650326/120363425091766468@g.us"
+name = "Nadav kitchen"
+
+[[display.name]]
+target = "whatsapp:359884650326/359895435560@s.whatsapp.net"
+name = "Letica"
+
+[[display.name]]
+target = "whatsapp:359884650326/359896868123@s.whatsapp.net"
+name = "Hipster Storage"
+
+[[display.name]]
+target = "space:Messenger Meta"
+name = "Meta"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1750695905.848629"
+name = "NP working tomorrow, Sagi thanks"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1751554110.178129"
+name = "Moving from OddService to T360"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1746448511.884429"
+name = "Onboarding logic discussion and JSON spec for…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791457261.837189"
+name = "Plan to check tomorrow"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791711990.938879"
+name = "Public tipster favorite bookmakers API endpoint…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1787138705.188069"
+name = "Provider metadata and category normalization…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1746547147.410679"
+name = "Swagger ID naming confusion resolved"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1764247916.489909"
+name = "UUID Hash Mismatch Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789914006.303019"
+name = "Fixing 851 & 853"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1746342004.222009"
+name = "Bugfix: Matches_ids change breaks FE favorite…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1780753795.644439"
+name = "Sagi Only Drives with PlayStation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1785921770.494019"
+name = "Align Streakers Carousel and Filters Update…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1745175879.996679"
+name = "Implementing prioritized market ordering for…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1764666543.809469"
+name = "Token purchase attempt, review pending"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1755679813.093249"
+name = "Delete old notifications after seven days"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1749019076.314439"
+name = "Meeting with Eugene at 10:15"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789053357.324099"
+name = "Sagi screenshot 2026-09-10 19.06.08"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1756800142.577159"
+name = "Balancing Real‑Time vs. Batch Stats Updates for…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1782807914.138619"
+name = "CORS fix and user tournament migration"
+
+[[display.name]]
+target = "linkedin:ACoAACO8St8BOsg-Aq1mSkNF9uEvy6eTD4S6XUY/2-NWQ4NTdjNWQtMzcxYi00NDk4LThjNDEtZmE3NzJlOTcxZjY4XzAxMw=="
+name = "Alexandra Gaykin"
+
+[[display.name]]
+target = "linkedin:ACoAACO8St8BOsg-Aq1mSkNF9uEvy6eTD4S6XUY/2-ZDU3YmQzYjktYzYyOS00Y2U4LWEyYjgtNmEwOWYxZTUxYWFjXzEwMA=="
+name = "Jonathan Schler"
+
+[[display.name]]
+target = "linkedin:ACoAACO8St8BOsg-Aq1mSkNF9uEvy6eTD4S6XUY/2-MGI5MDE3ZTktNDdhOS00NWQ5LWExZjctNmZkMzJmMzc2ZDIxXzEwMA=="
+name = "Adi Bonfil"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1762270507.174609"
+name = "הבנת המספרים בשיחה"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1784129416.249099"
+name = "Missing Market Provider Issue Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1786036883.932759"
+name = "הוספת wins לבוטים סטייג' רולבק״"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1784139470.992909"
+name = "Decision on single‑provider markets for T360"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1786036645.500869"
+name = "טיפול בנוסחאת מומנטום ושינויים"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791732699.394259"
+name = "Review exbetz‑be‑api PR #957 non‑blocking…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1772799347.413009"
+name = "Expo FCM server key error fix"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789373376.185089"
+name = "Review request for TMDV-1981 merge"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1755679299.235279"
+name = "Remove line 81 from notifications controller"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1785942585.557209"
+name = "Free parlays bug blocks tomorrow's tasks"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1747650804.372549"
+name = "Adding manual indexing column to outcomes table"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1786254716.629409"
+name = "Average Legs Stats Clarification Conversation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1757085880.004359"
+name = "PR review: enhanced customer information…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791615807.861339"
+name = "Argo env fix and live results confusion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1764239307.251109"
+name = "Clarifying Evgeny's request in chat thread"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1782745886.903539"
+name = "Planning meeting with Sagi Eugene and you"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791460481.301069"
+name = "Sportsbook Odds API Enhancement Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1750159280.547109"
+name = "Reviewing PR #384 exbetz-be-api"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790159159.164069"
+name = "Admin option for disabling leagues discussion"
+
+[[display.name]]
+target = "space:LinkedIn Linkedin"
+name = "LinkedIn"
+
+[[display.name]]
+target = "space:Google Messages SMS"
+name = "SMS"
+
+[[display.name]]
+target = "whatsapp:359884650326/447708845809@s.whatsapp.net"
+name = "Tom"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790400857.268739"
+name = "Merge PR after tomorrow's availability"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791996306.410319"
+name = "Compact v2 tipform API update review"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1786254862.985999"
+name = "Approval Granted, Asking About Prior Items"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789641029.676409"
+name = "Issue: 500 Error on Sport Category API, Review…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789558532.179799"
+name = "Deployment verification and monitoring reminder"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1748962128.721959"
+name = "Meeting scheduling for API guidelines review…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1761122177.762439"
+name = "Meet at 5pm to discuss tasks"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1745329776.416879"
+name = "Improving Live Tips Carousel Data Fetching"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1787139311.435989"
+name = "Manual migration strategy discussion with…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790319514.935709"
+name = "ESLint memory fix for 919 issue"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1756725636.461669"
+name = "Pull request discussion: tipforms PATCH endpoint"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791903793.926159"
+name = "Review of GitHub PR 868 and reset warning"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1769007927.941479"
+name = "Adding promo balance and affiliation admin"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790773879.556539"
+name = "Bookmaker data structure clarification for…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1758214089.009369"
+name = "Duplicate feeds concern between two sources"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1747829006.224229"
+name = "Slack bet updates PR review discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1765546901.812469"
+name = "Apple payment gateway metadata setup"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1757496555.355349"
+name = "Refactor circular dependencies, mobile app…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1754987219.234849"
+name = "Merge PR: Server‑side events for notifications"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791958903.632009"
+name = "Configurable kickoff odds stop for pull request…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1755874968.643129"
+name = "Top Matches Endpoint Refactor Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791914484.716549"
+name = "Merge Pull Request 962 to Prod"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1745502341.218249"
+name = "Unifying Stats Source of Truth and Profile…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792140280.360659"
+name = "Merge strategy confusion about PRs and backend…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1786034018.780969"
+name = "Barlow font usage for parlay image generator…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1784567781.136989"
+name = "Match slug logic rewrite discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1745484535.832059"
+name = "Logo size concerns in product review channel"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1755940070.175209"
+name = "Redesign of “reveal tip” to “buy tip”…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790158072.023079"
+name = "Need Unique Slugs Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791711743.881039"
+name = "Reviewing open PRs for backend API fixes and…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789899778.816829"
+name = "Reviewing legacy code, Redis debugging, logs…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791708842.149589"
+name = "Avatar upload improvements: resize, Cloudinary…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791879648.376349"
+name = "LinkedIn post shared discussion starts"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1786014633.570019"
+name = "Migrations, Flag Switch, Rank Job"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1787122318.956099"
+name = "Can't join now, will ping later"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1770046741.697869"
+name = "Avoiding Double Promo Code Use"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789381549.034179"
+name = "Query optimization review with Sagi Chizik"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791552795.994689"
+name = "SofaScore IP block: proxy URL missing for logos"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1784963079.818329"
+name = "Security issue: merge from dev?"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1786191865.288629"
+name = "Remove priority for 10+ strike experts in old…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1786478083.306609"
+name = "Review requested for exbetz-be-api PR 856"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1786191845.800679"
+name = "Merge Message Sagi Waiting for Response"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1782198175.835469"
+name = "Система отслеживания устаревших коэффициентов"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1757264645.087669"
+name = "Rollback strategy discussion for quick…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1781072557.915029"
+name = "Commit fix before World Cup release"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1787138143.403079"
+name = "NBA leagues per provider translation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791296507.689989"
+name = "Deploy exbetz-be-api pull 936 to QA only until…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1785913273.391879"
+name = "Question about EXPERT_FILTERING_ENABLE variable"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1750066807.816529"
+name = "External User UUIDs for Recommendation Service…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791887197.414689"
+name = "Odds contract update for unlocked parlays"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1766228726.947359"
+name = "Token packages not clickable issue"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790079860.904509"
+name = "Fixing 851/853 Review UpdateFixing 851/853…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1746544247.900919"
+name = "Fetching categories by ID returns 500 error due…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790251516.401519"
+name = "Waiting on reviews for #863, #917, #919"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1742226758.170349"
+name = "Miner Staging Integration Approval and PR…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1750262413.372799"
+name = "Push staging to production discussion with…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791715658.359109"
+name = "Daily opened-markets report scheduling…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791535717.894179"
+name = "Avatar rings PR merged after review comments"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791288521.747339"
+name = "Issue TMDV-1928 superseded, lock conflict…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790362384.363839"
+name = "Fixing sport categories sitemap where clause…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1743578464.994679"
+name = "Fixing Hockey data bug in API"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791281372.906079"
+name = "TMDV Ticket Updates and Bookmaker Logic"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1786029803.147789"
+name = "TS_NODE_FILES Required After Type Augmentation…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1786029587.160259"
+name = "env.staging file discussion with Evgeny"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791457195.186349"
+name = "API error on retrieving tipform details by UUID…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1746085159.437209"
+name = "Authorization on Teams List Endpoint Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1757680950.370569"
+name = "Meta CAPI flag discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789717401.350959"
+name = "API Refactor for Match Market Endpoints 907"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1764500968.066449"
+name = "DB price discrepancy fix"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1776870683.439839"
+name = "Контроль по букиз: уменьшение фильтрации"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1756458050.125059"
+name = "Audit Scheduler Service Documentation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1769351251.032529"
+name = "Politicians keep us in tension"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1757843947.714259"
+name = "Fixture cancellation, Evgeny shares logs"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1756645197.879899"
+name = "Evgeny Subotin sending JWT tokens"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1756886826.140659"
+name = "Slack webhook shared by Evgeny"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1757155628.618009"
+name = "Top 15 slowest SQL queries"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1776157171.460159"
+name = "Quick completion confirmation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1760688780.841039"
+name = "Telnet to Redis on tipmaster.ai"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1761726296.645089"
+name = "Balance calculation vs direct tipster payment…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1756196173.561109"
+name = "30 Pods Not Ready Issue"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1769351234.897869"
+name = "Debugging DB_DISABLE_SSL flag issue"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1779098221.295289"
+name = "Пробуем встретиться побухаем вместе"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1754406125.168609"
+name = "Legacy Hebrew accounting docs in US"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1757523027.269459"
+name = "Debug logs missing canceled status"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1755457280.078619"
+name = "Random Cipher String Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1758460334.373629"
+name = "Fixture cancellation causes null markets error"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1759752730.162149"
+name = "Apple/Google subscription integration…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1757842276.759099"
+name = "Subscription test email fluke"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1776870643.216699"
+name = "Поздравления с днём независимости"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1779098249.670959"
+name = "Обсуждение победы Болгарии в Евровидении"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1791993567.537089"
+name = "סגירת קבצים ו-OO בעיות‎"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1792094309.925459"
+name = "משחקים זזים – טיפול ב‑Void והחזרות"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1780755109.114849"
+name = "Bracket feature confusion and data issue"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790589046.648249"
+name = "Review of tipster performanceStatus update and…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1789722912.431839"
+name = "Rename Bet Settings to Play Preferences"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1791537765.190179"
+name = "Backend consumer OOM causing odds outage fix…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1764237602.829249"
+name = "obfuscated IDs in google store order request?"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1748982155.534939"
+name = "Parlay feed status mismatch and solution…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1747655346.147739"
+name = "Clarifying start_time vs start_date confusion…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1790159384.432949"
+name = "Pull request #917: missing orderBy match.id…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1756726050.534129"
+name = "API Refactor: Top Matches Endpoint Update"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1786033326.753489"
+name = "Error loading Barlow fonts on startup"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792077245.236569"
+name = "Odds By feature update, TMDV‑2070…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1765786440.974429"
+name = "Staging merge ready for parlay test"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1789813152.567319"
+name = "Repeated CloudWatch Alarm Status Updates"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1769361204.670749"
+name = "Momentum rating API usage discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1785231088.053419"
+name = "Merge conflict resolution for exbetz‑be‑api PRs…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1746623526.452859"
+name = "TMDV-767 tip creation error fix conversation"
+
+[[display.name]]
+target = "space:Signal phone"
+name = "Signal"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792083866.314239"
+name = "Single-book favor logic merge saga explanation"
+
+[[display.name]]
+target = "space:Signal il"
+name = "Signal"
+
+[[display.name]]
+target = "space:Telegram bg"
+name = "Telegram"
+
+[[display.name]]
+target = "space:Instagram me"
+name = "Instagram"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1762507287.521789"
+name = "Accessing GCP Pub/Sub Subscription List"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1749748719.883649"
+name = "Markets Counter Bug Fix Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1750324716.160729"
+name = "Add Cricket, Softball, Volleyball SVGs to…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1783071132.891139"
+name = "Meta FirstPurchase event implementation review"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782379259.666729"
+name = "Pagination bug fix discussion for matches/top…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1759145685.377579"
+name = "Secret Update Approval Thread"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782124723.376749"
+name = "NBA Blitz link browser errors discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1776695450.568339"
+name = "Tipster Sitemap Strategy Meeting"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782376632.860689"
+name = "Matches pagination fix and review request"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1781521533.572079"
+name = "Tagging Sagi Chizik, puzzled reply"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1780588590.634339"
+name = "Sagi sends info to Evgeny"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1749805949.422039"
+name = "New Icons, Noto Emoji, Sports Mapping"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1751441880.656489"
+name = "Adjusting Match Filtering Intervals QA"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1782294971.280809"
+name = "Adjusting top‑request pagination limits"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1750152401.177259"
+name = "Sports feature toggle updates and icon requests"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1781103728.061069"
+name = "Live score scraping interval debate with Sagi…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1777988876.708119"
+name = "Add live tabs to tournament and team pages with…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1749760250.472529"
+name = "Testing with Mailinator: team inquiry"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J5QD241L/1750863907.720579"
+name = "Eugene Discusses LSports Odds Platform…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1745753254.342579"
+name = "Site speed issue thread"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1746101577.675109"
+name = "Staging Deploy QA: New Homepage Hero and…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1749457324.471389"
+name = "Sports Data Live‑Time Update Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1742972966.834859"
+name = "OpenAI 4O Image Generation Marketing Impact"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1746627583.725859"
+name = "Welcome new member cocktails high energy"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1742202926.348869"
+name = "Password restrictions and Chrome generate"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1751366217.037239"
+name = "Metaverse Future Speculation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1753719752.456299"
+name = "Adjusting Sports Visibility: Football, Hockey…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1750073844.374779"
+name = "Deploying Sports Emojis to Staging and…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1749799250.524249"
+name = "Frontend Production Deployment Celebration"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1748625135.527159"
+name = "Staging Wallet Success Photo"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1745410062.869939"
+name = "Live blog image preview update process"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1756568055.639459"
+name = "Birthday wishes to Sergey Mühlinin"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C01J9F8ND6H/1745949790.206509"
+name = "Frontend refactor removes matches caching…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1744011739.350689"
+name = "Betting Markets: BI Files and Settlement…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1777724391.125239"
+name = "Managing tennis event ordering in trading system"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1744635312.573769"
+name = "Missing baseline for “Team Scoring First”…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1762275241.614009"
+name = "Odds and market discrepancies in NHL and NBA…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1774875675.489159"
+name = "Reconciling Snapshot vs RMQ Delta Updates in…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1792314386.483819"
+name = "SofaScore API Access Issues"
+
+[[display.name]]
+target = "space:Instagram Eugene"
+name = "Instagram"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H6DT/1788502355.961649"
+name = "Adjusting League Merges Judgment Calls Discussed"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1792349860.144589"
+name = "Proxy attempt fails; API returns 403 challenge"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792429789.195869"
+name = "User Activity Notifications Design Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1792597342.321279"
+name = "סטלמנטס אקסל: דיבורים ופתרונות"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792609115.676949"
+name = "Review of TipMaster PR 981"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1792873070.988209"
+name = "תקלות באקסל סטלמנטס 24.10"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792872263.109859"
+name = "Redis timeout fix and tipform feed compacting"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792776224.124819"
+name = "NestJS Upgrade Decision Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792929078.406769"
+name = "Eugene 993 rebased conflict resolution…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792873239.836749"
+name = "991 single-pod tipforms rebuild merged"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792928603.043909"
+name = "Georgia trip, food, wine, no reviews"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1792922572.458079"
+name = "SSE starvation due to HTTP/1.1 connections"
+
+[[display.name]]
+target = "telegram:8735244446/-1004410724531"
+name = "Acting"
+
+[[display.name]]
+target = "telegram:8735244446/6225653571"
+name = "NovoSalsa"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1793030216.951399"
+name = "אקסל סטלמנטס ניתוח וסגירת משחקים"
+
+[display.rail]
+order = [
+	"tag:Unread",
+	"tag:Drafts",
+	"-",
+	"tag:Friends",
+	"tag:Work",
+	"tag:Acquaintances",
+	"tag:Social",
+	"tag:Colleagues",
+	"tag:Services",
+	"-",
+	"*",
+	"-",
+	"tag:Archived",
+	"tag:Spam",
+]
+network_colors = true
+
+[display.media]
+mode = "inline"
+cache_dir = "/home/eugene/.cache/kith/media"
+
+[[display.media.rule]]
+sender = "whatsapp:972533342045@s.whatsapp.net"
+
+[display.direction]
+auto = true
+rtl = ["whatsapp:359884650326/120363429032076834@g.us"]
+
+[notifications]
+desktop = true
+
+[[notifications.rule]]
+name = "everything"
+show = "all"
+
+[[notifications.rule]]
+name = "Shieldy"
+sender = "telegram:771096498"
+show = "none"
+
+[[notifications.rule]]
+name = "DeFensy AntiSpamBot"
+sender = "telegram:2122880839"
+show = "none"
+
+[[notifications.rule]]
+name = "Kovcheg Antispam Bot"
+sender = "telegram:8675593747"
+show = "none"
+
+[keys.spell]
+open_insert = "alt+k"
+
+[[keys.jump]]
+chord = "g B"
+target = "room:slack:T01K2D5TCAC/D08TP8N839C"
+
+[[keys.jump]]
+chord = "g G"
+target = "room:whatsapp:359884650326/359889658989@s.whatsapp.net"
+
+[[keys.jump]]
+chord = "g b"
+target = "room:whatsapp:359884650326/972542443374-1480440817@g.us"
+
+[[keys.jump]]
+chord = "g d"
+target = "room:whatsapp:359884650326/120363429032076834@g.us"
+
+[[keys.jump]]
+chord = "g e"
+target = "room:slack:T01K2D5TCAC/D08FYS31A4V"
+
+[[keys.jump]]
+chord = "g l"
+target = "room:whatsapp:359884650326/972533342045@s.whatsapp.net"
+
+[[keys.jump]]
+chord = "g m"
+target = "room:whatsapp:359884650326/359884626245@s.whatsapp.net"
+
+[[keys.jump]]
+chord = "g n"
+target = "room:messenger:100009131024163/100010013771598"
+
+[[keys.jump]]
+chord = "g r"
+target = "room:whatsapp:359884650326/359892047770@s.whatsapp.net"
+
+[[keys.jump]]
+chord = "g s"
+target = "room:slack:T01K2D5TCAC/D08FYS2H99T"
+
+[[keys.jump]]
+chord = "g u"
+target = "tag:Unread"
+
+[[keys.jump]]
+chord = "g w"
+target = "tag:Work"
+
+[clipboard]
+copy_downloads = true
+
+[spell]
+check_before_send = true
+
+[assist]
+endpoint = "https://api.groq.com/openai/v1/chat/completions"
+model = "openai/gpt-oss-20b"
+key_ref = "groq"
+timeout = "4s"
+name_threads = true
+name_threads_after = 1
+
+[assist.thread_name]
+max_tokens = 300
+
+[agent.read]
+rooms = ["place:Work", "protocol:Telegram"]
+encrypted = true
+
+[agent.write]
+rooms = ["place:Work", "telegram:8735244446/8735244446"]
+encrypted = true
+send = ["place:Work", "telegram:8735244446/8735244446"]
+
+[[whatsapp.account]]
+name = "bg"
+phone = "+359884650326"
+
+[[whatsapp.account]]
+name = "il"
+phone = "+972545347450"
+
+[[slack.account]]
+name = "Tipmaster"
+workspace = "T01K2D5TCAC"
+
+[[telegram.account]]
+name = "bg"
+phone = "+359884650326"
+
+[[messenger.account]]
+name = "Meta"
+
+[[linkedin.account]]
+name = "Linkedin"
+
+[[gmessages.account]]
+name = "SMS"
+
+[[signal.account]]
+name = "il"
+
+[[instagram.account]]
+name = "me"
+
+[[instagram.account]]
+name = "Eugene"
+
+[storage]
+instance = "19c882ceddc8615f"
+
+[[tag]]
+name = "Invites"
+rule = ["invite"]
+exclusive = ["tags"]
+hide_when_empty = true
+first = true
+count_in_label = true
+
+[[tag]]
+name = "DMs"
+rule = ["dm"]
+hidden = true
+
+[[tag]]
+name = "Unread"
+rule = ["unread"]
+sticky = true
+
+[[tag]]
+name = "Drafts"
+rule = ["draft"]
+hide_when_empty = true
+
+[[tag]]
+name = "Pinned"
+hide_when_empty = true
+
+[[tag]]
+name = "Spam"
+picked = [
+	"gmessages:8df1e4ace159/1119",
+	"gmessages:8df1e4ace159/1080",
+	"gmessages:8df1e4ace159/1162",
+	"gmessages:8df1e4ace159/1164",
+	"gmessages:8df1e4ace159/1160",
+	"gmessages:8df1e4ace159/1163",
+	"gmessages:8df1e4ace159/1080",
+	"gmessages:8df1e4ace159/1072",
+	"gmessages:8df1e4ace159/1176",
+]
+excluded = [
+	"gmessages:8df1e4ace159/759",
+	"gmessages:8df1e4ace159/877",
+	"gmessages:8df1e4ace159/785",
+	"gmessages:8df1e4ace159/1090",
+	"gmessages:8df1e4ace159/1167",
+]
+people = ["telegram:1020327345", "telegram:8465082143"]
+counts_unread = false
+notifies = false
+exclusive = ["tags", "spaces", "origin"]
+hide_when_empty = true
+
+[[tag]]
+name = "Archived"
+picked = [
+	"slack:T01K2D5TCAC/C09EHPCNZB9",
+	"slack:T01K2D5TCAC/D08FMFVSVD5",
+	"telegram:8735244446/-1001665760449~14786",
+	"telegram:8735244446/-1001665760449~30289",
+	"telegram:8735244446/-1001665760449~14759",
+	"telegram:8735244446/-1001665760449~14761",
+	"telegram:8735244446/-1001665760449~14797",
+	"telegram:8735244446/-1001665760449~21720",
+	"telegram:8735244446/-1001665760449~14748",
+	"telegram:8735244446/-1001665760449~15280",
+	"telegram:8735244446/-1001665760449~14802",
+	"telegram:8735244446/-1001665760449~21708",
+	"telegram:8735244446/-1001665760449~14793",
+	"telegram:8735244446/-1001665760449~14772",
+	"telegram:8735244446/-1001665760449~14848",
+	"telegram:8735244446/-1001665760449~14791",
+	"telegram:8735244446/-1001665760449~14778",
+	"telegram:8735244446/-1001665760449~15272",
+	"telegram:8735244446/-1001665760449~125550",
+	"telegram:8735244446/-1001665760449~15739",
+	"telegram:8735244446/-1001665760449~14767",
+	"telegram:8735244446/-1001665760449~15288",
+	"telegram:8735244446/-1001665760449~14765",
+	"telegram:8735244446/-1001665760449~14795",
+	"telegram:8735244446/-1001665760449~39328",
+	"telegram:8735244446/-1001665760449~46154",
+	"telegram:8735244446/-1001665760449~14763",
+	"telegram:8735244446/-1001665760449~15292",
+	"telegram:8735244446/-1001665760449~14774",
+	"telegram:8735244446/-1001665760449~14782",
+	"telegram:8735244446/-1001696384234~27628",
+	"telegram:8735244446/-1001665760449~14780",
+	"telegram:8735244446/-1001665760449~16685",
+	"telegram:8735244446/-1001665760449~41475",
+	"telegram:8735244446/-1001696384234~5307",
+	"telegram:8735244446/-1001665760449~14784",
+	"telegram:8735244446/-1001665760449~14770",
+	"telegram:8735244446/-1001665760449~30293",
+	"telegram:8735244446/-1001696384234~12743",
+	"whatsapp:359884650326/972523281793-1506430370@g.us",
+	"telegram:8735244446/-1001696384234~6275",
+	"whatsapp:359884650326/447481338059@s.whatsapp.net",
+	"whatsapp:359884650326/359876406144@s.whatsapp.net",
+	"whatsapp:359884650326/359893237474@s.whatsapp.net",
+	"whatsapp:359884650326/97239771111@s.whatsapp.net",
+	"whatsapp:359884650326/972505565587@s.whatsapp.net",
+	"whatsapp:359884650326/972523332087@s.whatsapp.net",
+	"whatsapp:972545347450/97235721025@s.whatsapp.net",
+	"whatsapp:972545347450/972549882407@s.whatsapp.net",
+	"whatsapp:972545347450/972545408882@s.whatsapp.net",
+	"whatsapp:972545347450/972545408881@s.whatsapp.net",
+	"whatsapp:972545347450/972542233372@s.whatsapp.net",
+	"whatsapp:972545347450/97298604412@s.whatsapp.net",
+	"whatsapp:972545347450/97235726544@s.whatsapp.net",
+	"whatsapp:972545347450/447481338059@s.whatsapp.net",
+	"whatsapp:972545347450/status@broadcast",
+	"whatsapp:972545347450/972549815268@s.whatsapp.net",
+	"whatsapp:359884650326/97466729165@s.whatsapp.net",
+	"whatsapp:359884650326/306985758586@s.whatsapp.net",
+	"whatsapp:359884650326/972545913991@s.whatsapp.net",
+	"whatsapp:359884650326/972542560176@s.whatsapp.net",
+	"whatsapp:359884650326/359884101009@s.whatsapp.net",
+	"whatsapp:359884650326/972547700485@s.whatsapp.net",
+	"whatsapp:359884650326/40773798615@s.whatsapp.net",
+	"whatsapp:359884650326/359879060381@s.whatsapp.net",
+	"whatsapp:359884650326/381631114665@s.whatsapp.net",
+	"whatsapp:359884650326/972527120785@s.whatsapp.net",
+	"whatsapp:359884650326/972549893455@s.whatsapp.net",
+	"whatsapp:359884650326/972544771242@s.whatsapp.net",
+	"whatsapp:359884650326/359889160531@s.whatsapp.net",
+	"whatsapp:359884650326/972545408881@s.whatsapp.net",
+	"whatsapp:359884650326/359896234772@s.whatsapp.net",
+	"telegram:8735244446/-1001696384234~5233",
+	"telegram:8735244446/-1001696384234~8736",
+	"telegram:8735244446/-1001696384234~5232",
+	"telegram:8735244446/-1001696384234",
+	"whatsapp:359884650326/359876429994@s.whatsapp.net",
+	"whatsapp:359884650326/381643832758@s.whatsapp.net",
+	"whatsapp:359884650326/120363419967619640@g.us",
+	"whatsapp:359884650326/380661930715@s.whatsapp.net",
+]
+excluded = ["telegram:8735244446/640732978"]
+counts_unread = false
+exclusive = ["tags", "spaces"]
+hide_when_empty = true
+
+[[tag]]
+name = "Friends"
+picked = [
+	"whatsapp:359884650326/972526007656@s.whatsapp.net",
+	"whatsapp:359884650326/120363040336262952@g.us",
+	"whatsapp:359884650326/972542443374-1480440817@g.us",
+	"whatsapp:359884650326/972542443374@s.whatsapp.net",
+	"whatsapp:359884650326/972529201899@s.whatsapp.net",
+	"whatsapp:359884650326/972544624672@s.whatsapp.net",
+	"whatsapp:359884650326/972533342045@s.whatsapp.net",
+	"whatsapp:359884650326/359884626245@s.whatsapp.net",
+]
+
+[[tag]]
+name = "Acquaintances"
+picked = [
+	"whatsapp:359884650326/4560606105@s.whatsapp.net",
+	"telegram:8735244446/216455255",
+	"telegram:8735244446/273576493",
+	"whatsapp:359884650326/353896081593@s.whatsapp.net",
+	"whatsapp:359884650326/972528827466@s.whatsapp.net",
+	"telegram:8735244446/795539749",
+	"whatsapp:359884650326/359889658989@s.whatsapp.net",
+	"whatsapp:359884650326/359877170050@s.whatsapp.net",
+	"messenger:100009131024163/100010013771598",
+	"whatsapp:359884650326/359892047770@s.whatsapp.net",
+	"whatsapp:359884650326/79633160295@s.whatsapp.net",
+	"whatsapp:359884650326/447708845809@s.whatsapp.net",
+	"telegram:8735244446/458288642",
+	"telegram:8735244446/284993387",
+	"telegram:8735244446/429541479",
+	"telegram:8735244446/404481744",
+	"telegram:8735244446/640732978",
+	"telegram:8735244446/306771510",
+]
+
+[[tag]]
+name = "Social"
+picked = [
+	"telegram:8735244446/-1001696384234~9268",
+	"telegram:8735244446/-1001696384234~30307",
+	"whatsapp:359884650326/120363407898535932@g.us",
+	"telegram:8735244446/-1004491243278",
+	"telegram:8735244446/-1001696384234~5253",
+	"telegram:8735244446/-1001696384234~11995",
+	"telegram:8735244446/-1001696384234~5219",
+	"telegram:8735244446/-1001696384234~5333",
+	"whatsapp:359884650326/359887583999@s.whatsapp.net",
+	"whatsapp:359884650326/359879858868-1419191746@g.us",
+	"telegram:8735244446/-1001696384234~5234",
+	"telegram:8735244446/-1001696384234~5468",
+	"messenger:100009131024163/1424297952557922",
+	"messenger:100009131024163/367342269904",
+	"whatsapp:359884650326/120363421307559381@g.us",
+	"telegram:8735244446/-1001696384234~5226",
+	"messenger:100009131024163/9936136333139591",
+	"telegram:8735244446/-1001696384234~5307",
+	"whatsapp:359884650326/261345253355-1590387098@g.us",
+	"telegram:8735244446/-1002543417183",
+	"telegram:8735244446/-1001672165691",
+	"messenger:100009131024163/1716224778606743",
+	"telegram:8735244446/-1001696384234~11997",
+	"whatsapp:359884650326/120363425050143298@g.us",
+	"telegram:8735244446/-1002143205554",
+	"telegram:8735244446/6225653571",
+	"telegram:8735244446/1496774548",
+	"telegram:8735244446/-1004410724531",
+]
+
+[[tag]]
+name = "Colleagues"
+picked = [
+	"whatsapp:359884650326/33614114380@s.whatsapp.net",
+	"whatsapp:359884650326/972546154531@s.whatsapp.net",
+	"whatsapp:359884650326/972528692597@s.whatsapp.net",
+	"whatsapp:359884650326/972505204617@s.whatsapp.net",
+	"whatsapp:359884650326/972524598114@s.whatsapp.net",
+	"whatsapp:359884650326/972526007656@s.whatsapp.net",
+	"whatsapp:972545347450/972542343205@s.whatsapp.net",
+	"whatsapp:359884650326/972524524965@s.whatsapp.net",
+	"whatsapp:972545347450/972528708296@s.whatsapp.net",
+	"whatsapp:359884650326/972523313570@s.whatsapp.net",
+	"whatsapp:359884650326/972504250008@s.whatsapp.net",
+	"whatsapp:359884650326/972502020191@s.whatsapp.net",
+	"whatsapp:359884650326/972544488156@s.whatsapp.net",
+	"whatsapp:359884650326/972545376312@s.whatsapp.net",
+	"whatsapp:359884650326/972524522066@s.whatsapp.net",
+	"whatsapp:359884650326/972542443374@s.whatsapp.net",
+	"whatsapp:359884650326/972545655939@s.whatsapp.net",
+	"whatsapp:359884650326/972523437346@s.whatsapp.net",
+	"whatsapp:359884650326/972507554685@s.whatsapp.net",
+	"whatsapp:359884650326/972525115185@s.whatsapp.net",
+	"whatsapp:359884650326/972506763981@s.whatsapp.net",
+	"whatsapp:359884650326/972547844262@s.whatsapp.net",
+	"whatsapp:359884650326/40730372674@s.whatsapp.net",
+	"whatsapp:359884650326/972544467918@s.whatsapp.net",
+	"whatsapp:359884650326/972545519009@s.whatsapp.net",
+	"whatsapp:359884650326/972547757373@s.whatsapp.net",
+	"whatsapp:359884650326/972524668805@s.whatsapp.net",
+	"whatsapp:359884650326/972523916865@s.whatsapp.net",
+	"whatsapp:359884650326/972544782062@s.whatsapp.net",
+	"whatsapp:359884650326/972544624672@s.whatsapp.net",
+	"whatsapp:359884650326/972522579059@s.whatsapp.net",
+	"whatsapp:359884650326/972507637223@s.whatsapp.net",
+	"whatsapp:359884650326/972545380037@s.whatsapp.net",
+	"whatsapp:359884650326/972544816091@s.whatsapp.net",
+	"whatsapp:359884650326/972545525302@s.whatsapp.net",
+	"whatsapp:972545347450/972548002040@s.whatsapp.net",
+	"whatsapp:359884650326/972543050559@s.whatsapp.net",
+	"whatsapp:359884650326/972545498176@s.whatsapp.net",
+	"whatsapp:359884650326/972523375096@s.whatsapp.net",
+	"whatsapp:359884650326/972542001494@s.whatsapp.net",
+]
+
+[[tag]]
+name = "Services"
+picked = [
+	"whatsapp:359884650326/972544467300@s.whatsapp.net",
+	"whatsapp:359884650326/359883711181@s.whatsapp.net",
+	"whatsapp:359884650326/359894041133@s.whatsapp.net",
+	"whatsapp:359884650326/359886682898@s.whatsapp.net",
+	"whatsapp:359884650326/380508180946@s.whatsapp.net",
+	"whatsapp:359884650326/120363425091766468@g.us",
+	"whatsapp:359884650326/359895435560@s.whatsapp.net",
+	"whatsapp:359884650326/381606828268@s.whatsapp.net",
+	"whatsapp:359884650326/359899945699@s.whatsapp.net",
+	"whatsapp:359884650326/359884875398@s.whatsapp.net",
+	"whatsapp:359884650326/306977627969@s.whatsapp.net",
+	"whatsapp:359884650326/38163435955@s.whatsapp.net",
+	"whatsapp:359884650326/359876429994@s.whatsapp.net",
+	"whatsapp:359884650326/972544771242@s.whatsapp.net",
+	"whatsapp:359884650326/359894448441@s.whatsapp.net",
+	"whatsapp:359884650326/359879060381@s.whatsapp.net",
+	"whatsapp:359884650326/359889222650@s.whatsapp.net",
+	"whatsapp:359884650326/972528748308@s.whatsapp.net",
+	"whatsapp:359884650326/359896868123@s.whatsapp.net",
+	"whatsapp:359884650326/359876101590@s.whatsapp.net",
+	"whatsapp:359884650326/420602320288@s.whatsapp.net",
+]
+
+[[tag]]
+name = "All"
+rule = ["*"]
+hidden = true
+
+[[tag]]
+name = "Work"
+picked = [
+	"whatsapp:359884650326/120363429032076834@g.us",
+	"whatsapp:359884650326/972547844262@s.whatsapp.net",
+	"whatsapp:359884650326/972545376312@s.whatsapp.net",
+	"whatsapp:359884650326/40730372674@s.whatsapp.net",
+	"slack:T01K2D5TCAC/D08FYS31A4V",
+	"slack:T01K2D5TCAC/D08TP8N839C",
+	"slack:T01K2D5TCAC/C08HVEWCKQE",
+	"slack:T01K2D5TCAC/D08FYS2H99T",
+	"slack:T01K2D5TCAC/C08G9DSFHUL",
+	"whatsapp:359884650326/972523313570@s.whatsapp.net",
+]
+
+[[profile]]
+name = "default"
+include = ["*"]
+
+[[filter]]
+name = "politics"
+tag = "Spam"
+words = [
+	"*בחירות",
+	"*מילואימניקים",
+	"*מפלג*",
+	"*ממשל*",
+	"*קלפי",
+	"Голосуй*",
+]
+in = ["place:SMS"]
+moves = ["always"]
+
+[[filter]]
+name = "survey"
+tag = "Spam"
+words = ["*סקר"]
+in = ["place:SMS"]
+moves = ["always"]
+
+[[filter]]
+name = "adds"
+tag = "Spam"
+words = ["*החזר מס", "*החזרי מס"]
+in = ["place:SMS"]
+moves = ["always"]
+
+[[filter]]
+name = "religion"
+tag = "Spam"
+words = ["*תפילין"]
+in = ["place:SMS"]
+moves = ["always"]
+
+[[filter]]
+name = "cjk or arabic"
+tag = "Spam"
+script = ["Han", "Kana", "Hangul", "Arabic"]
+
+[[command]]
+name = "zoom"
+output = "send"
+
+[[command]]
+name = "call"
+output = "send"
+
+[[command]]
+name = "meet"
+output = "send"
+
+# Debug while watching why Google refuses the Messages cookies; remove when done.
+[log]
+level = "debug"

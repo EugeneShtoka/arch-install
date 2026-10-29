@@ -10,20 +10,7 @@
 
 
 [display]
-max_name_length = 15
-skin_tone = "light"
-color_messages = true
-network_colors = true
 priority = ["tag:Friends", "tag:Work", "tag:Social", "tag:Colleagues"]
-
-[display.theme.networks]
-whatsapp = "teal"
-telegram = "blue"
-slack = "magenta"
-messenger = "orchid"
-instagram = "orchid"
-linkedin = "periwinkle"
-google_messages = "coral"
 
 [[display.space_rule]]
 space = "tag:Friends"
@@ -1219,20 +1206,6 @@ order = [
 ]
 network_colors = true
 
-[display.media]
-mode = "inline"
-cache_dir = "/home/eugene/.cache/kith/media"
-
-[[display.media.rule]]
-sender = "whatsapp:972533342045@s.whatsapp.net"
-
-[display.direction]
-auto = true
-rtl = ["whatsapp:359884650326/120363429032076834@g.us"]
-
-[notifications]
-desktop = true
-
 [[notifications.rule]]
 name = "everything"
 show = "all"
@@ -1252,70 +1225,11 @@ name = "Kovcheg Antispam Bot"
 sender = "telegram:8675593747"
 show = "none"
 
-[keys.spell]
-open_insert = "alt+k"
-
-[[keys.jump]]
-chord = "g B"
-target = "room:slack:T01K2D5TCAC/D08TP8N839C"
-
-[[keys.jump]]
-chord = "g G"
-target = "room:whatsapp:359884650326/359889658989@s.whatsapp.net"
-
-[[keys.jump]]
-chord = "g b"
-target = "room:whatsapp:359884650326/972542443374-1480440817@g.us"
-
-[[keys.jump]]
-chord = "g d"
-target = "room:whatsapp:359884650326/120363429032076834@g.us"
-
-[[keys.jump]]
-chord = "g e"
-target = "room:slack:T01K2D5TCAC/D08FYS31A4V"
-
-[[keys.jump]]
-chord = "g l"
-target = "room:whatsapp:359884650326/972533342045@s.whatsapp.net"
-
-[[keys.jump]]
-chord = "g m"
-target = "room:whatsapp:359884650326/359884626245@s.whatsapp.net"
-
-[[keys.jump]]
-chord = "g n"
-target = "room:messenger:100009131024163/100010013771598"
-
-[[keys.jump]]
-chord = "g r"
-target = "room:whatsapp:359884650326/359892047770@s.whatsapp.net"
-
-[[keys.jump]]
-chord = "g s"
-target = "room:slack:T01K2D5TCAC/D08FYS2H99T"
-
-[[keys.jump]]
-chord = "g u"
-target = "tag:Unread"
-
-[[keys.jump]]
-chord = "g w"
-target = "tag:Work"
-
-[clipboard]
-copy_downloads = true
-
-[spell]
-check_before_send = true
-
 [assist]
 endpoint = "https://api.groq.com/openai/v1/chat/completions"
 model = "openai/gpt-oss-20b"
 key_ref = "groq"
 timeout = "4s"
-name_threads = true
-name_threads_after = 1
 
 [assist.thread_name]
 max_tokens = 300
@@ -1328,6 +1242,9 @@ encrypted = true
 rooms = ["place:Work", "telegram:8735244446/8735244446"]
 encrypted = true
 send = ["place:Work", "telegram:8735244446/8735244446"]
+
+[log]
+level = "debug"
 
 [[whatsapp.account]]
 name = "bg"
@@ -1711,19 +1628,3 @@ moves = ["always"]
 name = "cjk or arabic"
 tag = "Spam"
 script = ["Han", "Kana", "Hangul", "Arabic"]
-
-[[command]]
-name = "zoom"
-output = "send"
-
-[[command]]
-name = "call"
-output = "send"
-
-[[command]]
-name = "meet"
-output = "send"
-
-# Debug while watching why Google refuses the Messages cookies; remove when done.
-[log]
-level = "debug"
