@@ -7,6 +7,7 @@
 #
 # For every option with its documentation, run: kith --print-device-config
 
+profile_in_use = "default"
 
 [display]
 max_name_length = 15
