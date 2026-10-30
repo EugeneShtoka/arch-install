@@ -1195,6 +1195,14 @@ name = "Disk Queue Alarm for tipmaster-prd in us-east-2"
 target = "whatsapp:359884650326/359888696616@s.whatsapp.net"
 name = "Vladimir Seleznev"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1793358430.800019"
+name = "EBS I/O balance alarm alerts in us-east-2…"
+
+[[display.name]]
+target = "telegram:8735244446/-1002051669717"
+name = "София, Болгария"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1427,6 +1435,7 @@ picked = [
 	"whatsapp:359884650326/381643832758@s.whatsapp.net",
 	"whatsapp:359884650326/120363419967619640@g.us",
 	"whatsapp:359884650326/380661930715@s.whatsapp.net",
+	"telegram:8735244446/-1002051669717",
 ]
 excluded = ["telegram:8735244446/640732978"]
 counts_unread = false
@@ -1467,6 +1476,7 @@ picked = [
 	"telegram:8735244446/404481744",
 	"telegram:8735244446/640732978",
 	"telegram:8735244446/306771510",
+	"whatsapp:359884650326/359888696616@s.whatsapp.net",
 ]
 
 [[tag]]
