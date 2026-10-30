@@ -63,6 +63,10 @@ ids = [
 	"signal:bca08bfa-0aec-4805-963d-2c503ebef70c",
 ]
 
+[[display.identity]]
+alias = "Vladimir Seleznev"
+ids = ["whatsapp:359888696616@s.whatsapp.net", "telegram:216455255"]
+
 [[display.name]]
 target = "telegram:8735244446/-1001343563058"
 name = "General"
@@ -294,10 +298,6 @@ name = "Sarit Hazan"
 [[display.name]]
 target = "whatsapp:359884650326/972547257696@s.whatsapp.net"
 name = "Maksim Sheykman"
-
-[[display.name]]
-target = "telegram:8735244446/216455255"
-name = "Vladimir Seleznev"
 
 [[display.name]]
 target = "whatsapp:359884650326/972528827466@s.whatsapp.net"
@@ -1186,6 +1186,14 @@ name = "NovoSalsa"
 [[display.name]]
 target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1793030216.951399"
 name = "אקסל סטלמנטס ניתוח וסגירת משחקים"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1793304652.493489"
+name = "Disk Queue Alarm for tipmaster-prd in us-east-2"
+
+[[display.name]]
+target = "whatsapp:359884650326/359888696616@s.whatsapp.net"
+name = "Vladimir Seleznev"
 
 [display.rail]
 order = [
