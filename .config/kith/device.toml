@@ -110,3 +110,9 @@ output = "send"
 [[command]]
 name = "meet"
 output = "send"
+
+# EliteDesk kithd; uncomment to dial it instead of the local one.
+# [[bridge]]
+# name = "100.64.0.5"
+# addresses = ["100.64.0.5:7443"]
+# id = "PHZK-VN7K-YFO5-LFJ3-YLI6-JVBH-CA3X-3ITM-UBIV-OZHA-65WR-7JZP-54EA"
