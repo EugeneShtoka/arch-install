@@ -16,7 +16,7 @@ color_messages = true
 network_colors = true
 send_typing = false
 
-[display.theme.networks]
+[tui.theme.networks]
 whatsapp = "teal"
 telegram = "blue"
 slack = "magenta"
