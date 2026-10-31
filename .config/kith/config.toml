@@ -1203,6 +1203,10 @@ name = "EBS I/O balance alarm alerts in us-east-2…"
 target = "telegram:8735244446/-1002051669717"
 name = "София, Болгария"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1793199885.434899"
+name = "בדיקת סטלמנטס: טסטים ואנגליה"
+
 [display.rail]
 order = [
 	"tag:Unread",
