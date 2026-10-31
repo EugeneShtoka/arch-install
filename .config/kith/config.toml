@@ -1303,6 +1303,9 @@ name = "Eugene"
 [storage]
 instance = "19c882ceddc8615f"
 
+[gui.theme]
+mode = "dark"
+
 [[tag]]
 name = "Invites"
 rule = ["invite"]
