@@ -16,15 +16,6 @@ color_messages = true
 network_colors = true
 send_typing = false
 
-[tui.theme.networks]
-whatsapp = "teal"
-telegram = "blue"
-slack = "magenta"
-messenger = "orchid"
-instagram = "orchid"
-linkedin = "periwinkle"
-google_messages = "coral"
-
 [display.direction]
 auto = true
 rtl = ["whatsapp:359884650326/120363429032076834@g.us"]
@@ -35,6 +26,15 @@ cache_dir = "/home/eugene/.cache/kith/media"
 
 [[display.media.rule]]
 sender = "whatsapp:972533342045@s.whatsapp.net"
+
+[tui.theme.networks]
+whatsapp = "teal"
+telegram = "blue"
+slack = "magenta"
+messenger = "orchid"
+instagram = "orchid"
+linkedin = "periwinkle"
+google_messages = "coral"
 
 [notifications]
 desktop = true
