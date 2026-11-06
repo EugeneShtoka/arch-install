@@ -1304,7 +1304,7 @@ name = "Eugene"
 instance = "19c882ceddc8615f"
 
 [gui.theme]
-mode = "dark"
+mode = "cobalt"
 
 [[tag]]
 name = "Invites"
