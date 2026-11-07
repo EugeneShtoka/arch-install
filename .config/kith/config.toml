@@ -1207,6 +1207,14 @@ name = "София, Болгария"
 target = "thread:slack:T01K2D5TCAC/D08TP8N839C/1793199885.434899"
 name = "בדיקת סטלמנטס: טסטים ואנגליה"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1793705525.388089"
+name = "Kill PR 875 for exbetz-be-api"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1793701123.610609"
+name = "Terragrunt review and NestJS ESM decision"
+
 [display.rail]
 order = [
 	"tag:Unread",
