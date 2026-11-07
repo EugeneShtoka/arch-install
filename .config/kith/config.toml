@@ -1215,6 +1215,22 @@ name = "Kill PR 875 for exbetz-be-api"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1793701123.610609"
 name = "Terragrunt review and NestJS ESM decision"
 
+[[display.name]]
+target = "whatsapp:359884650326/120363404981314202@g.us"
+name = "Driving school christmas party"
+
+[[display.name]]
+target = "whatsapp:359884650326/120363391256836644@g.us"
+name = "Driving School"
+
+[[display.name]]
+target = "telegram:8735244446/-1003876763062~36"
+name = "Salsa Beginners (Lopez)"
+
+[[display.name]]
+target = "telegram:8735244446/-1003876763062"
+name = "Salsa (Lopez)"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1536,6 +1552,7 @@ picked = [
 	"telegram:8735244446/-1003876763062",
 	"telegram:8735244446/-1003876763062~36",
 	"whatsapp:359884650326/120363391256836644@g.us",
+	"whatsapp:359884650326/120363404981314202@g.us",
 ]
 
 [[tag]]
