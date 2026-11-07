@@ -1231,6 +1231,10 @@ name = "Salsa Beginners (Lopez)"
 target = "telegram:8735244446/-1003876763062"
 name = "Salsa (Lopez)"
 
+[[display.name]]
+target = "telegram:8735244446/1496774548"
+name = "Olesya (acting)"
+
 [display.rail]
 order = [
 	"tag:Unread",
