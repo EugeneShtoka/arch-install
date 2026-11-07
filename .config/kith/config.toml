@@ -1252,6 +1252,13 @@ order = [
 	"tag:Archived",
 	"tag:Spam",
 ]
+hidden = [
+	"place:Cuban con E. Lopez",
+	"space:Foreigners Driving School",
+	"space:WE ARE GOING ON A TRIP",
+	"place:Ukranians",
+	"place:Home food",
+]
 network_colors = true
 
 [[notifications.rule]]
