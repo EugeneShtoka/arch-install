@@ -7,5 +7,5 @@ alias rim-world='setsid $SCRIPTS_PATH/game-run.sh ~/Games/RimWorld/start.sh &>/d
 alias bar='setsid $SCRIPTS_PATH/game-run.sh ~/Games/Beyond\ All\ Reason/Beyond-All-Reason-1.2988.0.AppImage &>/dev/null'
 alias grim-dawn='setsid $SCRIPTS_PATH/game-run.sh ~/Games/Grim\ Dawn/start.sh &>/dev/null'
 alias factorio='setsid $SCRIPTS_PATH/game-run.sh steam 427520 &>/dev/null'
-alias probably-stolen='setsid $SCRIPTS_PATH/game-run.sh steam 4349200 &>/dev/null'
+alias probably-stolen='setsid $SCRIPTS_PATH/game-run.sh lutris lutris:rungame/probably-stolen &>/dev/null'
 alias dont-starve-together='setsid $SCRIPTS_PATH/game-run.sh steam 322330 &>/dev/null'
