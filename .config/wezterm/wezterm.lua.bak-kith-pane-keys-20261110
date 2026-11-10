@@ -1,0 +1,138 @@
+local wezterm = require("wezterm")
+local config = wezterm.config_builder()
+
+config.color_schemes = {
+	["My Cobalt 2"] = {
+		background = "#193549",
+		foreground = "#8ff586",
+		cursor_bg = "#f0cc09",
+		cursor_fg = "#fefff2",
+		cursor_border = "#f0cc09",
+		selection_bg = "#18354f",
+		selection_fg = "#b5b5b5",
+		ansi = { "#000000", "#ff0000", "#38de21", "#ffe50a", "#3aa5ff", "#ff005d", "#00bbbb", "#bbbbbb" },
+		brights = { "#555555", "#f40e17", "#3bd01d", "#edc809", "#3aa5ff", "#ff55ff", "#6ae3fa", "#ffffff" },
+	},
+}
+config.color_scheme = "My Cobalt 2"
+
+config.font = wezterm.font_with_fallback({
+	"JetBrains Mono",
+	{ family = "Miriam Mono CLM", weight = "DemiBold", scale = 1.2 },
+})
+config.font_size = 12.0
+
+-- Measure emoji the way modern apps assume. WezTerm defaults to Unicode 9 widths, in
+-- which an emoji-presentation sequence (a base character plus U+FE0F: ‼️ ❤️ ⚠️ 🌧️) is
+-- one cell wide, while every library that lays out a TUI — uniseg, and so lipgloss and
+-- anything built on it — calls it two. Every such glyph then shifted the rest of its
+-- row by a column: kith's emoji grid came out with wandering columns and a pane
+-- border in pieces. Verified with `wezterm ls-fonts --text`: at version 9, 35 of that
+-- palette's 395 glyphs report cells=1; at 14, all of them report cells=2.
+config.unicode_version = 14
+
+config.term = "wezterm"
+
+config.enable_kitty_keyboard = true
+
+-- On the EliteDesk every window attaches to the persistent mux server (systemd user unit
+-- wezterm-mux-server), so its tabs are the same ones the laptop sees through
+-- `wezterm connect SSHMUX:elitedesk`, and they survive the GUI closing.
+-- `wezterm start -- cmd` still opens a local, non-persistent window.
+if wezterm.hostname() == "elitedesk" then
+	config.unix_domains = { { name = "unix" } }
+	config.default_gui_startup_args = { "connect", "unix" }
+end
+
+config.audible_bell = "Disabled"
+
+config.window_padding = { left = 10, right = 10, top = 10, bottom = 0 }
+
+config.enable_tab_bar = false
+config.window_decorations = "NONE"
+config.window_close_confirmation = "NeverPrompt"
+
+-- Keep the pane open when its program exits non-zero, so a crash (e.g. an nvim
+-- abort) stays on screen instead of silently taking the window with it.
+-- Clean exits (:q, exiting a shell) still close as usual.
+config.exit_behavior = "CloseOnCleanExit"
+config.exit_behavior_messaging = "Verbose"
+
+local function update_tabs_cache()
+	wezterm.run_child_process({ os.getenv("SCRIPTS_PATH") .. "/wezterm-tabs-update.sh" })
+end
+
+wezterm.on("mux-tab-created", function(tab, mux_window)
+	update_tabs_cache()
+end)
+
+wezterm.on("mux-tab-closed", function(window_id, tab_id)
+	update_tabs_cache()
+end)
+
+wezterm.on("format-tab-title", function(tab)
+	local process = tab.active_pane.foreground_process_name
+	local name = process:match("([^/]+)$") or process
+	if name == "yazi" then
+		return "File browser"
+	elseif name == "ticker" then
+		return "Stock market"
+	end
+	return tab.active_pane.title
+end)
+
+config.keys = {
+	{
+		key = "h",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action_callback(function(window, pane)
+			local text = pane:get_lines_as_text(10000)
+			local tmp = os.tmpname() .. ".sh"
+			local f = io.open(tmp, "w")
+			f:write(text)
+			f:close()
+			window:perform_action(
+				wezterm.action.SpawnCommandInNewTab({
+					args = { "nvim", "-R", "-c", "set buftype=nofile | set noswapfile | normal G", tmp },
+				}),
+				pane
+			)
+		end),
+	},
+	{ key = "c", mods = "CTRL", action = wezterm.action.CopyTo("Clipboard") },
+	{
+		key = "v",
+		mods = "CTRL",
+		action = wezterm.action.PasteFrom("Clipboard"),
+	},
+	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x03") },
+	-- Close this window's view of a mux (SSHMUX:elitedesk, unix) while its tabs keep running
+	{ key = "d", mods = "CTRL|SHIFT", action = wezterm.action.DetachDomain("CurrentPaneDomain") },
+	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{
+		key = "Tab",
+		mods = "CTRL",
+		action = wezterm.action_callback(function(window, pane)
+			wezterm.run_child_process({ "sh", "-c", "date +%s > /tmp/claude-context-switch" })
+			window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
+		end),
+	},
+	{
+		key = "Tab",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action_callback(function(window, pane)
+			wezterm.run_child_process({ "sh", "-c", "date +%s > /tmp/claude-context-switch" })
+			window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
+		end),
+	},
+	{
+		key = "Tab",
+		mods = "CTRL|ALT",
+		action = wezterm.action_callback(function(window, pane)
+			wezterm.run_child_process({ "sh", "-c", "date +%s > /tmp/claude-context-switch" })
+			window:perform_action(wezterm.action.ShowTabNavigator, pane)
+		end),
+	},
+}
+
+return config

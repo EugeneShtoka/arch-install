@@ -135,4 +135,12 @@ config.keys = {
 	},
 }
 
+-- kith's pane keys (ctrl+shift+1..4) need wezterm's tab defaults given up.
+for _, key in ipairs({ "1", "2", "3", "4", "!", "@", "#", "$" }) do
+  table.insert(config.keys, { key = key, mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment })
+end
+for _, key in ipairs({ "!", "@", "#", "$" }) do
+  table.insert(config.keys, { key = key, mods = "CTRL", action = wezterm.action.DisableDefaultAssignment })
+end
+
 return config
