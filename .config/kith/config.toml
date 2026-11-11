@@ -1235,6 +1235,10 @@ name = "Salsa (Lopez)"
 target = "telegram:8735244446/1496774548"
 name = "Olesya (acting)"
 
+[[display.name]]
+target = "telegram:8735244446/-1004440201678"
+name = "NovoSalsa Beginners"
+
 [display.rail]
 order = [
 	"tag:Unread",
@@ -1564,6 +1568,8 @@ picked = [
 	"telegram:8735244446/-1003876763062~36",
 	"whatsapp:359884650326/120363391256836644@g.us",
 	"whatsapp:359884650326/120363404981314202@g.us",
+	"telegram:8735244446/-1004440201678",
+	"telegram:8735244446/-1001956827454",
 ]
 
 [[tag]]
