@@ -74,6 +74,9 @@ PATH="/home/eugene/.local/share/gem/ruby/3.2.0/bin:$PATH"
 # SSH
 source $SCRIPTS_PATH/ssh-init.sh >/dev/null 2>&1
 
+# Keyring stays locked when the EliteDesk is reached via the wezterm mux (no PAM login)
+[[ $HOST == elitedesk && -o interactive ]] && $SCRIPTS_PATH/keyring-unlock.sh
+
 # bun completions
 [ -s "/home/eugene/.bun/_bun" ] && source "/home/eugene/.bun/_bun"
 
