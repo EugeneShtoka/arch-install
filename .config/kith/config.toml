@@ -71,6 +71,14 @@ ids = ["whatsapp:359888696616@s.whatsapp.net", "telegram:216455255"]
 alias = "Svetlana"
 ids = ["telegram:66919467"]
 
+[[display.identity]]
+alias = "Boris"
+ids = ["telegram:439601524"]
+
+[[display.identity]]
+alias = "Oleg"
+ids = ["telegram:1034274664"]
+
 [[display.name]]
 target = "telegram:8735244446/-1001343563058"
 name = "General"
