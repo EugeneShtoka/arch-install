@@ -1263,6 +1263,26 @@ name = "Referral link integration bug fix and API…"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794304106.857099"
 name = "Tipster post reminder feature QA status update"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794331090.794119"
+name = "PR998 merged after fix"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794728780.955649"
+name = "Optimizing Match Panel API Calls for Speed…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794382539.534909"
+name = "NestJS AI, Trace, Email & OTLP Integration…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794727820.055659"
+name = "Match markets two-query load PR merge and…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794304346.608129"
+name = "CronJob Exiting Before Push Queue Drains"
+
 [display.rail]
 order = [
 	"tag:Unread",
