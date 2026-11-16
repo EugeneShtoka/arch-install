@@ -1255,6 +1255,14 @@ name = "NovoSalsa Beginners"
 target = "telegram:8735244446/-1004496952678"
 name = "RPG Changelling"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1793802364.300889"
+name = "Referral link integration bug fix and API…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794304106.857099"
+name = "Tipster post reminder feature QA status update"
+
 [display.rail]
 order = [
 	"tag:Unread",
