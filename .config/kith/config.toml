@@ -1315,6 +1315,46 @@ name = "CloudWatch read latency alarm toggles for…"
 target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1794694239.736809"
 name = "CloudWatch Alarm: tipmaster disk queue alerts"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794900480.572909"
+name = "Data cleanup plan for old OO matches in #1036…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795029837.146759"
+name = "Reducing outcome serializer times"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794940360.915289"
+name = "Black Friday credit pack discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794911255.170959"
+name = "Rebase Needed for PR 1038"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795021750.592559"
+name = "Fixing missing /tipforms/hot route issue"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795081786.336299"
+name = "Apple sandbox on prod blocks BF review"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795028627.915469"
+name = "Cancel Appsflyer API Requests Discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794916266.399429"
+name = "Branch cleanup on exbetz-be-api 618 branches…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794841955.585969"
+name = "Referral Terms Freeze on Registration"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794913213.625529"
+name = "Cognito ID 400 hotfix review and merge"
+
 [display.rail]
 order = [
 	"tag:Unread",
