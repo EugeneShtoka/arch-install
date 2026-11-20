@@ -12,14 +12,6 @@
 [display]
 priority = ["tag:Friends", "tag:Work", "tag:Social", "tag:Colleagues"]
 
-[[display.space_rule]]
-space = "tag:Friends"
-first_name_only = true
-
-[[display.space_rule]]
-space = "tag:Work"
-first_name_only = true
-
 [display.deleted]
 keep = true
 
@@ -1378,6 +1370,14 @@ name = "Coverage and Settlement Availability for…"
 [[display.name]]
 target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1787336018.670999"
 name = "FanDuel support status inquiry"
+
+[[display.name_rule]]
+match = "tag:Friends"
+first_name_only = true
+
+[[display.name_rule]]
+match = "tag:Work"
+first_name_only = true
 
 [display.rail]
 order = [
