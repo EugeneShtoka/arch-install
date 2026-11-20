@@ -1355,6 +1355,30 @@ name = "Referral Terms Freeze on Registration"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794913213.625529"
 name = "Cognito ID 400 hotfix review and merge"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1789760276.375109"
+name = "Grader Issue Follow-Up and Email…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1794855171.863829"
+name = "Request for portal access and API key renewal…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1787664239.742709"
+name = "Integration progress update for new feature…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1789316973.189809"
+name = "Incorrect settlement audit for Optic Odds cases"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1787157758.505089"
+name = "Coverage and Settlement Availability for…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1787336018.670999"
+name = "FanDuel support status inquiry"
+
 [display.rail]
 order = [
 	"tag:Unread",
