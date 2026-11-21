@@ -1371,6 +1371,26 @@ name = "Coverage and Settlement Availability for…"
 target = "thread:slack:T01K2D5TCAC/C0BPVE4MSCR/1787336018.670999"
 name = "FanDuel support status inquiry"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1794675754.119639"
+name = "CloudWatch EBS IO Balance Alarm us-east-2…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1794499823.895359"
+name = "CloudWatch disk queue alarm toggling in…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1794911130.338959"
+name = "CloudWatch Disk Queue Alarm Repeated Updates in…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1793909425.310459"
+name = "CloudWatch disk queue alarm toggling"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1794506748.200879"
+name = "CloudWatch write latency alert toggling for…"
+
 [[display.name_rule]]
 match = "tag:Friends"
 first_name_only = true
