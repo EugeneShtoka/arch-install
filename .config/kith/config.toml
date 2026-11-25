@@ -1391,6 +1391,14 @@ name = "CloudWatch disk queue alarm toggling"
 target = "thread:slack:T01K2D5TCAC/C09EHPCNZB9/1794506748.200879"
 name = "CloudWatch write latency alert toggling for…"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794728544.785019"
+name = "Archive plan discussion and scheduling meeting"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794917482.096459"
+name = "Review rebased PR #1042 GitHub"
+
 [[display.name_rule]]
 match = "tag:Friends"
 first_name_only = true
