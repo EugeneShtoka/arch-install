@@ -1407,6 +1407,14 @@ name = "App Register-Token 401 Debug Session Expiry Fix"
 target = "thread:slack:T01K2D5TCAC/D08FYS31A4V/1794862143.389039"
 name = "Разница маркеров LINES после кикоффа"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795636823.497649"
+name = "Tipform purchase notification issue…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795636457.055169"
+name = "Redis CacheTimeouts Due To Large Bulk"
+
 [[display.name_rule]]
 match = "tag:Friends"
 first_name_only = true
