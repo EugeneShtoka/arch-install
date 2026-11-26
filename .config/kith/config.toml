@@ -1399,6 +1399,10 @@ name = "Archive plan discussion and scheduling meeting"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1794917482.096459"
 name = "Review rebased PR #1042 GitHub"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795635647.761969"
+name = "App Register-Token 401 Debug Session Expiry Fix"
+
 [[display.name_rule]]
 match = "tag:Friends"
 first_name_only = true
