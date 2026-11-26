@@ -1511,6 +1511,10 @@ name = "Settlement channel issue resolved LSports IDs…"
 target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1749115029.850439"
 name = "Explaining Event ID (FixtureId) in LSports data…"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795615535.206439"
+name = "Shared Artifact Access Issue"
+
 [[display.name_rule]]
 match = "tag:Friends"
 first_name_only = true
