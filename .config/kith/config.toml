@@ -1415,6 +1415,102 @@ name = "Tipform purchase notification issue…"
 target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795636457.055169"
 name = "Redis CacheTimeouts Due To Large Bulk"
 
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08HVEWCKQE/1795685605.488419"
+name = "Merge dev to main request approval"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1748602455.631069"
+name = "Database access credentials shared for bastion…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1748430555.461049"
+name = "Tip‑form pagination logic and limits discussion"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1785484283.369609"
+name = "Manual Follow vs Guild Sub Notifications"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1750588007.611249"
+name = "Add endpoint for top tipsters"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1747658056.741079"
+name = "PR merge discussion and category matching"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1785426774.675859"
+name = "Align FE, Release Staging Merge"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1754925745.721709"
+name = "Pull Request and Jira Ticket TMDV-1043"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/D08FYS2H99T/1742983253.649259"
+name = "Backend DB connection pg_hba.conf error"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1783242314.123709"
+name = "Exporting Trade360 dashboard settings query to…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1742795542.540509"
+name = "Package inactive issue lsports support"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1749114995.443269"
+name = "kapa.ai offers help for LSports"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1774018718.217549"
+name = "TypeScript return type mismatch for getFixtures…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1779656702.975299"
+name = "Schedule meeting Monday 15:00 confirmation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1762784641.414479"
+name = "NBA Week Outlook NHL Task Update"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1751436009.465599"
+name = "Trade360 API integration and sample feed issues"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1782723160.358899"
+name = "T360 Snapshot API provider list limitation"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1742214779.001169"
+name = "Missing Fixtures in FixtureMarkets Query"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1774022469.808719"
+name = "Granularity of market message sequences in live…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1767725859.747309"
+name = "Duplicate LSports event result updates issue"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1777043308.824109"
+name = "Trade360 PreMatch sports availability inquiry"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1772615246.334279"
+name = "Introducing CEM Roles and Responsibilities for…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1748951832.360959"
+name = "Settlement channel issue resolved LSports IDs…"
+
+[[display.name]]
+target = "thread:slack:T01K2D5TCAC/C08G9DSFHUL/1749115029.850439"
+name = "Explaining Event ID (FixtureId) in LSports data…"
+
 [[display.name_rule]]
 match = "tag:Friends"
 first_name_only = true
